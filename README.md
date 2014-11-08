@@ -1,4 +1,4 @@
-geolink-design
-==============
+EarthCube GeoLink
+=================
 
-Design information about the EarthCube Geolink project.
+Design information about the EarthCube [Geolink project](http://geo-link.org).  
