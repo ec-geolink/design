@@ -1,0 +1,9 @@
+@prefix olorg: <http://schema.oceanlink.org/organization#> .
+@prefix olinfo: <http://schema.oceanlink.org/information-object#> .
+
+<http://lod.bco-dmo.org/id/funding/355> rdf:type olorg:Organization ;
+                                        olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/355#info> .
+
+<http://lod.bco-dmo.org/id/funding/355#info> rdf:type olinfo:InformationObject ;
+                                             olinfo:hasWebpage "http://www.nsf.gov/oce"^^<xsd:anyURI> ;
+                                             olinfo:hasCanonicalName "NSF Division of Ocean Sciences (NSF OCE)"@en-US .
