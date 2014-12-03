@@ -1,0 +1,15 @@
+@prefix olperson: <http://schema.oceanlink.org/person#> .
+@prefix olpersoninfo: <http://schema.oceanlink.org/personal-info-item#> .
+@prefix olpersonname: <http://schema.oceanlink.org/person-name#> .
+
+<http://lod.bco-dmo.org/id/people/50454> rdf:type olperson:Person ;
+                                         olperson:hasPersonalInfoItem <http://lod.bco-dmo.org/id/people/50454#info> .
+
+<http://lod.bco-dmo.org/id/people/50454#info> rdf:type olpersoninfo:PersonalInfoItem ;
+                                              olpersoninfo:isPersonInfoItemOf <http://lod.bco-dmo.org/id/person/50454> ;
+                                              olpersoninfo:hasPersonInfoValue <http://lod.bco-dmo.org/id/people/50454#name> .
+
+<http://lod.bco-dmo.org/id/people/50454#name> rdf:type olpersonname:PersonName ;
+                                              olpersonname:fullNameAsString "Dr Peter Wiebe"@en-US ;
+                                              olpersonname:firstOrGivenName "Peter"@en-US ;
+                                              olpersonname:familyOrSurname "Wiebe"@en-US .
