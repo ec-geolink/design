@@ -1,0 +1,17 @@
+@prefix olaward: <http://schema.oceanlink.org/funding-award#> .
+@prefix olinfo: <http://schema.oceanlink.org/information-object#> .
+@prefix olrole: <http://schema.oceanlink.org/agent-role#> .
+
+<http://lod.bco-dmo.org/id/award/514213> rdf:type olaward:FundingAward ;
+                                         olaward:hasFundingAgent <http://lod.bco-dmo.org/id/organization/355> ;
+                                         olaward:isDescribedBy <http://lod.bco-dmo.org/id/award/514213#info> .
+
+<http://lod.bco-dmo.org/id/award/514213#info> rdf:type olaward:FundingAwardInformationObject ;
+                                              olaward:hasAwardID "OCE-8415615"^^<xsd:string> ;
+                                              olinfo:hasWebpage "http://nsf.gov/awardsearch/showAward?AWD_ID=8415615"^^<xsd:anyURI> ;
+                                              olinfo:hasCanonicalName "OCE-8415615"^^<xsd:string> .
+
+<http://lod.bco-dmo.org/id/award/514213#ProgramManager51484> rdf:type olrole:AgentRole ;
+                                                             olrole:isPerformedBy <http://lod.bco-dmo.org/id/person/51484> ;
+                                                             olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/award/514213> ;
+                                                             olrole:hasAgentRoleType <http://schema.oceanlink.org/agent-role#programManager> .
