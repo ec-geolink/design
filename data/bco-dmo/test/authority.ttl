@@ -1,0 +1,30 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix olcruise: <http://schema.oceanlink.org/cruise#> .
+@prefix oltrajectory: <http://schema.oceanlink.org/trajectory#> .
+@prefix olvessel: <http://schema.oceanlink.org/vessel#> .
+@prefix olorg: <http://schema.oceanlink.org/organization#> .
+@prefix olinfo: <http://schema.oceanlink.org/information-object#> .
+@prefix olprogram: <http://schema.oceanlink.org/program#> .
+@prefix olaward: <http://schema.oceanlink.org/funding-award#> .
+@prefix olagent: <http://schema.oceanlink.org/agent#> .
+@prefix olagentaffiliation: <http://schema.oceanlink.org/agent-affiliation#> .
+@prefix olrole: <http://schema.oceanlink.org/agent-role#> .
+@prefix olperson: <http://schema.oceanlink.org/person#> .
+@prefix olpersoninfo: <http://schema.oceanlink.org/personal-info-item#> .
+@prefix olpersonname: <http://schema.oceanlink.org/person-name#> .
+@prefix olplatform: <http://schema.oceanlink.org/platform#> .
+@prefix olplace: <http://schema.oceanlink.org/place#> .
+@prefix olevent: <http://schema.oceanlink.org/event#> .
+@prefix olgeometry: <http://schema.oceanlink.org/geometry#> .
+@prefix oldataset: <http://schema.oceanlink.org/repository-object#> .
+
+<http://lod.bco-dmo.org/id/authority/1> rdf:type olorg:Organization ;
+                                        olorg:isDescribedBy <http://lod.bco-dmo.org/id/authority/1#info> .
+
+<http://lod.bco-dmo.org/id/authority/1#info> rdf:type olinfo:InformationObject ;
+                                             olinfo:hasCanonicalName "International Council for the Exploration of the Sea"@en-US ;
+                                             olinfo:alsoKnownAs "ICES"@en-US ;
+                                             olinfo:hasWebpage "http://www.ices.dk/indexfla.asp"^^<xsd:anyURI> .

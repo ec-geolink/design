@@ -1,0 +1,581 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix olcruise: <http://schema.oceanlink.org/cruise#> .
+@prefix oltrajectory: <http://schema.oceanlink.org/trajectory#> .
+@prefix olvessel: <http://schema.oceanlink.org/vessel#> .
+@prefix olorg: <http://schema.oceanlink.org/organization#> .
+@prefix olinfo: <http://schema.oceanlink.org/information-object#> .
+@prefix olprogram: <http://schema.oceanlink.org/program#> .
+@prefix olaward: <http://schema.oceanlink.org/funding-award#> .
+@prefix olagent: <http://schema.oceanlink.org/agent#> .
+@prefix olagentaffiliation: <http://schema.oceanlink.org/agent-affiliation#> .
+@prefix olrole: <http://schema.oceanlink.org/agent-role#> .
+@prefix olperson: <http://schema.oceanlink.org/person#> .
+@prefix olpersoninfo: <http://schema.oceanlink.org/personal-info-item#> .
+@prefix olpersonname: <http://schema.oceanlink.org/person-name#> .
+@prefix olplatform: <http://schema.oceanlink.org/platform#> .
+@prefix olplace: <http://schema.oceanlink.org/place#> .
+@prefix olevent: <http://schema.oceanlink.org/event#> .
+@prefix olgeometry: <http://schema.oceanlink.org/geometry#> .
+@prefix oldataset: <http://schema.oceanlink.org/repository-object#> .
+
+<http://lod.bco-dmo.org/id/program/2012> rdf:type olprogram:Program ;
+                                         olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/2012#info> ;
+                                         olrole:providesAgentRoleType <http://schema.oceanlink.org/agent-affiliation#affiliate> .
+
+<http://lod.bco-dmo.org/id/program/2012#info> rdf:type olinfo:InformationObject ;
+                                              olinfo:hasCanonicalName "U.S. GLOBal ocean ECosystems dynamics"@en-US ;
+                                              olinfo:alsoKnownAs "U.S. GLOBEC"@en-US ;
+                                              olinfo:hasWebpage "http://www.usglobec.org/"^^<xsd:anyURI> .
+
+<http://lod.bco-dmo.org/id/program/2012#role-50407> olprogram:isAssociatedWithProgram <http://lod.bco-dmo.org/id/program/2012> ;
+                                                    rdf:type olagentaffiliation:AgentAffiliation ;
+                                                    olrole:isPerformedBy <http://lod.bco-dmo.org/id/person/50407> ;
+                                                    olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/program/2012> ;
+                                                    olrole:hasAgentRoleType <http://schema.oceanlink.org/agent-affiliation#affiliate> .
+
+<http://lod.bco-dmo.org/id/person/50407> olagent:performsAgentRole <http://lod.bco-dmo.org/id/program/2012#role-50407> .
+<http://lod.bco-dmo.org/id/program/2013> rdf:type olprogram:Program ;
+                                         olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/2013#info> ;
+                                         olrole:providesAgentRoleType <http://schema.oceanlink.org/agent-affiliation#affiliate> .
+
+<http://lod.bco-dmo.org/id/program/2013#info> rdf:type olinfo:InformationObject ;
+                                              olinfo:hasCanonicalName "U.S. Joint Global Ocean Flux Study"@en-US ;
+                                              olinfo:alsoKnownAs "U.S. JGOFS"@en-US ;
+                                              olinfo:hasWebpage "http://usjgofs.whoi.edu/"^^<xsd:anyURI> .
+
+<http://lod.bco-dmo.org/id/program/2013#role-50522> olprogram:isAssociatedWithProgram <http://lod.bco-dmo.org/id/program/2013> ;
+                                                    rdf:type olagentaffiliation:AgentAffiliation ;
+                                                    olrole:isPerformedBy <http://lod.bco-dmo.org/id/person/50522> ;
+                                                    olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/program/2013> ;
+                                                    olrole:hasAgentRoleType <http://schema.oceanlink.org/agent-affiliation#affiliate> .
+
+<http://lod.bco-dmo.org/id/person/50522> olagent:performsAgentRole <http://lod.bco-dmo.org/id/program/2013#role-50522> .
+<http://lod.bco-dmo.org/id/program/2014> rdf:type olprogram:Program ;
+                                         olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/2014#info> ;
+                                         olrole:providesAgentRoleType <http://schema.oceanlink.org/agent-affiliation#affiliate> .
+
+<http://lod.bco-dmo.org/id/program/2014#info> rdf:type olinfo:InformationObject ;
+                                              olinfo:hasCanonicalName "Census of Marine Life"@en-US ;
+                                              olinfo:alsoKnownAs "CoML"@en-US ;
+                                              olinfo:hasWebpage "http://www.coml.org/"^^<xsd:anyURI> .
+
+<http://lod.bco-dmo.org/id/program/2014#role-50389> olprogram:isAssociatedWithProgram <http://lod.bco-dmo.org/id/program/2014> ;
+                                                    rdf:type olagentaffiliation:AgentAffiliation ;
+                                                    olrole:isPerformedBy <http://lod.bco-dmo.org/id/person/50389> ;
+                                                    olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/program/2014> ;
+                                                    olrole:hasAgentRoleType <http://schema.oceanlink.org/agent-affiliation#affiliate> .
+
+<http://lod.bco-dmo.org/id/person/50389> olagent:performsAgentRole <http://lod.bco-dmo.org/id/program/2014#role-50389> .
+<http://lod.bco-dmo.org/id/program/2015> rdf:type olprogram:Program ;
+                                         olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/2015#info> ;
+                                         olrole:providesAgentRoleType <http://schema.oceanlink.org/agent-affiliation#affiliate> .
+
+<http://lod.bco-dmo.org/id/program/2015#info> rdf:type olinfo:InformationObject ;
+                                              olinfo:hasCanonicalName "Ocean Carbon and Biogeochemistry"@en-US ;
+                                              olinfo:alsoKnownAs "OCB"@en-US ;
+                                              olinfo:hasWebpage "http://us-ocb.org/"^^<xsd:anyURI> .
+
+<http://lod.bco-dmo.org/id/program/2015#role-50505> olprogram:isAssociatedWithProgram <http://lod.bco-dmo.org/id/program/2015> ;
+                                                    rdf:type olagentaffiliation:AgentAffiliation ;
+                                                    olrole:isPerformedBy <http://lod.bco-dmo.org/id/person/50505> ;
+                                                    olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/program/2015> ;
+                                                    olrole:hasAgentRoleType <http://schema.oceanlink.org/agent-affiliation#affiliate> .
+
+<http://lod.bco-dmo.org/id/person/50505> olagent:performsAgentRole <http://lod.bco-dmo.org/id/program/2015#role-50505> .
+
+<http://lod.bco-dmo.org/id/program/2015#role-50917> olprogram:isAssociatedWithProgram <http://lod.bco-dmo.org/id/program/2015> ;
+                                                    rdf:type olagentaffiliation:AgentAffiliation ;
+                                                    olrole:isPerformedBy <http://lod.bco-dmo.org/id/person/50917> ;
+                                                    olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/program/2015> ;
+                                                    olrole:hasAgentRoleType <http://schema.oceanlink.org/agent-affiliation#affiliate> .
+
+<http://lod.bco-dmo.org/id/person/50917> olagent:performsAgentRole <http://lod.bco-dmo.org/id/program/2015#role-50917> .
+<http://lod.bco-dmo.org/id/program/2016> rdf:type olprogram:Program ;
+                                         olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/2016#info> .
+
+<http://lod.bco-dmo.org/id/program/2016#info> rdf:type olinfo:InformationObject ;
+                                              olinfo:hasCanonicalName "United States Surface Ocean Lower Atmosphere Study"@en-US ;
+                                              olinfo:alsoKnownAs "U.S. SOLAS"@en-US ;
+                                              olinfo:hasWebpage "http://www.us-solas.org/"^^<xsd:anyURI> .
+<http://lod.bco-dmo.org/id/program/2017> rdf:type olprogram:Program ;
+                                         olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/2017#info> ;
+                                         olrole:providesAgentRoleType <http://schema.oceanlink.org/agent-affiliation#affiliate> .
+
+<http://lod.bco-dmo.org/id/program/2017#info> rdf:type olinfo:InformationObject ;
+                                              olinfo:hasCanonicalName "Iron Synthesis"@en-US ;
+                                              olinfo:alsoKnownAs "FeSynth"@en-US .
+
+<http://lod.bco-dmo.org/id/program/2017#role-50909> olprogram:isAssociatedWithProgram <http://lod.bco-dmo.org/id/program/2017> ;
+                                                    rdf:type olagentaffiliation:AgentAffiliation ;
+                                                    olrole:isPerformedBy <http://lod.bco-dmo.org/id/person/50909> ;
+                                                    olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/program/2017> ;
+                                                    olrole:hasAgentRoleType <http://schema.oceanlink.org/agent-affiliation#affiliate> .
+
+<http://lod.bco-dmo.org/id/person/50909> olagent:performsAgentRole <http://lod.bco-dmo.org/id/program/2017#role-50909> .
+
+<http://lod.bco-dmo.org/id/program/2017#role-50929> olprogram:isAssociatedWithProgram <http://lod.bco-dmo.org/id/program/2017> ;
+                                                    rdf:type olagentaffiliation:AgentAffiliation ;
+                                                    olrole:isPerformedBy <http://lod.bco-dmo.org/id/person/50929> ;
+                                                    olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/program/2017> ;
+                                                    olrole:hasAgentRoleType <http://schema.oceanlink.org/agent-affiliation#affiliate> .
+
+<http://lod.bco-dmo.org/id/person/50929> olagent:performsAgentRole <http://lod.bco-dmo.org/id/program/2017#role-50929> .
+
+<http://lod.bco-dmo.org/id/program/2017#role-51065> olprogram:isAssociatedWithProgram <http://lod.bco-dmo.org/id/program/2017> ;
+                                                    rdf:type olagentaffiliation:AgentAffiliation ;
+                                                    olrole:isPerformedBy <http://lod.bco-dmo.org/id/person/51065> ;
+                                                    olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/program/2017> ;
+                                                    olrole:hasAgentRoleType <http://schema.oceanlink.org/agent-affiliation#affiliate> .
+
+<http://lod.bco-dmo.org/id/person/51065> olagent:performsAgentRole <http://lod.bco-dmo.org/id/program/2017#role-51065> .
+
+<http://lod.bco-dmo.org/id/program/2017#role-51180> olprogram:isAssociatedWithProgram <http://lod.bco-dmo.org/id/program/2017> ;
+                                                    rdf:type olagentaffiliation:AgentAffiliation ;
+                                                    olrole:isPerformedBy <http://lod.bco-dmo.org/id/person/51180> ;
+                                                    olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/program/2017> ;
+                                                    olrole:hasAgentRoleType <http://schema.oceanlink.org/agent-affiliation#affiliate> .
+
+<http://lod.bco-dmo.org/id/person/51180> olagent:performsAgentRole <http://lod.bco-dmo.org/id/program/2017#role-51180> .
+<http://lod.bco-dmo.org/id/program/2018> rdf:type olprogram:Program ;
+                                         olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/2018#info> ;
+                                         olrole:providesAgentRoleType <http://schema.oceanlink.org/agent-affiliation#affiliate> .
+
+<http://lod.bco-dmo.org/id/program/2018#info> rdf:type olinfo:InformationObject ;
+                                              olinfo:hasCanonicalName "NorthEast Consortium"@en-US ;
+                                              olinfo:alsoKnownAs "NEC"@en-US ;
+                                              olinfo:hasWebpage "http://northeastconsortium.org/"^^<xsd:anyURI> .
+
+<http://lod.bco-dmo.org/id/program/2018#role-51374> olprogram:isAssociatedWithProgram <http://lod.bco-dmo.org/id/program/2018> ;
+                                                    rdf:type olagentaffiliation:AgentAffiliation ;
+                                                    olrole:isPerformedBy <http://lod.bco-dmo.org/id/person/51374> ;
+                                                    olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/program/2018> ;
+                                                    olrole:hasAgentRoleType <http://schema.oceanlink.org/agent-affiliation#affiliate> .
+
+<http://lod.bco-dmo.org/id/person/51374> olagent:performsAgentRole <http://lod.bco-dmo.org/id/program/2018#role-51374> .
+<http://lod.bco-dmo.org/id/program/2019> rdf:type olprogram:Program ;
+                                         olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/2019#info> .
+
+<http://lod.bco-dmo.org/id/program/2019#info> rdf:type olinfo:InformationObject ;
+                                              olinfo:hasCanonicalName "NACP-OCB Coastal Synthesis"@en-US ;
+                                              olinfo:alsoKnownAs "NACP-OCB Coastal"@en-US ;
+                                              olinfo:hasWebpage "http://www.nacarbon.org/cgi-nacp/working_groups/wg.pl?synthesis=1#coastal"^^<xsd:anyURI> .
+<http://lod.bco-dmo.org/id/program/2020> rdf:type olprogram:Program ;
+                                         olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/2020#info> ;
+                                         olrole:providesAgentRoleType <http://schema.oceanlink.org/agent-affiliation#affiliate> .
+
+<http://lod.bco-dmo.org/id/program/2020#info> rdf:type olinfo:InformationObject ;
+                                              olinfo:hasCanonicalName "North American Carbon Program"@en-US ;
+                                              olinfo:alsoKnownAs "NACP"@en-US ;
+                                              olinfo:hasWebpage "http://www.nacarbon.org/nacp/"^^<xsd:anyURI> .
+
+<http://lod.bco-dmo.org/id/program/2020#role-51070> olprogram:isAssociatedWithProgram <http://lod.bco-dmo.org/id/program/2020> ;
+                                                    rdf:type olagentaffiliation:AgentAffiliation ;
+                                                    olrole:isPerformedBy <http://lod.bco-dmo.org/id/person/51070> ;
+                                                    olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/program/2020> ;
+                                                    olrole:hasAgentRoleType <http://schema.oceanlink.org/agent-affiliation#affiliate> .
+
+<http://lod.bco-dmo.org/id/person/51070> olagent:performsAgentRole <http://lod.bco-dmo.org/id/program/2020#role-51070> .
+<http://lod.bco-dmo.org/id/program/2021> rdf:type olprogram:Program ;
+                                         olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/2021#info> ;
+                                         olrole:providesAgentRoleType <http://schema.oceanlink.org/agent-affiliation#affiliate> .
+
+<http://lod.bco-dmo.org/id/program/2021#info> rdf:type olinfo:InformationObject ;
+                                              olinfo:hasCanonicalName "Integrated Marine Biogeochemistry and Ecosystem Research -US"@en-US ;
+                                              olinfo:alsoKnownAs "IMBER-US"@en-US ;
+                                              olinfo:hasWebpage "http://www.imber.info/"^^<xsd:anyURI> .
+
+<http://lod.bco-dmo.org/id/program/2021#role-50737> olprogram:isAssociatedWithProgram <http://lod.bco-dmo.org/id/program/2021> ;
+                                                    rdf:type olagentaffiliation:AgentAffiliation ;
+                                                    olrole:isPerformedBy <http://lod.bco-dmo.org/id/person/50737> ;
+                                                    olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/program/2021> ;
+                                                    olrole:hasAgentRoleType <http://schema.oceanlink.org/agent-affiliation#affiliate> .
+
+<http://lod.bco-dmo.org/id/person/50737> olagent:performsAgentRole <http://lod.bco-dmo.org/id/program/2021#role-50737> .
+
+<http://lod.bco-dmo.org/id/program/2021#role-51163> olprogram:isAssociatedWithProgram <http://lod.bco-dmo.org/id/program/2021> ;
+                                                    rdf:type olagentaffiliation:AgentAffiliation ;
+                                                    olrole:isPerformedBy <http://lod.bco-dmo.org/id/person/51163> ;
+                                                    olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/program/2021> ;
+                                                    olrole:hasAgentRoleType <http://schema.oceanlink.org/agent-affiliation#affiliate> .
+
+<http://lod.bco-dmo.org/id/person/51163> olagent:performsAgentRole <http://lod.bco-dmo.org/id/program/2021#role-51163> .
+
+<http://lod.bco-dmo.org/id/program/2021#role-51094> olprogram:isAssociatedWithProgram <http://lod.bco-dmo.org/id/program/2021> ;
+                                                    rdf:type olagentaffiliation:AgentAffiliation ;
+                                                    olrole:isPerformedBy <http://lod.bco-dmo.org/id/person/51094> ;
+                                                    olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/program/2021> ;
+                                                    olrole:hasAgentRoleType <http://schema.oceanlink.org/agent-affiliation#affiliate> .
+
+<http://lod.bco-dmo.org/id/person/51094> olagent:performsAgentRole <http://lod.bco-dmo.org/id/program/2021#role-51094> .
+
+<http://lod.bco-dmo.org/id/program/2021#role-50513> olprogram:isAssociatedWithProgram <http://lod.bco-dmo.org/id/program/2021> ;
+                                                    rdf:type olagentaffiliation:AgentAffiliation ;
+                                                    olrole:isPerformedBy <http://lod.bco-dmo.org/id/person/50513> ;
+                                                    olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/program/2021> ;
+                                                    olrole:hasAgentRoleType <http://schema.oceanlink.org/agent-affiliation#affiliate> .
+
+<http://lod.bco-dmo.org/id/person/50513> olagent:performsAgentRole <http://lod.bco-dmo.org/id/program/2021#role-50513> .
+<http://lod.bco-dmo.org/id/program/2022> rdf:type olprogram:Program ;
+                                         olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/2022#info> ;
+                                         olrole:providesAgentRoleType <http://schema.oceanlink.org/agent-affiliation#affiliate> .
+
+<http://lod.bco-dmo.org/id/program/2022#info> rdf:type olinfo:InformationObject ;
+                                              olinfo:hasCanonicalName "U.S. GEOTRACES"@en-US ;
+                                              olinfo:alsoKnownAs "U.S. GEOTRACES"@en-US ;
+                                              olinfo:hasWebpage "http://www.geotraces.org/"^^<xsd:anyURI> .
+
+<http://lod.bco-dmo.org/id/program/2022#role-50572> olprogram:isAssociatedWithProgram <http://lod.bco-dmo.org/id/program/2022> ;
+                                                    rdf:type olagentaffiliation:AgentAffiliation ;
+                                                    olrole:isPerformedBy <http://lod.bco-dmo.org/id/person/50572> ;
+                                                    olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/program/2022> ;
+                                                    olrole:hasAgentRoleType <http://schema.oceanlink.org/agent-affiliation#affiliate> .
+
+<http://lod.bco-dmo.org/id/person/50572> olagent:performsAgentRole <http://lod.bco-dmo.org/id/program/2022#role-50572> .
+<http://lod.bco-dmo.org/id/program/2023> rdf:type olprogram:Program ;
+                                         olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/2023#info> ;
+                                         olrole:providesAgentRoleType <http://schema.oceanlink.org/agent-affiliation#affiliate> .
+
+<http://lod.bco-dmo.org/id/program/2023#info> rdf:type olinfo:InformationObject ;
+                                              olinfo:hasCanonicalName "National Marine Fisheries Service / Northeast Fisheries Science Center"@en-US ;
+                                              olinfo:alsoKnownAs "NMFS/NEFSC"@en-US ;
+                                              olinfo:hasWebpage "http://www.nefsc.noaa.gov/history/nefsc.html"^^<xsd:anyURI> .
+
+<http://lod.bco-dmo.org/id/program/2023#role-51164> olprogram:isAssociatedWithProgram <http://lod.bco-dmo.org/id/program/2023> ;
+                                                    rdf:type olagentaffiliation:AgentAffiliation ;
+                                                    olrole:isPerformedBy <http://lod.bco-dmo.org/id/person/51164> ;
+                                                    olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/program/2023> ;
+                                                    olrole:hasAgentRoleType <http://schema.oceanlink.org/agent-affiliation#affiliate> .
+
+<http://lod.bco-dmo.org/id/person/51164> olagent:performsAgentRole <http://lod.bco-dmo.org/id/program/2023#role-51164> .
+
+<http://lod.bco-dmo.org/id/program/2023#role-50380> olprogram:isAssociatedWithProgram <http://lod.bco-dmo.org/id/program/2023> ;
+                                                    rdf:type olagentaffiliation:AgentAffiliation ;
+                                                    olrole:isPerformedBy <http://lod.bco-dmo.org/id/person/50380> ;
+                                                    olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/program/2023> ;
+                                                    olrole:hasAgentRoleType <http://schema.oceanlink.org/agent-affiliation#affiliate> .
+
+<http://lod.bco-dmo.org/id/person/50380> olagent:performsAgentRole <http://lod.bco-dmo.org/id/program/2023#role-50380> .
+<http://lod.bco-dmo.org/id/program/2024> rdf:type olprogram:Program ;
+                                         olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/2024#info> .
+
+<http://lod.bco-dmo.org/id/program/2024#info> rdf:type olinfo:InformationObject ;
+                                              olinfo:hasCanonicalName "Comparative Analysis of Marine Ecosystem Organization"@en-US ;
+                                              olinfo:alsoKnownAs "CAMEO"@en-US ;
+                                              olinfo:hasWebpage "http://cameo.noaa.gov/"^^<xsd:anyURI> .
+<http://lod.bco-dmo.org/id/program/2025> rdf:type olprogram:Program ;
+                                         olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/2025#info> .
+
+<http://lod.bco-dmo.org/id/program/2025#info> rdf:type olinfo:InformationObject ;
+                                              olinfo:hasCanonicalName "Historical Datasets"@en-US ;
+                                              olinfo:alsoKnownAs "Historical"@en-US .
+<http://lod.bco-dmo.org/id/program/2026> rdf:type olprogram:Program ;
+                                         olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/2026#info> .
+
+<http://lod.bco-dmo.org/id/program/2026#info> rdf:type olinfo:InformationObject ;
+                                              olinfo:hasCanonicalName "Long Term Ecological Research network"@en-US ;
+                                              olinfo:alsoKnownAs "LTER"@en-US ;
+                                              olinfo:hasWebpage "http://www.lternet.edu/"^^<xsd:anyURI> .
+<http://lod.bco-dmo.org/id/program/2027> rdf:type olprogram:Program ;
+                                         olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/2027#info> .
+
+<http://lod.bco-dmo.org/id/program/2027#info> rdf:type olinfo:InformationObject ;
+                                              olinfo:hasCanonicalName "Emerging Topics in Biogeochemical Cycles"@en-US ;
+                                              olinfo:alsoKnownAs "ETBC"@en-US ;
+                                              olinfo:hasWebpage "http://www.nsf.gov/pubs/2007/nsf07049/nsf07049.jsp"^^<xsd:anyURI> .
+<http://lod.bco-dmo.org/id/program/2028> rdf:type olprogram:Program ;
+                                         olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/2028#info> ;
+                                         olrole:providesAgentRoleType <http://schema.oceanlink.org/agent-affiliation#affiliate> .
+
+<http://lod.bco-dmo.org/id/program/2028#info> rdf:type olinfo:InformationObject ;
+                                              olinfo:hasCanonicalName "Gulf of Mexico - Deepwater Horizon Oil Spill"@en-US ;
+                                              olinfo:alsoKnownAs "GoMX - DHOS"@en-US .
+
+<http://lod.bco-dmo.org/id/program/2028#role-50910> olprogram:isAssociatedWithProgram <http://lod.bco-dmo.org/id/program/2028> ;
+                                                    rdf:type olagentaffiliation:AgentAffiliation ;
+                                                    olrole:isPerformedBy <http://lod.bco-dmo.org/id/person/50910> ;
+                                                    olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/program/2028> ;
+                                                    olrole:hasAgentRoleType <http://schema.oceanlink.org/agent-affiliation#affiliate> .
+
+<http://lod.bco-dmo.org/id/person/50910> olagent:performsAgentRole <http://lod.bco-dmo.org/id/program/2028#role-50910> .
+<http://lod.bco-dmo.org/id/program/2029> rdf:type olprogram:Program ;
+                                         olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/2029#info> .
+
+<http://lod.bco-dmo.org/id/program/2029#info> rdf:type olinfo:InformationObject ;
+                                              olinfo:hasCanonicalName "U. S. Climate Variability and Predictability"@en-US ;
+                                              olinfo:alsoKnownAs "U.S. CLIVAR"@en-US ;
+                                              olinfo:hasWebpage "http://www.usclivar.org/"^^<xsd:anyURI> .
+<http://lod.bco-dmo.org/id/program/2030> rdf:type olprogram:Program ;
+                                         olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/2030#info> .
+
+<http://lod.bco-dmo.org/id/program/2030#info> rdf:type olinfo:InformationObject ;
+                                              olinfo:hasCanonicalName "Science, Engineering and Education for Sustainability NSF-Wide Investment (SEES): Ocean Acidification (formerly CRI-OA)"@en-US ;
+                                              olinfo:alsoKnownAs "SEES-OA"@en-US ;
+                                              olinfo:hasWebpage "http://www.nsf.gov/funding/pgm_summ.jsp?pims_id=503477"^^<xsd:anyURI> .
+<http://lod.bco-dmo.org/id/program/2031> rdf:type olprogram:Program ;
+                                         olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/2031#info> .
+
+<http://lod.bco-dmo.org/id/program/2031#info> rdf:type olinfo:InformationObject ;
+                                              olinfo:hasCanonicalName "Dimensions of Biodiversity"@en-US ;
+                                              olinfo:alsoKnownAs "Dimensions of Biodiversity"@en-US ;
+                                              olinfo:hasWebpage "http://www.nsf.gov/funding/pgm_summ.jsp?pims_id=503446"^^<xsd:anyURI> .
+<http://lod.bco-dmo.org/id/program/2032> rdf:type olprogram:Program ;
+                                         olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/2032#info> ;
+                                         olrole:providesAgentRoleType <http://schema.oceanlink.org/agent-affiliation#affiliate> .
+
+<http://lod.bco-dmo.org/id/program/2032#info> rdf:type olinfo:InformationObject ;
+                                              olinfo:hasCanonicalName "Arctic Summer Cloud Ocean Study"@en-US ;
+                                              olinfo:alsoKnownAs "ASCOS"@en-US ;
+                                              olinfo:hasWebpage "http://www.ascos.se/"^^<xsd:anyURI> .
+
+<http://lod.bco-dmo.org/id/program/2032#role-51452> olprogram:isAssociatedWithProgram <http://lod.bco-dmo.org/id/program/2032> ;
+                                                    rdf:type olagentaffiliation:AgentAffiliation ;
+                                                    olrole:isPerformedBy <http://lod.bco-dmo.org/id/person/51452> ;
+                                                    olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/program/2032> ;
+                                                    olrole:hasAgentRoleType <http://schema.oceanlink.org/agent-affiliation#affiliate> .
+
+<http://lod.bco-dmo.org/id/person/51452> olagent:performsAgentRole <http://lod.bco-dmo.org/id/program/2032#role-51452> .
+
+<http://lod.bco-dmo.org/id/program/2032#role-51451> olprogram:isAssociatedWithProgram <http://lod.bco-dmo.org/id/program/2032> ;
+                                                    rdf:type olagentaffiliation:AgentAffiliation ;
+                                                    olrole:isPerformedBy <http://lod.bco-dmo.org/id/person/51451> ;
+                                                    olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/program/2032> ;
+                                                    olrole:hasAgentRoleType <http://schema.oceanlink.org/agent-affiliation#affiliate> .
+
+<http://lod.bco-dmo.org/id/person/51451> olagent:performsAgentRole <http://lod.bco-dmo.org/id/program/2032#role-51451> .
+
+<http://lod.bco-dmo.org/id/program/2032#role-50910> olprogram:isAssociatedWithProgram <http://lod.bco-dmo.org/id/program/2032> ;
+                                                    rdf:type olagentaffiliation:AgentAffiliation ;
+                                                    olrole:isPerformedBy <http://lod.bco-dmo.org/id/person/50910> ;
+                                                    olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/program/2032> ;
+                                                    olrole:hasAgentRoleType <http://schema.oceanlink.org/agent-affiliation#affiliate> .
+
+<http://lod.bco-dmo.org/id/person/50910> olagent:performsAgentRole <http://lod.bco-dmo.org/id/program/2032#role-50910> .
+<http://lod.bco-dmo.org/id/program/2033> rdf:type olprogram:Program ;
+                                         olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/2033#info> .
+
+<http://lod.bco-dmo.org/id/program/2033#info> rdf:type olinfo:InformationObject ;
+                                              olinfo:hasCanonicalName "Partnership for Interdisciplinary Studies of Coastal Oceans"@en-US ;
+                                              olinfo:alsoKnownAs "PISCO"@en-US ;
+                                              olinfo:hasWebpage "http://www.piscoweb.org/"^^<xsd:anyURI> .
+<http://lod.bco-dmo.org/id/program/2034> rdf:type olprogram:Program ;
+                                         olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/2034#info> ;
+                                         olrole:providesAgentRoleType <http://schema.oceanlink.org/agent-affiliation#affiliate> .
+
+<http://lod.bco-dmo.org/id/program/2034#info> rdf:type olinfo:InformationObject ;
+                                              olinfo:hasCanonicalName "Laurentian Great Lakes Ecosystem Studies"@en-US ;
+                                              olinfo:alsoKnownAs "Laurentian Great Lakes Ecosystem Studies"@en-US ;
+                                              olinfo:hasWebpage "http://www.tc.umn.edu/~stern007/"^^<xsd:anyURI> .
+
+<http://lod.bco-dmo.org/id/program/2034#role-51462> olprogram:isAssociatedWithProgram <http://lod.bco-dmo.org/id/program/2034> ;
+                                                    rdf:type olagentaffiliation:AgentAffiliation ;
+                                                    olrole:isPerformedBy <http://lod.bco-dmo.org/id/person/51462> ;
+                                                    olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/program/2034> ;
+                                                    olrole:hasAgentRoleType <http://schema.oceanlink.org/agent-affiliation#affiliate> .
+
+<http://lod.bco-dmo.org/id/person/51462> olagent:performsAgentRole <http://lod.bco-dmo.org/id/program/2034#role-51462> .
+
+<http://lod.bco-dmo.org/id/program/2034#role-51463> olprogram:isAssociatedWithProgram <http://lod.bco-dmo.org/id/program/2034> ;
+                                                    rdf:type olagentaffiliation:AgentAffiliation ;
+                                                    olrole:isPerformedBy <http://lod.bco-dmo.org/id/person/51463> ;
+                                                    olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/program/2034> ;
+                                                    olrole:hasAgentRoleType <http://schema.oceanlink.org/agent-affiliation#affiliate> .
+
+<http://lod.bco-dmo.org/id/person/51463> olagent:performsAgentRole <http://lod.bco-dmo.org/id/program/2034#role-51463> .
+
+<http://lod.bco-dmo.org/id/program/2034#role-51461> olprogram:isAssociatedWithProgram <http://lod.bco-dmo.org/id/program/2034> ;
+                                                    rdf:type olagentaffiliation:AgentAffiliation ;
+                                                    olrole:isPerformedBy <http://lod.bco-dmo.org/id/person/51461> ;
+                                                    olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/program/2034> ;
+                                                    olrole:hasAgentRoleType <http://schema.oceanlink.org/agent-affiliation#affiliate> .
+
+<http://lod.bco-dmo.org/id/person/51461> olagent:performsAgentRole <http://lod.bco-dmo.org/id/program/2034#role-51461> .
+
+<http://lod.bco-dmo.org/id/program/2034#role-50919> olprogram:isAssociatedWithProgram <http://lod.bco-dmo.org/id/program/2034> ;
+                                                    rdf:type olagentaffiliation:AgentAffiliation ;
+                                                    olrole:isPerformedBy <http://lod.bco-dmo.org/id/person/50919> ;
+                                                    olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/program/2034> ;
+                                                    olrole:hasAgentRoleType <http://schema.oceanlink.org/agent-affiliation#affiliate> .
+
+<http://lod.bco-dmo.org/id/person/50919> olagent:performsAgentRole <http://lod.bco-dmo.org/id/program/2034#role-50919> .
+
+<http://lod.bco-dmo.org/id/program/2034#role-51464> olprogram:isAssociatedWithProgram <http://lod.bco-dmo.org/id/program/2034> ;
+                                                    rdf:type olagentaffiliation:AgentAffiliation ;
+                                                    olrole:isPerformedBy <http://lod.bco-dmo.org/id/person/51464> ;
+                                                    olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/program/2034> ;
+                                                    olrole:hasAgentRoleType <http://schema.oceanlink.org/agent-affiliation#affiliate> .
+
+<http://lod.bco-dmo.org/id/person/51464> olagent:performsAgentRole <http://lod.bco-dmo.org/id/program/2034#role-51464> .
+
+<http://lod.bco-dmo.org/id/program/2034#role-51500> olprogram:isAssociatedWithProgram <http://lod.bco-dmo.org/id/program/2034> ;
+                                                    rdf:type olagentaffiliation:AgentAffiliation ;
+                                                    olrole:isPerformedBy <http://lod.bco-dmo.org/id/person/51500> ;
+                                                    olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/program/2034> ;
+                                                    olrole:hasAgentRoleType <http://schema.oceanlink.org/agent-affiliation#affiliate> .
+
+<http://lod.bco-dmo.org/id/person/51500> olagent:performsAgentRole <http://lod.bco-dmo.org/id/program/2034#role-51500> .
+
+<http://lod.bco-dmo.org/id/program/2034#role-51724> olprogram:isAssociatedWithProgram <http://lod.bco-dmo.org/id/program/2034> ;
+                                                    rdf:type olagentaffiliation:AgentAffiliation ;
+                                                    olrole:isPerformedBy <http://lod.bco-dmo.org/id/person/51724> ;
+                                                    olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/program/2034> ;
+                                                    olrole:hasAgentRoleType <http://schema.oceanlink.org/agent-affiliation#affiliate> .
+
+<http://lod.bco-dmo.org/id/person/51724> olagent:performsAgentRole <http://lod.bco-dmo.org/id/program/2034#role-51724> .
+
+<http://lod.bco-dmo.org/id/program/2034#role-51548> olprogram:isAssociatedWithProgram <http://lod.bco-dmo.org/id/program/2034> ;
+                                                    rdf:type olagentaffiliation:AgentAffiliation ;
+                                                    olrole:isPerformedBy <http://lod.bco-dmo.org/id/person/51548> ;
+                                                    olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/program/2034> ;
+                                                    olrole:hasAgentRoleType <http://schema.oceanlink.org/agent-affiliation#affiliate> .
+
+<http://lod.bco-dmo.org/id/person/51548> olagent:performsAgentRole <http://lod.bco-dmo.org/id/program/2034#role-51548> .
+
+<http://lod.bco-dmo.org/id/program/2034#role-50910> olprogram:isAssociatedWithProgram <http://lod.bco-dmo.org/id/program/2034> ;
+                                                    rdf:type olagentaffiliation:AgentAffiliation ;
+                                                    olrole:isPerformedBy <http://lod.bco-dmo.org/id/person/50910> ;
+                                                    olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/program/2034> ;
+                                                    olrole:hasAgentRoleType <http://schema.oceanlink.org/agent-affiliation#affiliate> .
+
+<http://lod.bco-dmo.org/id/person/50910> olagent:performsAgentRole <http://lod.bco-dmo.org/id/program/2034#role-50910> .
+<http://lod.bco-dmo.org/id/program/2035> rdf:type olprogram:Program ;
+                                         olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/2035#info> .
+
+<http://lod.bco-dmo.org/id/program/2035#info> rdf:type olinfo:InformationObject ;
+                                              olinfo:hasCanonicalName "Innovative North Pacific Experiment"@en-US ;
+                                              olinfo:alsoKnownAs "INoPEx"@en-US ;
+                                              olinfo:hasWebpage "http://www.ldeo.columbia.edu/~cth/inopex.htm"^^<xsd:anyURI> .
+<http://lod.bco-dmo.org/id/program/2036> rdf:type olprogram:Program ;
+                                         olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/2036#info> ;
+                                         olrole:providesAgentRoleType <http://schema.oceanlink.org/agent-affiliation#affiliate> .
+
+<http://lod.bco-dmo.org/id/program/2036#info> rdf:type olinfo:InformationObject ;
+                                              olinfo:hasCanonicalName "Ocean Flux Program"@en-US ;
+                                              olinfo:alsoKnownAs "OFP"@en-US ;
+                                              olinfo:hasWebpage "http://ecosystems.mbl.edu/conte/ofp/index.html"^^<xsd:anyURI> .
+
+<http://lod.bco-dmo.org/id/program/2036#role-50678> olprogram:isAssociatedWithProgram <http://lod.bco-dmo.org/id/program/2036> ;
+                                                    rdf:type olagentaffiliation:AgentAffiliation ;
+                                                    olrole:isPerformedBy <http://lod.bco-dmo.org/id/person/50678> ;
+                                                    olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/program/2036> ;
+                                                    olrole:hasAgentRoleType <http://schema.oceanlink.org/agent-affiliation#affiliate> .
+
+<http://lod.bco-dmo.org/id/person/50678> olagent:performsAgentRole <http://lod.bco-dmo.org/id/program/2036#role-50678> .
+<http://lod.bco-dmo.org/id/program/472023> rdf:type olprogram:Program ;
+                                           olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/472023#info> .
+
+<http://lod.bco-dmo.org/id/program/472023#info> rdf:type olinfo:InformationObject ;
+                                                olinfo:hasCanonicalName "Line P"@en-US ;
+                                                olinfo:alsoKnownAs "Line P"@en-US ;
+                                                olinfo:hasWebpage "http://www.pac.dfo-mpo.gc.ca/science/oceans/data-donnees/line-p/index-eng.html"^^<xsd:anyURI> .
+<http://lod.bco-dmo.org/id/program/514212> rdf:type olprogram:Program ;
+                                           olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/514212#info> ;
+                                           olrole:providesAgentRoleType <http://schema.oceanlink.org/agent-affiliation#affiliate> .
+
+<http://lod.bco-dmo.org/id/program/514212#info> rdf:type olinfo:InformationObject ;
+                                                olinfo:hasCanonicalName "Tropical Eastern Pacific Coral Reefs"@en-US ;
+                                                olinfo:alsoKnownAs "TEP Corals"@en-US .
+
+<http://lod.bco-dmo.org/id/program/514212#role-514244> olprogram:isAssociatedWithProgram <http://lod.bco-dmo.org/id/program/514212> ;
+                                                       rdf:type olagentaffiliation:AgentAffiliation ;
+                                                       olrole:isPerformedBy <http://lod.bco-dmo.org/id/person/514244> ;
+                                                       olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/program/514212> ;
+                                                       olrole:hasAgentRoleType <http://schema.oceanlink.org/agent-affiliation#affiliate> .
+
+<http://lod.bco-dmo.org/id/person/514244> olagent:performsAgentRole <http://lod.bco-dmo.org/id/program/514212#role-514244> .
+
+<http://lod.bco-dmo.org/id/program/514212#role-514245> olprogram:isAssociatedWithProgram <http://lod.bco-dmo.org/id/program/514212> ;
+                                                       rdf:type olagentaffiliation:AgentAffiliation ;
+                                                       olrole:isPerformedBy <http://lod.bco-dmo.org/id/person/514245> ;
+                                                       olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/program/514212> ;
+                                                       olrole:hasAgentRoleType <http://schema.oceanlink.org/agent-affiliation#affiliate> .
+
+<http://lod.bco-dmo.org/id/person/514245> olagent:performsAgentRole <http://lod.bco-dmo.org/id/program/514212#role-514245> .
+
+<http://lod.bco-dmo.org/id/program/514212#role-472189> olprogram:isAssociatedWithProgram <http://lod.bco-dmo.org/id/program/514212> ;
+                                                       rdf:type olagentaffiliation:AgentAffiliation ;
+                                                       olrole:isPerformedBy <http://lod.bco-dmo.org/id/person/472189> ;
+                                                       olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/program/514212> ;
+                                                       olrole:hasAgentRoleType <http://schema.oceanlink.org/agent-affiliation#affiliate> .
+
+<http://lod.bco-dmo.org/id/person/472189> olagent:performsAgentRole <http://lod.bco-dmo.org/id/program/514212#role-472189> .
+
+<http://lod.bco-dmo.org/id/program/514212#role-514246> olprogram:isAssociatedWithProgram <http://lod.bco-dmo.org/id/program/514212> ;
+                                                       rdf:type olagentaffiliation:AgentAffiliation ;
+                                                       olrole:isPerformedBy <http://lod.bco-dmo.org/id/person/514246> ;
+                                                       olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/program/514212> ;
+                                                       olrole:hasAgentRoleType <http://schema.oceanlink.org/agent-affiliation#affiliate> .
+
+<http://lod.bco-dmo.org/id/person/514246> olagent:performsAgentRole <http://lod.bco-dmo.org/id/program/514212#role-514246> .
+
+<http://lod.bco-dmo.org/id/program/514212#role-514248> olprogram:isAssociatedWithProgram <http://lod.bco-dmo.org/id/program/514212> ;
+                                                       rdf:type olagentaffiliation:AgentAffiliation ;
+                                                       olrole:isPerformedBy <http://lod.bco-dmo.org/id/person/514248> ;
+                                                       olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/program/514212> ;
+                                                       olrole:hasAgentRoleType <http://schema.oceanlink.org/agent-affiliation#affiliate> .
+
+<http://lod.bco-dmo.org/id/person/514248> olagent:performsAgentRole <http://lod.bco-dmo.org/id/program/514212#role-514248> .
+<http://lod.bco-dmo.org/id/program/517517> rdf:type olprogram:Program ;
+                                           olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/517517#info> ;
+                                           olrole:providesAgentRoleType <http://schema.oceanlink.org/agent-affiliation#affiliate> .
+
+<http://lod.bco-dmo.org/id/program/517517#info> rdf:type olinfo:InformationObject ;
+                                                olinfo:hasCanonicalName "GeoMICS"@en-US ;
+                                                olinfo:alsoKnownAs "GeoMICS"@en-US .
+
+<http://lod.bco-dmo.org/id/program/517517#role-517495> olprogram:isAssociatedWithProgram <http://lod.bco-dmo.org/id/program/517517> ;
+                                                       rdf:type olagentaffiliation:AgentAffiliation ;
+                                                       olrole:isPerformedBy <http://lod.bco-dmo.org/id/person/517495> ;
+                                                       olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/program/517517> ;
+                                                       olrole:hasAgentRoleType <http://schema.oceanlink.org/agent-affiliation#affiliate> .
+
+<http://lod.bco-dmo.org/id/person/517495> olagent:performsAgentRole <http://lod.bco-dmo.org/id/program/517517#role-517495> .
+
+<http://lod.bco-dmo.org/id/program/517517#role-50741> olprogram:isAssociatedWithProgram <http://lod.bco-dmo.org/id/program/517517> ;
+                                                      rdf:type olagentaffiliation:AgentAffiliation ;
+                                                      olrole:isPerformedBy <http://lod.bco-dmo.org/id/person/50741> ;
+                                                      olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/program/517517> ;
+                                                      olrole:hasAgentRoleType <http://schema.oceanlink.org/agent-affiliation#affiliate> .
+
+<http://lod.bco-dmo.org/id/person/50741> olagent:performsAgentRole <http://lod.bco-dmo.org/id/program/517517#role-50741> .
+
+<http://lod.bco-dmo.org/id/program/517517#role-51295> olprogram:isAssociatedWithProgram <http://lod.bco-dmo.org/id/program/517517> ;
+                                                      rdf:type olagentaffiliation:AgentAffiliation ;
+                                                      olrole:isPerformedBy <http://lod.bco-dmo.org/id/person/51295> ;
+                                                      olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/program/517517> ;
+                                                      olrole:hasAgentRoleType <http://schema.oceanlink.org/agent-affiliation#affiliate> .
+
+<http://lod.bco-dmo.org/id/person/51295> olagent:performsAgentRole <http://lod.bco-dmo.org/id/program/517517#role-51295> .
+
+<http://lod.bco-dmo.org/id/program/517517#role-51087> olprogram:isAssociatedWithProgram <http://lod.bco-dmo.org/id/program/517517> ;
+                                                      rdf:type olagentaffiliation:AgentAffiliation ;
+                                                      olrole:isPerformedBy <http://lod.bco-dmo.org/id/person/51087> ;
+                                                      olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/program/517517> ;
+                                                      olrole:hasAgentRoleType <http://schema.oceanlink.org/agent-affiliation#affiliate> .
+
+<http://lod.bco-dmo.org/id/person/51087> olagent:performsAgentRole <http://lod.bco-dmo.org/id/program/517517#role-51087> .
+
+<http://lod.bco-dmo.org/id/program/517517#role-50800> olprogram:isAssociatedWithProgram <http://lod.bco-dmo.org/id/program/517517> ;
+                                                      rdf:type olagentaffiliation:AgentAffiliation ;
+                                                      olrole:isPerformedBy <http://lod.bco-dmo.org/id/person/50800> ;
+                                                      olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/program/517517> ;
+                                                      olrole:hasAgentRoleType <http://schema.oceanlink.org/agent-affiliation#affiliate> .
+
+<http://lod.bco-dmo.org/id/person/50800> olagent:performsAgentRole <http://lod.bco-dmo.org/id/program/517517#role-50800> .
+
+<http://lod.bco-dmo.org/id/program/517517#role-50679> olprogram:isAssociatedWithProgram <http://lod.bco-dmo.org/id/program/517517> ;
+                                                      rdf:type olagentaffiliation:AgentAffiliation ;
+                                                      olrole:isPerformedBy <http://lod.bco-dmo.org/id/person/50679> ;
+                                                      olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/program/517517> ;
+                                                      olrole:hasAgentRoleType <http://schema.oceanlink.org/agent-affiliation#affiliate> .
+
+<http://lod.bco-dmo.org/id/person/50679> olagent:performsAgentRole <http://lod.bco-dmo.org/id/program/517517#role-50679> .
+<http://lod.bco-dmo.org/id/program/523496> rdf:type olprogram:Program ;
+                                           olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/523496#info> .
+
+<http://lod.bco-dmo.org/id/program/523496#info> rdf:type olinfo:InformationObject ;
+                                                olinfo:hasCanonicalName "Arctic Observing Network"@en-US ;
+                                                olinfo:alsoKnownAs "AON"@en-US ;
+                                                olinfo:hasWebpage "http://www.arcus.org/search-program/aon"^^<xsd:anyURI> .

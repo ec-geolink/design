@@ -1,0 +1,382 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix olcruise: <http://schema.oceanlink.org/cruise#> .
+@prefix oltrajectory: <http://schema.oceanlink.org/trajectory#> .
+@prefix olvessel: <http://schema.oceanlink.org/vessel#> .
+@prefix olorg: <http://schema.oceanlink.org/organization#> .
+@prefix olinfo: <http://schema.oceanlink.org/information-object#> .
+@prefix olprogram: <http://schema.oceanlink.org/program#> .
+@prefix olaward: <http://schema.oceanlink.org/funding-award#> .
+@prefix olagent: <http://schema.oceanlink.org/agent#> .
+@prefix olagentaffiliation: <http://schema.oceanlink.org/agent-affiliation#> .
+@prefix olrole: <http://schema.oceanlink.org/agent-role#> .
+@prefix olperson: <http://schema.oceanlink.org/person#> .
+@prefix olpersoninfo: <http://schema.oceanlink.org/personal-info-item#> .
+@prefix olpersonname: <http://schema.oceanlink.org/person-name#> .
+@prefix olplatform: <http://schema.oceanlink.org/platform#> .
+@prefix olplace: <http://schema.oceanlink.org/place#> .
+@prefix olevent: <http://schema.oceanlink.org/event#> .
+@prefix olgeometry: <http://schema.oceanlink.org/geometry#> .
+@prefix oldataset: <http://schema.oceanlink.org/repository-object#> .
+
+<http://lod.bco-dmo.org/id/funding/350> rdf:type olorg:Organization ;
+                                        olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/350#info> .
+
+<http://lod.bco-dmo.org/id/funding/350#info> rdf:type olinfo:InformationObject ;
+                                             olinfo:hasCanonicalName "National Science Foundation (NSF)"@en-US ;
+                                             olinfo:alsoKnownAs "NSF"@en-US .
+<http://lod.bco-dmo.org/id/funding/351> rdf:type olorg:Organization ;
+                                        olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/351#info> .
+
+<http://lod.bco-dmo.org/id/funding/351#info> rdf:type olinfo:InformationObject ;
+                                             olinfo:hasCanonicalName "Office of Naval Research (ONR)"@en-US ;
+                                             olinfo:alsoKnownAs "ONR"@en-US .
+<http://lod.bco-dmo.org/id/funding/352> rdf:type olorg:Organization ;
+                                        olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/352#info> .
+
+<http://lod.bco-dmo.org/id/funding/352#info> rdf:type olinfo:InformationObject ;
+                                             olinfo:hasCanonicalName "National Oceanic and Atmospheric Administration (NOAA)"@en-US ;
+                                             olinfo:alsoKnownAs "NOAA"@en-US .
+<http://lod.bco-dmo.org/id/funding/353> rdf:type olorg:Organization ;
+                                        olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/353#info> .
+
+<http://lod.bco-dmo.org/id/funding/353#info> rdf:type olinfo:InformationObject ;
+                                             olinfo:hasCanonicalName "National Aeronautics & Space Administration (NASA)"@en-US ;
+                                             olinfo:alsoKnownAs "NASA"@en-US .
+<http://lod.bco-dmo.org/id/funding/354> rdf:type olorg:Organization ;
+                                        olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/354#info> .
+
+<http://lod.bco-dmo.org/id/funding/354#info> rdf:type olinfo:InformationObject ;
+                                             olinfo:hasCanonicalName "US Department of Energy (DOE)"@en-US ;
+                                             olinfo:alsoKnownAs "DOE"@en-US .
+<http://lod.bco-dmo.org/id/funding/355> rdf:type olorg:Organization ;
+                                        olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/355#info> .
+
+<http://lod.bco-dmo.org/id/funding/355#info> rdf:type olinfo:InformationObject ;
+                                             olinfo:hasCanonicalName "NSF Ocean Sciences (NSF OCE)"@en-US ;
+                                             olinfo:alsoKnownAs "NSF OCE"@en-US .
+<http://lod.bco-dmo.org/id/funding/356> rdf:type olorg:Organization ;
+                                        olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/356#info> .
+
+<http://lod.bco-dmo.org/id/funding/356#info> rdf:type olinfo:InformationObject ;
+                                             olinfo:hasCanonicalName "New Zealand Foundation for Research, Science and Technology  (FRST)"@en-US ;
+                                             olinfo:alsoKnownAs "FRST"@en-US .
+<http://lod.bco-dmo.org/id/funding/357> rdf:type olorg:Organization ;
+                                        olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/357#info> .
+
+<http://lod.bco-dmo.org/id/funding/357#info> rdf:type olinfo:InformationObject ;
+                                             olinfo:hasCanonicalName "New Zealand International Science and Technology Fund (ISAT)"@en-US ;
+                                             olinfo:alsoKnownAs "ISAT"@en-US .
+<http://lod.bco-dmo.org/id/funding/358> rdf:type olorg:Organization ;
+                                        olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/358#info> .
+
+<http://lod.bco-dmo.org/id/funding/358#info> rdf:type olinfo:InformationObject ;
+                                             olinfo:hasCanonicalName "Alfred Wegener Instituite for Polar and Marine Research (AWI)"@en-US ;
+                                             olinfo:alsoKnownAs "AWI"@en-US .
+<http://lod.bco-dmo.org/id/funding/359> rdf:type olorg:Organization ;
+                                        olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/359#info> .
+
+<http://lod.bco-dmo.org/id/funding/359#info> rdf:type olinfo:InformationObject ;
+                                             olinfo:hasCanonicalName "Fondo Nacional de Ciencia, Tecnología e Innovación of Venezuela (FONACIT)"@en-US ;
+                                             olinfo:alsoKnownAs "FONACIT"@en-US .
+<http://lod.bco-dmo.org/id/funding/360> rdf:type olorg:Organization ;
+                                        olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/360#info> .
+
+<http://lod.bco-dmo.org/id/funding/360#info> rdf:type olinfo:InformationObject ;
+                                             olinfo:hasCanonicalName "Scientific Committee on Oceanic Research (SCOR)"@en-US ;
+                                             olinfo:alsoKnownAs "SCOR"@en-US .
+<http://lod.bco-dmo.org/id/funding/361> rdf:type olorg:Organization ;
+                                        olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/361#info> .
+
+<http://lod.bco-dmo.org/id/funding/361#info> rdf:type olinfo:InformationObject ;
+                                             olinfo:hasCanonicalName "Gordon and Betty Moore Foundation (Moore)"@en-US ;
+                                             olinfo:alsoKnownAs "Moore"@en-US .
+<http://lod.bco-dmo.org/id/funding/362> rdf:type olorg:Organization ;
+                                        olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/362#info> .
+
+<http://lod.bco-dmo.org/id/funding/362#info> rdf:type olinfo:InformationObject ;
+                                             olinfo:hasCanonicalName "North Atlantic Treaty Organisation (NATO)"@en-US ;
+                                             olinfo:alsoKnownAs "NATO"@en-US .
+<http://lod.bco-dmo.org/id/funding/363> rdf:type olorg:Organization ;
+                                        olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/363#info> .
+
+<http://lod.bco-dmo.org/id/funding/363#info> rdf:type olinfo:InformationObject ;
+                                             olinfo:hasCanonicalName "United Kingdom Natural Environmental Research Council (NERC)"@en-US ;
+                                             olinfo:alsoKnownAs "NERC"@en-US .
+<http://lod.bco-dmo.org/id/funding/364> rdf:type olorg:Organization ;
+                                        olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/364#info> .
+
+<http://lod.bco-dmo.org/id/funding/364#info> rdf:type olinfo:InformationObject ;
+                                             olinfo:hasCanonicalName "Australian Antarctic Sciences Program (AASP)"@en-US ;
+                                             olinfo:alsoKnownAs "AASP"@en-US .
+<http://lod.bco-dmo.org/id/funding/365> rdf:type olorg:Organization ;
+                                        olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/365#info> .
+
+<http://lod.bco-dmo.org/id/funding/365#info> rdf:type olinfo:InformationObject ;
+                                             olinfo:hasCanonicalName "Antarctic Climate and Ecosystems Cooperative Research Centre (ACECRC)"@en-US ;
+                                             olinfo:alsoKnownAs "ACECRC"@en-US .
+<http://lod.bco-dmo.org/id/funding/366> rdf:type olorg:Organization ;
+                                        olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/366#info> .
+
+<http://lod.bco-dmo.org/id/funding/366#info> rdf:type olinfo:InformationObject ;
+                                             olinfo:hasCanonicalName "Australian National Collaborative Research Infrastructure Strategy (NCRIS)"@en-US ;
+                                             olinfo:alsoKnownAs "NCRIS"@en-US .
+<http://lod.bco-dmo.org/id/funding/367> rdf:type olorg:Organization ;
+                                        olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/367#info> .
+
+<http://lod.bco-dmo.org/id/funding/367#info> rdf:type olinfo:InformationObject ;
+                                             olinfo:hasCanonicalName "The Sloan Foundation (Sloan)"@en-US ;
+                                             olinfo:alsoKnownAs "Sloan"@en-US .
+<http://lod.bco-dmo.org/id/funding/368> rdf:type olorg:Organization ;
+                                        olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/368#info> .
+
+<http://lod.bco-dmo.org/id/funding/368#info> rdf:type olinfo:InformationObject ;
+                                             olinfo:hasCanonicalName "NOAA Ocean Exploration Program (NOAA OEP)"@en-US ;
+                                             olinfo:alsoKnownAs "NOAA OEP"@en-US .
+<http://lod.bco-dmo.org/id/funding/369> rdf:type olorg:Organization ;
+                                        olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/369#info> .
+
+<http://lod.bco-dmo.org/id/funding/369#info> rdf:type olinfo:InformationObject ;
+                                             olinfo:hasCanonicalName "NSF Antarctic Sciences (NSF ANT)"@en-US ;
+                                             olinfo:alsoKnownAs "NSF ANT"@en-US .
+<http://lod.bco-dmo.org/id/funding/370> rdf:type olorg:Organization ;
+                                        olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/370#info> .
+
+<http://lod.bco-dmo.org/id/funding/370#info> rdf:type olinfo:InformationObject ;
+                                             olinfo:hasCanonicalName "US Environmental Protection Agency (US EPA)"@en-US ;
+                                             olinfo:alsoKnownAs "US EPA"@en-US .
+<http://lod.bco-dmo.org/id/funding/371> rdf:type olorg:Organization ;
+                                        olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/371#info> .
+
+<http://lod.bco-dmo.org/id/funding/371#info> rdf:type olinfo:InformationObject ;
+                                             olinfo:hasCanonicalName "US Department of Agriculture (USDA)"@en-US ;
+                                             olinfo:alsoKnownAs "USDA"@en-US .
+<http://lod.bco-dmo.org/id/funding/372> rdf:type olorg:Organization ;
+                                        olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/372#info> .
+
+<http://lod.bco-dmo.org/id/funding/372#info> rdf:type olinfo:InformationObject ;
+                                             olinfo:hasCanonicalName "US Geological Survey (USGS)"@en-US ;
+                                             olinfo:alsoKnownAs "USGS"@en-US .
+<http://lod.bco-dmo.org/id/funding/373> rdf:type olorg:Organization ;
+                                        olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/373#info> .
+
+<http://lod.bco-dmo.org/id/funding/373#info> rdf:type olinfo:InformationObject ;
+                                             olinfo:hasCanonicalName "National Institute of Standards and Technology (NIST)"@en-US ;
+                                             olinfo:alsoKnownAs "NIST"@en-US .
+<http://lod.bco-dmo.org/id/funding/374> rdf:type olorg:Organization ;
+                                        olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/374#info> .
+
+<http://lod.bco-dmo.org/id/funding/374#info> rdf:type olinfo:InformationObject ;
+                                             olinfo:hasCanonicalName "New Zealand National Institute for Water and Atmospheric Research (NIWA)"@en-US ;
+                                             olinfo:alsoKnownAs "NIWA"@en-US .
+<http://lod.bco-dmo.org/id/funding/375> rdf:type olorg:Organization ;
+                                        olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/375#info> .
+
+<http://lod.bco-dmo.org/id/funding/375#info> rdf:type olinfo:InformationObject ;
+                                             olinfo:hasCanonicalName "The European Community - CARUSO (CARUSO)"@en-US ;
+                                             olinfo:alsoKnownAs "CARUSO"@en-US .
+<http://lod.bco-dmo.org/id/funding/376> rdf:type olorg:Organization ;
+                                        olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/376#info> .
+
+<http://lod.bco-dmo.org/id/funding/376#info> rdf:type olinfo:InformationObject ;
+                                             olinfo:hasCanonicalName "United States Naval Research Laboratory (Navy/NRL)"@en-US ;
+                                             olinfo:alsoKnownAs "Navy/NRL"@en-US .
+<http://lod.bco-dmo.org/id/funding/377> rdf:type olorg:Organization ;
+                                        olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/377#info> .
+
+<http://lod.bco-dmo.org/id/funding/377#info> rdf:type olinfo:InformationObject ;
+                                             olinfo:hasCanonicalName "International Geosphere Biosphere Programme (IGBP)"@en-US ;
+                                             olinfo:alsoKnownAs "IGBP"@en-US .
+<http://lod.bco-dmo.org/id/funding/378> rdf:type olorg:Organization ;
+                                        olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/378#info> .
+
+<http://lod.bco-dmo.org/id/funding/378#info> rdf:type olinfo:InformationObject ;
+                                             olinfo:hasCanonicalName "NMFS/Northeast Fisheries Science Center (NOAA NEFSC)"@en-US ;
+                                             olinfo:alsoKnownAs "NOAA NEFSC"@en-US .
+<http://lod.bco-dmo.org/id/funding/379> rdf:type olorg:Organization ;
+                                        olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/379#info> .
+
+<http://lod.bco-dmo.org/id/funding/379#info> rdf:type olinfo:InformationObject ;
+                                             olinfo:hasCanonicalName "NOAA/National Marine Fisheries Service (NOAA/NMFS)"@en-US ;
+                                             olinfo:alsoKnownAs "NOAA/NMFS"@en-US .
+<http://lod.bco-dmo.org/id/funding/380> rdf:type olorg:Organization ;
+                                        olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/380#info> .
+
+<http://lod.bco-dmo.org/id/funding/380#info> rdf:type olinfo:InformationObject ;
+                                             olinfo:hasCanonicalName "David and Lucile Packard Foundation (Packard)"@en-US ;
+                                             olinfo:alsoKnownAs "Packard"@en-US .
+<http://lod.bco-dmo.org/id/funding/381> rdf:type olorg:Organization ;
+                                        olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/381#info> .
+
+<http://lod.bco-dmo.org/id/funding/381#info> rdf:type olinfo:InformationObject ;
+                                             olinfo:hasCanonicalName "Defence Science and Technology Laboratory (DSTL)"@en-US ;
+                                             olinfo:alsoKnownAs "DSTL"@en-US .
+<http://lod.bco-dmo.org/id/funding/382> rdf:type olorg:Organization ;
+                                        olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/382#info> .
+
+<http://lod.bco-dmo.org/id/funding/382#info> rdf:type olinfo:InformationObject ;
+                                             olinfo:hasCanonicalName "Coastal Ocean Observing and Analysis (COOA)"@en-US ;
+                                             olinfo:alsoKnownAs "COOA"@en-US .
+<http://lod.bco-dmo.org/id/funding/383> rdf:type olorg:Organization ;
+                                        olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/383#info> .
+
+<http://lod.bco-dmo.org/id/funding/383#info> rdf:type olinfo:InformationObject ;
+                                             olinfo:hasCanonicalName "NorthEast Consortium (NEC)"@en-US ;
+                                             olinfo:alsoKnownAs "NEC"@en-US .
+<http://lod.bco-dmo.org/id/funding/384> rdf:type olorg:Organization ;
+                                        olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/384#info> .
+
+<http://lod.bco-dmo.org/id/funding/384#info> rdf:type olinfo:InformationObject ;
+                                             olinfo:hasCanonicalName "U.S. Department of Energy's Genomic Science program (formerly Genomics:GTL) (DOE GTL Program)"@en-US ;
+                                             olinfo:alsoKnownAs "DOE GTL Program"@en-US .
+<http://lod.bco-dmo.org/id/funding/385> rdf:type olorg:Organization ;
+                                        olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/385#info> .
+
+<http://lod.bco-dmo.org/id/funding/385#info> rdf:type olinfo:InformationObject ;
+                                             olinfo:hasCanonicalName "Gordon and Betty Moore Foundation Marine Microbiology Initiative (MooreMarMicro)"@en-US ;
+                                             olinfo:alsoKnownAs "MooreMarMicro"@en-US .
+<http://lod.bco-dmo.org/id/funding/386> rdf:type olorg:Organization ;
+                                        olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/386#info> .
+
+<http://lod.bco-dmo.org/id/funding/386#info> rdf:type olinfo:InformationObject ;
+                                             olinfo:hasCanonicalName "NASA Ocean Carbon and Biogeochemistry Program (NASA OCB)"@en-US ;
+                                             olinfo:alsoKnownAs "NASA OCB"@en-US .
+<http://lod.bco-dmo.org/id/funding/387> rdf:type olorg:Organization ;
+                                        olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/387#info> .
+
+<http://lod.bco-dmo.org/id/funding/387#info> rdf:type olinfo:InformationObject ;
+                                             olinfo:hasCanonicalName "NOAA Center for Sponsored Coastal Ocean Research Coastal Ocean Program (NOAA/CSCOR/COP)"@en-US ;
+                                             olinfo:alsoKnownAs "NOAA/CSCOR/COP"@en-US .
+<http://lod.bco-dmo.org/id/funding/388> rdf:type olorg:Organization ;
+                                        olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/388#info> .
+
+<http://lod.bco-dmo.org/id/funding/388#info> rdf:type olinfo:InformationObject ;
+                                             olinfo:hasCanonicalName "National Institute of Environmental Health Sciences (NIEHS)"@en-US ;
+                                             olinfo:alsoKnownAs "NIEHS"@en-US .
+<http://lod.bco-dmo.org/id/funding/389> rdf:type olorg:Organization ;
+                                        olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/389#info> .
+
+<http://lod.bco-dmo.org/id/funding/389#info> rdf:type olinfo:InformationObject ;
+                                             olinfo:hasCanonicalName "The European Community - ORFOIS (ORFOIS)"@en-US ;
+                                             olinfo:alsoKnownAs "ORFOIS"@en-US .
+<http://lod.bco-dmo.org/id/funding/390> rdf:type olorg:Organization ;
+                                        olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/390#info> .
+
+<http://lod.bco-dmo.org/id/funding/390#info> rdf:type olinfo:InformationObject ;
+                                             olinfo:hasCanonicalName "NSF Arctic Sciences (NSF ARC)"@en-US ;
+                                             olinfo:alsoKnownAs "NSF ARC"@en-US .
+<http://lod.bco-dmo.org/id/funding/391> rdf:type olorg:Organization ;
+                                        olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/391#info> .
+
+<http://lod.bco-dmo.org/id/funding/391#info> rdf:type olinfo:InformationObject ;
+                                             olinfo:hasCanonicalName "Minnesota Sea Grant (MN Sea Grant)"@en-US ;
+                                             olinfo:alsoKnownAs "MN Sea Grant"@en-US .
+<http://lod.bco-dmo.org/id/funding/392> rdf:type olorg:Organization ;
+                                        olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/392#info> .
+
+<http://lod.bco-dmo.org/id/funding/392#info> rdf:type olinfo:InformationObject ;
+                                             olinfo:hasCanonicalName "NSF Emerging Frontiers Division (NSF EF)"@en-US ;
+                                             olinfo:alsoKnownAs "NSF EF"@en-US .
+<http://lod.bco-dmo.org/id/funding/393> rdf:type olorg:Organization ;
+                                        olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/393#info> .
+
+<http://lod.bco-dmo.org/id/funding/393#info> rdf:type olinfo:InformationObject ;
+                                             olinfo:hasCanonicalName "Schmidt Ocean Institute (SOI)"@en-US ;
+                                             olinfo:alsoKnownAs "SOI"@en-US .
+<http://lod.bco-dmo.org/id/funding/394> rdf:type olorg:Organization ;
+                                        olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/394#info> .
+
+<http://lod.bco-dmo.org/id/funding/394#info> rdf:type olinfo:InformationObject ;
+                                             olinfo:hasCanonicalName "Marine Science and Technology Foundation (MSTF)"@en-US ;
+                                             olinfo:alsoKnownAs "MSTF"@en-US .
+<http://lod.bco-dmo.org/id/funding/395> rdf:type olorg:Organization ;
+                                        olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/395#info> .
+
+<http://lod.bco-dmo.org/id/funding/395#info> rdf:type olinfo:InformationObject ;
+                                             olinfo:hasCanonicalName "Woods Hole Sea Grant (WH Sea Grant)"@en-US ;
+                                             olinfo:alsoKnownAs "WH Sea Grant"@en-US .
+<http://lod.bco-dmo.org/id/funding/396> rdf:type olorg:Organization ;
+                                        olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/396#info> .
+
+<http://lod.bco-dmo.org/id/funding/396#info> rdf:type olinfo:InformationObject ;
+                                             olinfo:hasCanonicalName "WHOI Access to the Sea Fund (Access to the Sea)"@en-US ;
+                                             olinfo:alsoKnownAs "Access to the Sea"@en-US .
+<http://lod.bco-dmo.org/id/funding/397> rdf:type olorg:Organization ;
+                                        olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/397#info> .
+
+<http://lod.bco-dmo.org/id/funding/397#info> rdf:type olinfo:InformationObject ;
+                                             olinfo:hasCanonicalName "NSF Ocean Sciences Research Initiation Grants (NSF OCE-RIG)"@en-US ;
+                                             olinfo:alsoKnownAs "NSF OCE-RIG"@en-US .
+<http://lod.bco-dmo.org/id/funding/398> rdf:type olorg:Organization ;
+                                        olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/398#info> .
+
+<http://lod.bco-dmo.org/id/funding/398#info> rdf:type olinfo:InformationObject ;
+                                             olinfo:hasCanonicalName "National Sciences and Engineering Research Council of Canada (NSERC)"@en-US ;
+                                             olinfo:alsoKnownAs "NSERC"@en-US .
+<http://lod.bco-dmo.org/id/funding/399> rdf:type olorg:Organization ;
+                                        olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/399#info> .
+
+<http://lod.bco-dmo.org/id/funding/399#info> rdf:type olinfo:InformationObject ;
+                                             olinfo:hasCanonicalName "Fund for Advanced Research in Priority Areas FONDAP (Centers of Excellence) (FONDAP)"@en-US ;
+                                             olinfo:alsoKnownAs "FONDAP"@en-US .
+<http://lod.bco-dmo.org/id/funding/400> rdf:type olorg:Organization ;
+                                        olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/400#info> .
+
+<http://lod.bco-dmo.org/id/funding/400#info> rdf:type olinfo:InformationObject ;
+                                             olinfo:hasCanonicalName "National Commission for Science and Technology (CONICYT), Chile (CONICYT)"@en-US ;
+                                             olinfo:alsoKnownAs "CONICYT"@en-US .
+<http://lod.bco-dmo.org/id/funding/401> rdf:type olorg:Organization ;
+                                        olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/401#info> .
+
+<http://lod.bco-dmo.org/id/funding/401#info> rdf:type olinfo:InformationObject ;
+                                             olinfo:hasCanonicalName "Fundacion Andes (Fundacion Andes)"@en-US ;
+                                             olinfo:alsoKnownAs "Fundacion Andes"@en-US .
+<http://lod.bco-dmo.org/id/funding/402> rdf:type olorg:Organization ;
+                                        olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/402#info> .
+
+<http://lod.bco-dmo.org/id/funding/402#info> rdf:type olinfo:InformationObject ;
+                                             olinfo:hasCanonicalName "California Sea Grant (CASG)"@en-US ;
+                                             olinfo:alsoKnownAs "CASG"@en-US .
+<http://lod.bco-dmo.org/id/funding/472024> rdf:type olorg:Organization ;
+                                           olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/472024#info> .
+
+<http://lod.bco-dmo.org/id/funding/472024#info> rdf:type olinfo:InformationObject ;
+                                                olinfo:hasCanonicalName "Fisheries and Oceans, Canada"@en-US .
+<http://lod.bco-dmo.org/id/funding/472573> rdf:type olorg:Organization ;
+                                           olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/472573#info> .
+
+<http://lod.bco-dmo.org/id/funding/472573#info> rdf:type olinfo:InformationObject ;
+                                                olinfo:hasCanonicalName "WHOI (WHOI - internal)"@en-US ;
+                                                olinfo:alsoKnownAs "WHOI - internal"@en-US .
+<http://lod.bco-dmo.org/id/funding/472825> rdf:type olorg:Organization ;
+                                           olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/472825#info> .
+
+<http://lod.bco-dmo.org/id/funding/472825#info> rdf:type olinfo:InformationObject ;
+                                                olinfo:hasCanonicalName "Centro de Investigacao Marinha e Ambiental (CIMAR)"@en-US ;
+                                                olinfo:alsoKnownAs "CIMAR"@en-US .
+<http://lod.bco-dmo.org/id/funding/489481> rdf:type olorg:Organization ;
+                                           olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/489481#info> .
+
+<http://lod.bco-dmo.org/id/funding/489481#info> rdf:type olinfo:InformationObject ;
+                                                olinfo:hasCanonicalName "European Commission Marie Curie Actions Program (EC - Marie Curie Actions)"@en-US ;
+                                                olinfo:alsoKnownAs "EC - Marie Curie Actions"@en-US .
+<http://lod.bco-dmo.org/id/funding/490497> rdf:type olorg:Organization ;
+                                           olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/490497#info> .
+
+<http://lod.bco-dmo.org/id/funding/490497#info> rdf:type olinfo:InformationObject ;
+                                                olinfo:hasCanonicalName "NSF Division of Polar Programs (NSF PLR)"@en-US ;
+                                                olinfo:alsoKnownAs "NSF PLR"@en-US .
+<http://lod.bco-dmo.org/id/funding/535512> rdf:type olorg:Organization ;
+                                           olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/535512#info> .
+
+<http://lod.bco-dmo.org/id/funding/535512#info> rdf:type olinfo:InformationObject ;
+                                                olinfo:hasCanonicalName "NSF Division of Molecular and Cellular Biosciences (NSF MCB)"@en-US ;
+                                                olinfo:alsoKnownAs "NSF MCB"@en-US .
+<http://lod.bco-dmo.org/id/funding/542158> rdf:type olorg:Organization ;
+                                           olorg:isDescribedBy <http://lod.bco-dmo.org/id/funding/542158#info> .
+
+<http://lod.bco-dmo.org/id/funding/542158#info> rdf:type olinfo:InformationObject ;
+                                                olinfo:hasCanonicalName "Swiss National Science Foundation (SNSF)"@en-US ;
+                                                olinfo:alsoKnownAs "SNSF"@en-US .
