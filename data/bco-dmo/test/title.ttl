@@ -1,0 +1,86 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix olcruise: <http://schema.oceanlink.org/cruise#> .
+@prefix oltrajectory: <http://schema.oceanlink.org/trajectory#> .
+@prefix olvessel: <http://schema.oceanlink.org/vessel#> .
+@prefix olorg: <http://schema.oceanlink.org/organization#> .
+@prefix olinfo: <http://schema.oceanlink.org/information-object#> .
+@prefix olprogram: <http://schema.oceanlink.org/program#> .
+@prefix olaward: <http://schema.oceanlink.org/funding-award#> .
+@prefix olagent: <http://schema.oceanlink.org/agent#> .
+@prefix olagentaffiliation: <http://schema.oceanlink.org/agent-affiliation#> .
+@prefix olrole: <http://schema.oceanlink.org/agent-role#> .
+@prefix olperson: <http://schema.oceanlink.org/person#> .
+@prefix olpersoninfo: <http://schema.oceanlink.org/personal-info-item#> .
+@prefix olpersonname: <http://schema.oceanlink.org/person-name#> .
+@prefix olplatform: <http://schema.oceanlink.org/platform#> .
+@prefix olplace: <http://schema.oceanlink.org/place#> .
+@prefix olevent: <http://schema.oceanlink.org/event#> .
+@prefix olgeometry: <http://schema.oceanlink.org/geometry#> .
+@prefix oldataset: <http://schema.oceanlink.org/repository-object#> .
+
+<http://lod.bco-dmo.org/id/role/127> rdf:type owl:NamedIndividual ,
+                                              olrole:AgentRoleType ;
+                                     rdfs:label "Chief Scientist"@en-US ;
+                                     owl:sameAs <http://schema.oceanlink.org/cruise#chiefScientist> .
+<http://lod.bco-dmo.org/id/role/129> rdf:type owl:NamedIndividual ,
+                                              olrole:AgentRoleType ;
+                                     rdfs:label "Co-Chief Scientist"@en-US ;
+                                     owl:sameAs <http://schema.oceanlink.org/cruise#co_chief_scientist> .
+<http://lod.bco-dmo.org/id/role/142> rdf:type owl:NamedIndividual ,
+                                              olrole:AgentRoleType ;
+                                     rdfs:label "Lead Principal Investigator"@en-US .
+<http://lod.bco-dmo.org/id/role/138> rdf:type owl:NamedIndividual ,
+                                              olrole:AgentRoleType ;
+                                     rdfs:label "Principal Investigator"@en-US .
+<http://lod.bco-dmo.org/id/role/140> rdf:type owl:NamedIndividual ,
+                                              olrole:AgentRoleType ;
+                                     rdfs:label "Co-Principal Investigator"@en-US .
+<http://lod.bco-dmo.org/id/role/144> rdf:type owl:NamedIndividual ,
+                                              olrole:AgentRoleType ;
+                                     rdfs:label "International Collaborator"@en-US .
+<http://lod.bco-dmo.org/id/role/130> rdf:type owl:NamedIndividual ,
+                                              olrole:AgentRoleType ;
+                                     rdfs:label "Scientist"@en-US ;
+                                     owl:sameAs <http://schema.oceanlink.org/cruise#scientist> .
+<http://lod.bco-dmo.org/id/role/132> rdf:type owl:NamedIndividual ,
+                                              olrole:AgentRoleType ;
+                                     rdfs:label "Originator"@en-US .
+<http://lod.bco-dmo.org/id/role/141> rdf:type owl:NamedIndividual ,
+                                              olrole:AgentRoleType ;
+                                     rdfs:label "Captain"@en-US ;
+                                     owl:sameAs <http://schema.oceanlink.org/cruise#captain> .
+<http://lod.bco-dmo.org/id/role/143> rdf:type owl:NamedIndividual ,
+                                              olrole:AgentRoleType ;
+                                     rdfs:label "Project Coordinator"@en-US .
+<http://lod.bco-dmo.org/id/role/128> rdf:type owl:NamedIndividual ,
+                                              olrole:AgentRoleType ;
+                                     rdfs:label "Student"@en-US ;
+                                     owl:sameAs <http://schema.oceanlink.org/cruise#student> .
+<http://lod.bco-dmo.org/id/role/133> rdf:type owl:NamedIndividual ,
+                                              olrole:AgentRoleType ;
+                                     rdfs:label "Contact"@en-US .
+<http://lod.bco-dmo.org/id/role/134> rdf:type owl:NamedIndividual ,
+                                              olrole:AgentRoleType ;
+                                     rdfs:label "Analyst"@en-US .
+<http://lod.bco-dmo.org/id/role/135> rdf:type owl:NamedIndividual ,
+                                              olrole:AgentRoleType ;
+                                     rdfs:label "Technician"@en-US ;
+                                     owl:sameAs <http://schema.oceanlink.org/cruise#technician> .
+<http://lod.bco-dmo.org/id/role/137> rdf:type owl:NamedIndividual ,
+                                              olrole:AgentRoleType ;
+                                     rdfs:label "Data Manager"@en-US .
+<http://lod.bco-dmo.org/id/role/136> rdf:type owl:NamedIndividual ,
+                                              olrole:AgentRoleType ;
+                                     rdfs:label "Curator"@en-US .
+<http://lod.bco-dmo.org/id/role/139> rdf:type owl:NamedIndividual ,
+                                              olrole:AgentRoleType ;
+                                     rdfs:label "Data Publisher"@en-US .
+<http://lod.bco-dmo.org/id/role/131> rdf:type owl:NamedIndividual ,
+                                              olrole:AgentRoleType ;
+                                     rdfs:label "Guest"@en-US .
+<http://lod.bco-dmo.org/id/role/145> rdf:type owl:NamedIndividual ,
+                                              olrole:AgentRoleType ;
+                                     rdfs:label "BCO-DMO Data Manager"@en-US .
