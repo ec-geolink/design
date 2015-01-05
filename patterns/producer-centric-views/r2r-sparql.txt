@@ -3,7 +3,7 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX xml: <http://www.w3.org/XML/1998/namespace>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX glv-r2r: <http://schema.geolink.org/r2r-view/>
+PREFIX glv: <http://schema.geolink.org/view/>
 PREFIX gl-funding-award: <http://schema.geolink.org/funding-award/>
 PREFIX gl-cruise: <http://schema.geolink.org/cruise/>
 PREFIX gl-agent-role: <http://schema.geolink.org/agent-role/>
@@ -30,11 +30,11 @@ CONSTRUCT {
 }
 FROM <http://address-to-r2r-graph-mapped-to-view>
 WHERE {
-  ?X rdf:type glv-r2r:Award .
-  ?X glv-r2r:hasSponsor ?Z.
-  ?X glv-r2r:hasIdentifier ?ID .
-  ?X glv-r2r:hasTitle ?T .
-  ?X glv-r2r:hasDescribingSource ?W .
+  ?X rdf:type glv:Award .
+  ?X glv:hasSponsor ?Z.
+  ?X glv:hasIdentifier ?ID .
+  ?X glv:hasTitle ?T .
+  ?X glv:hasDescribingSource ?W .
 }
 
 
@@ -50,10 +50,10 @@ CONSTRUCT {
 }
 FROM <http://address-to-r2r-graph-mapped-to-view>
 WHERE {
-  ?O rdf:type glv-r2r:Organization
-  ?O glv-r2r:hasIdentifier ?ID .
-  ?O glv-r2r:hasLabel ?L .
-  ?O glv-r2r:hasName ?M .
+  ?O rdf:type glv:Organization
+  ?O glv:hasIdentifier ?ID .
+  ?O glv:hasLabel ?L .
+  ?O glv:hasName ?M .
 }
 
 
@@ -75,22 +75,25 @@ CONSTRUCT {
 }
 FROM <http://address-to-r2r-graph-mapped-to-view>
 WHERE {
-  ?C rdf:type glv-r2r:Cruise .
-  ?C glv-r2r:hasAward ?AW .
-  ?C glv-r2r:hasEventInCruise ?EV .
-  ?C glv-r2r:hasFileset ?FSET .
-  ?C glv-r2r:hasHolding ?HLD .
-  ?C glv-r2r:hasCruiseOperator ?OP .
-  ?C glv-r2r:hasCruiseParticipant ?P .
-  ?P glv-r2r:hasCruiseParticipantRole ?ROL .
-  ?C glv-r2r:hasProduct ?PROD .
-  ?C glv-r2r:hasCruiseScheduler ?SCH .
-  ?C glv-r2r:hasCruiseTrack ?TRACK .
-  ?C glv-r2r:hasVessel ?V .
-  ?C glv-r2r:hasVesselName ?VN .
-  ?C glv-r2r:hasTitle ?T .
-  ?C glv-r2r:hasCruiseType ?TY .
-  ?C glv-r2r:hasIdentifier ?ID .
-  ?C glv-r2r:hasLabel ?L .
-  ?C glv-r2r:seeAlso ?W .
+  ?C rdf:type glv:Cruise .
+  ?C glv:hasAward ?AW .
+  ?C glv:hasEventInCruise ?EV .
+  ?C glv:hasFileset ?FSET .
+  ?C glv:hasHolding ?HLD .
+  ?C glv:hasCruiseOperator ?OP .
+
+  ?C glv:hasCruiseParticipant ?P .
+  ?P glv:hasCruiseParticipantRole ?ROL .
+  ?P glv:hasCruiseParticipantInstitution ?INST .
+
+  ?C glv:hasProduct ?PROD .
+  ?C glv:hasCruiseScheduler ?SCH .
+  ?C glv:hasCruiseTrack ?TRACK .
+  ?C glv:hasVessel ?V .
+  ?C glv:hasVesselName ?VN .
+  ?C glv:hasTitle ?T .
+  ?C glv:hasCruiseType ?TY .
+  ?C glv:hasIdentifier ?ID .
+  ?C glv:hasLabel ?L .
+  ?C glv:seeAlso ?W .
 }
