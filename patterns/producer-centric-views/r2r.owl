@@ -2,22 +2,113 @@
 
 
 <!DOCTYPE rdf:RDF [
+    <!ENTITY foaf "http://xmlns.com/foaf/0.1/" >
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY glv-r2r "http://schema.geolink.org/r2r-view/" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
 ]>
 
 
-<rdf:RDF xmlns="http://schema.geolink.org/r2r/"
-     xml:base="http://schema.geolink.org/r2r/"
+<rdf:RDF xmlns="http://schema.geolink.org/r2r-view/"
+     xml:base="http://schema.geolink.org/r2r-view/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:glv-r2r="http://schema.geolink.org/r2r-view/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-    <owl:Ontology rdf:about="http://schema.geolink.org/r2r/">
-        <owl:versionIRI rdf:resource="http://schema.geolink.org/r2r/1.0/"/>
+    <owl:Ontology rdf:about="http://schema.geolink.org/r2r-view/">
+        <owl:versionIRI rdf:resource="&glv-r2r;1.0/"/>
     </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.geolink.org/r2r-view/hasSponsor -->
+
+    <owl:ObjectProperty rdf:about="&glv-r2r;hasSponsor"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.geolink.org/r2r-view/hasDescribingSource -->
+
+    <owl:DatatypeProperty rdf:about="&glv-r2r;hasDescribingSource"/>
+    
+
+
+    <!-- http://schema.geolink.org/r2r-view/hasIdentifier -->
+
+    <owl:DatatypeProperty rdf:about="&glv-r2r;hasIdentifier"/>
+    
+
+
+    <!-- http://schema.geolink.org/r2r-view/hasLabel -->
+
+    <owl:DatatypeProperty rdf:about="&glv-r2r;hasLabel"/>
+    
+
+
+    <!-- http://schema.geolink.org/r2r-view/hasName -->
+
+    <owl:DatatypeProperty rdf:about="&glv-r2r;hasName"/>
+    
+
+
+    <!-- http://schema.geolink.org/r2r-view/hasTitle -->
+
+    <owl:DatatypeProperty rdf:about="&glv-r2r;hasTitle"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.geolink.org/r2r-view/Award -->
+
+    <owl:Class rdf:about="&glv-r2r;Award"/>
+    
+
+
+    <!-- http://schema.geolink.org/r2r-view/Cruise -->
+
+    <owl:Class rdf:about="&glv-r2r;Cruise"/>
+    
+
+
+    <!-- http://schema.geolink.org/r2r-view/Organization -->
+
+    <owl:Class rdf:about="&glv-r2r;Organization"/>
 </rdf:RDF>
 
 

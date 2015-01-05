@@ -1,0 +1,96 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX glv-r2r: <http://schema.geolink.org/r2r-view/>
+PREFIX gl-funding-award: <http://schema.geolink.org/funding-award/>
+PREFIX gl-cruise: <http://schema.geolink.org/cruise/>
+PREFIX gl-agent-role: <http://schema.geolink.org/agent-role/>
+PREFIX gl-agent: <http://schema.geolink.org/agent/>
+PREFIX gl-org: <http://schema.geolink.org/organization/>
+PREFIX gl-info-obj: <http://schema.geolink.org/information-object/>
+
+## If some triple in the WHERE clause is optional in the data, then use OPTIONAL clause?
+## Only construct triples from non-inverse relationship.
+## Based on <http://linked.rvdata.us/page/award/100004>      
+
+CONSTRUCT {
+   ?X rdf:type glv-funding-award:FundingAward .
+   _:ar gl-agent-role:isAgentRoleIn ?X .
+   _:ar rdf:type gl-agent-role:AgentRole .
+   _:ar gl-agent-role:hasAgentRoleType gl-agent-role:sponsor_role .
+   _:ar gl-agent-role:isPerformedBy ?Z .
+   ?Z rdf:type gl-org:Organization . 
+   ?X gl-info-obj:isDescribedBy _:io .
+   _:io rdf:type gl-funding-award:FundingAwardInformationObject .
+   _:io gl-funding-award:hasAwardID ?ID .
+   _:io gl-funding-award:hasTitle ?T .
+   _:io gl-info-obj:seeAlso ?W .
+}
+FROM <http://address-to-r2r-graph-mapped-to-view>
+WHERE {
+  ?X rdf:type glv-r2r:Award .
+  ?X glv-r2r:hasSponsor ?Z.
+  ?X glv-r2r:hasIdentifier ?ID .
+  ?X glv-r2r:hasTitle ?T .
+  ?X glv-r2r:hasDescribingSource ?W .
+}
+
+
+## Based on <http://linked.rvdata.us/page/organization/gov.nsf>
+    
+CONSTRUCT {
+  ?O rdf:type gl-org:Organization .
+  ?O gl-info-obj:isDescribedBy _:io .
+  _:io rdf:type gl-org:OrganizationInformationObject .
+  _:io gl-info-obj:hasCanonicalName ?ID .
+  _:io gl-info-obj:alsoKnownAs ?L .
+  _:io gl-info-obj:alsoKnownAs ?M .  
+}
+FROM <http://address-to-r2r-graph-mapped-to-view>
+WHERE {
+  ?O rdf:type glv-r2r:Organization
+  ?O glv-r2r:hasIdentifier ?ID .
+  ?O glv-r2r:hasLabel ?L .
+  ?O glv-r2r:hasName ?M .
+}
+
+
+## Based on <http://linked.rvdata.us/page/cruise/MGL0901>
+## Only partially done .
+## Event is for port arrival/departure?
+## Fileset, Holding, : not yet done.
+##
+
+CONSTRUCT {
+  ?C rdf:type gl-cruise:Cruise .
+  ?C gl-funding-award:isFundedBy ?AW
+  _:arop rdf:type gl-agent-role:AgentRole .
+  _:arop gl-agent-role:isAgentRoleIn ?C .
+  _:arop gl-agent-role:hasAgentRoleType gl-cruise:operator_role
+  _:arop gl-agent-role:isPerformedBy ?OP .
+  ?OP rdf:type gl-org:Organization .
+  
+}
+FROM <http://address-to-r2r-graph-mapped-to-view>
+WHERE {
+  ?C rdf:type glv-r2r:Cruise .
+  ?C glv-r2r:hasAward ?AW .
+  ?C glv-r2r:hasEvent ?EV .
+  ?C glv-r2r:hasFileset ?FSET .
+  ?C glv-r2r:hasHolding ?HLD .
+  ?C glv-r2r:hasOperator ?OP .
+  ?C glv-r2r:hasParticipant ?P .
+  ?P glv-r2r:hasR2ModelRole ?ROL .
+  ?C glv-r2r:hasProduct ?PROD .
+  ?C glv-r2r:hasScheduler ?SCH .
+  ?C glv-r2r:hasTrack ?TRACK .
+  ?C glv-r2r:hasVessel ?V .
+  ?C glv-r2r:hasTitle ?T .
+  ?C glv-r2r:hasVesselName ?VN .
+  ?C glv-r2r:hasR2ModelCruise ?TY .
+  ?C glv-r2r:hasIdentifier ?ID .
+  ?C glv-r2r:hasLabel ?L .
+  ?C glv-r2r:seeAlso ?W .
+}

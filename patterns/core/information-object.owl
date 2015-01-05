@@ -38,7 +38,9 @@
 
     <!-- http://schema.geolink.org/information-object/isDescribedBy -->
 
-    <owl:ObjectProperty rdf:about="&gl-info-obj;isDescribedBy"/>
+    <owl:ObjectProperty rdf:about="&gl-info-obj;isDescribedBy">
+        <rdfs:range rdf:resource="&gl-info-obj;InformationObject"/>
+    </owl:ObjectProperty>
     
 
 
@@ -107,6 +109,12 @@
     <owl:Class rdf:about="&gl-info-obj;InformationObject">
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-info-obj;hasCanonicalName"/>
+                <owl:allValuesFrom rdf:resource="&rdf;PlainLiteral"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="&gl-info-obj;seeAlso"/>
                 <owl:allValuesFrom rdf:resource="&xsd;anyURI"/>
             </owl:Restriction>
@@ -119,15 +127,29 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&gl-info-obj;hasCanonicalName"/>
+                <owl:onProperty rdf:resource="&gl-info-obj;hasDescription"/>
                 <owl:allValuesFrom rdf:resource="&rdf;PlainLiteral"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&gl-info-obj;hasDescription"/>
-                <owl:allValuesFrom rdf:resource="&rdf;PlainLiteral"/>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="&gl-info-obj;isDescribedBy"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:complementOf>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&gl-info-obj;isDescribedBy"/>
+                        <owl:someValuesFrom rdf:resource="&gl-info-obj;InformationObject"/>
+                    </owl:Restriction>
+                </owl:complementOf>
+            </owl:Class>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -149,23 +171,6 @@
                 <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty>
-                    <rdf:Description>
-                        <owl:inverseOf rdf:resource="&gl-info-obj;isDescribedBy"/>
-                    </rdf:Description>
-                </owl:onProperty>
-                <owl:onClass rdf:resource="&gl-info-obj;InformationObject"/>
-                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&gl-info-obj;isDescribedBy"/>
-                <owl:allValuesFrom rdf:resource="&gl-info-obj;InformationObject"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
     </rdf:Description>
     
 
@@ -185,22 +190,22 @@
     </owl:Restriction>
     <owl:Restriction>
         <rdfs:subClassOf rdf:resource="&gl-info-obj;InformationObject"/>
-        <owl:onProperty rdf:resource="&gl-info-obj;hasDescription"/>
-        <owl:someValuesFrom rdf:resource="&rdf;PlainLiteral"/>
-    </owl:Restriction>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&gl-info-obj;InformationObject"/>
-        <owl:onProperty rdf:resource="&gl-info-obj;hasCanonicalName"/>
-        <owl:someValuesFrom rdf:resource="&rdf;PlainLiteral"/>
-    </owl:Restriction>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&gl-info-obj;InformationObject"/>
         <owl:onProperty rdf:resource="&gl-info-obj;seeAlso"/>
         <owl:someValuesFrom rdf:resource="&xsd;anyURI"/>
     </owl:Restriction>
     <owl:Restriction>
         <rdfs:subClassOf rdf:resource="&gl-info-obj;InformationObject"/>
+        <owl:onProperty rdf:resource="&gl-info-obj;hasDescription"/>
+        <owl:someValuesFrom rdf:resource="&rdf;PlainLiteral"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&gl-info-obj;InformationObject"/>
         <owl:onProperty rdf:resource="&gl-info-obj;alsoKnownAs"/>
+        <owl:someValuesFrom rdf:resource="&rdf;PlainLiteral"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&gl-info-obj;InformationObject"/>
+        <owl:onProperty rdf:resource="&gl-info-obj;hasCanonicalName"/>
         <owl:someValuesFrom rdf:resource="&rdf;PlainLiteral"/>
     </owl:Restriction>
 </rdf:RDF>

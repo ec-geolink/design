@@ -176,6 +176,12 @@
     
 
 
+    <!-- http://schema.geolink.org/funding-award/hasTitle -->
+
+    <owl:DatatypeProperty rdf:about="&gl-funding-award;hasTitle"/>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -198,13 +204,6 @@
     <owl:Class rdf:about="&gl-funding-award;AwardAmount">
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&gl-funding-award;hasCurrencyCode"/>
-                <owl:onClass rdf:resource="&gl-funding-award;CurrencyCode"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="&gl-funding-award;hasCurrencyValue"/>
                 <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onDataRange rdf:resource="&xsd;decimal"/>
@@ -213,13 +212,20 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&gl-funding-award;hasCurrencyCode"/>
-                <owl:allValuesFrom rdf:resource="&gl-funding-award;CurrencyCode"/>
+                <owl:onClass rdf:resource="&gl-funding-award;CurrencyCode"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&gl-funding-award;hasCurrencyValue"/>
                 <owl:allValuesFrom rdf:resource="&xsd;decimal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-funding-award;hasCurrencyCode"/>
+                <owl:allValuesFrom rdf:resource="&gl-funding-award;CurrencyCode"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -243,24 +249,6 @@
         </owl:equivalentClass>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&gl-funding-award;hasPrincipalInvestigator"/>
-                <owl:allValuesFrom rdf:resource="&gl-agent;Agent"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&gl-info-obj;isDescribedBy"/>
-                <owl:someValuesFrom rdf:resource="&gl-funding-award;FundingAwardInformationObject"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&gl-funding-award;hasProgramManager"/>
-                <owl:allValuesFrom rdf:resource="&gl-agent;Agent"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="&gl-info-obj;isDescribedBy"/>
                 <owl:allValuesFrom rdf:resource="&gl-funding-award;FundingAwardInformationObject"/>
             </owl:Restriction>
@@ -282,8 +270,9 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&gl-funding-award;startsAtDate"/>
-                <owl:allValuesFrom rdf:resource="&time;Instant"/>
+                <owl:onProperty rdf:resource="&gl-funding-award;hasAwardAmount"/>
+                <owl:onClass rdf:resource="&gl-funding-award;AwardAmount"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -291,25 +280,6 @@
                 <owl:onProperty rdf:resource="&gl-funding-award;startsAtDate"/>
                 <owl:onClass rdf:resource="&time;Instant"/>
                 <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&gl-funding-award;endsAtDate"/>
-                <owl:allValuesFrom rdf:resource="&time;Instant"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&gl-funding-award;hasFundingAgent"/>
-                <owl:allValuesFrom rdf:resource="&gl-agent;Agent"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&gl-funding-award;hasAwardAmount"/>
-                <owl:onClass rdf:resource="&gl-funding-award;AwardAmount"/>
-                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -323,6 +293,42 @@
                 <owl:onProperty rdf:resource="&gl-funding-award;endsAtDate"/>
                 <owl:onClass rdf:resource="&time;Instant"/>
                 <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-funding-award;hasFundingAgent"/>
+                <owl:allValuesFrom rdf:resource="&gl-agent;Agent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-info-obj;isDescribedBy"/>
+                <owl:someValuesFrom rdf:resource="&gl-funding-award;FundingAwardInformationObject"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-funding-award;hasPrincipalInvestigator"/>
+                <owl:allValuesFrom rdf:resource="&gl-agent;Agent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-funding-award;endsAtDate"/>
+                <owl:allValuesFrom rdf:resource="&time;Instant"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-funding-award;hasProgramManager"/>
+                <owl:allValuesFrom rdf:resource="&gl-agent;Agent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-funding-award;startsAtDate"/>
+                <owl:allValuesFrom rdf:resource="&time;Instant"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -341,6 +347,19 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-info-obj;hasCanonicalName"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&rdf;PlainLiteral"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-funding-award;hasTitle"/>
+                <owl:allValuesFrom rdf:resource="&rdf;PlainLiteral"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="&gl-funding-award;hasAwardID"/>
                 <owl:allValuesFrom rdf:resource="&rdf;PlainLiteral"/>
             </owl:Restriction>
@@ -348,13 +367,6 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&gl-funding-award;hasAwardID"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="&rdf;PlainLiteral"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&gl-info-obj;hasCanonicalName"/>
                 <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onDataRange rdf:resource="&rdf;PlainLiteral"/>
             </owl:Restriction>
@@ -407,14 +419,20 @@
      -->
 
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&gl-funding-award;FundingAward"/>
-        <owl:onProperty rdf:resource="&gl-info-obj;isDescribedBy"/>
-        <owl:someValuesFrom rdf:resource="&gl-funding-award;FundingAwardInformationObject"/>
-    </owl:Restriction>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&gl-funding-award;FundingAward"/>
-        <owl:onProperty rdf:resource="&gl-funding-award;startsAtDate"/>
-        <owl:someValuesFrom rdf:resource="&time;Instant"/>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-funding-award;rolifiedPrincipalInvestigatorRole"/>
+                <owl:hasSelf rdf:datatype="&xsd;boolean">true</owl:hasSelf>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:onProperty rdf:resource="&gl-agent-role;hasAgentRoleType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&gl-funding-award;principal_investigator_role"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
     </owl:Restriction>
     <owl:Restriction>
         <owl:equivalentClass>
@@ -433,6 +451,22 @@
         </owl:someValuesFrom>
     </owl:Restriction>
     <owl:Restriction>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-funding-award;rolifiedProgramManagerRole"/>
+                <owl:hasSelf rdf:datatype="&xsd;boolean">true</owl:hasSelf>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:onProperty rdf:resource="&gl-agent-role;hasAgentRoleType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&gl-funding-award;program_manager_role"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
         <rdfs:subClassOf rdf:resource="&gl-funding-award;FundingAwardInformationObject"/>
         <owl:onProperty rdf:resource="&gl-funding-award;hasAwardID"/>
         <owl:someValuesFrom rdf:resource="&rdf;PlainLiteral"/>
@@ -441,6 +475,46 @@
         <rdfs:subClassOf rdf:resource="&gl-funding-award;FundingAward"/>
         <owl:onProperty rdf:resource="&gl-funding-award;hasAwardAmount"/>
         <owl:someValuesFrom rdf:resource="&gl-funding-award;AwardAmount"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&gl-funding-award;FundingAward"/>
+        <owl:onProperty rdf:resource="&gl-funding-award;startsAtDate"/>
+        <owl:someValuesFrom rdf:resource="&time;Instant"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&gl-funding-award;FundingAward"/>
+        <owl:onProperty rdf:resource="&gl-info-obj;isDescribedBy"/>
+        <owl:someValuesFrom rdf:resource="&gl-funding-award;FundingAwardInformationObject"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&gl-funding-award;FundingAward"/>
+        <owl:onProperty rdf:resource="&gl-funding-award;hasPrincipalInvestigator"/>
+        <owl:someValuesFrom rdf:resource="&gl-agent;Agent"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&gl-funding-award;FundingAwardInformationObject"/>
+        <owl:onProperty rdf:resource="&gl-funding-award;hasTitle"/>
+        <owl:someValuesFrom rdf:resource="&rdf;PlainLiteral"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&gl-funding-award;FundingAward"/>
+        <owl:onProperty rdf:resource="&gl-funding-award;hasProgramManager"/>
+        <owl:someValuesFrom rdf:resource="&gl-agent;Agent"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&gl-funding-award;FundingAward"/>
+        <owl:onProperty rdf:resource="&gl-funding-award;hasFundingAgent"/>
+        <owl:someValuesFrom rdf:resource="&gl-agent;Agent"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&gl-funding-award;AwardAmount"/>
+        <owl:onProperty rdf:resource="&gl-funding-award;hasCurrencyValue"/>
+        <owl:someValuesFrom rdf:resource="&xsd;decimal"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&gl-funding-award;FundingAwardInformationObject"/>
+        <owl:onProperty rdf:resource="&gl-funding-award;hasDescriptionDocument"/>
+        <owl:someValuesFrom rdf:resource="&gl-dor;DigitalObjectRecord"/>
     </owl:Restriction>
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
@@ -458,70 +532,13 @@
     </rdf:Description>
     <owl:Restriction>
         <rdfs:subClassOf rdf:resource="&gl-funding-award;AwardAmount"/>
-        <owl:onProperty rdf:resource="&gl-funding-award;hasCurrencyValue"/>
-        <owl:someValuesFrom rdf:resource="&xsd;decimal"/>
-    </owl:Restriction>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&gl-funding-award;FundingAward"/>
-        <owl:onProperty rdf:resource="&gl-funding-award;hasPrincipalInvestigator"/>
-        <owl:someValuesFrom rdf:resource="&gl-agent;Agent"/>
+        <owl:onProperty rdf:resource="&gl-funding-award;hasCurrencyCode"/>
+        <owl:someValuesFrom rdf:resource="&gl-funding-award;CurrencyCode"/>
     </owl:Restriction>
     <owl:Restriction>
         <rdfs:subClassOf rdf:resource="&gl-funding-award;FundingAward"/>
         <owl:onProperty rdf:resource="&gl-funding-award;endsAtDate"/>
         <owl:someValuesFrom rdf:resource="&time;Instant"/>
-    </owl:Restriction>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&gl-funding-award;FundingAward"/>
-        <owl:onProperty rdf:resource="&gl-funding-award;hasProgramManager"/>
-        <owl:someValuesFrom rdf:resource="&gl-agent;Agent"/>
-    </owl:Restriction>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&gl-funding-award;AwardAmount"/>
-        <owl:onProperty rdf:resource="&gl-funding-award;hasCurrencyCode"/>
-        <owl:someValuesFrom rdf:resource="&gl-funding-award;CurrencyCode"/>
-    </owl:Restriction>
-    <owl:Restriction>
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&gl-funding-award;rolifiedProgramManagerRole"/>
-                <owl:hasSelf rdf:datatype="&xsd;boolean">true</owl:hasSelf>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <owl:onProperty rdf:resource="&gl-agent-role;hasAgentRoleType"/>
-        <owl:someValuesFrom>
-            <owl:Class>
-                <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&gl-funding-award;program_manager_role"/>
-                </owl:oneOf>
-            </owl:Class>
-        </owl:someValuesFrom>
-    </owl:Restriction>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&gl-funding-award;FundingAward"/>
-        <owl:onProperty rdf:resource="&gl-funding-award;hasFundingAgent"/>
-        <owl:someValuesFrom rdf:resource="&gl-agent;Agent"/>
-    </owl:Restriction>
-    <owl:Restriction>
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&gl-funding-award;rolifiedPrincipalInvestigatorRole"/>
-                <owl:hasSelf rdf:datatype="&xsd;boolean">true</owl:hasSelf>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <owl:onProperty rdf:resource="&gl-agent-role;hasAgentRoleType"/>
-        <owl:someValuesFrom>
-            <owl:Class>
-                <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&gl-funding-award;principal_investigator_role"/>
-                </owl:oneOf>
-            </owl:Class>
-        </owl:someValuesFrom>
-    </owl:Restriction>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&gl-funding-award;FundingAwardInformationObject"/>
-        <owl:onProperty rdf:resource="&gl-funding-award;hasDescriptionDocument"/>
-        <owl:someValuesFrom rdf:resource="&gl-dor;DigitalObjectRecord"/>
     </owl:Restriction>
 </rdf:RDF>
 
