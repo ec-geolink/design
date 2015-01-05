@@ -353,6 +353,22 @@
     
 
 
+    <!-- http://schema.geolink.org/cruise/curator_role -->
+
+    <owl:NamedIndividual rdf:about="&gl-cruise;curator_role">
+        <rdf:type rdf:resource="&gl-cruise;CruiseAgentRoleType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/cruise/data_manager_role -->
+
+    <owl:NamedIndividual rdf:about="&gl-cruise;data_manager_role">
+        <rdf:type rdf:resource="&gl-cruise;CruiseAgentRoleType"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://schema.geolink.org/cruise/foreign_observer_role -->
 
     <owl:NamedIndividual rdf:about="&gl-cruise;foreign_observer_role">
@@ -411,7 +427,9 @@
 
     <!-- http://schema.geolink.org/cruise/maintenance_cruisetype -->
 
-    <owl:NamedIndividual rdf:about="&gl-cruise;maintenance_cruisetype"/>
+    <owl:NamedIndividual rdf:about="&gl-cruise;maintenance_cruisetype">
+        <rdf:type rdf:resource="&gl-cruise;CruiseType"/>
+    </owl:NamedIndividual>
     
 
 
@@ -433,7 +451,9 @@
 
     <!-- http://schema.geolink.org/cruise/operational_cruisetype -->
 
-    <owl:NamedIndividual rdf:about="&gl-cruise;operational_cruisetype"/>
+    <owl:NamedIndividual rdf:about="&gl-cruise;operational_cruisetype">
+        <rdf:type rdf:resource="&gl-cruise;CruiseType"/>
+    </owl:NamedIndividual>
     
 
 
@@ -447,13 +467,31 @@
 
     <!-- http://schema.geolink.org/cruise/other_cruisetype -->
 
-    <owl:NamedIndividual rdf:about="&gl-cruise;other_cruisetype"/>
+    <owl:NamedIndividual rdf:about="&gl-cruise;other_cruisetype">
+        <rdf:type rdf:resource="&gl-cruise;CruiseType"/>
+    </owl:NamedIndividual>
     
 
 
     <!-- http://schema.geolink.org/cruise/postdoc_scientist_role -->
 
     <owl:NamedIndividual rdf:about="&gl-cruise;postdoc_scientist_role">
+        <rdf:type rdf:resource="&gl-cruise;CruiseAgentRoleType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/cruise/principal_investigator_role -->
+
+    <owl:NamedIndividual rdf:about="&gl-cruise;principal_investigator_role">
+        <rdf:type rdf:resource="&gl-cruise;CruiseAgentRoleType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/cruise/project_coordinator_role -->
+
+    <owl:NamedIndividual rdf:about="&gl-cruise;project_coordinator_role">
         <rdf:type rdf:resource="&gl-cruise;CruiseAgentRoleType"/>
     </owl:NamedIndividual>
     
@@ -493,7 +531,9 @@
 
     <!-- http://schema.geolink.org/cruise/transit_cruisetype -->
 
-    <owl:NamedIndividual rdf:about="&gl-cruise;transit_cruisetype"/>
+    <owl:NamedIndividual rdf:about="&gl-cruise;transit_cruisetype">
+        <rdf:type rdf:resource="&gl-cruise;CruiseType"/>
+    </owl:NamedIndividual>
     
 
 
