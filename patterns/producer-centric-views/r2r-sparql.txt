@@ -77,19 +77,19 @@ FROM <http://address-to-r2r-graph-mapped-to-view>
 WHERE {
   ?C rdf:type glv-r2r:Cruise .
   ?C glv-r2r:hasAward ?AW .
-  ?C glv-r2r:hasEvent ?EV .
+  ?C glv-r2r:hasEventInCruise ?EV .
   ?C glv-r2r:hasFileset ?FSET .
   ?C glv-r2r:hasHolding ?HLD .
-  ?C glv-r2r:hasOperator ?OP .
-  ?C glv-r2r:hasParticipant ?P .
-  ?P glv-r2r:hasR2ModelRole ?ROL .
+  ?C glv-r2r:hasCruiseOperator ?OP .
+  ?C glv-r2r:hasCruiseParticipant ?P .
+  ?P glv-r2r:hasCruiseParticipantRole ?ROL .
   ?C glv-r2r:hasProduct ?PROD .
-  ?C glv-r2r:hasScheduler ?SCH .
-  ?C glv-r2r:hasTrack ?TRACK .
+  ?C glv-r2r:hasCruiseScheduler ?SCH .
+  ?C glv-r2r:hasCruiseTrack ?TRACK .
   ?C glv-r2r:hasVessel ?V .
-  ?C glv-r2r:hasTitle ?T .
   ?C glv-r2r:hasVesselName ?VN .
-  ?C glv-r2r:hasR2ModelCruise ?TY .
+  ?C glv-r2r:hasTitle ?T .
+  ?C glv-r2r:hasCruiseType ?TY .
   ?C glv-r2r:hasIdentifier ?ID .
   ?C glv-r2r:hasLabel ?L .
   ?C glv-r2r:seeAlso ?W .

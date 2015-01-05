@@ -36,9 +36,81 @@
     
 
 
+    <!-- http://schema.geolink.org/r2r-view/hasAward -->
+
+    <owl:ObjectProperty rdf:about="&glv-r2r;hasAward"/>
+    
+
+
+    <!-- http://schema.geolink.org/r2r-view/hasCruiseOperator -->
+
+    <owl:ObjectProperty rdf:about="&glv-r2r;hasCruiseOperator"/>
+    
+
+
+    <!-- http://schema.geolink.org/r2r-view/hasCruiseParticipant -->
+
+    <owl:ObjectProperty rdf:about="&glv-r2r;hasCruiseParticipant"/>
+    
+
+
+    <!-- http://schema.geolink.org/r2r-view/hasCruiseParticipantRole -->
+
+    <owl:ObjectProperty rdf:about="&glv-r2r;hasCruiseParticipantRole"/>
+    
+
+
+    <!-- http://schema.geolink.org/r2r-view/hasCruiseScheduler -->
+
+    <owl:ObjectProperty rdf:about="&glv-r2r;hasCruiseScheduler"/>
+    
+
+
+    <!-- http://schema.geolink.org/r2r-view/hasCruiseTrack -->
+
+    <owl:ObjectProperty rdf:about="&glv-r2r;hasCruiseTrack"/>
+    
+
+
+    <!-- http://schema.geolink.org/r2r-view/hasCruiseType -->
+
+    <owl:ObjectProperty rdf:about="&glv-r2r;hasCruiseType"/>
+    
+
+
+    <!-- http://schema.geolink.org/r2r-view/hasEventInCruise -->
+
+    <owl:ObjectProperty rdf:about="&glv-r2r;hasEventInCruise"/>
+    
+
+
+    <!-- http://schema.geolink.org/r2r-view/hasFileset -->
+
+    <owl:ObjectProperty rdf:about="&glv-r2r;hasFileset"/>
+    
+
+
+    <!-- http://schema.geolink.org/r2r-view/hasHolding -->
+
+    <owl:ObjectProperty rdf:about="&glv-r2r;hasHolding"/>
+    
+
+
+    <!-- http://schema.geolink.org/r2r-view/hasProduct -->
+
+    <owl:ObjectProperty rdf:about="&glv-r2r;hasProduct"/>
+    
+
+
     <!-- http://schema.geolink.org/r2r-view/hasSponsor -->
 
     <owl:ObjectProperty rdf:about="&glv-r2r;hasSponsor"/>
+    
+
+
+    <!-- http://schema.geolink.org/r2r-view/hasVessel -->
+
+    <owl:ObjectProperty rdf:about="&glv-r2r;hasVessel"/>
     
 
 
@@ -80,6 +152,18 @@
     <!-- http://schema.geolink.org/r2r-view/hasTitle -->
 
     <owl:DatatypeProperty rdf:about="&glv-r2r;hasTitle"/>
+    
+
+
+    <!-- http://schema.geolink.org/r2r-view/hasVesselName -->
+
+    <owl:DatatypeProperty rdf:about="&glv-r2r;hasVesselName"/>
+    
+
+
+    <!-- http://schema.geolink.org/r2r-view/seeAlso -->
+
+    <owl:DatatypeProperty rdf:about="&glv-r2r;seeAlso"/>
     
 
 
