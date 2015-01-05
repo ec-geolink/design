@@ -1,0 +1,22 @@
+PREFIX glext: <http://schema.geolink.org/ext/>
+
+glext:http_vocab.nerc.ac.uk/collection/P03/current/G030/ rdf:type glext:Geochronology_and_stratigraphy .
+                    glext:name "Geochronology and stratigraphy"^^lang@en-US .
+                    glext:name "Gaga Googoo"^^lang@spanish .
+                    glext:name "Gaga Googoo"^^lang@french .
+                    glext:description "...."^^lang@en-US .
+                    glext:origin <http://vocab.nerc.ac.uk/collection/P03/current/G030/> .
+                    glext:childCategory <glext:http_vocab.nerc.ac.uk/collection/P02/current/SPAG/> .
+                    glext:childCategory <glext:http_vocab.nerc.ac.uk/collection/P02/current/SAGE/> .
+                    glext:siblingCategory  <glext:http_vocab.nerc.ac.uk/collection/P03/current/G025/> .
+                    glext:isDescribedBy _:nerc_P03_G030_info_obj ;
+                    
+_:nerc_P03_G030_info_obj rdf:type glext:NERCParameterInformationObject .
+                    glext:importedOnDate "xxxx-xx-xxTxx:xx:xx"^^xsd:DateTime .
+                    glext:deprectated  "TRUE|FALSE";  #auto-populated based on existence in the RDF ingest each night
+                    
+
+...
+r2r:ptp123 gl-paramter:hasNERCParameter <http://schema.geolink.org/ext/http_vocab.nerc.ac.uk/collection/P03/current/G030/>
+...
+bcodmo:ptp123 gl-parameter:hasNERCParameter <http://vocab.nerc.ac.uk/collection/P03/current/G030/>
