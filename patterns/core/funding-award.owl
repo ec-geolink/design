@@ -1,0 +1,531 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY time "http://www.w3.org/2006/time#" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY gl-agent "http://schema.geolink.org/agent/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY gl-agent-role "http://schema.geolink.org/agent-role/" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY gl-funding-award "http://schema.geolink.org/funding-award/" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY gl-info-obj "http://schema.geolink.org/information-object/" >
+    <!ENTITY gl-dor "http://schema.geolink.org/digital-object-record/" >
+]>
+
+
+<rdf:RDF xmlns="http://schema.geolink.org/funding-award/"
+     xml:base="http://schema.geolink.org/funding-award/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:time="http://www.w3.org/2006/time#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:gl-info-obj="http://schema.geolink.org/information-object/"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:gl-funding-award="http://schema.geolink.org/funding-award/"
+     xmlns:gl-agent="http://schema.geolink.org/agent/"
+     xmlns:gl-agent-role="http://schema.geolink.org/agent-role/"
+     xmlns:gl-dor="http://schema.geolink.org/digital-object-record/">
+    <owl:Ontology rdf:about="http://schema.geolink.org/funding-award/">
+        <owl:imports rdf:resource="&gl-agent-role;1.0/"/>
+        <owl:versionIRI rdf:resource="&gl-funding-award;1.0/"/>
+        <owl:imports rdf:resource="&gl-info-obj;1.0/"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.geolink.org/funding-award/endsAtDate -->
+
+    <owl:ObjectProperty rdf:about="&gl-funding-award;endsAtDate"/>
+    
+
+
+    <!-- http://schema.geolink.org/funding-award/hasAwardAmount -->
+
+    <owl:ObjectProperty rdf:about="&gl-funding-award;hasAwardAmount"/>
+    
+
+
+    <!-- http://schema.geolink.org/funding-award/hasCurrencyCode -->
+
+    <owl:ObjectProperty rdf:about="&gl-funding-award;hasCurrencyCode"/>
+    
+
+
+    <!-- http://schema.geolink.org/funding-award/hasDescriptionDocument -->
+
+    <owl:ObjectProperty rdf:about="&gl-funding-award;hasDescriptionDocument"/>
+    
+
+
+    <!-- http://schema.geolink.org/funding-award/hasFundingAgent -->
+
+    <owl:ObjectProperty rdf:about="&gl-funding-award;hasFundingAgent">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="&gl-funding-award;rolifiedFundingAward"/>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&gl-agent-role;isAgentRoleIn"/>
+            </rdf:Description>
+            <rdf:Description rdf:about="&gl-funding-award;rolifiedSponsorRole"/>
+            <rdf:Description rdf:about="&gl-agent-role;isPerformedBy"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/funding-award/hasPrincipalInvestigator -->
+
+    <owl:ObjectProperty rdf:about="&gl-funding-award;hasPrincipalInvestigator">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="&gl-funding-award;rolifiedFundingAward"/>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&gl-agent-role;isAgentRoleIn"/>
+            </rdf:Description>
+            <rdf:Description rdf:about="&gl-funding-award;rolifiedPrincipalInvestigatorRole"/>
+            <rdf:Description rdf:about="&gl-agent-role;isPerformedBy"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/funding-award/hasProgramManager -->
+
+    <owl:ObjectProperty rdf:about="&gl-funding-award;hasProgramManager">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="&gl-funding-award;rolifiedFundingAward"/>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&gl-agent-role;isAgentRoleIn"/>
+            </rdf:Description>
+            <rdf:Description rdf:about="&gl-funding-award;rolifiedProgramManagerRole"/>
+            <rdf:Description rdf:about="&gl-agent-role;isPerformedBy"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/funding-award/isFundedBy -->
+
+    <owl:ObjectProperty rdf:about="&gl-funding-award;isFundedBy">
+        <rdfs:range rdf:resource="&gl-funding-award;FundingAward"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/funding-award/rolifiedFundingAward -->
+
+    <owl:ObjectProperty rdf:about="&gl-funding-award;rolifiedFundingAward"/>
+    
+
+
+    <!-- http://schema.geolink.org/funding-award/rolifiedPrincipalInvestigatorRole -->
+
+    <owl:ObjectProperty rdf:about="&gl-funding-award;rolifiedPrincipalInvestigatorRole"/>
+    
+
+
+    <!-- http://schema.geolink.org/funding-award/rolifiedProgramManagerRole -->
+
+    <owl:ObjectProperty rdf:about="&gl-funding-award;rolifiedProgramManagerRole"/>
+    
+
+
+    <!-- http://schema.geolink.org/funding-award/rolifiedSponsorRole -->
+
+    <owl:ObjectProperty rdf:about="&gl-funding-award;rolifiedSponsorRole"/>
+    
+
+
+    <!-- http://schema.geolink.org/funding-award/startsAtDate -->
+
+    <owl:ObjectProperty rdf:about="&gl-funding-award;startsAtDate"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.geolink.org/funding-award/hasAwardID -->
+
+    <owl:DatatypeProperty rdf:about="&gl-funding-award;hasAwardID"/>
+    
+
+
+    <!-- http://schema.geolink.org/funding-award/hasCurrencyValue -->
+
+    <owl:DatatypeProperty rdf:about="&gl-funding-award;hasCurrencyValue"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.geolink.org/digital-object-record/DigitalObjectRecord -->
+
+    <owl:Class rdf:about="&gl-dor;DigitalObjectRecord"/>
+    
+
+
+    <!-- http://schema.geolink.org/funding-award/AwardAmount -->
+
+    <owl:Class rdf:about="&gl-funding-award;AwardAmount">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-funding-award;hasCurrencyCode"/>
+                <owl:onClass rdf:resource="&gl-funding-award;CurrencyCode"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-funding-award;hasCurrencyValue"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;decimal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-funding-award;hasCurrencyCode"/>
+                <owl:allValuesFrom rdf:resource="&gl-funding-award;CurrencyCode"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-funding-award;hasCurrencyValue"/>
+                <owl:allValuesFrom rdf:resource="&xsd;decimal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/funding-award/CurrencyCode -->
+
+    <owl:Class rdf:about="&gl-funding-award;CurrencyCode"/>
+    
+
+
+    <!-- http://schema.geolink.org/funding-award/FundingAward -->
+
+    <owl:Class rdf:about="&gl-funding-award;FundingAward">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-funding-award;rolifiedFundingAward"/>
+                <owl:hasSelf rdf:datatype="&xsd;boolean">true</owl:hasSelf>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-funding-award;hasPrincipalInvestigator"/>
+                <owl:allValuesFrom rdf:resource="&gl-agent;Agent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-info-obj;isDescribedBy"/>
+                <owl:someValuesFrom rdf:resource="&gl-funding-award;FundingAwardInformationObject"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-funding-award;hasProgramManager"/>
+                <owl:allValuesFrom rdf:resource="&gl-agent;Agent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-info-obj;isDescribedBy"/>
+                <owl:allValuesFrom rdf:resource="&gl-funding-award;FundingAwardInformationObject"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="&gl-agent-role;isAgentRoleIn"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&gl-agent-role;hasAgentRoleType"/>
+                        <owl:hasValue rdf:resource="&gl-funding-award;sponsor_role"/>
+                    </owl:Restriction>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-funding-award;startsAtDate"/>
+                <owl:allValuesFrom rdf:resource="&time;Instant"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-funding-award;startsAtDate"/>
+                <owl:onClass rdf:resource="&time;Instant"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-funding-award;endsAtDate"/>
+                <owl:allValuesFrom rdf:resource="&time;Instant"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-funding-award;hasFundingAgent"/>
+                <owl:allValuesFrom rdf:resource="&gl-agent;Agent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-funding-award;hasAwardAmount"/>
+                <owl:onClass rdf:resource="&gl-funding-award;AwardAmount"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-funding-award;hasAwardAmount"/>
+                <owl:allValuesFrom rdf:resource="&gl-funding-award;AwardAmount"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-funding-award;endsAtDate"/>
+                <owl:onClass rdf:resource="&time;Instant"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/funding-award/FundingAwardInformationObject -->
+
+    <owl:Class rdf:about="&gl-funding-award;FundingAwardInformationObject">
+        <rdfs:subClassOf rdf:resource="&gl-info-obj;InformationObject"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-funding-award;hasDescriptionDocument"/>
+                <owl:allValuesFrom rdf:resource="&gl-dor;DigitalObjectRecord"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-funding-award;hasAwardID"/>
+                <owl:allValuesFrom rdf:resource="&rdf;PlainLiteral"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-funding-award;hasAwardID"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&rdf;PlainLiteral"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-info-obj;hasCanonicalName"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&rdf;PlainLiteral"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.geolink.org/funding-award/principal_investigator_role -->
+
+    <owl:NamedIndividual rdf:about="&gl-funding-award;principal_investigator_role">
+        <rdf:type rdf:resource="&gl-agent-role;AgentRoleType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/funding-award/program_manager_role -->
+
+    <owl:NamedIndividual rdf:about="&gl-funding-award;program_manager_role">
+        <rdf:type rdf:resource="&gl-agent-role;AgentRoleType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/funding-award/sponsor_role -->
+
+    <owl:NamedIndividual rdf:about="&gl-funding-award;sponsor_role">
+        <rdf:type rdf:resource="&gl-agent-role;AgentRoleType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&gl-funding-award;FundingAward"/>
+        <owl:onProperty rdf:resource="&gl-info-obj;isDescribedBy"/>
+        <owl:someValuesFrom rdf:resource="&gl-funding-award;FundingAwardInformationObject"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&gl-funding-award;FundingAward"/>
+        <owl:onProperty rdf:resource="&gl-funding-award;startsAtDate"/>
+        <owl:someValuesFrom rdf:resource="&time;Instant"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-funding-award;rolifiedSponsorRole"/>
+                <owl:hasSelf rdf:datatype="&xsd;boolean">true</owl:hasSelf>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:onProperty rdf:resource="&gl-agent-role;hasAgentRoleType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&gl-funding-award;sponsor_role"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&gl-funding-award;FundingAwardInformationObject"/>
+        <owl:onProperty rdf:resource="&gl-funding-award;hasAwardID"/>
+        <owl:someValuesFrom rdf:resource="&rdf;PlainLiteral"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&gl-funding-award;FundingAward"/>
+        <owl:onProperty rdf:resource="&gl-funding-award;hasAwardAmount"/>
+        <owl:someValuesFrom rdf:resource="&gl-funding-award;AwardAmount"/>
+    </owl:Restriction>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&gl-agent-role;AgentRole"/>
+            <rdf:Description rdf:about="&gl-agent-role;AgentRoleType"/>
+            <rdf:Description rdf:about="&gl-agent;Agent"/>
+            <rdf:Description rdf:about="&gl-dor;DigitalObjectRecord"/>
+            <rdf:Description rdf:about="&gl-funding-award;AwardAmount"/>
+            <rdf:Description rdf:about="&gl-funding-award;CurrencyCode"/>
+            <rdf:Description rdf:about="&gl-funding-award;FundingAward"/>
+            <rdf:Description rdf:about="&gl-info-obj;InformationObject"/>
+            <rdf:Description rdf:about="&time;Instant"/>
+        </owl:members>
+    </rdf:Description>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&gl-funding-award;AwardAmount"/>
+        <owl:onProperty rdf:resource="&gl-funding-award;hasCurrencyValue"/>
+        <owl:someValuesFrom rdf:resource="&xsd;decimal"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&gl-funding-award;FundingAward"/>
+        <owl:onProperty rdf:resource="&gl-funding-award;hasPrincipalInvestigator"/>
+        <owl:someValuesFrom rdf:resource="&gl-agent;Agent"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&gl-funding-award;FundingAward"/>
+        <owl:onProperty rdf:resource="&gl-funding-award;endsAtDate"/>
+        <owl:someValuesFrom rdf:resource="&time;Instant"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&gl-funding-award;FundingAward"/>
+        <owl:onProperty rdf:resource="&gl-funding-award;hasProgramManager"/>
+        <owl:someValuesFrom rdf:resource="&gl-agent;Agent"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&gl-funding-award;AwardAmount"/>
+        <owl:onProperty rdf:resource="&gl-funding-award;hasCurrencyCode"/>
+        <owl:someValuesFrom rdf:resource="&gl-funding-award;CurrencyCode"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-funding-award;rolifiedProgramManagerRole"/>
+                <owl:hasSelf rdf:datatype="&xsd;boolean">true</owl:hasSelf>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:onProperty rdf:resource="&gl-agent-role;hasAgentRoleType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&gl-funding-award;program_manager_role"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&gl-funding-award;FundingAward"/>
+        <owl:onProperty rdf:resource="&gl-funding-award;hasFundingAgent"/>
+        <owl:someValuesFrom rdf:resource="&gl-agent;Agent"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-funding-award;rolifiedPrincipalInvestigatorRole"/>
+                <owl:hasSelf rdf:datatype="&xsd;boolean">true</owl:hasSelf>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:onProperty rdf:resource="&gl-agent-role;hasAgentRoleType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&gl-funding-award;principal_investigator_role"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&gl-funding-award;FundingAwardInformationObject"/>
+        <owl:onProperty rdf:resource="&gl-funding-award;hasDescriptionDocument"/>
+        <owl:someValuesFrom rdf:resource="&gl-dor;DigitalObjectRecord"/>
+    </owl:Restriction>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net -->
+

@@ -1,0 +1,260 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY time "http://www.w3.org/2006/time#" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY gl-person "http://schema.geolink.org/person/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY gl-pinfo-item "http://schema.geolink.org/personal-info-item/" >
+]>
+
+
+<rdf:RDF xmlns="http://schema.geolink.org/personal-info-item/"
+     xml:base="http://schema.geolink.org/personal-info-item/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:time="http://www.w3.org/2006/time#"
+     xmlns:gl-person="http://schema.geolink.org/person/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:gl-pinfo-item="http://schema.geolink.org/personal-info-item/">
+    <owl:Ontology rdf:about="http://schema.geolink.org/personal-info-item/">
+        <owl:versionIRI rdf:resource="&gl-pinfo-item;1.0/"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.geolink.org/person/hasPersonalInfoItem -->
+
+    <owl:ObjectProperty rdf:about="&gl-person;hasPersonalInfoItem">
+        <owl:inverseOf rdf:resource="&gl-pinfo-item;isPersonalInfoItemOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/personal-info-item/endsAtTime -->
+
+    <owl:ObjectProperty rdf:about="&gl-pinfo-item;endsAtTime"/>
+    
+
+
+    <!-- http://schema.geolink.org/personal-info-item/hasAllowedValue -->
+
+    <owl:ObjectProperty rdf:about="&gl-pinfo-item;hasAllowedValue">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&gl-pinfo-item;hasPersonalInfoType"/>
+            </rdf:Description>
+            <rdf:Description rdf:about="&gl-pinfo-item;hasPersonalInfoValue"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/personal-info-item/hasPersonalInfoType -->
+
+    <owl:ObjectProperty rdf:about="&gl-pinfo-item;hasPersonalInfoType"/>
+    
+
+
+    <!-- http://schema.geolink.org/personal-info-item/hasPersonalInfoValue -->
+
+    <owl:ObjectProperty rdf:about="&gl-pinfo-item;hasPersonalInfoValue"/>
+    
+
+
+    <!-- http://schema.geolink.org/personal-info-item/isPersonalInfoItemOf -->
+
+    <owl:ObjectProperty rdf:about="&gl-pinfo-item;isPersonalInfoItemOf"/>
+    
+
+
+    <!-- http://schema.geolink.org/personal-info-item/startsAtTime -->
+
+    <owl:ObjectProperty rdf:about="&gl-pinfo-item;startsAtTime"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.geolink.org/person/Person -->
+
+    <owl:Class rdf:about="&gl-person;Person"/>
+    
+
+
+    <!-- http://schema.geolink.org/personal-info-item/PersonalInfoItem -->
+
+    <owl:Class rdf:about="&gl-pinfo-item;PersonalInfoItem">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-pinfo-item;endsAtTime"/>
+                <owl:onClass rdf:resource="&time;Instant"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-pinfo-item;isPersonalInfoItemOf"/>
+                <owl:allValuesFrom rdf:resource="&gl-person;Person"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-pinfo-item;startsAtTime"/>
+                <owl:onClass rdf:resource="&time;Instant"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-pinfo-item;endsAtTime"/>
+                <owl:allValuesFrom rdf:resource="&time;Instant"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-pinfo-item;hasPersonalInfoType"/>
+                <owl:onClass rdf:resource="&gl-pinfo-item;PersonalInfoType"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-pinfo-item;hasPersonalInfoType"/>
+                <owl:allValuesFrom rdf:resource="&gl-pinfo-item;PersonalInfoType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-pinfo-item;hasPersonalInfoValue"/>
+                <owl:allValuesFrom rdf:resource="&gl-pinfo-item;PersonalInfoValue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-pinfo-item;hasPersonalInfoValue"/>
+                <owl:onClass rdf:resource="&gl-pinfo-item;PersonalInfoValue"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-pinfo-item;startsAtTime"/>
+                <owl:allValuesFrom rdf:resource="&time;Instant"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-pinfo-item;isPersonalInfoItemOf"/>
+                <owl:onClass rdf:resource="&gl-person;Person"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/personal-info-item/PersonalInfoType -->
+
+    <owl:Class rdf:about="&gl-pinfo-item;PersonalInfoType">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-pinfo-item;hasAllowedValue"/>
+                <owl:allValuesFrom rdf:resource="&gl-pinfo-item;PersonalInfoValue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-pinfo-item;hasAllowedValue"/>
+                <owl:someValuesFrom rdf:resource="&gl-pinfo-item;PersonalInfoValue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/personal-info-item/PersonalInfoValue -->
+
+    <owl:Class rdf:about="&gl-pinfo-item;PersonalInfoValue"/>
+    
+
+
+    <!-- http://www.w3.org/2006/time#Instant -->
+
+    <owl:Class rdf:about="&time;Instant"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&gl-pinfo-item;PersonalInfoItem"/>
+        <owl:onProperty rdf:resource="&gl-pinfo-item;hasPersonalInfoType"/>
+        <owl:someValuesFrom rdf:resource="&gl-pinfo-item;PersonalInfoType"/>
+    </owl:Restriction>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&gl-person;Person"/>
+            <rdf:Description rdf:about="&gl-pinfo-item;PersonalInfoItem"/>
+            <rdf:Description rdf:about="&gl-pinfo-item;PersonalInfoType"/>
+            <rdf:Description rdf:about="&gl-pinfo-item;PersonalInfoValue"/>
+            <rdf:Description rdf:about="&time;Instant"/>
+        </owl:members>
+    </rdf:Description>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&gl-pinfo-item;PersonalInfoItem"/>
+        <owl:onProperty rdf:resource="&gl-pinfo-item;hasPersonalInfoValue"/>
+        <owl:someValuesFrom rdf:resource="&gl-pinfo-item;PersonalInfoValue"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&gl-pinfo-item;PersonalInfoItem"/>
+        <owl:onProperty rdf:resource="&gl-pinfo-item;endsAtTime"/>
+        <owl:someValuesFrom rdf:resource="&time;Instant"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&gl-pinfo-item;PersonalInfoItem"/>
+        <owl:onProperty rdf:resource="&gl-pinfo-item;startsAtTime"/>
+        <owl:someValuesFrom rdf:resource="&time;Instant"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&gl-pinfo-item;PersonalInfoItem"/>
+        <owl:onProperty rdf:resource="&gl-pinfo-item;isPersonalInfoItemOf"/>
+        <owl:someValuesFrom rdf:resource="&gl-person;Person"/>
+    </owl:Restriction>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net -->
+

@@ -1,0 +1,172 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY gl-person "http://schema.geolink.org/person/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY gl-org "http://schema.geolink.org/organization/" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY gl-agent-affiliation "http://schema.geolink.org/agent-affiliation/" >
+]>
+
+
+<rdf:RDF xmlns="http://schema.geolink.org/agent-affiliation/"
+     xml:base="http://schema.geolink.org/agent-affiliation/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:gl-person="http://schema.geolink.org/person/"
+     xmlns:gl-org="http://schema.geolink.org/organization/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:gl-agent-affiliation="http://schema.geolink.org/agent-affiliation/">
+    <owl:Ontology rdf:about="http://schema.geolink.org/agent-affiliation/">
+        <owl:versionIRI rdf:resource="&gl-agent-affiliation;1.0/"/>
+        <owl:imports rdf:resource="http://schema.geolink.org/agent-role/1.0/"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.geolink.org/agent-affiliation/AgentAffiliation -->
+
+    <owl:Class rdf:about="&gl-agent-affiliation;AgentAffiliation">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/agent-role/AgentRole"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://schema.geolink.org/agent-role/isAgentRoleIn"/>
+                        <owl:someValuesFrom rdf:resource="&gl-org;Organization"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://schema.geolink.org/agent-role/hasAgentRoleType"/>
+                        <owl:hasValue rdf:resource="&gl-agent-affiliation;affiliate_role"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/agent-affiliation/OrganizationAffiliation -->
+
+    <owl:Class rdf:about="&gl-agent-affiliation;OrganizationAffiliation">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&gl-agent-affiliation;AgentAffiliation"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://schema.geolink.org/agent-role/isPerformedBy"/>
+                        <owl:someValuesFrom rdf:resource="&gl-org;Organization"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/agent-role/isPerformedBy"/>
+                <owl:allValuesFrom rdf:resource="&gl-org;Organization"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/agent-affiliation/PersonAffiliation -->
+
+    <owl:Class rdf:about="&gl-agent-affiliation;PersonAffiliation">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&gl-agent-affiliation;AgentAffiliation"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://schema.geolink.org/agent-role/isPerformedBy"/>
+                        <owl:someValuesFrom rdf:resource="&gl-person;Person"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/agent-role/isPerformedBy"/>
+                <owl:allValuesFrom rdf:resource="&gl-person;Person"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/organization/Organization -->
+
+    <owl:Class rdf:about="&gl-org;Organization">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/agent/Agent"/>
+        <owl:disjointWith rdf:resource="&gl-person;Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/person/Person -->
+
+    <owl:Class rdf:about="&gl-person;Person">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/agent/Agent"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.geolink.org/agent-affiliation/affiliate_role -->
+
+    <owl:NamedIndividual rdf:about="&gl-agent-affiliation;affiliate_role">
+        <rdf:type rdf:resource="http://schema.geolink.org/agent-role/AgentRoleType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&gl-agent-affiliation;AgentAffiliation"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/agent-role/hasAgentRoleType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&gl-agent-affiliation;affiliate_role"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net -->
+

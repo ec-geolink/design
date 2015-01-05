@@ -1,0 +1,161 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY gl-agent "http://schema.geolink.org/agent/" >
+    <!ENTITY gl-person "http://schema.geolink.org/person/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY gl-org "http://schema.geolink.org/organization/" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://schema.geolink.org/organization/"
+     xml:base="http://schema.geolink.org/organization/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:gl-person="http://schema.geolink.org/person/"
+     xmlns:gl-org="http://schema.geolink.org/organization/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:gl-agent="http://schema.geolink.org/agent/">
+    <owl:Ontology rdf:about="http://schema.geolink.org/organization/">
+        <owl:imports rdf:resource="http://schema.geolink.org/agent-role/1.0/"/>
+        <owl:imports rdf:resource="&gl-agent;1.0/"/>
+        <owl:imports rdf:resource="http://schema.geolink.org/information-object/1.0/"/>
+        <owl:versionIRI rdf:resource="&gl-org;1.0/"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.geolink.org/organization/hasSubOrganization -->
+
+    <owl:ObjectProperty rdf:about="&gl-org;hasSubOrganization">
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.geolink.org/organization/Organization -->
+
+    <owl:Class rdf:about="&gl-org;Organization">
+        <rdfs:subClassOf rdf:resource="&gl-agent;Agent"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/agent-role/providesAgentRoleType"/>
+                <owl:someValuesFrom rdf:resource="http://schema.geolink.org/agent-role/AgentRoleType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/information-object/isDescribedBy"/>
+                <owl:someValuesFrom rdf:resource="&gl-org;OrganizationInformationObject"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-org;hasSubOrganization"/>
+                <owl:allValuesFrom rdf:resource="&gl-org;Organization"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="&gl-person;Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/organization/OrganizationInformationObject -->
+
+    <owl:Class rdf:about="&gl-org;OrganizationInformationObject">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/information-object/InformationObject"/>
+                    <owl:Restriction>
+                        <owl:onProperty>
+                            <rdf:Description>
+                                <owl:inverseOf rdf:resource="http://schema.geolink.org/information-object/isDescribedBy"/>
+                            </rdf:Description>
+                        </owl:onProperty>
+                        <owl:someValuesFrom rdf:resource="&gl-org;Organization"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/information-object/InformationObject"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/information-object/hasCanonicalName"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&rdf;PlainLiteral"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/person/Person -->
+
+    <owl:Class rdf:about="&gl-person;Person">
+        <rdfs:subClassOf rdf:resource="&gl-agent;Agent"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://schema.geolink.org/agent-role/AgentRole"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/agent-role/AgentRoleType"/>
+            <rdf:Description rdf:about="&gl-agent;Agent"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/information-object/InformationObject"/>
+            <rdf:Description rdf:about="http://www.w3.org/2006/time#Instant"/>
+        </owl:members>
+    </rdf:Description>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&gl-org;Organization"/>
+        <owl:onProperty rdf:resource="&gl-org;hasSubOrganization"/>
+        <owl:someValuesFrom rdf:resource="&gl-org;Organization"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&gl-org;Organization"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/information-object/isDescribedBy"/>
+        <owl:someValuesFrom rdf:resource="&gl-org;OrganizationInformationObject"/>
+    </owl:Restriction>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net -->
+

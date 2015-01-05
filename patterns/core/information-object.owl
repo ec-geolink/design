@@ -1,0 +1,211 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY dcterms "http://purl.org/dc/terms/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY gl-info-obj "http://schema.geolink.org/information-object/" >
+]>
+
+
+<rdf:RDF xmlns="http://schema.geolink.org/information-object/"
+     xml:base="http://schema.geolink.org/information-object/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:gl-info-obj="http://schema.geolink.org/information-object/"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:dcterms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="http://schema.geolink.org/information-object/">
+        <owl:versionIRI rdf:resource="&gl-info-obj;1.0/"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.geolink.org/information-object/isDescribedBy -->
+
+    <owl:ObjectProperty rdf:about="&gl-info-obj;isDescribedBy"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.geolink.org/information-object/alsoKnownAs -->
+
+    <owl:DatatypeProperty rdf:about="&gl-info-obj;alsoKnownAs">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/information-object/hasCanonicalName -->
+
+    <owl:DatatypeProperty rdf:about="&gl-info-obj;hasCanonicalName">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/information-object/hasDescription -->
+
+    <owl:DatatypeProperty rdf:about="&gl-info-obj;hasDescription">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/information-object/hasWebpage -->
+
+    <owl:DatatypeProperty rdf:about="&gl-info-obj;hasWebpage">
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/information-object/seeAlso -->
+
+    <owl:DatatypeProperty rdf:about="&gl-info-obj;seeAlso"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.geolink.org/information-object/InformationObject -->
+
+    <owl:Class rdf:about="&gl-info-obj;InformationObject">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-info-obj;seeAlso"/>
+                <owl:allValuesFrom rdf:resource="&xsd;anyURI"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-info-obj;alsoKnownAs"/>
+                <owl:allValuesFrom rdf:resource="&rdf;PlainLiteral"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-info-obj;hasCanonicalName"/>
+                <owl:allValuesFrom rdf:resource="&rdf;PlainLiteral"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-info-obj;hasDescription"/>
+                <owl:allValuesFrom rdf:resource="&rdf;PlainLiteral"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-info-obj;hasWebpage"/>
+                <owl:allValuesFrom rdf:resource="&xsd;anyURI"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <rdf:Description rdf:about="&owl;Thing">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-info-obj;isDescribedBy"/>
+                <owl:onClass rdf:resource="&gl-info-obj;InformationObject"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="&gl-info-obj;isDescribedBy"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:onClass rdf:resource="&gl-info-obj;InformationObject"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-info-obj;isDescribedBy"/>
+                <owl:allValuesFrom rdf:resource="&gl-info-obj;InformationObject"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&gl-info-obj;InformationObject"/>
+        <owl:onProperty rdf:resource="&gl-info-obj;hasWebpage"/>
+        <owl:someValuesFrom rdf:resource="&xsd;anyURI"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&gl-info-obj;InformationObject"/>
+        <owl:onProperty rdf:resource="&gl-info-obj;hasDescription"/>
+        <owl:someValuesFrom rdf:resource="&rdf;PlainLiteral"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&gl-info-obj;InformationObject"/>
+        <owl:onProperty rdf:resource="&gl-info-obj;hasCanonicalName"/>
+        <owl:someValuesFrom rdf:resource="&rdf;PlainLiteral"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&gl-info-obj;InformationObject"/>
+        <owl:onProperty rdf:resource="&gl-info-obj;seeAlso"/>
+        <owl:someValuesFrom rdf:resource="&xsd;anyURI"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&gl-info-obj;InformationObject"/>
+        <owl:onProperty rdf:resource="&gl-info-obj;alsoKnownAs"/>
+        <owl:someValuesFrom rdf:resource="&rdf;PlainLiteral"/>
+    </owl:Restriction>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net -->
+

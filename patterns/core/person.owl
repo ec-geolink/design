@@ -1,0 +1,406 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY time "http://www.w3.org/2006/time#" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY gl-place "http://schema.geolink.org/place/" >
+    <!ENTITY gl-agent "http://schema.geolink.org/agent/" >
+    <!ENTITY gl-event "http://schema.geolink.org/event/" >
+    <!ENTITY gl-person "http://schema.geolink.org/person/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY gl-credential "http://schema.geolink.org/credential/" >
+    <!ENTITY gl-agent-role "http://schema.geolink.org/agent-role/" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY gl-org "http://schema.geolink.org/organization/" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY gl-pinfo-item "http://schema.geolink.org/personal-info-item/" >
+]>
+
+
+<rdf:RDF xmlns="http://schema.geolink.org/person/"
+     xml:base="http://schema.geolink.org/person/"
+     xmlns:gl-place="http://schema.geolink.org/place/"
+     xmlns:gl-pinfo-item="http://schema.geolink.org/personal-info-item/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:time="http://www.w3.org/2006/time#"
+     xmlns:gl-event="http://schema.geolink.org/event/"
+     xmlns:gl-credential="http://schema.geolink.org/credential/"
+     xmlns:gl-person="http://schema.geolink.org/person/"
+     xmlns:gl-org="http://schema.geolink.org/organization/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:gl-agent="http://schema.geolink.org/agent/"
+     xmlns:gl-agent-role="http://schema.geolink.org/agent-role/">
+    <owl:Ontology rdf:about="http://schema.geolink.org/person/">
+        <owl:imports rdf:resource="&gl-agent;1.0/"/>
+        <owl:imports rdf:resource="&gl-event;1.0/"/>
+        <owl:versionIRI rdf:resource="&gl-person;1.0/"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.geolink.org/person/hasBirthEvent -->
+
+    <owl:ObjectProperty rdf:about="&gl-person;hasBirthEvent">
+        <owl:inverseOf rdf:resource="&gl-person;isBirthEventOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/person/hasCredential -->
+
+    <owl:ObjectProperty rdf:about="&gl-person;hasCredential"/>
+    
+
+
+    <!-- http://schema.geolink.org/person/hasPersonalInfoItem -->
+
+    <owl:ObjectProperty rdf:about="&gl-person;hasPersonalInfoItem"/>
+    
+
+
+    <!-- http://schema.geolink.org/person/isBirthEventOf -->
+
+    <owl:ObjectProperty rdf:about="&gl-person;isBirthEventOf">
+        <rdfs:subPropertyOf rdf:resource="&gl-event;hasActor"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="&gl-person;rolifiedBirthEvent"/>
+            <rdf:Description rdf:about="&gl-event;providesAgentRole"/>
+            <rdf:Description rdf:about="&gl-person;rolifiedBornChildAgentRole"/>
+            <rdf:Description rdf:about="&gl-agent-role;isPerformedBy"/>
+            <rdf:Description rdf:about="&gl-person;rolifiedPerson"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/person/rolifiedBirthEvent -->
+
+    <owl:ObjectProperty rdf:about="&gl-person;rolifiedBirthEvent"/>
+    
+
+
+    <!-- http://schema.geolink.org/person/rolifiedBornChildAgentRole -->
+
+    <owl:ObjectProperty rdf:about="&gl-person;rolifiedBornChildAgentRole"/>
+    
+
+
+    <!-- http://schema.geolink.org/person/rolifiedPerson -->
+
+    <owl:ObjectProperty rdf:about="&gl-person;rolifiedPerson"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.geolink.org/credential/Credential -->
+
+    <owl:Class rdf:about="&gl-credential;Credential"/>
+    
+
+
+    <!-- http://schema.geolink.org/organization/Organization -->
+
+    <owl:Class rdf:about="&gl-org;Organization">
+        <rdfs:subClassOf rdf:resource="&gl-agent;Agent"/>
+        <owl:disjointWith rdf:resource="&gl-person;Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/person/BirthEvent -->
+
+    <owl:Class rdf:about="&gl-person;BirthEvent">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-person;rolifiedBirthEvent"/>
+                <owl:hasSelf rdf:datatype="&xsd;boolean">true</owl:hasSelf>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&gl-event;Event"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-event;hasEventType"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:oneOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&gl-person;birth_event"/>
+                        </owl:oneOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-event;occursAtTime"/>
+                <owl:onClass rdf:resource="&time;Instant"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-event;providesAgentRole"/>
+                <owl:onClass>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&gl-agent-role;isPerformedBy"/>
+                                <owl:someValuesFrom rdf:resource="&gl-person;Person"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&gl-agent-role;hasAgentRoleType"/>
+                                <owl:hasValue rdf:resource="&gl-person;born_child"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:onClass>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-event;occursAtPlace"/>
+                <owl:onClass rdf:resource="&gl-place;Place"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-event;hasEventType"/>
+                <owl:hasValue rdf:resource="&gl-person;birth_event"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/person/Person -->
+
+    <owl:Class rdf:about="&gl-person;Person">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-person;rolifiedPerson"/>
+                <owl:hasSelf rdf:datatype="&xsd;boolean">true</owl:hasSelf>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&gl-agent;Agent"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-person;hasCredential"/>
+                <owl:allValuesFrom rdf:resource="&gl-credential;Credential"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-person;hasPersonalInfoItem"/>
+                <owl:allValuesFrom rdf:resource="&gl-pinfo-item;PersonalInfoItem"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-person;hasBirthEvent"/>
+                <owl:allValuesFrom rdf:resource="&gl-person;BirthEvent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-agent;performsAgentRole"/>
+                <owl:onClass>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&gl-agent-role;AgentRole"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&gl-agent-role;hasAgentRoleType"/>
+                                <owl:hasValue rdf:resource="&gl-person;born_child"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:onClass>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/personal-info-item/PersonalInfoItem -->
+
+    <owl:Class rdf:about="&gl-pinfo-item;PersonalInfoItem"/>
+    
+
+
+    <!-- http://www.w3.org/2006/time#Instant -->
+
+    <owl:Class rdf:about="&time;Instant">
+        <rdfs:subClassOf rdf:resource="&time;TemporalEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.geolink.org/person/birth_event -->
+
+    <owl:NamedIndividual rdf:about="&gl-person;birth_event">
+        <rdf:type rdf:resource="&gl-event;EventType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/person/born_child -->
+
+    <owl:NamedIndividual rdf:about="&gl-person;born_child">
+        <rdf:type rdf:resource="&gl-agent-role;AgentRoleType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&gl-person;Person"/>
+        <owl:onProperty rdf:resource="&gl-person;hasBirthEvent"/>
+        <owl:someValuesFrom rdf:resource="&gl-person;BirthEvent"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&gl-person;BirthEvent"/>
+        <owl:onProperty rdf:resource="&gl-event;hasEventType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&gl-person;birth_event"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Class>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="&gl-event;providesAgentRole"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:onClass rdf:resource="&gl-person;BirthEvent"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="&gl-agent-role;AgentRole"/>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-agent-role;hasAgentRoleType"/>
+                <owl:hasValue rdf:resource="&gl-person;born_child"/>
+            </owl:Restriction>
+        </owl:intersectionOf>
+    </owl:Class>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="&gl-person;birth_event"/>
+            <rdf:Description rdf:about="&gl-person;born_child"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <owl:Restriction>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&gl-agent-role;AgentRole"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&gl-agent-role;isPerformedBy"/>
+                        <owl:someValuesFrom rdf:resource="&gl-person;Person"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <owl:onProperty rdf:resource="&gl-agent-role;hasAgentRoleType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&gl-person;birth_event"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&gl-person;Person"/>
+        <owl:onProperty rdf:resource="&gl-person;hasPersonalInfoItem"/>
+        <owl:someValuesFrom rdf:resource="&gl-pinfo-item;PersonalInfoItem"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&gl-person;Person"/>
+        <owl:onProperty rdf:resource="&gl-person;hasCredential"/>
+        <owl:someValuesFrom rdf:resource="&gl-credential;Credential"/>
+    </owl:Restriction>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&gl-agent-role;AgentRole"/>
+            <rdf:Description rdf:about="&gl-agent-role;AgentRoleType"/>
+            <rdf:Description rdf:about="&gl-agent;Agent"/>
+            <rdf:Description rdf:about="&gl-credential;Credential"/>
+            <rdf:Description rdf:about="&gl-event;Event"/>
+            <rdf:Description rdf:about="&gl-event;EventType"/>
+            <rdf:Description rdf:about="&gl-pinfo-item;PersonalInfoItem"/>
+            <rdf:Description rdf:about="&gl-place;Place"/>
+            <rdf:Description rdf:about="&time;TemporalEntity"/>
+        </owl:members>
+    </rdf:Description>
+    <owl:Class>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-person;rolifiedBornChildAgentRole"/>
+                <owl:hasSelf rdf:datatype="&xsd;boolean">true</owl:hasSelf>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="&gl-agent-role;AgentRole"/>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gl-agent-role;hasAgentRoleType"/>
+                <owl:hasValue rdf:resource="&gl-person;born_child"/>
+            </owl:Restriction>
+        </owl:intersectionOf>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net -->
+

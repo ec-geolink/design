@@ -1,0 +1,212 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://schema.geolink.org/quantity/"
+     xml:base="http://schema.geolink.org/quantity/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://schema.geolink.org/quantity/">
+        <owl:versionIRI rdf:resource="http://schema.geolink.org/quantity/1.0/"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.geolink.org/quantity/hasQuantityKind -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/quantity/hasQuantityKind"/>
+    
+
+
+    <!-- http://schema.geolink.org/quantity/hasQuantityUnit -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/quantity/hasQuantityUnit"/>
+    
+
+
+    <!-- http://schema.geolink.org/quantity/hasQuantityValue -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/quantity/hasQuantityValue"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.geolink.org/quantity/hasQuantityValueNumeric -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/quantity/hasQuantityValueNumeric"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.geolink.org/quantity/Quantity -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/quantity/Quantity">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/quantity/hasQuantityKind"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/quantity/QuantityKind"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/quantity/hasQuantityKind"/>
+                <owl:onClass rdf:resource="http://schema.geolink.org/quantity/QuantityKind"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/quantity/hasQuantityValue"/>
+                <owl:onClass rdf:resource="http://schema.geolink.org/quantity/QuantityValue"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/quantity/hasQuantityValue"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/quantity/QuantityValue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/quantity/QuantityKind -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/quantity/QuantityKind">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/quantity/hasQuantityUnit"/>
+                <owl:someValuesFrom rdf:resource="http://schema.geolink.org/quantity/QuantityUnit"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/quantity/hasQuantityUnit"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/quantity/QuantityUnit"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/quantity/QuantityUnit -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/quantity/QuantityUnit"/>
+    
+
+
+    <!-- http://schema.geolink.org/quantity/QuantityValue -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/quantity/QuantityValue">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/quantity/hasQuantityUnit"/>
+                <owl:onClass rdf:resource="http://schema.geolink.org/quantity/QuantityUnit"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/quantity/hasQuantityValueNumeric"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;double"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/quantity/hasQuantityUnit"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/quantity/QuantityUnit"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/quantity/hasQuantityValueNumeric"/>
+                <owl:allValuesFrom rdf:resource="&xsd;double"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:Restriction>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/quantity/QuantityKind"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/quantity/QuantityValue"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/quantity/hasQuantityUnit"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/quantity/QuantityUnit"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/quantity/Quantity"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/quantity/hasQuantityValue"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/quantity/QuantityValue"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/quantity/Quantity"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/quantity/hasQuantityKind"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/quantity/QuantityKind"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/quantity/QuantityValue"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/quantity/hasQuantityValueNumeric"/>
+        <owl:someValuesFrom rdf:resource="&xsd;double"/>
+    </owl:Restriction>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net -->
+
