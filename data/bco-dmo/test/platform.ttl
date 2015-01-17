@@ -2,24 +2,24 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix time: <http://www.w3.org/2006/time#> .
-@prefix olcruise: <http://schema.oceanlink.org/cruise#> .
-@prefix oltrajectory: <http://schema.oceanlink.org/trajectory#> .
-@prefix olvessel: <http://schema.oceanlink.org/vessel#> .
-@prefix olorg: <http://schema.oceanlink.org/organization#> .
-@prefix olinfo: <http://schema.oceanlink.org/information-object#> .
-@prefix olprogram: <http://schema.oceanlink.org/program#> .
-@prefix olaward: <http://schema.oceanlink.org/funding-award#> .
-@prefix olagent: <http://schema.oceanlink.org/agent#> .
-@prefix olagentaffiliation: <http://schema.oceanlink.org/agent-affiliation#> .
-@prefix olrole: <http://schema.oceanlink.org/agent-role#> .
-@prefix olperson: <http://schema.oceanlink.org/person#> .
-@prefix olpersoninfo: <http://schema.oceanlink.org/personal-info-item#> .
-@prefix olpersonname: <http://schema.oceanlink.org/person-name#> .
-@prefix olplatform: <http://schema.oceanlink.org/platform#> .
-@prefix olplace: <http://schema.oceanlink.org/place#> .
-@prefix olevent: <http://schema.oceanlink.org/event#> .
-@prefix olgeometry: <http://schema.oceanlink.org/geometry#> .
-@prefix oldataset: <http://schema.oceanlink.org/repository-object#> .
+@prefix olcruise: <http://schema.geolink.org/cruise#> .
+@prefix oltrajectory: <http://schema.geolink.org/trajectory#> .
+@prefix olvessel: <http://schema.geolink.org/vessel#> .
+@prefix olorg: <http://schema.geolink.org/organization#> .
+@prefix olinfo: <http://schema.geolink.org/information-object#> .
+@prefix olprogram: <http://schema.geolink.org/program#> .
+@prefix olaward: <http://schema.geolink.org/funding-award#> .
+@prefix olagent: <http://schema.geolink.org/agent#> .
+@prefix olagentaffiliation: <http://schema.geolink.org/agent-affiliation#> .
+@prefix olrole: <http://schema.geolink.org/agent-role#> .
+@prefix olperson: <http://schema.geolink.org/person#> .
+@prefix olpersoninfo: <http://schema.geolink.org/personal-info-item#> .
+@prefix olpersonname: <http://schema.geolink.org/person-name#> .
+@prefix olplatform: <http://schema.geolink.org/platform#> .
+@prefix olplace: <http://schema.geolink.org/place#> .
+@prefix olevent: <http://schema.geolink.org/event#> .
+@prefix olgeometry: <http://schema.geolink.org/geometry#> .
+@prefix oldataset: <http://schema.geolink.org/repository-object#> .
 
 <http://lod.bco-dmo.org/id/platform/53986> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/53986#info> ;
@@ -43,7 +43,7 @@
 <http://lod.bco-dmo.org/id/platform/53987> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/53987#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/53987#type> ;
-                                           olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                           olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                            olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/266> .
 
 <http://lod.bco-dmo.org/id/platform/53987#type> rdf:type olplatform:SeaVoXL06 ;
@@ -67,7 +67,7 @@
 <http://lod.bco-dmo.org/id/platform/53987#owner> rdf:type olrole:AgentRole ;
                                                  olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/53987> ;
                                                  olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/266> ;
-                                                 olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                 olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/53988> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/53988#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/53988#type> .
@@ -90,7 +90,7 @@
 <http://lod.bco-dmo.org/id/platform/53989> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/53989#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/53989#type> ;
-                                           olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                           olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                            olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/268> .
 
 <http://lod.bco-dmo.org/id/platform/53989#type> rdf:type olplatform:SeaVoXL06 ;
@@ -112,7 +112,7 @@
 <http://lod.bco-dmo.org/id/platform/53989#owner> rdf:type olrole:AgentRole ;
                                                  olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/53989> ;
                                                  olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/268> ;
-                                                 olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                 olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/53990> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/53990#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/53990#type> .
@@ -154,7 +154,7 @@
 <http://lod.bco-dmo.org/id/platform/53992> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/53992#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/53992#type> ;
-                                           olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                           olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                            olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/1> .
 
 <http://lod.bco-dmo.org/id/platform/53992#type> rdf:type olplatform:SeaVoXL06 ;
@@ -178,11 +178,11 @@
 <http://lod.bco-dmo.org/id/platform/53992#owner> rdf:type olrole:AgentRole ;
                                                  olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/53992> ;
                                                  olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/1> ;
-                                                 olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                 olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/53993> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/53993#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/53993#type> ;
-                                           olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                           olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                            olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/4> .
 
 <http://lod.bco-dmo.org/id/platform/53993#type> rdf:type olplatform:SeaVoXL06 ;
@@ -205,11 +205,11 @@
 <http://lod.bco-dmo.org/id/platform/53993#owner> rdf:type olrole:AgentRole ;
                                                  olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/53993> ;
                                                  olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/4> ;
-                                                 olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                 olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/53994> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/53994#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/53994#type> ;
-                                           olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                           olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                            olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/2> .
 
 <http://lod.bco-dmo.org/id/platform/53994#type> rdf:type olplatform:SeaVoXL06 ;
@@ -233,7 +233,7 @@
 <http://lod.bco-dmo.org/id/platform/53994#owner> rdf:type olrole:AgentRole ;
                                                  olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/53994> ;
                                                  olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/2> ;
-                                                 olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                 olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/53995> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/53995#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/53995#type> .
@@ -257,7 +257,7 @@
 <http://lod.bco-dmo.org/id/platform/53997> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/53997#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/53997#type> ;
-                                           olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                           olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                            olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/2> .
 
 <http://lod.bco-dmo.org/id/platform/53997#type> rdf:type olplatform:SeaVoXL06 ;
@@ -281,7 +281,7 @@
 <http://lod.bco-dmo.org/id/platform/53997#owner> rdf:type olrole:AgentRole ;
                                                  olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/53997> ;
                                                  olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/2> ;
-                                                 olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                 olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/53998> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/53998#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/53998#type> .
@@ -353,7 +353,7 @@
 <http://lod.bco-dmo.org/id/platform/54003> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54003#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54003#type> ;
-                                           olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                           olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                            olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/2> .
 
 <http://lod.bco-dmo.org/id/platform/54003#type> rdf:type olplatform:SeaVoXL06 ;
@@ -377,11 +377,11 @@
 <http://lod.bco-dmo.org/id/platform/54003#owner> rdf:type olrole:AgentRole ;
                                                  olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/54003> ;
                                                  olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/2> ;
-                                                 olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                 olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/54004> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54004#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54004#type> ;
-                                           olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                           olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                            olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/124> .
 
 <http://lod.bco-dmo.org/id/platform/54004#type> rdf:type olplatform:SeaVoXL06 ;
@@ -402,7 +402,7 @@
 <http://lod.bco-dmo.org/id/platform/54004#owner> rdf:type olrole:AgentRole ;
                                                  olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/54004> ;
                                                  olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/124> ;
-                                                 olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                 olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/54005> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54005#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54005#type> .
@@ -445,7 +445,7 @@
 <http://lod.bco-dmo.org/id/platform/54008> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54008#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54008#type> ;
-                                           olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                           olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                            olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/13> .
 
 <http://lod.bco-dmo.org/id/platform/54008#type> rdf:type olplatform:SeaVoXL06 ;
@@ -469,11 +469,11 @@
 <http://lod.bco-dmo.org/id/platform/54008#owner> rdf:type olrole:AgentRole ;
                                                  olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/54008> ;
                                                  olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/13> ;
-                                                 olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                 olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/54009> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54009#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54009#type> ;
-                                           olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                           olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                            olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/62> .
 
 <http://lod.bco-dmo.org/id/platform/54009#type> rdf:type olplatform:SeaVoXL06 ;
@@ -497,7 +497,7 @@
 <http://lod.bco-dmo.org/id/platform/54009#owner> rdf:type olrole:AgentRole ;
                                                  olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/54009> ;
                                                  olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/62> ;
-                                                 olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                 olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/54010> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54010#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54010#type> .
@@ -520,7 +520,7 @@
 <http://lod.bco-dmo.org/id/platform/54011> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54011#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54011#type> ;
-                                           olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                           olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                            olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/26> .
 
 <http://lod.bco-dmo.org/id/platform/54011#type> rdf:type olplatform:SeaVoXL06 ;
@@ -544,7 +544,7 @@
 <http://lod.bco-dmo.org/id/platform/54011#owner> rdf:type olrole:AgentRole ;
                                                  olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/54011> ;
                                                  olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/26> ;
-                                                 olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                 olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/54012> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54012#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54012#type> .
@@ -565,7 +565,7 @@
 <http://lod.bco-dmo.org/id/platform/54013> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54013#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54013#type> ;
-                                           olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                           olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                            olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/26> .
 
 <http://lod.bco-dmo.org/id/platform/54013#type> rdf:type olplatform:SeaVoXL06 ;
@@ -589,7 +589,7 @@
 <http://lod.bco-dmo.org/id/platform/54013#owner> rdf:type olrole:AgentRole ;
                                                  olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/54013> ;
                                                  olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/26> ;
-                                                 olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                 olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/54014> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54014#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54014#type> .
@@ -633,7 +633,7 @@
 <http://lod.bco-dmo.org/id/platform/54017> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54017#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54017#type> ;
-                                           olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                           olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                            olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/27> .
 
 <http://lod.bco-dmo.org/id/platform/54017#type> rdf:type olplatform:SeaVoXL06 ;
@@ -657,11 +657,11 @@
 <http://lod.bco-dmo.org/id/platform/54017#owner> rdf:type olrole:AgentRole ;
                                                  olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/54017> ;
                                                  olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/27> ;
-                                                 olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                 olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/54018> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54018#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54018#type> ;
-                                           olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                           olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                            olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/9> .
 
 <http://lod.bco-dmo.org/id/platform/54018#type> rdf:type olplatform:SeaVoXL06 ;
@@ -685,11 +685,11 @@
 <http://lod.bco-dmo.org/id/platform/54018#owner> rdf:type olrole:AgentRole ;
                                                  olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/54018> ;
                                                  olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/9> ;
-                                                 olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                 olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/54020> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54020#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54020#type> ;
-                                           olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                           olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                            olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/267> .
 
 <http://lod.bco-dmo.org/id/platform/54020#type> rdf:type olplatform:SeaVoXL06 ;
@@ -713,7 +713,7 @@
 <http://lod.bco-dmo.org/id/platform/54020#owner> rdf:type olrole:AgentRole ;
                                                  olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/54020> ;
                                                  olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/267> ;
-                                                 olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                 olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/54021> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54021#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54021#type> .
@@ -755,7 +755,7 @@
 <http://lod.bco-dmo.org/id/platform/54023> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54023#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54023#type> ;
-                                           olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                           olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                            olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/104> .
 
 <http://lod.bco-dmo.org/id/platform/54023#type> rdf:type olplatform:SeaVoXL06 ;
@@ -779,7 +779,7 @@
 <http://lod.bco-dmo.org/id/platform/54023#owner> rdf:type olrole:AgentRole ;
                                                  olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/54023> ;
                                                  olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/104> ;
-                                                 olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                 olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/54024> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54024#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54024#type> .
@@ -840,7 +840,7 @@
 <http://lod.bco-dmo.org/id/platform/54040> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54040#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54040#type> ;
-                                           olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                           olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                            olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/2> .
 
 <http://lod.bco-dmo.org/id/platform/54040#type> rdf:type olplatform:SeaVoXL06 ;
@@ -863,7 +863,7 @@
 <http://lod.bco-dmo.org/id/platform/54040#owner> rdf:type olrole:AgentRole ;
                                                  olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/54040> ;
                                                  olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/2> ;
-                                                 olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                 olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/54041> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54041#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54041#type> .
@@ -992,7 +992,7 @@
 <http://lod.bco-dmo.org/id/platform/54057> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54057#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54057#type> ;
-                                           olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                           olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                            olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/26> .
 
 <http://lod.bco-dmo.org/id/platform/54057#type> rdf:type olplatform:SeaVoXL06 ;
@@ -1016,7 +1016,7 @@
 <http://lod.bco-dmo.org/id/platform/54057#owner> rdf:type olrole:AgentRole ;
                                                  olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/54057> ;
                                                  olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/26> ;
-                                                 olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                 olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/54058> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54058#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54058#type> .
@@ -1125,7 +1125,7 @@
 <http://lod.bco-dmo.org/id/platform/54064> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54064#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54064#type> ;
-                                           olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                           olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                            olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/70> .
 
 <http://lod.bco-dmo.org/id/platform/54064#type> rdf:type olplatform:SeaVoXL06 ;
@@ -1147,7 +1147,7 @@
 <http://lod.bco-dmo.org/id/platform/54064#owner> rdf:type olrole:AgentRole ;
                                                  olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/54064> ;
                                                  olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/70> ;
-                                                 olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                 olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/54065> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54065#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54065#type> .
@@ -1210,7 +1210,7 @@
 <http://lod.bco-dmo.org/id/platform/54070> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54070#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54070#type> ;
-                                           olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                           olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                            olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/132> .
 
 <http://lod.bco-dmo.org/id/platform/54070#type> rdf:type olplatform:SeaVoXL06 ;
@@ -1232,7 +1232,7 @@
 <http://lod.bco-dmo.org/id/platform/54070#owner> rdf:type olrole:AgentRole ;
                                                  olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/54070> ;
                                                  olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/132> ;
-                                                 olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                 olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/54071> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54071#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54071#type> .
@@ -1255,7 +1255,7 @@
 <http://lod.bco-dmo.org/id/platform/54072> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54072#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54072#type> ;
-                                           olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                           olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                            olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/68> .
 
 <http://lod.bco-dmo.org/id/platform/54072#type> rdf:type olplatform:SeaVoXL06 ;
@@ -1278,7 +1278,7 @@
 <http://lod.bco-dmo.org/id/platform/54072#owner> rdf:type olrole:AgentRole ;
                                                  olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/54072> ;
                                                  olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/68> ;
-                                                 olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                 olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/54073> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54073#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54073#type> .
@@ -1433,7 +1433,7 @@
 <http://lod.bco-dmo.org/id/platform/54081> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54081#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54081#type> ;
-                                           olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                           olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                            olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/115> .
 
 <http://lod.bco-dmo.org/id/platform/54081#type> rdf:type olplatform:SeaVoXL06 ;
@@ -1455,7 +1455,7 @@
 <http://lod.bco-dmo.org/id/platform/54081#owner> rdf:type olrole:AgentRole ;
                                                  olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/54081> ;
                                                  olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/115> ;
-                                                 olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                 olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/54082> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54082#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54082#type> .
@@ -1727,7 +1727,7 @@
 <http://lod.bco-dmo.org/id/platform/54114> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54114#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54114#type> ;
-                                           olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                           olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                            olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/77> .
 
 <http://lod.bco-dmo.org/id/platform/54114#type> rdf:type olplatform:SeaVoXL06 ;
@@ -1751,11 +1751,11 @@
 <http://lod.bco-dmo.org/id/platform/54114#owner> rdf:type olrole:AgentRole ;
                                                  olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/54114> ;
                                                  olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/77> ;
-                                                 olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                 olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/54116> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54116#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54116#type> ;
-                                           olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                           olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                            olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/79> .
 
 <http://lod.bco-dmo.org/id/platform/54116#type> rdf:type olplatform:SeaVoXL06 ;
@@ -1778,7 +1778,7 @@
 <http://lod.bco-dmo.org/id/platform/54116#owner> rdf:type olrole:AgentRole ;
                                                  olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/54116> ;
                                                  olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/79> ;
-                                                 olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                 olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/54119> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54119#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54119#type> .
@@ -1812,7 +1812,7 @@
 <http://lod.bco-dmo.org/id/platform/54122> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54122#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54122#type> ;
-                                           olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                           olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                            olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/145> .
 
 <http://lod.bco-dmo.org/id/platform/54122#type> rdf:type olplatform:SeaVoXL06 ;
@@ -1836,11 +1836,11 @@
 <http://lod.bco-dmo.org/id/platform/54122#owner> rdf:type olrole:AgentRole ;
                                                  olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/54122> ;
                                                  olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/145> ;
-                                                 olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                 olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/54124> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54124#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54124#type> ;
-                                           olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                           olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                            olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/33> .
 
 <http://lod.bco-dmo.org/id/platform/54124#type> rdf:type olplatform:SeaVoXL06 ;
@@ -1864,7 +1864,7 @@
 <http://lod.bco-dmo.org/id/platform/54124#owner> rdf:type olrole:AgentRole ;
                                                  olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/54124> ;
                                                  olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/33> ;
-                                                 olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                 olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/54125> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54125#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54125#type> .
@@ -1878,7 +1878,7 @@
 <http://lod.bco-dmo.org/id/platform/54128> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54128#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54128#type> ;
-                                           olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                           olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                            olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/36> .
 
 <http://lod.bco-dmo.org/id/platform/54128#type> rdf:type olplatform:SeaVoXL06 ;
@@ -1902,7 +1902,7 @@
 <http://lod.bco-dmo.org/id/platform/54128#owner> rdf:type olrole:AgentRole ;
                                                  olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/54128> ;
                                                  olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/36> ;
-                                                 olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                 olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/54129> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54129#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54129#type> .
@@ -2200,7 +2200,7 @@
 <http://lod.bco-dmo.org/id/platform/54151> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54151#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54151#type> ;
-                                           olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                           olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                            olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/70> .
 
 <http://lod.bco-dmo.org/id/platform/54151#type> rdf:type olplatform:SeaVoXL06 ;
@@ -2224,7 +2224,7 @@
 <http://lod.bco-dmo.org/id/platform/54151#owner> rdf:type olrole:AgentRole ;
                                                  olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/54151> ;
                                                  olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/70> ;
-                                                 olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                 olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/54152> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54152#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54152#type> .
@@ -2477,7 +2477,7 @@
 <http://lod.bco-dmo.org/id/platform/54177> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54177#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54177#type> ;
-                                           olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                           olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                            olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/85> .
 
 <http://lod.bco-dmo.org/id/platform/54177#type> rdf:type olplatform:SeaVoXL06 ;
@@ -2491,7 +2491,7 @@
 <http://lod.bco-dmo.org/id/platform/54177#owner> rdf:type olrole:AgentRole ;
                                                  olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/54177> ;
                                                  olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/85> ;
-                                                 olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                 olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/54178> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54178#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54178#type> .
@@ -2505,7 +2505,7 @@
 <http://lod.bco-dmo.org/id/platform/54179> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54179#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54179#type> ;
-                                           olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                           olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                            olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/265> .
 
 <http://lod.bco-dmo.org/id/platform/54179#type> rdf:type olplatform:SeaVoXL06 ;
@@ -2529,7 +2529,7 @@
 <http://lod.bco-dmo.org/id/platform/54179#owner> rdf:type olrole:AgentRole ;
                                                  olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/54179> ;
                                                  olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/265> ;
-                                                 olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                 olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/54180> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54180#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54180#type> .
@@ -2543,7 +2543,7 @@
 <http://lod.bco-dmo.org/id/platform/54181> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54181#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54181#type> ;
-                                           olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                           olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                            olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/2> .
 
 <http://lod.bco-dmo.org/id/platform/54181#type> rdf:type olplatform:SeaVoXL06 ;
@@ -2567,11 +2567,11 @@
 <http://lod.bco-dmo.org/id/platform/54181#owner> rdf:type olrole:AgentRole ;
                                                  olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/54181> ;
                                                  olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/2> ;
-                                                 olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                 olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/54182> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54182#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54182#type> ;
-                                           olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                           olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                            olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/246> .
 
 <http://lod.bco-dmo.org/id/platform/54182#type> rdf:type olplatform:SeaVoXL06 ;
@@ -2595,11 +2595,11 @@
 <http://lod.bco-dmo.org/id/platform/54182#owner> rdf:type olrole:AgentRole ;
                                                  olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/54182> ;
                                                  olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/246> ;
-                                                 olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                 olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/54185> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54185#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54185#type> ;
-                                           olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                           olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                            olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/27> .
 
 <http://lod.bco-dmo.org/id/platform/54185#type> rdf:type olplatform:SeaVoXL06 ;
@@ -2623,11 +2623,11 @@
 <http://lod.bco-dmo.org/id/platform/54185#owner> rdf:type olrole:AgentRole ;
                                                  olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/54185> ;
                                                  olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/27> ;
-                                                 olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                 olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/54186> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54186#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54186#type> ;
-                                           olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                           olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                            olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/62> .
 
 <http://lod.bco-dmo.org/id/platform/54186#type> rdf:type olplatform:SeaVoXL06 ;
@@ -2651,11 +2651,11 @@
 <http://lod.bco-dmo.org/id/platform/54186#owner> rdf:type olrole:AgentRole ;
                                                  olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/54186> ;
                                                  olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/62> ;
-                                                 olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                 olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/54187> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54187#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54187#type> ;
-                                           olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                           olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                            olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/263> .
 
 <http://lod.bco-dmo.org/id/platform/54187#type> rdf:type olplatform:SeaVoXL06 ;
@@ -2679,11 +2679,11 @@
 <http://lod.bco-dmo.org/id/platform/54187#owner> rdf:type olrole:AgentRole ;
                                                  olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/54187> ;
                                                  olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/263> ;
-                                                 olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                 olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/54189> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54189#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54189#type> ;
-                                           olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                           olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                            olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/271> .
 
 <http://lod.bco-dmo.org/id/platform/54189#type> rdf:type olplatform:SeaVoXL06 ;
@@ -2707,7 +2707,7 @@
 <http://lod.bco-dmo.org/id/platform/54189#owner> rdf:type olrole:AgentRole ;
                                                  olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/54189> ;
                                                  olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/271> ;
-                                                 olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                 olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/54193> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54193#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54193#type> .
@@ -2721,7 +2721,7 @@
 <http://lod.bco-dmo.org/id/platform/54195> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54195#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54195#type> ;
-                                           olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                           olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                            olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/275> .
 
 <http://lod.bco-dmo.org/id/platform/54195#type> rdf:type olplatform:SeaVoXL06 ;
@@ -2744,11 +2744,11 @@
 <http://lod.bco-dmo.org/id/platform/54195#owner> rdf:type olrole:AgentRole ;
                                                  olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/54195> ;
                                                  olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/275> ;
-                                                 olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                 olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/54220> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54220#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54220#type> ;
-                                           olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                           olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                            olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/256> .
 
 <http://lod.bco-dmo.org/id/platform/54220#type> rdf:type olplatform:SeaVoXL06 ;
@@ -2762,11 +2762,11 @@
 <http://lod.bco-dmo.org/id/platform/54220#owner> rdf:type olrole:AgentRole ;
                                                  olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/54220> ;
                                                  olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/256> ;
-                                                 olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                 olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/54221> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54221#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54221#type> ;
-                                           olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                           olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                            olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/85> .
 
 <http://lod.bco-dmo.org/id/platform/54221#type> rdf:type olplatform:SeaVoXL06 ;
@@ -2780,11 +2780,11 @@
 <http://lod.bco-dmo.org/id/platform/54221#owner> rdf:type olrole:AgentRole ;
                                                  olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/54221> ;
                                                  olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/85> ;
-                                                 olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                 olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/54227> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54227#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54227#type> ;
-                                           olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                           olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                            olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/161> .
 
 <http://lod.bco-dmo.org/id/platform/54227#type> rdf:type olplatform:SeaVoXL06 ;
@@ -2799,11 +2799,11 @@
 <http://lod.bco-dmo.org/id/platform/54227#owner> rdf:type olrole:AgentRole ;
                                                  olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/54227> ;
                                                  olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/161> ;
-                                                 olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                 olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/54231> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54231#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54231#type> ;
-                                           olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                           olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                            olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/126> .
 
 <http://lod.bco-dmo.org/id/platform/54231#type> rdf:type olplatform:SeaVoXL06 ;
@@ -2827,11 +2827,11 @@
 <http://lod.bco-dmo.org/id/platform/54231#owner> rdf:type olrole:AgentRole ;
                                                  olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/54231> ;
                                                  olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/126> ;
-                                                 olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                 olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/54232> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54232#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54232#type> ;
-                                           olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                           olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                            olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/74> .
 
 <http://lod.bco-dmo.org/id/platform/54232#type> rdf:type olplatform:SeaVoXL06 ;
@@ -2853,11 +2853,11 @@
 <http://lod.bco-dmo.org/id/platform/54232#owner> rdf:type olrole:AgentRole ;
                                                  olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/54232> ;
                                                  olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/74> ;
-                                                 olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                 olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/54242> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54242#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54242#type> ;
-                                           olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                           olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                            olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/242> .
 
 <http://lod.bco-dmo.org/id/platform/54242#type> rdf:type olplatform:SeaVoXL06 ;
@@ -2871,7 +2871,7 @@
 <http://lod.bco-dmo.org/id/platform/54242#owner> rdf:type olrole:AgentRole ;
                                                  olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/54242> ;
                                                  olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/242> ;
-                                                 olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                 olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/54253> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54253#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54253#type> .
@@ -2895,7 +2895,7 @@
 <http://lod.bco-dmo.org/id/platform/54254> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54254#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54254#type> ;
-                                           olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                           olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                            olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/301> .
 
 <http://lod.bco-dmo.org/id/platform/54254#type> rdf:type olplatform:SeaVoXL06 ;
@@ -2909,11 +2909,11 @@
 <http://lod.bco-dmo.org/id/platform/54254#owner> rdf:type olrole:AgentRole ;
                                                  olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/54254> ;
                                                  olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/301> ;
-                                                 olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                 olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/54256> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54256#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54256#type> ;
-                                           olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                           olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                            olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/324> .
 
 <http://lod.bco-dmo.org/id/platform/54256#type> rdf:type olplatform:SeaVoXL06 ;
@@ -2928,11 +2928,11 @@
 <http://lod.bco-dmo.org/id/platform/54256#owner> rdf:type olrole:AgentRole ;
                                                  olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/54256> ;
                                                  olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/324> ;
-                                                 olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                 olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/54260> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54260#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54260#type> ;
-                                           olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                           olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                            olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/332> .
 
 <http://lod.bco-dmo.org/id/platform/54260#type> rdf:type olplatform:SeaVoXL06 ;
@@ -2955,11 +2955,11 @@
 <http://lod.bco-dmo.org/id/platform/54260#owner> rdf:type olrole:AgentRole ;
                                                  olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/54260> ;
                                                  olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/332> ;
-                                                 olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                 olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/54261> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54261#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54261#type> ;
-                                           olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                           olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                            olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/333> .
 
 <http://lod.bco-dmo.org/id/platform/54261#type> rdf:type olplatform:SeaVoXL06 ;
@@ -2982,11 +2982,11 @@
 <http://lod.bco-dmo.org/id/platform/54261#owner> rdf:type olrole:AgentRole ;
                                                  olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/54261> ;
                                                  olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/333> ;
-                                                 olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                 olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/54271> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54271#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54271#type> ;
-                                           olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                           olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                            olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/301> .
 
 <http://lod.bco-dmo.org/id/platform/54271#type> rdf:type olplatform:SeaVoXL06 ;
@@ -2999,11 +2999,11 @@
 <http://lod.bco-dmo.org/id/platform/54271#owner> rdf:type olrole:AgentRole ;
                                                  olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/54271> ;
                                                  olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/301> ;
-                                                 olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                 olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/54278> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54278#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54278#type> ;
-                                           olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                           olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                            olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/343> .
 
 <http://lod.bco-dmo.org/id/platform/54278#type> rdf:type olplatform:SeaVoXL06 ;
@@ -3017,11 +3017,11 @@
 <http://lod.bco-dmo.org/id/platform/54278#owner> rdf:type olrole:AgentRole ;
                                                  olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/54278> ;
                                                  olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/343> ;
-                                                 olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                 olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/54280> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54280#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54280#type> ;
-                                           olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                           olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                            olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/268> .
 
 <http://lod.bco-dmo.org/id/platform/54280#type> rdf:type olplatform:SeaVoXL06 ;
@@ -3035,11 +3035,11 @@
 <http://lod.bco-dmo.org/id/platform/54280#owner> rdf:type olrole:AgentRole ;
                                                  olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/54280> ;
                                                  olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/268> ;
-                                                 olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                 olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/54281> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54281#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54281#type> ;
-                                           olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                           olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                            olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/343> .
 
 <http://lod.bco-dmo.org/id/platform/54281#type> rdf:type olplatform:SeaVoXL06 ;
@@ -3053,11 +3053,11 @@
 <http://lod.bco-dmo.org/id/platform/54281#owner> rdf:type olrole:AgentRole ;
                                                  olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/54281> ;
                                                  olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/343> ;
-                                                 olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                 olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/54283> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54283#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54283#type> ;
-                                           olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                           olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                            olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/346> .
 
 <http://lod.bco-dmo.org/id/platform/54283#type> rdf:type olplatform:SeaVoXL06 ;
@@ -3080,11 +3080,11 @@
 <http://lod.bco-dmo.org/id/platform/54283#owner> rdf:type olrole:AgentRole ;
                                                  olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/54283> ;
                                                  olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/346> ;
-                                                 olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                 olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/54285> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54285#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54285#type> ;
-                                           olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                           olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                            olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/190> .
 
 <http://lod.bco-dmo.org/id/platform/54285#type> rdf:type olplatform:SeaVoXL06 ;
@@ -3097,11 +3097,11 @@
 <http://lod.bco-dmo.org/id/platform/54285#owner> rdf:type olrole:AgentRole ;
                                                  olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/54285> ;
                                                  olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/190> ;
-                                                 olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                 olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/54287> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54287#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54287#type> ;
-                                           olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                           olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                            olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/138> .
 
 <http://lod.bco-dmo.org/id/platform/54287#type> rdf:type olplatform:SeaVoXL06 ;
@@ -3124,11 +3124,11 @@
 <http://lod.bco-dmo.org/id/platform/54287#owner> rdf:type olrole:AgentRole ;
                                                  olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/54287> ;
                                                  olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/138> ;
-                                                 olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                 olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/54288> rdf:type olvessel:Vessel ;
                                            olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/54288#info> ;
                                            olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/54288#type> ;
-                                           olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                           olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                            olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/349> .
 
 <http://lod.bco-dmo.org/id/platform/54288#type> rdf:type olplatform:SeaVoXL06 ;
@@ -3142,7 +3142,7 @@
 <http://lod.bco-dmo.org/id/platform/54288#owner> rdf:type olrole:AgentRole ;
                                                  olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/54288> ;
                                                  olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/349> ;
-                                                 olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                 olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/472154> rdf:type olvessel:Vessel ;
                                             olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/472154#info> ;
                                             olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/472154#type> .
@@ -3156,7 +3156,7 @@
 <http://lod.bco-dmo.org/id/platform/472156> rdf:type olvessel:Vessel ;
                                             olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/472156#info> ;
                                             olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/472156#type> ;
-                                            olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                            olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                             olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/9> .
 
 <http://lod.bco-dmo.org/id/platform/472156#type> rdf:type olplatform:SeaVoXL06 ;
@@ -3170,11 +3170,11 @@
 <http://lod.bco-dmo.org/id/platform/472156#owner> rdf:type olrole:AgentRole ;
                                                   olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/472156> ;
                                                   olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/9> ;
-                                                  olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                  olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/472192> rdf:type olvessel:Vessel ;
                                             olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/472192#info> ;
                                             olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/472192#type> ;
-                                            olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                            olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                             olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/472191> .
 
 <http://lod.bco-dmo.org/id/platform/472192#type> rdf:type olplatform:SeaVoXL06 ;
@@ -3188,11 +3188,11 @@
 <http://lod.bco-dmo.org/id/platform/472192#owner> rdf:type olrole:AgentRole ;
                                                   olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/472192> ;
                                                   olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/472191> ;
-                                                  olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                  olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/474260> rdf:type olvessel:Vessel ;
                                             olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/474260#info> ;
                                             olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/474260#type> ;
-                                            olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                            olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                             olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/118> .
 
 <http://lod.bco-dmo.org/id/platform/474260#type> rdf:type olplatform:SeaVoXL06 ;
@@ -3205,11 +3205,11 @@
 <http://lod.bco-dmo.org/id/platform/474260#owner> rdf:type olrole:AgentRole ;
                                                   olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/474260> ;
                                                   olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/118> ;
-                                                  olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                  olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/489111> rdf:type olvessel:Vessel ;
                                             olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/489111#info> ;
                                             olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/489111#type> ;
-                                            olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                            olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                             olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/489110> .
 
 <http://lod.bco-dmo.org/id/platform/489111#type> rdf:type olplatform:SeaVoXL06 ;
@@ -3222,11 +3222,11 @@
 <http://lod.bco-dmo.org/id/platform/489111#owner> rdf:type olrole:AgentRole ;
                                                   olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/489111> ;
                                                   olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/489110> ;
-                                                  olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                  olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/489469> rdf:type olvessel:Vessel ;
                                             olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/489469#info> ;
                                             olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/489469#type> ;
-                                            olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                            olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                             olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/489465> .
 
 <http://lod.bco-dmo.org/id/platform/489469#type> rdf:type olplatform:SeaVoXL06 ;
@@ -3249,11 +3249,11 @@
 <http://lod.bco-dmo.org/id/platform/489469#owner> rdf:type olrole:AgentRole ;
                                                   olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/489469> ;
                                                   olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/489465> ;
-                                                  olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                  olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/505592> rdf:type olvessel:Vessel ;
                                             olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/505592#info> ;
                                             olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/505592#type> ;
-                                            olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                            olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                             olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/81> .
 
 <http://lod.bco-dmo.org/id/platform/505592#type> rdf:type olplatform:SeaVoXL06 ;
@@ -3267,7 +3267,7 @@
 <http://lod.bco-dmo.org/id/platform/505592#owner> rdf:type olrole:AgentRole ;
                                                   olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/505592> ;
                                                   olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/81> ;
-                                                  olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                  olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/514216> rdf:type olvessel:Vessel ;
                                             olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/514216#info> ;
                                             olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/514216#type> .
@@ -3282,7 +3282,7 @@
 <http://lod.bco-dmo.org/id/platform/516246> rdf:type olvessel:Vessel ;
                                             olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/516246#info> ;
                                             olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/516246#type> ;
-                                            olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                            olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                             olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/516245> .
 
 <http://lod.bco-dmo.org/id/platform/516246#type> rdf:type olplatform:SeaVoXL06 ;
@@ -3296,11 +3296,11 @@
 <http://lod.bco-dmo.org/id/platform/516246#owner> rdf:type olrole:AgentRole ;
                                                   olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/516246> ;
                                                   olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/516245> ;
-                                                  olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                  olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/516247> rdf:type olvessel:Vessel ;
                                             olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/516247#info> ;
                                             olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/516247#type> ;
-                                            olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                            olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                             olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/516245> .
 
 <http://lod.bco-dmo.org/id/platform/516247#type> rdf:type olplatform:SeaVoXL06 ;
@@ -3313,11 +3313,11 @@
 <http://lod.bco-dmo.org/id/platform/516247#owner> rdf:type olrole:AgentRole ;
                                                   olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/516247> ;
                                                   olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/516245> ;
-                                                  olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                  olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/521575> rdf:type olvessel:Vessel ;
                                             olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/521575#info> ;
                                             olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/521575#type> ;
-                                            olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                            olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                             olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/64> .
 
 <http://lod.bco-dmo.org/id/platform/521575#type> rdf:type olplatform:SeaVoXL06 ;
@@ -3332,11 +3332,11 @@
 <http://lod.bco-dmo.org/id/platform/521575#owner> rdf:type olrole:AgentRole ;
                                                   olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/521575> ;
                                                   olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/64> ;
-                                                  olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                  olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/523628> rdf:type olvessel:Vessel ;
                                             olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/523628#info> ;
                                             olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/523628#type> ;
-                                            olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                            olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                             olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/223> .
 
 <http://lod.bco-dmo.org/id/platform/523628#type> rdf:type olplatform:SeaVoXL06 ;
@@ -3351,11 +3351,11 @@
 <http://lod.bco-dmo.org/id/platform/523628#owner> rdf:type olrole:AgentRole ;
                                                   olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/523628> ;
                                                   olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/223> ;
-                                                  olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                  olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/523769> rdf:type olvessel:Vessel ;
                                             olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/523769#info> ;
                                             olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/523769#type> ;
-                                            olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                            olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                             olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/343> .
 
 <http://lod.bco-dmo.org/id/platform/523769#type> rdf:type olplatform:SeaVoXL06 ;
@@ -3377,11 +3377,11 @@
 <http://lod.bco-dmo.org/id/platform/523769#owner> rdf:type olrole:AgentRole ;
                                                   olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/523769> ;
                                                   olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/343> ;
-                                                  olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                  olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/528565> rdf:type olvessel:Vessel ;
                                             olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/528565#info> ;
                                             olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/528565#type> ;
-                                            olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                            olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                             olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/528563> .
 
 <http://lod.bco-dmo.org/id/platform/528565#type> rdf:type olplatform:SeaVoXL06 ;
@@ -3394,11 +3394,11 @@
 <http://lod.bco-dmo.org/id/platform/528565#owner> rdf:type olrole:AgentRole ;
                                                   olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/528565> ;
                                                   olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/528563> ;
-                                                  olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                  olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/536288> rdf:type olvessel:Vessel ;
                                             olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/536288#info> ;
                                             olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/536288#type> ;
-                                            olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                            olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                             olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/537420> .
 
 <http://lod.bco-dmo.org/id/platform/536288#type> rdf:type olplatform:SeaVoXL06 ;
@@ -3419,11 +3419,11 @@
 <http://lod.bco-dmo.org/id/platform/536288#owner> rdf:type olrole:AgentRole ;
                                                   olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/536288> ;
                                                   olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/537420> ;
-                                                  olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                  olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/537423> rdf:type olvessel:Vessel ;
                                             olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/537423#info> ;
                                             olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/537423#type> ;
-                                            olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                            olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                             olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/537422> .
 
 <http://lod.bco-dmo.org/id/platform/537423#type> rdf:type olplatform:SeaVoXL06 ;
@@ -3436,7 +3436,7 @@
 <http://lod.bco-dmo.org/id/platform/537423#owner> rdf:type olrole:AgentRole ;
                                                   olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/537423> ;
                                                   olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/537422> ;
-                                                  olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                  olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/542006> rdf:type olvessel:Vessel ;
                                             olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/542006#info> ;
                                             olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/542006#type> .
@@ -3452,7 +3452,7 @@
 <http://lod.bco-dmo.org/id/platform/542102> rdf:type olvessel:Vessel ;
                                             olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/542102#info> ;
                                             olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/542102#type> ;
-                                            olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                            olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                             olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/206> .
 
 <http://lod.bco-dmo.org/id/platform/542102#type> rdf:type olplatform:SeaVoXL06 ;
@@ -3467,11 +3467,11 @@
 <http://lod.bco-dmo.org/id/platform/542102#owner> rdf:type olrole:AgentRole ;
                                                   olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/542102> ;
                                                   olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/206> ;
-                                                  olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                  olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/542213> rdf:type olvessel:Vessel ;
                                             olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/542213#info> ;
                                             olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/542213#type> ;
-                                            olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                            olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                             olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/542212> .
 
 <http://lod.bco-dmo.org/id/platform/542213#type> rdf:type olplatform:SeaVoXL06 ;
@@ -3484,11 +3484,11 @@
 <http://lod.bco-dmo.org/id/platform/542213#owner> rdf:type olrole:AgentRole ;
                                                   olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/542213> ;
                                                   olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/542212> ;
-                                                  olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                  olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .
 <http://lod.bco-dmo.org/id/platform/542389> rdf:type olvessel:Vessel ;
                                             olvessel:isDescribedBy <http://lod.bco-dmo.org/id/platform/542389#info> ;
                                             olplatform:hasPlatformType <http://lod.bco-dmo.org/id/platform/542389#type> ;
-                                            olrole:providesAgentRoleType <http://schema.oceanlink.org/vessel#owner> ;
+                                            olrole:providesAgentRoleType <http://schema.geolink.org/vessel#owner> ;
                                             olvessel:hasVesselOwner <http://lod.bco-dmo.org/id/affiliation/2> .
 
 <http://lod.bco-dmo.org/id/platform/542389#type> rdf:type olplatform:SeaVoXL06 ;
@@ -3511,4 +3511,4 @@
 <http://lod.bco-dmo.org/id/platform/542389#owner> rdf:type olrole:AgentRole ;
                                                   olrole:isAgentRoleIn <http://lod.bco-dmo.org/id/platform/542389> ;
                                                   olrole:isPerformedBy <http://lod.bco-dmo.org/id/affiliation/2> ;
-                                                  olrole:hasAgentRoleType <http://schema.oceanlink.org/vessel#owner> .
+                                                  olrole:hasAgentRoleType <http://schema.geolink.org/vessel#owner> .

@@ -2,33 +2,39 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix time: <http://www.w3.org/2006/time#> .
-@prefix olcruise: <http://schema.oceanlink.org/cruise#> .
-@prefix oltrajectory: <http://schema.oceanlink.org/trajectory#> .
-@prefix olvessel: <http://schema.oceanlink.org/vessel#> .
-@prefix olorg: <http://schema.oceanlink.org/organization#> .
-@prefix olinfo: <http://schema.oceanlink.org/information-object#> .
-@prefix olprogram: <http://schema.oceanlink.org/program#> .
-@prefix olaward: <http://schema.oceanlink.org/funding-award#> .
-@prefix olagent: <http://schema.oceanlink.org/agent#> .
-@prefix olagentaffiliation: <http://schema.oceanlink.org/agent-affiliation#> .
-@prefix olrole: <http://schema.oceanlink.org/agent-role#> .
-@prefix olperson: <http://schema.oceanlink.org/person#> .
-@prefix olpersoninfo: <http://schema.oceanlink.org/personal-info-item#> .
-@prefix olpersonname: <http://schema.oceanlink.org/person-name#> .
-@prefix olplatform: <http://schema.oceanlink.org/platform#> .
-@prefix olplace: <http://schema.oceanlink.org/place#> .
-@prefix olevent: <http://schema.oceanlink.org/event#> .
-@prefix olgeometry: <http://schema.oceanlink.org/geometry#> .
-@prefix oldataset: <http://schema.oceanlink.org/repository-object#> .
+@prefix olcruise: <http://schema.geolink.org/cruise#> .
+@prefix oltrajectory: <http://schema.geolink.org/trajectory#> .
+@prefix olvessel: <http://schema.geolink.org/vessel#> .
+@prefix olorg: <http://schema.geolink.org/organization#> .
+@prefix olinfo: <http://schema.geolink.org/information-object#> .
+@prefix olprogram: <http://schema.geolink.org/program#> .
+@prefix olaward: <http://schema.geolink.org/funding-award#> .
+@prefix olagent: <http://schema.geolink.org/agent#> .
+@prefix olagentaffiliation: <http://schema.geolink.org/agent-affiliation#> .
+@prefix olrole: <http://schema.geolink.org/agent-role#> .
+@prefix olperson: <http://schema.geolink.org/person#> .
+@prefix olpersoninfo: <http://schema.geolink.org/personal-info-item#> .
+@prefix olpersonname: <http://schema.geolink.org/person-name#> .
+@prefix olplatform: <http://schema.geolink.org/platform#> .
+@prefix olplace: <http://schema.geolink.org/place#> .
+@prefix olevent: <http://schema.geolink.org/event#> .
+@prefix olgeometry: <http://schema.geolink.org/geometry#> .
+@prefix oldataset: <http://schema.geolink.org/repository-object#> .
 
 <http://lod.bco-dmo.org/id/program/2012> rdf:type olprogram:Program ;
                                          olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/2012#info> ;
+                                         olprogram:startsAtDate <http://lod.bco-dmo.org/id/program/2012#startDate> ;
                                          olrole:providesAgentRoleType <http://lod.bco-dmo.org/id/role/142> .
 
 <http://lod.bco-dmo.org/id/program/2012#info> rdf:type olinfo:InformationObject ;
                                               olinfo:hasCanonicalName "U.S. GLOBal ocean ECosystems dynamics"@en-US ;
                                               olinfo:alsoKnownAs "U.S. GLOBEC"@en-US ;
+                                              olinfo:hasDescription """<p>U.S. GLOBEC (GLOBal ocean ECosystems dynamics) is a research program organized by oceanographers and fisheries scientists to address the question of how global climate change may affect the abundance and production of animals in the sea.</p>
+<p>The U.S. GLOBEC Program currently had major research efforts underway in the Georges Bank / Northwest Atlantic Region, and the Northeast Pacific (with components in the California Current and in the Coastal Gulf of Alaska). U.S. GLOBEC&nbsp;was a major contributor to International GLOBEC efforts in the Southern Ocean and Western Antarctic Peninsula (WAP).</p>"""^^<rdf:HTML> ;
                                               olinfo:hasWebpage "http://www.usglobec.org/"^^<xsd:anyURI> .
+
+<http://lod.bco-dmo.org/id/program/2012#startDate> rdf:type time:Instant ;
+                                                   time:inXSDDate "1991-01"^^<xsd:date> .
 
 <http://lod.bco-dmo.org/id/program/2012#role-50407> olprogram:isAssociatedWithProgram <http://lod.bco-dmo.org/id/program/2012> ;
                                                     rdf:type olagentaffiliation:AgentAffiliation ;
@@ -40,12 +46,26 @@
 <http://lod.bco-dmo.org/id/person/50407> olagent:performsAgentRole <http://lod.bco-dmo.org/id/program/2012#role-50407> .
 <http://lod.bco-dmo.org/id/program/2013> rdf:type olprogram:Program ;
                                          olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/2013#info> ;
+                                         olprogram:startsAtDate <http://lod.bco-dmo.org/id/program/2013#startDate> ;
+                                         olprogram:endsAtDate <http://lod.bco-dmo.org/id/program/2013#endDate> ;
                                          olrole:providesAgentRoleType <http://lod.bco-dmo.org/id/role/142> .
 
 <http://lod.bco-dmo.org/id/program/2013#info> rdf:type olinfo:InformationObject ;
                                               olinfo:hasCanonicalName "U.S. Joint Global Ocean Flux Study"@en-US ;
                                               olinfo:alsoKnownAs "U.S. JGOFS"@en-US ;
+                                              olinfo:hasDescription """<p>
+The United States Joint Global Ocean Flux Study was a national component of international JGOFS and an integral part of global climate change research.
+</p>
+<p>
+The U.S. launched the Joint Global Ocean Flux Study (JGOFS) in the late 1980s to study the ocean carbon cycle. An ambitious goal was set to understand the controls on the concentrations and fluxes of carbon and associated nutrients in the ocean. A new field of ocean biogeochemistry emerged with an emphasis on quality measurements of carbon system parameters and interdisciplinary field studies of the biological, chemical and physical process which control the ocean carbon cycle. As we studied ocean biogeochemistry, we learned that our simple views of carbon uptake and transport were severely limited, and a new "wave" of ocean science was born. U.S. JGOFS has been supported primarily by the U.S. National Science Foundation in collaboration with the National Oceanic and Atmospheric Administration, the National Aeronautics and Space Administration, the Department of Energy and the Office of Naval Research. U.S. JGOFS, ended in 2005 with the conclusion of the Synthesis and Modeling Project (SMP). 
+</p>"""^^<rdf:HTML> ;
                                               olinfo:hasWebpage "http://usjgofs.whoi.edu/"^^<xsd:anyURI> .
+
+<http://lod.bco-dmo.org/id/program/2013#startDate> rdf:type time:Instant ;
+                                                   time:inXSDDate "1984-01"^^<xsd:date> .
+
+<http://lod.bco-dmo.org/id/program/2013#endDate> rdf:type time:Instant ;
+                                                 time:inXSDDate "2005-01"^^<xsd:date> .
 
 <http://lod.bco-dmo.org/id/program/2013#role-50522> olprogram:isAssociatedWithProgram <http://lod.bco-dmo.org/id/program/2013> ;
                                                     rdf:type olagentaffiliation:AgentAffiliation ;
@@ -57,12 +77,39 @@
 <http://lod.bco-dmo.org/id/person/50522> olagent:performsAgentRole <http://lod.bco-dmo.org/id/program/2013#role-50522> .
 <http://lod.bco-dmo.org/id/program/2014> rdf:type olprogram:Program ;
                                          olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/2014#info> ;
+                                         olprogram:startsAtDate <http://lod.bco-dmo.org/id/program/2014#startDate> ;
+                                         olprogram:endsAtDate <http://lod.bco-dmo.org/id/program/2014#endDate> ;
                                          olrole:providesAgentRoleType <http://lod.bco-dmo.org/id/role/142> .
 
 <http://lod.bco-dmo.org/id/program/2014#info> rdf:type olinfo:InformationObject ;
                                               olinfo:hasCanonicalName "Census of Marine Life"@en-US ;
                                               olinfo:alsoKnownAs "CoML"@en-US ;
+                                              olinfo:hasDescription """The Census of Marine Life is a global network of researchers in more than 80 nations engaged in a 10-year scientific initiative to assess and explain the diversity, distribution, and abundance of life in the oceans. The world's first comprehensive Census of Marine Life - past, present, and future - will be released in 2010.
+<p>
+The stated purpose of the Census of Marine Life is to assess and explain the diversity, distribution, and abundance of marine life. Each plays an important role in what is known, unknown, and may never be known about what lives in the global ocean.
+<p>
+First, diversity. The Census aims to make for the first time a comprehensive global list of all forms of life in the sea. No such unified list yet exists. Census scientists estimate that about 230,000 species of marine animals have been described and reside in jars in collections in museums of natural history and other repositories. Since the Census began in 2000, researchers have added more than 5600 species to the lists. They aim to add many thousands more by 2010. The database of the Census already includes records for more than 16 million records, old and new. By 2010, the goal is to have all the old and the new species in an on-line encyclopedia with a webpage for every species. In addition, we will estimate how many species remain unknown, that is, remain to be discovered. The number could be astonishingly large, perhaps a million or more, if all small animals and protists are included. For comparison, biologists have described about 1.5 million terrestrial plants and animals.
+<p>
+Second, distribution. The Census aims to produce maps where the animals have been observed or where they could live, that is, the territory or range of the species. Knowing the range matters a lot for people concerned about, for example, possible consequences of global climate change.
+<p>
+Third, abundance. No Census is complete without measures of abundance. We want to know not only that there is such a thing as a Madagascar crab but how many there are. For marine life, populations are being estimated either in numbers or in total kilos, called biomass.
+<p>
+To complete the context, it is important to understand the top motivations for the Census of Marine Life. Most importantly, much of the ocean is unexplored. Most of the records in its database are for observations near the surface, and down to 1000 meters. No observations have been made in most of the deep ocean, while most of the ocean is deep.
+<p>
+Another important issue is that diversity varies in space. Marine hot spots, like the rain forests of the land, exist off for large fish off the coasts of Brazil and Australia. The goal is to know much more about marine hot spots, to help conserve these large fish. Their abundance and thus their diversity is changing, especially for commercially important species. Between 1952 and 1976, for example, fishermen and their customers emptied many areas of the ocean of tuna.
+<p>
+The Census has evolved a strategy of 14 field projects to touch the major habitats and groups of species in the global ocean. Eleven field projects address habitats, such as seamounts or the Arctic Ocean. Three field projects look globally at animals that either traverse the seas or appear globally distributed: the top predators such as tuna and the plankton and the microbes. The projects employ a mix of technologies. These include acoustics or sound, optics or cameras, tags placed on individual animals that store or report data, and genetics, as well as some actual capture of animals. The technologies complement one another. Sound can survey large areas in the ocean, while light cannot. Light can capture detail and characters that sound cannot. And genetics can make identifications from fragments of specimens or larvae where pictures tell little.
+<p>
+This mix of curiosity, need to know, technology, and scientists willing to investigate the unexplored and undiscovered will result in a Census of Marine Life in 2010 that provides a much clearer picture of what lives below the surface around the globe. Several reasons make such a report timely, indeed urgent. Crises in the sea are reported regularly. One recent study predicted the end of commercial fishery globally by 2050, if current trends persist. Better information is needed to fashion the management that will sustain fisheries, conserve diversity, reverse losses of habitat, reduce impacts of pollution, and respond to global climate change. Hence, there are biological, economic, philosophical and political reasons to push for greater exploration and understanding of the ocean and its inhabitants. Indeed, the United Nations Convention on Biological Diversity requires signatories to collect information on living resources, but, as yet, no nation has a complete baseline of such information. The Census of Marine Life's global network of researchers will help to fill this knowledge gap, providing critical information to help guide decisions on how to manage global marine resources for the future.
+<p>
+[Text copied from the CoML web site, November 5, 2008]"""^^<rdf:HTML> ;
                                               olinfo:hasWebpage "http://www.coml.org/"^^<xsd:anyURI> .
+
+<http://lod.bco-dmo.org/id/program/2014#startDate> rdf:type time:Instant ;
+                                                   time:inXSDDate "2001-01"^^<xsd:date> .
+
+<http://lod.bco-dmo.org/id/program/2014#endDate> rdf:type time:Instant ;
+                                                 time:inXSDDate "2010-01"^^<xsd:date> .
 
 <http://lod.bco-dmo.org/id/program/2014#role-50389> olprogram:isAssociatedWithProgram <http://lod.bco-dmo.org/id/program/2014> ;
                                                     rdf:type olagentaffiliation:AgentAffiliation ;
@@ -74,13 +121,25 @@
 <http://lod.bco-dmo.org/id/person/50389> olagent:performsAgentRole <http://lod.bco-dmo.org/id/program/2014#role-50389> .
 <http://lod.bco-dmo.org/id/program/2015> rdf:type olprogram:Program ;
                                          olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/2015#info> ;
+                                         olprogram:startsAtDate <http://lod.bco-dmo.org/id/program/2015#startDate> ;
                                          olrole:providesAgentRoleType <http://lod.bco-dmo.org/id/role/142> ,
                                                                       <http://lod.bco-dmo.org/id/role/140> .
 
 <http://lod.bco-dmo.org/id/program/2015#info> rdf:type olinfo:InformationObject ;
                                               olinfo:hasCanonicalName "Ocean Carbon and Biogeochemistry"@en-US ;
                                               olinfo:alsoKnownAs "OCB"@en-US ;
+                                              olinfo:hasDescription """<p>The Ocean Carbon and Biogeochemistry (OCB) program focuses on the ocean's role as a component of the global Earth system, bringing together research in geochemistry, ocean physics, and ecology that inform on and advance our understanding of ocean biogeochemistry. The overall program goals are to promote, plan, and coordinate collaborative, multidisciplinary research opportunities within the U.S. research community and with international partners. Important OCB-related activities currently include: the Ocean Carbon and Climate Change (OCCC) and the North American Carbon Program (NACP); U.S. contributions to IMBER, SOLAS, CARBOOCEAN; and numerous U.S. single-investigator and medium-size research projects funded by U.S. federal agencies including NASA, NOAA, and NSF.</p>
+
+<p>The scientific mission of OCB is to study the evolving role of the ocean in the global carbon cycle, in the face of environmental variability and change through studies of marine biogeochemical cycles and associated ecosystems.</p>
+
+<p>The overarching OCB science themes include improved understanding and prediction of: 1) oceanic uptake and release of atmospheric CO2 and other greenhouse gases and 2) environmental sensitivities of biogeochemical cycles, marine ecosystems, and interactions between the two.</p>
+
+<p>The OCB Research Priorities (updated January 2012) include: ocean acidification; terrestrial/coastal carbon fluxes and exchanges; climate sensitivities of and change in ecosystem structure and associated impacts on biogeochemical cycles; mesopelagic ecological and biogeochemical interactions; benthic-pelagic feedbacks on biogeochemical cycles; ocean carbon uptake and storage; and expanding low-oxygen conditions in the coastal and open oceans.</p>
+"""^^<rdf:HTML> ;
                                               olinfo:hasWebpage "http://us-ocb.org/"^^<xsd:anyURI> .
+
+<http://lod.bco-dmo.org/id/program/2015#startDate> rdf:type time:Instant ;
+                                                   time:inXSDDate "2006-01"^^<xsd:date> .
 
 <http://lod.bco-dmo.org/id/program/2015#role-50505> olprogram:isAssociatedWithProgram <http://lod.bco-dmo.org/id/program/2015> ;
                                                     rdf:type olagentaffiliation:AgentAffiliation ;
@@ -101,21 +160,68 @@
 
 <http://lod.bco-dmo.org/id/person/50917> olagent:performsAgentRole <http://lod.bco-dmo.org/id/program/2015#role-50917> .
 <http://lod.bco-dmo.org/id/program/2016> rdf:type olprogram:Program ;
-                                         olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/2016#info> .
+                                         olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/2016#info> ;
+                                         olprogram:startsAtDate <http://lod.bco-dmo.org/id/program/2016#startDate> .
 
 <http://lod.bco-dmo.org/id/program/2016#info> rdf:type olinfo:InformationObject ;
                                               olinfo:hasCanonicalName "United States Surface Ocean Lower Atmosphere Study"@en-US ;
                                               olinfo:alsoKnownAs "U.S. SOLAS"@en-US ;
+                                              olinfo:hasDescription """<p>The Surface Ocean Lower Atmosphere Study (SOLAS) program is designed to enable researchers from different disciplines to interact and investigate the multitude of processes and interactions between the coupled ocean and atmosphere.</p>
+<p>
+Oceanographers and atmospheric scientists are working together to improve understanding of the fate, transport, and feedbacks of climate relevant compounds, and also weather and hazards that are affected by processes at the surface ocean.</p>
+<p>Oceanographers and atmospheric scientists are working together to improve understanding of the fate, transport, and feedbacks of climate relevant compounds.</p>
+<p>
+Physical, chemical, and biological research near the ocean-atmosphere interface must be performed in synergy to extend our current knowledge to adequately understand and forecast changes on short and long time frames and over local and global spatial scales. </p>
+<p>
+The findings obtained from SOLAS are used to improve knowledge at process scale that will lead to better quantification of fluxes of climate relevant compounds such as CO2, sulfur and nitrogen compounds, hydrocarbons and halocarbons, as well as dust, energy and momentum. This activity facilitates a fundamental understanding to assist the societal needs for climate change, environmental health, weather prediction, and national security.</p>
+<p>
+The US SOLAS program is a component of the International SOLAS program where collaborations are forged with investigators around the world to examine SOLAS issues ubiquitous to the world's oceans and atmosphere. <br /><br />
+<a href="http://www.solas-int.org/">Â» International SOLAS Web site</a></p>
+
+
+<h4>Science Implementation Strategy Reports</h4>
+<p><a href="http://data.bco-dmo.org/US_SOLAS/US-SOLAS_Science_Implementation_Strategy.pdf">US-SOLAS</a> (4 MB PDF file) <br />
+<a href="http://www.us-solas.org:8080/Plone/science-implementation-strategy">Other SOLAS reports</a> are available for download from the US SOLAS Web site</p>"""^^<rdf:HTML> ;
                                               olinfo:hasWebpage "http://www.us-solas.org/"^^<xsd:anyURI> .
+
+<http://lod.bco-dmo.org/id/program/2016#startDate> rdf:type time:Instant ;
+                                                   time:inXSDDate "2006-01"^^<xsd:date> .
 <http://lod.bco-dmo.org/id/program/2017> rdf:type olprogram:Program ;
                                          olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/2017#info> ;
+                                         olprogram:startsAtDate <http://lod.bco-dmo.org/id/program/2017#startDate> ;
                                          olrole:providesAgentRoleType <http://lod.bco-dmo.org/id/role/142> ,
                                                                       <http://lod.bco-dmo.org/id/role/140> ,
                                                                       <http://lod.bco-dmo.org/id/role/133> .
 
 <http://lod.bco-dmo.org/id/program/2017#info> rdf:type olinfo:InformationObject ;
                                               olinfo:hasCanonicalName "Iron Synthesis"@en-US ;
-                                              olinfo:alsoKnownAs "FeSynth"@en-US .
+                                              olinfo:alsoKnownAs "FeSynth"@en-US ;
+                                              olinfo:hasDescription """<p>The two main objectives of the Iron Synthesis program (SCOR Working Group proposal, 2005), are: <br />
+1. Data compilation: assembling a common open-access database of the <em>in situ</em> iron experiments, beginning with the first period (1993-2002; Ironex-1, Ironex-2, SOIREE, EisenEx, SEEDS-1; SOFeX, SERIES) where primary articles have already been published, to be followed by the 2004 experiments where primary articles are now in progress (EIFEX, SEEDS-2; SAGE, FeeP);  similarly for the natural fertilizations S.O.JGOFS (1992), CROZEX (2004/2005) and KEOPS (2005). <br />
+<br />
+2. Modeling and data synthesis of specific aspects of two or more such experiments for various topics such as physical mixing, phytoplankton productivity, overall ecosystem functioning, iron chemistry, CO2 budgeting, nutrient uptake ratios, DMS(P) processes, and combinations of these variables and processes.</p>
+<p>SCOR Working Group proposal, 2005. &quot;The Legacy of <em>in situ</em> Iron Enrichments: Data Compilation and Modeling&quot;. <br />
+<a target="blank" href="http://www.scor-int.org/Working_Groups/wg131.htm ">http://www.scor-int.org/Working_Groups/wg131.htm</a></p>
+<p>See also: SCOR Proceedings  Vol. 42 Concepcion, Chile  October 2006, pgs: 13-16 2.3.3 Working Group on The Legacy of <em>in situ</em> Iron Enrichments: Data Compilation and Modeling.</p>
+<p>The first objective of the Iron Synthesis program involves a data recovery effort aimed at  assembling a common, open-access database of data and metadata from a series of <em>in-situ</em> ocean iron fertilization experiments conducted between 1993 and 2005.  Initially, funding for this effort is being provided by the Scientific Committee on Oceanic Research (SCOR) and the U.S. National Science Foundation (NSF).</p>
+<p>Through the combined efforts of the principal investigators of the individual projects and the staff of Biological and Chemical Oceanography Data Management Office (BCO-DMO), data currently available primarily through individuals, disparate reports and data agencies, and in multiple formats, are being collected and prepared for addition to the  BCO-DMO database from which they will be freely available to the community.</p>
+<p>As data are contributed to the BCO-DMO office, they are organized into four overlapping categories: <br />
+1. Level 1, basic metadata <br />
+(e.g., description of project/study, general location, PI(s), participants); <br />
+2. Level 2, detailed metadata and basic shipboard data and routine ship's operations  <br />
+(e.g., CTDs, underway measurements, sampling event logs); <br />
+3. Level 3, detailed metadata and data from specialized observations <br />
+(e.g., discrete observations, experimental results, rate measurements) and <br />
+4. Level 4, remaining datasets<br />
+(e.g., highest level of detailed data available from each study).</p>
+<p>Collaboration with BCO-DMO staff began in March of 2008 and initial efforts have been directed toward basic project descriptions, levels 1 and 2 metadata and basic data, with detailed and more detailed data files being incorporated as they become available and are processed.</p>
+<h3>Related file</h3>
+<p><a href="http://data.bco-dmo.org/Fe_Synthesis/Mesoscale_Iron_Enrichment_Experiments_1993-2005_Synthesis_and_Future_Directions_612.pdf">Program Documentation</a></p>
+<p>The Iron Synthesis Program is funded jointly by the Scientific Committee on Oceanic Research (SCOR) and the U.S. National Science Foundation (NSF).</p>
+<p><img width="94" height="94" src="http://data.bco-dmo.org/images/icon_nsf.gif" alt="" />   <img width="159" height="94" src="http://data.bco-dmo.org/images/logos/logo2_SCOR.jpg" alt="" /></p>"""^^<rdf:HTML> .
+
+<http://lod.bco-dmo.org/id/program/2017#startDate> rdf:type time:Instant ;
+                                                   time:inXSDDate "2007-01"^^<xsd:date> .
 
 <http://lod.bco-dmo.org/id/program/2017#role-50909> olprogram:isAssociatedWithProgram <http://lod.bco-dmo.org/id/program/2017> ;
                                                     rdf:type olagentaffiliation:AgentAffiliation ;
@@ -159,12 +265,24 @@
 <http://lod.bco-dmo.org/id/person/51180> olagent:performsAgentRole <http://lod.bco-dmo.org/id/program/2017#role-51180> .
 <http://lod.bco-dmo.org/id/program/2018> rdf:type olprogram:Program ;
                                          olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/2018#info> ;
+                                         olprogram:startsAtDate <http://lod.bco-dmo.org/id/program/2018#startDate> ;
                                          olrole:providesAgentRoleType <http://lod.bco-dmo.org/id/role/142> .
 
 <http://lod.bco-dmo.org/id/program/2018#info> rdf:type olinfo:InformationObject ;
                                               olinfo:hasCanonicalName "NorthEast Consortium"@en-US ;
                                               olinfo:alsoKnownAs "NEC"@en-US ;
+                                              olinfo:hasDescription """<div id="indexstatement">The Northeast Consortium encourages and funds <strong><br />
+cooperative research</strong> and monitoring projects in the Gulf of Maine and Georges Bank that have effective, <strong><br />
+equal partnerships</strong> among fishermen, scientists, educators, and marine resource managers.</div>
+<p align="left">At the 2008 Maine Fisheremen's Forum, the Northeast Consortium organized a session on data collection and availability. Participants included several key organizations in the Gulf of Maine area, sharing what data are out there and how you can find them.&nbsp;</p>
+<p align="left"><strong>The Northeast Consortium has joined the Gulf of Maine Ocean Data Partnership. </strong>The purpose of the GoMODP is to promote and coordinate the sharing, linking, electronic dissemination, and use of data on the Gulf of Maine region.</p>
+<p>The Northeast Consortium was created in 1999 to encourage and fund effective, equal partnerships among commercial fishermen, scientists, and other stakeholders to engage in cooperative research and monitoring projects in the Gulf of Maine and Georges Bank. The Northeast Consortium consists of four research institutions (University of New Hampshire, University of Maine, Massachusetts Institute of Technology, and Woods Hole Oceanographic Institution), which are working together to foster this initiative.</p>
+<p>The Northeast Consortium administers nearly $5M annually from the National Oceanic and Atmospheric Administration for cooperative research on a broad range of topics including gear selectivity, fish habitat, stock assessments, and socioeconomics. The funding is appropriated to the National Marine Fisheries Service and administered by the University of New Hampshire on behalf of the Northeast Consortium. Funds are distributed through an annual open competition, which is announced via a Request for Proposals (RFP). All projects must involve partnership between commercial fishermen and scientists.</p>
+<p>The Northeast Consortium seeks to fund projects that will be conducted in a responsible manner. Cooperative research projects should be designed to minimize any negative impacts to ecosystems or marine organisms, and be consistent with accepted ethical research practices, including the use of animals and human subjects in research, scrutiny of research protocols by an institutional board of review, etc.</p>"""^^<rdf:HTML> ;
                                               olinfo:hasWebpage "http://northeastconsortium.org/"^^<xsd:anyURI> .
+
+<http://lod.bco-dmo.org/id/program/2018#startDate> rdf:type time:Instant ;
+                                                   time:inXSDDate "1999-01"^^<xsd:date> .
 
 <http://lod.bco-dmo.org/id/program/2018#role-51374> olprogram:isAssociatedWithProgram <http://lod.bco-dmo.org/id/program/2018> ;
                                                     rdf:type olagentaffiliation:AgentAffiliation ;
@@ -175,20 +293,56 @@
 
 <http://lod.bco-dmo.org/id/person/51374> olagent:performsAgentRole <http://lod.bco-dmo.org/id/program/2018#role-51374> .
 <http://lod.bco-dmo.org/id/program/2019> rdf:type olprogram:Program ;
-                                         olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/2019#info> .
+                                         olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/2019#info> ;
+                                         olprogram:startsAtDate <http://lod.bco-dmo.org/id/program/2019#startDate> .
 
 <http://lod.bco-dmo.org/id/program/2019#info> rdf:type olinfo:InformationObject ;
                                               olinfo:hasCanonicalName "NACP-OCB Coastal Synthesis"@en-US ;
                                               olinfo:alsoKnownAs "NACP-OCB Coastal"@en-US ;
+                                              olinfo:hasDescription """<p>In late June 2008, the OCB Project Office sent out a call for participation in the Coastal Synthesis Activity as part of the North American Carbon Program (NACP) Interim Synthesis Activities. The objective of this activity is to stimulate the synthesis and publication of recent observational and modeling results on carbon cycle fluxes and processes along the North American continental margin.  The current state of knowledge of the magnitude, spatial distribution, and inter-annual variability of carbon sources and sinks in coastal waters is incomplete.  Thus, the goal of this activity is to synthesize individual, small-scale studies across broader spatial and temporal scales to improve quantitative assessments of the North American coastal carbon cycle.  Because the coastal oceans have important and complex linkages with terrestrial, atmospheric, and open ocean biogeochemical cycles, we encourage the participation of researchers focused on both organic and inorganic carbon, as well as nitrogen and phosphorous cycle topics related to carbon balance and related issues such as hypoxia impacts on continental margins.</p>
+ 
+<p>Planning for the coastal synthesis activity was initiated during a breakout session  at the 2008 OCB Summer Science Workshop.  The proposed coastal synthesis activity is initially broken into five U.S. geographical sub-regions (Atlantic Coast, Pacific Coast, Gulf Coast, Arctic Coast, and Laurentian Great Lakes), with leads identified for each region.  Researchers were encouraged to consider ongoing projects and think about how those projects might relate to one or more of the regional syntheses. Additional information available at the NACP Web site (<a href="http://www.nacarbon.org/cgi-bin/working_groups/wg.pl">http://www.nacarbon.org/cgi-bin/working_groups/wg.pl</a>) includes a list of active NACP Interim Synthesis activities and working groups. </p>
+
+<p>The majority of data sets uploaded for this project will be synthesis data sets, representing an integration of previously compiled data from the various sub-regions.</p>
+
+<h4>Related Links:<br></h4>
+<a href="http://www.nacarbon.org/cgi-nacp/working_groups/wg.pl?synthesis=1#coastal">NACP Coastal Synthesis Web Site</a> (includes regional links) <br />
+<br />
+"""^^<rdf:HTML> ;
                                               olinfo:hasWebpage "http://www.nacarbon.org/cgi-nacp/working_groups/wg.pl?synthesis=1#coastal"^^<xsd:anyURI> .
+
+<http://lod.bco-dmo.org/id/program/2019#startDate> rdf:type time:Instant ;
+                                                   time:inXSDDate "2008-01"^^<xsd:date> .
 <http://lod.bco-dmo.org/id/program/2020> rdf:type olprogram:Program ;
                                          olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/2020#info> ;
+                                         olprogram:startsAtDate <http://lod.bco-dmo.org/id/program/2020#startDate> ;
                                          olrole:providesAgentRoleType <http://lod.bco-dmo.org/id/role/133> .
 
 <http://lod.bco-dmo.org/id/program/2020#info> rdf:type olinfo:InformationObject ;
                                               olinfo:hasCanonicalName "North American Carbon Program"@en-US ;
                                               olinfo:alsoKnownAs "NACP"@en-US ;
+                                              olinfo:hasDescription """<p>The North American Carbon Program (NACP) is a multidisciplinary research program to obtain scientific understanding of North America's carbon sources and sinks and of changes in carbon stocks needed to meet societal concerns and to provide tools for decision makers. Successful execution of the NACP will require an unprecedented level of coordination among observational, experimental, and modeling efforts regarding terrestrial, oceanic, atmospheric, and human components. The NACP is supported by a number of different federal agencies through a variety of intramural and extramural funding mechanisms and award instruments. NACP will rely upon a rich and diverse array of existing observational networks, monitoring sites, and experimental field studies in North America and its adjacent oceans. Integrating these different program activities and maximizing synergy amongst them, will require expert guidance beyond the norm for large field programs in Earth system science and global climate change.</p>
+<p><strong>Central Objective  </strong></p>
+<p>The central objective of the North American Carbon Program is to measure           and understand the sources and sinks of Carbon Dioxide (CO<sub>2</sub>),           Methane (CH<sub>4</sub>), and Carbon Monoxide (CO) in North America and           in adjacent ocean regions.</p>
+<p><strong>Goals</strong></p>
+<ul>
+    <li>Develop quantitative scientific knowledge, robust observations, and models to determine the emissions and uptake of CO<sub>2</sub>, CH<sub>4</sub>, and CO, changes in carbon stocks, and the factors regulating these processes for North America and adjacent ocean basins.</li>
+    <li>Develop the scientific basis to implement full carbon accounting on regional and continental scales. This is the knowledge base needed to design monitoring programs for natural and managed CO<sub>2</sub> sinks and emissions of CH<sub>4</sub>.</li>
+    <li>Support long-term quantitative measurements of fluxes, sources, and sinks of atmospheric CO<sub>2</sub> and CH<sub>4</sub>, and develop forecasts for future trends.</li>
+</ul>
+<p><strong>Science Questions   </strong></p>
+<ul>
+    <li>What is the carbon balance of North America and adjacent oceans? What are the geographic patterns of fluxes of CO<sub>2</sub>, CH<sub>4</sub>, and CO? How is the balance changing over time?</li>
+    <li>What processes control the sources and sinks of CO<sub>2</sub>, CH<sub>4</sub>, and CO, and how do the controls change with time?</li>
+    <li>Are there potential surprises where sources increase or sinks disappear?</li>
+    <li>How can we enhance and manage long-lived carbon sinks, and provide resources to support decision makers?</li>
+</ul>
+<p>The NACP Science Steering Group (SSG) provides scientific leadership for the NACP. (<a href="http://www.nacarbon.org/nacp/about.html#group">NACP SSG</a>)</p>
+<p><b>Program Data:</b> The data from most projects associated with the NACP program are not managed by BCO-DMO.&nbsp; Information about most projects and their results are available from the Program and Data site URLs shown above.&nbsp; However, some exceptions are the NACP/OCB coastal synthesis projects listed below when the project section is expanded.</p>"""^^<rdf:HTML> ;
                                               olinfo:hasWebpage "http://www.nacarbon.org/nacp/"^^<xsd:anyURI> .
+
+<http://lod.bco-dmo.org/id/program/2020#startDate> rdf:type time:Instant ;
+                                                   time:inXSDDate "2005-01"^^<xsd:date> .
 
 <http://lod.bco-dmo.org/id/program/2020#role-51070> olprogram:isAssociatedWithProgram <http://lod.bco-dmo.org/id/program/2020> ;
                                                     rdf:type olagentaffiliation:AgentAffiliation ;
@@ -200,13 +354,22 @@
 <http://lod.bco-dmo.org/id/person/51070> olagent:performsAgentRole <http://lod.bco-dmo.org/id/program/2020#role-51070> .
 <http://lod.bco-dmo.org/id/program/2021> rdf:type olprogram:Program ;
                                          olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/2021#info> ;
+                                         olprogram:startsAtDate <http://lod.bco-dmo.org/id/program/2021#startDate> ;
                                          olrole:providesAgentRoleType <http://lod.bco-dmo.org/id/role/142> ,
                                                                       <http://lod.bco-dmo.org/id/role/140> .
 
 <http://lod.bco-dmo.org/id/program/2021#info> rdf:type olinfo:InformationObject ;
                                               olinfo:hasCanonicalName "Integrated Marine Biogeochemistry and Ecosystem Research -US"@en-US ;
                                               olinfo:alsoKnownAs "IMBER-US"@en-US ;
+                                              olinfo:hasDescription """<p>The BCO-DMO database includes data from IMBER endorsed projects lead by US funded investigators. There is no dedicated US IMBER project or data management office.  Those functions are provided by US-OCB and BCO-DMO respectively.</p>
+<p>The information in this program description pertains to the Internationally coordinated IMBER research program. The projects contributing data to the BCO-DMO database are those funded by US NSF only.  The full IMBER data catalog is hosted at the Global Change Master Directory (GCMD).&nbsp;</p>
+<p><b>IMBER Data Portal:</b> The IMBER project has chosen to create a metadata portal hosted by the NASA's Global Change Master Directory (GCMD). The GCMD IMBER data catalog provides an overview of all IMBER endorsed and related projects and links to datasets, and can be found at URL <a href="http://gcmd.nasa.gov/portals/imber/">http://gcmd.nasa.gov/portals/imber/</a>.</p>
+<p>IMBER research will seek to identify the mechanisms by which marine life influences marine biogeochemical cycles, and how these, in turn, influence marine ecosystems. Central to the IMBER goal is the development of a predictive understanding of how marine biogeochemical cycles and ecosystems respond to complex forcings, such as large-scale climatic variations, changing physical dynamics, carbon cycle chemistry and nutrient fluxes, and the impacts of marine harvesting. Changes in marine biogeochemical cycles and ecosystems due to global change will also have consequences for the broader Earth System. An even greater challenge will be drawing together the natural and social science communities to study some of the key impacts and feedbacks between the marine and human systems.</p>
+<p>To address the IMBER goal, four scientific themes, each including several issues, have been identified for the IMBER project: Theme 1 - Interactions between Biogeochemical Cycles and Marine Food Webs;  Theme 2 - Sensitivity to Global Change: How will key marine biogeochemical cycles, ecosystems and their interactions, respond to global change?; Theme 3 - Feedback to the Earth System: What are the roles of the ocean biogeochemistry and ecosystems in regulating climate?; and  Theme 4 - Responses of Society: What are the relationships between marine biogeochemical cycles, ecosystems, and the human system?</p>"""^^<rdf:HTML> ;
                                               olinfo:hasWebpage "http://www.imber.info/"^^<xsd:anyURI> .
+
+<http://lod.bco-dmo.org/id/program/2021#startDate> rdf:type time:Instant ;
+                                                   time:inXSDDate "2004-01"^^<xsd:date> .
 
 <http://lod.bco-dmo.org/id/program/2021#role-50737> olprogram:isAssociatedWithProgram <http://lod.bco-dmo.org/id/program/2021> ;
                                                     rdf:type olagentaffiliation:AgentAffiliation ;
@@ -248,12 +411,28 @@
 <http://lod.bco-dmo.org/id/person/50513> olagent:performsAgentRole <http://lod.bco-dmo.org/id/program/2021#role-50513> .
 <http://lod.bco-dmo.org/id/program/2022> rdf:type olprogram:Program ;
                                          olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/2022#info> ;
+                                         olprogram:startsAtDate <http://lod.bco-dmo.org/id/program/2022#startDate> ;
                                          olrole:providesAgentRoleType <http://lod.bco-dmo.org/id/role/142> .
 
 <http://lod.bco-dmo.org/id/program/2022#info> rdf:type olinfo:InformationObject ;
                                               olinfo:hasCanonicalName "U.S. GEOTRACES"@en-US ;
                                               olinfo:alsoKnownAs "U.S. GEOTRACES"@en-US ;
+                                              olinfo:hasDescription """<p><strong>GEOTRACES</strong> is a <a href="http://www.jhu.edu/scor/GEOTRACES.htm" target="_blank">SCOR</a> sponsored program; and funding for program infrastructure development is provided by the <a href="http://www.nsf.gov" target="_blank">U.S. National Science Foundation</a>.</p>
+
+<p>GEOTRACES gained momentum following a special symposium, S02: Biogeochemical cycling of trace elements and isotopes in the ocean and applications to constrain contemporary marine processes (GEOSECS II), at a 2003 Goldschmidt meeting convened in Japan. The GEOSECS II acronym referred to the Geochemical Ocean Section Studies To determine full water column distributions of selected trace elements and isotopes, including their concentration, chemical speciation, and physical form, along a sufficient number of sections in each ocean basin to establish the principal relationships between these distributions and with more traditional hydrographic parameters;</p>
+
+<blockquote>
+<p>* To evaluate the sources, sinks, and internal cycling of these species and thereby characterize more completely the physical, chemical and biological processes regulating their distributions, and the sensitivity of these processes to global change; and</p>
+
+<p>* To understand the processes that control the concentrations of geochemical species used for proxies of the past environment, both in the water column and in the substrates that reflect the water column.</p>
+</blockquote>
+
+<p>GEOTRACES will be global in scope, consisting of ocean sections complemented by regional process studies. Sections and process studies will combine fieldwork, laboratory experiments and modelling. Beyond realizing the scientific objectives identified above, a natural outcome of this work will be to build a community of marine scientists who understand the processes regulating trace element cycles sufficiently well to exploit this knowledge reliably in future interdisciplinary studies.</p>
+"""^^<rdf:HTML> ;
                                               olinfo:hasWebpage "http://www.geotraces.org/"^^<xsd:anyURI> .
+
+<http://lod.bco-dmo.org/id/program/2022#startDate> rdf:type time:Instant ;
+                                                   time:inXSDDate "2003-01"^^<xsd:date> .
 
 <http://lod.bco-dmo.org/id/program/2022#role-50572> olprogram:isAssociatedWithProgram <http://lod.bco-dmo.org/id/program/2022> ;
                                                     rdf:type olagentaffiliation:AgentAffiliation ;
@@ -265,13 +444,45 @@
 <http://lod.bco-dmo.org/id/person/50572> olagent:performsAgentRole <http://lod.bco-dmo.org/id/program/2022#role-50572> .
 <http://lod.bco-dmo.org/id/program/2023> rdf:type olprogram:Program ;
                                          olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/2023#info> ;
+                                         olprogram:startsAtDate <http://lod.bco-dmo.org/id/program/2023#startDate> ;
                                          olrole:providesAgentRoleType <http://lod.bco-dmo.org/id/role/142> ,
                                                                       <http://lod.bco-dmo.org/id/role/145> .
 
 <http://lod.bco-dmo.org/id/program/2023#info> rdf:type olinfo:InformationObject ;
                                               olinfo:hasCanonicalName "National Marine Fisheries Service / Northeast Fisheries Science Center"@en-US ;
                                               olinfo:alsoKnownAs "NMFS/NEFSC"@en-US ;
+                                              olinfo:hasDescription """The <a href="http://www.nefsc.noaa.gov/history/nefsc.html" target="_blank">Northeast Fisheries Science Center</a>
+is the research arm of NOAA Fisheries in the Northeast region. The Center plans, develops, and manages a multidisciplinary program of basic and applied research to: (1) better understand living marine resources of the Northeast Continental Shelf Ecosystem from the Gulf of Maine to Cape Hatteras, and the habitat quality essential for their existence and continued productivity; and (2) describe and provide to management, industry, and the public, options for the conservation and utilization of living marine resources, and for the restoration and maintenance of marine environmental quality. 
+</p>
+<p>
+The functions are carried out through the coordinated efforts of research facilities located in Massachusetts, Rhode Island, Connecticut, New Jersey, and Washington, DC. 
+</p>
+<p>
+<a href="http://www.nmfs.noaa.gov/" target="_blank">NOAA's National Marine Fisheries Service</a> is the federal agency, a division of the Department of Commerce, responsible for the stewardship of the nation's living marine resources and their habitat. NOAA's National Marine Fisheries Service is responsible for the management, conservation and protection of living marine resources within the United States' Exclusive Economic Zone (water three to 200 mile offshore). Using the tools provided by the Magnuson-Stevens Act, NOAA's National Marine Fisheries Service assesses and predicts the status of fish stocks, ensures compliance with fisheries regulations and works to reduce wasteful fishing practices. Under the Marine Mammal Protection Act and the Endangered Species Act, NOAA's National Marine Fisheries Service recovers protected marine species (i.e. whales, turtles) without unnecessarily impeding economic and recreational opportunities. With the help of the six regional offices and eight councils, NOAA's National Marine Fisheries Service is able to work with communities on fishery management issues. NOAA's National Marine Fisheries Service works to promote sustainable fisheries and to prevent lost economic potential associated with overfishing, declining species and degraded habitats. NOAA's National Marine Fisheries Service strives to balance competing public needs.
+</p>
+<p>
+<a href="http://www.noaa.gov/" target="_blank">National Oceanic and Atmospheric Administation (NOAA)</a> is an agency that enriches life through science. Our reach goes from the surface of the sun to the depths of the ocean floor as we work to keep citizens informed of the changing environment around them.
+</p>
+<p>
+From daily weather forecasts, severe storm warnings and climate monitoring to fisheries management, coastal restoration and supporting marine commerce, NOAAâ€™s products and services support economic vitality and affect more than one-third of Americaâ€™s gross domestic product. NOAAâ€™s dedicated scientists use cutting-edge research and high-tech instrumentation to provide citizens, planners, emergency managers and other decision makers with reliable information they need when they need it. 
+</p>
+<p>
+
+NOAA's roots date back to 1807, when the Nationâ€™s first scientific agency, the Survey of the Coast, was established. Since then, NOAA has evolved to meet the needs of a changing country. NOAA maintains a presence in every state and has emerged as an international leader on scientific and environmental matters.  
+</p>
+<p>
+
+NOAAâ€™s mission touches the lives of every American and we are proud of our role in protecting life and property and conserving and protecting natural resources.
+</p>
+
+
+
+
+"""^^<rdf:HTML> ;
                                               olinfo:hasWebpage "http://www.nefsc.noaa.gov/history/nefsc.html"^^<xsd:anyURI> .
+
+<http://lod.bco-dmo.org/id/program/2023#startDate> rdf:type time:Instant ;
+                                                   time:inXSDDate "1977-01"^^<xsd:date> .
 
 <http://lod.bco-dmo.org/id/program/2023#role-51164> olprogram:isAssociatedWithProgram <http://lod.bco-dmo.org/id/program/2023> ;
                                                     rdf:type olagentaffiliation:AgentAffiliation ;
@@ -292,39 +503,95 @@
 
 <http://lod.bco-dmo.org/id/person/50380> olagent:performsAgentRole <http://lod.bco-dmo.org/id/program/2023#role-50380> .
 <http://lod.bco-dmo.org/id/program/2024> rdf:type olprogram:Program ;
-                                         olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/2024#info> .
+                                         olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/2024#info> ;
+                                         olprogram:startsAtDate <http://lod.bco-dmo.org/id/program/2024#startDate> .
 
 <http://lod.bco-dmo.org/id/program/2024#info> rdf:type olinfo:InformationObject ;
                                               olinfo:hasCanonicalName "Comparative Analysis of Marine Ecosystem Organization"@en-US ;
                                               olinfo:alsoKnownAs "CAMEO"@en-US ;
+                                              olinfo:hasDescription """<p>"The Comparative Analysis of Marine Ecosystem Organization (CAMEO) program is implemented as a partnership between the NOAA National Marine Fisheries Service and National Science Foundation Division of Ocean Sciences.  The purpose of CAMEO is to strengthen the scientific basis for an ecosystem approach to the stewardship of our ocean and coastal living marine resources. The program supports fundamental research to understand complex dynamics controlling ecosystem structure, productivity, behavior, resilience, and population connectivity, as well as effects of climate variability and anthropogenic pressures on living marine resources and critical habitats. CAMEO encourages the development of multiple approaches, such as ecosystem models and comparative analyses of managed and unmanaged areas (e.g., marine protected areas) that can ultimately form a basis for forecasting and decision support.  Central to the program is the emphasis on collaborations between academic and private researchers and federal agency scientists with mission responsibilities to inform ecosystem management activities." (from CAMEO website)</p>
+<p>
+This funding opportunity will implement CAMEO research by supporting the development of research tools and strategic approaches. The following types of proposals are encouraged:<br>
+
+<p>1. Development of strategies and methodologies for comparative analyses that can be applied consistently across spatial and temporal scales and ecosystems, and that facilitate the design of decision support tools for marine populations, ecosystems and habitats.</p>
+
+<p>2. Development of models that address key scientific questions by comparing ecosystems and ecosystem processes. Models that are geographically and temporally portable, and that incorporate assessment of modeling skill, are particularly encouraged.</p>
+
+<p>3. Retrospective studies that analyze, re-analyze or synthesize existing information (historic, time-series, ongoing program, etc.) using a comparative approach.</p>
+
+<p>4. Studies that integrate the human dimension within ecosystem dynamics. The CAMEO program seeks to promote interdisciplinary research using comparative approaches to link marine ecosystem research with the social and behavioral sciences in new and vital ways.</p>
+
+<p>To guide these program priorities, a Science Steering Committee was formed through Dr. Linda Deegan and the initial Scientific Planning Office at the Marine Biological Laboratory in Woods Hole, MA.  This Committee will provide scientific advice and broad direction to NOAA and NSF regarding the CAMEO program.   The Committee will initially focus on developing a science plan, but will also assist in outreach activities to support the development of CAMEO.  Responsibilities will include assisting in establishing plans, assessing progress, and reviewing program priorities on a continuing basis.</p>
+
+
+"""^^<rdf:HTML> ;
                                               olinfo:hasWebpage "http://cameo.noaa.gov/"^^<xsd:anyURI> .
+
+<http://lod.bco-dmo.org/id/program/2024#startDate> rdf:type time:Instant ;
+                                                   time:inXSDDate "2008-01"^^<xsd:date> .
 <http://lod.bco-dmo.org/id/program/2025> rdf:type olprogram:Program ;
-                                         olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/2025#info> .
+                                         olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/2025#info> ;
+                                         olprogram:endsAtDate <http://lod.bco-dmo.org/id/program/2025#endDate> .
 
 <http://lod.bco-dmo.org/id/program/2025#info> rdf:type olinfo:InformationObject ;
                                               olinfo:hasCanonicalName "Historical Datasets"@en-US ;
-                                              olinfo:alsoKnownAs "Historical"@en-US .
+                                              olinfo:alsoKnownAs "Historical"@en-US ;
+                                              olinfo:hasDescription """<p>This 'program' consists of data sets that are not part of a recognized program and are of historical interest, usually collected before 1980.</p>
+"""^^<rdf:HTML> .
+
+<http://lod.bco-dmo.org/id/program/2025#endDate> rdf:type time:Instant ;
+                                                 time:inXSDDate "2000-01"^^<xsd:date> .
 <http://lod.bco-dmo.org/id/program/2026> rdf:type olprogram:Program ;
-                                         olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/2026#info> .
+                                         olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/2026#info> ;
+                                         olprogram:startsAtDate <http://lod.bco-dmo.org/id/program/2026#startDate> .
 
 <http://lod.bco-dmo.org/id/program/2026#info> rdf:type olinfo:InformationObject ;
                                               olinfo:hasCanonicalName "Long Term Ecological Research network"@en-US ;
                                               olinfo:alsoKnownAs "LTER"@en-US ;
+                                              olinfo:hasDescription """<p><strong>adapted from http://www.lternet.edu/ </strong></p>
+<p>The National Science Foundation established the LTER program in 1980 to support research on long-term ecological phenomena in the United States. The Long Term Ecological Research (LTER) Network is a collaborative  effort involving more than 1800 scientists and students investigating  ecological processes over long temporal and broad spatial scales.  The  LTER Network promotes synthesis and comparative research across sites and  ecosystems and among other related national and international research  programs. The 26 LTER research sites represent diverse ecosystems with emphasis on different research themes, and cross-site  communication, network publications, and research-planning activities are coordinated through the LTER Network Office.</p>
+<p>The five marine sites report data that are of interest to the research community supported by BCO-DMO (figure 1).</p>
+<p><a href="http://data.bco-dmo.org/LTER/LTER_sites_map.png"><img width="796" src="http://data.bco-dmo.org/LTER/LTER_sites_map.png" alt="LTER site location map" /></a></p>
+<p>Figure 1. There are 26 LTER research sites in the US of which five study coastal marine ecosystems. The five sites are: California Current Ecosystem (CCE); Georgia Coastal Ecosystems (GCE); Moorea Coral Reef (MCR); Plum Island Ecosystems (PIE) and Santa Barbara Coastal (SBC). Click on the image to view a larger version of the site location map. [Source: modification of the site location map published at http://www.lternet.edu/lter-sites and copied September 2012]</p>"""^^<rdf:HTML> ;
                                               olinfo:hasWebpage "http://www.lternet.edu/"^^<xsd:anyURI> .
+
+<http://lod.bco-dmo.org/id/program/2026#startDate> rdf:type time:Instant ;
+                                                   time:inXSDDate "1980-01"^^<xsd:date> .
 <http://lod.bco-dmo.org/id/program/2027> rdf:type olprogram:Program ;
-                                         olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/2027#info> .
+                                         olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/2027#info> ;
+                                         olprogram:startsAtDate <http://lod.bco-dmo.org/id/program/2027#startDate> .
 
 <http://lod.bco-dmo.org/id/program/2027#info> rdf:type olinfo:InformationObject ;
                                               olinfo:hasCanonicalName "Emerging Topics in Biogeochemical Cycles"@en-US ;
                                               olinfo:alsoKnownAs "ETBC"@en-US ;
+                                              olinfo:hasDescription """<p>The original call for proposals for Emerging Topics in Biogeochemical Cycles (ETBC) was issued in September 2007 by the US NSF Directorate for Geosciences (NSF 07-049).  </p>
+<p>The Geosciences Directorate (GEO) is substantially augmenting our past funding sources to explicitly support emerging areas of interdisciplinary research.  We seek to foster transformational advances in our quantitative or mechanistic understanding of biogeochemical cycles that integrate physical-chemical-biological processes over the range of temporal and/or spatial scales in Earthâ€™s environments. We encourage submission of proposals that address emerging topics in biogeochemical cycles, the water cycle or their coupling, across the interfaces of atmosphere, land, and oceans.  Proposals must cross the disciplinary boundaries of two or more divisions in Geosciences (e.g. ATM, EAR, OCE) or of at least one division in Geosciences and a division in another NSF directorate.  </p>
+<p>Although funding programmatic disciplines continues to provide a robust and adaptable framework to build our understanding of the geosciences and the earth as a system, there are classes of emerging and challenging problems that require integration of concepts and observations across diverse fields.   Our goal is to enhance such integration. Successful proposals need to develop intellectual excitement in the participating disciplinary communities.  Also encouraged are proposals that have broader educational, diversity, societal, or infrastructure impacts that capitalize on this interdisciplinary opportunity. </p>
+"""^^<rdf:HTML> ;
                                               olinfo:hasWebpage "http://www.nsf.gov/pubs/2007/nsf07049/nsf07049.jsp"^^<xsd:anyURI> .
+
+<http://lod.bco-dmo.org/id/program/2027#startDate> rdf:type time:Instant ;
+                                                   time:inXSDDate "2007-01"^^<xsd:date> .
 <http://lod.bco-dmo.org/id/program/2028> rdf:type olprogram:Program ;
                                          olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/2028#info> ;
+                                         olprogram:startsAtDate <http://lod.bco-dmo.org/id/program/2028#startDate> ;
+                                         olprogram:endsAtDate <http://lod.bco-dmo.org/id/program/2028#endDate> ;
                                          olrole:providesAgentRoleType <http://lod.bco-dmo.org/id/role/145> .
 
 <http://lod.bco-dmo.org/id/program/2028#info> rdf:type olinfo:InformationObject ;
                                               olinfo:hasCanonicalName "Gulf of Mexico - Deepwater Horizon Oil Spill"@en-US ;
-                                              olinfo:alsoKnownAs "GoMX - DHOS"@en-US .
+                                              olinfo:alsoKnownAs "GoMX - DHOS"@en-US ;
+                                              olinfo:hasDescription """<div><b>Grants for Rapid Response Research (RAPID) </b></div>
+<div>The RAPID funding mechanism is used for proposals having a severe  urgency with regard to availability of, or access to data, facilities or  specialized equipment, including quick-response research on natural or  anthropogenic disasters and similar unanticipated events.</div>
+<div>&nbsp;</div>
+<p><b>GOM - Broader Impacts</b><br />
+The need to  understand the impact of this largest oil spill to date on  ecosystems  and biochemical cycling is self evident. The consequences of  the  disaster and accompanying clean up measures (e.g. the distribution  of  dispersants) need to be evaluated to guide further mediating  measures  and to develop and improve responses to similar disasters in  the future.  Would it be advantageous if such oil aggregates sink, or  should it  rather remain suspended?  Possibly measures can be developed  to enhance  sinking or suspension (e.g. addition of ballast minerals)  once we  understand their current formation and fate. Understanding the  particle  dynamics following the input of large amounts of oil and  dispersants  into the water is a prerequisite to develop response  strategies for now  and in the future.</p>"""^^<rdf:HTML> .
+
+<http://lod.bco-dmo.org/id/program/2028#startDate> rdf:type time:Instant ;
+                                                   time:inXSDDate "2009-01"^^<xsd:date> .
+
+<http://lod.bco-dmo.org/id/program/2028#endDate> rdf:type time:Instant ;
+                                                 time:inXSDDate "2012-01"^^<xsd:date> .
 
 <http://lod.bco-dmo.org/id/program/2028#role-50910> olprogram:isAssociatedWithProgram <http://lod.bco-dmo.org/id/program/2028> ;
                                                     rdf:type olagentaffiliation:AgentAffiliation ;
@@ -340,30 +607,109 @@
 <http://lod.bco-dmo.org/id/program/2029#info> rdf:type olinfo:InformationObject ;
                                               olinfo:hasCanonicalName "U. S. Climate Variability and Predictability"@en-US ;
                                               olinfo:alsoKnownAs "U.S. CLIVAR"@en-US ;
+                                              olinfo:hasDescription """<p>Note: The official U.S. CLIVAR program description will be supplied by Steve Diggs.</p>
+<p>A temporary description copied from the US CLIVAR Web site is:</p>
+<p><font size="2" face="Arial, Helvetica, sans-serif">CLIVAR               (Climate Variability and Predictability) is an international, interdisciplinary               research effort within the World Climate Research Programme (WCRP)               focusing on the variability and predictability of the slowly varying               components of the climate system. CLIVAR investigates the physical               and dynamical processes in the climate system that occur on seasonal,               interannual, decadal and centennial time-scales. CLIVAR recognizes               that a critical measure of success in its research program is a               transferal of insight and knowledge to routine production of climate               forecasts, information and products.</font></p>
+<p class="style7">The goals of U.S. CLIVAR include:</p>
+<ul>
+    <li class="style7">Identifying and understanding the major patterns of climate variability               on seasonal, decadal and longer time scales and evaluating their               predictability;</li>
+    <li class="style7">Expanding our capacity in short term (seasonal to interannual)               climate predictability and searching for ways to predict decadal               variability;</li>
+    <li class="style7">Better documenting the record of rapid climate changes and the               mechanisms for these events, and evaluating the potential for abrupt               climate changes in the future;</li>
+    <li class="style7">Evaluating and enhancing the models used to project climate change               due to human activity, including anthropogenically induced changes               in atmospheric composition, and:</li>
+    <li class="style7">Detecting and describing any climate changes that may occur.</li>
+</ul>
+<p><b>Program Data:</b> The data from most projects associated with the US CLIVAR program are not managed by BCO-DMO. Information about these projects and their results are available from the Program and Data site URLs shown above. However, there are a few exceptions, and those projects are listed below when the project section is expanded.</p>"""^^<rdf:HTML> ;
                                               olinfo:hasWebpage "http://www.usclivar.org/"^^<xsd:anyURI> .
 <http://lod.bco-dmo.org/id/program/2030> rdf:type olprogram:Program ;
-                                         olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/2030#info> .
+                                         olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/2030#info> ;
+                                         olprogram:startsAtDate <http://lod.bco-dmo.org/id/program/2030#startDate> ;
+                                         olprogram:endsAtDate <http://lod.bco-dmo.org/id/program/2030#endDate> .
 
 <http://lod.bco-dmo.org/id/program/2030#info> rdf:type olinfo:InformationObject ;
                                               olinfo:hasCanonicalName "Science, Engineering and Education for Sustainability NSF-Wide Investment (SEES): Ocean Acidification (formerly CRI-OA)"@en-US ;
                                               olinfo:alsoKnownAs "SEES-OA"@en-US ;
+                                              olinfo:hasDescription """<p>NSF Climate Research Investment (CRI) activities that were initiated in 2010 are now included under Science, Engineering and Education for Sustainability NSF-Wide Investment (SEES). SEES is a portfolio of activities that highlights NSF's unique role in helping society address the challenge(s) of achieving sustainability. Detailed information about the SEES program is available from NSF (<a href="http://www.nsf.gov/funding/pgm_summ.jsp?pims_id=504707" target="_blank">http://www.nsf.gov/funding/pgm_summ.jsp?pims_id=504707</a>).</p>
+
+<p>In recognition of the need for basic research concerning the nature, extent and impact of ocean acidification on oceanic environments in the past, present and future, the goal of the SEES: OA program is to understand (a) the chemistry and physical chemistry of ocean acidification; (b) how ocean acidification interacts with processes at the organismal level; and (c) how the earth system history informs our understanding of the effects of ocean acidification on the present day and future ocean.</p>
+
+<p><strong>Solicitations issued under this program:</strong><br />
+<a href="http://www.nsf.gov/publications/pub_summ.jsp?ods_key=nsf10530" target="_blank">NSF 10-530</a>, FY 2010-FY2011<br />
+<a href="http://www.nsf.gov/publications/pub_summ.jsp?ods_key=nsf12500" target="_blank">NSF 12-500</a>, FY 2012<br />
+<a href="http://www.nsf.gov/pubs/2012/nsf12600/nsf12600.htm" target="_blank">NSF 12-600</a>, FY 2013<br />
+<a href="http://www.nsf.gov/pubs/2013/nsf13586/nsf13586.htm" target="_blank">NSF 13-586</a>, FY 2014<br />
+NSF 13-586 was the final solicitation that will be released for this program.</p>
+
+<p><strong>PI Meetings:</strong><br />
+<a href="http://www.whoi.edu/workshops/OAPI2011" target="_blank">1st U.S. Ocean Acidification PI Meeting</a>(March 22-24, 2011, Woods Hole, MA)<br />
+<a href="http://www.whoi.edu/page.do?pid=117036" target="_blank">2nd U.S. Ocean Acidification PI Meeting</a>(Sept. 18-20, 2013, Washington, DC)<br />
+3rd U.S. Ocean Acidification PI Meeting (June 9-11, 2015, Woods Hole, MA – Tentative)</p>
+
+<p><strong>NSF media releases for the Ocean Acidification Program:</strong><br />
+<br />
+<a href="http://www.nsf.gov/news/news_summ.jsp?cntn_id=117823&amp;org=NSF&amp;from=news" target="_blank">Press Release 10-186 NSF Awards Grants to Study Effects of Ocean Acidification</a><br />
+<br />
+<a href="http://www.nsf.gov/discoveries/disc_summ.jsp?cntn_id=127342&amp;org=NSF" target="_blank">Discovery Blue Mussels "Hang On" Along Rocky Shores: For How Long?</a><br />
+<br />
+<a href="http://www.nsf.gov/discoveries/disc_summ.jsp?cntn_id=122642&amp;org=NSF" target="_blank">Discovery nsf.gov - National Science Foundation (NSF) Discoveries - Trouble in Paradise: Ocean Acidification This Way Comes - US National Science Foundation (NSF)</a><br />
+<br />
+<a href="http://www.nsf.gov/news/news_summ.jsp?cntn_id=125523" target="_blank">Press Release 12-179 nsf.gov - National Science Foundation (NSF) News - Ocean Acidification: Finding New Answers Through National Science Foundation Research Grants - US National Science Foundation (NSF)</a><br />
+<br />
+<a href="http://www.nsf.gov/news/news_summ.jsp?cntn_id=128228" target="_blank">Press Release 13-102 World Oceans Month Brings Mixed News for Oysters</a><br />
+<br />
+<a href="http://www.nsf.gov/news/news_summ.jsp?cntn_id=128243" target="_blank">Press Release 13-108 nsf.gov - National Science Foundation (NSF) News - Natural Underwater Springs Show How Coral Reefs Respond to Ocean Acidification - US National Science Foundation (NSF)</a><br />
+<br />
+<a href="http://www.nsf.gov/news/news_summ.jsp?WT.si_n=ClickedAbstractsRecentAwards&amp;WT.si_x=1&amp;WT.si_http://www.nsf.gov/news/news_summ.jsp?WT.si_n=ClickedAbstractsRecentAwards&amp;WT.si_x=1&amp;WT.si_cs=1&amp;WT.z_pims_id=503477&amp;cntn_id=128913&amp;org=GEO&amp;from=news" target="_blank">Press Release 13-148 Ocean acidification: Making new discoveries through National Science Foundation research grants</a><br />
+<br />
+<a href="http://www.nsf.gov/news/news_videos.jsp?cntn_id=128913&amp;media_id=74822&amp;org=NSFhttp://www.nsf.gov/news/news_videos.jsp?cntn_id=128913&amp;media_id=74822&amp;org=NSF" target="_blank">Press Release 13-148 - Video nsf.gov - News - Video - NSF Ocean Sciences Division Director David Conover answers questions about ocean acidification. - US National Science Foundation (NSF)</a><br />
+<br />
+<a href="http://www.nsf.gov/news/news_summ.jsp?cntn_id=130129" target="_blank">Press Release 14-010 nsf.gov - National Science Foundation (NSF) News - Palau's coral reefs surprisingly resistant to ocean acidification - US National Science Foundation (NSF)</a><br />
+<br />
+<a href="http://www.nsf.gov/news/news_summ.jsp?cntn_id=132548&amp;org=NSF&amp;from=news" target="_blank">Press Release 14-116 nsf.gov - National Science Foundation (NSF) News - Ocean Acidification: NSF awards $11.4 million in new grants to study effects on marine ecosystems - US National Science Foundation (NSF)</a></p>
+<!--<p>Recent awards made through this program (with abstracts): <a href="http://www.nsf.gov/awardsearch/progSearch.do?WT.si_n=ClickedAbstractsRecentAwards&amp;WT.si_x=1&amp;WT.si_cs=1&amp;WT.z_pims_id=503477&amp;SearchType=progSearch&amp;page=2&amp;QueryText=&amp;ProgOrganization=&amp;ProgOfficer=&amp;ProgEleCode=&amp;BooleanElement=true&amp;ProgRefCode=1382,8001&amp;BooleanRef=true&amp;ProgProgram=&amp;ProgFoaCode=&amp;RestrictActive=on&amp;Search=Search#results" target="_blank">list of recent OA awards</a></p> -->"""^^<rdf:HTML> ;
                                               olinfo:hasWebpage "http://www.nsf.gov/funding/pgm_summ.jsp?pims_id=503477"^^<xsd:anyURI> .
+
+<http://lod.bco-dmo.org/id/program/2030#startDate> rdf:type time:Instant ;
+                                                   time:inXSDDate "2010-01"^^<xsd:date> .
+
+<http://lod.bco-dmo.org/id/program/2030#endDate> rdf:type time:Instant ;
+                                                 time:inXSDDate "2014-01"^^<xsd:date> .
 <http://lod.bco-dmo.org/id/program/2031> rdf:type olprogram:Program ;
-                                         olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/2031#info> .
+                                         olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/2031#info> ;
+                                         olprogram:startsAtDate <http://lod.bco-dmo.org/id/program/2031#startDate> .
 
 <http://lod.bco-dmo.org/id/program/2031#info> rdf:type olinfo:InformationObject ;
                                               olinfo:hasCanonicalName "Dimensions of Biodiversity"@en-US ;
                                               olinfo:alsoKnownAs "Dimensions of Biodiversity"@en-US ;
+                                              olinfo:hasDescription """<p>(adapted from the NSF Synopsis of Program)<br />
+Dimensions of Biodiversity is a program solicitation from the NSF Directorate for Biological Sciences. FY 2010 was year one of the program.&nbsp; [<a href="http://www.nsf.gov/funding/pgm_summ.jsp?pims_id=503446">MORE</a> from NSF]<br />
+<br />
+The NSF Dimensions of Biodiversity program seeks to characterize biodiversity on Earth by using integrative, innovative approaches to fill rapidly the most substantial gaps in our understanding. The program will take a broad view of biodiversity, and in its initial phase will focus on the integration of genetic, taxonomic, and functional dimensions of biodiversity. Project investigators are encouraged to integrate these three dimensions to understand the interactions and feedbacks among them. While this focus complements several core NSF programs, it differs by requiring that multiple dimensions of biodiversity be addressed simultaneously, to understand the roles of biodiversity in critical ecological and evolutionary processes.</p>
+"""^^<rdf:HTML> ;
                                               olinfo:hasWebpage "http://www.nsf.gov/funding/pgm_summ.jsp?pims_id=503446"^^<xsd:anyURI> .
+
+<http://lod.bco-dmo.org/id/program/2031#startDate> rdf:type time:Instant ;
+                                                   time:inXSDDate "2010-01"^^<xsd:date> .
 <http://lod.bco-dmo.org/id/program/2032> rdf:type olprogram:Program ;
                                          olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/2032#info> ;
+                                         olprogram:startsAtDate <http://lod.bco-dmo.org/id/program/2032#startDate> ;
+                                         olprogram:endsAtDate <http://lod.bco-dmo.org/id/program/2032#endDate> ;
                                          olrole:providesAgentRoleType <http://lod.bco-dmo.org/id/role/140> ,
                                                                       <http://lod.bco-dmo.org/id/role/145> .
 
 <http://lod.bco-dmo.org/id/program/2032#info> rdf:type olinfo:InformationObject ;
                                               olinfo:hasCanonicalName "Arctic Summer Cloud Ocean Study"@en-US ;
                                               olinfo:alsoKnownAs "ASCOS"@en-US ;
+                                              olinfo:hasDescription """<p>The Arctic Summer Cloud Ocean Study is a scientific ice-breaker borne mission to the high Arctic Ocean. The focus is on the physical and chemical processes leading to cloud formation, and scientists ranging from chemists and biologists to oceanographers and meteorologists will contribute.</p>
+<p><a target="_blank" href="http://www.ascos.se/">Arctic Summer Cloud  Ocean Study (ASCOS)</a></p>
+<p><a target="_blank" href="http://articascos.blogspot.com/">ARCTIC ASCOS blog</a></p>
+<p><a target="_blank" href="http://www.atmos-chem-phys.net/special_issue218.html">ASCOS Special Issue in Atmospheric Chemistry and Physics</a></p>"""^^<rdf:HTML> ;
                                               olinfo:hasWebpage "http://www.ascos.se/"^^<xsd:anyURI> .
+
+<http://lod.bco-dmo.org/id/program/2032#startDate> rdf:type time:Instant ;
+                                                   time:inXSDDate "2008-01"^^<xsd:date> .
+
+<http://lod.bco-dmo.org/id/program/2032#endDate> rdf:type time:Instant ;
+                                                 time:inXSDDate "2008-01"^^<xsd:date> .
 
 <http://lod.bco-dmo.org/id/program/2032#role-51452> olprogram:isAssociatedWithProgram <http://lod.bco-dmo.org/id/program/2032> ;
                                                     rdf:type olagentaffiliation:AgentAffiliation ;
@@ -393,14 +739,44 @@
 
 <http://lod.bco-dmo.org/id/person/50910> olagent:performsAgentRole <http://lod.bco-dmo.org/id/program/2032#role-50910> .
 <http://lod.bco-dmo.org/id/program/2033> rdf:type olprogram:Program ;
-                                         olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/2033#info> .
+                                         olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/2033#info> ;
+                                         olprogram:startsAtDate <http://lod.bco-dmo.org/id/program/2033#startDate> .
 
 <http://lod.bco-dmo.org/id/program/2033#info> rdf:type olinfo:InformationObject ;
                                               olinfo:hasCanonicalName "Partnership for Interdisciplinary Studies of Coastal Oceans"@en-US ;
                                               olinfo:alsoKnownAs "PISCO"@en-US ;
+                                              olinfo:hasDescription """<p>The Partnership for Interdisciplinary Studies of Coastal Oceans is a long-term ecosystem research and monitoring program established with the goals of:&nbsp;</p>
+
+<ul>
+	<li>understanding dynamics of the coastal ocean ecosystem along the U.S. west coast</li>
+	<li>sharing that knowledge so ocean managers and policy makers can make science based decisions regarding coastal and marine stewardship</li>
+	<li>producing a new generation of scientists trained in interdisciplinary collaborative approaches</li>
+</ul>
+
+<p>Over the last 10 years, PISCO has successfully built a unique research program that combines complementary disciplines to answer critical environmental questions and inform management and policy. Activities are conducted at the latitudinal scale of the California Current Large Marine Ecosystem along the west coast of North America, but anchored around the dynamics of coastal, hardbottom habitats and the oceanography of the nearshore ocean – among the most productive and diverse components of this ecosystem. The program integrates studies of changes in the ocean environment through ecological monitoring and experiments. Scientists examine the causes and consequences of ecosystem changes over spatial scales that are the most relevant to marine species and management, but largely unstudied elsewhere.<br />
+<br />
+Findings are linked to solutions through a growing portfolio of tools for policy and management decisions. The time from scientific discovery to policy change is greatly reduced by coordinated, efficient links between scientists and key decision makers.<br />
+<br />
+Core elements of PISCO are:</p>
+
+<ul>
+	<li>Interdisciplinary ecosystem science</li>
+	<li>Data archiving and sharing</li>
+	<li>Outreach to public and decision-making user groups</li>
+	<li>Interdisciplinary training</li>
+	<li>Coordination of distributed research team</li>
+</ul>
+
+<p>Established in 1999 with funding from The David and Lucile Packard Foundation, PISCO is led by scientists from core campuses Oregon State University (OSU); Stanford University’s Hopkins Marine Station; University of California, Santa Cruz (UCSC); and University of California, Santa Barbara (UCSB). Collaborators from other institutions also contribute to leadership and development of PISCO programs.&nbsp; As of 2005, core PISCO activities are funded by collaborative grants from The David and Lucile Packard Foundation and the Gordon and Betty Moore Foundation. Core support, along with additional funding from diverse public and private sources, make this unique partnership possible.</p>
+"""^^<rdf:HTML> ;
                                               olinfo:hasWebpage "http://www.piscoweb.org/"^^<xsd:anyURI> .
+
+<http://lod.bco-dmo.org/id/program/2033#startDate> rdf:type time:Instant ;
+                                                   time:inXSDDate "1999-01"^^<xsd:date> .
 <http://lod.bco-dmo.org/id/program/2034> rdf:type olprogram:Program ;
                                          olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/2034#info> ;
+                                         olprogram:startsAtDate <http://lod.bco-dmo.org/id/program/2034#startDate> ;
+                                         olprogram:endsAtDate <http://lod.bco-dmo.org/id/program/2034#endDate> ;
                                          olrole:providesAgentRoleType <http://lod.bco-dmo.org/id/role/138> ,
                                                                       <http://lod.bco-dmo.org/id/role/140> ,
                                                                       <http://lod.bco-dmo.org/id/role/133> ,
@@ -410,7 +786,18 @@
 <http://lod.bco-dmo.org/id/program/2034#info> rdf:type olinfo:InformationObject ;
                                               olinfo:hasCanonicalName "Laurentian Great Lakes Ecosystem Studies"@en-US ;
                                               olinfo:alsoKnownAs "Laurentian Great Lakes Ecosystem Studies"@en-US ;
+                                              olinfo:hasDescription """<p>A series of studies concerned with the chemistry and biology of the  Laurentian Great Lakes. &nbsp;These different  studies share a focus on the dynamics of organic pools of carbon, nitrogen  and phosphorus, and the stoichiometric linkages among these elements. At  different times, work also has focused on trace metal dynamics and  interactions with biota, the rates of primary production and herbivory,  rates and patterns of primary productivity, and the century-long, steady  trend of increasing nitrate in Earth's largest lake by area. &nbsp;Microbial  populations have been investigated and linked to these chemical properties.</p>
+<p>This Program was created by BCO-DMO staff to bring various Laurentian Great Lakes Research projects under one umbrella for improved discovery and access.<br />
+<br />
+Dates: 1998 - 2014<br />
+Funding: NSF/OCE and Minnesota Sea Grant</p>"""^^<rdf:HTML> ;
                                               olinfo:hasWebpage "http://www.tc.umn.edu/~stern007/"^^<xsd:anyURI> .
+
+<http://lod.bco-dmo.org/id/program/2034#startDate> rdf:type time:Instant ;
+                                                   time:inXSDDate "1998-01"^^<xsd:date> .
+
+<http://lod.bco-dmo.org/id/program/2034#endDate> rdf:type time:Instant ;
+                                                 time:inXSDDate "2013-01"^^<xsd:date> .
 
 <http://lod.bco-dmo.org/id/program/2034#role-51462> olprogram:isAssociatedWithProgram <http://lod.bco-dmo.org/id/program/2034> ;
                                                     rdf:type olagentaffiliation:AgentAffiliation ;
@@ -505,20 +892,39 @@
 
 <http://lod.bco-dmo.org/id/person/50910> olagent:performsAgentRole <http://lod.bco-dmo.org/id/program/2034#role-50910> .
 <http://lod.bco-dmo.org/id/program/2035> rdf:type olprogram:Program ;
-                                         olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/2035#info> .
+                                         olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/2035#info> ;
+                                         olprogram:startsAtDate <http://lod.bco-dmo.org/id/program/2035#startDate> ;
+                                         olprogram:endsAtDate <http://lod.bco-dmo.org/id/program/2035#endDate> .
 
 <http://lod.bco-dmo.org/id/program/2035#info> rdf:type olinfo:InformationObject ;
                                               olinfo:hasCanonicalName "Innovative North Pacific Experiment"@en-US ;
                                               olinfo:alsoKnownAs "INoPEx"@en-US ;
+                                              olinfo:hasDescription "<p>Expedition of the research vessel &quot;Sonne&quot; to the subpolar North Pacific and the Bering Sea in 2009 (SO202-INOPEX) around the Pacific subarctic gyre sampling seawater and ocean sediments.</p>"^^<rdf:HTML> ;
                                               olinfo:hasWebpage "http://www.ldeo.columbia.edu/~cth/inopex.htm"^^<xsd:anyURI> .
+
+<http://lod.bco-dmo.org/id/program/2035#startDate> rdf:type time:Instant ;
+                                                   time:inXSDDate "2010-01"^^<xsd:date> .
+
+<http://lod.bco-dmo.org/id/program/2035#endDate> rdf:type time:Instant ;
+                                                 time:inXSDDate "2013-01"^^<xsd:date> .
 <http://lod.bco-dmo.org/id/program/2036> rdf:type olprogram:Program ;
                                          olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/2036#info> ;
+                                         olprogram:startsAtDate <http://lod.bco-dmo.org/id/program/2036#startDate> ;
+                                         olprogram:endsAtDate <http://lod.bco-dmo.org/id/program/2036#endDate> ;
                                          olrole:providesAgentRoleType <http://lod.bco-dmo.org/id/role/138> .
 
 <http://lod.bco-dmo.org/id/program/2036#info> rdf:type olinfo:InformationObject ;
                                               olinfo:hasCanonicalName "Ocean Flux Program"@en-US ;
                                               olinfo:alsoKnownAs "OFP"@en-US ;
+                                              olinfo:hasDescription """<p>(Adapted from the NSF Project Summary)</p>
+<p>Since 1978, the Oceanic Flux Program (OFP), originally founded and managed by at the Woods Hole Oceanographic Institution and now managed by the Bermuda Institute of Ocean Science (BIOS), has continuously measured particle fluxes in the deep Sargasso Sea. The 35+ year OFP time-series is, by far, the longest of its kind and unique in its focus on the deep ocean. OFP has produced a unique, albeit &quot;edited&quot;, record of temporal variability in the &quot;biological pump&quot;, a term loosely applied here to material transfer from the surface to the deep ocean. The OFP provided the first direct evidence for seasonality in the deep ocean and the tight coupling between deep fluxes and upper ocean processes. It has provided clear evidence of the intensity of biological reprocessing of flux and scavenging of suspended material in mesopelagic waters. The record has documented interannual and longer variations in deep fluxes and shorter term fluctuations driven by the interactions between mesoscale physical variability, meteorological forcing and ecosystem responses.</p>"""^^<rdf:HTML> ;
                                               olinfo:hasWebpage "http://ecosystems.mbl.edu/conte/ofp/index.html"^^<xsd:anyURI> .
+
+<http://lod.bco-dmo.org/id/program/2036#startDate> rdf:type time:Instant ;
+                                                   time:inXSDDate "1978-01"^^<xsd:date> .
+
+<http://lod.bco-dmo.org/id/program/2036#endDate> rdf:type time:Instant ;
+                                                 time:inXSDDate "2015-01"^^<xsd:date> .
 
 <http://lod.bco-dmo.org/id/program/2036#role-50678> olprogram:isAssociatedWithProgram <http://lod.bco-dmo.org/id/program/2036> ;
                                                     rdf:type olagentaffiliation:AgentAffiliation ;
@@ -529,14 +935,30 @@
 
 <http://lod.bco-dmo.org/id/person/50678> olagent:performsAgentRole <http://lod.bco-dmo.org/id/program/2036#role-50678> .
 <http://lod.bco-dmo.org/id/program/472023> rdf:type olprogram:Program ;
-                                           olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/472023#info> .
+                                           olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/472023#info> ;
+                                           olprogram:startsAtDate <http://lod.bco-dmo.org/id/program/472023#startDate> .
 
 <http://lod.bco-dmo.org/id/program/472023#info> rdf:type olinfo:InformationObject ;
                                                 olinfo:hasCanonicalName "Line P"@en-US ;
                                                 olinfo:alsoKnownAs "Line P"@en-US ;
+                                                olinfo:hasDescription """<p>Excerpt from: Canadian Data Report of Hydrography and Ocean Sciences No. 107. 1992</p>
+
+<p><strong>An Update of the Statistics of Hydrographic/CTD Data taken at Ocean Station P (May 1956-September 1990)</strong></p>
+
+<p>by S. Tabata and W.E. Weichselbaumer Institute of Ocean Sciences, Department of Fisheries and Oceans, Sidney, B.C. V8L 4B2</p>
+
+<p><strong>Introduction</strong></p>
+
+<p>In recent years the importance of the oceans to global climatic changes has been given much attention and consequently the study of the ocean climatology has received major consideration in global climate studies. Interest in large-scale oceanographic events and general ocean circulation is more widespread than ever before. This shift in interest has necessitated the requirement for examining the ocean within a greater time frame. However, long ocean time series data needed for such a study are not readily available. Ocean Station&nbsp;P (50 00°N, 145 00°W, depth 4220 meters) was operated as an ocean weather station from 19 December, 1949 through 20 June, 1981. The first oceanographic observation there, in the form of a bathythermograph cast, was made on 19 December, 1949 (Leipper et al., 1954). In view of the importance of long ocean time series the observations at Station P and Line P were continued, although at much less frequent intervals than in the past, after the withdrawal of the weatherships in June 1981. The observations are carried out mainly by the staff of the Institute of Ocean Sciences using, to a large measure, their own ships. The present ship schedule permits only 3 to 4 cruises there per year. The statistics of representative oceanographic data for Station P and Line&nbsp;P, based on oceanographic observations made during August 1956 through June 1981 by the Canadian weatherships, have been published previously (Tabata and Peart,1985a, 1985b, 1986). Since then observations have continued there to this day.</p>
+"""^^<rdf:HTML> ;
                                                 olinfo:hasWebpage "http://www.pac.dfo-mpo.gc.ca/science/oceans/data-donnees/line-p/index-eng.html"^^<xsd:anyURI> .
+
+<http://lod.bco-dmo.org/id/program/472023#startDate> rdf:type time:Instant ;
+                                                     time:inXSDDate "1949-01"^^<xsd:date> .
 <http://lod.bco-dmo.org/id/program/514212> rdf:type olprogram:Program ;
                                            olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/514212#info> ;
+                                           olprogram:startsAtDate <http://lod.bco-dmo.org/id/program/514212#startDate> ;
+                                           olprogram:endsAtDate <http://lod.bco-dmo.org/id/program/514212#endDate> ;
                                            olrole:providesAgentRoleType <http://lod.bco-dmo.org/id/role/142> ,
                                                                         <http://lod.bco-dmo.org/id/role/140> ,
                                                                         <http://lod.bco-dmo.org/id/role/133> .
@@ -544,6 +966,12 @@
 <http://lod.bco-dmo.org/id/program/514212#info> rdf:type olinfo:InformationObject ;
                                                 olinfo:hasCanonicalName "Tropical Eastern Pacific Coral Reefs"@en-US ;
                                                 olinfo:alsoKnownAs "TEP Corals"@en-US .
+
+<http://lod.bco-dmo.org/id/program/514212#startDate> rdf:type time:Instant ;
+                                                     time:inXSDDate "1985-01"^^<xsd:date> .
+
+<http://lod.bco-dmo.org/id/program/514212#endDate> rdf:type time:Instant ;
+                                                   time:inXSDDate "2012-01"^^<xsd:date> .
 
 <http://lod.bco-dmo.org/id/program/514212#role-514244> olprogram:isAssociatedWithProgram <http://lod.bco-dmo.org/id/program/514212> ;
                                                        rdf:type olagentaffiliation:AgentAffiliation ;
@@ -595,12 +1023,29 @@
 <http://lod.bco-dmo.org/id/person/514248> olagent:performsAgentRole <http://lod.bco-dmo.org/id/program/514212#role-514248> .
 <http://lod.bco-dmo.org/id/program/517517> rdf:type olprogram:Program ;
                                            olorg:isDescribedBy <http://lod.bco-dmo.org/id/program/517517#info> ;
+                                           olprogram:startsAtDate <http://lod.bco-dmo.org/id/program/517517#startDate> ;
+                                           olprogram:endsAtDate <http://lod.bco-dmo.org/id/program/517517#endDate> ;
                                            olrole:providesAgentRoleType <http://lod.bco-dmo.org/id/role/142> ,
                                                                         <http://lod.bco-dmo.org/id/role/140> .
 
 <http://lod.bco-dmo.org/id/program/517517#info> rdf:type olinfo:InformationObject ;
                                                 olinfo:hasCanonicalName "GeoMICS"@en-US ;
-                                                olinfo:alsoKnownAs "GeoMICS"@en-US .
+                                                olinfo:alsoKnownAs "GeoMICS"@en-US ;
+                                                olinfo:hasDescription """<p>The GeoMICS (Global scale Microbial Interactions across Chemical Surveys) research effort grew out of an Ocean Carbon and Biogeochemistry (OCB) workshop that discussed how molecular ecologists might collaborate with geochemists to better understand biogeochemical processes in the world oceans. The workshop highlighted the potential of bringing these two communities together. The first GeoMICS cruise was carried out in May 2012 on the R/V Thompson along a subset of Line P. Goals included:</p>
+
+<ul>
+	<li>Identify interactions between changes in microbial diversity, community functions, and chemical features across a gradient.</li>
+	<li>Coordinate sampling protocols: inorganic geochemistry, organic geochemistry, and molecular biology.</li>
+</ul>
+
+<p>In February 2013, an OCB-sponsored workshop was held to coordinate data analysis among the groups of participants (inorganic geochemists, organic geochemists, molecular ecologists, modelers, and computer scientists).</p>
+"""^^<rdf:HTML> .
+
+<http://lod.bco-dmo.org/id/program/517517#startDate> rdf:type time:Instant ;
+                                                     time:inXSDDate "2012-01"^^<xsd:date> .
+
+<http://lod.bco-dmo.org/id/program/517517#endDate> rdf:type time:Instant ;
+                                                   time:inXSDDate "2013-01"^^<xsd:date> .
 
 <http://lod.bco-dmo.org/id/program/517517#role-517495> olprogram:isAssociatedWithProgram <http://lod.bco-dmo.org/id/program/517517> ;
                                                        rdf:type olagentaffiliation:AgentAffiliation ;
@@ -665,4 +1110,8 @@
 <http://lod.bco-dmo.org/id/program/523496#info> rdf:type olinfo:InformationObject ;
                                                 olinfo:hasCanonicalName "Arctic Observing Network"@en-US ;
                                                 olinfo:alsoKnownAs "AON"@en-US ;
+                                                olinfo:hasDescription """<p>The AON is envisioned as a system of atmospheric, land- and ocean-based environmental monitoring capabilities--from ocean buoys to satellites--that will significantly advance our observations of Arctic environmental conditions. &nbsp;AON is an integral part of&nbsp;the interagency U.S. government initiative--the Study of Environmental Arctic Change (SEARCH) program, an NSF initiative growing out of the International Polar Year (IPY) to improve observational capabilities in the Arctic and leave a long-term legacy for the benefit of science and society. &nbsp;Data from the AON&nbsp;will contribute to scientific research leading to (1) increased knowledge and understanding of the regional and global causes and consequences of present-day environmental arctic change, (2) scenarios for and prediction of the course of future arctic change and its regional and global consequences, and (3) the development of adaptive responses to arctic change.</p>
+
+<p>AON currently consists of&nbsp;51 projects&nbsp;funded by the NSF Office of Polar Programs. The AON projects fall into the following&nbsp;SEARCH Implementation Plan&nbsp;categories: Atmosphere; Ocean and Sea Ice; Hydrology/Cryosphere; Terrestrial Ecosystems; and Human Dimensions.</p>
+"""^^<rdf:HTML> ;
                                                 olinfo:hasWebpage "http://www.arcus.org/search-program/aon"^^<xsd:anyURI> .
