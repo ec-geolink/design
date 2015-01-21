@@ -24,14 +24,15 @@ def addStatement(model, s, p, o):
 def addDataset(model, doc):
     d1base = "https://cn.dataone.org/cn/v1/object/"
     dcterms = "http://purl.org/dc/terms/"
-    gldataset = "http://schema.geolink.org/repository-object#"
+    gldata = "http://schema.geolink.org/repository-object#"
     element = d.find("./str[@name='identifier']")
     identifier = element.text
-    addStatement(model, d1base+identifier, "http://www.w3.org/1999/02/22-rdf-syntax-ns#type", gldataset+"DigitalObjectRecord")
+    addStatement(model, d1base+identifier, "http://www.w3.org/1999/02/22-rdf-syntax-ns#type", gldata+"DigitalObjectRecord")
     addStatement(model, d1base+identifier, dcterms+"identifier", identifier)
     element = d.find("./str[@name='title']")
     title = element.text
     addStatement(model, d1base+identifier, dcterms+"title", title)
+    
     originlist = d.findall("./arr[@name='origin']/str")
 
 def createModel():
@@ -43,9 +44,22 @@ def createModel():
         raise Exception("new RDF.model failed")
     return model
 
-def serialize(filename):
-    serializer=RDF.Serializer()
-    serializer.set_namespace("dcterms", RDF.Uri(dcterms))
+def serialize(model, filename, format):
+    # Format can be one of:
+    # rdfxml          RDF/XML (default)
+    # ntriples        N-Triples
+    # turtle          Turtle Terse RDF Triple Language
+    # trig            TriG - Turtle with Named Graphs
+    # rss-tag-soup    RSS Tag Soup
+    # grddl           Gleaning Resource Descriptions from Dialects of Languages
+    # guess           Pick the parser to use using content type and URI
+    # rdfa            RDF/A via librdfa
+    # nquads          N-Quads
+    if format==None:
+        format="turtle"
+    serializer=RDF.Serializer(name=format)
+    serializer.set_namespace("dcterms", RDF.Uri("http://purl.org/dc/terms/"))
+    serializer.set_namespace("gldata", RDF.Uri("http://schema.geolink.org/repository-object#"))
     serializer.serialize_model_to_file(filename, model)
 
 def main():
@@ -54,11 +68,8 @@ def main():
     doclist = xmldoc.findall(".//doc")
     for d in doclist:
         addDataset(model, d)
-        #print(ET.tostring(d))
-        
-    for s in model.find_statements(RDF.Statement()):
-        print "found statement:",s
-    print "Done"
+    serialize(model, "dataone-example-lod.ttl", "turtle")
+    serialize(model, "dataone-example-lod.rdf", "rdfxml")
 
 if __name__ == "__main__":
     import RDF

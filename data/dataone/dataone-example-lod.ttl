@@ -1,0 +1,9 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix gldata: <http://schema.geolink.org/repository-object#> .
+
+<https://cn.dataone.org/cn/v1/object/doi:10.6085/AA/WES001_030MTBD021R00_20100416.50.1>
+    dcterms:identifier "doi:10.6085/AA/WES001_030MTBD021R00_20100416.50.1" ;
+    dcterms:title "MBNMS/PISCO: Physical Oceanography: moored temperature data: Weston Beach, California, USA (WES001)" ;
+    a "http://schema.geolink.org/repository-object#DigitalObjectRecord" .
+
