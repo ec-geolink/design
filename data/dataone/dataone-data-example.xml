@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<response>
+  <lst name="responseHeader">
+    <int name="status">0</int>
+    <int name="QTime">25</int>
+    <lst name="params">
+      <str name="fl">identifier,title,author,authorLastName,origin,submitter,rightsHolder,relatedOrganizations,contactOrganization,documents,resourceMap</str>
+      <str name="start">20000</str>
+      <str name="q">formatType:METADATA</str>
+      <str name="rows">2</str>
+    </lst>
+  </lst>
+  <result name="response" numFound="187716" start="20000">
+    <doc>
+      <str name="author">John Roach</str>
+      <arr name="authorLastName">
+        <str>Roach</str>
+        <str>Grimm</str>
+        <str>Buyantuyev</str>
+      </arr>
+      <arr name="contactOrganization">
+        <str>Global Institute of Sustainability</str>
+      </arr>
+      <str name="identifier">knb-lter-cap.306.4</str>
+      <arr name="origin">
+        <str>John Roach</str>
+        <str>Nancy B. Grimm</str>
+        <str>Alexander Buyantuyev</str>
+      </arr>
+      <str name="rightsHolder">uid=CAP,o=LTER,dc=ecoinformatics,dc=org</str>
+      <str name="submitter">uid=CAP,o=LTER,dc=ecoinformatics,dc=org</str>
+      <str name="title">Indian Bend Wash GIS Mask II</str>
+    </doc>
+    <doc>
+      <str name="author">Huang Chu-Meei</str>
+      <arr name="authorLastName">
+        <str>Chu-Meei</str>
+      </arr>
+      <arr name="contactOrganization">
+        <str>Taiwan Forestry Research Institute</str>
+      </arr>
+      <arr name="documents">
+        <str>hcme.9.1</str>
+      </arr>
+      <str name="identifier">hcme.8.1</str>
+      <arr name="origin">
+        <str>Huang Chu-Meei</str>
+      </arr>
+      <arr name="resourceMap">
+        <str>resourceMap_hcme.8.1</str>
+      </arr>
+      <str name="rightsHolder">uid=hcme,o=TFRI,dc=ecoinformatics,dc=org</str>
+      <str name="submitter">uid=hcme,o=TFRI,dc=ecoinformatics,dc=org</str>
+      <str name="title">Organic Matter Accumulation in the Forest Floors of Forest Ecosystems in Taiwan-soil analysis</str>
+    </doc>
+  </result>
+</response>
