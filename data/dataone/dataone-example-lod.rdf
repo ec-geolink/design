@@ -1,12 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:gldata="http://schema.geolink.org/repository-object#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-  <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/object/doi:10.6085/AA/WES001_030MTBD021R00_20100416.50.1">
-    <rdf:type>http://schema.geolink.org/repository-object#DigitalObjectRecord</rdf:type>
+<rdf:RDF xmlns:datacite="http://purl.org/spar/datacite/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:gldata="http://schema.geolink.org/repository-object#" xmlns:glperson="http://schema.geolink.org/person#" xmlns:glpersonii="http://schema.geolink.org/personal-info-item#" xmlns:glpersonname="http://schema.geolink.org/person-name#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5n58kx5/2/cadwsap-s0710300-013.xml">
+    <rdf:type rdf:resource="http://schema.geolink.org/repository-object#DigitalObjectRecord"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/object/doi:10.6085/AA/WES001_030MTBD021R00_20100416.50.1">
-    <dcterms:title>MBNMS/PISCO: Physical Oceanography: moored temperature data: Weston Beach, California, USA (WES001)</dcterms:title>
+  <rdf:Description rdf:about="urn:uuid:5b25c4ec-05d6-4bcd-a5db-46d9ad375c4c">
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/object/doi:10.6085/AA/WES001_030MTBD021R00_20100416.50.1">
-    <dcterms:identifier>doi:10.6085/AA/WES001_030MTBD021R00_20100416.50.1</dcterms:identifier>
+  <rdf:Description rdf:about="urn:uuid:5b25c4ec-05d6-4bcd-a5db-46d9ad375c4c">
+    <rdf:type rdf:resource="http://schema.geolink.org/person#Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5n58kx5/2/cadwsap-s0710300-013.xml">
+    <dcterms:identifier>ark:/13030/m5n58kx5/2/cadwsap-s0710300-013.xml</dcterms:identifier>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn:uuid:5b25c4ec-05d6-4bcd-a5db-46d9ad375c4c">
+    <foaf:name>CDPH San Francisco District</foaf:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://orcid.org/5b25c4ec05d64bcda5db46d9ad375c4c">
+    <datacite:usesIdentifierScheme rdf:resource="http://purl.org/spar/datacite/orcid"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://orcid.org/5b25c4ec05d64bcda5db46d9ad375c4c">
+    <rdf:type rdf:resource="http://purl.org/spar/datacite/PersonalIdentifier"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn:uuid:5b25c4ec-05d6-4bcd-a5db-46d9ad375c4c">
+    <datacite:hasIdentifier rdf:resource="http://orcid.org/5b25c4ec05d64bcda5db46d9ad375c4c"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5n58kx5/2/cadwsap-s0710300-013.xml">
+    <dcterms:title>DWSAP Assessment for 0710300-013:  MOUNT DIABLO STATE PARK / SPRING 10</dcterms:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5n58kx5/2/cadwsap-s0710300-013.xml">
+    <dcterms:creator rdf:resource="http://orcid.org/5b25c4ec05d64bcda5db46d9ad375c4c"/>
   </rdf:Description>
 </rdf:RDF>

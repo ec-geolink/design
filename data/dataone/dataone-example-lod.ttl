@@ -1,9 +1,24 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix glpersonname: <http://schema.geolink.org/person-name#> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix glperson: <http://schema.geolink.org/person#> .
+@prefix glpersonii: <http://schema.geolink.org/personal-info-item#> .
 @prefix gldata: <http://schema.geolink.org/repository-object#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 
-<https://cn.dataone.org/cn/v1/object/doi:10.6085/AA/WES001_030MTBD021R00_20100416.50.1>
-    dcterms:identifier "doi:10.6085/AA/WES001_030MTBD021R00_20100416.50.1" ;
-    dcterms:title "MBNMS/PISCO: Physical Oceanography: moored temperature data: Weston Beach, California, USA (WES001)" ;
-    a "http://schema.geolink.org/repository-object#DigitalObjectRecord" .
+<http://orcid.org/5b25c4ec05d64bcda5db46d9ad375c4c>
+    datacite:usesIdentifierScheme datacite:orcid ;
+    a datacite:PersonalIdentifier .
+
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5n58kx5/2/cadwsap-s0710300-013.xml>
+    dcterms:creator <http://orcid.org/5b25c4ec05d64bcda5db46d9ad375c4c> ;
+    dcterms:identifier "ark:/13030/m5n58kx5/2/cadwsap-s0710300-013.xml" ;
+    dcterms:title "DWSAP Assessment for 0710300-013:  MOUNT DIABLO STATE PARK / SPRING 10" ;
+    a gldata:DigitalObjectRecord .
+
+<urn:uuid:5b25c4ec-05d6-4bcd-a5db-46d9ad375c4c>
+    datacite:hasIdentifier <http://orcid.org/5b25c4ec05d64bcda5db46d9ad375c4c> ;
+    a glperson:Person, foaf:Person ;
+    foaf:name "CDPH San Francisco District" .
 
