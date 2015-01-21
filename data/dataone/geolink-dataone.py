@@ -25,22 +25,21 @@ def addStatement(model, s, p, o):
     
 def addDataset(model, doc, ns, personhash):
     d1base = "https://cn.dataone.org/cn/v1/resolve/"
-    
-    element = d.find("./str[@name='identifier']")
+    element = doc.find("./str[@name='identifier']")
     identifier = element.text
     addStatement(model, d1base+identifier, "http://www.w3.org/1999/02/22-rdf-syntax-ns#type", RDF.Uri(ns["gldata"]+"DigitalObjectRecord"))
     addStatement(model, d1base+identifier, ns["dcterms"]+"identifier", identifier)
-    title_element = d.find("./str[@name='title']")
+    title_element = doc.find("./str[@name='title']")
     addStatement(model, d1base+identifier, ns["dcterms"]+"title", title_element.text)
     
-    originlist = d.findall("./arr[@name='origin']/str")
+    originlist = doc.findall("./arr[@name='origin']/str")
     for creatornode in originlist:
         creator = creatornode.text
         if (creator not in personhash):
             # Add it
             newid = uuid.uuid4()
             p_uuid = newid.urn
-            p_orcid = "http://orcid.org/" + newid.hex
+            p_orcid = "http://fakeorcid.org/" + newid.hex
             p_data = [p_uuid, p_orcid]
             personhash[creator] = p_data
         else:
@@ -54,14 +53,15 @@ def addDataset(model, doc, ns, personhash):
         addStatement(model, p_uuid, ns["foaf"]+"name", creator)
         
         pi_node = RDF.Node(RDF.Uri(p_orcid))
-        statement=RDF.Statement(pi_node, RDF.Uri("http://www.w3.org/1999/02/22-rdf-syntax-ns#type"), RDF.Uri(ns["datacite"]+"PersonalIdentifier"))       
-        model.add_statement(statement)
-        statement=RDF.Statement(pi_node, RDF.Uri(ns["datacite"]+"usesIdentifierScheme"), RDF.Uri(ns["datacite"]+"orcid"))       
-        model.add_statement(statement)
-        statement=RDF.Statement(RDF.Uri(p_uuid), RDF.Uri(ns["datacite"]+"hasIdentifier"), pi_node)
-        model.add_statement(statement)
-        statement=RDF.Statement(RDF.Uri(d1base+identifier), RDF.Uri(ns["dcterms"]+"creator"), pi_node)
-        model.add_statement(statement)
+        s1=RDF.Statement(pi_node, RDF.Uri("http://www.w3.org/1999/02/22-rdf-syntax-ns#type"), RDF.Uri(ns["datacite"]+"PersonalIdentifier"))       
+        model.add_statement(s1)
+        s2=RDF.Statement(pi_node, RDF.Uri(ns["datacite"]+"usesIdentifierScheme"), RDF.Uri(ns["datacite"]+"orcid"))       
+        model.add_statement(s2)
+        s3=RDF.Statement(RDF.Uri(p_uuid), RDF.Uri(ns["datacite"]+"hasIdentifier"), pi_node)
+        model.add_statement(s3)
+        s4=RDF.Statement(RDF.Uri(d1base+identifier), RDF.Uri(ns["dcterms"]+"creator"), RDF.Uri(p_uuid))
+        model.add_statement(s4)
+        model.sync()
 
 # TODO:
 # <http://lod.bco-dmo.org/id/person/50377> rdf:type olperson:Person ;
@@ -79,6 +79,7 @@ def addDataset(model, doc, ns, personhash):
 
 def createModel():
     storage=RDF.Storage(storage_name="hashes", name="geolink", options_string="new='yes',hash-type='memory',dir='.'")
+    #storage=RDF.MemoryStorage()
     if storage is None:
         raise Exception("new RDF.Storage failed")
     model=RDF.Model(storage)
@@ -121,8 +122,11 @@ def main():
     }
     xmldoc = getDataList()
     doclist = xmldoc.findall(".//doc")
+    print(len(doclist))
     for d in doclist:
         addDataset(model, d, ns, personhash)
+        
+    print("Model size before serialize: " + str(model.size()))
     serialize(model, ns, "dataone-example-lod.ttl", "turtle")
     serialize(model, ns, "dataone-example-lod.rdf", "rdfxml")
 
