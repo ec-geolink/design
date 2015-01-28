@@ -3,59 +3,41 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX xml: <http://www.w3.org/XML/1998/namespace>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX geosparql: <http://www.opengis.net/ont/geosparql#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX glv: <http://schema.geolink.org/view/>
-PREFIX gl-funding-award: <http://schema.geolink.org/funding-award/>
-PREFIX gl-cruise: <http://schema.geolink.org/cruise/>
-PREFIX gl-agent-role: <http://schema.geolink.org/agent-role/>
-PREFIX gl-agent: <http://schema.geolink.org/agent/>
-PREFIX gl-org: <http://schema.geolink.org/organization/>
-PREFIX gl-info-obj: <http://schema.geolink.org/information-object/>
+PREFIX gl: <http://schema.geolink.org/>
 
 ## If some triple in the WHERE clause is optional in the data, then use OPTIONAL clause?
 ## Only construct triples from non-inverse relationship.
 ## Based on <http://linked.rvdata.us/page/award/100004>      
 
+
+## r2r:Award rdfs:subClassOf glv:Award 
+
 CONSTRUCT {
-   ?X rdf:type glv-funding-award:FundingAward .
-   _:ar gl-agent-role:isAgentRoleIn ?X .
-   _:ar rdf:type gl-agent-role:AgentRole .
-   _:ar gl-agent-role:hasAgentRoleType gl-agent-role:sponsor_role .
-   _:ar gl-agent-role:isPerformedBy ?Z .
-   ?Z rdf:type gl-org:Organization . 
-   ?X gl-info-obj:isDescribedBy _:io .
-   _:io rdf:type gl-funding-award:FundingAwardInformationObject .
-   _:io gl-funding-award:hasAwardID ?ID .
-   _:io gl-funding-award:hasTitle ?T .
-   _:io gl-info-obj:seeAlso ?W .
+   ?X rdf:type gl:FundingAward .
+   _:ar gl:isAgentRoleIn ?X .
+   _:ar rdf:type gl:AgentRole .
+   _:ar gl:hasAgentRoleType gl:funding_award_sponsor_role .
+   _:ar gl:isPerformedBy ?Z .
+   ?Z rdf:type gl:Organization . 
+   ?X gl:isDescribedBy _:io .
+   _:io rdf:type gl:FundingAwardInformationObject .
+   _:io gl:hasAwardID ?ID .
+   _:io gl:hasAwardTitle ?T .
+   _:io gl:seeAlso ?W .
 }
 FROM <http://address-to-r2r-graph-mapped-to-view>
 WHERE {
   ?X rdf:type glv:Award .
   ?X glv:hasSponsor ?Z.
-  ?X glv:hasIdentifier ?ID .
-  ?X glv:hasTitle ?T .
-  ?X glv:hasDescribingSource ?W .
+  ?X dcterms:identifier ?ID .
+  ?X dcterms:title ?T .
+  ?X dcterms:source ?W .
 }
-
-
-## Based on <http://linked.rvdata.us/page/organization/gov.nsf>
-    
-CONSTRUCT {
-  ?O rdf:type gl-org:Organization .
-  ?O gl-info-obj:isDescribedBy _:io .
-  _:io rdf:type gl-org:OrganizationInformationObject .
-  _:io gl-info-obj:hasCanonicalName ?ID .
-  _:io gl-info-obj:alsoKnownAs ?L .
-  _:io gl-info-obj:alsoKnownAs ?M .  
-}
-FROM <http://address-to-r2r-graph-mapped-to-view>
-WHERE {
-  ?O rdf:type glv:Organization
-  ?O glv:hasIdentifier ?ID .
-  ?O glv:hasLabel ?L .
-  ?O glv:hasName ?M .
-}
-
 
 ## Based on <http://linked.rvdata.us/page/cruise/MGL0901>
 ## Only partially done .
@@ -64,20 +46,21 @@ WHERE {
 ##
 
 CONSTRUCT {
-  ?C rdf:type gl-cruise:Cruise .
-  ?C gl-funding-award:isFundedBy ?AW
-  _:arop rdf:type gl-agent-role:AgentRole .
-  _:arop gl-agent-role:isAgentRoleIn ?C .
-  _:arop gl-agent-role:hasAgentRoleType gl-cruise:operator_role
-  _:arop gl-agent-role:isPerformedBy ?OP .
-  ?OP rdf:type gl-org:Organization .
+  ?C rdf:type gl:Cruise .
+  ?C gl:isFundedBy ?AW .
+  ?C gl:
+  _:arop rdf:type gl:AgentRole .
+  _:arop gl:isAgentRoleIn ?C .
+  _:arop gl:hasAgentRoleType gl:cruise_operator_role
+  _:arop gl:isPerformedBy ?OP .
+  ?OP rdf:type gl:Organization .
   
 }
 FROM <http://address-to-r2r-graph-mapped-to-view>
 WHERE {
   ?C rdf:type glv:Cruise .
   ?C glv:hasAward ?AW .
-  ?C glv:hasEventInCruise ?EV .
+  ?C glv:hasCruiseEvent ?EV .
   ?C glv:hasFileset ?FSET .
   ?C glv:hasHolding ?HLD .
   ?C glv:hasCruiseOperator ?OP .
@@ -91,33 +74,182 @@ WHERE {
   ?C glv:hasCruiseTrack ?TRACK .
   ?C glv:hasVessel ?V .
   ?C glv:hasVesselName ?VN .
-  ?C glv:hasTitle ?T .
   ?C glv:hasCruiseType ?TY .
-  ?C glv:hasIdentifier ?ID .
-  ?C glv:hasLabel ?L .
-  ?C glv:seeAlso ?W .
+  
+  ?C dcterms:title ?T .
+  ?C dcterms:identifier ?ID .
+  ?C rdfs:label ?L .
+  ?C rdfs:seeAlso ?W .
+}
+
+## http://linked.rvdata.us/page/device/100002
+
+CONSTRUCT {
+}
+FROM
+WHERE {
 }
 
 ## <http://linked.rvdata.us/page/event/100002781>
+## This corresponds to arrival/departure from port
 
 CONSTRUCT {
 }
 FROM <http://address-to-graph-view>
 WHERE {
-  
+  ?E glv:hasPort ?P .
+  ?E glv:hasPortActivityType ?A .
+  ?E glv:atTime ?T .
+  ?E rdfs:label ?L .
+  ?E rdf:type glv:Event .
 }
 
 ## <http://linked.rvdata.us/page/fileset/101244>
+## r2r:Fileset rdfs:subClassOf glv:DigitalObjectRecord
+
 CONSTRUCT {
 } 
 FROM
 WHERE {
+  ?FS glv:hasDevice ?DV .
+  ?FS glv:hasFormat ?FMT .
+  ?FS dcterms:identifier ?ID .
+  ?FS rdfs:label ?L .
+  ?FS dcterms:source ?S .
+  ?FS dcterms:tableOfContents ?TOC .
+  ?FS dcterms:title ?T .
+  ?FS rdf:type glv:DigitalObjectRecord .
 }
 
+## http://linked.rvdata.us/page/format/100008
+CONSTRUCT {
+}
+FROM
+WHERE {
+}
+
+## http://linked.rvdata.us/page/geometry/100004
+CONSTRUCT {
+}
+FROM
+WHERE {
+}
 
 ## <http://linked.rvdata.us/page/holding/100035>
+## r2r:Holding rdfs:subClassOf glv:DigitalObjectRecord
+
 CONSTRUCT {
 } 
 FROM
 WHERE {
+  ?H glv:belongsToRepository ?REPO .
+  ?H dcterms:identifier ?ID .
+  ?H rdfs:label ?L .
+  ?H dcterms:source ?S .
+  ?H rdf:type glv:DigitalObjectRecord .
 }
+
+## http://linked.rvdata.us/page/model/100015
+CONSTRUCT {
+}
+FROM
+WHERE {
+}
+
+
+## Based on <http://linked.rvdata.us/page/organization/gov.nsf>
+## r2r:Organization rdfs:subClassOf glv:Organization
+
+CONSTRUCT {
+  ?O rdf:type gl:Organization .
+  ?O gl:isDescribedBy _:io .
+  _:io rdf:type gl:OrganizationInformationObject .
+  _:io gl:hasCanonicalName ?ID .
+  _:io gl:alsoKnownAs ?L .
+  _:io gl:alsoKnownAs ?M .  
+}
+FROM <http://address-to-r2r-graph-mapped-to-view>
+WHERE {
+  ?O rdf:type glv:Organization
+  ?O dcterms:identifier ?ID .
+  ?O rdfs:label ?L .
+  ?O foaf:name ?M .
+}
+
+
+## http://linked.rvdata.us/page/participant/100005
+CONSTRUCT {
+}
+FROM
+WHERE {
+}
+
+
+
+
+## http://linked.rvdata.us/page/person/100275
+
+CONSTRUCT {
+}
+FROM
+WHERE {
+  ?P dcterms:identifier ?ID .
+  ?P rdfs:label ?L .
+  ?P foaf:name ?M .
+  ?P rdf:type glv:Person
+}
+
+
+## http://linked.rvdata.us/page/port/100006
+CONSTRUCT {
+}
+FROM
+WHERE {
+}
+
+## http://linked.rvdata.us/page/product/100014
+CONSTRUCT {
+}
+FROM
+WHERE {
+}
+
+## http://linked.rvdata.us/page/report/100455
+CONSTRUCT {
+}
+FROM
+WHERE {
+}
+
+## http://linked.rvdata.us/page/repository/IMLGS
+CONSTRUCT {
+}
+FROM
+WHERE {
+}
+
+## http://linked.rvdata.us/page/track/MGL0901
+## <http://www.opengis.net/ont/sf#LineString> rdfs:subClassOf glv:Geometry 
+CONSTRUCT {
+}
+FROM
+WHERE {
+  ?TR geosparql:asWKT ?WKT .
+  ?TR rdfs:label ?L .
+  ?TR rdf:type glv:Geometry  
+}
+
+## http://linked.rvdata.us/page/vessel/33H3
+## r2r:Vessel rdfs:subClassOf glv:Vessel
+
+CONSTRUCT {
+}
+FROM
+WHERE {
+  ?V glv:hasVesselOperator ?OP .
+  ?V glv:hasVesselOwner ?OW .
+  ?V skos:exactMatch ?NERCVESSEL .
+  ?V rdfs:label ?L .
+  ?V rdf:type glv:Vessel  
+}
+
