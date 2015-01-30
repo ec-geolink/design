@@ -68,12 +68,9 @@ WHERE {
 		?SCH rdf:type ecglview:Organization .
 		
   ?C ecglview:hasParticipation ?P .
-		?P ecglview:hasAffiliationDuringCruise ?ORG .
-			?ORG rdf:type ecglview:Organization .				
-		?P ecglview:isPerformedBy ?PERS .
-			?PERS rdf:type ecglview:Person .
-		?P ecglview:hasRoleType ?ROL .
-		?P rdf:type ecglview:AgentRole .
+		?P ecglview:hasAffiliationDuringCruise ?ORG .			
+		?P ecglview:isPerformedBy ?PERS .			
+		?P ecglview:hasRoleType ?ROL .		
   
   ?C ecglview:hasFileset ?FSET .  
   ?C ecglview:hasHolding ?HLD .  
