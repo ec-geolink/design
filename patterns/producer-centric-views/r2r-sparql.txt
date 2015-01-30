@@ -64,29 +64,37 @@ CONSTRUCT {
 FROM <http://address-to-r2r-graph-mapped-to-view>
 WHERE {
   ?C rdf:type ecglview:Cruise .
-  ?C ecglview:hasAward ?AW .    
+  
+  OPTIONAL { ?C ecglview:hasAward ?AW . }   
   ?C ecglview:hasOperator ?OP .  
   ?C ecglview:hasScheduler ?SCH .	
-  ?C ecglview:hasParticipation ?P .
+  
+  OPTIONAL {
+	?C ecglview:hasParticipation ?P .
 		?P ecglview:hasAffiliationDuringCruise ?ORG .			
 		?P ecglview:isPerformedBy ?PERS .			
 		?P ecglview:hasRoleType ?ROL .		
+  }
   
-  ?C ecglview:hasTrack ?TRACK .
+  OPTIONAL {
+	?C ecglview:hasTrack ?TRACK .
 		{ 
 		  { ?TRACK geosparql:asWKT ?WKT . } 
 		  UNION
 		  { ?TRACK geosparql:asGML ?GML . }
 		} 
-
+  }
+  
 
   ?C ecglview:hasStartPortCall ?PC0 .
 	?PC0 ecglview:atPort ?PSTART .
 	?PC0 ecglview:hasTimeStamp ?TSTART .
   
-  ?C ecglview:hasMidPortCall ?PCM .
-	?PCM ecglview:atPort ?PMID .
-	?PCM ecglview:hasTimeStamp ?TMID .
+  OPTIONAL {
+	?C ecglview:hasMidPortCall ?PCM .
+		?PCM ecglview:atPort ?PMID .
+		?PCM ecglview:hasTimeStamp ?TMID .
+  }
   
   ?C ecglview:hasEndPortCall ?PCN .
 	?PCN ecgclview:atPort ?PEND .
@@ -96,11 +104,20 @@ WHERE {
   ?C ecglview:hasCruiseType ?TY .
   
   ?C dcterms:title ?T .  ## this is cruise title, i.e., cruise full name
-  ?C dcterms:identifier ?ID .  ## should be mapped as alternate ID or alias
-  ?C rdfs:label ?L . ## as alternate ID or alias
-  ?C rdfs:seeAlso ?W .  ## cruise webpage?
   
-  OPTIONAL { ?C ecglview:hasRelatedCruise ?C1 } ## should be for a different cruise but related because they shared the same mission
+  OPTIONAL {
+	?C dcterms:identifier ?ID .  ## should be mapped as alternate ID or alias
+  }
+  
+  OPTIONAL {
+	?C rdfs:label ?L . ## as alternate ID or alias
+  }
+  
+  OPTIONAL {
+	?C rdfs:seeAlso ?W .  ## cruise webpage?
+  }
+    
+  OPTIONAL { ?C ecglview:hasRelatedCruise ?C1 . } ## should be for a different cruise but related because they shared the same mission
   
  }
 
@@ -110,9 +127,9 @@ CONSTRUCT {
 }
 FROM
 WHERE {
-  ?D ecglview:hasDeviceModel ?M .
-  ?D ecglview:hasDeviceVendor ?VEND .
-  ?D ecglview:hasDeviceTypeVocab ?T .
+  ?D ecglview:hasModel ?M .
+  ?D ecglview:hasVendor ?ORG .
+  ?D ecglview:hasDeviceType ?T .
   ?D dcterms:identifier ?ID .
   ?D rdfs:label ?L .
   ?D rdf:type ecglview:Device
@@ -120,7 +137,8 @@ WHERE {
 }
 
 ## <http://linked.rvdata.us/page/event/100002781>
-## This corresponds to arrival/departure from port
+## This corresponds to arrival/departure from port  -- drop this 
+## We do need probably a Port class as a subclass of Place -- generalize this to gazetteer
 
 CONSTRUCT {
 }
@@ -135,6 +153,7 @@ WHERE {
 
 ## <http://linked.rvdata.us/page/fileset/101244>
 ## r2r:Fileset rdfs:subClassOf ecglview:DigitalObjectRecord
+## wait for Bob republished the data as a particular 
 
 CONSTRUCT {
 } 
@@ -151,6 +170,8 @@ WHERE {
 }
 
 ## http://linked.rvdata.us/page/format/100008
+## For format, we need stub (probably explicitly say it FileFormats)
+
 CONSTRUCT {
 }
 FROM
@@ -171,11 +192,11 @@ WHERE {
 	?GEOM rdfs:label ?L .
 	?GEOM geo:lat ?LAT .
 	?GEOM geo:long ?LONG .
-	?GEOM rdf:type geo:Point .
+	?GEOM rdf:type ecgl:Geometry .
 }
 
 ## <http://linked.rvdata.us/page/holding/100035>
-## r2r:Holding rdfs:subClassOf ecglview:DigitalObjectRecord
+## r2r:Holding rdfs:subClassOf ecglview:DigitalObjectRecord  -- drop it!
 
 CONSTRUCT {
 } 
@@ -189,7 +210,7 @@ WHERE {
 }
 
 ## http://linked.rvdata.us/page/model/100015
-## What is r2r:Model?
+## What is r2r:Model? This is used for device (every device has a make and model -- NERC L22 -- drop vendor from device)
 CONSTRUCT {
 }
 FROM
@@ -246,21 +267,24 @@ WHERE {
   ?P dcterms:identifier ?ID .
   ?P rdfs:label ?L .
   ?P foaf:name ?M .
+  OPTIONAL { { ?P ecglview:hasAffiliation ?ORG . } UNION { ?ORG foaf:member ?P. } }
   ?P rdf:type ecglview:Person
 }
 
 
 ## http://linked.rvdata.us/page/port/100006
 ## r2r:Port rdfs:subClassOf ecglview:Place
+## understand this as place
+
 CONSTRUCT {
 }
 FROM
 WHERE {
-  ?PORT ecglview:hasCountryVoc ?C .
-  ?PORT ecglview:hasGeometry ?GEOM .
-  ?PORT dcterms:identifier ?ID .
-  ?PORT rdfs:label ?L .
-  ?PORT rdf:type ecglview:Place
+  OPTIONAL { ?PLACE ecglview:hasCountry ?C . }  ## hasCountry only applies to political gazetteer
+  ?PLACE ecglview:hasGeometry ?GEOM .  
+  ?PLACE dcterms:identifier ?ID .
+  ?PLACE rdfs:label ?L .
+  ?PLACE rdf:type ecglview:Place
 }
 
 ## http://linked.rvdata.us/page/product/100014
@@ -287,13 +311,14 @@ WHERE {
 }
 
 ## http://linked.rvdata.us/page/repository/IMLGS
+## populate repository as organization; repository should be subclass of organization.
 CONSTRUCT {
 }
 FROM
 WHERE {
 	?REPO dcterms:identifier ?ID .
 	?REPO rdfs:label ?L .
-	?REPO foaf:name ?M .  ## This is weird since a repository is not a person.
+	?REPO foaf:name ?M .  
 	?REPO rdf:type ecglview:Repository .
 }
 
@@ -316,12 +341,12 @@ CONSTRUCT {
 }
 FROM
 WHERE {
-  ?V ecglview:hasVesselOperator ?OP .
-  ?V ecglview:hasVesselOwner ?OW .
-  ?V skos:exactMatch ?NERCVESSEL .
-  ?V dcterms:identifier ?ID .
-  ?V rdfs:label ?L .
+  ?V ecglview:hasOperator ?OP .
+  ?V ecglview:hasOwner ?OW .
+  ?V ecglview:hasAlternateID ?ALTID .
+  OPTIONAL { ?V dcterms:identifier ?ID .}
+  OPTIONAL { ?V rdfs:label ?L . }
   ?V rdf:type ecglview:Vessel  
-  ?V rdf:type ?NERCVESSELTYPE .
+  ?V ecglview:hasVesselType ?NERCVESSELTYPE .
 }
 
