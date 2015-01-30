@@ -95,11 +95,14 @@ WHERE {
   ?C ecglview:hasVessel ?V .  
   ?C ecglview:hasCruiseType ?TY .
   
-  ?C dcterms:title ?T .
-  ?C dcterms:identifier ?ID .
-  ?C rdfs:label ?L .
-  ?C rdfs:seeAlso ?W .
-}
+  ?C dcterms:title ?T .  ## this is cruise title, i.e., cruise full name
+  ?C dcterms:identifier ?ID .  ## should be mapped as alternate ID or alias
+  ?C rdfs:label ?L . ## as alternate ID or alias
+  ?C rdfs:seeAlso ?W .  ## cruise webpage?
+  
+  OPTIONAL { ?C ecglview:hasRelatedCruise ?C1 } ## should be for a different cruise but related because they shared the same mission
+  
+ }
 
 ## http://linked.rvdata.us/page/device/100002
 ## r2r:Device rdfs:subClassOf ecglview:Device
