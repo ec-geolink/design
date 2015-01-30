@@ -7,33 +7,34 @@ PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX geosparql: <http://www.opengis.net/ont/geosparql#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-PREFIX glv: <http://schema.geolink.org/view/1.0/>
-PREFIX gls: <http://schema.geolink.org/1.0/>
+PREFIX ecgl: <http://schema.geolink.org/1.0/>
+PREFIX ecglview: <http://schema.geolink.org/view/1.0/>
+PREFIX ecglvoc: <http://schema.geolink.org/voc/1.0/>
 
 ## If some triple in the WHERE clause is optional in the data, then use OPTIONAL clause?
 ## Need to figure out which triple pattenrs oae
 ## Currently, only construct triples from non-inverse relationship. 
 
 ## Based on <http://linked.rvdata.us/page/award/100004>      
-## r2r:Award rdfs:subClassOf glv:Award 
+## r2r:Award rdfs:subClassOf ecglview:Award 
 
 CONSTRUCT {
-   ?X rdf:type gls:FundingAward .
-   _:ar gls:isAgentRoleIn ?X .
-   _:ar rdf:type gls:AgentRole .
-   _:ar gls:hasAgentRoleType gls:funding_award_sponsor_role .
-   _:ar gls:isPerformedBy ?Z .
-   ?Z rdf:type gls:Organization . 
-   ?X gls:isDescribedBy _:io .
-   _:io rdf:type gls:FundingAwardInformationObject .
-   _:io gls:hasAwardID ?ID .
-   _:io gls:hasAwardTitle ?T .
-   _:io gls:seeAlso ?W .
+   ?X rdf:type ecgl:FundingAward .
+   _:ar ecgl:isAgentRoleIn ?X .
+   _:ar rdf:type ecgl:AgentRole .
+   _:ar ecgl:hasAgentRoleType ecgl:funding_award_sponsor_role .
+   _:ar ecgl:isPerformedBy ?Z .
+   ?Z rdf:type ecgl:Organization . 
+   ?X ecgl:isDescribedBy _:io .
+   _:io rdf:type ecgl:FundingAwardInformationObject .
+   _:io ecgl:hasAwardID ?ID .
+   _:io ecgl:hasAwardTitle ?T .
+   _:io ecgl:seeAlso ?W .
 }
 FROM <http://address-to-r2r-graph-mapped-to-view>
 WHERE {
-  ?X rdf:type glv:Award .
-  ?X glv:hasSponsor ?Z.
+  ?X rdf:type ecglview:Award .
+  ?X ecglview:hasSponsor ?Z.
   ?X dcterms:identifier ?ID .
   ?X dcterms:title ?T .
   ?X dcterms:source ?W .
@@ -46,30 +47,48 @@ WHERE {
 ## cruise participant relationship is reified, but cruise operator and scheduler are not.
 
 CONSTRUCT {
-  ?C rdf:type gls:Cruise .
-  ?C gls:isFundedBy ?AW .
-  ?C gls:
-  _:arop rdf:type gls:AgentRole .
-  _:arop gls:isAgentRoleIn ?C .
-  _:arop gls:hasAgentRoleType gls:cruise_operator_role
-  _:arop gls:isPerformedBy ?OP .
-  ?OP rdf:type gls:Organization .  
+  ?C rdf:type ecgl:Cruise .
+  ?C ecgl:isFundedBy ?AW .
+  ?C ecgl:
+  _:arop rdf:type ecgl:AgentRole .
+  _:arop ecgl:isAgentRoleIn ?C .
+  _:arop ecgl:hasAgentRoleType ecgl:cruise_operator_role
+  _:arop ecgl:isPerformedBy ?OP .
+  ?OP rdf:type ecgl:Organization .  
 }
 FROM <http://address-to-r2r-graph-mapped-to-view>
 WHERE {
-  ?C rdf:type glv:Cruise .
-  ?C glv:hasAward ?AW .  
-  ?C glv:hasCruiseOperator ?OP .
-  ?C glv:hasCruiseScheduler ?SCH .
-  ?C glv:hasCruiseParticipant ?P .
-  ?C glv:hasFileset ?FSET .  
-  ?C glv:hasHolding ?HLD .  
-  ?C glv:hasProduct ?PROD .  
-  ?C glv:hasCruiseTrack ?TRACK .
-  ?C glv:hasCruiseEvent ?EV .  
-  ?C glv:hasVessel ?V .
-  ?C glv:hasVesselName ?VN .
-  ?C glv:hasCruiseTypeVoc ?TY .
+  ?C rdf:type ecglview:Cruise .
+  ?C ecglview:hasAward ?AW .  
+  ?C ecglview:hasOperator ?OP .
+  ?C ecglview:hasScheduler ?SCH .
+  ?C ecglview:hasParticipant ?P .
+		?P ecglview:hasAffiliation ?ORG .
+		?P dcterms:identifier ?ID .
+		?P rdfs:label ?L .
+		?P ecglview:isPerformedBy ?PERS .
+		?P ecglview:hasParticipantRoleType ?ROL .
+		?P rdf:type ecglview:AgentRole .
+  
+  ?C ecglview:hasFileset ?FSET .  
+  ?C ecglview:hasHolding ?HLD .  
+  ?C ecglview:hasProduct ?PROD .  
+  ?C ecglview:hasTrack ?TRACK .
+
+  ?C ecglview:hasStartPortCall ?PC0 .
+  ?PC0 ecglview:atPort ?PSTART .
+  ?PC0 ecglview:hasTimeStamp ?TSTART .
+  
+  ?C ecglview:hasMidPortCall ?PCM .
+  ?PCM ecglview:atPort ?PMID .
+  ?PCM ecglview:hasTimeStamp ?TMID .
+  
+  ?C ecglview:hasEndPortCall ?PCN .
+  ?PCN cgclview:atPort ?PEND .
+  ?PCN ecglview:hasTimeStamp ?TEND .
+
+  ?C ecglview:hasVessel ?V .  
+  ?C ecglview:hasCruiseType ?TY .
   
   ?C dcterms:title ?T .
   ?C dcterms:identifier ?ID .
@@ -78,17 +97,17 @@ WHERE {
 }
 
 ## http://linked.rvdata.us/page/device/100002
-## r2r:Device rdfs:subClassOf glv:Device
+## r2r:Device rdfs:subClassOf ecglview:Device
 CONSTRUCT {
 }
 FROM
 WHERE {
-  ?D glv:hasDeviceModel ?M .
-  ?D glv:hasDeviceVendor ?VEND .
-  ?D glv:hasDeviceTypeVocab ?T .
+  ?D ecglview:hasDeviceModel ?M .
+  ?D ecglview:hasDeviceVendor ?VEND .
+  ?D ecglview:hasDeviceTypeVocab ?T .
   ?D dcterms:identifier ?ID .
   ?D rdfs:label ?L .
-  ?D rdf:type glv:Device
+  ?D rdf:type ecglview:Device
   ## ?D rdf:type ?NERCVOC .
 }
 
@@ -99,28 +118,28 @@ CONSTRUCT {
 }
 FROM <http://address-to-graph-view>
 WHERE {
-  ?E glv:hasPort ?P .
-  ?E glv:hasPortActivityTypeVoc ?A .
-  ?E glv:hasTimeStamp ?T .
+  ?E ecglview:hasPort ?P .
+  ?E ecglview:hasPortActivityTypeVoc ?A .
+  ?E ecglview:hasTimeStamp ?T .
   ?E rdfs:label ?L .
-  ?E rdf:type glv:Event .
+  ?E rdf:type ecglview:Event .
 }
 
 ## <http://linked.rvdata.us/page/fileset/101244>
-## r2r:Fileset rdfs:subClassOf glv:DigitalObjectRecord
+## r2r:Fileset rdfs:subClassOf ecglview:DigitalObjectRecord
 
 CONSTRUCT {
 } 
 FROM
 WHERE {
-  ?FS glv:hasDevice ?DV .
-  ?FS glv:hasFormat ?FMT .
+  ?FS ecglview:hasDevice ?DV .
+  ?FS ecglview:hasFormat ?FMT .
   ?FS dcterms:identifier ?ID .
   ?FS rdfs:label ?L .
   ?FS dcterms:source ?S .
   ?FS dcterms:tableOfContents ?TOC .
   ?FS dcterms:title ?T .
-  ?FS rdf:type glv:DigitalObjectRecord .
+  ?FS rdf:type ecglview:DigitalObjectRecord .
 }
 
 ## http://linked.rvdata.us/page/format/100008
@@ -131,7 +150,7 @@ WHERE {
 	?FMT dcterms:description ?DESC . ## R2R uses rdfs:description, which is not defined in RDFS
 	?FMT dcterms:identifier ?ID .
 	?FMT rdfs:label ?L .
-	?FMT rdf:type glv:Format .
+	?FMT rdf:type ecglview:Format .
 }
 
 ## http://linked.rvdata.us/page/geometry/100004
@@ -148,17 +167,17 @@ WHERE {
 }
 
 ## <http://linked.rvdata.us/page/holding/100035>
-## r2r:Holding rdfs:subClassOf glv:DigitalObjectRecord
+## r2r:Holding rdfs:subClassOf ecglview:DigitalObjectRecord
 
 CONSTRUCT {
 } 
 FROM
 WHERE {
-  ?H glv:belongsToRepository ?REPO .
+  ?H ecglview:belongsToRepository ?REPO .
   ?H dcterms:identifier ?ID .
   ?H rdfs:label ?L .
   ?H dcterms:source ?S .
-  ?H rdf:type glv:DigitalObjectRecord .
+  ?H rdf:type ecglview:DigitalObjectRecord .
 }
 
 ## http://linked.rvdata.us/page/model/100015
@@ -167,7 +186,7 @@ CONSTRUCT {
 }
 FROM
 WHERE {
-  ?MOD glv:hasVendor ?VEND .
+  ?MOD ecglview:hasVendor ?VEND .
   ?MOD dcterms:identifier ?ID .
   ?MOD rdfs:label ?L .
   ## ?MOD rdf:type r2r:Model .
@@ -175,19 +194,19 @@ WHERE {
 
 
 ## Based on <http://linked.rvdata.us/page/organization/gov.nsf>
-## r2r:Organization rdfs:subClassOf glv:Organization
+## r2r:Organization rdfs:subClassOf ecglview:Organization
 
 CONSTRUCT {
-  ?O rdf:type gls:Organization .
-  ?O gls:isDescribedBy _:io .
-  _:io rdf:type gls:OrganizationInformationObject .
-  _:io gls:hasCanonicalName ?ID .
-  _:io gls:alsoKnownAs ?L .
-  _:io gls:alsoKnownAs ?M .  
+  ?O rdf:type ecgl:Organization .
+  ?O ecgl:isDescribedBy _:io .
+  _:io rdf:type ecgl:OrganizationInformationObject .
+  _:io ecgl:hasCanonicalName ?ID .
+  _:io ecgl:alsoKnownAs ?L .
+  _:io ecgl:alsoKnownAs ?M .  
 }
 FROM <http://address-to-r2r-graph-mapped-to-view>
 WHERE {
-  ?O rdf:type glv:Organization
+  ?O rdf:type ecglview:Organization
   ?O dcterms:identifier ?ID .
   ?O rdfs:label ?L .
   ?O foaf:name ?M .
@@ -195,17 +214,17 @@ WHERE {
 
 
 ## http://linked.rvdata.us/page/participant/100005
-CONSTRUCT {
-}
-FROM
-WHERE {
-  ?P glv:hasAffiliation ?ORG .
-  ?P dcterms:identifier ?ID .
-  ?P rdfs:label ?L .
-  ?P glv:isPerformedBy ?PERS .
-  ?P glv:hasParticipantRoleTypeVoc ?ROL .
-  ?P rdf:type glv:AgentRole .
-}
+## CONSTRUCT {
+## }
+## FROM
+## WHERE {
+##  ?P ecglview:hasAffiliation ?ORG .
+##  ?P dcterms:identifier ?ID .
+##  ?P rdfs:label ?L .
+##  ?P ecglview:isPerformedBy ?PERS .
+##  ?P ecglview:hasParticipantRoleTypeVoc ?ROL .
+##  ?P rdf:type ecglview:AgentRole .
+## }
 
 
 
@@ -219,25 +238,25 @@ WHERE {
   ?P dcterms:identifier ?ID .
   ?P rdfs:label ?L .
   ?P foaf:name ?M .
-  ?P rdf:type glv:Person
+  ?P rdf:type ecglview:Person
 }
 
 
 ## http://linked.rvdata.us/page/port/100006
-## r2r:Port rdfs:subClassOf glv:Place
+## r2r:Port rdfs:subClassOf ecglview:Place
 CONSTRUCT {
 }
 FROM
 WHERE {
-  ?PORT glv:hasCountryVoc ?C .
-  ?PORT glv:hasGeometry ?GEOM .
+  ?PORT ecglview:hasCountryVoc ?C .
+  ?PORT ecglview:hasGeometry ?GEOM .
   ?PORT dcterms:identifier ?ID .
   ?PORT rdfs:label ?L .
-  ?PORT rdf:type glv:Place
+  ?PORT rdf:type ecglview:Place
 }
 
 ## http://linked.rvdata.us/page/product/100014
-## r2r:Product rdfs:subClassOf glv:DigitalObjectRecord
+## r2r:Product rdfs:subClassOf ecglview:DigitalObjectRecord
 CONSTRUCT {
 }
 FROM
@@ -245,7 +264,7 @@ WHERE {
 	?PROD dcterms:identifier ?ID .
 	?PROD rdfs:label ?L .
 	?PROD dcterms:source ?URL .
-	?PROD rdf:type glv:DigitalObjectRecord .
+	?PROD rdf:type ecglview:DigitalObjectRecord .
 }
 
 ## http://linked.rvdata.us/page/report/100455
@@ -256,7 +275,7 @@ WHERE {
 	?PROD dcterms:identifier ?ID .
 	?PROD rdfs:label ?L .
 	?PROD dcterms:source ?URL .
-	?PROD rdf:type glv:DigitalObjectRecord .
+	?PROD rdf:type ecglview:DigitalObjectRecord .
 }
 
 ## http://linked.rvdata.us/page/repository/IMLGS
@@ -267,11 +286,11 @@ WHERE {
 	?REPO dcterms:identifier ?ID .
 	?REPO rdfs:label ?L .
 	?REPO foaf:name ?M .  ## This is weird since a repository is not a person.
-	?REPO rdf:type glv:Repository .
+	?REPO rdf:type ecglview:Repository .
 }
 
 ## http://linked.rvdata.us/page/track/MGL0901
-## <http://www.opengis.net/ont/sf#LineString> rdfs:subClassOf glv:Geometry 
+## <http://www.opengis.net/ont/sf#LineString> rdfs:subClassOf ecglview:Geometry 
 ## Is every track a line string?
 CONSTRUCT {
 }
@@ -279,22 +298,22 @@ FROM
 WHERE {
   ?TR geosparql:asWKT ?WKT .
   ?TR rdfs:label ?L .
-  ?TR rdf:type glv:Geometry  
+  ?TR rdf:type ecglview:Geometry  
 }
 
 ## http://linked.rvdata.us/page/vessel/33H3
-## r2r:Vessel rdfs:subClassOf glv:Vessel
+## r2r:Vessel rdfs:subClassOf ecglview:Vessel
 
 CONSTRUCT {
 }
 FROM
 WHERE {
-  ?V glv:hasVesselOperator ?OP .
-  ?V glv:hasVesselOwner ?OW .
+  ?V ecglview:hasVesselOperator ?OP .
+  ?V ecglview:hasVesselOwner ?OW .
   ?V skos:exactMatch ?NERCVESSEL .
   ?V dcterms:identifier ?ID .
   ?V rdfs:label ?L .
-  ?V rdf:type glv:Vessel  
+  ?V rdf:type ecglview:Vessel  
   ?V rdf:type ?NERCVESSELTYPE .
 }
 
