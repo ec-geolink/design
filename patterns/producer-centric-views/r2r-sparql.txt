@@ -15,6 +15,11 @@ PREFIX ecglvoc: <http://schema.geolink.org/voc/1.0/>
 ## Need to figure out which triple pattenrs oae
 ## Currently, only construct triples from non-inverse relationship. 
 
+## dcterms:identifier is always mapped to ecgl:hasAlternateID
+## unless it's the "main" class in that particular view, put the typing in the CONSTRUCT clause instead of in the WHERE clause. 
+## That is, data providers should only give a typing as a bootstrap.
+
+
 ## Based on <http://linked.rvdata.us/page/award/100004>      
 ## r2r:Award rdfs:subClassOf ecglview:Award 
 
@@ -59,35 +64,33 @@ CONSTRUCT {
 FROM <http://address-to-r2r-graph-mapped-to-view>
 WHERE {
   ?C rdf:type ecglview:Cruise .
-  ?C ecglview:hasAward ?AW .  
-  
-  ?C ecglview:hasOperator ?OP .
-		?OP rdf:type ecglview:Organization .
-  
-  ?C ecglview:hasScheduler ?SCH .
-		?SCH rdf:type ecglview:Organization .
-		
+  ?C ecglview:hasAward ?AW .    
+  ?C ecglview:hasOperator ?OP .  
+  ?C ecglview:hasScheduler ?SCH .	
   ?C ecglview:hasParticipation ?P .
 		?P ecglview:hasAffiliationDuringCruise ?ORG .			
 		?P ecglview:isPerformedBy ?PERS .			
 		?P ecglview:hasRoleType ?ROL .		
   
-  ?C ecglview:hasFileset ?FSET .  
-  ?C ecglview:hasHolding ?HLD .  
-  ?C ecglview:hasProduct ?PROD .  
   ?C ecglview:hasTrack ?TRACK .
+		{ 
+		  { ?TRACK geosparql:asWKT ?WKT . } 
+		  UNION
+		  { ?TRACK geosparql:asGML ?GML . }
+		} 
+
 
   ?C ecglview:hasStartPortCall ?PC0 .
-  ?PC0 ecglview:atPort ?PSTART .
-  ?PC0 ecglview:hasTimeStamp ?TSTART .
+	?PC0 ecglview:atPort ?PSTART .
+	?PC0 ecglview:hasTimeStamp ?TSTART .
   
   ?C ecglview:hasMidPortCall ?PCM .
-  ?PCM ecglview:atPort ?PMID .
-  ?PCM ecglview:hasTimeStamp ?TMID .
+	?PCM ecglview:atPort ?PMID .
+	?PCM ecglview:hasTimeStamp ?TMID .
   
   ?C ecglview:hasEndPortCall ?PCN .
-  ?PCN cgclview:atPort ?PEND .
-  ?PCN ecglview:hasTimeStamp ?TEND .
+	?PCN ecgclview:atPort ?PEND .
+	?PCN ecglview:hasTimeStamp ?TEND .
 
   ?C ecglview:hasVessel ?V .  
   ?C ecglview:hasCruiseType ?TY .
