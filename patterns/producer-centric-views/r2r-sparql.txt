@@ -60,14 +60,19 @@ FROM <http://address-to-r2r-graph-mapped-to-view>
 WHERE {
   ?C rdf:type ecglview:Cruise .
   ?C ecglview:hasAward ?AW .  
+  
   ?C ecglview:hasOperator ?OP .
+		?OP rdf:type ecglview:Organization .
+  
   ?C ecglview:hasScheduler ?SCH .
-  ?C ecglview:hasParticipant ?P .
-		?P ecglview:hasAffiliation ?ORG .
-		?P dcterms:identifier ?ID .
-		?P rdfs:label ?L .
+		?SCH rdf:type ecglview:Organization .
+		
+  ?C ecglview:hasParticipation ?P .
+		?P ecglview:hasAffiliationDuringCruise ?ORG .
+			?ORG rdf:type ecglview:Organization .				
 		?P ecglview:isPerformedBy ?PERS .
-		?P ecglview:hasParticipantRoleType ?ROL .
+			?PERS rdf:type ecglview:Person .
+		?P ecglview:hasRoleType ?ROL .
 		?P rdf:type ecglview:AgentRole .
   
   ?C ecglview:hasFileset ?FSET .  
