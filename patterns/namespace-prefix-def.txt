@@ -1,0 +1,10 @@
+## This is the base URI for classes and properties
+PREFIX ecgl: <http://schema.geolink.org/1.0/>
+
+## This is the base URI for producer/consumer-centric views
+PREFIX ecglview: <http://schema.geolink.org/view/1.0/>
+
+## This is the base URI for all controlled vocabularies (i.e., named individuals) used in the pattern collection and/or views. 
+## If a controlled vocabulary term is actually originated from external source, e.g., NERC, it would have a link to a URI of the external definition.
+PREFIX ecglvoc: <http://schema.geolink.org/voc/1.0/>  
+
