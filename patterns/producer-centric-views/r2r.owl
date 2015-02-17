@@ -58,9 +58,21 @@
     
 
 
+    <!-- http://schema.geolink.org/view/dev/r2rview#hasCruise -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;r2rview#hasCruise"/>
+    
+
+
     <!-- http://schema.geolink.org/view/dev/r2rview#hasCruiseType -->
 
     <owl:ObjectProperty rdf:about="&ecglview;r2rview#hasCruiseType"/>
+    
+
+
+    <!-- http://schema.geolink.org/view/dev/r2rview#hasDataset -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;r2rview#hasDataset"/>
     
 
 
@@ -70,9 +82,33 @@
     
 
 
+    <!-- http://schema.geolink.org/view/dev/r2rview#hasFormatType -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;r2rview#hasFormatType"/>
+    
+
+
     <!-- http://schema.geolink.org/view/dev/r2rview#hasGeometry -->
 
     <owl:ObjectProperty rdf:about="&ecglview;r2rview#hasGeometry"/>
+    
+
+
+    <!-- http://schema.geolink.org/view/dev/r2rview#hasInstrument -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;r2rview#hasInstrument"/>
+    
+
+
+    <!-- http://schema.geolink.org/view/dev/r2rview#hasInstrumentType -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;r2rview#hasInstrumentType"/>
+    
+
+
+    <!-- http://schema.geolink.org/view/dev/r2rview#hasMeasurementType -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;r2rview#hasMeasurementType"/>
     
 
 
@@ -106,6 +142,12 @@
     
 
 
+    <!-- http://schema.geolink.org/view/dev/r2rview#hasRepository -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;r2rview#hasRepository"/>
+    
+
+
     <!-- http://schema.geolink.org/view/dev/r2rview#hasRoleType -->
 
     <owl:ObjectProperty rdf:about="&ecglview;r2rview#hasRoleType"/>
@@ -133,6 +175,12 @@
     <!-- http://schema.geolink.org/view/dev/r2rview#hasTrack -->
 
     <owl:ObjectProperty rdf:about="&ecglview;r2rview#hasTrack"/>
+    
+
+
+    <!-- http://schema.geolink.org/view/dev/r2rview#hasVendor -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;r2rview#hasVendor"/>
     
 
 
@@ -183,6 +231,24 @@
     
 
 
+    <!-- http://schema.geolink.org/view/dev/r2rview#hasByteLength -->
+
+    <owl:DatatypeProperty rdf:about="&ecglview;r2rview#hasByteLength"/>
+    
+
+
+    <!-- http://schema.geolink.org/view/dev/r2rview#hasChecksum -->
+
+    <owl:DatatypeProperty rdf:about="&ecglview;r2rview#hasChecksum"/>
+    
+
+
+    <!-- http://schema.geolink.org/view/dev/r2rview#hasModel -->
+
+    <owl:DatatypeProperty rdf:about="&ecglview;r2rview#hasModel"/>
+    
+
+
     <!-- http://schema.geolink.org/view/dev/r2rview#hasScheme -->
 
     <owl:DatatypeProperty rdf:about="&ecglview;r2rview#hasScheme"/>
@@ -204,6 +270,12 @@
     <!-- http://schema.geolink.org/view/dev/r2rview#seeAlso -->
 
     <owl:DatatypeProperty rdf:about="&ecglview;r2rview#seeAlso"/>
+    
+
+
+    <!-- http://schema.geolink.org/view/dev/r2rview#source -->
+
+    <owl:DatatypeProperty rdf:about="&ecglview;r2rview#source"/>
     
 
 
@@ -233,6 +305,24 @@
     <!-- http://schema.geolink.org/view/dev/r2rview#Cruise -->
 
     <owl:Class rdf:about="&ecglview;r2rview#Cruise"/>
+    
+
+
+    <!-- http://schema.geolink.org/view/dev/r2rview#DataObject -->
+
+    <owl:Class rdf:about="&ecglview;r2rview#DataObject"/>
+    
+
+
+    <!-- http://schema.geolink.org/view/dev/r2rview#Dataset -->
+
+    <owl:Class rdf:about="&ecglview;r2rview#Dataset"/>
+    
+
+
+    <!-- http://schema.geolink.org/view/dev/r2rview#Instrument -->
+
+    <owl:Class rdf:about="&ecglview;r2rview#Instrument"/>
     
 
 
