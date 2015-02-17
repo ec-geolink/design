@@ -4,8 +4,8 @@
 <!DOCTYPE rdf:RDF [
     <!ENTITY foaf "http://xmlns.com/foaf/0.1/" >
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
-    <!ENTITY glv "http://schema.geolink.org/view/" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY ecglview "http://schema.geolink.org/view/dev/" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
 ]>
@@ -18,10 +18,8 @@
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:glv="http://schema.geolink.org/view/">
-    <owl:Ontology rdf:about="http://schema.geolink.org/view/">
-        <owl:versionIRI rdf:resource="&glv;1.0/"/>
-    </owl:Ontology>
+     xmlns:ecglview="http://schema.geolink.org/view/dev/">
+    <owl:Ontology rdf:about="&ecglview;r2rview"/>
     
 
 
@@ -36,81 +34,123 @@
     
 
 
-    <!-- http://schema.geolink.org/view/hasAward -->
+    <!-- http://schema.geolink.org/view/dev/r2rview#atPort -->
 
-    <owl:ObjectProperty rdf:about="&glv;hasAward"/>
+    <owl:ObjectProperty rdf:about="&ecglview;r2rview#atPort"/>
     
 
 
-    <!-- http://schema.geolink.org/view/hasCruiseOperator -->
+    <!-- http://schema.geolink.org/view/dev/r2rview#fromCountry -->
 
-    <owl:ObjectProperty rdf:about="&glv;hasCruiseOperator"/>
+    <owl:ObjectProperty rdf:about="&ecglview;r2rview#fromCountry"/>
     
 
 
-    <!-- http://schema.geolink.org/view/hasCruiseParticipant -->
+    <!-- http://schema.geolink.org/view/dev/r2rview#hasAffiliation -->
 
-    <owl:ObjectProperty rdf:about="&glv;hasCruiseParticipant"/>
+    <owl:ObjectProperty rdf:about="&ecglview;r2rview#hasAffiliation"/>
     
 
 
-    <!-- http://schema.geolink.org/view/hasCruiseParticipantRole -->
+    <!-- http://schema.geolink.org/view/dev/r2rview#hasAward -->
 
-    <owl:ObjectProperty rdf:about="&glv;hasCruiseParticipantRole"/>
+    <owl:ObjectProperty rdf:about="&ecglview;r2rview#hasAward"/>
     
 
 
-    <!-- http://schema.geolink.org/view/hasCruiseScheduler -->
+    <!-- http://schema.geolink.org/view/dev/r2rview#hasCruiseType -->
 
-    <owl:ObjectProperty rdf:about="&glv;hasCruiseScheduler"/>
+    <owl:ObjectProperty rdf:about="&ecglview;r2rview#hasCruiseType"/>
     
 
 
-    <!-- http://schema.geolink.org/view/hasCruiseTrack -->
+    <!-- http://schema.geolink.org/view/dev/r2rview#hasEndPortCall -->
 
-    <owl:ObjectProperty rdf:about="&glv;hasCruiseTrack"/>
+    <owl:ObjectProperty rdf:about="&ecglview;r2rview#hasEndPortCall"/>
     
 
 
-    <!-- http://schema.geolink.org/view/hasCruiseType -->
+    <!-- http://schema.geolink.org/view/dev/r2rview#hasGeometry -->
 
-    <owl:ObjectProperty rdf:about="&glv;hasCruiseType"/>
+    <owl:ObjectProperty rdf:about="&ecglview;r2rview#hasGeometry"/>
     
 
 
-    <!-- http://schema.geolink.org/view/hasEventInCruise -->
+    <!-- http://schema.geolink.org/view/dev/r2rview#hasMidPortCall -->
 
-    <owl:ObjectProperty rdf:about="&glv;hasEventInCruise"/>
+    <owl:ObjectProperty rdf:about="&ecglview;r2rview#hasMidPortCall"/>
     
 
 
-    <!-- http://schema.geolink.org/view/hasFileset -->
+    <!-- http://schema.geolink.org/view/dev/r2rview#hasOperator -->
 
-    <owl:ObjectProperty rdf:about="&glv;hasFileset"/>
+    <owl:ObjectProperty rdf:about="&ecglview;r2rview#hasOperator"/>
     
 
 
-    <!-- http://schema.geolink.org/view/hasHolding -->
+    <!-- http://schema.geolink.org/view/dev/r2rview#hasParticipation -->
 
-    <owl:ObjectProperty rdf:about="&glv;hasHolding"/>
+    <owl:ObjectProperty rdf:about="&ecglview;r2rview#hasParticipation"/>
     
 
 
-    <!-- http://schema.geolink.org/view/hasProduct -->
+    <!-- http://schema.geolink.org/view/dev/r2rview#hasProgram -->
 
-    <owl:ObjectProperty rdf:about="&glv;hasProduct"/>
+    <owl:ObjectProperty rdf:about="&ecglview;r2rview#hasProgram"/>
     
 
 
-    <!-- http://schema.geolink.org/view/hasSponsor -->
+    <!-- http://schema.geolink.org/view/dev/r2rview#hasRelatedCruise -->
 
-    <owl:ObjectProperty rdf:about="&glv;hasSponsor"/>
+    <owl:ObjectProperty rdf:about="&ecglview;r2rview#hasRelatedCruise"/>
     
 
 
-    <!-- http://schema.geolink.org/view/hasVessel -->
+    <!-- http://schema.geolink.org/view/dev/r2rview#hasRoleType -->
 
-    <owl:ObjectProperty rdf:about="&glv;hasVessel"/>
+    <owl:ObjectProperty rdf:about="&ecglview;r2rview#hasRoleType"/>
+    
+
+
+    <!-- http://schema.geolink.org/view/dev/r2rview#hasScheduler -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;r2rview#hasScheduler"/>
+    
+
+
+    <!-- http://schema.geolink.org/view/dev/r2rview#hasSponsor -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;r2rview#hasSponsor"/>
+    
+
+
+    <!-- http://schema.geolink.org/view/dev/r2rview#hasStartPortCall -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;r2rview#hasStartPortCall"/>
+    
+
+
+    <!-- http://schema.geolink.org/view/dev/r2rview#hasTrack -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;r2rview#hasTrack"/>
+    
+
+
+    <!-- http://schema.geolink.org/view/dev/r2rview#hasVessel -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;r2rview#hasVessel"/>
+    
+
+
+    <!-- http://schema.geolink.org/view/dev/r2rview#isPerformedBy -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;r2rview#isPerformedBy"/>
+    
+
+
+    <!-- http://schema.geolink.org/view/dev/r2rview#matches -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;r2rview#matches"/>
     
 
 
@@ -125,45 +165,51 @@
     
 
 
-    <!-- http://schema.geolink.org/view/hasDescribingSource -->
+    <!-- http://schema.geolink.org/view/dev/r2rview#abstract -->
 
-    <owl:DatatypeProperty rdf:about="&glv;hasDescribingSource"/>
+    <owl:DatatypeProperty rdf:about="&ecglview;r2rview#abstract"/>
     
 
 
-    <!-- http://schema.geolink.org/view/hasIdentifier -->
+    <!-- http://schema.geolink.org/view/dev/r2rview#asWKT -->
 
-    <owl:DatatypeProperty rdf:about="&glv;hasIdentifier"/>
+    <owl:DatatypeProperty rdf:about="&ecglview;r2rview#asWKT"/>
     
 
 
-    <!-- http://schema.geolink.org/view/hasLabel -->
+    <!-- http://schema.geolink.org/view/dev/r2rview#email -->
 
-    <owl:DatatypeProperty rdf:about="&glv;hasLabel"/>
+    <owl:DatatypeProperty rdf:about="&ecglview;r2rview#email"/>
     
 
 
-    <!-- http://schema.geolink.org/view/hasName -->
+    <!-- http://schema.geolink.org/view/dev/r2rview#hasScheme -->
 
-    <owl:DatatypeProperty rdf:about="&glv;hasName"/>
+    <owl:DatatypeProperty rdf:about="&ecglview;r2rview#hasScheme"/>
     
 
 
-    <!-- http://schema.geolink.org/view/hasTitle -->
+    <!-- http://schema.geolink.org/view/dev/r2rview#hasTimeStamp -->
 
-    <owl:DatatypeProperty rdf:about="&glv;hasTitle"/>
+    <owl:DatatypeProperty rdf:about="&ecglview;r2rview#hasTimeStamp"/>
     
 
 
-    <!-- http://schema.geolink.org/view/hasVesselName -->
+    <!-- http://schema.geolink.org/view/dev/r2rview#identfier -->
 
-    <owl:DatatypeProperty rdf:about="&glv;hasVesselName"/>
+    <owl:DatatypeProperty rdf:about="&ecglview;r2rview#identfier"/>
     
 
 
-    <!-- http://schema.geolink.org/view/seeAlso -->
+    <!-- http://schema.geolink.org/view/dev/r2rview#seeAlso -->
 
-    <owl:DatatypeProperty rdf:about="&glv;seeAlso"/>
+    <owl:DatatypeProperty rdf:about="&ecglview;r2rview#seeAlso"/>
+    
+
+
+    <!-- http://schema.geolink.org/view/dev/r2rview#title -->
+
+    <owl:DatatypeProperty rdf:about="&ecglview;r2rview#title"/>
     
 
 
@@ -178,21 +224,45 @@
     
 
 
-    <!-- http://schema.geolink.org/view/Award -->
+    <!-- http://schema.geolink.org/view/dev/r2rview#Award -->
 
-    <owl:Class rdf:about="&glv;Award"/>
+    <owl:Class rdf:about="&ecglview;r2rview#Award"/>
     
 
 
-    <!-- http://schema.geolink.org/view/Cruise -->
+    <!-- http://schema.geolink.org/view/dev/r2rview#Cruise -->
 
-    <owl:Class rdf:about="&glv;Cruise"/>
+    <owl:Class rdf:about="&ecglview;r2rview#Cruise"/>
     
 
 
-    <!-- http://schema.geolink.org/view/Organization -->
+    <!-- http://schema.geolink.org/view/dev/r2rview#Organization -->
 
-    <owl:Class rdf:about="&glv;Organization"/>
+    <owl:Class rdf:about="&ecglview;r2rview#Organization"/>
+    
+
+
+    <!-- http://schema.geolink.org/view/dev/r2rview#Person -->
+
+    <owl:Class rdf:about="&ecglview;r2rview#Person"/>
+    
+
+
+    <!-- http://schema.geolink.org/view/dev/r2rview#Place -->
+
+    <owl:Class rdf:about="&ecglview;r2rview#Place"/>
+    
+
+
+    <!-- http://schema.geolink.org/view/dev/r2rview#Program -->
+
+    <owl:Class rdf:about="&ecglview;r2rview#Program"/>
+    
+
+
+    <!-- http://schema.geolink.org/view/dev/r2rview#Vessel -->
+
+    <owl:Class rdf:about="&ecglview;r2rview#Vessel"/>
 </rdf:RDF>
 
 
