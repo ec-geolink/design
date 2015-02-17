@@ -20,29 +20,30 @@ PREFIX ecglvoc: <http://schema.geolink.org/voc/1.0/>
 ## That is, data providers should only give a typing as a bootstrap.
 
 
-## Based on <http://linked.rvdata.us/page/award/100004>      
+## Based on <http://linked.rvdata.us/page/award/100004> 
 ## r2r:Award rdfs:subClassOf ecglview:Award 
 
 CONSTRUCT {
-   ?X rdf:type ecgl:FundingAward .
-   _:ar ecgl:isAgentRoleIn ?X .
-   _:ar rdf:type ecgl:AgentRole .
-   _:ar ecgl:hasAgentRoleType ecgl:funding_award_sponsor_role .
-   _:ar ecgl:isPerformedBy ?Z .
-   ?Z rdf:type ecgl:Organization . 
-   ?X ecgl:isDescribedBy _:io .
-   _:io rdf:type ecgl:FundingAwardInformationObject .
-   _:io ecgl:hasAwardID ?ID .
-   _:io ecgl:hasAwardTitle ?T .
-   _:io ecgl:seeAlso ?W .
+	?X rdf:type ecgl:FundingAward .
+	_:ar ecgl:isAgentRoleIn ?X .
+	_:ar rdf:type ecgl:AgentRole .
+	_:ar ecgl:hasAgentRoleType ecglvoc:funding_award_sponsor_role .
+	_:ar ecgl:isPerformedBy ?Z .
+	?Z rdf:type ecgl:Organization . 
+	?X ecgl:isDescribedBy _:io .
+	_:io rdf:type ecgl:FundingAwardInformationObject .
+	_:io ecgl:hasAlternateID [ ?ID, ?L ] .
+	_:io ecgl:hasTitle ?T .
+	_:io ecgl:seeAlso ?W .
 }
 FROM <http://address-to-r2r-graph-mapped-to-view>
 WHERE {
-  ?X rdf:type ecglview:Award .
-  ?X ecglview:hasSponsor ?Z.
-  ?X dcterms:identifier ?ID .
-  ?X dcterms:title ?T .
-  ?X dcterms:source ?W .
+	?X rdf:type ecglview:Award .
+	?X ecglview:hasSponsor ?Z.
+	OPTIONAL { ?X rdfs:label ?L . }
+	OPTIONAL { ?X dcterms:title ?T . }
+	OPTIONAL { ?X dcterms:identifier ?ID . }
+	OPTIONAL { ?X dcterms:source ?W . }
 }
 
 ## Based on <http://linked.rvdata.us/page/cruise/MGL0901>
@@ -52,72 +53,71 @@ WHERE {
 ## cruise participant relationship is reified, but cruise operator and scheduler are not.
 
 CONSTRUCT {
-  ?C rdf:type ecgl:Cruise .
-  ?C ecgl:isFundedBy ?AW .
-  ?C ecgl:
-  _:arop rdf:type ecgl:AgentRole .
-  _:arop ecgl:isAgentRoleIn ?C .
-  _:arop ecgl:hasAgentRoleType ecgl:cruise_operator_role
-  _:arop ecgl:isPerformedBy ?OP .
-  ?OP rdf:type ecgl:Organization .  
+	?C rdf:type ecgl:Cruise .
+	?C ecgl:isFundedBy ?AW .
+	?C ecgl:
+	_:arop rdf:type ecgl:AgentRole .
+	_:arop ecgl:isAgentRoleIn ?C .
+	_:arop ecgl:hasAgentRoleType ecgl:cruise_operator_role
+	_:arop ecgl:isPerformedBy ?OP .
+	?OP rdf:type ecgl:Organization .  
 }
 FROM <http://address-to-r2r-graph-mapped-to-view>
 WHERE {
-  ?C rdf:type ecglview:Cruise .
-  
-  OPTIONAL { ?C ecglview:hasAward ?AW . }   
-  ?C ecglview:hasOperator ?OP .  
-  ?C ecglview:hasScheduler ?SCH .	
-  
-  OPTIONAL {
-	?C ecglview:hasParticipation ?P .
-		?P ecglview:hasAffiliationDuringCruise ?ORG .			
-		?P ecglview:isPerformedBy ?PERS .			
-		?P ecglview:hasRoleType ?ROL .		
-  }
-  
-  OPTIONAL {
-	?C ecglview:hasTrack ?TRACK .
-		{ 
-		  { ?TRACK geosparql:asWKT ?WKT . } 
-		  UNION
-		  { ?TRACK geosparql:asGML ?GML . }
-		} 
-  }
-  
+	?C rdf:type ecglview:Cruise .
 
-  ?C ecglview:hasStartPortCall ?PC0 .
+	OPTIONAL { ?C ecglview:hasAward ?AW . }   
+
+	?C ecglview:hasOperator ?OP .  
+	?C ecglview:hasScheduler ?SCH .	
+
+	OPTIONAL {
+		?C ecglview:hasParticipation ?P .
+			?P ecglview:hasAffiliationDuringCruise ?ORG .			
+			?P ecglview:isPerformedBy ?PERS .			
+			?P ecglview:hasRoleType ?ROL .		
+	}
+
+	OPTIONAL {
+		?C ecglview:hasTrack ?TRACK .
+			{ 	{ ?TRACK geosparql:asWKT ?WKT . } 
+				UNION
+				{ ?TRACK geosparql:asGML ?GML . }	} 
+	}
+
+
+	?C ecglview:hasStartPortCall ?PC0 .
 	?PC0 ecglview:atPort ?PSTART .
 	?PC0 ecglview:hasTimeStamp ?TSTART .
-  
-  OPTIONAL {
+
+	OPTIONAL {
 	?C ecglview:hasMidPortCall ?PCM .
 		?PCM ecglview:atPort ?PMID .
 		?PCM ecglview:hasTimeStamp ?TMID .
-  }
-  
-  ?C ecglview:hasEndPortCall ?PCN .
+	}
+
+	?C ecglview:hasEndPortCall ?PCN .
 	?PCN ecgclview:atPort ?PEND .
 	?PCN ecglview:hasTimeStamp ?TEND .
 
-  ?C ecglview:hasVessel ?V .  
-  ?C ecglview:hasCruiseType ?TY .
-  
-  ?C dcterms:title ?T .  ## this is cruise title, i.e., cruise full name
-  
-  OPTIONAL {
+	?C ecglview:hasVessel ?V .  
+	?C ecglview:hasCruiseType ?TY .
+
+	?C dcterms:title ?T .  ## this is cruise title, i.e., cruise full name
+
+	OPTIONAL {
 	?C dcterms:identifier ?ID .  ## should be mapped as alternate ID or alias
-  }
-  
-  OPTIONAL {
+	}
+
+	OPTIONAL {
 	?C rdfs:label ?L . ## as alternate ID or alias
-  }
-  
-  OPTIONAL {
+	}
+
+	OPTIONAL {
 	?C rdfs:seeAlso ?W .  ## cruise webpage?
-  }
-    
-  OPTIONAL { ?C ecglview:hasRelatedCruise ?C1 . } ## should be for a different cruise but related because they shared the same mission
+	}
+
+	OPTIONAL { ?C ecglview:hasRelatedCruise ?C1 . } ## should be for a different cruise but related because they shared the same mission
   
  }
 
@@ -264,7 +264,8 @@ CONSTRUCT {
 }
 FROM
 WHERE {
-  ?P dcterms:identifier ?ID .
+  OPTIONAL {  ?P dcterms:identifier ?ID .}
+  OPTIONAL {  ?P ecglview:hasAlternateID ?ID .}
   ?P rdfs:label ?L .
   ?P foaf:name ?M .
   OPTIONAL { { ?P ecglview:hasAffiliation ?ORG . } UNION { ?ORG foaf:member ?P. } }
