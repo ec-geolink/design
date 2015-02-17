@@ -7,9 +7,9 @@ PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX geosparql: <http://www.opengis.net/ont/geosparql#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-PREFIX ecgl: <http://schema.geolink.org/1.0/>
-PREFIX ecglview: <http://schema.geolink.org/view/1.0/>
-PREFIX ecglvoc: <http://schema.geolink.org/voc/1.0/>
+PREFIX ecgl: <http://schema.geolink.org/dev/>
+PREFIX ecglview: <http://schema.geolink.org/view/1.0/ecglview#>
+PREFIX ecglvoc: <http://schema.geolink.org/voc/1.0/ecglvoc#>
 
 ## If some triple in the WHERE clause is optional in the data, then use OPTIONAL clause?
 ## Need to figure out which triple pattenrs oae
@@ -19,12 +19,18 @@ PREFIX ecglvoc: <http://schema.geolink.org/voc/1.0/>
 ## unless it's the "main" class in that particular view, put the typing in the CONSTRUCT clause instead of in the WHERE clause. 
 ## That is, data providers should only give a typing as a bootstrap.
 
+## Regarding CONSTRUCT with OPTIONAL clause, SPARQL 1.0 recommendation says: 
+## "If any such instantiation produces a triple containing an unbound variable or an illegal RDF construct, 
+## such as a literal in subject or predicate position, then that triple is not included in the output RDF graph."
+## However, it is possible that this doesn't scale.
 
+
+## populating Award
 ## Based on <http://linked.rvdata.us/page/award/100004> 
 ## r2r:Award rdfs:subClassOf ecglview:Award 
 
 CONSTRUCT {
-	?X rdf:type ecgl:FundingAward .
+	?X rdf:type ecgl:fundingaward#FundingAward .
 	_:ar ecgl:isAgentRoleIn ?X .
 	_:ar rdf:type ecgl:AgentRole .
 	_:ar ecgl:hasAgentRoleType ecglvoc:funding_award_sponsor_role .
@@ -40,6 +46,10 @@ FROM <http://address-to-r2r-graph-mapped-to-view>
 WHERE {
 	?X rdf:type ecglview:Award .
 	?X ecglview:hasSponsor ?Z.
+	?X ecglview:identifier ?ID .
+	?X ecglview:title ?T .
+	?X ecglview:abstract ?ABS .
+	?
 	OPTIONAL { ?X rdfs:label ?L . }
 	OPTIONAL { ?X dcterms:title ?T . }
 	OPTIONAL { ?X dcterms:identifier ?ID . }
