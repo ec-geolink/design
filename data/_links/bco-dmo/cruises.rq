@@ -1,0 +1,12 @@
+#http://lod.bco-dmo.org/sparql
+CONSTRUCT {
+ ?c ?p ?match
+} WHERE {
+  GRAPH <http://www.bco-dmo.org/> {
+    ?c a odo:Cruise .
+    { ?c owl:sameAs ?match . } 
+    UNION 
+    { ?c odo:matches ?match . }
+    ?c ?p ?match .
+  }
+}
