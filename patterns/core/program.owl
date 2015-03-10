@@ -2,33 +2,23 @@
 
 
 <!DOCTYPE rdf:RDF [
-    <!ENTITY time "http://www.w3.org/2006/time#" >
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
-    <!ENTITY gl-agent "http://schema.geolink.org/agent/" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY gl-program "http://schema.geolink.org/program/" >
-    <!ENTITY gl-agent-role "http://schema.geolink.org/agent-role/" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-    <!ENTITY gl-info-obj "http://schema.geolink.org/information-object/" >
 ]>
 
 
-<rdf:RDF xmlns="http://schema.geolink.org/program/"
-     xml:base="http://schema.geolink.org/program/"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:time="http://www.w3.org/2006/time#"
-     xmlns:gl-program="http://schema.geolink.org/program/"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:gl-info-obj="http://schema.geolink.org/information-object/"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+<rdf:RDF xmlns="http://schema.geolink.org/dev/program#"
+     xml:base="http://schema.geolink.org/dev/program"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:gl-agent="http://schema.geolink.org/agent/"
-     xmlns:gl-agent-role="http://schema.geolink.org/agent-role/">
-    <owl:Ontology rdf:about="http://schema.geolink.org/program/">
-        <owl:imports rdf:resource="&gl-agent-role;1.0/"/>
-        <owl:imports rdf:resource="&gl-info-obj;1.0/"/>
-        <owl:versionIRI rdf:resource="&gl-program;1.0/"/>
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://schema.geolink.org/dev/program">
+        <owl:imports rdf:resource="http://schema.geolink.org/dev/program-to-agentrole"/>
+        <owl:imports rdf:resource="http://schema.geolink.org/dev/program-to-informationobject"/>
+        <owl:imports rdf:resource="http://schema.geolink.org/dev/program-to-owltime"/>
     </owl:Ontology>
     
 
@@ -44,92 +34,23 @@
     
 
 
-    <!-- http://schema.geolink.org/program/endsAtDate -->
+    <!-- http://schema.geolink.org/dev/program#endsOnDate -->
 
-    <owl:ObjectProperty rdf:about="&gl-program;endsAtDate"/>
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/program#endsOnDate"/>
     
 
 
-    <!-- http://schema.geolink.org/program/hasCoPrincipalInvestigator -->
+    <!-- http://schema.geolink.org/dev/program#isAssociatedWithProgram -->
 
-    <owl:ObjectProperty rdf:about="&gl-program;hasCoPrincipalInvestigator"/>
-    
-
-
-    <!-- http://schema.geolink.org/program/hasDataManager -->
-
-    <owl:ObjectProperty rdf:about="&gl-program;hasDataManager"/>
-    
-
-
-    <!-- http://schema.geolink.org/program/hasPrincipalInvestigator -->
-
-    <owl:ObjectProperty rdf:about="&gl-program;hasPrincipalInvestigator"/>
-    
-
-
-    <!-- http://schema.geolink.org/program/isAssociatedWIthProgram -->
-
-    <owl:ObjectProperty rdf:about="&gl-program;isAssociatedWIthProgram">
-        <rdfs:range rdf:resource="&gl-program;Program"/>
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/program#isAssociatedWithProgram">
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/program#Program"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://schema.geolink.org/program/rolifiedCoPI -->
+    <!-- http://schema.geolink.org/dev/program#startsOnDate -->
 
-    <owl:ObjectProperty rdf:about="&gl-program;rolifiedCoPI">
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="&gl-program;rolifiedProgram"/>
-            <rdf:Description>
-                <owl:inverseOf rdf:resource="&gl-agent-role;isAgentRoleIn"/>
-            </rdf:Description>
-            <rdf:Description rdf:about="&gl-program;rolifiedCoPI"/>
-            <rdf:Description rdf:about="&gl-agent-role;isPerformedBy"/>
-        </owl:propertyChainAxiom>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://schema.geolink.org/program/rolifiedDM -->
-
-    <owl:ObjectProperty rdf:about="&gl-program;rolifiedDM">
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="&gl-program;rolifiedProgram"/>
-            <rdf:Description>
-                <owl:inverseOf rdf:resource="&gl-agent-role;isAgentRoleIn"/>
-            </rdf:Description>
-            <rdf:Description rdf:about="&gl-program;rolifiedDM"/>
-            <rdf:Description rdf:about="&gl-agent-role;isPerformedBy"/>
-        </owl:propertyChainAxiom>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://schema.geolink.org/program/rolifiedPI -->
-
-    <owl:ObjectProperty rdf:about="&gl-program;rolifiedPI">
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="&gl-program;rolifiedProgram"/>
-            <rdf:Description>
-                <owl:inverseOf rdf:resource="&gl-agent-role;isAgentRoleIn"/>
-            </rdf:Description>
-            <rdf:Description rdf:about="&gl-program;rolifiedPI"/>
-            <rdf:Description rdf:about="&gl-agent-role;isPerformedBy"/>
-        </owl:propertyChainAxiom>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://schema.geolink.org/program/rolifiedProgram -->
-
-    <owl:ObjectProperty rdf:about="&gl-program;rolifiedProgram"/>
-    
-
-
-    <!-- http://schema.geolink.org/program/startsAtDate -->
-
-    <owl:ObjectProperty rdf:about="&gl-program;startsAtDate"/>
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/program#startsOnDate"/>
     
 
 
@@ -144,102 +65,97 @@
     
 
 
-    <!-- http://schema.geolink.org/program/Program -->
+    <!-- http://schema.geolink.org/dev/program#CoPrincipalInvestigatorRole -->
 
-    <owl:Class rdf:about="&gl-program;Program">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&gl-program;rolifiedProgram"/>
-                <owl:hasSelf rdf:datatype="&xsd;boolean">true</owl:hasSelf>
-            </owl:Restriction>
-        </owl:equivalentClass>
+    <owl:Class rdf:about="http://schema.geolink.org/dev/program#CoPrincipalInvestigatorRole">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/program#AgentRole"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/program#DataManagerRole -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/program#DataManagerRole">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/program#AgentRole"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/program#PrincipalInvestigatorRole -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/program#PrincipalInvestigatorRole">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/program#AgentRole"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/program#Program -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/program#Program">
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&gl-program;endsAtDate"/>
-                <owl:allValuesFrom rdf:resource="&time;Instant"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&gl-program;hasDataManager"/>
-                <owl:allValuesFrom rdf:resource="&gl-agent;Agent"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&gl-program;endsAtDate"/>
-                <owl:onClass rdf:resource="&time;Instant"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/program#endsOnDate"/>
+                <owl:onClass rdf:resource="http://schema.geolink.org/dev/program#TimeInstant"/>
                 <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&gl-program;hasCoPrincipalInvestigator"/>
-                <owl:allValuesFrom rdf:resource="&gl-agent;Agent"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&gl-program;startsAtDate"/>
-                <owl:allValuesFrom rdf:resource="&time;Instant"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&gl-program;hasPrincipalInvestigator"/>
-                <owl:allValuesFrom rdf:resource="&gl-agent;Agent"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&gl-info-obj;isDescribedBy"/>
-                <owl:onClass rdf:resource="&gl-info-obj;InformationObject"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/program#isDescribedBy"/>
+                <owl:onClass rdf:resource="http://schema.geolink.org/dev/program#ProgramInformationObject"/>
                 <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&gl-program;startsAtDate"/>
-                <owl:onClass rdf:resource="&time;Instant"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/program#endsOnDate"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/dev/program#TimeInstant"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/program#isDescribedBy"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/dev/program#ProgramInformationObject"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/program#providesAgentRole"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/dev/program#AgentRole"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/program#startsOnDate"/>
+                <owl:onClass rdf:resource="http://schema.geolink.org/dev/program#TimeInstant"/>
                 <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/program#startsOnDate"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/dev/program#TimeInstant"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
     
 
 
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Individuals
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
+    <!-- http://schema.geolink.org/dev/program#ProgramInformationObject -->
 
-    
-
-
-    <!-- http://schema.geolink.org/program/co_principal_investigator_role -->
-
-    <owl:NamedIndividual rdf:about="&gl-program;co_principal_investigator_role">
-        <rdf:type rdf:resource="&gl-agent-role;AgentRoleType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://schema.geolink.org/program/data_manager_role -->
-
-    <owl:NamedIndividual rdf:about="&gl-program;data_manager_role">
-        <rdf:type rdf:resource="&gl-agent-role;AgentRoleType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://schema.geolink.org/program/principal_investigator_role -->
-
-    <owl:NamedIndividual rdf:about="&gl-program;principal_investigator_role">
-        <rdf:type rdf:resource="&gl-agent-role;AgentRoleType"/>
-    </owl:NamedIndividual>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/program#ProgramInformationObject">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/program#isDescribedBy"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:onClass rdf:resource="http://schema.geolink.org/dev/program#Program"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
     
 
 
@@ -252,92 +168,41 @@
      -->
 
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&gl-program;Program"/>
-        <owl:onProperty rdf:resource="&gl-program;hasPrincipalInvestigator"/>
-        <owl:someValuesFrom rdf:resource="&gl-agent;Agent"/>
-    </owl:Restriction>
-    <owl:Restriction>
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&gl-program;rolifiedCoPI"/>
-                <owl:hasSelf rdf:datatype="&xsd;boolean">true</owl:hasSelf>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <owl:onProperty rdf:resource="&gl-agent-role;hasAgentRoleType"/>
-        <owl:someValuesFrom>
-            <owl:Class>
-                <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&gl-program;co_principal_investigator_role"/>
-                </owl:oneOf>
-            </owl:Class>
-        </owl:someValuesFrom>
-    </owl:Restriction>
-    <owl:Restriction>
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&gl-program;rolifiedDM"/>
-                <owl:hasSelf rdf:datatype="&xsd;boolean">true</owl:hasSelf>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <owl:onProperty rdf:resource="&gl-agent-role;hasAgentRoleType"/>
-        <owl:someValuesFrom>
-            <owl:Class>
-                <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&gl-program;data_manager_role"/>
-                </owl:oneOf>
-            </owl:Class>
-        </owl:someValuesFrom>
-    </owl:Restriction>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&gl-program;Program"/>
-        <owl:onProperty rdf:resource="&gl-program;startsAtDate"/>
-        <owl:someValuesFrom rdf:resource="&time;Instant"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/program#Program"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/program#endsOnDate"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/dev/program#TimeInstant"/>
     </owl:Restriction>
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="&gl-agent-role;AgentRole"/>
-            <rdf:Description rdf:about="&gl-agent-role;AgentRoleType"/>
-            <rdf:Description rdf:about="&gl-agent;Agent"/>
-            <rdf:Description rdf:about="&gl-info-obj;InformationObject"/>
-            <rdf:Description rdf:about="&gl-program;Program"/>
-            <rdf:Description rdf:about="&time;Instant"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/dev/program#CoPrincipalInvestigatorRole"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/dev/program#DataManagerRole"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/dev/program#PrincipalInvestigatorRole"/>
         </owl:members>
     </rdf:Description>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&gl-program;Program"/>
-        <owl:onProperty rdf:resource="&gl-program;endsAtDate"/>
-        <owl:someValuesFrom rdf:resource="&time;Instant"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/program#Program"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/program#startsOnDate"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/dev/program#TimeInstant"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&gl-program;Program"/>
-        <owl:onProperty rdf:resource="&gl-program;hasDataManager"/>
-        <owl:someValuesFrom rdf:resource="&gl-agent;Agent"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/program#Program"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/program#isDescribedBy"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/dev/program#ProgramInformationObject"/>
     </owl:Restriction>
-    <owl:Restriction>
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&gl-program;rolifiedPI"/>
-                <owl:hasSelf rdf:datatype="&xsd;boolean">true</owl:hasSelf>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <owl:onProperty rdf:resource="&gl-agent-role;hasAgentRoleType"/>
-        <owl:someValuesFrom>
-            <owl:Class>
-                <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&gl-program;principal_investigator_role"/>
-                </owl:oneOf>
-            </owl:Class>
-        </owl:someValuesFrom>
-    </owl:Restriction>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&gl-program;Program"/>
-        <owl:onProperty rdf:resource="&gl-program;hasCoPrincipalInvestigator"/>
-        <owl:someValuesFrom rdf:resource="&gl-agent;Agent"/>
-    </owl:Restriction>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://schema.geolink.org/dev/program#Agent"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/dev/program#AgentRole"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/dev/program#Program"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/dev/program#ProgramInformationObject"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/dev/program#TimeInstant"/>
+        </owl:members>
+    </rdf:Description>
 </rdf:RDF>
 
 
 
-<!-- Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net -->
+<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
 

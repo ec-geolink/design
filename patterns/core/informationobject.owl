@@ -1,0 +1,312 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://schema.geolink.org/dev/informationobject#"
+     xml:base="http://schema.geolink.org/dev/informationobject"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://schema.geolink.org/dev/informationobject"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.geolink.org/dev/informationobject#hasAlternativeIdentifier -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/informationobject#hasAlternativeIdentifier"/>
+    
+
+
+    <!-- http://schema.geolink.org/dev/informationobject#hasIdentifierScheme -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/informationobject#hasIdentifierScheme"/>
+    
+
+
+    <!-- http://schema.geolink.org/dev/informationobject#hasPrimaryIdentifier -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/informationobject#hasPrimaryIdentifier"/>
+    
+
+
+    <!-- http://schema.geolink.org/dev/informationobject#isDescribedBy -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/informationobject#isDescribedBy">
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/informationobject#InformationObject"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.geolink.org/dev/informationobject#alsoKnownAs -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/informationobject#alsoKnownAs"/>
+    
+
+
+    <!-- http://schema.geolink.org/dev/informationobject#hasCanonicalName -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/informationobject#hasCanonicalName"/>
+    
+
+
+    <!-- http://schema.geolink.org/dev/informationobject#hasDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/informationobject#hasDescription"/>
+    
+
+
+    <!-- http://schema.geolink.org/dev/informationobject#hasIdentifierValue -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/informationobject#hasIdentifierValue"/>
+    
+
+
+    <!-- http://schema.geolink.org/dev/informationobject#hasWebpage -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/informationobject#hasWebpage"/>
+    
+
+
+    <!-- http://schema.geolink.org/dev/informationobject#seeAlso -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/informationobject#seeAlso"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.geolink.org/dev/informationobject#Identifier -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/informationobject#Identifier">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/informationobject#hasIdentifierScheme"/>
+                <owl:onClass rdf:resource="http://schema.geolink.org/dev/informationobject#IdentifierScheme"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/informationobject#hasIdentifierValue"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/informationobject#hasIdentifierValue"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/informationobject#hasIdentifierScheme"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/dev/informationobject#IdentifierScheme"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/informationobject#IdentifierScheme -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/informationobject#IdentifierScheme"/>
+    
+
+
+    <!-- http://schema.geolink.org/dev/informationobject#InformationObject -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/informationobject#InformationObject">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/informationobject#hasPrimaryIdentifier"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/dev/informationobject#Identifier"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/informationobject#hasWebpage"/>
+                <owl:allValuesFrom rdf:resource="&xsd;anyURI"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/informationobject#hasAlternativeIdentifier"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/dev/informationobject#Identifier"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/informationobject#hasPrimaryIdentifier"/>
+                <owl:onClass rdf:resource="http://schema.geolink.org/dev/informationobject#Identifier"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/informationobject#hasCanonicalName"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:complementOf>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/informationobject#isDescribedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/dev/informationobject#InformationObject"/>
+                    </owl:Restriction>
+                </owl:complementOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/informationobject#alsoKnownAs"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/informationobject#isDescribedBy"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/informationobject#hasDescription"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/informationobject#seeAlso"/>
+                <owl:allValuesFrom rdf:resource="&xsd;anyURI"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <rdf:Description rdf:about="&owl;Thing">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/informationobject#isDescribedBy"/>
+                <owl:onClass rdf:resource="http://schema.geolink.org/dev/informationobject#InformationObject"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/informationobject#InformationObject"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/informationobject#hasCanonicalName"/>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/informationobject#InformationObject"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/informationobject#hasAlternativeIdentifier"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/dev/informationobject#Identifier"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/informationobject#Identifier"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/informationobject#hasIdentifierScheme"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/dev/informationobject#IdentifierScheme"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/informationobject#InformationObject"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/informationobject#alsoKnownAs"/>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+    </owl:Restriction>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://schema.geolink.org/dev/informationobject#Identifier"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/dev/informationobject#IdentifierScheme"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/dev/informationobject#InformationObject"/>
+        </owl:members>
+    </rdf:Description>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/informationobject#InformationObject"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/informationobject#hasPrimaryIdentifier"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/dev/informationobject#Identifier"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/informationobject#InformationObject"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/informationobject#hasWebpage"/>
+        <owl:someValuesFrom rdf:resource="&xsd;anyURI"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/informationobject#InformationObject"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/informationobject#hasDescription"/>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/informationobject#Identifier"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/informationobject#hasIdentifierValue"/>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/informationobject#InformationObject"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/informationobject#seeAlso"/>
+        <owl:someValuesFrom rdf:resource="&xsd;anyURI"/>
+    </owl:Restriction>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+

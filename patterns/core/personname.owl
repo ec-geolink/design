@@ -1,0 +1,181 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://schema.geolink.org/dev/personname#"
+     xml:base="http://schema.geolink.org/dev/personname"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://schema.geolink.org/dev/personname">
+        <owl:imports rdf:resource="http://schema.geolink.org/dev/personname-to-person"/>
+        <owl:imports rdf:resource="http://schema.geolink.org/dev/personname-to-personalinfoitem"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.geolink.org/dev/personname#hasPersonName -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/personname#hasPersonName"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.geolink.org/dev/personname#familyOrSurname -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/personname#familyOrSurname"/>
+    
+
+
+    <!-- http://schema.geolink.org/dev/personname#firstOrGivenName -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/personname#firstOrGivenName"/>
+    
+
+
+    <!-- http://schema.geolink.org/dev/personname#fullNameAsString -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/personname#fullNameAsString"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.geolink.org/dev/personname#Person -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/personname#Person">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/personname#hasPersonName"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/dev/personname#PersonName"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/personname#hasPersonName"/>
+                <owl:someValuesFrom rdf:resource="http://schema.geolink.org/dev/personname#PersonName"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://schema.geolink.org/dev/personname#PersonName"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/personname#PersonName -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/personname#PersonName">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/personname#familyOrSurname"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/personname#fullNameAsString"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/personname#familyOrSurname"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/personname#firstOrGivenName"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/personname#firstOrGivenName"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/personname#fullNameAsString"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/personname#PersonName"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/personname#firstOrGivenName"/>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/personname#Person"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/personname#hasPersonName"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/dev/personname#PersonName"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/personname#PersonName"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/personname#fullNameAsString"/>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/personname#PersonName"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/personname#familyOrSurname"/>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+    </owl:Restriction>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+

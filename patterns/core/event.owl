@@ -2,32 +2,24 @@
 
 
 <!DOCTYPE rdf:RDF [
-    <!ENTITY time "http://www.w3.org/2006/time#" >
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
-    <!ENTITY gl-place "http://schema.geolink.org/place/" >
-    <!ENTITY gl-event "http://schema.geolink.org/event/" >
-    <!ENTITY gl-agent "http://schema.geolink.org/agent/" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY gl-agent-role "http://schema.geolink.org/agent-role/" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
 ]>
 
 
-<rdf:RDF xmlns="http://schema.geolink.org/event/"
-     xml:base="http://schema.geolink.org/event/"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:gl-event="http://schema.geolink.org/event/"
-     xmlns:time="http://www.w3.org/2006/time#"
-     xmlns:gl-place="http://schema.geolink.org/place/"
+<rdf:RDF xmlns="http://schema.geolink.org/dev/event#"
+     xml:base="http://schema.geolink.org/dev/event"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:gl-agent="http://schema.geolink.org/agent/"
-     xmlns:gl-agent-role="http://schema.geolink.org/agent-role/">
-    <owl:Ontology rdf:about="http://schema.geolink.org/event/">
-        <owl:imports rdf:resource="&gl-agent-role;1.0/"/>
-        <owl:versionIRI rdf:resource="&gl-event;1.0/"/>
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://schema.geolink.org/dev/event">
+        <owl:imports rdf:resource="http://schema.geolink.org/dev/event-to-agent"/>
+        <owl:imports rdf:resource="http://schema.geolink.org/dev/event-to-agentrole"/>
+        <owl:imports rdf:resource="http://schema.geolink.org/dev/event-to-owltime"/>
+        <owl:imports rdf:resource="http://schema.geolink.org/dev/event-to-place"/>
     </owl:Ontology>
     
 
@@ -43,59 +35,42 @@
     
 
 
-    <!-- http://schema.geolink.org/event/endsAtTime -->
+    <!-- http://schema.geolink.org/dev/event#endsAtTime -->
 
-    <owl:ObjectProperty rdf:about="&gl-event;endsAtTime">
-        <rdfs:subPropertyOf rdf:resource="&gl-event;occursAtTime"/>
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/event#endsAtTime">
+        <rdfs:subPropertyOf rdf:resource="http://schema.geolink.org/dev/event#occursAtTime"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://schema.geolink.org/event/hasActor -->
+    <!-- http://schema.geolink.org/dev/event#isPerformedBy -->
 
-    <owl:ObjectProperty rdf:about="&gl-event;hasActor">
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="&gl-event;providesAgentRole"/>
-            <rdf:Description rdf:about="&gl-agent-role;isPerformedBy"/>
-        </owl:propertyChainAxiom>
-    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/event#isPerformedBy"/>
     
 
 
-    <!-- http://schema.geolink.org/event/hasEventType -->
+    <!-- http://schema.geolink.org/dev/event#occursAtPlace -->
 
-    <owl:ObjectProperty rdf:about="&gl-event;hasEventType"/>
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/event#occursAtPlace"/>
     
 
 
-    <!-- http://schema.geolink.org/event/occursAtPlace -->
+    <!-- http://schema.geolink.org/dev/event#occursAtTime -->
 
-    <owl:ObjectProperty rdf:about="&gl-event;occursAtPlace"/>
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/event#occursAtTime"/>
     
 
 
-    <!-- http://schema.geolink.org/event/occursAtTime -->
+    <!-- http://schema.geolink.org/dev/event#providesAgentRole -->
 
-    <owl:ObjectProperty rdf:about="&gl-event;occursAtTime"/>
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/event#providesAgentRole"/>
     
 
 
-    <!-- http://schema.geolink.org/event/providesAgentRole -->
+    <!-- http://schema.geolink.org/dev/event#startsAtTime -->
 
-    <owl:ObjectProperty rdf:about="&gl-event;providesAgentRole">
-        <rdfs:subPropertyOf>
-            <rdf:Description>
-                <owl:inverseOf rdf:resource="&gl-agent-role;isAgentRoleIn"/>
-            </rdf:Description>
-        </rdfs:subPropertyOf>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://schema.geolink.org/event/startsAtTime -->
-
-    <owl:ObjectProperty rdf:about="&gl-event;startsAtTime">
-        <rdfs:subPropertyOf rdf:resource="&gl-event;occursAtTime"/>
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/event#startsAtTime">
+        <rdfs:subPropertyOf rdf:resource="http://schema.geolink.org/dev/event#occursAtTime"/>
     </owl:ObjectProperty>
     
 
@@ -111,129 +86,104 @@
     
 
 
-    <!-- http://schema.geolink.org/agent-role/AgentRole -->
+    <!-- http://schema.geolink.org/dev/event#Agent -->
 
-    <owl:Class rdf:about="&gl-agent-role;AgentRole"/>
+    <owl:Class rdf:about="http://schema.geolink.org/dev/event#Agent"/>
     
 
 
-    <!-- http://schema.geolink.org/agent-role/AgentRoleType -->
+    <!-- http://schema.geolink.org/dev/event#AgentRole -->
 
-    <owl:Class rdf:about="&gl-agent-role;AgentRoleType"/>
-    
-
-
-    <!-- http://schema.geolink.org/agent/Agent -->
-
-    <owl:Class rdf:about="&gl-agent;Agent"/>
-    
-
-
-    <!-- http://schema.geolink.org/event/Event -->
-
-    <owl:Class rdf:about="&gl-event;Event">
+    <owl:Class rdf:about="http://schema.geolink.org/dev/event#AgentRole">
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&gl-event;endsAtTime"/>
-                <owl:onClass rdf:resource="&time;Instant"/>
-                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&gl-event;endsAtTime"/>
-                <owl:allValuesFrom rdf:resource="&time;Instant"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&gl-event;hasEventType"/>
-                <owl:onClass rdf:resource="&gl-event;EventType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/event#isPerformedBy"/>
+                <owl:onClass rdf:resource="http://schema.geolink.org/dev/event#Agent"/>
                 <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&gl-event;hasActor"/>
-                <owl:allValuesFrom rdf:resource="&gl-agent;Agent"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&gl-event;occursAtPlace"/>
-                <owl:allValuesFrom rdf:resource="&gl-place;Place"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&gl-event;occursAtTime"/>
-                <owl:someValuesFrom rdf:resource="&time;TemporalEntity"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&gl-event;startsAtTime"/>
-                <owl:allValuesFrom rdf:resource="&time;Instant"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&gl-event;startsAtTime"/>
-                <owl:onClass rdf:resource="&time;Instant"/>
-                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&gl-event;providesAgentRole"/>
-                <owl:allValuesFrom rdf:resource="&gl-agent-role;AgentRole"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&gl-event;hasEventType"/>
-                <owl:allValuesFrom rdf:resource="&gl-event;EventType"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&gl-event;occursAtTime"/>
-                <owl:allValuesFrom rdf:resource="&time;TemporalEntity"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&gl-event;occursAtPlace"/>
-                <owl:someValuesFrom rdf:resource="&gl-place;Place"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/event#isPerformedBy"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/dev/event#Agent"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/event/EventType -->
+    <!-- http://schema.geolink.org/dev/event#Event -->
 
-    <owl:Class rdf:about="&gl-event;EventType"/>
+    <owl:Class rdf:about="http://schema.geolink.org/dev/event#Event">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/event#occursAtPlace"/>
+                <owl:someValuesFrom rdf:resource="http://schema.geolink.org/dev/event#Place"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/event#startsAtTime"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/dev/event#TimeInstant"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/event#occursAtTime"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/dev/event#TimeInstant"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/event#occursAtPlace"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/dev/event#Place"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/event#startsAtTime"/>
+                <owl:onClass rdf:resource="http://schema.geolink.org/dev/event#TimeInstant"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/event#providesAgentRole"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/dev/event#AgentRole"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/event#endsAtTime"/>
+                <owl:onClass rdf:resource="http://schema.geolink.org/dev/event#TimeInstant"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/event#occursAtTime"/>
+                <owl:someValuesFrom rdf:resource="http://schema.geolink.org/dev/event#TimeInstant"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/event#endsAtTime"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/dev/event#TimeInstant"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/place/Place -->
+    <!-- http://schema.geolink.org/dev/event#Place -->
 
-    <owl:Class rdf:about="&gl-place;Place"/>
+    <owl:Class rdf:about="http://schema.geolink.org/dev/event#Place"/>
     
 
 
-    <!-- http://www.w3.org/2006/time#Instant -->
+    <!-- http://schema.geolink.org/dev/event#TimeInstant -->
 
-    <rdf:Description rdf:about="&time;Instant">
-        <rdfs:subClassOf rdf:resource="&time;TemporalEntity"/>
-    </rdf:Description>
-    
-
-
-    <!-- http://www.w3.org/2006/time#TemporalEntity -->
-
-    <owl:Class rdf:about="&time;TemporalEntity"/>
+    <owl:Class rdf:about="http://schema.geolink.org/dev/event#TimeInstant"/>
     
 
 
@@ -246,55 +196,48 @@
      -->
 
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&gl-event;Event"/>
-        <owl:onProperty rdf:resource="&gl-event;occursAtTime"/>
-        <owl:someValuesFrom rdf:resource="&time;TemporalEntity"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/event#Event"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/event#occursAtPlace"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/dev/event#Place"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&gl-event;Event"/>
-        <owl:onProperty rdf:resource="&gl-event;hasEventType"/>
-        <owl:someValuesFrom rdf:resource="&gl-event;EventType"/>
-    </owl:Restriction>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&gl-event;Event"/>
-        <owl:onProperty rdf:resource="&gl-event;startsAtTime"/>
-        <owl:someValuesFrom rdf:resource="&time;Instant"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/event#Event"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/event#providesAgentRole"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/dev/event#AgentRole"/>
     </owl:Restriction>
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="&gl-agent-role;AgentRole"/>
-            <rdf:Description rdf:about="&gl-agent-role;AgentRoleType"/>
-            <rdf:Description rdf:about="&gl-agent;Agent"/>
-            <rdf:Description rdf:about="&gl-event;Event"/>
-            <rdf:Description rdf:about="&gl-event;EventType"/>
-            <rdf:Description rdf:about="&gl-place;Place"/>
-            <rdf:Description rdf:about="&time;TemporalEntity"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/dev/event#Agent"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/dev/event#AgentRole"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/dev/event#Event"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/dev/event#Place"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/dev/event#TimeInstant"/>
         </owl:members>
     </rdf:Description>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&gl-event;Event"/>
-        <owl:onProperty rdf:resource="&gl-event;occursAtPlace"/>
-        <owl:someValuesFrom rdf:resource="&gl-place;Place"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/event#Event"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/event#endsAtTime"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/dev/event#TimeInstant"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&gl-event;Event"/>
-        <owl:onProperty rdf:resource="&gl-event;hasActor"/>
-        <owl:someValuesFrom rdf:resource="&gl-agent;Agent"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/event#Event"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/event#startsAtTime"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/dev/event#TimeInstant"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&gl-event;Event"/>
-        <owl:onProperty rdf:resource="&gl-event;endsAtTime"/>
-        <owl:someValuesFrom rdf:resource="&time;Instant"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/event#AgentRole"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/event#isPerformedBy"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/dev/event#Agent"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&gl-event;Event"/>
-        <owl:onProperty rdf:resource="&gl-event;providesAgentRole"/>
-        <owl:someValuesFrom rdf:resource="&gl-agent-role;AgentRole"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/event#Event"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/event#occursAtTime"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/dev/event#TimeInstant"/>
     </owl:Restriction>
 </rdf:RDF>
 
 
 
-<!-- Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net -->
+<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
 
