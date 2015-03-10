@@ -1,3 +1,18 @@
+## If some triple in the WHERE clause is optional in the data, then use OPTIONAL clause?
+## Need to figure out which triple pattenrs oae
+## Currently, only construct triples from non-inverse relationship. 
+
+## dcterms:identifier is always mapped to ecgl:hasAlternateID
+## unless it's the "main" class in that particular view, put the typing in the CONSTRUCT clause instead of in the WHERE clause. 
+## That is, data providers should only give a typing as a bootstrap.
+
+## Regarding CONSTRUCT with OPTIONAL clause, SPARQL 1.0 recommendation says: 
+## "If any such instantiation produces a triple containing an unbound variable or an illegal RDF construct, 
+## such as a literal in subject or predicate position, then that triple is not included in the output RDF graph."
+## However, it is possible that this doesn't scale.
+
+
+
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX xml: <http://www.w3.org/XML/1998/namespace>
@@ -11,22 +26,17 @@ PREFIX ecgl: <http://schema.geolink.org/dev/>
 PREFIX ecglview: <http://schema.geolink.org/view/1.0/ecglview#>
 PREFIX ecglvoc: <http://schema.geolink.org/voc/1.0/ecglvoc#>
 
+PREFIX ecglag: <http://schema.geolink.org/dev/agent#>
+PREFIX ecglar: <http://schema.geolink.org/dev/agentrole#>
+PREFIX ecglcr: <http://schema.geolink.org/dev/cruise#>
+PREFIX ecglev: <http://schema.geolink.org/dev/event#>
 PREFIX ecglfa: <http://schema.geolink.org/dev/fundingaward#>
 PREFIX ecglio: <http://schema.geolink.org/dev/informationobject#>
 PREFIX ecglog: <http://schema.geolink.org/dev/organization#>
-
-## If some triple in the WHERE clause is optional in the data, then use OPTIONAL clause?
-## Need to figure out which triple pattenrs oae
-## Currently, only construct triples from non-inverse relationship. 
-
-## dcterms:identifier is always mapped to ecgl:hasAlternateID
-## unless it's the "main" class in that particular view, put the typing in the CONSTRUCT clause instead of in the WHERE clause. 
-## That is, data providers should only give a typing as a bootstrap.
-
-## Regarding CONSTRUCT with OPTIONAL clause, SPARQL 1.0 recommendation says: 
-## "If any such instantiation produces a triple containing an unbound variable or an illegal RDF construct, 
-## such as a literal in subject or predicate position, then that triple is not included in the output RDF graph."
-## However, it is possible that this doesn't scale.
+PREFIX ecglpg: <http://schema.geolink.org/dev/program#>
+PREFIX ecglpl: <http://schema.geolink.org/dev/place#>
+PREFIX ecglpr: <http://schema.geolink.org/dev/person#>
+PREFIX ecglvs: <http://schema.geolink.org/dev/vessel#>
 
 
 ## populating Award
@@ -67,6 +77,9 @@ WHERE {
 
 CONSTRUCT {
 	?C rdf:type ecgl:Cruise .
+	?C ecglcr:isDescribedBy 
+		[	rdf:type ecglcr:CruiseInformationObject; 
+			ecglcio:hasPrimaryIdentifier ?ID; ]
 	?C ecgl:isFundedBy ?AW .
 	?C ecgl:
 	_:arop rdf:type ecgl:AgentRole .
@@ -78,18 +91,28 @@ CONSTRUCT {
 FROM <http://address-to-r2r-graph-mapped-to-view>
 WHERE {
 	?C rdf:type ecglview:Cruise .
-
-	OPTIONAL { ?C ecglview:hasAward ?AW . }   
-
-	?C ecglview:hasOperator ?OP .  
-	?C ecglview:hasScheduler ?SCH .	
-
-	OPTIONAL {
-		?C ecglview:hasParticipation ?P .
-			?P ecglview:hasAffiliationDuringCruise ?ORG .			
-			?P ecglview:isPerformedBy ?PERS .			
-			?P ecglview:hasRoleType ?ROL .		
-	}
+	?C ecglview:identifier ?ID .
+	OPTIONAL { ?C ecglview:matches [ ecglview:identifier ?W; ecglview:hasScheme ?M ] . }
+	OPTIONAL { ?C ecglview:seeAlso ?SEEALSO . }
+	OPTIONAL { ?C ecglview:abstract ?ABS . }
+	?C ecglview:hasCruiseType ?CTYPE .
+	?C ecglview:hasVessel ?VS .
+	?C ecglview:hasOperator ?OPER .
+	?C ecglview:hasScheduler ?SCH .
+	?C ecglview:hasAward ?AWARD .
+	OPTIONAL { ?C ecglview:hasProgram ?PROG . }
+	OPTIONAL {  ?C ecglview:hasParticipation 
+					[ 	ecglview:isPerformedBy ?PR; 
+						ecglview:hasAffiliation ?AFF; 
+						ecglview:hasRoleType ?RT ] .}
+	?C ecglview:hasStartPortCall [	ecglview:atPort ?PORTSTART; ecglview:hasTimeStamp ?TMSTART ].
+	OPTIONAL { 	?C ecglview:hasMidPortCall 
+					[	ecglview:atPort ?PORTMID; 
+						ecglview:hasTimeStamp ?TMMID ]. }
+	?C ecglview:hasEndPortCall [	ecglview:atPort ?PORTEND; ecglview:hasTimeStamp ?TMEND ].
+	
+	OPTIONAL { ?C ecglview:hasRelatedCruise ?C1 . } ## should be for a different cruise but related because they shared the same mission
+	
 
 	OPTIONAL {
 		?C ecglview:hasTrack ?TRACK .
@@ -97,40 +120,6 @@ WHERE {
 				UNION
 				{ ?TRACK geosparql:asGML ?GML . }	} 
 	}
-
-
-	?C ecglview:hasStartPortCall ?PC0 .
-	?PC0 ecglview:atPort ?PSTART .
-	?PC0 ecglview:hasTimeStamp ?TSTART .
-
-	OPTIONAL {
-	?C ecglview:hasMidPortCall ?PCM .
-		?PCM ecglview:atPort ?PMID .
-		?PCM ecglview:hasTimeStamp ?TMID .
-	}
-
-	?C ecglview:hasEndPortCall ?PCN .
-	?PCN ecgclview:atPort ?PEND .
-	?PCN ecglview:hasTimeStamp ?TEND .
-
-	?C ecglview:hasVessel ?V .  
-	?C ecglview:hasCruiseType ?TY .
-
-	?C dcterms:title ?T .  ## this is cruise title, i.e., cruise full name
-
-	OPTIONAL {
-	?C dcterms:identifier ?ID .  ## should be mapped as alternate ID or alias
-	}
-
-	OPTIONAL {
-	?C rdfs:label ?L . ## as alternate ID or alias
-	}
-
-	OPTIONAL {
-	?C rdfs:seeAlso ?W .  ## cruise webpage?
-	}
-
-	OPTIONAL { ?C ecglview:hasRelatedCruise ?C1 . } ## should be for a different cruise but related because they shared the same mission
   
  }
 
