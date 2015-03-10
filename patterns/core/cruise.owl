@@ -3,39 +3,26 @@
 
 <!DOCTYPE rdf:RDF [
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
-    <!ENTITY gl-place "http://schema.geolink.org/place/" >
-    <!ENTITY gl-vessel "http://schema.geolink.org/vessel/" >
-    <!ENTITY gl-cruise "http://schema.geolink.org/cruise/" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY gl-program "http://schema.geolink.org/program/" >
-    <!ENTITY gl-traj "http://schema.geolink.org/trajectory/" >
-    <!ENTITY gl-agent-role "http://schema.geolink.org/agent-role/" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
-    <!ENTITY gl-funding-award "http://schema.geolink.org/funding-award/" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-    <!ENTITY gl-info-obj "http://schema.geolink.org/information-object/" >
 ]>
 
 
-<rdf:RDF xmlns="http://schema.geolink.org/cruise/"
-     xml:base="http://schema.geolink.org/cruise/"
-     xmlns:gl-place="http://schema.geolink.org/place/"
-     xmlns:gl-vessel="http://schema.geolink.org/vessel/"
-     xmlns:gl-traj="http://schema.geolink.org/trajectory/"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:gl-program="http://schema.geolink.org/program/"
-     xmlns:gl-cruise="http://schema.geolink.org/cruise/"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:gl-info-obj="http://schema.geolink.org/information-object/"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+<rdf:RDF xmlns="http://schema.geolink.org/dev/cruise#"
+     xml:base="http://schema.geolink.org/dev/cruise"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:gl-funding-award="http://schema.geolink.org/funding-award/"
-     xmlns:gl-agent-role="http://schema.geolink.org/agent-role/">
-    <owl:Ontology rdf:about="http://schema.geolink.org/cruise/">
-        <owl:imports rdf:resource="&gl-agent-role;1.0/"/>
-        <owl:versionIRI rdf:resource="&gl-cruise;1.0/"/>
-        <owl:imports rdf:resource="http://schema.geolink.org/event/1.0/"/>
-        <owl:imports rdf:resource="&gl-traj;1.0/"/>
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://schema.geolink.org/dev/cruise">
+        <owl:imports rdf:resource="http://schema.geolink.org/dev/cruise-to-event"/>
+        <owl:imports rdf:resource="http://schema.geolink.org/dev/cruise-to-fundingaward"/>
+        <owl:imports rdf:resource="http://schema.geolink.org/dev/cruise-to-informationobject"/>
+        <owl:imports rdf:resource="http://schema.geolink.org/dev/cruise-to-owltime"/>
+        <owl:imports rdf:resource="http://schema.geolink.org/dev/cruise-to-place"/>
+        <owl:imports rdf:resource="http://schema.geolink.org/dev/cruise-to-program"/>
+        <owl:imports rdf:resource="http://schema.geolink.org/dev/cruise-to-vessel"/>
     </owl:Ontology>
     
 
@@ -51,73 +38,75 @@
     
 
 
-    <!-- http://schema.geolink.org/cruise/hasCruiseTrajectory -->
+    <!-- http://schema.geolink.org/dev/cruise#atPort -->
 
-    <owl:ObjectProperty rdf:about="&gl-cruise;hasCruiseTrajectory"/>
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/cruise#atPort"/>
     
 
 
-    <!-- http://schema.geolink.org/cruise/hasCruiseType -->
+    <!-- http://schema.geolink.org/dev/cruise#atTime -->
 
-    <owl:ObjectProperty rdf:about="&gl-cruise;hasCruiseType"/>
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/cruise#atTime"/>
     
 
 
-    <!-- http://schema.geolink.org/cruise/isAssociatedWithCruise -->
+    <!-- http://schema.geolink.org/dev/cruise#endsAt -->
 
-    <owl:ObjectProperty rdf:about="&gl-cruise;isAssociatedWithCruise">
-        <rdfs:range rdf:resource="&gl-cruise;Cruise"/>
-    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/cruise#endsAt"/>
     
 
 
-    <!-- http://schema.geolink.org/cruise/isUndertakenBy -->
+    <!-- http://schema.geolink.org/dev/cruise#hasAttribute -->
 
-    <owl:ObjectProperty rdf:about="&gl-cruise;isUndertakenBy">
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="&gl-cruise;hasCruiseTrajectory"/>
-            <rdf:Description rdf:about="&gl-traj;isTraversedBy"/>
-        </owl:propertyChainAxiom>
-    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/cruise#hasAttribute"/>
     
 
 
-    <!-- http://schema.geolink.org/event/occursAtPlace -->
+    <!-- http://schema.geolink.org/dev/cruise#hasFix -->
 
-    <rdf:Description rdf:about="http://schema.geolink.org/event/occursAtPlace">
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="&gl-cruise;hasCruiseTrajectory"/>
-            <rdf:Description rdf:about="&gl-traj;hasFix"/>
-            <rdf:Description rdf:about="&gl-traj;hasLocation"/>
-            <rdf:Description>
-                <owl:inverseOf rdf:resource="&gl-place;hasSpatialFootprint"/>
-            </rdf:Description>
-        </owl:propertyChainAxiom>
-    </rdf:Description>
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/cruise#hasFix"/>
     
 
 
-    <!-- http://schema.geolink.org/event/occursAtTime -->
+    <!-- http://schema.geolink.org/dev/cruise#hasLocation -->
 
-    <rdf:Description rdf:about="http://schema.geolink.org/event/occursAtTime">
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="&gl-cruise;hasCruiseTrajectory"/>
-            <rdf:Description rdf:about="&gl-traj;hasFix"/>
-            <rdf:Description rdf:about="&gl-traj;atTime"/>
-        </owl:propertyChainAxiom>
-    </rdf:Description>
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/cruise#hasLocation"/>
     
 
 
-    <!-- http://schema.geolink.org/funding-award/isFundedBy -->
+    <!-- http://schema.geolink.org/dev/cruise#hasSegment -->
 
-    <owl:ObjectProperty rdf:about="&gl-funding-award;isFundedBy"/>
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/cruise#hasSegment"/>
     
 
 
-    <!-- http://schema.geolink.org/program/isAssociatedWIthProgram -->
+    <!-- http://schema.geolink.org/dev/cruise#hasTrajectory -->
 
-    <owl:ObjectProperty rdf:about="&gl-program;isAssociatedWIthProgram"/>
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/cruise#hasTrajectory"/>
+    
+
+
+    <!-- http://schema.geolink.org/dev/cruise#isAssociatedWithCruise -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/cruise#isAssociatedWithCruise"/>
+    
+
+
+    <!-- http://schema.geolink.org/dev/cruise#isTraversedBy -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/cruise#isTraversedBy"/>
+    
+
+
+    <!-- http://schema.geolink.org/dev/cruise#isUndertakenBy -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/cruise#isUndertakenBy"/>
+    
+
+
+    <!-- http://schema.geolink.org/dev/cruise#startsFrom -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/cruise#startsFrom"/>
     
 
 
@@ -132,534 +121,256 @@
     
 
 
-    <!-- http://schema.geolink.org/cruise/Cruise -->
+    <!-- http://schema.geolink.org/dev/cruise#CaptainRole -->
 
-    <owl:Class rdf:about="&gl-cruise;Cruise">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/event/Event"/>
+    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#CaptainRole">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#AgentRole"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/cruise#ChiefEngineerRole -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#ChiefEngineerRole">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#EngineerRole"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/cruise#ChiefScientistRole -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#ChiefScientistRole">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#ScientistRole"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/cruise#CoChiefScientistRole -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#CoChiefScientistRole">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#ScientistRole"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/cruise#Cruise -->
+
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/cruise#Cruise">
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&gl-info-obj;isDescribedBy"/>
-                <owl:allValuesFrom rdf:resource="&gl-cruise;CruiseInformationObject"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&gl-cruise;hasCruiseTrajectory"/>
-                <owl:allValuesFrom rdf:resource="&gl-cruise;CruiseTrajectory"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&gl-info-obj;isDescribedBy"/>
-                <owl:onClass rdf:resource="&gl-cruise;CruiseInformationObject"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/cruise#isDescribedBy"/>
+                <owl:onClass rdf:resource="http://schema.geolink.org/dev/cruise#CruiseInformationObject"/>
                 <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&gl-cruise;isUndertakenBy"/>
-                <owl:someValuesFrom rdf:resource="&gl-vessel;Vessel"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&gl-cruise;isUndertakenBy"/>
-                <owl:allValuesFrom rdf:resource="&gl-vessel;Vessel"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&gl-agent-role;providesAgentRoleType"/>
-                <owl:allValuesFrom rdf:resource="&gl-cruise;CruiseAgentRoleType"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&gl-cruise;hasCruiseTrajectory"/>
-                <owl:onClass rdf:resource="&gl-cruise;CruiseTrajectory"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
-    <owl:Axiom>
-        <rdfs:comment>Should have been (isUndertakenBy exactly 1 Vessel), but this would violate the regularity restriction</rdfs:comment>
-        <owl:annotatedSource rdf:resource="&gl-cruise;Cruise"/>
-        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&gl-cruise;isUndertakenBy"/>
-                <owl:someValuesFrom rdf:resource="&gl-vessel;Vessel"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-    </owl:Axiom>
-    
-
-
-    <!-- http://schema.geolink.org/cruise/CruiseAgentRoleType -->
-
-    <owl:Class rdf:about="&gl-cruise;CruiseAgentRoleType">
-        <rdfs:subClassOf rdf:resource="&gl-agent-role;AgentRoleType"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/cruise/CruiseInformationObject -->
-
-    <owl:Class rdf:about="&gl-cruise;CruiseInformationObject">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&gl-info-obj;InformationObject"/>
-                    <owl:Restriction>
-                        <owl:onProperty>
-                            <rdf:Description>
-                                <owl:inverseOf rdf:resource="&gl-info-obj;isDescribedBy"/>
-                            </rdf:Description>
-                        </owl:onProperty>
-                        <owl:someValuesFrom rdf:resource="&gl-cruise;Cruise"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&gl-cruise;hasCruiseType"/>
-                <owl:onClass rdf:resource="&gl-cruise;CruiseType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/cruise#isUndertakenBy"/>
+                <owl:onClass rdf:resource="http://schema.geolink.org/dev/cruise#Vessel"/>
                 <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&gl-program;isAssociatedWIthProgram"/>
-                <owl:allValuesFrom rdf:resource="&gl-program;Program"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/cruise#hasTrajectory"/>
+                <owl:onClass rdf:resource="http://schema.geolink.org/dev/cruise#Trajectory"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&gl-cruise;hasCruiseType"/>
-                <owl:allValuesFrom rdf:resource="&gl-cruise;CruiseType"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&gl-funding-award;isFundedBy"/>
-                <owl:allValuesFrom rdf:resource="&gl-funding-award;FundingAward"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/cruise/CruiseTrajectory -->
-
-    <owl:Class rdf:about="&gl-cruise;CruiseTrajectory">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&gl-traj;Trajectory"/>
-                    <owl:Restriction>
-                        <owl:onProperty>
-                            <rdf:Description>
-                                <owl:inverseOf rdf:resource="&gl-cruise;hasCruiseTrajectory"/>
-                            </rdf:Description>
-                        </owl:onProperty>
-                        <owl:onClass rdf:resource="&gl-cruise;Cruise"/>
-                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/cruise/CruiseType -->
-
-    <owl:Class rdf:about="&gl-cruise;CruiseType">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&gl-cruise;transit_cruisetype"/>
-                    <rdf:Description rdf:about="&gl-cruise;operational_cruisetype"/>
-                    <rdf:Description rdf:about="&gl-cruise;maintenance_cruisetype"/>
-                    <rdf:Description rdf:about="&gl-cruise;other_cruisetype"/>
-                </owl:oneOf>
-            </owl:Class>
-        </owl:equivalentClass>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/funding-award/FundingAward -->
-
-    <owl:Class rdf:about="&gl-funding-award;FundingAward"/>
-    
-
-
-    <!-- http://schema.geolink.org/program/Program -->
-
-    <owl:Class rdf:about="&gl-program;Program"/>
-    
-
-
-    <!-- http://schema.geolink.org/vessel/Vessel -->
-
-    <owl:Class rdf:about="&gl-vessel;Vessel">
-        <rdfs:subClassOf rdf:resource="&gl-traj;MovingObject"/>
-    </owl:Class>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Individuals
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://schema.geolink.org/cruise/captain_role -->
-
-    <owl:NamedIndividual rdf:about="&gl-cruise;captain_role">
-        <rdf:type rdf:resource="&gl-cruise;CruiseAgentRoleType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://schema.geolink.org/cruise/chief_engineer_role -->
-
-    <owl:NamedIndividual rdf:about="&gl-cruise;chief_engineer_role">
-        <rdf:type rdf:resource="&gl-cruise;CruiseAgentRoleType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://schema.geolink.org/cruise/chief_scientist_role -->
-
-    <owl:NamedIndividual rdf:about="&gl-cruise;chief_scientist_role">
-        <rdf:type rdf:resource="&gl-cruise;CruiseAgentRoleType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://schema.geolink.org/cruise/co_chief_scientist_role -->
-
-    <owl:NamedIndividual rdf:about="&gl-cruise;co_chief_scientist_role">
-        <rdf:type rdf:resource="&gl-cruise;CruiseAgentRoleType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://schema.geolink.org/cruise/curator_role -->
-
-    <owl:NamedIndividual rdf:about="&gl-cruise;curator_role">
-        <rdf:type rdf:resource="&gl-cruise;CruiseAgentRoleType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://schema.geolink.org/cruise/data_manager_role -->
-
-    <owl:NamedIndividual rdf:about="&gl-cruise;data_manager_role">
-        <rdf:type rdf:resource="&gl-cruise;CruiseAgentRoleType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://schema.geolink.org/cruise/foreign_observer_role -->
-
-    <owl:NamedIndividual rdf:about="&gl-cruise;foreign_observer_role">
-        <rdf:type rdf:resource="&gl-cruise;CruiseAgentRoleType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://schema.geolink.org/cruise/graduate_student_role -->
-
-    <owl:NamedIndividual rdf:about="&gl-cruise;graduate_student_role">
-        <rdf:type rdf:resource="&gl-cruise;CruiseAgentRoleType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://schema.geolink.org/cruise/higher_ed_educator_role -->
-
-    <owl:NamedIndividual rdf:about="&gl-cruise;higher_ed_educator_role">
-        <rdf:type rdf:resource="&gl-cruise;CruiseAgentRoleType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://schema.geolink.org/cruise/inspector_role -->
-
-    <owl:NamedIndividual rdf:about="&gl-cruise;inspector_role">
-        <rdf:type rdf:resource="&gl-cruise;CruiseAgentRoleType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://schema.geolink.org/cruise/k12_educator_role -->
-
-    <owl:NamedIndividual rdf:about="&gl-cruise;k12_educator_role">
-        <rdf:type rdf:resource="&gl-cruise;CruiseAgentRoleType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://schema.geolink.org/cruise/k12_student_role -->
-
-    <owl:NamedIndividual rdf:about="&gl-cruise;k12_student_role">
-        <rdf:type rdf:resource="&gl-cruise;CruiseAgentRoleType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://schema.geolink.org/cruise/lead_marine_technician_role -->
-
-    <owl:NamedIndividual rdf:about="&gl-cruise;lead_marine_technician_role">
-        <rdf:type rdf:resource="&gl-cruise;CruiseAgentRoleType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://schema.geolink.org/cruise/maintenance_cruisetype -->
-
-    <owl:NamedIndividual rdf:about="&gl-cruise;maintenance_cruisetype">
-        <rdf:type rdf:resource="&gl-cruise;CruiseType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://schema.geolink.org/cruise/marine_technician_role -->
-
-    <owl:NamedIndividual rdf:about="&gl-cruise;marine_technician_role">
-        <rdf:type rdf:resource="&gl-cruise;CruiseAgentRoleType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://schema.geolink.org/cruise/observer_role -->
-
-    <owl:NamedIndividual rdf:about="&gl-cruise;observer_role">
-        <rdf:type rdf:resource="&gl-cruise;CruiseAgentRoleType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://schema.geolink.org/cruise/operational_cruisetype -->
-
-    <owl:NamedIndividual rdf:about="&gl-cruise;operational_cruisetype">
-        <rdf:type rdf:resource="&gl-cruise;CruiseType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://schema.geolink.org/cruise/operator_role -->
-
-    <owl:NamedIndividual rdf:about="&gl-cruise;operator_role">
-        <rdf:type rdf:resource="&gl-cruise;CruiseAgentRoleType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://schema.geolink.org/cruise/other_cruisetype -->
-
-    <owl:NamedIndividual rdf:about="&gl-cruise;other_cruisetype">
-        <rdf:type rdf:resource="&gl-cruise;CruiseType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://schema.geolink.org/cruise/postdoc_scientist_role -->
-
-    <owl:NamedIndividual rdf:about="&gl-cruise;postdoc_scientist_role">
-        <rdf:type rdf:resource="&gl-cruise;CruiseAgentRoleType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://schema.geolink.org/cruise/principal_investigator_role -->
-
-    <owl:NamedIndividual rdf:about="&gl-cruise;principal_investigator_role">
-        <rdf:type rdf:resource="&gl-cruise;CruiseAgentRoleType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://schema.geolink.org/cruise/project_coordinator_role -->
-
-    <owl:NamedIndividual rdf:about="&gl-cruise;project_coordinator_role">
-        <rdf:type rdf:resource="&gl-cruise;CruiseAgentRoleType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://schema.geolink.org/cruise/scheduler_role -->
-
-    <owl:NamedIndividual rdf:about="&gl-cruise;scheduler_role">
-        <rdf:type rdf:resource="&gl-cruise;CruiseAgentRoleType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://schema.geolink.org/cruise/scientist_role -->
-
-    <owl:NamedIndividual rdf:about="&gl-cruise;scientist_role">
-        <rdf:type rdf:resource="&gl-cruise;CruiseAgentRoleType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://schema.geolink.org/cruise/student_role -->
-
-    <owl:NamedIndividual rdf:about="&gl-cruise;student_role">
-        <rdf:type rdf:resource="&gl-cruise;CruiseAgentRoleType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://schema.geolink.org/cruise/technician_role -->
-
-    <owl:NamedIndividual rdf:about="&gl-cruise;technician_role">
-        <rdf:type rdf:resource="&gl-cruise;CruiseAgentRoleType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://schema.geolink.org/cruise/transit_cruisetype -->
-
-    <owl:NamedIndividual rdf:about="&gl-cruise;transit_cruisetype">
-        <rdf:type rdf:resource="&gl-cruise;CruiseType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://schema.geolink.org/cruise/undergraduate_student_role -->
-
-    <owl:NamedIndividual rdf:about="&gl-cruise;undergraduate_student_role">
-        <rdf:type rdf:resource="&gl-cruise;CruiseAgentRoleType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // General axioms
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    <rdf:Description>
-        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="&gl-agent-role;AgentRole"/>
-            <rdf:Description rdf:about="&gl-agent-role;AgentRoleType"/>
-            <rdf:Description rdf:about="http://schema.geolink.org/agent/Agent"/>
-            <rdf:Description rdf:about="&gl-cruise;CruiseType"/>
-            <rdf:Description rdf:about="http://schema.geolink.org/event/Event"/>
-            <rdf:Description rdf:about="http://schema.geolink.org/event/EventType"/>
-            <rdf:Description rdf:about="&gl-funding-award;FundingAward"/>
-            <rdf:Description rdf:about="http://schema.geolink.org/geometry/Geometry"/>
-            <rdf:Description rdf:about="&gl-info-obj;InformationObject"/>
-            <rdf:Description rdf:about="&gl-place;Place"/>
-            <rdf:Description rdf:about="&gl-program;Program"/>
-            <rdf:Description rdf:about="&gl-traj;Attribute"/>
-            <rdf:Description rdf:about="&gl-traj;Fix"/>
-            <rdf:Description rdf:about="&gl-traj;MovingObject"/>
-            <rdf:Description rdf:about="&gl-traj;Segment"/>
-            <rdf:Description rdf:about="&gl-traj;Trajectory"/>
-            <rdf:Description rdf:about="http://www.w3.org/2006/time#TemporalEntity"/>
-        </owl:members>
     </rdf:Description>
-    <owl:Restriction>
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&gl-info-obj;isDescribedBy"/>
-                <owl:someValuesFrom>
-                    <owl:Class>
-                        <owl:intersectionOf rdf:parseType="Collection">
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="&gl-funding-award;isFundedBy"/>
-                                <owl:someValuesFrom rdf:resource="&gl-funding-award;FundingAward"/>
-                            </owl:Restriction>
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="&gl-cruise;hasCruiseType"/>
-                                <owl:hasValue rdf:resource="&gl-cruise;operational_cruisetype"/>
-                            </owl:Restriction>
-                        </owl:intersectionOf>
-                    </owl:Class>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/event/providesAgentRole"/>
-        <owl:someValuesFrom>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&gl-agent-role;hasAgentRoleType"/>
-                <owl:hasValue rdf:resource="&gl-cruise;chief_scientist_role"/>
-            </owl:Restriction>
-        </owl:someValuesFrom>
-    </owl:Restriction>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&gl-cruise;Cruise"/>
-        <owl:onProperty rdf:resource="&gl-cruise;hasCruiseTrajectory"/>
-        <owl:someValuesFrom rdf:resource="&gl-cruise;CruiseTrajectory"/>
-    </owl:Restriction>
-    <rdf:Description>
-        <rdf:type rdf:resource="&owl;AllDifferent"/>
-        <owl:distinctMembers rdf:parseType="Collection">
-            <rdf:Description rdf:about="&gl-cruise;captain_role"/>
-            <rdf:Description rdf:about="&gl-cruise;chief_engineer_role"/>
-            <rdf:Description rdf:about="&gl-cruise;chief_scientist_role"/>
-            <rdf:Description rdf:about="&gl-cruise;co_chief_scientist_role"/>
-            <rdf:Description rdf:about="&gl-cruise;foreign_observer_role"/>
-            <rdf:Description rdf:about="&gl-cruise;graduate_student_role"/>
-            <rdf:Description rdf:about="&gl-cruise;higher_ed_educator_role"/>
-            <rdf:Description rdf:about="&gl-cruise;inspector_role"/>
-            <rdf:Description rdf:about="&gl-cruise;k12_educator_role"/>
-            <rdf:Description rdf:about="&gl-cruise;k12_student_role"/>
-            <rdf:Description rdf:about="&gl-cruise;lead_marine_technician_role"/>
-            <rdf:Description rdf:about="&gl-cruise;maintenance_cruisetype"/>
-            <rdf:Description rdf:about="&gl-cruise;marine_technician_role"/>
-            <rdf:Description rdf:about="&gl-cruise;observer_role"/>
-            <rdf:Description rdf:about="&gl-cruise;operational_cruisetype"/>
-            <rdf:Description rdf:about="&gl-cruise;operator_role"/>
-            <rdf:Description rdf:about="&gl-cruise;other_cruisetype"/>
-            <rdf:Description rdf:about="&gl-cruise;postdoc_scientist_role"/>
-            <rdf:Description rdf:about="&gl-cruise;scheduler_role"/>
-            <rdf:Description rdf:about="&gl-cruise;scientist_role"/>
-            <rdf:Description rdf:about="&gl-cruise;student_role"/>
-            <rdf:Description rdf:about="&gl-cruise;technician_role"/>
-            <rdf:Description rdf:about="&gl-cruise;transit_cruisetype"/>
-            <rdf:Description rdf:about="&gl-cruise;undergraduate_student_role"/>
-        </owl:distinctMembers>
-    </rdf:Description>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&gl-cruise;Cruise"/>
-        <owl:onProperty rdf:resource="&gl-cruise;isUndertakenBy"/>
-        <owl:someValuesFrom rdf:resource="&gl-vessel;Vessel"/>
-    </owl:Restriction>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&gl-cruise;Cruise"/>
-        <owl:onProperty rdf:resource="&gl-agent-role;providesAgentRoleType"/>
-        <owl:someValuesFrom rdf:resource="&gl-cruise;CruiseAgentRoleType"/>
-    </owl:Restriction>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&gl-cruise;CruiseInformationObject"/>
-        <owl:onProperty rdf:resource="&gl-cruise;hasCruiseType"/>
-        <owl:someValuesFrom rdf:resource="&gl-cruise;CruiseType"/>
-    </owl:Restriction>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&gl-cruise;Cruise"/>
-        <owl:onProperty rdf:resource="&gl-info-obj;isDescribedBy"/>
-        <owl:someValuesFrom rdf:resource="&gl-cruise;CruiseInformationObject"/>
-    </owl:Restriction>
+    
+
+
+    <!-- http://schema.geolink.org/dev/cruise#EducatorRole -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#EducatorRole">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#AgentRole"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/cruise#EngineerRole -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#EngineerRole">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#AgentRole"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/cruise#ForeignObserverRole -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#ForeignObserverRole">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#ObserverRole"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/cruise#GraduateStudentRole -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#GraduateStudentRole">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#StudentRole"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/cruise#HigherEdEducatorRole -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#HigherEdEducatorRole">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#EducatorRole"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/cruise#InspectorRole -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#InspectorRole">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#AgentRole"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/cruise#K12EducatorRole -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#K12EducatorRole">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#EducatorRole"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/cruise#K12StudentRole -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#K12StudentRole">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#StudentRole"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/cruise#LeadTechnicianRole -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#LeadTechnicianRole">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#TechnicianRole"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/cruise#MaintenanceCruise -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#MaintenanceCruise">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#Cruise"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/cruise#MarineTechnicianRole -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#MarineTechnicianRole">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#TechnicianRole"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/cruise#ObserverRole -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#ObserverRole">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#AgentRole"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/cruise#OperationalCruise -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#OperationalCruise">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#Cruise"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/cruise#OperatorRole -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#OperatorRole">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#AgentRole"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/cruise#OtherObserverRole -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#OtherObserverRole">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#ObserverRole"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/cruise#OtherRole -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#OtherRole">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#AgentRole"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/cruise#PostdocScientistRole -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#PostdocScientistRole">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#ScientistRole"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/cruise#SchedulerRole -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#SchedulerRole">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#AgentRole"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/cruise#ScientistRole -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#ScientistRole">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#AgentRole"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/cruise#StudentRole -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#StudentRole">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#AgentRole"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/cruise#TechnicianRole -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#TechnicianRole">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#AgentRole"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/cruise#Trajectory -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#Trajectory"/>
+    
+
+
+    <!-- http://schema.geolink.org/dev/cruise#TransitCruise -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#TransitCruise">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#Cruise"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/cruise#UndergraduateStudentRole -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#UndergraduateStudentRole">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#StudentRole"/>
+    </owl:Class>
 </rdf:RDF>
 
 
 
-<!-- Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net -->
+<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
 
