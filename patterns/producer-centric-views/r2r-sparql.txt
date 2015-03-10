@@ -11,6 +11,10 @@ PREFIX ecgl: <http://schema.geolink.org/dev/>
 PREFIX ecglview: <http://schema.geolink.org/view/1.0/ecglview#>
 PREFIX ecglvoc: <http://schema.geolink.org/voc/1.0/ecglvoc#>
 
+PREFIX ecglfa: <http://schema.geolink.org/dev/fundingaward#>
+PREFIX ecglio: <http://schema.geolink.org/dev/informationobject#>
+PREFIX ecglog: <http://schema.geolink.org/dev/organization#>
+
 ## If some triple in the WHERE clause is optional in the data, then use OPTIONAL clause?
 ## Need to figure out which triple pattenrs oae
 ## Currently, only construct triples from non-inverse relationship. 
@@ -29,18 +33,20 @@ PREFIX ecglvoc: <http://schema.geolink.org/voc/1.0/ecglvoc#>
 ## Based on <http://linked.rvdata.us/page/award/100004> 
 ## r2r:Award rdfs:subClassOf ecglview:Award 
 
+
 CONSTRUCT {
-	?X rdf:type ecgl:fundingaward#FundingAward .
-	_:ar ecgl:isAgentRoleIn ?X .
-	_:ar rdf:type ecgl:AgentRole .
-	_:ar ecgl:hasAgentRoleType ecglvoc:funding_award_sponsor_role .
+	?X rdf:type ecglfa:FundingAward .
+	?X ecglfa:providesAgentRole _:ar	
+	_:ar rdf:type ecglfa:SponsorRole .		
 	_:ar ecgl:isPerformedBy ?Z .
-	?Z rdf:type ecgl:Organization . 
-	?X ecgl:isDescribedBy _:io .
-	_:io rdf:type ecgl:FundingAwardInformationObject .
-	_:io ecgl:hasAlternateID [ ?ID, ?L ] .
-	_:io ecgl:hasTitle ?T .
-	_:io ecgl:seeAlso ?W .
+	?Z rdf:type ecglog:Organization . 
+	?X ecglfa:isDescribedBy _:io .
+	_:io rdf:type ecglfa:FundingAwardInformationObject .
+	_:io ecglfa:hasPrimaryIdentifier [ ecglio:hasIdentifierValue ?ID ] .
+	_:io ecglio:hasCanonicalName ?T .
+	_:io ecglio:seeAlso ?W .
+	_:io ecglio:hasDescription ?ABS .
+	_:io ecglio:hasAlternativeIdentifier [ ecglio:hasIdentifierValue ?W; ecglio:hasIdentifierScheme ?URI ].
 }
 FROM <http://address-to-r2r-graph-mapped-to-view>
 WHERE {
@@ -48,12 +54,9 @@ WHERE {
 	?X ecglview:hasSponsor ?Z.
 	?X ecglview:identifier ?ID .
 	?X ecglview:title ?T .
-	?X ecglview:abstract ?ABS .
-	?
-	OPTIONAL { ?X rdfs:label ?L . }
-	OPTIONAL { ?X dcterms:title ?T . }
-	OPTIONAL { ?X dcterms:identifier ?ID . }
-	OPTIONAL { ?X dcterms:source ?W . }
+	OPTIONAL { ?X ecglview:absract ?ABS . }	
+	OPTIONAL { ?X ecglview:seeAlso ?T . }	
+	OPTIONAL { ?X ecglview:matches [ ecglview:identifier ?W; ecglview:hasScheme ?URI ] . }
 }
 
 ## Based on <http://linked.rvdata.us/page/cruise/MGL0901>
