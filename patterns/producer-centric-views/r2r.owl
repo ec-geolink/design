@@ -13,12 +13,12 @@
 
 <rdf:RDF xmlns="http://schema.geolink.org/view/dev/ecglview#"
      xml:base="http://schema.geolink.org/view/dev/ecglview"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:ecglview="http://schema.geolink.org/view/dev/ecglview#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:ecglview="http://schema.geolink.org/view/dev/ecglview#">
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/">
     <owl:Ontology rdf:about="http://schema.geolink.org/view/dev/ecglview"/>
     
 
@@ -162,7 +162,10 @@
 
     <!-- http://schema.geolink.org/view/dev/ecglview#hasSponsor -->
 
-    <owl:ObjectProperty rdf:about="&ecglview;hasSponsor"/>
+    <owl:ObjectProperty rdf:about="&ecglview;hasSponsor">
+        <rdfs:domain rdf:resource="&ecglview;Award"/>
+        <rdfs:range rdf:resource="&ecglview;Organization"/>
+    </owl:ObjectProperty>
     
 
 
@@ -198,7 +201,18 @@
 
     <!-- http://schema.geolink.org/view/dev/ecglview#matches -->
 
-    <owl:ObjectProperty rdf:about="&ecglview;matches"/>
+    <owl:ObjectProperty rdf:about="&ecglview;matches">
+        <rdfs:comment>The range of this property consists of (possibly blank) nodes that act as the domain of the &apos;hasScheme&apos; property. Graph patterns for data using this property can either be of the form:
+-   ?X :identifier ?ID
+-   ?X :matches [ :identifier ?ID ; :hasScheme ?S ]</rdfs:comment>
+        <rdfs:domain rdf:resource="&ecglview;Award"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ecglview;hasScheme"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
     
 
 
@@ -215,7 +229,10 @@
 
     <!-- http://schema.geolink.org/view/dev/ecglview#abstract -->
 
-    <owl:DatatypeProperty rdf:about="&ecglview;abstract"/>
+    <owl:DatatypeProperty rdf:about="&ecglview;abstract">
+        <rdfs:domain rdf:resource="&ecglview;Award"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
     
 
 
@@ -251,7 +268,22 @@
 
     <!-- http://schema.geolink.org/view/dev/ecglview#hasScheme -->
 
-    <owl:DatatypeProperty rdf:about="&ecglview;hasScheme"/>
+    <owl:DatatypeProperty rdf:about="&ecglview;hasScheme">
+        <rdfs:comment>The domain of this property consists of (possibly blank) nodes that act as the range of the &apos;matches&apos; property. Graph patterns for data using this property can either be of the form:
+-   ?X :identifier ?ID
+-   ?X :matches [ :identifier ?ID ; :hasScheme ?S ]</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="&ecglview;matches"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="&owl;Thing"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
     
 
 
@@ -263,13 +295,36 @@
 
     <!-- http://schema.geolink.org/view/dev/ecglview#identfier -->
 
-    <owl:DatatypeProperty rdf:about="&ecglview;identfier"/>
+    <owl:DatatypeProperty rdf:about="&ecglview;identfier">
+        <rdfs:comment>The domain of this property also includes (possibly blank) nodes that act as the range of the &apos;matches&apos; property. Graph patterns for data using this property can either be of the form:
+-   ?X :identifier ?ID
+-   ?X :matches [ :identifier ?ID ; :hasScheme ?S ]</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ecglview;Award"/>
+                    <owl:Restriction>
+                        <owl:onProperty>
+                            <rdf:Description>
+                                <owl:inverseOf rdf:resource="&ecglview;matches"/>
+                            </rdf:Description>
+                        </owl:onProperty>
+                        <owl:someValuesFrom rdf:resource="&owl;Thing"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
     
 
 
     <!-- http://schema.geolink.org/view/dev/ecglview#seeAlso -->
 
-    <owl:DatatypeProperty rdf:about="&ecglview;seeAlso"/>
+    <owl:DatatypeProperty rdf:about="&ecglview;seeAlso">
+        <rdfs:domain rdf:resource="&ecglview;Award"/>
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
+    </owl:DatatypeProperty>
     
 
 
@@ -281,7 +336,10 @@
 
     <!-- http://schema.geolink.org/view/dev/ecglview#title -->
 
-    <owl:DatatypeProperty rdf:about="&ecglview;title"/>
+    <owl:DatatypeProperty rdf:about="&ecglview;title">
+        <rdfs:domain rdf:resource="&ecglview;Award"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
     
 
 
@@ -357,5 +415,5 @@
 
 
 
-<!-- Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net -->
+<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
 
