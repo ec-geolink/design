@@ -74,6 +74,7 @@
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="&ecglview;Organization"/>
                     <rdf:Description rdf:about="&ecglview;Person"/>
+                    <rdf:Description rdf:about="&ecglview;Place"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -165,12 +166,6 @@
         <rdfs:range rdf:resource="&ecglview;Gender"/>
         <rdfs:domain rdf:resource="&ecglview;Person"/>
     </owl:ObjectProperty>
-    
-
-
-    <!-- http://schema.geolink.org/view/dev/ecglview#hasGeometry -->
-
-    <owl:ObjectProperty rdf:about="&ecglview;hasGeometry"/>
     
 
 
@@ -266,6 +261,15 @@
                 <owl:someValuesFrom rdf:resource="&ecglview;Organization"/>
             </owl:Restriction>
         </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/view/dev/ecglview#hasPlaceType -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;hasPlaceType">
+        <rdfs:domain rdf:resource="&ecglview;Place"/>
+        <rdfs:range rdf:resource="&ecglview;PlaceType"/>
     </owl:ObjectProperty>
     
 
@@ -409,6 +413,8 @@
                     <rdf:Description rdf:about="&ecglview;Instrument"/>
                     <rdf:Description rdf:about="&ecglview;Organization"/>
                     <rdf:Description rdf:about="&ecglview;Person"/>
+                    <rdf:Description rdf:about="&ecglview;Place"/>
+                    <rdf:Description rdf:about="&ecglview;Program"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -467,6 +473,15 @@
     <owl:DatatypeProperty rdf:about="&ecglview;hasChecksum">
         <rdfs:domain rdf:resource="&ecglview;DigitalObject"/>
         <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/view/dev/ecglview#hasGeometry -->
+
+    <owl:DatatypeProperty rdf:about="&ecglview;hasGeometry">
+        <rdfs:domain rdf:resource="&ecglview;Place"/>
+        <rdfs:range rdf:resource="&geosparql;wktLiteral"/>
     </owl:DatatypeProperty>
     
 
@@ -533,6 +548,8 @@
                     <rdf:Description rdf:about="&ecglview;Instrument"/>
                     <rdf:Description rdf:about="&ecglview;Organization"/>
                     <rdf:Description rdf:about="&ecglview;Person"/>
+                    <rdf:Description rdf:about="&ecglview;Place"/>
+                    <rdf:Description rdf:about="&ecglview;Program"/>
                     <owl:Restriction>
                         <owl:onProperty>
                             <rdf:Description>
@@ -562,6 +579,8 @@
                     <rdf:Description rdf:about="&ecglview;Instrument"/>
                     <rdf:Description rdf:about="&ecglview;Organization"/>
                     <rdf:Description rdf:about="&ecglview;Person"/>
+                    <rdf:Description rdf:about="&ecglview;Place"/>
+                    <rdf:Description rdf:about="&ecglview;Program"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -592,6 +611,8 @@
                     <rdf:Description rdf:about="&ecglview;Instrument"/>
                     <rdf:Description rdf:about="&ecglview;Organization"/>
                     <rdf:Description rdf:about="&ecglview;Person"/>
+                    <rdf:Description rdf:about="&ecglview;Place"/>
+                    <rdf:Description rdf:about="&ecglview;Program"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -691,6 +712,12 @@
     <!-- http://schema.geolink.org/view/dev/ecglview#Place -->
 
     <owl:Class rdf:about="&ecglview;Place"/>
+    
+
+
+    <!-- http://schema.geolink.org/view/dev/ecglview#PlaceType -->
+
+    <owl:Class rdf:about="&ecglview;PlaceType"/>
     
 
 
