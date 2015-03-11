@@ -147,7 +147,10 @@
 
     <!-- http://schema.geolink.org/view/dev/ecglview#hasInstrumentType -->
 
-    <owl:ObjectProperty rdf:about="&ecglview;hasInstrumentType"/>
+    <owl:ObjectProperty rdf:about="&ecglview;hasInstrumentType">
+        <rdfs:domain rdf:resource="&ecglview;Instrument"/>
+        <rdfs:range rdf:resource="&ecglview;InstrumentType"/>
+    </owl:ObjectProperty>
     
 
 
@@ -282,7 +285,10 @@
 
     <!-- http://schema.geolink.org/view/dev/ecglview#hasVendor -->
 
-    <owl:ObjectProperty rdf:about="&ecglview;hasVendor"/>
+    <owl:ObjectProperty rdf:about="&ecglview;hasVendor">
+        <rdfs:domain rdf:resource="&ecglview;Instrument"/>
+        <rdfs:range rdf:resource="&ecglview;Organization"/>
+    </owl:ObjectProperty>
     
 
 
@@ -307,20 +313,21 @@
         <rdfs:comment>The range of this property consists of (possibly blank) nodes that act as the domain of the &apos;hasScheme&apos; property. Graph patterns for data using this property can either be of the form:
 -   ?X :identifier ?ID
 -   ?X :matches [ :identifier ?ID ; :hasScheme ?S ]</rdfs:comment>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ecglview;Award"/>
+                    <rdf:Description rdf:about="&ecglview;Cruise"/>
+                    <rdf:Description rdf:about="&ecglview;Instrument"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ecglview;hasScheme"/>
                 <owl:someValuesFrom rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:range>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&ecglview;Award"/>
-                    <rdf:Description rdf:about="&ecglview;Cruise"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
         <rdfs:range>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ecglview;identfier"/>
@@ -378,7 +385,10 @@
 
     <!-- http://schema.geolink.org/view/dev/ecglview#hasModel -->
 
-    <owl:DatatypeProperty rdf:about="&ecglview;hasModel"/>
+    <owl:DatatypeProperty rdf:about="&ecglview;hasModel">
+        <rdfs:domain rdf:resource="&ecglview;Instrument"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
     
 
 
@@ -412,6 +422,7 @@
     <!-- http://schema.geolink.org/view/dev/ecglview#hasTrack -->
 
     <owl:DatatypeProperty rdf:about="&ecglview;hasTrack">
+        <rdfs:domain rdf:resource="&ecglview;Cruise"/>
         <rdfs:range rdf:resource="&geosparql;wktLiteral"/>
     </owl:DatatypeProperty>
     
@@ -429,6 +440,7 @@
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="&ecglview;Award"/>
                     <rdf:Description rdf:about="&ecglview;Cruise"/>
+                    <rdf:Description rdf:about="&ecglview;Instrument"/>
                     <owl:Restriction>
                         <owl:onProperty>
                             <rdf:Description>
@@ -453,6 +465,7 @@
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="&ecglview;Award"/>
                     <rdf:Description rdf:about="&ecglview;Cruise"/>
+                    <rdf:Description rdf:about="&ecglview;Instrument"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -475,6 +488,7 @@
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="&ecglview;Award"/>
                     <rdf:Description rdf:about="&ecglview;Cruise"/>
+                    <rdf:Description rdf:about="&ecglview;Instrument"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -526,6 +540,12 @@
     <!-- http://schema.geolink.org/view/dev/ecglview#Instrument -->
 
     <owl:Class rdf:about="&ecglview;Instrument"/>
+    
+
+
+    <!-- http://schema.geolink.org/view/dev/ecglview#InstrumentType -->
+
+    <owl:Class rdf:about="&ecglview;InstrumentType"/>
     
 
 
