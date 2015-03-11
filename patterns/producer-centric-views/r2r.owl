@@ -90,7 +90,14 @@
 
     <owl:ObjectProperty rdf:about="&ecglview;hasCruise">
         <rdfs:range rdf:resource="&ecglview;Cruise"/>
-        <rdfs:domain rdf:resource="&ecglview;Dataset"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ecglview;Dataset"/>
+                    <rdf:Description rdf:about="&ecglview;DigitalObject"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
     </owl:ObjectProperty>
     
 
@@ -132,7 +139,10 @@
 
     <!-- http://schema.geolink.org/view/dev/ecglview#hasFormatType -->
 
-    <owl:ObjectProperty rdf:about="&ecglview;hasFormatType"/>
+    <owl:ObjectProperty rdf:about="&ecglview;hasFormatType">
+        <rdfs:domain rdf:resource="&ecglview;DigitalObject"/>
+        <rdfs:range rdf:resource="&ecglview;FormatType"/>
+    </owl:ObjectProperty>
     
 
 
@@ -145,8 +155,15 @@
     <!-- http://schema.geolink.org/view/dev/ecglview#hasInstrument -->
 
     <owl:ObjectProperty rdf:about="&ecglview;hasInstrument">
-        <rdfs:domain rdf:resource="&ecglview;Dataset"/>
         <rdfs:range rdf:resource="&ecglview;Instrument"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ecglview;Dataset"/>
+                    <rdf:Description rdf:about="&ecglview;DigitalObject"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
     </owl:ObjectProperty>
     
 
@@ -163,8 +180,15 @@
     <!-- http://schema.geolink.org/view/dev/ecglview#hasMeasurementType -->
 
     <owl:ObjectProperty rdf:about="&ecglview;hasMeasurementType">
-        <rdfs:domain rdf:resource="&ecglview;Dataset"/>
         <rdfs:range rdf:resource="&ecglview;MeasurementType"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ecglview;Dataset"/>
+                    <rdf:Description rdf:about="&ecglview;DigitalObject"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
     </owl:ObjectProperty>
     
 
@@ -245,8 +269,15 @@
     <!-- http://schema.geolink.org/view/dev/ecglview#hasRepository -->
 
     <owl:ObjectProperty rdf:about="&ecglview;hasRepository">
-        <rdfs:domain rdf:resource="&ecglview;Dataset"/>
         <rdfs:range rdf:resource="&ecglview;Organization"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ecglview;Dataset"/>
+                    <rdf:Description rdf:about="&ecglview;DigitalObject"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
     </owl:ObjectProperty>
     
 
@@ -313,6 +344,15 @@
     
 
 
+    <!-- http://schema.geolink.org/view/dev/ecglview#isPartOf -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;isPartOf">
+        <rdfs:range rdf:resource="&ecglview;Dataset"/>
+        <rdfs:domain rdf:resource="&ecglview;DigitalObject"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://schema.geolink.org/view/dev/ecglview#isPerformedBy -->
 
     <owl:ObjectProperty rdf:about="&ecglview;isPerformedBy"/>
@@ -343,6 +383,7 @@
                     <rdf:Description rdf:about="&ecglview;Award"/>
                     <rdf:Description rdf:about="&ecglview;Cruise"/>
                     <rdf:Description rdf:about="&ecglview;Dataset"/>
+                    <rdf:Description rdf:about="&ecglview;DigitalObject"/>
                     <rdf:Description rdf:about="&ecglview;Instrument"/>
                 </owl:unionOf>
             </owl:Class>
@@ -387,13 +428,19 @@
 
     <!-- http://schema.geolink.org/view/dev/ecglview#hasByteLength -->
 
-    <owl:DatatypeProperty rdf:about="&ecglview;hasByteLength"/>
+    <owl:DatatypeProperty rdf:about="&ecglview;hasByteLength">
+        <rdfs:domain rdf:resource="&ecglview;DigitalObject"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
     
 
 
     <!-- http://schema.geolink.org/view/dev/ecglview#hasChecksum -->
 
-    <owl:DatatypeProperty rdf:about="&ecglview;hasChecksum"/>
+    <owl:DatatypeProperty rdf:about="&ecglview;hasChecksum">
+        <rdfs:domain rdf:resource="&ecglview;DigitalObject"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
     
 
 
@@ -455,6 +502,7 @@
                     <rdf:Description rdf:about="&ecglview;Award"/>
                     <rdf:Description rdf:about="&ecglview;Cruise"/>
                     <rdf:Description rdf:about="&ecglview;Dataset"/>
+                    <rdf:Description rdf:about="&ecglview;DigitalObject"/>
                     <rdf:Description rdf:about="&ecglview;Instrument"/>
                     <owl:Restriction>
                         <owl:onProperty>
@@ -481,6 +529,7 @@
                     <rdf:Description rdf:about="&ecglview;Award"/>
                     <rdf:Description rdf:about="&ecglview;Cruise"/>
                     <rdf:Description rdf:about="&ecglview;Dataset"/>
+                    <rdf:Description rdf:about="&ecglview;DigitalObject"/>
                     <rdf:Description rdf:about="&ecglview;Instrument"/>
                 </owl:unionOf>
             </owl:Class>
@@ -491,7 +540,10 @@
 
     <!-- http://schema.geolink.org/view/dev/ecglview#source -->
 
-    <owl:DatatypeProperty rdf:about="&ecglview;source"/>
+    <owl:DatatypeProperty rdf:about="&ecglview;source">
+        <rdfs:domain rdf:resource="&ecglview;DigitalObject"/>
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
+    </owl:DatatypeProperty>
     
 
 
@@ -505,6 +557,7 @@
                     <rdf:Description rdf:about="&ecglview;Award"/>
                     <rdf:Description rdf:about="&ecglview;Cruise"/>
                     <rdf:Description rdf:about="&ecglview;Dataset"/>
+                    <rdf:Description rdf:about="&ecglview;DigitalObject"/>
                     <rdf:Description rdf:about="&ecglview;Instrument"/>
                 </owl:unionOf>
             </owl:Class>
@@ -542,15 +595,21 @@
     
 
 
-    <!-- http://schema.geolink.org/view/dev/ecglview#DataObject -->
-
-    <owl:Class rdf:about="&ecglview;DataObject"/>
-    
-
-
     <!-- http://schema.geolink.org/view/dev/ecglview#Dataset -->
 
     <owl:Class rdf:about="&ecglview;Dataset"/>
+    
+
+
+    <!-- http://schema.geolink.org/view/dev/ecglview#DigitalObject -->
+
+    <owl:Class rdf:about="&ecglview;DigitalObject"/>
+    
+
+
+    <!-- http://schema.geolink.org/view/dev/ecglview#FormatType -->
+
+    <owl:Class rdf:about="&ecglview;FormatType"/>
     
 
 
