@@ -5,6 +5,7 @@
     <!ENTITY foaf "http://xmlns.com/foaf/0.1/" >
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY geosparql "http://www.opengis.net/ont/geosparql#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
     <!ENTITY ecglview "http://schema.geolink.org/view/dev/ecglview#" >
@@ -13,6 +14,7 @@
 
 <rdf:RDF xmlns="http://schema.geolink.org/view/dev/ecglview#"
      xml:base="http://schema.geolink.org/view/dev/ecglview"
+     xmlns:geosparql="http://www.opengis.net/ont/geosparql#"
      xmlns:ecglview="http://schema.geolink.org/view/dev/ecglview#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
@@ -20,6 +22,29 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:foaf="http://xmlns.com/foaf/0.1/">
     <owl:Ontology rdf:about="http://schema.geolink.org/view/dev/ecglview"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.opengis.net/ont/geosparql#gmlLiteral -->
+
+    <rdfs:Datatype rdf:about="&geosparql;gmlLiteral"/>
+    
+
+
+    <!-- http://www.opengis.net/ont/geosparql#wktLiteral -->
+
+    <rdfs:Datatype rdf:about="&geosparql;wktLiteral"/>
     
 
 
@@ -167,8 +192,8 @@
         <rdfs:domain rdf:resource="&ecglview;Cruise"/>
         <rdfs:range>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ecglview;hasAffiliation"/>
-                <owl:someValuesFrom rdf:resource="&ecglview;Organization"/>
+                <owl:onProperty rdf:resource="&ecglview;isPerformedBy"/>
+                <owl:someValuesFrom rdf:resource="&ecglview;Person"/>
             </owl:Restriction>
         </rdfs:range>
         <rdfs:range>
@@ -179,8 +204,8 @@
         </rdfs:range>
         <rdfs:range>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ecglview;isPerformedBy"/>
-                <owl:someValuesFrom rdf:resource="&ecglview;Person"/>
+                <owl:onProperty rdf:resource="&ecglview;hasAffiliation"/>
+                <owl:someValuesFrom rdf:resource="&ecglview;Organization"/>
             </owl:Restriction>
         </rdfs:range>
     </owl:ObjectProperty>
@@ -252,12 +277,6 @@
             </owl:Restriction>
         </rdfs:range>
     </owl:ObjectProperty>
-    
-
-
-    <!-- http://schema.geolink.org/view/dev/ecglview#hasTrack -->
-
-    <owl:ObjectProperty rdf:about="&ecglview;hasTrack"/>
     
 
 
@@ -339,12 +358,6 @@
     
 
 
-    <!-- http://schema.geolink.org/view/dev/ecglview#asWKT -->
-
-    <owl:DatatypeProperty rdf:about="&ecglview;asWKT"/>
-    
-
-
     <!-- http://schema.geolink.org/view/dev/ecglview#email -->
 
     <owl:DatatypeProperty rdf:about="&ecglview;email"/>
@@ -393,6 +406,14 @@
     <!-- http://schema.geolink.org/view/dev/ecglview#hasTimeStamp -->
 
     <owl:DatatypeProperty rdf:about="&ecglview;hasTimeStamp"/>
+    
+
+
+    <!-- http://schema.geolink.org/view/dev/ecglview#hasTrack -->
+
+    <owl:DatatypeProperty rdf:about="&ecglview;hasTrack">
+        <rdfs:range rdf:resource="&geosparql;wktLiteral"/>
+    </owl:DatatypeProperty>
     
 
 
