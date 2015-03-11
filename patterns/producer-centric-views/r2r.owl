@@ -54,7 +54,10 @@
 
     <!-- http://schema.geolink.org/view/dev/ecglview#hasAward -->
 
-    <owl:ObjectProperty rdf:about="&ecglview;hasAward"/>
+    <owl:ObjectProperty rdf:about="&ecglview;hasAward">
+        <rdfs:range rdf:resource="&ecglview;Award"/>
+        <rdfs:domain rdf:resource="&ecglview;Cruise"/>
+    </owl:ObjectProperty>
     
 
 
@@ -66,7 +69,10 @@
 
     <!-- http://schema.geolink.org/view/dev/ecglview#hasCruiseType -->
 
-    <owl:ObjectProperty rdf:about="&ecglview;hasCruiseType"/>
+    <owl:ObjectProperty rdf:about="&ecglview;hasCruiseType">
+        <rdfs:domain rdf:resource="&ecglview;Cruise"/>
+        <rdfs:range rdf:resource="&ecglview;CruiseType"/>
+    </owl:ObjectProperty>
     
 
 
@@ -78,7 +84,21 @@
 
     <!-- http://schema.geolink.org/view/dev/ecglview#hasEndPortCall -->
 
-    <owl:ObjectProperty rdf:about="&ecglview;hasEndPortCall"/>
+    <owl:ObjectProperty rdf:about="&ecglview;hasEndPortCall">
+        <rdfs:domain rdf:resource="&ecglview;Cruise"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ecglview;hasTimeStamp"/>
+                <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ecglview;atPort"/>
+                <owl:someValuesFrom rdf:resource="&ecglview;Place"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
     
 
 
@@ -114,31 +134,74 @@
 
     <!-- http://schema.geolink.org/view/dev/ecglview#hasMidPortCall -->
 
-    <owl:ObjectProperty rdf:about="&ecglview;hasMidPortCall"/>
+    <owl:ObjectProperty rdf:about="&ecglview;hasMidPortCall">
+        <rdfs:domain rdf:resource="&ecglview;Cruise"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ecglview;atPort"/>
+                <owl:someValuesFrom rdf:resource="&ecglview;Place"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ecglview;hasTimeStamp"/>
+                <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
     
 
 
     <!-- http://schema.geolink.org/view/dev/ecglview#hasOperator -->
 
-    <owl:ObjectProperty rdf:about="&ecglview;hasOperator"/>
+    <owl:ObjectProperty rdf:about="&ecglview;hasOperator">
+        <rdfs:domain rdf:resource="&ecglview;Cruise"/>
+        <rdfs:range rdf:resource="&ecglview;Organization"/>
+    </owl:ObjectProperty>
     
 
 
     <!-- http://schema.geolink.org/view/dev/ecglview#hasParticipation -->
 
-    <owl:ObjectProperty rdf:about="&ecglview;hasParticipation"/>
+    <owl:ObjectProperty rdf:about="&ecglview;hasParticipation">
+        <rdfs:domain rdf:resource="&ecglview;Cruise"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ecglview;hasAffiliation"/>
+                <owl:someValuesFrom rdf:resource="&ecglview;Organization"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ecglview;hasRoleType"/>
+                <owl:someValuesFrom rdf:resource="&ecglview;RoleType"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ecglview;isPerformedBy"/>
+                <owl:someValuesFrom rdf:resource="&ecglview;Person"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
     
 
 
     <!-- http://schema.geolink.org/view/dev/ecglview#hasProgram -->
 
-    <owl:ObjectProperty rdf:about="&ecglview;hasProgram"/>
+    <owl:ObjectProperty rdf:about="&ecglview;hasProgram">
+        <rdfs:domain rdf:resource="&ecglview;Cruise"/>
+        <rdfs:range rdf:resource="&ecglview;Cruise"/>
+    </owl:ObjectProperty>
     
 
 
     <!-- http://schema.geolink.org/view/dev/ecglview#hasRelatedCruise -->
 
-    <owl:ObjectProperty rdf:about="&ecglview;hasRelatedCruise"/>
+    <owl:ObjectProperty rdf:about="&ecglview;hasRelatedCruise">
+        <rdfs:range rdf:resource="&ecglview;Cruise"/>
+        <rdfs:domain rdf:resource="&ecglview;Cruise"/>
+    </owl:ObjectProperty>
     
 
 
@@ -156,7 +219,10 @@
 
     <!-- http://schema.geolink.org/view/dev/ecglview#hasScheduler -->
 
-    <owl:ObjectProperty rdf:about="&ecglview;hasScheduler"/>
+    <owl:ObjectProperty rdf:about="&ecglview;hasScheduler">
+        <rdfs:domain rdf:resource="&ecglview;Cruise"/>
+        <rdfs:range rdf:resource="&ecglview;Organization"/>
+    </owl:ObjectProperty>
     
 
 
@@ -171,7 +237,21 @@
 
     <!-- http://schema.geolink.org/view/dev/ecglview#hasStartPortCall -->
 
-    <owl:ObjectProperty rdf:about="&ecglview;hasStartPortCall"/>
+    <owl:ObjectProperty rdf:about="&ecglview;hasStartPortCall">
+        <rdfs:domain rdf:resource="&ecglview;Cruise"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ecglview;hasTimeStamp"/>
+                <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ecglview;atPort"/>
+                <owl:someValuesFrom rdf:resource="&ecglview;Place"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
     
 
 
@@ -189,7 +269,10 @@
 
     <!-- http://schema.geolink.org/view/dev/ecglview#hasVessel -->
 
-    <owl:ObjectProperty rdf:about="&ecglview;hasVessel"/>
+    <owl:ObjectProperty rdf:about="&ecglview;hasVessel">
+        <rdfs:domain rdf:resource="&ecglview;Cruise"/>
+        <rdfs:range rdf:resource="&ecglview;Vessel"/>
+    </owl:ObjectProperty>
     
 
 
@@ -205,10 +288,23 @@
         <rdfs:comment>The range of this property consists of (possibly blank) nodes that act as the domain of the &apos;hasScheme&apos; property. Graph patterns for data using this property can either be of the form:
 -   ?X :identifier ?ID
 -   ?X :matches [ :identifier ?ID ; :hasScheme ?S ]</rdfs:comment>
-        <rdfs:domain rdf:resource="&ecglview;Award"/>
         <rdfs:range>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ecglview;hasScheme"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ecglview;Award"/>
+                    <rdf:Description rdf:about="&ecglview;Cruise"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ecglview;identfier"/>
                 <owl:someValuesFrom rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:range>
@@ -230,8 +326,15 @@
     <!-- http://schema.geolink.org/view/dev/ecglview#abstract -->
 
     <owl:DatatypeProperty rdf:about="&ecglview;abstract">
-        <rdfs:domain rdf:resource="&ecglview;Award"/>
         <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ecglview;Award"/>
+                    <rdf:Description rdf:about="&ecglview;Cruise"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
     </owl:DatatypeProperty>
     
 
@@ -304,6 +407,7 @@
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="&ecglview;Award"/>
+                    <rdf:Description rdf:about="&ecglview;Cruise"/>
                     <owl:Restriction>
                         <owl:onProperty>
                             <rdf:Description>
@@ -322,8 +426,15 @@
     <!-- http://schema.geolink.org/view/dev/ecglview#seeAlso -->
 
     <owl:DatatypeProperty rdf:about="&ecglview;seeAlso">
-        <rdfs:domain rdf:resource="&ecglview;Award"/>
         <rdfs:range rdf:resource="&xsd;anyURI"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ecglview;Award"/>
+                    <rdf:Description rdf:about="&ecglview;Cruise"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
     </owl:DatatypeProperty>
     
 
@@ -337,8 +448,15 @@
     <!-- http://schema.geolink.org/view/dev/ecglview#title -->
 
     <owl:DatatypeProperty rdf:about="&ecglview;title">
-        <rdfs:domain rdf:resource="&ecglview;Award"/>
         <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ecglview;Award"/>
+                    <rdf:Description rdf:about="&ecglview;Cruise"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
     </owl:DatatypeProperty>
     
 
@@ -363,6 +481,12 @@
     <!-- http://schema.geolink.org/view/dev/ecglview#Cruise -->
 
     <owl:Class rdf:about="&ecglview;Cruise"/>
+    
+
+
+    <!-- http://schema.geolink.org/view/dev/ecglview#CruiseType -->
+
+    <owl:Class rdf:about="&ecglview;CruiseType"/>
     
 
 
@@ -405,6 +529,12 @@
     <!-- http://schema.geolink.org/view/dev/ecglview#Program -->
 
     <owl:Class rdf:about="&ecglview;Program"/>
+    
+
+
+    <!-- http://schema.geolink.org/view/dev/ecglview#RoleType -->
+
+    <owl:Class rdf:about="&ecglview;RoleType"/>
     
 
 
