@@ -67,13 +67,19 @@
 
     <!-- http://schema.geolink.org/view/dev/ecglview#fromCountry -->
 
-    <owl:ObjectProperty rdf:about="&ecglview;fromCountry"/>
+    <owl:ObjectProperty rdf:about="&ecglview;fromCountry">
+        <rdfs:range rdf:resource="&ecglview;Country"/>
+        <rdfs:domain rdf:resource="&ecglview;Person"/>
+    </owl:ObjectProperty>
     
 
 
     <!-- http://schema.geolink.org/view/dev/ecglview#hasAffiliation -->
 
-    <owl:ObjectProperty rdf:about="&ecglview;hasAffiliation"/>
+    <owl:ObjectProperty rdf:about="&ecglview;hasAffiliation">
+        <rdfs:range rdf:resource="&ecglview;Organization"/>
+        <rdfs:domain rdf:resource="&ecglview;Person"/>
+    </owl:ObjectProperty>
     
 
 
@@ -142,6 +148,15 @@
     <owl:ObjectProperty rdf:about="&ecglview;hasFormatType">
         <rdfs:domain rdf:resource="&ecglview;DigitalObject"/>
         <rdfs:range rdf:resource="&ecglview;FormatType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/view/dev/ecglview#hasGender -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;hasGender">
+        <rdfs:range rdf:resource="&ecglview;Gender"/>
+        <rdfs:domain rdf:resource="&ecglview;Person"/>
     </owl:ObjectProperty>
     
 
@@ -385,6 +400,7 @@
                     <rdf:Description rdf:about="&ecglview;Dataset"/>
                     <rdf:Description rdf:about="&ecglview;DigitalObject"/>
                     <rdf:Description rdf:about="&ecglview;Instrument"/>
+                    <rdf:Description rdf:about="&ecglview;Person"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -422,7 +438,10 @@
 
     <!-- http://schema.geolink.org/view/dev/ecglview#email -->
 
-    <owl:DatatypeProperty rdf:about="&ecglview;email"/>
+    <owl:DatatypeProperty rdf:about="&ecglview;email">
+        <rdfs:domain rdf:resource="&ecglview;Person"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
     
 
 
@@ -504,6 +523,7 @@
                     <rdf:Description rdf:about="&ecglview;Dataset"/>
                     <rdf:Description rdf:about="&ecglview;DigitalObject"/>
                     <rdf:Description rdf:about="&ecglview;Instrument"/>
+                    <rdf:Description rdf:about="&ecglview;Person"/>
                     <owl:Restriction>
                         <owl:onProperty>
                             <rdf:Description>
@@ -531,6 +551,7 @@
                     <rdf:Description rdf:about="&ecglview;Dataset"/>
                     <rdf:Description rdf:about="&ecglview;DigitalObject"/>
                     <rdf:Description rdf:about="&ecglview;Instrument"/>
+                    <rdf:Description rdf:about="&ecglview;Person"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -559,6 +580,7 @@
                     <rdf:Description rdf:about="&ecglview;Dataset"/>
                     <rdf:Description rdf:about="&ecglview;DigitalObject"/>
                     <rdf:Description rdf:about="&ecglview;Instrument"/>
+                    <rdf:Description rdf:about="&ecglview;Person"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -580,6 +602,12 @@
     <!-- http://schema.geolink.org/view/dev/ecglview#Award -->
 
     <owl:Class rdf:about="&ecglview;Award"/>
+    
+
+
+    <!-- http://schema.geolink.org/view/dev/ecglview#Country -->
+
+    <owl:Class rdf:about="&ecglview;Country"/>
     
 
 
@@ -610,6 +638,12 @@
     <!-- http://schema.geolink.org/view/dev/ecglview#FormatType -->
 
     <owl:Class rdf:about="&ecglview;FormatType"/>
+    
+
+
+    <!-- http://schema.geolink.org/view/dev/ecglview#Gender -->
+
+    <owl:Class rdf:about="&ecglview;Gender"/>
     
 
 
