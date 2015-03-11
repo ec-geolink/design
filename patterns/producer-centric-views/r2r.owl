@@ -61,7 +61,43 @@
 
     <!-- http://schema.geolink.org/view/dev/ecglview#atPort -->
 
-    <owl:ObjectProperty rdf:about="&ecglview;atPort"/>
+    <owl:ObjectProperty rdf:about="&ecglview;atPort">
+        <rdfs:comment>The domain of this property consists of (possibly blank) nodes that act as the range of &apos;hasStartPortCall&apos;, &apos;hasMidPortCall&apos;, or &apos;hasEndPortCall&apos; properties. Graph patterns for data using this property can either be of the form:
+-   ?X :hasStartPortCall [ :atPort ?PL ; :hasTimeStamp ?T ]
+-   ?X :hasMidPortCall [ :atPort ?PL ; :hasTimeStamp ?T ]
+-   ?X :hasEndPortCall [ :atPort ?PL ; :hasTimeStamp ?T ]</rdfs:comment>
+        <rdfs:range rdf:resource="&ecglview;Place"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty>
+                            <rdf:Description>
+                                <owl:inverseOf rdf:resource="&ecglview;hasEndPortCall"/>
+                            </rdf:Description>
+                        </owl:onProperty>
+                        <owl:someValuesFrom rdf:resource="&owl;Thing"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty>
+                            <rdf:Description>
+                                <owl:inverseOf rdf:resource="&ecglview;hasMidPortCall"/>
+                            </rdf:Description>
+                        </owl:onProperty>
+                        <owl:someValuesFrom rdf:resource="&owl;Thing"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty>
+                            <rdf:Description>
+                                <owl:inverseOf rdf:resource="&ecglview;hasStartPortCall"/>
+                            </rdf:Description>
+                        </owl:onProperty>
+                        <owl:someValuesFrom rdf:resource="&owl;Thing"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
     
 
 
@@ -85,8 +121,25 @@
     <!-- http://schema.geolink.org/view/dev/ecglview#hasAffiliation -->
 
     <owl:ObjectProperty rdf:about="&ecglview;hasAffiliation">
+        <rdfs:comment>The domain of this property includes persons or (possibly blank) nodes that act as the range of &apos;hasParticipation&apos; property. Graph patterns for data using this property can either be of the form:
+- ?X :hasAffiliation ?O .
+- ?X :hasParticipation [ :hasRoleType ?RT ; :isPerformedBy ?P; :hasAffiliation ?O ]</rdfs:comment>
         <rdfs:range rdf:resource="&ecglview;Organization"/>
-        <rdfs:domain rdf:resource="&ecglview;Person"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ecglview;Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty>
+                            <rdf:Description>
+                                <owl:inverseOf rdf:resource="&ecglview;hasParticipation"/>
+                            </rdf:Description>
+                        </owl:onProperty>
+                        <owl:someValuesFrom rdf:resource="&owl;Thing"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
     </owl:ObjectProperty>
     
 
@@ -125,15 +178,11 @@
     
 
 
-    <!-- http://schema.geolink.org/view/dev/ecglview#hasDataset -->
-
-    <owl:ObjectProperty rdf:about="&ecglview;hasDataset"/>
-    
-
-
     <!-- http://schema.geolink.org/view/dev/ecglview#hasEndPortCall -->
 
     <owl:ObjectProperty rdf:about="&ecglview;hasEndPortCall">
+        <rdfs:comment>The range of this property consists of (possibly blank) nodes that act as the domain of the &apos;atPort&apos; and &apos;hasTimeStamp&apos; property. Graph patterns for data using this property can be of the form:
+-   ?X :hasEndPortCall [ :atPort ?PL ; :hasTimeStamp ?T ]</rdfs:comment>
         <rdfs:domain rdf:resource="&ecglview;Cruise"/>
         <rdfs:range>
             <owl:Restriction>
@@ -213,6 +262,8 @@
     <!-- http://schema.geolink.org/view/dev/ecglview#hasMidPortCall -->
 
     <owl:ObjectProperty rdf:about="&ecglview;hasMidPortCall">
+        <rdfs:comment>The range of this property consists of (possibly blank) nodes that act as the domain of the &apos;atPort&apos; and &apos;hasTimeStamp&apos; property. Graph patterns for data using this property can be of the form:
+-   ?X :hasMidPortCall [ :atPort ?PL ; :hasTimeStamp ?T ]</rdfs:comment>
         <rdfs:domain rdf:resource="&ecglview;Cruise"/>
         <rdfs:range>
             <owl:Restriction>
@@ -242,11 +293,13 @@
     <!-- http://schema.geolink.org/view/dev/ecglview#hasParticipation -->
 
     <owl:ObjectProperty rdf:about="&ecglview;hasParticipation">
+        <rdfs:comment>The range of this property consists of (possibly blank) nodes that act as the domain of the &apos;hasRoleType&apos;, &apos;isPerformedBy&apos;, and &apos;hasAffiliation&apos; property. Graph patterns for data using this property can be of the form:
+-   ?X :hasParticipation [ :hasRoleType ?RT ; :isPerformedBy ?P; :hasAffiliation ?O ]</rdfs:comment>
         <rdfs:domain rdf:resource="&ecglview;Cruise"/>
         <rdfs:range>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ecglview;isPerformedBy"/>
-                <owl:someValuesFrom rdf:resource="&ecglview;Person"/>
+                <owl:onProperty rdf:resource="&ecglview;hasAffiliation"/>
+                <owl:someValuesFrom rdf:resource="&ecglview;Organization"/>
             </owl:Restriction>
         </rdfs:range>
         <rdfs:range>
@@ -257,8 +310,8 @@
         </rdfs:range>
         <rdfs:range>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ecglview;hasAffiliation"/>
-                <owl:someValuesFrom rdf:resource="&ecglview;Organization"/>
+                <owl:onProperty rdf:resource="&ecglview;isPerformedBy"/>
+                <owl:someValuesFrom rdf:resource="&ecglview;Person"/>
             </owl:Restriction>
         </rdfs:range>
     </owl:ObjectProperty>
@@ -310,7 +363,21 @@
 
     <!-- http://schema.geolink.org/view/dev/ecglview#hasRoleType -->
 
-    <owl:ObjectProperty rdf:about="&ecglview;hasRoleType"/>
+    <owl:ObjectProperty rdf:about="&ecglview;hasRoleType">
+        <rdfs:comment>The domain of this property consists of (possibly blank) nodes that act as the range of &apos;hasParticipation&apos; property. Graph patterns for data using this property can either be of the form:
+-   ?X :hasParticipation [ :hasRoleType ?RT ; :isPerformedBy ?P; :hasAffiliation ?O ]</rdfs:comment>
+        <rdfs:range rdf:resource="&ecglview;RoleType"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="&ecglview;hasParticipation"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="&owl;Thing"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
     
 
 
@@ -335,6 +402,8 @@
     <!-- http://schema.geolink.org/view/dev/ecglview#hasStartPortCall -->
 
     <owl:ObjectProperty rdf:about="&ecglview;hasStartPortCall">
+        <rdfs:comment>The range of this property consists of (possibly blank) nodes that act as the domain of the &apos;atPort&apos; and &apos;hasTimeStamp&apos; property. Graph patterns for data using this property can be of the form:
+-   ?X :hasStartPortCall [ :atPort ?PL ; :hasTimeStamp ?T ]</rdfs:comment>
         <rdfs:domain rdf:resource="&ecglview;Cruise"/>
         <rdfs:range>
             <owl:Restriction>
@@ -381,7 +450,21 @@
 
     <!-- http://schema.geolink.org/view/dev/ecglview#isPerformedBy -->
 
-    <owl:ObjectProperty rdf:about="&ecglview;isPerformedBy"/>
+    <owl:ObjectProperty rdf:about="&ecglview;isPerformedBy">
+        <rdfs:comment>The domain of this property consists of (possibly blank) nodes that act as the range of &apos;hasParticipation&apos; property. Graph patterns for data using this property can either be of the form:
+-   ?X :hasParticipation [ :hasRoleType ?RT ; :isPerformedBy ?P; :hasAffiliation ?O ]</rdfs:comment>
+        <rdfs:range rdf:resource="&ecglview;Person"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="&ecglview;hasParticipation"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="&owl;Thing"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
     
 
 
@@ -393,13 +476,13 @@
 -   ?X :matches [ :identifier ?ID ; :hasScheme ?S ]</rdfs:comment>
         <rdfs:range>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ecglview;hasScheme"/>
+                <owl:onProperty rdf:resource="&ecglview;identfier"/>
                 <owl:someValuesFrom rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:range>
         <rdfs:range>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ecglview;identfier"/>
+                <owl:onProperty rdf:resource="&ecglview;hasScheme"/>
                 <owl:someValuesFrom rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:range>
@@ -518,7 +601,42 @@
 
     <!-- http://schema.geolink.org/view/dev/ecglview#hasTimeStamp -->
 
-    <owl:DatatypeProperty rdf:about="&ecglview;hasTimeStamp"/>
+    <owl:DatatypeProperty rdf:about="&ecglview;hasTimeStamp">
+        <rdfs:comment>The domain of this property consists of (possibly blank) nodes that act as the range of &apos;hasStartPortCall&apos;, &apos;hasMidPortCall&apos;, or &apos;hasEndPortCall&apos; properties. Graph patterns for data using this property can either be of the form:
+-   ?X :hasStartPortCall [ :atPort ?PL ; :hasTimeStamp ?T ]
+-   ?X :hasMidPortCall [ :atPort ?PL ; :hasTimeStamp ?T ]
+-   ?X :hasEndPortCall [ :atPort ?PL ; :hasTimeStamp ?T ]</rdfs:comment>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty>
+                            <rdf:Description>
+                                <owl:inverseOf rdf:resource="&ecglview;hasEndPortCall"/>
+                            </rdf:Description>
+                        </owl:onProperty>
+                        <owl:someValuesFrom rdf:resource="&owl;Thing"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty>
+                            <rdf:Description>
+                                <owl:inverseOf rdf:resource="&ecglview;hasMidPortCall"/>
+                            </rdf:Description>
+                        </owl:onProperty>
+                        <owl:someValuesFrom rdf:resource="&owl;Thing"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty>
+                            <rdf:Description>
+                                <owl:inverseOf rdf:resource="&ecglview;hasStartPortCall"/>
+                            </rdf:Description>
+                        </owl:onProperty>
+                        <owl:someValuesFrom rdf:resource="&owl;Thing"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
     
 
 
