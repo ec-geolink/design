@@ -88,7 +88,10 @@
 
     <!-- http://schema.geolink.org/view/dev/ecglview#hasCruise -->
 
-    <owl:ObjectProperty rdf:about="&ecglview;hasCruise"/>
+    <owl:ObjectProperty rdf:about="&ecglview;hasCruise">
+        <rdfs:range rdf:resource="&ecglview;Cruise"/>
+        <rdfs:domain rdf:resource="&ecglview;Dataset"/>
+    </owl:ObjectProperty>
     
 
 
@@ -141,7 +144,10 @@
 
     <!-- http://schema.geolink.org/view/dev/ecglview#hasInstrument -->
 
-    <owl:ObjectProperty rdf:about="&ecglview;hasInstrument"/>
+    <owl:ObjectProperty rdf:about="&ecglview;hasInstrument">
+        <rdfs:domain rdf:resource="&ecglview;Dataset"/>
+        <rdfs:range rdf:resource="&ecglview;Instrument"/>
+    </owl:ObjectProperty>
     
 
 
@@ -156,7 +162,10 @@
 
     <!-- http://schema.geolink.org/view/dev/ecglview#hasMeasurementType -->
 
-    <owl:ObjectProperty rdf:about="&ecglview;hasMeasurementType"/>
+    <owl:ObjectProperty rdf:about="&ecglview;hasMeasurementType">
+        <rdfs:domain rdf:resource="&ecglview;Dataset"/>
+        <rdfs:range rdf:resource="&ecglview;MeasurementType"/>
+    </owl:ObjectProperty>
     
 
 
@@ -235,7 +244,10 @@
 
     <!-- http://schema.geolink.org/view/dev/ecglview#hasRepository -->
 
-    <owl:ObjectProperty rdf:about="&ecglview;hasRepository"/>
+    <owl:ObjectProperty rdf:about="&ecglview;hasRepository">
+        <rdfs:domain rdf:resource="&ecglview;Dataset"/>
+        <rdfs:range rdf:resource="&ecglview;Organization"/>
+    </owl:ObjectProperty>
     
 
 
@@ -313,15 +325,6 @@
         <rdfs:comment>The range of this property consists of (possibly blank) nodes that act as the domain of the &apos;hasScheme&apos; property. Graph patterns for data using this property can either be of the form:
 -   ?X :identifier ?ID
 -   ?X :matches [ :identifier ?ID ; :hasScheme ?S ]</rdfs:comment>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&ecglview;Award"/>
-                    <rdf:Description rdf:about="&ecglview;Cruise"/>
-                    <rdf:Description rdf:about="&ecglview;Instrument"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
         <rdfs:range>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ecglview;hasScheme"/>
@@ -334,6 +337,16 @@
                 <owl:someValuesFrom rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:range>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ecglview;Award"/>
+                    <rdf:Description rdf:about="&ecglview;Cruise"/>
+                    <rdf:Description rdf:about="&ecglview;Dataset"/>
+                    <rdf:Description rdf:about="&ecglview;Instrument"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
     </owl:ObjectProperty>
     
 
@@ -358,6 +371,7 @@
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="&ecglview;Award"/>
                     <rdf:Description rdf:about="&ecglview;Cruise"/>
+                    <rdf:Description rdf:about="&ecglview;Dataset"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -440,6 +454,7 @@
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="&ecglview;Award"/>
                     <rdf:Description rdf:about="&ecglview;Cruise"/>
+                    <rdf:Description rdf:about="&ecglview;Dataset"/>
                     <rdf:Description rdf:about="&ecglview;Instrument"/>
                     <owl:Restriction>
                         <owl:onProperty>
@@ -465,6 +480,7 @@
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="&ecglview;Award"/>
                     <rdf:Description rdf:about="&ecglview;Cruise"/>
+                    <rdf:Description rdf:about="&ecglview;Dataset"/>
                     <rdf:Description rdf:about="&ecglview;Instrument"/>
                 </owl:unionOf>
             </owl:Class>
@@ -488,6 +504,7 @@
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="&ecglview;Award"/>
                     <rdf:Description rdf:about="&ecglview;Cruise"/>
+                    <rdf:Description rdf:about="&ecglview;Dataset"/>
                     <rdf:Description rdf:about="&ecglview;Instrument"/>
                 </owl:unionOf>
             </owl:Class>
@@ -546,6 +563,12 @@
     <!-- http://schema.geolink.org/view/dev/ecglview#InstrumentType -->
 
     <owl:Class rdf:about="&ecglview;InstrumentType"/>
+    
+
+
+    <!-- http://schema.geolink.org/view/dev/ecglview#MeasurementType -->
+
+    <owl:Class rdf:about="&ecglview;MeasurementType"/>
     
 
 
