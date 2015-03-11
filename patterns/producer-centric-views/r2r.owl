@@ -69,7 +69,14 @@
 
     <owl:ObjectProperty rdf:about="&ecglview;fromCountry">
         <rdfs:range rdf:resource="&ecglview;Country"/>
-        <rdfs:domain rdf:resource="&ecglview;Person"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ecglview;Organization"/>
+                    <rdf:Description rdf:about="&ecglview;Person"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
     </owl:ObjectProperty>
     
 
@@ -400,6 +407,7 @@
                     <rdf:Description rdf:about="&ecglview;Dataset"/>
                     <rdf:Description rdf:about="&ecglview;DigitalObject"/>
                     <rdf:Description rdf:about="&ecglview;Instrument"/>
+                    <rdf:Description rdf:about="&ecglview;Organization"/>
                     <rdf:Description rdf:about="&ecglview;Person"/>
                 </owl:unionOf>
             </owl:Class>
@@ -523,6 +531,7 @@
                     <rdf:Description rdf:about="&ecglview;Dataset"/>
                     <rdf:Description rdf:about="&ecglview;DigitalObject"/>
                     <rdf:Description rdf:about="&ecglview;Instrument"/>
+                    <rdf:Description rdf:about="&ecglview;Organization"/>
                     <rdf:Description rdf:about="&ecglview;Person"/>
                     <owl:Restriction>
                         <owl:onProperty>
@@ -551,6 +560,7 @@
                     <rdf:Description rdf:about="&ecglview;Dataset"/>
                     <rdf:Description rdf:about="&ecglview;DigitalObject"/>
                     <rdf:Description rdf:about="&ecglview;Instrument"/>
+                    <rdf:Description rdf:about="&ecglview;Organization"/>
                     <rdf:Description rdf:about="&ecglview;Person"/>
                 </owl:unionOf>
             </owl:Class>
@@ -580,6 +590,7 @@
                     <rdf:Description rdf:about="&ecglview;Dataset"/>
                     <rdf:Description rdf:about="&ecglview;DigitalObject"/>
                     <rdf:Description rdf:about="&ecglview;Instrument"/>
+                    <rdf:Description rdf:about="&ecglview;Organization"/>
                     <rdf:Description rdf:about="&ecglview;Person"/>
                 </owl:unionOf>
             </owl:Class>
