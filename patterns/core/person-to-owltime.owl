@@ -34,9 +34,9 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/person#TimeInstant -->
+    <!-- http://schema.geolink.org/dev/person#BirthTimeInstant -->
 
-    <owl:Class rdf:about="&ecglpr;TimeInstant">
+    <owl:Class rdf:about="&ecglpr;BirthTimeInstant">
         <rdfs:subClassOf rdf:resource="&time;Instant"/>
     </owl:Class>
     

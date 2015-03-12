@@ -34,9 +34,9 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/person#Place -->
+    <!-- http://schema.geolink.org/dev/person#BirthPlace -->
 
-    <owl:Class rdf:about="&ecglpr;Place">
+    <owl:Class rdf:about="&ecglpr;BirthPlace">
         <rdfs:subClassOf rdf:resource="&ecglpl;Place"/>
     </owl:Class>
     

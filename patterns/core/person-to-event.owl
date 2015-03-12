@@ -131,14 +131,6 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/person#AgentRole -->
-
-    <owl:Class rdf:about="&ecglpr;AgentRole">
-        <rdfs:subClassOf rdf:resource="&ecglev;AgentRole"/>
-    </owl:Class>
-    
-
-
     <!-- http://schema.geolink.org/dev/person#BirthEvent -->
 
     <owl:Class rdf:about="&ecglpr;BirthEvent">
@@ -147,26 +139,34 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/person#Person -->
+    <!-- http://schema.geolink.org/dev/person#BirthPlace -->
 
-    <owl:Class rdf:about="&ecglpr;Person">
-        <rdfs:subClassOf rdf:resource="&ecglev;Agent"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/dev/person#Place -->
-
-    <owl:Class rdf:about="&ecglpr;Place">
+    <owl:Class rdf:about="&ecglpr;BirthPlace">
         <rdfs:subClassOf rdf:resource="&ecglev;Place"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/person#TimeInstant -->
+    <!-- http://schema.geolink.org/dev/person#BirthTimeInstant -->
 
-    <owl:Class rdf:about="&ecglpr;TimeInstant">
+    <owl:Class rdf:about="&ecglpr;BirthTimeInstant">
         <rdfs:subClassOf rdf:resource="&ecglev;TimeInstant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/person#BornPersonRole -->
+
+    <owl:Class rdf:about="&ecglpr;BornPersonRole">
+        <rdfs:subClassOf rdf:resource="&ecglev;AgentRole"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/person#Person -->
+
+    <owl:Class rdf:about="&ecglpr;Person">
+        <rdfs:subClassOf rdf:resource="&ecglev;Agent"/>
     </owl:Class>
 </rdf:RDF>
 

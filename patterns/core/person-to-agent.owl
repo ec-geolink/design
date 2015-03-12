@@ -26,31 +26,6 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
-    // Object Properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://schema.geolink.org/dev/agent#performsAgentRole -->
-
-    <owl:ObjectProperty rdf:about="&ecglag;performsAgentRole"/>
-    
-
-
-    <!-- http://schema.geolink.org/dev/person#performsAgentRole -->
-
-    <owl:ObjectProperty rdf:about="&ecglpr;performsAgentRole">
-        <rdfs:subPropertyOf rdf:resource="&ecglag;performsAgentRole"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
     // Classes
     //
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -62,20 +37,6 @@
     <!-- http://schema.geolink.org/dev/agent#Agent -->
 
     <owl:Class rdf:about="&ecglag;Agent"/>
-    
-
-
-    <!-- http://schema.geolink.org/dev/agent#AgentRole -->
-
-    <owl:Class rdf:about="&ecglag;AgentRole"/>
-    
-
-
-    <!-- http://schema.geolink.org/dev/person#AgentRole -->
-
-    <owl:Class rdf:about="&ecglpr;AgentRole">
-        <rdfs:subClassOf rdf:resource="&ecglag;AgentRole"/>
-    </owl:Class>
     
 
 

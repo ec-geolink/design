@@ -85,9 +85,9 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/person#AgentRole -->
+    <!-- http://schema.geolink.org/dev/person#BornPersonRole -->
 
-    <owl:Class rdf:about="&ecglpr;AgentRole">
+    <owl:Class rdf:about="&ecglpr;BornPersonRole">
         <rdfs:subClassOf rdf:resource="&ecglar;AgentRole"/>
     </owl:Class>
     
