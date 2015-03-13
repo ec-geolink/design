@@ -68,6 +68,19 @@
     
 
 
+    <!-- http://schema.geolink.org/dev/organization#AgentRole -->
+
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/organization#AgentRole">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/organization#isPerformedBy"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/dev/organization#Agent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
     <!-- http://schema.geolink.org/dev/organization#Country -->
 
     <owl:Class rdf:about="http://schema.geolink.org/dev/organization#Country"/>
@@ -204,6 +217,11 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/organization#AgentRole"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/organization#isPerformedBy"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/dev/organization#Agent"/>
+    </owl:Restriction>
     <owl:Restriction>
         <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/organization#OrganizationInformationObject"/>
         <owl:onProperty rdf:resource="http://schema.geolink.org/dev/organization#hasCountryLocation"/>
