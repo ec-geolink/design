@@ -37,7 +37,7 @@
     <!-- http://schema.geolink.org/dev/organization#Person -->
 
     <owl:Class rdf:about="&ecglor;Person">
-        <rdfs:subClassOf rdf:resource="&ecglpr;Person"/>
+        <owl:equivalentClass rdf:resource="&ecglpr;Person"/>
     </owl:Class>
     
 

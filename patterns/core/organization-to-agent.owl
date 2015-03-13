@@ -40,10 +40,14 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/organization#performsAgentRole -->
+    <!-- http://schema.geolink.org/dev/organization#isPerformedBy -->
 
-    <owl:ObjectProperty rdf:about="&ecglor;performsAgentRole">
-        <rdfs:subPropertyOf rdf:resource="&ecglag;performsAgentRole"/>
+    <owl:ObjectProperty rdf:about="&ecglor;isPerformedBy">
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&ecglag;performsAgentRole"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
     </owl:ObjectProperty>
     
 
