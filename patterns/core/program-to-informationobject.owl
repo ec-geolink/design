@@ -65,9 +65,9 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/program#ProgramInformationObject -->
+    <!-- http://schema.geolink.org/dev/program#InformationObject -->
 
-    <owl:Class rdf:about="&ecglpg;ProgramInformationObject">
+    <owl:Class rdf:about="&ecglpg;InformationObject">
         <rdfs:subClassOf rdf:resource="&ecglio;InformationObject"/>
     </owl:Class>
 </rdf:RDF>
