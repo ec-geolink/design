@@ -16,6 +16,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="http://schema.geolink.org/dev/fundingaward">
+        <owl:imports rdf:resource="http://schema.geolink.org/dev/fundingaward-to-agent"/>
         <owl:imports rdf:resource="http://schema.geolink.org/dev/fundingaward-to-agentrole"/>
         <owl:imports rdf:resource="http://schema.geolink.org/dev/fundingaward-to-informationobject"/>
         <owl:imports rdf:resource="http://schema.geolink.org/dev/fundingaward-to-owltime"/>
@@ -120,12 +121,6 @@
     <owl:Class rdf:about="http://schema.geolink.org/dev/fundingaward#AwardAmount">
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/fundingaward#hasCurrencyValue"/>
-                <owl:allValuesFrom rdf:resource="&xsd;decimal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://schema.geolink.org/dev/fundingaward#hasCurrencyCode"/>
                 <owl:onClass rdf:resource="http://schema.geolink.org/dev/fundingaward#CurrencyCode"/>
                 <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
@@ -142,6 +137,12 @@
                 <owl:onProperty rdf:resource="http://schema.geolink.org/dev/fundingaward#hasCurrencyValue"/>
                 <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onDataRange rdf:resource="&xsd;decimal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/fundingaward#hasCurrencyValue"/>
+                <owl:allValuesFrom rdf:resource="&xsd;decimal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -167,6 +168,12 @@
     <owl:Class rdf:about="http://schema.geolink.org/dev/fundingaward#FundingAward">
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/fundingaward#providesAgentRole"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/dev/fundingaward#AgentRole"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://schema.geolink.org/dev/fundingaward#endsOnDate"/>
                 <owl:allValuesFrom rdf:resource="http://schema.geolink.org/dev/fundingaward#TimeInstant"/>
             </owl:Restriction>
@@ -185,15 +192,22 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/fundingaward#isDescribedBy"/>
-                <owl:onClass rdf:resource="http://schema.geolink.org/dev/fundingaward#InformationObject"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/fundingaward#providesAgentRole"/>
+                <owl:someValuesFrom rdf:resource="http://schema.geolink.org/dev/fundingaward#SponsorRole"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://schema.geolink.org/dev/fundingaward#hasAwardAmount"/>
-                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/dev/fundingaward#AwardAmount"/>
+                <owl:onClass rdf:resource="http://schema.geolink.org/dev/fundingaward#AwardAmount"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/fundingaward#isDescribedBy"/>
+                <owl:onClass rdf:resource="http://schema.geolink.org/dev/fundingaward#InformationObject"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -205,28 +219,15 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/fundingaward#hasAwardAmount"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/dev/fundingaward#AwardAmount"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://schema.geolink.org/dev/fundingaward#startsOnDate"/>
                 <owl:onClass rdf:resource="http://schema.geolink.org/dev/fundingaward#TimeInstant"/>
                 <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/fundingaward#providesAgentRole"/>
-                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/dev/fundingaward#AgentRole"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/fundingaward#providesAgentRole"/>
-                <owl:someValuesFrom rdf:resource="http://schema.geolink.org/dev/fundingaward#SponsorRole"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/fundingaward#hasAwardAmount"/>
-                <owl:onClass rdf:resource="http://schema.geolink.org/dev/fundingaward#AwardAmount"/>
-                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -280,29 +281,10 @@
         <owl:onProperty rdf:resource="http://schema.geolink.org/dev/fundingaward#isPerformedBy"/>
         <owl:someValuesFrom rdf:resource="http://schema.geolink.org/dev/fundingaward#Agent"/>
     </owl:Restriction>
-    <rdf:Description>
-        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://schema.geolink.org/dev/fundingaward#AgencyProgramManagerRole"/>
-            <rdf:Description rdf:about="http://schema.geolink.org/dev/fundingaward#CoPrincipalInvestigatorRole"/>
-            <rdf:Description rdf:about="http://schema.geolink.org/dev/fundingaward#PrincipalInvestigatorRole"/>
-            <rdf:Description rdf:about="http://schema.geolink.org/dev/fundingaward#SponsorRole"/>
-        </owl:members>
-    </rdf:Description>
     <owl:Restriction>
         <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/fundingaward#FundingAward"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/fundingaward#endsOnDate"/>
-        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/dev/fundingaward#TimeInstant"/>
-    </owl:Restriction>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/fundingaward#AwardAmount"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/fundingaward#hasCurrencyValue"/>
-        <owl:someValuesFrom rdf:resource="&xsd;decimal"/>
-    </owl:Restriction>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/fundingaward#AwardAmount"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/fundingaward#hasCurrencyCode"/>
-        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/dev/fundingaward#CurrencyCode"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/fundingaward#isDescribedBy"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/dev/fundingaward#InformationObject"/>
     </owl:Restriction>
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
@@ -318,6 +300,20 @@
     </rdf:Description>
     <owl:Restriction>
         <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/fundingaward#FundingAward"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/fundingaward#providesAgentRole"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/dev/fundingaward#AgentRole"/>
+    </owl:Restriction>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://schema.geolink.org/dev/fundingaward#AgencyProgramManagerRole"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/dev/fundingaward#CoPrincipalInvestigatorRole"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/dev/fundingaward#PrincipalInvestigatorRole"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/dev/fundingaward#SponsorRole"/>
+        </owl:members>
+    </rdf:Description>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/fundingaward#FundingAward"/>
         <owl:onProperty rdf:resource="http://schema.geolink.org/dev/fundingaward#startsOnDate"/>
         <owl:someValuesFrom rdf:resource="http://schema.geolink.org/dev/fundingaward#TimeInstant"/>
     </owl:Restriction>
@@ -328,13 +324,18 @@
     </owl:Restriction>
     <owl:Restriction>
         <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/fundingaward#FundingAward"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/fundingaward#isDescribedBy"/>
-        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/dev/fundingaward#InformationObject"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/fundingaward#endsOnDate"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/dev/fundingaward#TimeInstant"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/fundingaward#FundingAward"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/fundingaward#providesAgentRole"/>
-        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/dev/fundingaward#AgentRole"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/fundingaward#AwardAmount"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/fundingaward#hasCurrencyValue"/>
+        <owl:someValuesFrom rdf:resource="&xsd;decimal"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/fundingaward#AwardAmount"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/fundingaward#hasCurrencyCode"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/dev/fundingaward#CurrencyCode"/>
     </owl:Restriction>
 </rdf:RDF>
 
