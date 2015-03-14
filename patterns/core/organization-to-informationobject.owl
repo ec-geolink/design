@@ -90,9 +90,9 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/organization#OrganizationInformationObject -->
+    <!-- http://schema.geolink.org/dev/organization#InformationObject -->
 
-    <owl:Class rdf:about="&ecglor;OrganizationInformationObject">
+    <owl:Class rdf:about="&ecglor;InformationObject">
         <rdfs:subClassOf rdf:resource="&ecglio;InformationObject"/>
     </owl:Class>
 </rdf:RDF>
