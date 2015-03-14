@@ -34,25 +34,11 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/fundingaward#hasPrimaryIdentifier -->
-
-    <owl:ObjectProperty rdf:about="&ecglfa;hasPrimaryIdentifier">
-        <rdfs:subPropertyOf rdf:resource="&ecglio;hasPrimaryIdentifier"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://schema.geolink.org/dev/fundingaward#isDescribedBy -->
 
     <owl:ObjectProperty rdf:about="&ecglfa;isDescribedBy">
         <rdfs:subPropertyOf rdf:resource="&ecglio;isDescribedBy"/>
     </owl:ObjectProperty>
-    
-
-
-    <!-- http://schema.geolink.org/dev/informationobject#hasPrimaryIdentifier -->
-
-    <owl:ObjectProperty rdf:about="&ecglio;hasPrimaryIdentifier"/>
     
 
 
@@ -73,25 +59,11 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/fundingaward#FundingAwardIdentifier -->
+    <!-- http://schema.geolink.org/dev/fundingaward#InformationObject -->
 
-    <owl:Class rdf:about="&ecglfa;FundingAwardIdentifier">
-        <rdfs:subClassOf rdf:resource="&ecglio;Identifier"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/dev/fundingaward#FundingAwardInformationObject -->
-
-    <owl:Class rdf:about="&ecglfa;FundingAwardInformationObject">
+    <owl:Class rdf:about="&ecglfa;InformationObject">
         <rdfs:subClassOf rdf:resource="&ecglio;InformationObject"/>
     </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/dev/informationobject#Identifier -->
-
-    <owl:Class rdf:about="&ecglio;Identifier"/>
     
 
 
