@@ -200,8 +200,13 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="&ecglcr;Cruise"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="&ecglcr;hasCruiseType"/>
-                        <owl:hasValue rdf:resource="&ecglvoc;maintenance_cruisetype"/>
+                        <owl:onProperty rdf:resource="&ecglcr;isDescribedBy"/>
+                        <owl:someValuesFrom>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&ecglcr;hasCruiseType"/>
+                                <owl:hasValue rdf:resource="&ecglvoc;maintenance_cruisetype"/>
+                            </owl:Restriction>
+                        </owl:someValuesFrom>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
@@ -235,8 +240,13 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="&ecglcr;Cruise"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="&ecglcr;hasCruiseType"/>
-                        <owl:hasValue rdf:resource="&ecglvoc;operational_cruisetype"/>
+                        <owl:onProperty rdf:resource="&ecglcr;isDescribedBy"/>
+                        <owl:someValuesFrom>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&ecglcr;hasCruiseType"/>
+                                <owl:hasValue rdf:resource="&ecglvoc;operational_cruisetype"/>
+                            </owl:Restriction>
+                        </owl:someValuesFrom>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
@@ -338,8 +348,13 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="&ecglcr;Cruise"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="&ecglcr;hasCruiseType"/>
-                        <owl:hasValue rdf:resource="&ecglvoc;transit_cruisetype"/>
+                        <owl:onProperty rdf:resource="&ecglcr;isDescribedBy"/>
+                        <owl:someValuesFrom>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&ecglcr;hasCruiseType"/>
+                                <owl:hasValue rdf:resource="&ecglvoc;transit_cruisetype"/>
+                            </owl:Restriction>
+                        </owl:someValuesFrom>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
@@ -366,56 +381,34 @@
      -->
 
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&ecglcr;CoChiefScientistRole"/>
+        <rdfs:subClassOf rdf:resource="&ecglcr;K12EducatorRole"/>
         <owl:onProperty rdf:resource="&ecglcr;hasCruiseAgentRoleType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&ecglvoc;co_chief_scienstist_role"/>
+                    <rdf:Description rdf:about="&ecglvoc;k12_educator_role"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&ecglcr;InspectorRole"/>
+        <rdfs:subClassOf rdf:resource="&ecglcr;OperatorRole"/>
         <owl:onProperty rdf:resource="&ecglcr;hasCruiseAgentRoleType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&ecglvoc;inspector_role"/>
+                    <rdf:Description rdf:about="&ecglvoc;operator_role"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&ecglcr;ChiefScientistRole"/>
+        <rdfs:subClassOf rdf:resource="&ecglcr;ScientistRole"/>
         <owl:onProperty rdf:resource="&ecglcr;hasCruiseAgentRoleType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&ecglvoc;chief_scientist_role"/>
-                </owl:oneOf>
-            </owl:Class>
-        </owl:someValuesFrom>
-    </owl:Restriction>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&ecglcr;LeadTechnicianRole"/>
-        <owl:onProperty rdf:resource="&ecglcr;hasCruiseAgentRoleType"/>
-        <owl:someValuesFrom>
-            <owl:Class>
-                <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&ecglvoc;lead_technician_role"/>
-                </owl:oneOf>
-            </owl:Class>
-        </owl:someValuesFrom>
-    </owl:Restriction>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&ecglcr;ForeignObserverRole"/>
-        <owl:onProperty rdf:resource="&ecglcr;hasCruiseAgentRoleType"/>
-        <owl:someValuesFrom>
-            <owl:Class>
-                <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&ecglvoc;foreign_observer_role"/>
+                    <rdf:Description rdf:about="&ecglvoc;scientist_role"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
@@ -432,12 +425,143 @@
         </owl:someValuesFrom>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&ecglcr;SchedulerRole"/>
+        <rdfs:subClassOf rdf:resource="&ecglcr;GraduateStudentRole"/>
         <owl:onProperty rdf:resource="&ecglcr;hasCruiseAgentRoleType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&ecglvoc;scheduler_role"/>
+                    <rdf:Description rdf:about="&ecglvoc;graduate_student_role"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&ecglcr;ChiefScientistRole"/>
+        <owl:onProperty rdf:resource="&ecglcr;hasCruiseAgentRoleType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ecglvoc;chief_scientist_role"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&ecglcr;OtherObserverRole"/>
+        <owl:onProperty rdf:resource="&ecglcr;hasCruiseAgentRoleType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ecglvoc;other_observer_role"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&ecglcr;InspectorRole"/>
+        <owl:onProperty rdf:resource="&ecglcr;hasCruiseAgentRoleType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ecglvoc;inspector_role"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&ecglcr;ChiefEngineerRole"/>
+        <owl:onProperty rdf:resource="&ecglcr;hasCruiseAgentRoleType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ecglvoc;chief_engineer_role"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&ecglcr;StudentRole"/>
+        <owl:onProperty rdf:resource="&ecglcr;hasCruiseAgentRoleType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ecglvoc;student_role"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&ecglcr;CoChiefScientistRole"/>
+        <owl:onProperty rdf:resource="&ecglcr;hasCruiseAgentRoleType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ecglvoc;co_chief_scienstist_role"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&ecglcr;LeadTechnicianRole"/>
+        <owl:onProperty rdf:resource="&ecglcr;hasCruiseAgentRoleType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ecglvoc;lead_technician_role"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&ecglcr;CaptainRole"/>
+            <rdf:Description rdf:about="&ecglcr;EducatorRole"/>
+            <rdf:Description rdf:about="&ecglcr;EngineerRole"/>
+            <rdf:Description rdf:about="&ecglcr;InspectorRole"/>
+            <rdf:Description rdf:about="&ecglcr;ObserverRole"/>
+            <rdf:Description rdf:about="&ecglcr;OperatorRole"/>
+            <rdf:Description rdf:about="&ecglcr;OtherRole"/>
+            <rdf:Description rdf:about="&ecglcr;SchedulerRole"/>
+            <rdf:Description rdf:about="&ecglcr;ScientistRole"/>
+            <rdf:Description rdf:about="&ecglcr;StudentRole"/>
+            <rdf:Description rdf:about="&ecglcr;TechnicianRole"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&ecglcr;GraduateStudentRole"/>
+            <rdf:Description rdf:about="&ecglcr;K12StudentRole"/>
+            <rdf:Description rdf:about="&ecglcr;UndergraduateStudentRole"/>
+        </owl:members>
+    </rdf:Description>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&ecglcr;ForeignObserverRole"/>
+        <owl:onProperty rdf:resource="&ecglcr;hasCruiseAgentRoleType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ecglvoc;foreign_observer_role"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&ecglcr;MaintenanceCruise"/>
+            <rdf:Description rdf:about="&ecglcr;OperationalCruise"/>
+            <rdf:Description rdf:about="&ecglcr;TransitCruise"/>
+        </owl:members>
+    </rdf:Description>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&ecglcr;CaptainRole"/>
+        <owl:onProperty rdf:resource="&ecglcr;hasCruiseAgentRoleType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ecglvoc;captain_role"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
@@ -454,31 +578,34 @@
         </owl:someValuesFrom>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&ecglcr;GraduateStudentRole"/>
+        <rdfs:subClassOf rdf:resource="&ecglcr;ObserverRole"/>
         <owl:onProperty rdf:resource="&ecglcr;hasCruiseAgentRoleType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&ecglvoc;graduate_student_role"/>
+                    <rdf:Description rdf:about="&ecglvoc;observer_role"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
     </owl:Restriction>
-    <rdf:Description>
-        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="&ecglcr;ChiefScientistRole"/>
-            <rdf:Description rdf:about="&ecglcr;CoChiefScientistRole"/>
-            <rdf:Description rdf:about="&ecglcr;PostdocScientistRole"/>
-        </owl:members>
-    </rdf:Description>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&ecglcr;K12EducatorRole"/>
+        <rdfs:subClassOf rdf:resource="&ecglcr;K12StudentRole"/>
         <owl:onProperty rdf:resource="&ecglcr;hasCruiseAgentRoleType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&ecglvoc;k12_educator_role"/>
+                    <rdf:Description rdf:about="&ecglvoc;k12_student_role"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&ecglcr;EngineerRole"/>
+        <owl:onProperty rdf:resource="&ecglcr;hasCruiseAgentRoleType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ecglvoc;engineer_role"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
@@ -497,97 +624,18 @@
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="&ecglcr;GraduateStudentRole"/>
-            <rdf:Description rdf:about="&ecglcr;K12StudentRole"/>
-            <rdf:Description rdf:about="&ecglcr;UndergraduateStudentRole"/>
+            <rdf:Description rdf:about="&ecglcr;ChiefScientistRole"/>
+            <rdf:Description rdf:about="&ecglcr;CoChiefScientistRole"/>
+            <rdf:Description rdf:about="&ecglcr;PostdocScientistRole"/>
         </owl:members>
     </rdf:Description>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&ecglcr;CaptainRole"/>
+        <rdfs:subClassOf rdf:resource="&ecglcr;SchedulerRole"/>
         <owl:onProperty rdf:resource="&ecglcr;hasCruiseAgentRoleType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&ecglvoc;captain_role"/>
-                </owl:oneOf>
-            </owl:Class>
-        </owl:someValuesFrom>
-    </owl:Restriction>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&ecglcr;UndergraduateStudentRole"/>
-        <owl:onProperty rdf:resource="&ecglcr;hasCruiseAgentRoleType"/>
-        <owl:someValuesFrom>
-            <owl:Class>
-                <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&ecglvoc;undergraduate_student_role"/>
-                </owl:oneOf>
-            </owl:Class>
-        </owl:someValuesFrom>
-    </owl:Restriction>
-    <rdf:Description>
-        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="&ecglcr;MaintenanceCruise"/>
-            <rdf:Description rdf:about="&ecglcr;OperationalCruise"/>
-            <rdf:Description rdf:about="&ecglcr;TransitCruise"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="&ecglcr;CaptainRole"/>
-            <rdf:Description rdf:about="&ecglcr;EducatorRole"/>
-            <rdf:Description rdf:about="&ecglcr;EngineerRole"/>
-            <rdf:Description rdf:about="&ecglcr;InspectorRole"/>
-            <rdf:Description rdf:about="&ecglcr;ObserverRole"/>
-            <rdf:Description rdf:about="&ecglcr;OperatorRole"/>
-            <rdf:Description rdf:about="&ecglcr;OtherRole"/>
-            <rdf:Description rdf:about="&ecglcr;SchedulerRole"/>
-            <rdf:Description rdf:about="&ecglcr;ScientistRole"/>
-            <rdf:Description rdf:about="&ecglcr;StudentRole"/>
-            <rdf:Description rdf:about="&ecglcr;TechnicianRole"/>
-        </owl:members>
-    </rdf:Description>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&ecglcr;EngineerRole"/>
-        <owl:onProperty rdf:resource="&ecglcr;hasCruiseAgentRoleType"/>
-        <owl:someValuesFrom>
-            <owl:Class>
-                <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&ecglvoc;engineer_role"/>
-                </owl:oneOf>
-            </owl:Class>
-        </owl:someValuesFrom>
-    </owl:Restriction>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&ecglcr;OtherRole"/>
-        <owl:onProperty rdf:resource="&ecglcr;hasCruiseAgentRoleType"/>
-        <owl:someValuesFrom>
-            <owl:Class>
-                <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&ecglvoc;other_role"/>
-                </owl:oneOf>
-            </owl:Class>
-        </owl:someValuesFrom>
-    </owl:Restriction>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&ecglcr;ChiefEngineerRole"/>
-        <owl:onProperty rdf:resource="&ecglcr;hasCruiseAgentRoleType"/>
-        <owl:someValuesFrom>
-            <owl:Class>
-                <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&ecglvoc;chief_engineer_role"/>
-                </owl:oneOf>
-            </owl:Class>
-        </owl:someValuesFrom>
-    </owl:Restriction>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&ecglcr;K12StudentRole"/>
-        <owl:onProperty rdf:resource="&ecglcr;hasCruiseAgentRoleType"/>
-        <owl:someValuesFrom>
-            <owl:Class>
-                <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&ecglvoc;k12_student_role"/>
+                    <rdf:Description rdf:about="&ecglvoc;scheduler_role"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
@@ -604,39 +652,6 @@
         </owl:someValuesFrom>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&ecglcr;ObserverRole"/>
-        <owl:onProperty rdf:resource="&ecglcr;hasCruiseAgentRoleType"/>
-        <owl:someValuesFrom>
-            <owl:Class>
-                <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&ecglvoc;observer_role"/>
-                </owl:oneOf>
-            </owl:Class>
-        </owl:someValuesFrom>
-    </owl:Restriction>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&ecglcr;StudentRole"/>
-        <owl:onProperty rdf:resource="&ecglcr;hasCruiseAgentRoleType"/>
-        <owl:someValuesFrom>
-            <owl:Class>
-                <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&ecglvoc;student_role"/>
-                </owl:oneOf>
-            </owl:Class>
-        </owl:someValuesFrom>
-    </owl:Restriction>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&ecglcr;OperatorRole"/>
-        <owl:onProperty rdf:resource="&ecglcr;hasCruiseAgentRoleType"/>
-        <owl:someValuesFrom>
-            <owl:Class>
-                <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&ecglvoc;operator_role"/>
-                </owl:oneOf>
-            </owl:Class>
-        </owl:someValuesFrom>
-    </owl:Restriction>
-    <owl:Restriction>
         <rdfs:subClassOf rdf:resource="&ecglcr;TechnicianRole"/>
         <owl:onProperty rdf:resource="&ecglcr;hasCruiseAgentRoleType"/>
         <owl:someValuesFrom>
@@ -648,23 +663,23 @@
         </owl:someValuesFrom>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&ecglcr;ScientistRole"/>
+        <rdfs:subClassOf rdf:resource="&ecglcr;OtherRole"/>
         <owl:onProperty rdf:resource="&ecglcr;hasCruiseAgentRoleType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&ecglvoc;scientist_role"/>
+                    <rdf:Description rdf:about="&ecglvoc;other_role"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&ecglcr;OtherObserverRole"/>
+        <rdfs:subClassOf rdf:resource="&ecglcr;UndergraduateStudentRole"/>
         <owl:onProperty rdf:resource="&ecglcr;hasCruiseAgentRoleType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&ecglvoc;other_observer_role"/>
+                    <rdf:Description rdf:about="&ecglvoc;undergraduate_student_role"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
