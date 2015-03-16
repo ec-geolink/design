@@ -34,10 +34,47 @@
     
 
 
+    <!-- http://schema.geolink.org/dev/cruise#atTime -->
+
+    <owl:ObjectProperty rdf:about="&ecglcr;atTime"/>
+    
+
+
+    <!-- http://schema.geolink.org/dev/cruise#hasFix -->
+
+    <owl:ObjectProperty rdf:about="&ecglcr;hasFix"/>
+    
+
+
+    <!-- http://schema.geolink.org/dev/cruise#hasLocation -->
+
+    <owl:ObjectProperty rdf:about="&ecglcr;hasLocation"/>
+    
+
+
+    <!-- http://schema.geolink.org/dev/cruise#hasSpatialFootprint -->
+
+    <owl:ObjectProperty rdf:about="&ecglcr;hasSpatialFootprint"/>
+    
+
+
+    <!-- http://schema.geolink.org/dev/cruise#hasTrajectory -->
+
+    <owl:ObjectProperty rdf:about="&ecglcr;hasTrajectory"/>
+    
+
+
     <!-- http://schema.geolink.org/dev/cruise#isPerformedBy -->
 
     <owl:ObjectProperty rdf:about="&ecglcr;isPerformedBy">
         <rdfs:subPropertyOf rdf:resource="&ecglev;isPerformedBy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/cruise#providesAgentRole -->
+
+    <owl:ObjectProperty rdf:about="&ecglcr;providesAgentRole">
         <rdfs:subPropertyOf rdf:resource="&ecglev;providesAgentRole"/>
     </owl:ObjectProperty>
     
@@ -46,6 +83,33 @@
     <!-- http://schema.geolink.org/dev/event#isPerformedBy -->
 
     <owl:ObjectProperty rdf:about="&ecglev;isPerformedBy"/>
+    
+
+
+    <!-- http://schema.geolink.org/dev/event#occursAtPlace -->
+
+    <owl:ObjectProperty rdf:about="&ecglev;occursAtPlace">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="&ecglcr;hasTrajectory"/>
+            <rdf:Description rdf:about="&ecglcr;hasFix"/>
+            <rdf:Description rdf:about="&ecglcr;hasLocation"/>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&ecglcr;hasSpatialFootprint"/>
+            </rdf:Description>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/event#occursAtTime -->
+
+    <owl:ObjectProperty rdf:about="&ecglev;occursAtTime">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="&ecglcr;hasTrajectory"/>
+            <rdf:Description rdf:about="&ecglcr;hasFix"/>
+            <rdf:Description rdf:about="&ecglcr;atTime"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
     
 
 
@@ -90,6 +154,22 @@
     
 
 
+    <!-- http://schema.geolink.org/dev/cruise#Place -->
+
+    <owl:Class rdf:about="&ecglcr;Place">
+        <rdfs:subClassOf rdf:resource="&ecglev;Place"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/cruise#TimeEntity -->
+
+    <owl:Class rdf:about="&ecglcr;TimeEntity">
+        <rdfs:subClassOf rdf:resource="&ecglev;TimeEntity"/>
+    </owl:Class>
+    
+
+
     <!-- http://schema.geolink.org/dev/event#Agent -->
 
     <owl:Class rdf:about="&ecglev;Agent"/>
@@ -105,6 +185,18 @@
     <!-- http://schema.geolink.org/dev/event#Event -->
 
     <owl:Class rdf:about="&ecglev;Event"/>
+    
+
+
+    <!-- http://schema.geolink.org/dev/event#Place -->
+
+    <owl:Class rdf:about="&ecglev;Place"/>
+    
+
+
+    <!-- http://schema.geolink.org/dev/event#TimeEntity -->
+
+    <owl:Class rdf:about="&ecglev;TimeEntity"/>
 </rdf:RDF>
 
 

@@ -59,9 +59,9 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/cruise#Port -->
+    <!-- http://schema.geolink.org/dev/cruise#Place -->
 
-    <owl:Class rdf:about="&ecglcr;Port">
+    <owl:Class rdf:about="&ecglcr;Place">
         <rdfs:subClassOf rdf:resource="&ecglpl;Place"/>
     </owl:Class>
     

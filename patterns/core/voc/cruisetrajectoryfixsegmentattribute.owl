@@ -6,45 +6,20 @@
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
     <!ENTITY ecglcr "http://schema.geolink.org/dev/cruise#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY ecglvoc "http://schema.geolink.org/voc/dev/ecglvoc#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-    <!ENTITY ecglio "http://schema.geolink.org/dev/informationobject#" >
 ]>
 
 
-<rdf:RDF xmlns="http://schema.geolink.org/dev/cruise-to-informationobject#"
-     xml:base="http://schema.geolink.org/dev/cruise-to-informationobject"
-     xmlns:ecglio="http://schema.geolink.org/dev/informationobject#"
+<rdf:RDF xmlns="http://schema.geolink.org/voc/dev/cruisetrajectoryfixsegmentattribute#"
+     xml:base="http://schema.geolink.org/voc/dev/cruisetrajectoryfixsegmentattribute"
+     xmlns:ecglvoc="http://schema.geolink.org/voc/dev/ecglvoc#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:ecglcr="http://schema.geolink.org/dev/cruise#">
-    <owl:Ontology rdf:about="http://schema.geolink.org/dev/cruise-to-informationobject"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Object Properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://schema.geolink.org/dev/cruise#isDescribedBy -->
-
-    <owl:ObjectProperty rdf:about="&ecglcr;isDescribedBy">
-        <rdfs:subPropertyOf rdf:resource="&ecglio;isDescribedBy"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://schema.geolink.org/dev/informationobject#isDescribedBy -->
-
-    <owl:ObjectProperty rdf:about="&ecglio;isDescribedBy"/>
+    <owl:Ontology rdf:about="http://schema.geolink.org/voc/dev/cruisetrajectoryfixsegmentattribute"/>
     
 
 
@@ -59,17 +34,36 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/cruise#InformationObject -->
+    <!-- http://schema.geolink.org/dev/cruise#Attribute -->
 
-    <owl:Class rdf:about="&ecglcr;InformationObject">
-        <rdfs:subClassOf rdf:resource="&ecglio;InformationObject"/>
-    </owl:Class>
+    <owl:Class rdf:about="&ecglcr;Attribute"/>
     
 
 
-    <!-- http://schema.geolink.org/dev/informationobject#InformationObject -->
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
 
-    <owl:Class rdf:about="&ecglio;InformationObject"/>
+    
+
+
+    <!-- http://schema.geolink.org/voc/dev/ecglvoc#port_stop_arrival -->
+
+    <owl:NamedIndividual rdf:about="&ecglvoc;port_stop_arrival">
+        <rdf:type rdf:resource="&ecglcr;Attribute"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/voc/dev/ecglvoc#port_stop_departure -->
+
+    <owl:NamedIndividual rdf:about="&ecglvoc;port_stop_departure">
+        <rdf:type rdf:resource="&ecglcr;Attribute"/>
+    </owl:NamedIndividual>
 </rdf:RDF>
 
 

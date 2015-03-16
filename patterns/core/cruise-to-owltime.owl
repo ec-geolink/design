@@ -34,9 +34,9 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/cruise#TemporalThing -->
+    <!-- http://schema.geolink.org/dev/cruise#TimeEntity -->
 
-    <owl:Class rdf:about="&ecglcr;TemporalThing">
+    <owl:Class rdf:about="&ecglcr;TimeEntity">
         <rdfs:subClassOf rdf:resource="&time;TemporalEntity"/>
     </owl:Class>
     

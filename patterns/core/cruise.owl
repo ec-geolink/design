@@ -5,17 +5,21 @@
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY ecglvoc "http://schema.geolink.org/voc/dev/ecglvoc#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
 ]>
 
 
 <rdf:RDF xmlns="http://schema.geolink.org/dev/cruise#"
      xml:base="http://schema.geolink.org/dev/cruise"
+     xmlns:ecglvoc="http://schema.geolink.org/voc/dev/ecglvoc#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="http://schema.geolink.org/dev/cruise">
+        <owl:imports rdf:resource="http://schema.geolink.org/dev/cruise-to-agent"/>
+        <owl:imports rdf:resource="http://schema.geolink.org/dev/cruise-to-agentrole"/>
         <owl:imports rdf:resource="http://schema.geolink.org/dev/cruise-to-event"/>
         <owl:imports rdf:resource="http://schema.geolink.org/dev/cruise-to-fundingaward"/>
         <owl:imports rdf:resource="http://schema.geolink.org/dev/cruise-to-informationobject"/>
@@ -40,7 +44,15 @@
 
     <!-- http://schema.geolink.org/dev/cruise#atPort -->
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/cruise#atPort"/>
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/cruise#atPort">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://schema.geolink.org/dev/cruise#hasLocation"/>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/cruise#hasSpatialFootprint"/>
+            </rdf:Description>
+            <rdf:Description rdf:about="http://schema.geolink.org/dev/cruise#rollifiedPort"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
     
 
 
@@ -52,7 +64,12 @@
 
     <!-- http://schema.geolink.org/dev/cruise#endsAt -->
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/cruise#endsAt"/>
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/cruise#endsAt">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://schema.geolink.org/dev/cruise#startsFrom"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/dev/cruise#nextFix"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
     
 
 
@@ -64,7 +81,12 @@
 
     <!-- http://schema.geolink.org/dev/cruise#hasFix -->
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/cruise#hasFix"/>
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/cruise#hasFix">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://schema.geolink.org/dev/cruise#hasFix"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/dev/cruise#nextFix"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
     
 
 
@@ -74,9 +96,28 @@
     
 
 
+    <!-- http://schema.geolink.org/dev/cruise#hasRelatedCruise -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/cruise#hasRelatedCruise"/>
+    
+
+
     <!-- http://schema.geolink.org/dev/cruise#hasSegment -->
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/cruise#hasSegment"/>
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/cruise#hasSegment">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://schema.geolink.org/dev/cruise#hasFix"/>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/cruise#startsFrom"/>
+            </rdf:Description>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/cruise#hasSpatialFootprint -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/cruise#hasSpatialFootprint"/>
     
 
 
@@ -86,21 +127,77 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/cruise#isAssociatedWithCruise -->
+    <!-- http://schema.geolink.org/dev/cruise#isAssociatedWithProgram -->
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/cruise#isAssociatedWithCruise"/>
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/cruise#isAssociatedWithProgram"/>
+    
+
+
+    <!-- http://schema.geolink.org/dev/cruise#isDescribedBy -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/cruise#isDescribedBy"/>
+    
+
+
+    <!-- http://schema.geolink.org/dev/cruise#isFundedBy -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/cruise#isFundedBy"/>
+    
+
+
+    <!-- http://schema.geolink.org/dev/cruise#isPerformedBy -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/cruise#isPerformedBy"/>
+    
+
+
+    <!-- http://schema.geolink.org/dev/cruise#isTraveledBy -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/cruise#isTraveledBy">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/cruise#hasTrajectory"/>
+            </rdf:Description>
+            <rdf:Description rdf:about="http://schema.geolink.org/dev/cruise#isUndertakenBy"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
     
 
 
     <!-- http://schema.geolink.org/dev/cruise#isTraversedBy -->
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/cruise#isTraversedBy"/>
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/cruise#isTraversedBy">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/cruise#hasSegment"/>
+            </rdf:Description>
+            <rdf:Description rdf:about="http://schema.geolink.org/dev/cruise#isTraveledBy"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
     
 
 
     <!-- http://schema.geolink.org/dev/cruise#isUndertakenBy -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/cruise#isUndertakenBy"/>
+    
+
+
+    <!-- http://schema.geolink.org/dev/cruise#nextFix -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/cruise#nextFix"/>
+    
+
+
+    <!-- http://schema.geolink.org/dev/cruise#providesAgentRole -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/cruise#providesAgentRole"/>
+    
+
+
+    <!-- http://schema.geolink.org/dev/cruise#rollifiedPort -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/cruise#rollifiedPort"/>
     
 
 
@@ -121,45 +218,64 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/cruise#CaptainRole -->
+    <!-- http://schema.geolink.org/dev/cruise#Agent -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#CaptainRole">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#AgentRole"/>
+    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#Agent"/>
+    
+
+
+    <!-- http://schema.geolink.org/dev/cruise#AgentRole -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#AgentRole">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/cruise#isPerformedBy"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/dev/cruise#Agent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/cruise#isPerformedBy"/>
+                <owl:onClass rdf:resource="http://schema.geolink.org/dev/cruise#Agent"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/cruise#ChiefEngineerRole -->
+    <!-- http://schema.geolink.org/dev/cruise#Attribute -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#ChiefEngineerRole">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#EngineerRole"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/dev/cruise#ChiefScientistRole -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#ChiefScientistRole">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#ScientistRole"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/dev/cruise#CoChiefScientistRole -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#CoChiefScientistRole">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#ScientistRole"/>
-    </owl:Class>
+    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#Attribute"/>
     
 
 
     <!-- http://schema.geolink.org/dev/cruise#Cruise -->
 
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/cruise#Cruise">
+    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#Cruise">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/cruise#isUndertakenBy"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/dev/cruise#Vessel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/cruise#hasTrajectory"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/dev/cruise#Trajectory"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://schema.geolink.org/dev/cruise#isDescribedBy"/>
-                <owl:onClass rdf:resource="http://schema.geolink.org/dev/cruise#CruiseInformationObject"/>
+                <owl:onClass rdf:resource="http://schema.geolink.org/dev/cruise#InformationObject"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/cruise#hasTrajectory"/>
+                <owl:onClass rdf:resource="http://schema.geolink.org/dev/cruise#Trajectory"/>
                 <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -172,202 +288,427 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/cruise#hasTrajectory"/>
-                <owl:onClass rdf:resource="http://schema.geolink.org/dev/cruise#Trajectory"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/cruise#isDescribedBy"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/dev/cruise#InformationObject"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/cruise#providesAgentRole"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/dev/cruise#AgentRole"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/cruise#EndingFix -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#EndingFix">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/cruise#Fix"/>
+                    <owl:Class>
+                        <owl:complementOf>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/cruise#nextFix"/>
+                                <owl:someValuesFrom rdf:resource="&owl;Thing"/>
+                            </owl:Restriction>
+                        </owl:complementOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="http://schema.geolink.org/dev/cruise#StartingFix"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/cruise#Fix -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#Fix">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/cruise#hasLocation"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/dev/cruise#Position"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/cruise#atTime"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/dev/cruise#TimeEntity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/cruise#atPort"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/dev/cruise#Port"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/cruise#nextFix"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/dev/cruise#Fix"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/cruise#hasAttribute"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/dev/cruise#Attribute"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/cruise#FundingAward -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#FundingAward"/>
+    
+
+
+    <!-- http://schema.geolink.org/dev/cruise#InformationObject -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#InformationObject">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/cruise#isFundedBy"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/dev/cruise#FundingAward"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/cruise#isAssociatedWithProgram"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/dev/cruise#Program"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/cruise#isDescribedBy"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:onClass rdf:resource="http://schema.geolink.org/dev/cruise#Cruise"/>
                 <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
-    </rdf:Description>
-    
-
-
-    <!-- http://schema.geolink.org/dev/cruise#EducatorRole -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#EducatorRole">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#AgentRole"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/cruise#hasRelatedCruise"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/dev/cruise#Cruise"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/cruise#EngineerRole -->
+    <!-- http://schema.geolink.org/dev/cruise#Place -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#EngineerRole">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#AgentRole"/>
+    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#Place">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/cruise#hasSpatialFootprint"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/dev/cruise#Position"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/cruise#ForeignObserverRole -->
+    <!-- http://schema.geolink.org/dev/cruise#Port -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#ForeignObserverRole">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#ObserverRole"/>
+    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#Port">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/cruise#rollifiedPort"/>
+                <owl:hasSelf rdf:datatype="&xsd;boolean">true</owl:hasSelf>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#Place"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/cruise#GraduateStudentRole -->
+    <!-- http://schema.geolink.org/dev/cruise#Position -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#GraduateStudentRole">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#StudentRole"/>
+    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#Position"/>
+    
+
+
+    <!-- http://schema.geolink.org/dev/cruise#Program -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#Program"/>
+    
+
+
+    <!-- http://schema.geolink.org/dev/cruise#Segment -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#Segment">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/cruise#startsFrom"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/dev/cruise#Fix"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/cruise#startsFrom"/>
+                <owl:onClass rdf:resource="http://schema.geolink.org/dev/cruise#Fix"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/cruise#hasAttribute"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/dev/cruise#Attribute"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/cruise#endsAt"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/dev/cruise#Fix"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/cruise#isTraversedBy"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/dev/cruise#Vessel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/cruise#HigherEdEducatorRole -->
+    <!-- http://schema.geolink.org/dev/cruise#StartingFix -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#HigherEdEducatorRole">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#EducatorRole"/>
+    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#StartingFix">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/cruise#Fix"/>
+                    <owl:Class>
+                        <owl:complementOf>
+                            <owl:Restriction>
+                                <owl:onProperty>
+                                    <rdf:Description>
+                                        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/cruise#nextFix"/>
+                                    </rdf:Description>
+                                </owl:onProperty>
+                                <owl:someValuesFrom rdf:resource="&owl;Thing"/>
+                            </owl:Restriction>
+                        </owl:complementOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/cruise#InspectorRole -->
+    <!-- http://schema.geolink.org/dev/cruise#TimeEntity -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#InspectorRole">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#AgentRole"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/dev/cruise#K12EducatorRole -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#K12EducatorRole">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#EducatorRole"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/dev/cruise#K12StudentRole -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#K12StudentRole">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#StudentRole"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/dev/cruise#LeadTechnicianRole -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#LeadTechnicianRole">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#TechnicianRole"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/dev/cruise#MaintenanceCruise -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#MaintenanceCruise">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#Cruise"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/dev/cruise#MarineTechnicianRole -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#MarineTechnicianRole">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#TechnicianRole"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/dev/cruise#ObserverRole -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#ObserverRole">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#AgentRole"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/dev/cruise#OperationalCruise -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#OperationalCruise">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#Cruise"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/dev/cruise#OperatorRole -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#OperatorRole">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#AgentRole"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/dev/cruise#OtherObserverRole -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#OtherObserverRole">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#ObserverRole"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/dev/cruise#OtherRole -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#OtherRole">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#AgentRole"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/dev/cruise#PostdocScientistRole -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#PostdocScientistRole">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#ScientistRole"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/dev/cruise#SchedulerRole -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#SchedulerRole">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#AgentRole"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/dev/cruise#ScientistRole -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#ScientistRole">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#AgentRole"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/dev/cruise#StudentRole -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#StudentRole">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#AgentRole"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/dev/cruise#TechnicianRole -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#TechnicianRole">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#AgentRole"/>
-    </owl:Class>
+    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#TimeEntity"/>
     
 
 
     <!-- http://schema.geolink.org/dev/cruise#Trajectory -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#Trajectory"/>
+    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#Trajectory">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/cruise#isTraveledBy"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/dev/cruise#Vessel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/cruise#hasSegment"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/dev/cruise#Segment"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/cruise#hasFix"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/dev/cruise#Fix"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/cruise#hasFix"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://schema.geolink.org/dev/cruise#StartingFix"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/cruise#nextFix"/>
+                                <owl:someValuesFrom rdf:resource="http://schema.geolink.org/dev/cruise#Fix"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/cruise#TransitCruise -->
+    <!-- http://schema.geolink.org/dev/cruise#Vessel -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#TransitCruise">
+    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#Vessel"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#InformationObject"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/cruise#isAssociatedWithProgram"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/dev/cruise#Program"/>
+    </owl:Restriction>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://schema.geolink.org/dev/cruise#Agent"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/dev/cruise#AgentRole"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/dev/cruise#Attribute"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/dev/cruise#Cruise"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/dev/cruise#Fix"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/dev/cruise#FundingAward"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/dev/cruise#InformationObject"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/dev/cruise#Place"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/dev/cruise#Position"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/dev/cruise#Program"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/dev/cruise#Segment"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/dev/cruise#TimeEntity"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/dev/cruise#Trajectory"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/dev/cruise#Vessel"/>
+        </owl:members>
+    </rdf:Description>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#Trajectory"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/cruise#hasSegment"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/dev/cruise#Segment"/>
+    </owl:Restriction>
+    <owl:Restriction>
         <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#Cruise"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/dev/cruise#UndergraduateStudentRole -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/dev/cruise#UndergraduateStudentRole">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#StudentRole"/>
-    </owl:Class>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/cruise#isUndertakenBy"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/dev/cruise#Vessel"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#AgentRole"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/cruise#isPerformedBy"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/dev/cruise#Agent"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#Segment"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/cruise#startsFrom"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/dev/cruise#Fix"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#Fix"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/cruise#atTime"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/dev/cruise#TimeEntity"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#Fix"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/cruise#hasLocation"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/dev/cruise#Position"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#Cruise"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/cruise#providesAgentRole"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/dev/cruise#AgentRole"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#Trajectory"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/cruise#isTraveledBy"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/dev/cruise#Vessel"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#InformationObject"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/cruise#isFundedBy"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/dev/cruise#FundingAward"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#Cruise"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/cruise#hasTrajectory"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/dev/cruise#Trajectory"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#Place"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/cruise#hasSpatialFootprint"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/dev/cruise#Position"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#InformationObject"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/cruise#hasRelatedCruise"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/dev/cruise#Cruise"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#Fix"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/cruise#nextFix"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/dev/cruise#Fix"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#Fix"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/cruise#atPort"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/dev/cruise#Port"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#Trajectory"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/cruise#hasFix"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/dev/cruise#Fix"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#Segment"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/cruise#isTraversedBy"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/dev/cruise#Vessel"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/cruise#Fix"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/cruise#Segment"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/cruise#hasAttribute"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/dev/cruise#Attribute"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/cruise#startsFrom"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:onClass rdf:resource="http://schema.geolink.org/dev/cruise#Segment"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/cruise#nextFix"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/dev/cruise#Fix"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#Segment"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/cruise#endsAt"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/dev/cruise#Fix"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/cruise#Cruise"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/cruise#isDescribedBy"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/dev/cruise#InformationObject"/>
+    </owl:Restriction>
 </rdf:RDF>
 
 
