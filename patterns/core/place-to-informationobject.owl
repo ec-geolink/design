@@ -65,9 +65,9 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/place#PlaceInformationObject -->
+    <!-- http://schema.geolink.org/dev/place#InformationObject -->
 
-    <owl:Class rdf:about="&ecglpl;PlaceInformationObject">
+    <owl:Class rdf:about="&ecglpl;InformationObject">
         <rdfs:subClassOf rdf:resource="&ecglio;InformationObject"/>
     </owl:Class>
 </rdf:RDF>
