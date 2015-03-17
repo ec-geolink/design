@@ -1,0 +1,43 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX geosparql: <http://www.opengis.net/ont/geosparql#>
+PREFIX time: <http://www.w3.org/2006/time#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX ecgl: <http://schema.geolink.org/dev/>
+PREFIX ecglview: <http://schema.oceanlink.org/view/dev/ecglview#>
+PREFIX ecglvoc: <http://schema.oceanlink.org/voc/dev/ecglvoc#>
+
+PREFIX rvdata: <http://data2.rvdata.us/vocab/id/class/>
+PREFIX ecglag: <http://schema.geolink.org/dev/agent#>
+PREFIX ecglar: <http://schema.geolink.org/dev/agentrole#>
+PREFIX ecglcr: <http://schema.geolink.org/dev/cruise#>
+PREFIX ecglev: <http://schema.geolink.org/dev/event#>
+PREFIX ecglfa: <http://schema.geolink.org/dev/fundingaward#>
+PREFIX ecglid: <http://schema.geolink.org/dev/identifier#>
+PREFIX ecglio: <http://schema.geolink.org/dev/informationobject#>
+PREFIX ecglog: <http://schema.geolink.org/dev/organization#>
+PREFIX ecglpf: <http://schema.geolink.org/dev/platform#>
+PREFIX ecglpg: <http://schema.geolink.org/dev/program#>
+PREFIX ecglpl: <http://schema.geolink.org/dev/place#>
+PREFIX ecglpr: <http://schema.geolink.org/dev/person#>
+PREFIX ecglvs: <http://schema.geolink.org/dev/vessel#>
+
+SELECT *
+WHERE {
+	?PERSON rdf:type ecglview:Person .
+	?PERSON rdfs:label ?LABEL .
+	?PERSON foaf:name ?NAME .
+	?PERSON dcterms:identifier ?ID .
+	OPTIONAL { ?PERSON ecglview:hasAffiliation ?ORG .}
+	OPTIONAL { ?PERSON dcterms:title ?TITLE .} 
+	OPTIONAL { ?PERSON rdfs:seeAlso ?SEEALSO . }
+	OPTIONAL { ?PERSON ecglview:fromCountry ?COUNTRY .}
+	OPTIONAL { ?PERSON ecglview:email ?COUNTRY .}
+	OPTIONAL { ?PERSON ecglview:hasGender ?GENDER }
+	
+}
