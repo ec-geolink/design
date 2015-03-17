@@ -38,13 +38,13 @@
   <ecglpg:Program rdf:about="http://data2.rvdata.us/id/program/R2K">
     <ecglpg:isDescribedBy>
       <ecglpg:InformationObject>
-        <ecglio:hasDescription>Ridge 2000</ecglio:hasDescription>
-        <ecglio:alsoKnownAs>Ridge 2000</ecglio:alsoKnownAs>
         <ecglio:hasPrimaryIdentifier>
           <ecglio:Identifier>
             <ecglid:hasIdentifierValue>R2K</ecglid:hasIdentifierValue>
           </ecglio:Identifier>
         </ecglio:hasPrimaryIdentifier>
+        <ecglio:alsoKnownAs>Ridge 2000</ecglio:alsoKnownAs>
+        <ecglio:hasDescription>Ridge 2000</ecglio:hasDescription>
         <ecglio:hasAlternativeIdentifier>
           <ecglio:Identifier/>
         </ecglio:hasAlternativeIdentifier>
@@ -55,16 +55,16 @@
   <ecglpg:Program rdf:about="http://data2.rvdata.us/id/program/FOCI">
     <ecglpg:isDescribedBy>
       <ecglpg:InformationObject>
+        <ecglio:hasCanonicalName>Fisheries-Oceanography Coordinated Investigations</ecglio:hasCanonicalName>
         <ecglio:hasAlternativeIdentifier>
           <ecglio:Identifier/>
         </ecglio:hasAlternativeIdentifier>
-        <ecglio:hasCanonicalName>Fisheries-Oceanography Coordinated Investigations</ecglio:hasCanonicalName>
-        <ecglio:alsoKnownAs>Fisheries-Oceanography Coordinated Investigations</ecglio:alsoKnownAs>
         <ecglio:hasPrimaryIdentifier>
           <ecglio:Identifier>
             <ecglid:hasIdentifierValue>FOCI</ecglid:hasIdentifierValue>
           </ecglio:Identifier>
         </ecglio:hasPrimaryIdentifier>
+        <ecglio:alsoKnownAs>Fisheries-Oceanography Coordinated Investigations</ecglio:alsoKnownAs>
         <ecglio:hasDescription>Fisheries-Oceanography Coordinated Investigations</ecglio:hasDescription>
       </ecglpg:InformationObject>
     </ecglpg:isDescribedBy>
@@ -72,7 +72,6 @@
   <ecglpg:Program rdf:about="http://data2.rvdata.us/id/program/LEXEN">
     <ecglpg:isDescribedBy>
       <ecglpg:InformationObject>
-        <ecglio:hasDescription>Life in Extreme Environments</ecglio:hasDescription>
         <ecglio:alsoKnownAs>Life in Extreme Environments</ecglio:alsoKnownAs>
         <ecglio:hasAlternativeIdentifier>
           <ecglio:Identifier/>
@@ -82,6 +81,7 @@
             <ecglid:hasIdentifierValue>LEXEN</ecglid:hasIdentifierValue>
           </ecglio:Identifier>
         </ecglio:hasPrimaryIdentifier>
+        <ecglio:hasDescription>Life in Extreme Environments</ecglio:hasDescription>
         <ecglio:hasCanonicalName>Life in Extreme Environments</ecglio:hasCanonicalName>
       </ecglpg:InformationObject>
     </ecglpg:isDescribedBy>
@@ -90,32 +90,32 @@
     <ecglpg:isDescribedBy>
       <ecglpg:InformationObject>
         <ecglio:alsoKnownAs>Hawaii Ocean Timeseries</ecglio:alsoKnownAs>
+        <ecglio:hasDescription>Hawaii Ocean Timeseries</ecglio:hasDescription>
+        <ecglio:seeAlso rdf:resource="http://www.soest.hawaii.edu/HOT_WOCE/"/>
+        <ecglio:hasCanonicalName>Hawaii Ocean Timeseries</ecglio:hasCanonicalName>
+        <ecglio:hasAlternativeIdentifier>
+          <ecglio:Identifier/>
+        </ecglio:hasAlternativeIdentifier>
         <ecglio:hasPrimaryIdentifier>
           <ecglio:Identifier>
             <ecglid:hasIdentifierValue>HOT</ecglid:hasIdentifierValue>
           </ecglio:Identifier>
         </ecglio:hasPrimaryIdentifier>
-        <ecglio:seeAlso rdf:resource="http://www.soest.hawaii.edu/HOT_WOCE/"/>
-        <ecglio:hasAlternativeIdentifier>
-          <ecglio:Identifier/>
-        </ecglio:hasAlternativeIdentifier>
-        <ecglio:hasDescription>Hawaii Ocean Timeseries</ecglio:hasDescription>
-        <ecglio:hasCanonicalName>Hawaii Ocean Timeseries</ecglio:hasCanonicalName>
       </ecglpg:InformationObject>
     </ecglpg:isDescribedBy>
   </ecglpg:Program>
   <ecglpg:Program rdf:about="http://data2.rvdata.us/id/program/BEST">
     <ecglpg:isDescribedBy>
       <ecglpg:InformationObject>
-        <ecglio:hasDescription>Bering Ecosystem Study</ecglio:hasDescription>
-        <ecglio:seeAlso rdf:resource="http://archive.arcus.org/bering/projects.html"/>
-        <ecglio:hasCanonicalName>Bering Ecosystem Study</ecglio:hasCanonicalName>
+        <ecglio:alsoKnownAs>Bering Ecosystem Study</ecglio:alsoKnownAs>
         <ecglio:hasPrimaryIdentifier>
           <ecglio:Identifier>
             <ecglid:hasIdentifierValue>BEST</ecglid:hasIdentifierValue>
           </ecglio:Identifier>
         </ecglio:hasPrimaryIdentifier>
-        <ecglio:alsoKnownAs>Bering Ecosystem Study</ecglio:alsoKnownAs>
+        <ecglio:hasDescription>Bering Ecosystem Study</ecglio:hasDescription>
+        <ecglio:hasCanonicalName>Bering Ecosystem Study</ecglio:hasCanonicalName>
+        <ecglio:seeAlso rdf:resource="http://archive.arcus.org/bering/projects.html"/>
         <ecglio:hasAlternativeIdentifier>
           <ecglio:Identifier/>
         </ecglio:hasAlternativeIdentifier>
@@ -125,17 +125,17 @@
   <ecglpg:Program rdf:about="http://data2.rvdata.us/id/program/USAP">
     <ecglpg:isDescribedBy>
       <ecglpg:InformationObject>
-        <ecglio:hasPrimaryIdentifier>
-          <ecglio:Identifier>
-            <ecglid:hasIdentifierValue>USAP</ecglid:hasIdentifierValue>
-          </ecglio:Identifier>
-        </ecglio:hasPrimaryIdentifier>
         <ecglio:hasAlternativeIdentifier>
           <ecglio:Identifier/>
         </ecglio:hasAlternativeIdentifier>
         <ecglio:hasDescription>United States Antarctic Program</ecglio:hasDescription>
         <ecglio:seeAlso rdf:resource="http://www.usap.gov/"/>
         <ecglio:alsoKnownAs>United States Antarctic Program</ecglio:alsoKnownAs>
+        <ecglio:hasPrimaryIdentifier>
+          <ecglio:Identifier>
+            <ecglid:hasIdentifierValue>USAP</ecglid:hasIdentifierValue>
+          </ecglio:Identifier>
+        </ecglio:hasPrimaryIdentifier>
         <ecglio:hasCanonicalName>United States Antarctic Program</ecglio:hasCanonicalName>
       </ecglpg:InformationObject>
     </ecglpg:isDescribedBy>
@@ -143,34 +143,34 @@
   <ecglpg:Program rdf:about="http://data2.rvdata.us/id/program/ECOHAB">
     <ecglpg:isDescribedBy>
       <ecglpg:InformationObject>
-        <ecglio:hasCanonicalName>Ecology and Oceanography of Harmful Algal Blooms</ecglio:hasCanonicalName>
+        <ecglio:alsoKnownAs>Ecology and Oceanography of Harmful Algal Blooms</ecglio:alsoKnownAs>
+        <ecglio:hasDescription>Ecology and Oceanography of Harmful Algal Blooms</ecglio:hasDescription>
         <ecglio:hasPrimaryIdentifier>
           <ecglio:Identifier>
             <ecglid:hasIdentifierValue>ECOHAB</ecglid:hasIdentifierValue>
           </ecglio:Identifier>
         </ecglio:hasPrimaryIdentifier>
-        <ecglio:alsoKnownAs>Ecology and Oceanography of Harmful Algal Blooms</ecglio:alsoKnownAs>
         <ecglio:hasAlternativeIdentifier>
           <ecglio:Identifier/>
         </ecglio:hasAlternativeIdentifier>
-        <ecglio:hasDescription>Ecology and Oceanography of Harmful Algal Blooms</ecglio:hasDescription>
+        <ecglio:hasCanonicalName>Ecology and Oceanography of Harmful Algal Blooms</ecglio:hasCanonicalName>
       </ecglpg:InformationObject>
     </ecglpg:isDescribedBy>
   </ecglpg:Program>
   <ecglpg:Program rdf:about="http://data2.rvdata.us/id/program/NGOMEX">
     <ecglpg:isDescribedBy>
       <ecglpg:InformationObject>
-        <ecglio:hasCanonicalName>Hypoxia in the Northern Gulf Of Mexico</ecglio:hasCanonicalName>
+        <ecglio:alsoKnownAs>Hypoxia in the Northern Gulf Of Mexico</ecglio:alsoKnownAs>
+        <ecglio:hasDescription>Hypoxia in the Northern Gulf Of Mexico</ecglio:hasDescription>
         <ecglio:hasAlternativeIdentifier>
           <ecglio:Identifier/>
         </ecglio:hasAlternativeIdentifier>
-        <ecglio:alsoKnownAs>Hypoxia in the Northern Gulf Of Mexico</ecglio:alsoKnownAs>
+        <ecglio:hasCanonicalName>Hypoxia in the Northern Gulf Of Mexico</ecglio:hasCanonicalName>
         <ecglio:hasPrimaryIdentifier>
           <ecglio:Identifier>
             <ecglid:hasIdentifierValue>NGOMEX</ecglid:hasIdentifierValue>
           </ecglio:Identifier>
         </ecglio:hasPrimaryIdentifier>
-        <ecglio:hasDescription>Hypoxia in the Northern Gulf Of Mexico</ecglio:hasDescription>
       </ecglpg:InformationObject>
     </ecglpg:isDescribedBy>
   </ecglpg:Program>
@@ -181,31 +181,31 @@
         <ecglio:hasAlternativeIdentifier>
           <ecglio:Identifier/>
         </ecglio:hasAlternativeIdentifier>
+        <ecglio:hasCanonicalName>Ocean Observatories Initiative</ecglio:hasCanonicalName>
         <ecglio:hasPrimaryIdentifier>
           <ecglio:Identifier>
             <ecglid:hasIdentifierValue>OOI</ecglid:hasIdentifierValue>
           </ecglio:Identifier>
         </ecglio:hasPrimaryIdentifier>
         <ecglio:hasDescription>Ocean Observatories Initiative</ecglio:hasDescription>
-        <ecglio:hasCanonicalName>Ocean Observatories Initiative</ecglio:hasCanonicalName>
       </ecglpg:InformationObject>
     </ecglpg:isDescribedBy>
   </ecglpg:Program>
   <ecglpg:Program rdf:about="http://data2.rvdata.us/id/program/BATS">
     <ecglpg:isDescribedBy>
       <ecglpg:InformationObject>
+        <ecglio:hasCanonicalName>Bermuda Atlantic Time-series Study</ecglio:hasCanonicalName>
         <ecglio:hasPrimaryIdentifier>
           <ecglio:Identifier>
             <ecglid:hasIdentifierValue>BATS</ecglid:hasIdentifierValue>
           </ecglio:Identifier>
         </ecglio:hasPrimaryIdentifier>
-        <ecglio:hasCanonicalName>Bermuda Atlantic Time-series Study</ecglio:hasCanonicalName>
+        <ecglio:hasDescription>Bermuda Atlantic Time-series Study</ecglio:hasDescription>
         <ecglio:hasAlternativeIdentifier>
           <ecglio:Identifier/>
         </ecglio:hasAlternativeIdentifier>
-        <ecglio:hasDescription>Bermuda Atlantic Time-series Study</ecglio:hasDescription>
-        <ecglio:seeAlso rdf:resource="http://bats.bios.edu/"/>
         <ecglio:alsoKnownAs>Bermuda Atlantic Time-series Study</ecglio:alsoKnownAs>
+        <ecglio:seeAlso rdf:resource="http://bats.bios.edu/"/>
       </ecglpg:InformationObject>
     </ecglpg:isDescribedBy>
   </ecglpg:Program>
@@ -219,10 +219,10 @@
             <ecglid:hasIdentifierValue>CLIVAR</ecglid:hasIdentifierValue>
           </ecglio:Identifier>
         </ecglio:hasPrimaryIdentifier>
-        <ecglio:hasDescription>Climate Variability and Predictability</ecglio:hasDescription>
         <ecglio:hasAlternativeIdentifier>
           <ecglio:Identifier/>
         </ecglio:hasAlternativeIdentifier>
+        <ecglio:hasDescription>Climate Variability and Predictability</ecglio:hasDescription>
         <ecglio:alsoKnownAs>Climate Variability and Predictability</ecglio:alsoKnownAs>
       </ecglpg:InformationObject>
     </ecglpg:isDescribedBy>
@@ -230,23 +230,24 @@
   <ecglpg:Program rdf:about="http://data2.rvdata.us/id/program/GLOBEC">
     <ecglpg:isDescribedBy>
       <ecglpg:InformationObject>
-        <ecglio:hasDescription>Global Ocean Ecosystem Dynamics</ecglio:hasDescription>
-        <ecglio:alsoKnownAs>Global Ocean Ecosystem Dynamics</ecglio:alsoKnownAs>
+        <ecglio:hasAlternativeIdentifier>
+          <ecglio:Identifier/>
+        </ecglio:hasAlternativeIdentifier>
         <ecglio:hasCanonicalName>Global Ocean Ecosystem Dynamics</ecglio:hasCanonicalName>
         <ecglio:hasPrimaryIdentifier>
           <ecglio:Identifier>
             <ecglid:hasIdentifierValue>GLOBEC</ecglid:hasIdentifierValue>
           </ecglio:Identifier>
         </ecglio:hasPrimaryIdentifier>
-        <ecglio:hasAlternativeIdentifier>
-          <ecglio:Identifier/>
-        </ecglio:hasAlternativeIdentifier>
+        <ecglio:alsoKnownAs>Global Ocean Ecosystem Dynamics</ecglio:alsoKnownAs>
+        <ecglio:hasDescription>Global Ocean Ecosystem Dynamics</ecglio:hasDescription>
       </ecglpg:InformationObject>
     </ecglpg:isDescribedBy>
   </ecglpg:Program>
   <ecglpg:Program rdf:about="http://data2.rvdata.us/id/program/MARGINS">
     <ecglpg:isDescribedBy>
       <ecglpg:InformationObject>
+        <ecglio:hasCanonicalName>MARGINS</ecglio:hasCanonicalName>
         <ecglio:hasAlternativeIdentifier>
           <ecglio:Identifier/>
         </ecglio:hasAlternativeIdentifier>
@@ -255,26 +256,8 @@
             <ecglid:hasIdentifierValue>MARGINS</ecglid:hasIdentifierValue>
           </ecglio:Identifier>
         </ecglio:hasPrimaryIdentifier>
-        <ecglio:hasCanonicalName>MARGINS</ecglio:hasCanonicalName>
         <ecglio:hasDescription>MARGINS</ecglio:hasDescription>
         <ecglio:alsoKnownAs>MARGINS</ecglio:alsoKnownAs>
-      </ecglpg:InformationObject>
-    </ecglpg:isDescribedBy>
-  </ecglpg:Program>
-  <ecglpg:Program rdf:about="http://data2.rvdata.us/id/program/ECS">
-    <ecglpg:isDescribedBy>
-      <ecglpg:InformationObject>
-        <ecglio:hasPrimaryIdentifier>
-          <ecglio:Identifier>
-            <ecglid:hasIdentifierValue>ECS</ecglid:hasIdentifierValue>
-          </ecglio:Identifier>
-        </ecglio:hasPrimaryIdentifier>
-        <ecglio:alsoKnownAs>Extended Continental Shelf</ecglio:alsoKnownAs>
-        <ecglio:hasDescription>Extended Continental Shelf</ecglio:hasDescription>
-        <ecglio:hasAlternativeIdentifier>
-          <ecglio:Identifier/>
-        </ecglio:hasAlternativeIdentifier>
-        <ecglio:hasCanonicalName>Extended Continental Shelf</ecglio:hasCanonicalName>
       </ecglpg:InformationObject>
     </ecglpg:isDescribedBy>
   </ecglpg:Program>
@@ -282,10 +265,10 @@
     <ecglpg:isDescribedBy>
       <ecglpg:InformationObject>
         <ecglio:seeAlso rdf:resource="http://nctr.pmel.noaa.gov/Dart/"/>
-        <ecglio:alsoKnownAs>Deep-ocean Assessment and Reporting of Tsunamis</ecglio:alsoKnownAs>
         <ecglio:hasAlternativeIdentifier>
           <ecglio:Identifier/>
         </ecglio:hasAlternativeIdentifier>
+        <ecglio:alsoKnownAs>Deep-ocean Assessment and Reporting of Tsunamis</ecglio:alsoKnownAs>
         <ecglio:hasDescription>Deep-ocean Assessment and Reporting of Tsunamis</ecglio:hasDescription>
         <ecglio:hasPrimaryIdentifier>
           <ecglio:Identifier>
@@ -296,34 +279,51 @@
       </ecglpg:InformationObject>
     </ecglpg:isDescribedBy>
   </ecglpg:Program>
-  <ecglpg:Program rdf:about="http://data2.rvdata.us/id/program/OFP">
+  <ecglpg:Program rdf:about="http://data2.rvdata.us/id/program/ECS">
     <ecglpg:isDescribedBy>
       <ecglpg:InformationObject>
-        <ecglio:hasCanonicalName>Oceanic Flux Program</ecglio:hasCanonicalName>
+        <ecglio:hasDescription>Extended Continental Shelf</ecglio:hasDescription>
+        <ecglio:hasPrimaryIdentifier>
+          <ecglio:Identifier>
+            <ecglid:hasIdentifierValue>ECS</ecglid:hasIdentifierValue>
+          </ecglio:Identifier>
+        </ecglio:hasPrimaryIdentifier>
+        <ecglio:alsoKnownAs>Extended Continental Shelf</ecglio:alsoKnownAs>
         <ecglio:hasAlternativeIdentifier>
           <ecglio:Identifier/>
         </ecglio:hasAlternativeIdentifier>
+        <ecglio:hasCanonicalName>Extended Continental Shelf</ecglio:hasCanonicalName>
+      </ecglpg:InformationObject>
+    </ecglpg:isDescribedBy>
+  </ecglpg:Program>
+  <ecglpg:Program rdf:about="http://data2.rvdata.us/id/program/OFP">
+    <ecglpg:isDescribedBy>
+      <ecglpg:InformationObject>
+        <ecglio:hasAlternativeIdentifier>
+          <ecglio:Identifier/>
+        </ecglio:hasAlternativeIdentifier>
+        <ecglio:hasCanonicalName>Oceanic Flux Program</ecglio:hasCanonicalName>
         <ecglio:hasPrimaryIdentifier>
           <ecglio:Identifier>
             <ecglid:hasIdentifierValue>OFP</ecglid:hasIdentifierValue>
           </ecglio:Identifier>
         </ecglio:hasPrimaryIdentifier>
+        <ecglio:seeAlso rdf:resource="http://ecosystems.mbl.edu/conte/ofp/"/>
         <ecglio:hasDescription>Oceanic Flux Program</ecglio:hasDescription>
         <ecglio:alsoKnownAs>Oceanic Flux Program</ecglio:alsoKnownAs>
-        <ecglio:seeAlso rdf:resource="http://ecosystems.mbl.edu/conte/ofp/"/>
       </ecglpg:InformationObject>
     </ecglpg:isDescribedBy>
   </ecglpg:Program>
   <ecglpg:Program rdf:about="http://data2.rvdata.us/id/program/IODP">
     <ecglpg:isDescribedBy>
       <ecglpg:InformationObject>
-        <ecglio:hasCanonicalName>Integrated Ocean Drilling Program</ecglio:hasCanonicalName>
         <ecglio:seeAlso rdf:resource="http://www.iodp.org/"/>
+        <ecglio:hasCanonicalName>Integrated Ocean Drilling Program</ecglio:hasCanonicalName>
+        <ecglio:alsoKnownAs>Integrated Ocean Drilling Program</ecglio:alsoKnownAs>
         <ecglio:hasAlternativeIdentifier>
           <ecglio:Identifier/>
         </ecglio:hasAlternativeIdentifier>
         <ecglio:hasDescription>Integrated Ocean Drilling Program</ecglio:hasDescription>
-        <ecglio:alsoKnownAs>Integrated Ocean Drilling Program</ecglio:alsoKnownAs>
         <ecglio:hasPrimaryIdentifier>
           <ecglio:Identifier>
             <ecglid:hasIdentifierValue>IODP</ecglid:hasIdentifierValue>
@@ -335,49 +335,49 @@
   <ecglpg:Program rdf:about="http://data2.rvdata.us/id/program/CMOP">
     <ecglpg:isDescribedBy>
       <ecglpg:InformationObject>
-        <ecglio:hasAlternativeIdentifier>
-          <ecglio:Identifier/>
-        </ecglio:hasAlternativeIdentifier>
         <ecglio:hasDescription>Coastal Margin Observation and Prediction</ecglio:hasDescription>
         <ecglio:seeAlso rdf:resource="http://www.stccmop.org/"/>
         <ecglio:alsoKnownAs>Coastal Margin Observation and Prediction</ecglio:alsoKnownAs>
-        <ecglio:hasCanonicalName>Coastal Margin Observation and Prediction</ecglio:hasCanonicalName>
         <ecglio:hasPrimaryIdentifier>
           <ecglio:Identifier>
             <ecglid:hasIdentifierValue>CMOP</ecglid:hasIdentifierValue>
           </ecglio:Identifier>
         </ecglio:hasPrimaryIdentifier>
+        <ecglio:hasCanonicalName>Coastal Margin Observation and Prediction</ecglio:hasCanonicalName>
+        <ecglio:hasAlternativeIdentifier>
+          <ecglio:Identifier/>
+        </ecglio:hasAlternativeIdentifier>
       </ecglpg:InformationObject>
     </ecglpg:isDescribedBy>
   </ecglpg:Program>
   <ecglpg:Program rdf:about="http://data2.rvdata.us/id/program/GEOTRACES">
     <ecglpg:isDescribedBy>
       <ecglpg:InformationObject>
+        <ecglio:alsoKnownAs>Marine Biogeochemical Cycles of Trace Elements and Their Isotopes</ecglio:alsoKnownAs>
         <ecglio:seeAlso rdf:resource="http://www.usgeotraces.org/"/>
-        <ecglio:hasCanonicalName>Marine Biogeochemical Cycles of Trace Elements and Their Isotopes</ecglio:hasCanonicalName>
-        <ecglio:hasAlternativeIdentifier>
-          <ecglio:Identifier/>
-        </ecglio:hasAlternativeIdentifier>
         <ecglio:hasPrimaryIdentifier>
           <ecglio:Identifier>
             <ecglid:hasIdentifierValue>GEOTRACES</ecglid:hasIdentifierValue>
           </ecglio:Identifier>
         </ecglio:hasPrimaryIdentifier>
-        <ecglio:alsoKnownAs>Marine Biogeochemical Cycles of Trace Elements and Their Isotopes</ecglio:alsoKnownAs>
+        <ecglio:hasAlternativeIdentifier>
+          <ecglio:Identifier/>
+        </ecglio:hasAlternativeIdentifier>
         <ecglio:hasDescription>Marine Biogeochemical Cycles of Trace Elements and Their Isotopes</ecglio:hasDescription>
+        <ecglio:hasCanonicalName>Marine Biogeochemical Cycles of Trace Elements and Their Isotopes</ecglio:hasCanonicalName>
       </ecglpg:InformationObject>
     </ecglpg:isDescribedBy>
   </ecglpg:Program>
   <ecglpg:Program rdf:about="http://data2.rvdata.us/id/program/HS">
     <ecglpg:isDescribedBy>
       <ecglpg:InformationObject>
+        <ecglio:alsoKnownAs>Panulirus Hydrographic Stations (Hydrostation S)</ecglio:alsoKnownAs>
+        <ecglio:hasDescription>Panulirus Hydrographic Stations (Hydrostation S)</ecglio:hasDescription>
         <ecglio:hasPrimaryIdentifier>
           <ecglio:Identifier>
             <ecglid:hasIdentifierValue>HS</ecglid:hasIdentifierValue>
           </ecglio:Identifier>
         </ecglio:hasPrimaryIdentifier>
-        <ecglio:hasDescription>Panulirus Hydrographic Stations (Hydrostation S)</ecglio:hasDescription>
-        <ecglio:alsoKnownAs>Panulirus Hydrographic Stations (Hydrostation S)</ecglio:alsoKnownAs>
         <ecglio:hasAlternativeIdentifier>
           <ecglio:Identifier/>
         </ecglio:hasAlternativeIdentifier>
@@ -389,34 +389,34 @@
     <ecglpg:isDescribedBy>
       <ecglpg:InformationObject>
         <ecglio:hasDescription>Bermuda Institution of Ocean Sciences (BIOS)</ecglio:hasDescription>
-        <ecglio:seeAlso rdf:resource="http://www.bios.edu/"/>
-        <ecglio:alsoKnownAs>Bermuda Institution of Ocean Sciences (BIOS)</ecglio:alsoKnownAs>
-        <ecglio:hasAlternativeIdentifier>
-          <ecglio:Identifier/>
-        </ecglio:hasAlternativeIdentifier>
-        <ecglio:hasCanonicalName>Bermuda Institution of Ocean Sciences (BIOS)</ecglio:hasCanonicalName>
         <ecglio:hasPrimaryIdentifier>
           <ecglio:Identifier>
             <ecglid:hasIdentifierValue>BIOS</ecglid:hasIdentifierValue>
           </ecglio:Identifier>
         </ecglio:hasPrimaryIdentifier>
+        <ecglio:alsoKnownAs>Bermuda Institution of Ocean Sciences (BIOS)</ecglio:alsoKnownAs>
+        <ecglio:hasAlternativeIdentifier>
+          <ecglio:Identifier/>
+        </ecglio:hasAlternativeIdentifier>
+        <ecglio:seeAlso rdf:resource="http://www.bios.edu/"/>
+        <ecglio:hasCanonicalName>Bermuda Institution of Ocean Sciences (BIOS)</ecglio:hasCanonicalName>
       </ecglpg:InformationObject>
     </ecglpg:isDescribedBy>
   </ecglpg:Program>
   <ecglpg:Program rdf:about="http://data2.rvdata.us/id/program/SBI">
     <ecglpg:isDescribedBy>
       <ecglpg:InformationObject>
+        <ecglio:hasDescription>Shelf-Basin Interactions</ecglio:hasDescription>
+        <ecglio:hasAlternativeIdentifier>
+          <ecglio:Identifier/>
+        </ecglio:hasAlternativeIdentifier>
         <ecglio:hasPrimaryIdentifier>
           <ecglio:Identifier>
             <ecglid:hasIdentifierValue>SBI</ecglid:hasIdentifierValue>
           </ecglio:Identifier>
         </ecglio:hasPrimaryIdentifier>
-        <ecglio:hasAlternativeIdentifier>
-          <ecglio:Identifier/>
-        </ecglio:hasAlternativeIdentifier>
-        <ecglio:hasCanonicalName>Shelf-Basin Interactions</ecglio:hasCanonicalName>
         <ecglio:alsoKnownAs>Shelf-Basin Interactions</ecglio:alsoKnownAs>
-        <ecglio:hasDescription>Shelf-Basin Interactions</ecglio:hasDescription>
+        <ecglio:hasCanonicalName>Shelf-Basin Interactions</ecglio:hasCanonicalName>
       </ecglpg:InformationObject>
     </ecglpg:isDescribedBy>
   </ecglpg:Program>

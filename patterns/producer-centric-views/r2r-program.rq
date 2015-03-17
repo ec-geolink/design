@@ -31,10 +31,10 @@ CONSTRUCT {
 	?PROGRAM rdf:type ecglpg:Program .
 	?PROGRAM ecglpg:isDescribedBy [
 		rdf:type ecglpg:InformationObject ;
-		ecglio:hasCanonicalName ?LABEL ;
+		ecglio:hasCanonicalName ?LABEL ;		
 		ecglio:alsoKnownAs ?NAME ;
 		ecglio:hasDescription ?DESCRIPTION ;
-		ecglio:seeAlso ?SEEALSO^^xsd:anyURI ;
+		ecglio:seeAlso ?SEEALSO ;
 		ecglio:hasPrimaryIdentifier [ 
 			rdf:type ecglio:Identifier;  
 			ecglid:hasIdentifierValue ?ID ] ;
