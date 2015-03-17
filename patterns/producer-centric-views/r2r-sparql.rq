@@ -21,6 +21,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX geosparql: <http://www.opengis.net/ont/geosparql#>
+PREFIX time: <http://www.w3.org/2006/time#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX ecgl: <http://schema.geolink.org/dev/>
 PREFIX ecglview: <http://schema.geolink.org/view/1.0/ecglview#>
@@ -33,10 +34,13 @@ PREFIX ecglev: <http://schema.geolink.org/dev/event#>
 PREFIX ecglfa: <http://schema.geolink.org/dev/fundingaward#>
 PREFIX ecglio: <http://schema.geolink.org/dev/informationobject#>
 PREFIX ecglog: <http://schema.geolink.org/dev/organization#>
+PREFIX ecglpf: <http://schema.geolink.org/dev/platform#>
 PREFIX ecglpg: <http://schema.geolink.org/dev/program#>
 PREFIX ecglpl: <http://schema.geolink.org/dev/place#>
 PREFIX ecglpr: <http://schema.geolink.org/dev/person#>
 PREFIX ecglvs: <http://schema.geolink.org/dev/vessel#>
+
+
 
 
 ## populating Award

@@ -186,14 +186,14 @@
         <rdfs:domain rdf:resource="&ecglview;Cruise"/>
         <rdfs:range>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ecglview;hasTimeStamp"/>
-                <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
+                <owl:onProperty rdf:resource="&ecglview;atPort"/>
+                <owl:someValuesFrom rdf:resource="&ecglview;Place"/>
             </owl:Restriction>
         </rdfs:range>
         <rdfs:range>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ecglview;atPort"/>
-                <owl:someValuesFrom rdf:resource="&ecglview;Place"/>
+                <owl:onProperty rdf:resource="&ecglview;hasTimeStamp"/>
+                <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
             </owl:Restriction>
         </rdfs:range>
     </owl:ObjectProperty>
@@ -267,14 +267,14 @@
         <rdfs:domain rdf:resource="&ecglview;Cruise"/>
         <rdfs:range>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ecglview;atPort"/>
-                <owl:someValuesFrom rdf:resource="&ecglview;Place"/>
+                <owl:onProperty rdf:resource="&ecglview;hasTimeStamp"/>
+                <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
             </owl:Restriction>
         </rdfs:range>
         <rdfs:range>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ecglview;hasTimeStamp"/>
-                <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
+                <owl:onProperty rdf:resource="&ecglview;atPort"/>
+                <owl:someValuesFrom rdf:resource="&ecglview;Place"/>
             </owl:Restriction>
         </rdfs:range>
     </owl:ObjectProperty>
@@ -298,14 +298,14 @@
         <rdfs:domain rdf:resource="&ecglview;Cruise"/>
         <rdfs:range>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ecglview;hasAffiliation"/>
-                <owl:someValuesFrom rdf:resource="&ecglview;Organization"/>
+                <owl:onProperty rdf:resource="&ecglview;hasRoleType"/>
+                <owl:someValuesFrom rdf:resource="&ecglview;RoleType"/>
             </owl:Restriction>
         </rdfs:range>
         <rdfs:range>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ecglview;hasRoleType"/>
-                <owl:someValuesFrom rdf:resource="&ecglview;RoleType"/>
+                <owl:onProperty rdf:resource="&ecglview;hasAffiliation"/>
+                <owl:someValuesFrom rdf:resource="&ecglview;Organization"/>
             </owl:Restriction>
         </rdfs:range>
         <rdfs:range>
@@ -407,14 +407,14 @@
         <rdfs:domain rdf:resource="&ecglview;Cruise"/>
         <rdfs:range>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ecglview;hasTimeStamp"/>
-                <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
+                <owl:onProperty rdf:resource="&ecglview;atPort"/>
+                <owl:someValuesFrom rdf:resource="&ecglview;Place"/>
             </owl:Restriction>
         </rdfs:range>
         <rdfs:range>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ecglview;atPort"/>
-                <owl:someValuesFrom rdf:resource="&ecglview;Place"/>
+                <owl:onProperty rdf:resource="&ecglview;hasTimeStamp"/>
+                <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
             </owl:Restriction>
         </rdfs:range>
     </owl:ObjectProperty>
@@ -529,6 +529,14 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/view/dev/ecglview#description -->
+
+    <owl:DatatypeProperty rdf:about="&ecglview;description">
+        <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
 
