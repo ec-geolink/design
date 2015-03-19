@@ -476,12 +476,6 @@
 -   ?X :matches [ :identifier ?ID ; :hasScheme ?S ]</rdfs:comment>
         <rdfs:range>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ecglview;identfier"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:range>
-        <rdfs:range>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="&ecglview;hasScheme"/>
                 <owl:someValuesFrom rdf:resource="&xsd;string"/>
             </owl:Restriction>
@@ -501,6 +495,12 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ecglview;identifier"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -657,9 +657,9 @@
     
 
 
-    <!-- http://schema.geolink.org/view/dev/ecglview#identfier -->
+    <!-- http://schema.geolink.org/view/dev/ecglview#identifier -->
 
-    <owl:DatatypeProperty rdf:about="&ecglview;identfier">
+    <owl:DatatypeProperty rdf:about="&ecglview;identifier">
         <rdfs:comment>The domain of this property also includes (possibly blank) nodes that act as the range of the &apos;matches&apos; property. Graph patterns for data using this property can either be of the form:
 -   ?X :identifier ?ID
 -   ?X :matches [ :identifier ?ID ; :hasScheme ?S ]</rdfs:comment>
@@ -775,6 +775,12 @@
     
 
 
+    <!-- http://schema.geolink.org/view/dev/ecglview#CruiseParticipant -->
+
+    <owl:Class rdf:about="&ecglview;CruiseParticipant"/>
+    
+
+
     <!-- http://schema.geolink.org/view/dev/ecglview#CruiseType -->
 
     <owl:Class rdf:about="&ecglview;CruiseType"/>
@@ -835,6 +841,12 @@
     
 
 
+    <!-- http://schema.geolink.org/view/dev/ecglview#PhysicalSample -->
+
+    <owl:Class rdf:about="&ecglview;PhysicalSample"/>
+    
+
+
     <!-- http://schema.geolink.org/view/dev/ecglview#Place -->
 
     <owl:Class rdf:about="&ecglview;Place"/>
@@ -844,6 +856,12 @@
     <!-- http://schema.geolink.org/view/dev/ecglview#PlaceType -->
 
     <owl:Class rdf:about="&ecglview;PlaceType"/>
+    
+
+
+    <!-- http://schema.geolink.org/view/dev/ecglview#PortCall -->
+
+    <owl:Class rdf:about="&ecglview;PortCall"/>
     
 
 
