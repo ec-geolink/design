@@ -1,4 +1,4 @@
 EarthCube GeoLink
 =================
 
-Design information about the EarthCube [Geolink project](http://geo-link.org).  
+Design information about the EarthCube [Geolink project](http://www.geolink.org).  
