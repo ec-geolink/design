@@ -331,7 +331,7 @@
 
     <owl:ObjectProperty rdf:about="&ecglview;hasProgram">
         <rdfs:domain rdf:resource="&ecglview;Cruise"/>
-        <rdfs:range rdf:resource="&ecglview;Cruise"/>
+        <rdfs:range rdf:resource="&ecglview;Program"/>
     </owl:ObjectProperty>
     
 
