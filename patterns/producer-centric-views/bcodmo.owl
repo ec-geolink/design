@@ -9,19 +9,20 @@
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
     <!ENTITY ecglview "http://schema.geolink.org/dev/view#" >
-    <!ENTITY bcodmo "http://schema.geolink.org/dev/view-bcodmo#" >
+    <!ENTITY bcoglview "http://schema.geolink.org/dev/bcoview#" >
 ]>
 
 
-<rdf:RDF xmlns="http://schema.geolink.org/dev/view-bcodmo#"
-     xml:base="http://schema.geolink.org/dev/view-bcodmo"
+<rdf:RDF xmlns="http://schema.geolink.org/dev/bcoview#"
+     xml:base="http://schema.geolink.org/dev/bcoview"
      xmlns:geosparql="http://www.opengis.net/ont/geosparql#"
+     xmlns:bcoglview="http://schema.geolink.org/dev/bcoview#"
      xmlns:ecglview="http://schema.geolink.org/dev/view#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="http://schema.geolink.org/dev/view-bcodmo"/>
+    <owl:Ontology rdf:about="http://schema.geolink.org/dev/bcoview"/>
     
 
 
@@ -33,7 +34,23 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-
+    <!-- http://schema.geolink.org/dev/bcoview#isAgentRoleIn -->
+    
+    <owl:DatatypeProperty rdf:about="&bcodmo;hasRoleIn">
+        <rdfs:comment>Maps to full patterns data property AgentRole:hasAgentRoleIn</rdfs:comment>
+        <rdfs:domain rdf:resource="&ecglview;Role"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ecglview;Award"/>
+                    <rdf:Description rdf:about="&ecglview;Cruise"/>
+                    <rdf:Description rdf:about="&ecglview;Dataset"/>
+                    <rdf:Description rdf:about="&ecglview;DigitalObject"/>
+                    <rdf:Description rdf:about="&ecglview;Program"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
 
 
     <!-- 
@@ -44,9 +61,35 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-
-
-
+    <!-- http://schema.geolink.org/dev/bcoview#acronym -->
+    
+    <owl:DatatypeProperty rdf:about="&bcodmo;acronym">
+        <rdfs:comment>Maps to full patterns data property InformationObject:alsoKnownAs</rdfs:comment>
+        <rdfs:domain rdf:resource="&ecglview;Organization"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+    <!-- http://schema.geolink.org/dev/bcoview#website -->
+        
+    <owl:DatatypeProperty rdf:about="&bcodmo;website">
+        <rdfs:comment>Maps to full patterns data property InformationObject:hasWebpage</rdfs:comment>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ecglview;Award"/>
+                    <rdf:Description rdf:about="&ecglview;Cruise"/>
+                    <rdf:Description rdf:about="&ecglview;Dataset"/>
+                    <rdf:Description rdf:about="&ecglview;DigitalObject"/>
+                    <rdf:Description rdf:about="&ecglview;Instrument"/>
+                    <rdf:Description rdf:about="&ecglview;Organization"/>
+                    <rdf:Description rdf:about="&ecglview;Person"/>
+                    <rdf:Description rdf:about="&ecglview;Place"/>
+                    <rdf:Description rdf:about="&ecglview;Program"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
+    </owl:DatatypeProperty>
 
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -57,6 +100,18 @@
      -->
 
 
-
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Named Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+     
+    <!-- http://schema.geolink.org/dev/bcoview#website#program_manager_role -->
+	
+	<owl:NamedIndividual rdf:about="&bcodmo;program_manager_role">
+	    <rdfs:comment>Program Manager for an Award</rdfs:comment>
+	</owl:NamedIndividual>
 
 </rdf:RDF>
