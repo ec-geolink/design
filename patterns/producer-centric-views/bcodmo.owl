@@ -34,12 +34,12 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    <!-- http://schema.geolink.org/dev/bcoview#isAgentRoleIn -->
+    <!-- http://schema.geolink.org/dev/bcoview#hasRoleIn -->
     
-    <owl:DatatypeProperty rdf:about="&bcodmo;hasRoleIn">
-        <rdfs:comment>Maps to full patterns data property AgentRole:hasAgentRoleIn</rdfs:comment>
+    <owl:ObjectProperty rdf:about="&bcodmo;hasRoleIn">
+        <rdfs:comment>Maps to full patterns object property AgentRole:hasAgentRoleIn</rdfs:comment>
         <rdfs:domain rdf:resource="&ecglview;Role"/>
-        <rdfs:domain>
+        <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="&ecglview;Award"/>
@@ -49,10 +49,26 @@
                     <rdf:Description rdf:about="&ecglview;Program"/>
                 </owl:unionOf>
             </owl:Class>
-        </rdfs:domain>
-    </owl:DatatypeProperty>
+        </rdfs:range>
+    </owl:ObjectProperty>
 
-
+    <!-- http://schema.geolink.org/dev/bcoview#isPartOfDataset -->
+    
+    <owl:ObjectProperty rdf:about="&bcodmo;isPartOfDataset">
+        <rdfs:comment>Maps to full patterns ???</rdfs:comment>
+        <rdfs:domain rdf:resource="&ecglview;Dataset"/>
+        <rdfs:range rdf:resource="&ecglview;Dataset"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://schema.geolink.org/dev/bcoview#isFundedBy -->
+    
+    <owl:ObjectProperty rdf:about="&bcodmo;isFundedBy">
+        <rdfs:comment>Maps to full patterns ???</rdfs:comment>
+        <rdfs:domain rdf:resource="&ecglview;Dataset"/>
+        <rdfs:range rdf:resource="&ecglview;Award"/>
+    </owl:ObjectProperty>
+    
+    
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -65,7 +81,15 @@
     
     <owl:DatatypeProperty rdf:about="&bcodmo;acronym">
         <rdfs:comment>Maps to full patterns data property InformationObject:alsoKnownAs</rdfs:comment>
-        <rdfs:domain rdf:resource="&ecglview;Organization"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ecglview;Instrument"/>
+                    <rdf:Description rdf:about="&ecglview;Organization"/>
+                    <rdf:Description rdf:about="&ecglview;Program"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -91,6 +115,63 @@
         <rdfs:range rdf:resource="&xsd;anyURI"/>
     </owl:DatatypeProperty>
 
+    <!-- http://schema.geolink.org/dev/bcoview#hasDatasetLandingPage -->
+    
+    <owl:DatatypeProperty rdf:about="&bcodmo;hasDatasetLandingPage">
+        <rdfs:comment>Maps to full patterns ???</rdfs:comment>
+        <rdfs:domain rdf:resource="&ecglview;Dataset"/>
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
+    </owl:DatatypeProperty>
+    
+    <!-- http://schema.geolink.org/dev/bcoview#acquisitionDescription -->
+    
+    <owl:DatatypeProperty rdf:about="&bcodmo;acquisitionDescription">
+        <rdfs:comment>Maps to full patterns ???</rdfs:comment>
+        <rdfs:domain rdf:resource="&ecglview;Dataset"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+    <!-- http://schema.geolink.org/dev/bcoview#processingDescription -->
+    
+    <owl:DatatypeProperty rdf:about="&bcodmo;processingDescription">
+        <rdfs:comment>Maps to full patterns ???</rdfs:comment>
+        <rdfs:domain rdf:resource="&ecglview;Dataset"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+    <!-- http://schema.geolink.org/dev/bcoview#givenName -->
+    
+    <owl:DatatypeProperty rdf:about="&bcodmo;givenName">
+        <rdfs:comment>Maps to full patterns datatype property PersonName:firstOrGivenName</rdfs:comment>
+        <rdfs:domain rdf:resource="&ecglview;Person"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+    <!-- http://schema.geolink.org/dev/bcoview#surname -->
+    
+    <owl:DatatypeProperty rdf:about="&bcodmo;surname">
+        <rdfs:comment>Maps to full patterns datatype property PersonName:familyOrSurname</rdfs:comment>
+        <rdfs:domain rdf:resource="&ecglview;Person"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+    <!-- http://schema.geolink.org/dev/bcoview#hasStartDate -->
+    
+    <owl:DatatypeProperty rdf:about="&bcodmo;hasStartDate">
+        <rdfs:comment>Maps to full patterns ???</rdfs:comment>
+        <rdfs:domain rdf:resource="&ecglview;Program"/>
+        <rdfs:range rdf:resource="&xsd;date"/>
+    </owl:DatatypeProperty>
+    
+    <!-- http://schema.geolink.org/dev/bcoview#hasEndDate -->
+    
+    <owl:DatatypeProperty rdf:about="&bcodmo;hasEndDate">
+        <rdfs:comment>Maps to full patterns datatype property ???</rdfs:comment>
+        <rdfs:domain rdf:resource="&ecglview;Program"/>
+        <rdfs:range rdf:resource="&xsd;date"/>
+    </owl:DatatypeProperty>
+    
+    
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
