@@ -209,9 +209,9 @@
         <rdfs:range rdf:resource="&xsd;date"/>
     </owl:DatatypeProperty>
     
-    <!-- http://schema.geolink.org/dev/view#mediaType -->
+    <!-- http://schema.geolink.org/dev/bcoview#mediaType -->
 
-    <owl:DatatypeProperty rdf:about="&ecglview;hasChecksum">
+    <owl:DatatypeProperty rdf:about="&bcodmo;mediaType">
         <rdfs:domain rdf:resource="&ecglview;DigitalObject"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
