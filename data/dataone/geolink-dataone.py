@@ -27,7 +27,7 @@ def addDataset(model, doc, ns, personhash):
     d1base = "https://cn.dataone.org/cn/v1/resolve/"
     element = doc.find("./str[@name='identifier']")
     identifier = element.text
-    addStatement(model, d1base+identifier, "http://www.w3.org/1999/02/22-rdf-syntax-ns#type", RDF.Uri(ns["gldata"]+"DigitalObjectRecord"))
+    addStatement(model, d1base+identifier, "http://www.w3.org/1999/02/22-rdf-syntax-ns#type", RDF.Uri(ns["ecglview"]+"Dataset"))
     addStatement(model, d1base+identifier, ns["dcterms"]+"identifier", identifier)
     title_element = doc.find("./str[@name='title']")
     addStatement(model, d1base+identifier, ns["dcterms"]+"title", title_element.text)
@@ -48,7 +48,7 @@ def addDataset(model, doc, ns, personhash):
             p_uuid = p_data[0]
             p_orcid = p_data[1]
             
-        addStatement(model, p_uuid, "http://www.w3.org/1999/02/22-rdf-syntax-ns#type", RDF.Uri(ns["glperson"]+"Person"))
+        addStatement(model, p_uuid, "http://www.w3.org/1999/02/22-rdf-syntax-ns#type", RDF.Uri(ns["ecglview"]+"Person"))
         addStatement(model, p_uuid, "http://www.w3.org/1999/02/22-rdf-syntax-ns#type", RDF.Uri(ns["foaf"]+"Person"))
         addStatement(model, p_uuid, ns["foaf"]+"name", creator)
         
@@ -114,11 +114,13 @@ def main():
     ns = {
         "foaf": "http://xmlns.com/foaf/0.1/",
         "dcterms": "http://purl.org/dc/terms/",
-        "gldata": "http://schema.geolink.org/repository-object#",
-        "glperson": "http://schema.geolink.org/person#",
-        "glpersonii": "http://schema.geolink.org/personal-info-item#",
-        "glpersonname": "http://schema.geolink.org/person-name#",
-        "datacite": "http://purl.org/spar/datacite/"
+        "datacite": "http://purl.org/spar/datacite/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "geosparql": "http://www.opengis.net/ont/geosparql#",
+        "rdfs":  "http://www.w3.org/2000/01/rdf-schema#",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "ecglview": "http://schema.geolink.org/dev/view#"
     }
     xmldoc = getDataList()
     doclist = xmldoc.findall(".//doc")

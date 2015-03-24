@@ -1,2085 +1,988 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix glpersonname: <http://schema.geolink.org/person-name#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix ecglview: <http://schema.geolink.org/dev/view#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix geosparql: <http://www.opengis.net/ont/geosparql#> .
 @prefix datacite: <http://purl.org/spar/datacite/> .
-@prefix glperson: <http://schema.geolink.org/person#> .
-@prefix glpersonii: <http://schema.geolink.org/personal-info-item#> .
-@prefix gldata: <http://schema.geolink.org/repository-object#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-<http://fakeorcid.org/0092b16d99c1446382ef7a8123ceff85>
+<http://fakeorcid.org/04d3fd7b86894a3fb671b59f893ac018>
     datacite:usesIdentifierScheme datacite:orcid ;
     a datacite:PersonalIdentifier .
 
-<http://fakeorcid.org/011da5263a3b402993f22f75013919fa>
+<http://fakeorcid.org/0d796ce45ee84207a0ab30b6416326c6>
     datacite:usesIdentifierScheme datacite:orcid ;
     a datacite:PersonalIdentifier .
 
-<http://fakeorcid.org/01d3985466c5490bb41f923918d8c7bd>
+<http://fakeorcid.org/0f6b0de4e9e7471ba387507bb769d527>
     datacite:usesIdentifierScheme datacite:orcid ;
     a datacite:PersonalIdentifier .
 
-<http://fakeorcid.org/072bb9eadcb8433faacbc11ce9fc1160>
+<http://fakeorcid.org/16702a60a86a4b508d8b45be12218eff>
     datacite:usesIdentifierScheme datacite:orcid ;
     a datacite:PersonalIdentifier .
 
-<http://fakeorcid.org/0878319e4de64de1965753f943cfa0d3>
+<http://fakeorcid.org/1bce15c13b8d46a0a4502448567ab837>
     datacite:usesIdentifierScheme datacite:orcid ;
     a datacite:PersonalIdentifier .
 
-<http://fakeorcid.org/0c4347bd48aa4753b759e4f022a9b332>
+<http://fakeorcid.org/1c02e82b3f6642d18e70cc6af471b5f6>
     datacite:usesIdentifierScheme datacite:orcid ;
     a datacite:PersonalIdentifier .
 
-<http://fakeorcid.org/0c99cc9819df492992b8c0c714943dcb>
+<http://fakeorcid.org/1c52eb11b4564b49b8e8f1ce815416c6>
     datacite:usesIdentifierScheme datacite:orcid ;
     a datacite:PersonalIdentifier .
 
-<http://fakeorcid.org/0ddbfd2804154b529084e5577f2f4b48>
+<http://fakeorcid.org/1d171c35997f47478410ab541653f48a>
     datacite:usesIdentifierScheme datacite:orcid ;
     a datacite:PersonalIdentifier .
 
-<http://fakeorcid.org/0e45d38cb9284c079a07b7e9d7841cf7>
+<http://fakeorcid.org/1d8153a30705474d9b76773a84af10ae>
     datacite:usesIdentifierScheme datacite:orcid ;
     a datacite:PersonalIdentifier .
 
-<http://fakeorcid.org/104482b2a66c4cc8b3ae2717cbaea2f6>
+<http://fakeorcid.org/1f352e4c177745c38fe43c85c79f64a8>
     datacite:usesIdentifierScheme datacite:orcid ;
     a datacite:PersonalIdentifier .
 
-<http://fakeorcid.org/10943ec2a0094ac58e5e80b324a5375b>
+<http://fakeorcid.org/225d3b9c18af49769f831a4de79911ad>
     datacite:usesIdentifierScheme datacite:orcid ;
     a datacite:PersonalIdentifier .
 
-<http://fakeorcid.org/120f6df531ff43bb8627a7eb9c91095d>
+<http://fakeorcid.org/237fd64e9f9a48cc94bbc1b9852f30e3>
     datacite:usesIdentifierScheme datacite:orcid ;
     a datacite:PersonalIdentifier .
 
-<http://fakeorcid.org/128d0cf16ed04c0d9c092b9afa8dad60>
+<http://fakeorcid.org/24896ae6812646f4930184706c3db433>
     datacite:usesIdentifierScheme datacite:orcid ;
     a datacite:PersonalIdentifier .
 
-<http://fakeorcid.org/12c84a76b8de4613a56f372990869924>
+<http://fakeorcid.org/34612fa0c6d9411f93ad4783d9b6d349>
     datacite:usesIdentifierScheme datacite:orcid ;
     a datacite:PersonalIdentifier .
 
-<http://fakeorcid.org/134d90596d214275a067828786a5c90d>
+<http://fakeorcid.org/366ed812aa004ba9ba37eb1c41a05f5b>
     datacite:usesIdentifierScheme datacite:orcid ;
     a datacite:PersonalIdentifier .
 
-<http://fakeorcid.org/1457da5f0a204e3698a1ddb12cf10330>
+<http://fakeorcid.org/43c81e2f9a584c928f59434a83379a05>
     datacite:usesIdentifierScheme datacite:orcid ;
     a datacite:PersonalIdentifier .
 
-<http://fakeorcid.org/16b4fd0998c045a5af1d17242e34d7cc>
+<http://fakeorcid.org/47362c04125f4b80a6a8db47400a7360>
     datacite:usesIdentifierScheme datacite:orcid ;
     a datacite:PersonalIdentifier .
 
-<http://fakeorcid.org/18610579b90742fc9b3a8262ad6f9647>
+<http://fakeorcid.org/54e707acc96a4266969dc9df9585fe23>
     datacite:usesIdentifierScheme datacite:orcid ;
     a datacite:PersonalIdentifier .
 
-<http://fakeorcid.org/19f426f2f64442bf9e79673e910340bb>
+<http://fakeorcid.org/5be5c3981bfd48ff96672d87d280e967>
     datacite:usesIdentifierScheme datacite:orcid ;
     a datacite:PersonalIdentifier .
 
-<http://fakeorcid.org/1f6bf111a9b84aa8ab1a38e16c99e25a>
+<http://fakeorcid.org/5deba0250d6342db8226c3b71d5424d7>
     datacite:usesIdentifierScheme datacite:orcid ;
     a datacite:PersonalIdentifier .
 
-<http://fakeorcid.org/20d036dfe04b4d4bb3bcb9dcda948162>
+<http://fakeorcid.org/7e31f73c73154d228f3959484a65f0f4>
     datacite:usesIdentifierScheme datacite:orcid ;
     a datacite:PersonalIdentifier .
 
-<http://fakeorcid.org/21c1faa1c08c443bb651112eb1545f05>
+<http://fakeorcid.org/8a8c22891cab41fabc7bfcd6764e9c58>
     datacite:usesIdentifierScheme datacite:orcid ;
     a datacite:PersonalIdentifier .
 
-<http://fakeorcid.org/24fd4e5483e74716be005ee52a077774>
+<http://fakeorcid.org/8b7d9b1011dc409db1e77a08bfb2d2c5>
     datacite:usesIdentifierScheme datacite:orcid ;
     a datacite:PersonalIdentifier .
 
-<http://fakeorcid.org/24fe0cf70efb4d59b3f1e540a180efc4>
+<http://fakeorcid.org/8bcca0ad60524457b0b5e4b65c3836b0>
     datacite:usesIdentifierScheme datacite:orcid ;
     a datacite:PersonalIdentifier .
 
-<http://fakeorcid.org/2540954c26f94497b26238cd1f7456f7>
+<http://fakeorcid.org/91a7d05b6f7a4f29a3abafbbc39b5cb3>
     datacite:usesIdentifierScheme datacite:orcid ;
     a datacite:PersonalIdentifier .
 
-<http://fakeorcid.org/26107ddf725d4a32b94368c78ce1da41>
+<http://fakeorcid.org/9cbaab81101342d8b1bf064674f11e89>
     datacite:usesIdentifierScheme datacite:orcid ;
     a datacite:PersonalIdentifier .
 
-<http://fakeorcid.org/27a5270ebd7f496d9e1f1f9b64a0346f>
+<http://fakeorcid.org/a330e20fe69d41079f2e498ed3b490fc>
     datacite:usesIdentifierScheme datacite:orcid ;
     a datacite:PersonalIdentifier .
 
-<http://fakeorcid.org/29af62317eaa4bc68a264a3840a7f92b>
+<http://fakeorcid.org/b429c1f840044a72a2b705cf37c370d8>
     datacite:usesIdentifierScheme datacite:orcid ;
     a datacite:PersonalIdentifier .
 
-<http://fakeorcid.org/29e8ef7e54f94680a38d56907ac1273e>
+<http://fakeorcid.org/badcb28f39364ef2804565d99df04757>
     datacite:usesIdentifierScheme datacite:orcid ;
     a datacite:PersonalIdentifier .
 
-<http://fakeorcid.org/2a973ed1b9cf40e38596106b478a8afd>
+<http://fakeorcid.org/cc30c0b51398478389b1f6ce7260d2b6>
     datacite:usesIdentifierScheme datacite:orcid ;
     a datacite:PersonalIdentifier .
 
-<http://fakeorcid.org/2ab116f00e46470cae3e413b5b889d8b>
+<http://fakeorcid.org/cd236035bb3f4d50871b33d742c9d821>
     datacite:usesIdentifierScheme datacite:orcid ;
     a datacite:PersonalIdentifier .
 
-<http://fakeorcid.org/2ce998dbe83e42d6afe55d1df26e9c0d>
+<http://fakeorcid.org/d06f8a9c3ceb4da494507b8feab0305e>
     datacite:usesIdentifierScheme datacite:orcid ;
     a datacite:PersonalIdentifier .
 
-<http://fakeorcid.org/2d69a59d84bd4061823e8d6f73ff102a>
+<http://fakeorcid.org/d1033b9584ec488fbb7241235d2de3e9>
     datacite:usesIdentifierScheme datacite:orcid ;
     a datacite:PersonalIdentifier .
 
-<http://fakeorcid.org/2f2a4f415c714b5a8074febdebc42457>
+<http://fakeorcid.org/d49d3ad6ffb74807a8e945d614f505e2>
     datacite:usesIdentifierScheme datacite:orcid ;
     a datacite:PersonalIdentifier .
 
-<http://fakeorcid.org/300374afd77a4802bb8037c73401b600>
+<http://fakeorcid.org/d663d514dc8d4dccbcd8dfecab49ad7d>
     datacite:usesIdentifierScheme datacite:orcid ;
     a datacite:PersonalIdentifier .
 
-<http://fakeorcid.org/305c3fabca214b8fac7176ae4bd7ac8d>
+<http://fakeorcid.org/dcd99d7728b34617be7685c34c3e6188>
     datacite:usesIdentifierScheme datacite:orcid ;
     a datacite:PersonalIdentifier .
 
-<http://fakeorcid.org/320c3d2cea774504ae180fc635bb3180>
+<http://fakeorcid.org/e6d9dd30c3c047af909c81b8513acbcc>
     datacite:usesIdentifierScheme datacite:orcid ;
     a datacite:PersonalIdentifier .
 
-<http://fakeorcid.org/34b7b005505c42aba02ab5716519d34a>
+<http://fakeorcid.org/ee00fdfbfa844296926125fa3ea6a2a4>
     datacite:usesIdentifierScheme datacite:orcid ;
     a datacite:PersonalIdentifier .
 
-<http://fakeorcid.org/3537681085804d32b506577016e0a83c>
+<http://fakeorcid.org/f4303265418d44dfb122c88e18216052>
     datacite:usesIdentifierScheme datacite:orcid ;
     a datacite:PersonalIdentifier .
 
-<http://fakeorcid.org/36a6317e317244f288f38ed69218bc52>
+<http://fakeorcid.org/fba246d87ea945e394794eaec5fbee47>
     datacite:usesIdentifierScheme datacite:orcid ;
     a datacite:PersonalIdentifier .
 
-<http://fakeorcid.org/3753421342f44e3c98854855d572d74e>
+<http://fakeorcid.org/fbbb8143ac2b43f48ec73b68064a25b5>
     datacite:usesIdentifierScheme datacite:orcid ;
     a datacite:PersonalIdentifier .
 
-<http://fakeorcid.org/39d8eb83c00241539597525c71e5b9d1>
+<http://fakeorcid.org/ffc6790a48e04e0fbe281860e3a59bd6>
     datacite:usesIdentifierScheme datacite:orcid ;
     a datacite:PersonalIdentifier .
 
-<http://fakeorcid.org/3c870389c88048c2921bb06a789ed67a>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/3d10063c03a34773a9cc3677498060e0>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/42c7d873d77c4fb4be6a738ecf6ade23>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/42ee17c2388c456c910f669e1097e2ce>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/44c410fd0dca451ea45831f0e64453bc>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/451fb090cc964986be6c492d08c5cd51>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/45a4d761eff2462db2d1fdc965735d7a>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/4a852ab140cf4df587e5de2d52d4623e>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/4ab12d8475cf461c9c482518a7968ed8>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/4bd368e8262a4269a0524f2d5cd860ff>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/4c9a01e5ed9440f9a507f5c130ab18df>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/4d629d7295fd4809863ef39a100c5464>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/4d62dfcffdda43e7b922be0521a173f0>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/4daad16b3752451286f3f44471d892e8>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/4db76bb1c9b04ed8915306cd3e86cd8e>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/4dc2f9f6907242f7aabb1b5934ccfd08>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/4f858cd74e9c4c299bf7a5270a0efc57>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/511ceceafcfb4df1972beae8f5105c25>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/51677055952444f78ce6288221556e0f>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/5d3f02643908403aa20db9d3752bf604>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/5d8355356e0f4f2e94dbb9e7759dac07>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/5e4580f5e6634977baa49f7c9fc43936>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/6118792190e6483eab12475aef68cc99>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/62a909d6f8344bc4b2a2add6182d3c2d>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/63a5fd000f3c4e86a11e7b11f1cf00f5>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/65dd516464964ce7b1e7721725608e04>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/664b987b924a42f2ae827a08f3a0b544>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/66e5845be4fd444d894c8e9af572ece5>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/6be0846b9e574afa8847d931abdef867>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/6e73e97581964439aac70a67d1e7ccb3>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/6ec5e0d9c2fc4af8b748c9d76fff68f5>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/7051181023f748bcb90c65d1409f3e12>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/729dbe1b1cd9403bbb252068ff0f2265>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/7306375453be4cffa907d4fc91fe06fa>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/738d66cfbcfb436783e662c683c8711e>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/74633ecf761d4cc6a09a118f98830c7d>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/78674a9b0fd24865a789897455437c23>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/79991ed2b36e415cb844941babe76662>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/7f90c41f812b464790265493a346fea5>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/83680ca3ad254c8a96a1f9906e7f94ba>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/8516d4b8fac6469ebbf9b7fa61f1acfa>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/857b8439886a45bf9831117ad64c2b42>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/86eb7585c2aa4caa9cdcc79b381946cd>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/88b96954ddd84649939cf07959a74b46>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/89698919c13843a09289fae0fa2c926f>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/8b2382529fd14024914133f2db473c32>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/8e2a2658235f439ea896cfc0af015276>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/8f919f3be85845ab95cabe72a81db7e8>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/91e546bbccbb46c39b5ad40b4b99329e>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/92ddf3707fd24855a1876e9cf5da2f10>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/93a48d0a537a41a7992bb8c9f8a1a699>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/948ce0d99eef481f9bb1293af53fd622>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/95f13ea32f39469da2d414d6d14b10a9>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/979133fe3fca43bbb5bcfdf1fc86bf60>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/993211d9a56f434b81ebce2a4835cca3>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/99a0bdad80654c9da55fbcb3458a011d>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/9a66ca884d1b471bbba56e377ad042ea>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/9bbca0aa6f4f453989e26e0cc524f1e0>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/9c5dd2aaed1c40e3a764a1e8142734eb>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/9cb93c4934e54a2cb37ed3e7785d36bf>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/9f1d9a89abbf4a04bb4907106d5c73dc>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/a0bbf6f0ffeb483c98a95e0abfe15a0a>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/a14d5301d5d3462dbaa506eb865f15d0>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/a25807115ac841d688161f206ce9ec1a>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/a40d2ce163374e20894fd4f5a9533526>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/a479e8a45e844c488fca439f1a6cde68>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/a6d99c80ccc64b6186527cd0b20441c9>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/a8995024dbc44405a494b16255c36efb>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/a9184c0c91794a97b6fd075d15ad8eb5>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/ad53be4df66c48e1b82c2f80ecb34dda>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/af1b7ca2eeb64fc1b91c269e5b6e793f>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/afe1a318debd40fba75cc4335ec42d5d>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/afe9fa70034141b4b495fea8677b3a13>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/b2c7288c9c76485facb59d73c0463b5d>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/b3b5d14068c64f3dbaf183027203b5a0>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/b459fcea6d6249408a1ba216aa5baad5>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/b88d4e08221a4364af2b0c3b24b3133e>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/bb2ae59791934e598981279714eb0c97>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/be207ddba8f24ebd9fdf54364b9923ed>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/c03f3763931249159032947fa916b5d1>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/c0af382e940d49aea4ee825dbb80444d>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/c185bf1a696b43819a41d1412480786d>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/c1e3711744a147248f5ee4a4d1d01721>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/c3c871d54d5a4d4485356eb1d2276a08>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/c7ca8d01036048fdafadebc8fdedda19>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/c8f9ce34dea34b5e8cd2a6b75f1e478f>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/ccf63e54c5b04829bbaaf2a71325b7f9>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/ce2018bbf49a404e8a76f04f2b41f4ca>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/cecb9b6cf67c47ad9fb8e755afbe0b41>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/cefd029b71ba46ad89e093843e9f873e>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/d1a683a98f414b289700b893707deae2>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/d5e5595839cd4888badcfd9f6f0b5a9b>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/d641a95c19c7459d9624444130fc7b2a>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/d77fefe5deea491d8fec72bb80900d27>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/d9f272332cc3478cbbc83ec5579e9700>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/dc65eb14cc7d421283fcf5d76d6d9dab>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/dd5a3aba17b441eb88ff3bd3eca3fe6e>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/ddd637e54e0943d6a650309c61bd300b>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/de0e15434af142be99ffcf0c355b603d>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/deb6328538224c07bda324127b6d1955>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/e416be5cde8340289dca309a7694ab41>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/e56507763a9c41bd9f00ef3aca4037c8>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/e6a538281560464abd4885438976b5ba>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/e6b50987535549428fea9741983c75e3>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/e6f87c24c5414a37900d85db22f5c5c4>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/e9eb583bb0cf4b0e8947ba456882663a>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/ea44b322b4d44f389c9e3b2075f323a4>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/ed06a516fab442909a7d6e1cf0421669>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/efeb1a8aa36646a0b21b5e7ae9c41353>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/f00c9a79ce2e472d8a709a160a252184>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/f1313ca618f74ab7860d0309a42c47b2>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/f143e0625f2949e7be5234e068440a28>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/f266c6c46d2f41aba9b981b699934f77>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/f47f6eb577014dee9f6e7b61d51ac23c>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/f649fc73de2d48878536c5045b7b8f08>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/f85adb2637744db79983d76400af1f86>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/f936568e18724baa95604ceddee787cb>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/fa4eba553b8b40cebc14601d392935bc>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/fc3d5be6efc1465ba583496512acac3c>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/fc45c6449e2547a6b094989f8fe3e770>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/ff1c5ba55900409689571676e668199d>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/ff30bfc084744b1da133ab2c9c68aeb1>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<https://cn.dataone.org/cn/v1/resolve/FJPan.4.17>
-    dcterms:creator <urn:uuid:011da526-3a3b-4029-93f2-2f75013919fa>, <urn:uuid:27a5270e-bd7f-496d-9e1f-1f9b64a0346f>, <urn:uuid:300374af-d77a-4802-bb80-37c73401b600>, <urn:uuid:4db76bb1-c9b0-4ed8-9153-06cd3e86cd8e>, <urn:uuid:99a0bdad-8065-4c9d-a55f-bcb3458a011d> ;
-    dcterms:identifier "FJPan.4.17" ;
-    dcterms:title "The Long-term Dynamics Research of Kenting Uplifted Coralreef Reserve Broad-leaved Forest(1/3)" ;
-    a gldata:DigitalObjectRecord .
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5h99569/2/cadwsap-s3910012-089.xml>
+    dcterms:creator <urn:uuid:d49d3ad6-ffb7-4807-a8e9-45d614f505e2> ;
+    dcterms:identifier "ark:/13030/m5h99569/2/cadwsap-s3910012-089.xml" ;
+    dcterms:title "DWSAP Assessment for 3910012-089:  CITY OF STOCKTON / WELL SSS8" ;
+    a ecglview:Dataset .
 
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m54b301n/2/cadwsap-s5500057-003.xml>
-    dcterms:creator <urn:uuid:2d69a59d-84bd-4061-823e-8d6f73ff102a> ;
-    dcterms:identifier "ark:/13030/m54b301n/2/cadwsap-s5500057-003.xml" ;
-    dcterms:title "DWSAP Assessment for 5500057-003:  LONG BARN PROPERTY OWNERS / WELL#3" ;
-    a gldata:DigitalObjectRecord .
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5h995sx/2/cadwsap-s3610052-038.xml>
+    dcterms:creator <urn:uuid:04d3fd7b-8689-4a3f-b671-b59f893ac018> ;
+    dcterms:identifier "ark:/13030/m5h995sx/2/cadwsap-s3610052-038.xml" ;
+    dcterms:title "DWSAP Assessment for 3610052-038:  VICTOR VALLEY WATER DISTRICT / WELL 141" ;
+    a ecglview:Dataset .
 
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m54f1pg1/2/cadwsap-s2110503-005.xml>
-    dcterms:creator <urn:uuid:efeb1a8a-a366-46a0-b21b-5e7ae9c41353> ;
-    dcterms:identifier "ark:/13030/m54f1pg1/2/cadwsap-s2110503-005.xml" ;
-    dcterms:title "DWSAP Assessment for 2110503-005:  NPS PRNS - CAMPGROUNDS / GLEN CAMP WELL" ;
-    a gldata:DigitalObjectRecord .
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7tg1/2/cadwsap-s5200547-001.xml>
+    dcterms:creator <urn:uuid:366ed812-aa00-4ba9-ba37-eb1c41a05f5b> ;
+    dcterms:identifier "ark:/13030/m5hd7tg1/2/cadwsap-s5200547-001.xml" ;
+    dcterms:title "DWSAP Assessment for 5200547-001:  GATEWAY MOBILE HOME PARK / WELL 01" ;
+    a ecglview:Dataset .
 
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m55t3j8j/2/cadwsap-s0410004-001.xml>
-    dcterms:creator <urn:uuid:a40d2ce1-6337-4e20-894f-d4f5a9533526> ;
-    dcterms:identifier "ark:/13030/m55t3j8j/2/cadwsap-s0410004-001.xml" ;
-    dcterms:title "DWSAP Assessment for 0410004-001:  CITY OF GRIDLEY / FAIRVIEW DRIVE WELL - STANDBY" ;
-    a gldata:DigitalObjectRecord .
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7tg1/3/cadwsap-s5200547-001.xml>
+    dcterms:creator <urn:uuid:366ed812-aa00-4ba9-ba37-eb1c41a05f5b> ;
+    dcterms:identifier "ark:/13030/m5hd7tg1/3/cadwsap-s5200547-001.xml" ;
+    dcterms:title "DWSAP Assessment for 5200547-001:  GATEWAY MOBILE HOME PARK / WELL 01" ;
+    a ecglview:Dataset .
 
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m57m07gx/2/cadwsap-s3010092-028.xml>
-    dcterms:creator <urn:uuid:2ab116f0-0e46-470c-ae3e-413b5b889d8b> ;
-    dcterms:identifier "ark:/13030/m57m07gx/2/cadwsap-s3010092-028.xml" ;
-    dcterms:title "DWSAP Assessment for 3010092-028:  IRVINE RANCH WATER DISTRICT / LAWD WELL 03" ;
-    a gldata:DigitalObjectRecord .
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7thg/2/cadwsap-s5000487-001.xml>
+    dcterms:creator <urn:uuid:0f6b0de4-e9e7-471b-a387-507bb769d527> ;
+    dcterms:identifier "ark:/13030/m5hd7thg/2/cadwsap-s5000487-001.xml" ;
+    dcterms:title "DWSAP Assessment for 5000487-001:  J & J FARM FRESH PRODUCE & BAKERY / LPA REPORTED PRIMARY SOURCE" ;
+    a ecglview:Dataset .
 
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5902322/2/cadwsap-s2000551-001.xml>
-    dcterms:creator <urn:uuid:2f2a4f41-5c71-4b5a-8074-febdebc42457> ;
-    dcterms:identifier "ark:/13030/m5902322/2/cadwsap-s2000551-001.xml" ;
-    dcterms:title "DWSAP Assessment for 2000551-001:  MD#07 MARINA VIEW HEIGHTS / SOURCE WELL 1 UPPER/ WISHING WELL" ;
-    a gldata:DigitalObjectRecord .
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7thg/3/cadwsap-s5000487-001.xml>
+    dcterms:creator <urn:uuid:0f6b0de4-e9e7-471b-a387-507bb769d527> ;
+    dcterms:identifier "ark:/13030/m5hd7thg/3/cadwsap-s5000487-001.xml" ;
+    dcterms:title "DWSAP Assessment for 5000487-001:  J & J FARM FRESH PRODUCE & BAKERY / LPA REPORTED PRIMARY SOURCE" ;
+    a ecglview:Dataset .
 
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5959hmk/2/cadwsap-s1000318-002.xml>
-    dcterms:creator <urn:uuid:dd5a3aba-17b4-41eb-88ff-3bd3eca3fe6e> ;
-    dcterms:identifier "ark:/13030/m5959hmk/2/cadwsap-s1000318-002.xml" ;
-    dcterms:title "DWSAP Assessment for 1000318-002:  BENSON'S LAKESIDE RESORT / WELL 02" ;
-    a gldata:DigitalObjectRecord .
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7tjx/2/cadwsap-s3910001-009.xml>
+    dcterms:creator <urn:uuid:24896ae6-8126-46f4-9301-84706c3db433> ;
+    dcterms:identifier "ark:/13030/m5hd7tjx/2/cadwsap-s3910001-009.xml" ;
+    dcterms:title "DWSAP Assessment for 3910001-009:  CALIFORNIA WATER SERVICE - STOCKTON / WELL 09-01 - INACTIVE" ;
+    a ecglview:Dataset .
 
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5959j55/2/cadwsap-s3710012-020.xml>
-    dcterms:creator <urn:uuid:4a852ab1-40cf-4df5-87e5-de2d52d4623e> ;
-    dcterms:identifier "ark:/13030/m5959j55/2/cadwsap-s3710012-020.xml" ;
-    dcterms:title "DWSAP Assessment for 3710012-020:  RANCHO PAUMA MUTUAL WC / WELL V/O" ;
-    a gldata:DigitalObjectRecord .
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7tjx/3/cadwsap-s3910001-009.xml>
+    dcterms:creator <urn:uuid:24896ae6-8126-46f4-9301-84706c3db433> ;
+    dcterms:identifier "ark:/13030/m5hd7tjx/3/cadwsap-s3910001-009.xml" ;
+    dcterms:title "DWSAP Assessment for 3910001-009:  CALIFORNIA WATER SERVICE - STOCKTON / WELL 09-01 - INACTIVE" ;
+    a ecglview:Dataset .
 
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5bc3z00/2/cadwsap-s2000536-001.xml>
-    dcterms:creator <urn:uuid:2f2a4f41-5c71-4b5a-8074-febdebc42457> ;
-    dcterms:identifier "ark:/13030/m5bc3z00/2/cadwsap-s2000536-001.xml" ;
-    dcterms:title "DWSAP Assessment for 2000536-001:  HIGH SIERRA MEADOW MUTUAL WTR / SOURCE NORTH WELL" ;
-    a gldata:DigitalObjectRecord .
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7tkc/2/cadwsap-s0500045-001.xml>
+    dcterms:creator <urn:uuid:fba246d8-7ea9-45e3-9479-4eaec5fbee47> ;
+    dcterms:identifier "ark:/13030/m5hd7tkc/2/cadwsap-s0500045-001.xml" ;
+    dcterms:title "DWSAP Assessment for 0500045-001:  MERCED OUTBOARD CLUB / SOURCE 01 - SPRING" ;
+    a ecglview:Dataset .
 
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5c24vmd/2/cadwsap-s4810008-002.xml>
-    dcterms:creator <urn:uuid:62a909d6-f834-4bc4-b2a2-add6182d3c2d> ;
-    dcterms:identifier "ark:/13030/m5c24vmd/2/cadwsap-s4810008-002.xml" ;
-    dcterms:title "DWSAP Assessment for 4810008-002:  CITY OF VACAVILLE / WELL 01" ;
-    a gldata:DigitalObjectRecord .
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7tkc/3/cadwsap-s0500045-001.xml>
+    dcterms:creator <urn:uuid:fba246d8-7ea9-45e3-9479-4eaec5fbee47> ;
+    dcterms:identifier "ark:/13030/m5hd7tkc/3/cadwsap-s0500045-001.xml" ;
+    dcterms:title "DWSAP Assessment for 0500045-001:  MERCED OUTBOARD CLUB / SOURCE 01 - SPRING" ;
+    a ecglview:Dataset .
 
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5cn7307/2/cadwsap-s4010301-001.xml>
-    dcterms:creator <urn:uuid:e5650776-3a9c-41bd-9f00-ef3aca4037c8> ;
-    dcterms:identifier "ark:/13030/m5cn7307/2/cadwsap-s4010301-001.xml" ;
-    dcterms:title "DWSAP Assessment for 4010301-001:  HEARST MEMORIAL STATE BEACH / WELL 01" ;
-    a gldata:DigitalObjectRecord .
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7tmt/2/cadwsap-s1910024-002.xml>
+    dcterms:creator <urn:uuid:1c52eb11-b456-4b49-b8e8-f1ce815416c6> ;
+    dcterms:identifier "ark:/13030/m5hd7tmt/2/cadwsap-s1910024-002.xml" ;
+    dcterms:title "DWSAP Assessment for 1910024-002:  GSWC - CLAREMONT / BERKELEY WELL 01" ;
+    a ecglview:Dataset .
 
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5h9946w/2/cadwsap-s5000091-001.xml>
-    dcterms:creator <urn:uuid:de0e1543-4af1-42be-99ff-cf0c355b603d> ;
-    dcterms:identifier "ark:/13030/m5h9946w/2/cadwsap-s5000091-001.xml" ;
-    dcterms:title "DWSAP Assessment for 5000091-001:  OAKDALE GOLF & COUNTRY CLUB (EH) / SOUTH WELL" ;
-    a gldata:DigitalObjectRecord .
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7tmt/3/cadwsap-s1910024-002.xml>
+    dcterms:creator <urn:uuid:1c52eb11-b456-4b49-b8e8-f1ce815416c6> ;
+    dcterms:identifier "ark:/13030/m5hd7tmt/3/cadwsap-s1910024-002.xml" ;
+    dcterms:title "DWSAP Assessment for 1910024-002:  GSWC - CLAREMONT / BERKELEY WELL 01" ;
+    a ecglview:Dataset .
 
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5k64jbb/2/cadwsap-s1010035-006.xml>
-    dcterms:creator <urn:uuid:320c3d2c-ea77-4504-ae18-0fc635bb3180> ;
-    dcterms:identifier "ark:/13030/m5k64jbb/2/cadwsap-s1010035-006.xml" ;
-    dcterms:title "DWSAP Assessment for 1010035-006:  DEL REY COMMUNITY SERV DIST / WELL 06" ;
-    a gldata:DigitalObjectRecord .
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7tn8/2/cadwsap-s3610086-005.xml>
+    dcterms:creator <urn:uuid:04d3fd7b-8689-4a3f-b671-b59f893ac018> ;
+    dcterms:identifier "ark:/13030/m5hd7tn8/2/cadwsap-s3610086-005.xml" ;
+    dcterms:title "DWSAP Assessment for 3610086-005:  WEST END CONSOLIDATED WATER COMPANY / WEST END WELL 03" ;
+    a ecglview:Dataset .
 
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5ks6rv5/2/cadwsap-s3200036-001.xml>
-    dcterms:creator <urn:uuid:948ce0d9-9eef-481f-9bb1-293af53fd622> ;
-    dcterms:identifier "ark:/13030/m5ks6rv5/2/cadwsap-s3200036-001.xml" ;
-    dcterms:title "DWSAP Assessment for 3200036-001:  PNF FRENCHMAN & SPRING CREEK CG / WELL 01" ;
-    a gldata:DigitalObjectRecord .
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7tn8/3/cadwsap-s3610086-005.xml>
+    dcterms:creator <urn:uuid:04d3fd7b-8689-4a3f-b671-b59f893ac018> ;
+    dcterms:identifier "ark:/13030/m5hd7tn8/3/cadwsap-s3610086-005.xml" ;
+    dcterms:title "DWSAP Assessment for 3610086-005:  WEST END CONSOLIDATED WATER COMPANY / WEST END WELL 03" ;
+    a ecglview:Dataset .
 
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5m61j75/2/cadwsap-s3610044-010.xml>
-    dcterms:creator <urn:uuid:f649fc73-de2d-4887-8536-c5045b7b8f08> ;
-    dcterms:identifier "ark:/13030/m5m61j75/2/cadwsap-s3610044-010.xml" ;
-    dcterms:title "DWSAP Assessment for 3610044-010:  DWP - BIG BEAR LAKE/MOONRIDGE / LAKE PLANT WELL 01" ;
-    a gldata:DigitalObjectRecord .
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7tpq/2/cadwsap-s1510017-034.xml>
+    dcterms:creator <urn:uuid:1d171c35-997f-4747-8410-ab541653f48a> ;
+    dcterms:identifier "ark:/13030/m5hd7tpq/2/cadwsap-s1510017-034.xml" ;
+    dcterms:title "DWSAP Assessment for 1510017-034:  INDIAN WELLS VALLEY W.D. / WELL 31" ;
+    a ecglview:Dataset .
 
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5n58kx5/2/cadwsap-s0710300-013.xml>
-    dcterms:creator <urn:uuid:efeb1a8a-a366-46a0-b21b-5e7ae9c41353> ;
-    dcterms:identifier "ark:/13030/m5n58kx5/2/cadwsap-s0710300-013.xml" ;
-    dcterms:title "DWSAP Assessment for 0710300-013:  MOUNT DIABLO STATE PARK / SPRING 10" ;
-    a gldata:DigitalObjectRecord .
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7tpq/3/cadwsap-s1510017-034.xml>
+    dcterms:creator <urn:uuid:1d171c35-997f-4747-8410-ab541653f48a> ;
+    dcterms:identifier "ark:/13030/m5hd7tpq/3/cadwsap-s1510017-034.xml" ;
+    dcterms:title "DWSAP Assessment for 1510017-034:  INDIAN WELLS VALLEY W.D. / WELL 31" ;
+    a ecglview:Dataset .
 
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5rj4jkg/2/cadwsap-s2400216-001.xml>
-    dcterms:creator <urn:uuid:6be0846b-9e57-4afa-8847-d931abdef867> ;
-    dcterms:identifier "ark:/13030/m5rj4jkg/2/cadwsap-s2400216-001.xml" ;
-    dcterms:title "DWSAP Assessment for 2400216-001:  CAL TRANS CHOWCHILLA RIVER FACILITY / WELL #1 - S END OF FACILITY" ;
-    a gldata:DigitalObjectRecord .
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7tq5/2/cadwsap-s4500082-002.xml>
+    dcterms:creator <urn:uuid:dcd99d77-28b3-4617-be76-85c34c3e6188> ;
+    dcterms:identifier "ark:/13030/m5hd7tq5/2/cadwsap-s4500082-002.xml" ;
+    dcterms:title "DWSAP Assessment for 4500082-002:  MIDWAY MOBILEHOME PARK / WELL 02 -  DESTROYED" ;
+    a ecglview:Dataset .
 
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5t43sg4/2/cadwsap-s3710700-023.xml>
-    dcterms:creator <urn:uuid:d1a683a9-8f41-4b28-9700-b893707deae2> ;
-    dcterms:identifier "ark:/13030/m5t43sg4/2/cadwsap-s3710700-023.xml" ;
-    dcterms:title "DWSAP Assessment for 3710700-023:  CAMP PENDLETON (NORTH) / WELL 61511" ;
-    a gldata:DigitalObjectRecord .
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7tq5/3/cadwsap-s4500082-002.xml>
+    dcterms:creator <urn:uuid:dcd99d77-28b3-4617-be76-85c34c3e6188> ;
+    dcterms:identifier "ark:/13030/m5hd7tq5/3/cadwsap-s4500082-002.xml" ;
+    dcterms:title "DWSAP Assessment for 4500082-002:  MIDWAY MOBILEHOME PARK / WELL 02 -  DESTROYED" ;
+    a ecglview:Dataset .
 
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5x63mxh/2/cadwsap-s1910067-137.xml>
-    dcterms:creator <urn:uuid:120f6df5-31ff-43bb-8627-a7eb9c91095d> ;
-    dcterms:identifier "ark:/13030/m5x63mxh/2/cadwsap-s1910067-137.xml" ;
-    dcterms:title "DWSAP Assessment for 1910067-137:  LOS ANGELES-CITY, DEPT. OF WATER & POWER / VERDUGO WELL 01" ;
-    a gldata:DigitalObjectRecord .
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7trm/2/cadwsap-s4900897-004.xml>
+    dcterms:creator <urn:uuid:225d3b9c-18af-4976-9f83-1a4de79911ad> ;
+    dcterms:identifier "ark:/13030/m5hd7trm/2/cadwsap-s4900897-004.xml" ;
+    dcterms:title "DWSAP Assessment for 4900897-004:  RODNEY STRONG VINEYARDS / WELL 04" ;
+    a ecglview:Dataset .
 
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5z60ppc/2/cadwsap-s1910243-001.xml>
-    dcterms:creator <urn:uuid:e6b50987-5355-4942-8fea-9741983c75e3> ;
-    dcterms:identifier "ark:/13030/m5z60ppc/2/cadwsap-s1910243-001.xml" ;
-    dcterms:title "DWSAP Assessment for 1910243-001:  CALIFORNIAFWATER SERVICE CO-LEONA VALLEY / WELL 01-07 (FORMERLY WELL 01)" ;
-    a gldata:DigitalObjectRecord .
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7trm/3/cadwsap-s4900897-004.xml>
+    dcterms:creator <urn:uuid:225d3b9c-18af-4976-9f83-1a4de79911ad> ;
+    dcterms:identifier "ark:/13030/m5hd7trm/3/cadwsap-s4900897-004.xml" ;
+    dcterms:title "DWSAP Assessment for 4900897-004:  RODNEY STRONG VINEYARDS / WELL 04" ;
+    a ecglview:Dataset .
 
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5zp452f/2/cadwsap-s5210001-001.xml>
-    dcterms:creator <urn:uuid:a40d2ce1-6337-4e20-894f-d4f5a9533526> ;
-    dcterms:identifier "ark:/13030/m5zp452f/2/cadwsap-s5210001-001.xml" ;
-    dcterms:title "DWSAP Assessment for 5210001-001:  CITY OF CORNING / 6TH ST. WELL" ;
-    a gldata:DigitalObjectRecord .
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7ts2/2/cadwsap-s3610300-001.xml>
+    dcterms:creator <urn:uuid:04d3fd7b-8689-4a3f-b671-b59f893ac018> ;
+    dcterms:identifier "ark:/13030/m5hd7ts2/2/cadwsap-s3610300-001.xml" ;
+    dcterms:title "DWSAP Assessment for 3610300-001:  PROVIDENCE MTNS SRA / COOKS WELL" ;
+    a ecglview:Dataset .
 
-<https://cn.dataone.org/cn/v1/resolve/cchsin.6.2>
-    dcterms:creator <urn:uuid:0c4347bd-48aa-4753-b759-e4f022a9b332>, <urn:uuid:7f90c41f-812b-4647-9026-5493a346fea5>, <urn:uuid:e416be5c-de83-4028-9dca-309a7694ab41>, <urn:uuid:fc45c644-9e25-47a6-b094-989f8fe3e770> ;
-    dcterms:identifier "cchsin.6.2" ;
-    dcterms:title "台灣二葉松地上部生物量及碳貯存之估算" ;
-    a gldata:DigitalObjectRecord .
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7ts2/3/cadwsap-s3610300-001.xml>
+    dcterms:creator <urn:uuid:04d3fd7b-8689-4a3f-b671-b59f893ac018> ;
+    dcterms:identifier "ark:/13030/m5hd7ts2/3/cadwsap-s3610300-001.xml" ;
+    dcterms:title "DWSAP Assessment for 3610300-001:  PROVIDENCE MTNS SRA / COOKS WELL" ;
+    a ecglview:Dataset .
 
-<https://cn.dataone.org/cn/v1/resolve/chenlung.117.3>
-    dcterms:creator <urn:uuid:10943ec2-a009-4ac5-8e5e-80b324a5375b> ;
-    dcterms:identifier "chenlung.117.3" ;
-    dcterms:title "Composition and bioactivities of the leaf essential oils of Cinnamomum subavenium Miq. from Taiwan" ;
-    a gldata:DigitalObjectRecord .
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7tth/2/cadwsap-s4010027-001.xml>
+    dcterms:creator <urn:uuid:1bce15c1-3b8d-46a0-a450-2448567ab837> ;
+    dcterms:identifier "ark:/13030/m5hd7tth/2/cadwsap-s4010027-001.xml" ;
+    dcterms:title "DWSAP Assessment for 4010027-001:  NACIMIENTO WATER COMPANY / WELL 01 - STANDBY" ;
+    a ecglview:Dataset .
 
-<https://cn.dataone.org/cn/v1/resolve/chiou1.4.1>
-    dcterms:creator <urn:uuid:4c9a01e5-ed94-40f9-a507-f5c130ab18df>, <urn:uuid:4f858cd7-4e9c-4c29-9bf7-a5270a0efc57>, <urn:uuid:af1b7ca2-eeb6-4fc1-b91c-269e5b6e793f>, <urn:uuid:afe1a318-debd-40fb-a75c-c4335ec42d5d> ;
-    dcterms:identifier "chiou1.4.1" ;
-    dcterms:title "Supplements to the Pteridophytes in Taiwan (II): A Newly Recorded Species Diplazium crassiusculum Ching (Athyriaceae)" ;
-    a gldata:DigitalObjectRecord .
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7tth/3/cadwsap-s4010027-001.xml>
+    dcterms:creator <urn:uuid:1bce15c1-3b8d-46a0-a450-2448567ab837> ;
+    dcterms:identifier "ark:/13030/m5hd7tth/3/cadwsap-s4010027-001.xml" ;
+    dcterms:title "DWSAP Assessment for 4010027-001:  NACIMIENTO WATER COMPANY / WELL 01 - STANDBY" ;
+    a ecglview:Dataset .
 
-<https://cn.dataone.org/cn/v1/resolve/doi:10.6085/AA/ALEXXX_015ADCP015R00_20050614.50.5>
-    dcterms:creator <urn:uuid:1f6bf111-a9b8-4aa8-ab1a-38e16c99e25a>, <urn:uuid:5d835535-6e0f-4f2e-94db-b9e7759dac07> ;
-    dcterms:identifier "doi:10.6085/AA/ALEXXX_015ADCP015R00_20050614.50.5" ;
-    dcterms:title "PISCO: Physical Oceanography: bottom-mounted ADCP data: Gaviota State Park, California, USA (ALE)" ;
-    a gldata:DigitalObjectRecord .
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7tvz/2/cadwsap-s1900305-003.xml>
+    dcterms:creator <urn:uuid:237fd64e-9f9a-48cc-94bb-c1b9852f30e3> ;
+    dcterms:identifier "ark:/13030/m5hd7tvz/2/cadwsap-s1900305-003.xml" ;
+    dcterms:title "DWSAP Assessment for 1900305-003:  CHALLENGER MEMORIAL YOUTH CENTER / WELL 03" ;
+    a ecglview:Dataset .
 
-<https://cn.dataone.org/cn/v1/resolve/doi:10.6085/AA/ALEXXX_015MTBD009R00_20071105.50.2>
-    dcterms:creator <urn:uuid:1f6bf111-a9b8-4aa8-ab1a-38e16c99e25a>, <urn:uuid:5d835535-6e0f-4f2e-94db-b9e7759dac07> ;
-    dcterms:identifier "doi:10.6085/AA/ALEXXX_015MTBD009R00_20071105.50.2" ;
-    dcterms:title "PISCO: Physical Oceanography: moored temperature data: Gaviota State Park, California, USA (ALE)" ;
-    a gldata:DigitalObjectRecord .
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7tvz/3/cadwsap-s1900305-003.xml>
+    dcterms:creator <urn:uuid:237fd64e-9f9a-48cc-94bb-c1b9852f30e3> ;
+    dcterms:identifier "ark:/13030/m5hd7tvz/3/cadwsap-s1900305-003.xml" ;
+    dcterms:title "DWSAP Assessment for 1900305-003:  CHALLENGER MEMORIAL YOUTH CENTER / WELL 03" ;
+    a ecglview:Dataset .
 
-<https://cn.dataone.org/cn/v1/resolve/doi:10.6085/AA/ANO001_021MTBD000R00_20061130.50.2>
-    dcterms:creator <urn:uuid:42ee17c2-388c-456c-910f-669e1097e2ce>, <urn:uuid:5d835535-6e0f-4f2e-94db-b9e7759dac07>, <urn:uuid:a479e8a4-5e84-4c48-8fca-439f1a6cde68> ;
-    dcterms:identifier "doi:10.6085/AA/ANO001_021MTBD000R00_20061130.50.2" ;
-    dcterms:title "PISCO: Physical Oceanography: moored temperature data: Point Ano Nuevo, California, USA (ANO001)" ;
-    a gldata:DigitalObjectRecord .
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7twd/2/cadwsap-s1510001-009.xml>
+    dcterms:creator <urn:uuid:cc30c0b5-1398-4783-89b1-f6ce7260d2b6> ;
+    dcterms:identifier "ark:/13030/m5hd7twd/2/cadwsap-s1510001-009.xml" ;
+    dcterms:title "DWSAP Assessment for 1510001-009:  ARVIN COMMUNITY SERVICES DIST / WELL 08 - BEFORE PTA (BENZENE)" ;
+    a ecglview:Dataset .
 
-<https://cn.dataone.org/cn/v1/resolve/doi:10.6085/AA/ARGXXX_015ADCP015R00_20050226.50.5>
-    dcterms:creator <urn:uuid:1f6bf111-a9b8-4aa8-ab1a-38e16c99e25a>, <urn:uuid:5d835535-6e0f-4f2e-94db-b9e7759dac07> ;
-    dcterms:identifier "doi:10.6085/AA/ARGXXX_015ADCP015R00_20050226.50.5" ;
-    dcterms:title "PISCO: Physical Oceanography: bottom-mounted ADCP data: Point Arguello, California, USA (ARG)" ;
-    a gldata:DigitalObjectRecord .
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7twd/3/cadwsap-s1510001-009.xml>
+    dcterms:creator <urn:uuid:cc30c0b5-1398-4783-89b1-f6ce7260d2b6> ;
+    dcterms:identifier "ark:/13030/m5hd7twd/3/cadwsap-s1510001-009.xml" ;
+    dcterms:title "DWSAP Assessment for 1510001-009:  ARVIN COMMUNITY SERVICES DIST / WELL 08 - BEFORE PTA (BENZENE)" ;
+    a ecglview:Dataset .
 
-<https://cn.dataone.org/cn/v1/resolve/doi:10.6085/AA/ARGXXX_015MTBD009R00_20000221.50.6>
-    dcterms:creator <urn:uuid:1f6bf111-a9b8-4aa8-ab1a-38e16c99e25a>, <urn:uuid:5d835535-6e0f-4f2e-94db-b9e7759dac07> ;
-    dcterms:identifier "doi:10.6085/AA/ARGXXX_015MTBD009R00_20000221.50.6" ;
-    dcterms:title "PISCO: Physical Oceanography: moored temperature data: Point Arguello, California, USA (ARG)" ;
-    a gldata:DigitalObjectRecord .
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7txv/2/cadwsap-s3500833-001.xml>
+    dcterms:creator <urn:uuid:8a8c2289-1cab-41fa-bc7b-fcd6764e9c58> ;
+    dcterms:identifier "ark:/13030/m5hd7txv/2/cadwsap-s3500833-001.xml" ;
+    dcterms:title "DWSAP Assessment for 3500833-001:  SAN BENITO COUNTY HISTORICAL PARK-INAC / WELL 01 - INACTIVE" ;
+    a ecglview:Dataset .
 
-<https://cn.dataone.org/cn/v1/resolve/doi:10.6085/AA/BBYX00_XXXITBDXMMR01_20050525.50.2>
-    dcterms:creator <urn:uuid:5d835535-6e0f-4f2e-94db-b9e7759dac07>, <urn:uuid:b3b5d140-68c6-4f3d-baf1-83027203b5a0>, <urn:uuid:ddd637e5-4e09-43d6-a650-309c61bd300b> ;
-    dcterms:identifier "doi:10.6085/AA/BBYX00_XXXITBDXMMR01_20050525.50.2" ;
-    dcterms:title "PISCO: Intertidal: mussel growth temperature data: Boiler Bay, Oregon, USA (BBYX00)" ;
-    a gldata:DigitalObjectRecord .
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7txv/3/cadwsap-s3500833-001.xml>
+    dcterms:creator <urn:uuid:8a8c2289-1cab-41fa-bc7b-fcd6764e9c58> ;
+    dcterms:identifier "ark:/13030/m5hd7txv/3/cadwsap-s3500833-001.xml" ;
+    dcterms:title "DWSAP Assessment for 3500833-001:  SAN BENITO COUNTY HISTORICAL PARK-INAC / WELL 01 - INACTIVE" ;
+    a ecglview:Dataset .
 
-<https://cn.dataone.org/cn/v1/resolve/doi:10.6085/AA/BEAXXX_015MTBD014R00_20070125.50.4>
-    dcterms:creator <urn:uuid:1f6bf111-a9b8-4aa8-ab1a-38e16c99e25a>, <urn:uuid:5d835535-6e0f-4f2e-94db-b9e7759dac07>, <urn:uuid:a479e8a4-5e84-4c48-8fca-439f1a6cde68> ;
-    dcterms:identifier "doi:10.6085/AA/BEAXXX_015MTBD014R00_20070125.50.4" ;
-    dcterms:title "PISCO: Physical Oceanography: moored temperature data: Santa Rosa Island, California, USA (BEA)" ;
-    a gldata:DigitalObjectRecord .
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7tz9/2/cadwsap-s3901031-001.xml>
+    dcterms:creator <urn:uuid:a330e20f-e69d-4107-9f2e-498ed3b490fc> ;
+    dcterms:identifier "ark:/13030/m5hd7tz9/2/cadwsap-s3901031-001.xml" ;
+    dcterms:title "DWSAP Assessment for 3901031-001:  ORCHARD RESTAURANT / WELL HEAD" ;
+    a ecglview:Dataset .
 
-<https://cn.dataone.org/cn/v1/resolve/doi:10.6085/AA/CARX00_XXXITBDXLSR01_20050206.50.1>
-    dcterms:creator <urn:uuid:5d835535-6e0f-4f2e-94db-b9e7759dac07>, <urn:uuid:b3b5d140-68c6-4f3d-baf1-83027203b5a0>, <urn:uuid:ddd637e5-4e09-43d6-a650-309c61bd300b> ;
-    dcterms:identifier "doi:10.6085/AA/CARX00_XXXITBDXLSR01_20050206.50.1" ;
-    dcterms:title "PISCO: Intertidal: site temperature data: Cape Arago, Oregon, USA (CARX00)" ;
-    a gldata:DigitalObjectRecord .
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7tz9/3/cadwsap-s3901031-001.xml>
+    dcterms:creator <urn:uuid:a330e20f-e69d-4107-9f2e-498ed3b490fc> ;
+    dcterms:identifier "ark:/13030/m5hd7tz9/3/cadwsap-s3901031-001.xml" ;
+    dcterms:title "DWSAP Assessment for 3901031-001:  ORCHARD RESTAURANT / WELL HEAD" ;
+    a ecglview:Dataset .
 
-<https://cn.dataone.org/cn/v1/resolve/doi:10.6085/AA/CARX00_XXXITBDXLSR03_19990910.50.4>
-    dcterms:creator <urn:uuid:5d835535-6e0f-4f2e-94db-b9e7759dac07>, <urn:uuid:b3b5d140-68c6-4f3d-baf1-83027203b5a0>, <urn:uuid:ddd637e5-4e09-43d6-a650-309c61bd300b> ;
-    dcterms:identifier "doi:10.6085/AA/CARX00_XXXITBDXLSR03_19990910.50.4" ;
-    dcterms:title "PISCO: Intertidal: site temperature data: Cape Arago, Oregon, USA (CARX00)" ;
-    a gldata:DigitalObjectRecord .
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7v05/2/cadwsap-s3901337-002.xml>
+    dcterms:creator <urn:uuid:a330e20f-e69d-4107-9f2e-498ed3b490fc> ;
+    dcterms:identifier "ark:/13030/m5hd7v05/2/cadwsap-s3901337-002.xml" ;
+    dcterms:title "DWSAP Assessment for 3901337-002:  MORADA ESTATES N PWS #46 / WELL#2" ;
+    a ecglview:Dataset .
 
-<https://cn.dataone.org/cn/v1/resolve/doi:10.6085/AA/CBLX00_XXXITBDXLMR01_20021203.50.1>
-    dcterms:creator <urn:uuid:5d835535-6e0f-4f2e-94db-b9e7759dac07>, <urn:uuid:b3b5d140-68c6-4f3d-baf1-83027203b5a0>, <urn:uuid:ddd637e5-4e09-43d6-a650-309c61bd300b> ;
-    dcterms:identifier "doi:10.6085/AA/CBLX00_XXXITBDXLMR01_20021203.50.1" ;
-    dcterms:title "PISCO: Intertidal: mussel growth temperature data: Cape Blanco, Oregon, USA (CBLX00)" ;
-    a gldata:DigitalObjectRecord .
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7v05/3/cadwsap-s3901337-002.xml>
+    dcterms:creator <urn:uuid:a330e20f-e69d-4107-9f2e-498ed3b490fc> ;
+    dcterms:identifier "ark:/13030/m5hd7v05/3/cadwsap-s3901337-002.xml" ;
+    dcterms:title "DWSAP Assessment for 3901337-002:  MORADA ESTATES N PWS #46 / WELL#2" ;
+    a ecglview:Dataset .
 
-<https://cn.dataone.org/cn/v1/resolve/doi:10.6085/AA/CMRX00_XXXITBDXLSR03_20070719.50.3>
-    dcterms:creator <urn:uuid:5d835535-6e0f-4f2e-94db-b9e7759dac07>, <urn:uuid:b3b5d140-68c6-4f3d-baf1-83027203b5a0>, <urn:uuid:ddd637e5-4e09-43d6-a650-309c61bd300b> ;
-    dcterms:identifier "doi:10.6085/AA/CMRX00_XXXITBDXLSR03_20070719.50.3" ;
-    dcterms:title "PISCO: Intertidal: site temperature data: Cape Meares, Oregon, USA (CMRX00)" ;
-    a gldata:DigitalObjectRecord .
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7v1m/2/cadwsap-s5410016-028.xml>
+    dcterms:creator <urn:uuid:24896ae6-8126-46f4-9301-84706c3db433> ;
+    dcterms:identifier "ark:/13030/m5hd7v1m/2/cadwsap-s5410016-028.xml" ;
+    dcterms:title "DWSAP Assessment for 5410016-028:  CWS - VISALIA / WELL 24-01 - RAW" ;
+    a ecglview:Dataset .
 
-<https://cn.dataone.org/cn/v1/resolve/doi:10.6085/AA/CTNXXX_015MTBD003R00_20100324.50.1>
-    dcterms:creator <urn:uuid:1f6bf111-a9b8-4aa8-ab1a-38e16c99e25a>, <urn:uuid:5d835535-6e0f-4f2e-94db-b9e7759dac07> ;
-    dcterms:identifier "doi:10.6085/AA/CTNXXX_015MTBD003R00_20100324.50.1" ;
-    dcterms:title "PISCO: Physical Oceanography: moored temperature data: Santa Rosa Island, California, USA (CTNXXX)" ;
-    a gldata:DigitalObjectRecord .
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7v1m/3/cadwsap-s5410016-028.xml>
+    dcterms:creator <urn:uuid:24896ae6-8126-46f4-9301-84706c3db433> ;
+    dcterms:identifier "ark:/13030/m5hd7v1m/3/cadwsap-s5410016-028.xml" ;
+    dcterms:title "DWSAP Assessment for 5410016-028:  CWS - VISALIA / WELL 24-01 - RAW" ;
+    a ecglview:Dataset .
 
-<https://cn.dataone.org/cn/v1/resolve/doi:10.6085/AA/ESA001_025MTBD015R00_20061005.50.4>
-    dcterms:creator <urn:uuid:42ee17c2-388c-456c-910f-669e1097e2ce>, <urn:uuid:5d835535-6e0f-4f2e-94db-b9e7759dac07>, <urn:uuid:a479e8a4-5e84-4c48-8fca-439f1a6cde68> ;
-    dcterms:identifier "doi:10.6085/AA/ESA001_025MTBD015R00_20061005.50.4" ;
-    dcterms:title "PISCO: Physical Oceanography: moored temperature data: Esalen, California, USA (ESA001)" ;
-    a gldata:DigitalObjectRecord .
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7v22/2/cadwsap-s0400013-002.xml>
+    dcterms:creator <urn:uuid:5deba025-0d63-42db-8226-c3b71d5424d7> ;
+    dcterms:identifier "ark:/13030/m5hd7v22/2/cadwsap-s0400013-002.xml" ;
+    dcterms:title "DWSAP Assessment for 0400013-002:  MERRY MOUNTAIN MUTUAL / WELL #2 (BY REDWOOD TANK)" ;
+    a ecglview:Dataset .
 
-<https://cn.dataone.org/cn/v1/resolve/doi:10.6085/AA/FCKX00_XXXITV2XHSR01_20100226.50.1>
-    dcterms:creator <urn:uuid:5d835535-6e0f-4f2e-94db-b9e7759dac07>, <urn:uuid:b3b5d140-68c6-4f3d-baf1-83027203b5a0>, <urn:uuid:ddd637e5-4e09-43d6-a650-309c61bd300b> ;
-    dcterms:identifier "doi:10.6085/AA/FCKX00_XXXITV2XHSR01_20100226.50.1" ;
-    dcterms:title "PISCO: Intertidal: site temperature data: Fogarty Creek, Oregon, USA (FCKX00)" ;
-    a gldata:DigitalObjectRecord .
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7v22/3/cadwsap-s0400013-002.xml>
+    dcterms:creator <urn:uuid:5deba025-0d63-42db-8226-c3b71d5424d7> ;
+    dcterms:identifier "ark:/13030/m5hd7v22/3/cadwsap-s0400013-002.xml" ;
+    dcterms:title "DWSAP Assessment for 0400013-002:  MERRY MOUNTAIN MUTUAL / WELL #2 (BY REDWOOD TANK)" ;
+    a ecglview:Dataset .
 
-<https://cn.dataone.org/cn/v1/resolve/doi:10.6085/AA/HMS001_020ADCP019R00_20010313.50.3>
-    dcterms:creator <urn:uuid:42ee17c2-388c-456c-910f-669e1097e2ce>, <urn:uuid:5d835535-6e0f-4f2e-94db-b9e7759dac07> ;
-    dcterms:identifier "doi:10.6085/AA/HMS001_020ADCP019R00_20010313.50.3" ;
-    dcterms:title "PISCO: Physical Oceanography: bottom-mounted ADCP data: Hopkins Marine Station, California, USA (HMS001)" ;
-    a gldata:DigitalObjectRecord .
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7v3h/2/cadwsap-s4000215-001.xml>
+    dcterms:creator <urn:uuid:1c02e82b-3f66-42d1-8e70-cc6af471b5f6> ;
+    dcterms:identifier "ark:/13030/m5hd7v3h/2/cadwsap-s4000215-001.xml" ;
+    dcterms:title "DWSAP Assessment for 4000215-001:  WILLIAMS WATER CO / WELL 01" ;
+    a ecglview:Dataset .
 
-<https://cn.dataone.org/cn/v1/resolve/doi:10.6085/AA/ICMDXX_XXXITBPXMSR00_20060101.50.1>
-    dcterms:creator <urn:uuid:24fe0cf7-0efb-4d59-b3f1-e540a180efc4>, <urn:uuid:5d835535-6e0f-4f2e-94db-b9e7759dac07>, <urn:uuid:70511810-23f7-48bc-b90c-65d1409f3e12> ;
-    dcterms:identifier "doi:10.6085/AA/ICMDXX_XXXITBPXMSR00_20060101.50.1" ;
-    dcterms:title "PISCO: Intertidal: site temperature data: Cape_Mendocino (ICMDXX)" ;
-    a gldata:DigitalObjectRecord .
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7v3h/3/cadwsap-s4000215-001.xml>
+    dcterms:creator <urn:uuid:1c02e82b-3f66-42d1-8e70-cc6af471b5f6> ;
+    dcterms:identifier "ark:/13030/m5hd7v3h/3/cadwsap-s4000215-001.xml" ;
+    dcterms:title "DWSAP Assessment for 4000215-001:  WILLIAMS WATER CO / WELL 01" ;
+    a ecglview:Dataset .
 
-<https://cn.dataone.org/cn/v1/resolve/doi:10.6085/AA/JALXXX_015MTBD003R00_20030304.50.2>
-    dcterms:creator <urn:uuid:1f6bf111-a9b8-4aa8-ab1a-38e16c99e25a>, <urn:uuid:5d835535-6e0f-4f2e-94db-b9e7759dac07> ;
-    dcterms:identifier "doi:10.6085/AA/JALXXX_015MTBD003R00_20030304.50.2" ;
-    dcterms:title "PISCO: Physical Oceanography: moored temperature data: Jalama Beach Campground, California, USA (JAL)" ;
-    a gldata:DigitalObjectRecord .
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7v4z/2/cadwsap-s3600065-004.xml>
+    dcterms:creator <urn:uuid:43c81e2f-9a58-4c92-8f59-434a83379a05> ;
+    dcterms:identifier "ark:/13030/m5hd7v4z/2/cadwsap-s3600065-004.xml" ;
+    dcterms:title "DWSAP Assessment for 3600065-004:  ARROWHEAD SPRINGS/CAMPUS CRUSADE / FOOTBALL WELL" ;
+    a ecglview:Dataset .
 
-<https://cn.dataone.org/cn/v1/resolve/doi:10.6085/AA/JALXXX_015MTBD009R00_20020303.50.4>
-    dcterms:creator <urn:uuid:1f6bf111-a9b8-4aa8-ab1a-38e16c99e25a>, <urn:uuid:5d835535-6e0f-4f2e-94db-b9e7759dac07> ;
-    dcterms:identifier "doi:10.6085/AA/JALXXX_015MTBD009R00_20020303.50.4" ;
-    dcterms:title "PISCO: Physical Oceanography: moored temperature data: Jalama Beach Campground, California, USA (JAL)" ;
-    a gldata:DigitalObjectRecord .
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7v4z/3/cadwsap-s3600065-004.xml>
+    dcterms:creator <urn:uuid:43c81e2f-9a58-4c92-8f59-434a83379a05> ;
+    dcterms:identifier "ark:/13030/m5hd7v4z/3/cadwsap-s3600065-004.xml" ;
+    dcterms:title "DWSAP Assessment for 3600065-004:  ARROWHEAD SPRINGS/CAMPUS CRUSADE / FOOTBALL WELL" ;
+    a ecglview:Dataset .
 
-<https://cn.dataone.org/cn/v1/resolve/doi:10.6085/AA/KL027X_027MTBD012R00_20060531.50.4>
-    dcterms:creator <urn:uuid:18610579-b907-42fc-9b3a-8262ad6f9647>, <urn:uuid:a479e8a4-5e84-4c48-8fca-439f1a6cde68>, <urn:uuid:f47f6eb5-7701-4dee-9f6e-7b61d51ac23c> ;
-    dcterms:identifier "doi:10.6085/AA/KL027X_027MTBD012R00_20060531.50.4" ;
-    dcterms:title "OCNMS: Physical Oceanography: moored temperature data: Kalaloch, Washington, USA (KL027)" ;
-    a gldata:DigitalObjectRecord .
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7v5d/2/cadwsap-s4200866-001.xml>
+    dcterms:creator <urn:uuid:ffc6790a-48e0-4e0f-be28-1860e3a59bd6> ;
+    dcterms:identifier "ark:/13030/m5hd7v5d/2/cadwsap-s4200866-001.xml" ;
+    dcterms:title "DWSAP Assessment for 4200866-001:  FIRESTONE VINEYARD / WELL # 1" ;
+    a ecglview:Dataset .
 
-<https://cn.dataone.org/cn/v1/resolve/doi:10.6085/AA/KL027X_027MTBD026R00_20060927.50.2>
-    dcterms:creator <urn:uuid:18610579-b907-42fc-9b3a-8262ad6f9647>, <urn:uuid:a479e8a4-5e84-4c48-8fca-439f1a6cde68>, <urn:uuid:f47f6eb5-7701-4dee-9f6e-7b61d51ac23c> ;
-    dcterms:identifier "doi:10.6085/AA/KL027X_027MTBD026R00_20060927.50.2" ;
-    dcterms:title "OCNMS: Physical Oceanography: moored temperature data: Kalaloch, Washington, USA (KL027)" ;
-    a gldata:DigitalObjectRecord .
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7v5d/3/cadwsap-s4200866-001.xml>
+    dcterms:creator <urn:uuid:ffc6790a-48e0-4e0f-be28-1860e3a59bd6> ;
+    dcterms:identifier "ark:/13030/m5hd7v5d/3/cadwsap-s4200866-001.xml" ;
+    dcterms:title "DWSAP Assessment for 4200866-001:  FIRESTONE VINEYARD / WELL # 1" ;
+    a ecglview:Dataset .
 
-<https://cn.dataone.org/cn/v1/resolve/doi:10.6085/AA/LAC001_023MTBD000R00_20061004.50.6>
-    dcterms:creator <urn:uuid:37534213-42f4-4e3c-9885-4855d572d74e>, <urn:uuid:42ee17c2-388c-456c-910f-669e1097e2ce>, <urn:uuid:5d835535-6e0f-4f2e-94db-b9e7759dac07> ;
-    dcterms:identifier "doi:10.6085/AA/LAC001_023MTBD000R00_20061004.50.6" ;
-    dcterms:title "PISCO: Physical Oceanography: moored temperature data: La Cruz Rock, California, USA (LAC001)" ;
-    a gldata:DigitalObjectRecord .
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7v6v/2/cadwsap-s2000506-003.xml>
+    dcterms:creator <urn:uuid:91a7d05b-6f7a-4f29-a3ab-afbbc39b5cb3> ;
+    dcterms:identifier "ark:/13030/m5hd7v6v/2/cadwsap-s2000506-003.xml" ;
+    dcterms:title "DWSAP Assessment for 2000506-003:  SIERRA LINDA MUTUAL WATER CO / SOURCE WELL 3- ABANDONED" ;
+    a ecglview:Dataset .
 
-<https://cn.dataone.org/cn/v1/resolve/doi:10.6085/AA/LOP001_026MTBD004R00_20061220.50.6>
-    dcterms:creator <urn:uuid:37534213-42f4-4e3c-9885-4855d572d74e>, <urn:uuid:42ee17c2-388c-456c-910f-669e1097e2ce>, <urn:uuid:5d835535-6e0f-4f2e-94db-b9e7759dac07> ;
-    dcterms:identifier "doi:10.6085/AA/LOP001_026MTBD004R00_20061220.50.6" ;
-    dcterms:title "PISCO: Physical Oceanography: moored temperature data: Lopez Rock, California, USA (LOP001)" ;
-    a gldata:DigitalObjectRecord .
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7v6v/3/cadwsap-s2000506-003.xml>
+    dcterms:creator <urn:uuid:91a7d05b-6f7a-4f29-a3ab-afbbc39b5cb3> ;
+    dcterms:identifier "ark:/13030/m5hd7v6v/3/cadwsap-s2000506-003.xml" ;
+    dcterms:title "DWSAP Assessment for 2000506-003:  SIERRA LINDA MUTUAL WATER CO / SOURCE WELL 3- ABANDONED" ;
+    a ecglview:Dataset .
 
-<https://cn.dataone.org/cn/v1/resolve/doi:10.6085/AA/MB015X_015MTBD005R00_20050830.50.3>
-    dcterms:creator <urn:uuid:18610579-b907-42fc-9b3a-8262ad6f9647>, <urn:uuid:a479e8a4-5e84-4c48-8fca-439f1a6cde68>, <urn:uuid:f47f6eb5-7701-4dee-9f6e-7b61d51ac23c> ;
-    dcterms:identifier "doi:10.6085/AA/MB015X_015MTBD005R00_20050830.50.3" ;
-    dcterms:title "OCNMS: Physical Oceanography: moored temperature data: Makah Bay, Washington, USA (MB015)" ;
-    a gldata:DigitalObjectRecord .
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7v79/2/cadwsap-s3400107-001.xml>
+    dcterms:creator <urn:uuid:47362c04-125f-4b80-a6a8-db47400a7360> ;
+    dcterms:identifier "ark:/13030/m5hd7v79/2/cadwsap-s3400107-001.xml" ;
+    dcterms:title "DWSAP Assessment for 3400107-001:  RIVER S EDGE MARINA & RESORT / MAIN WELL" ;
+    a ecglview:Dataset .
 
-<https://cn.dataone.org/cn/v1/resolve/doi:10.6085/AA/MB015X_015MTBD010R00_20050830.50.2>
-    dcterms:creator <urn:uuid:18610579-b907-42fc-9b3a-8262ad6f9647>, <urn:uuid:a479e8a4-5e84-4c48-8fca-439f1a6cde68>, <urn:uuid:f47f6eb5-7701-4dee-9f6e-7b61d51ac23c> ;
-    dcterms:identifier "doi:10.6085/AA/MB015X_015MTBD010R00_20050830.50.2" ;
-    dcterms:title "OCNMS: Physical Oceanography: moored temperature data: Makah Bay, Washington, USA (MB015)" ;
-    a gldata:DigitalObjectRecord .
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7v79/3/cadwsap-s3400107-001.xml>
+    dcterms:creator <urn:uuid:47362c04-125f-4b80-a6a8-db47400a7360> ;
+    dcterms:identifier "ark:/13030/m5hd7v79/3/cadwsap-s3400107-001.xml" ;
+    dcterms:title "DWSAP Assessment for 3400107-001:  RIVER S EDGE MARINA & RESORT / MAIN WELL" ;
+    a ecglview:Dataset .
 
-<https://cn.dataone.org/cn/v1/resolve/doi:10.6085/AA/PELXXX_015MTBD003R00_20010829.50.2>
-    dcterms:creator <urn:uuid:1f6bf111-a9b8-4aa8-ab1a-38e16c99e25a>, <urn:uuid:5d835535-6e0f-4f2e-94db-b9e7759dac07> ;
-    dcterms:identifier "doi:10.6085/AA/PELXXX_015MTBD003R00_20010829.50.2" ;
-    dcterms:title "PISCO: Physical Oceanography: moored temperature data: Santa Cruz Island, California, USA (PEL)" ;
-    a gldata:DigitalObjectRecord .
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7v8r/2/cadwsap-s3210004-009.xml>
+    dcterms:creator <urn:uuid:1f352e4c-1777-45c3-8fe4-3c85c79f64a8> ;
+    dcterms:identifier "ark:/13030/m5hd7v8r/2/cadwsap-s3210004-009.xml" ;
+    dcterms:title "DWSAP Assessment for 3210004-009:  QUINCY COMMUNITY S.D. / NEW NORTON WELL - STANDBY" ;
+    a ecglview:Dataset .
 
-<https://cn.dataone.org/cn/v1/resolve/doi:10.6085/AA/PTS001_021MXTI006R00_20050113.50.1>
-    dcterms:creator <urn:uuid:42ee17c2-388c-456c-910f-669e1097e2ce>, <urn:uuid:5d835535-6e0f-4f2e-94db-b9e7759dac07> ;
-    dcterms:identifier "doi:10.6085/AA/PTS001_021MXTI006R00_20050113.50.1" ;
-    dcterms:title "PISCO: Physical Oceanography: moored temperature data: Point Sur, California, USA (PTS001)" ;
-    a gldata:DigitalObjectRecord .
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7v8r/3/cadwsap-s3210004-009.xml>
+    dcterms:creator <urn:uuid:1f352e4c-1777-45c3-8fe4-3c85c79f64a8> ;
+    dcterms:identifier "ark:/13030/m5hd7v8r/3/cadwsap-s3210004-009.xml" ;
+    dcterms:title "DWSAP Assessment for 3210004-009:  QUINCY COMMUNITY S.D. / NEW NORTON WELL - STANDBY" ;
+    a ecglview:Dataset .
 
-<https://cn.dataone.org/cn/v1/resolve/doi:10.6085/AA/PTS001_021MXTI006R00_20070619.50.1>
-    dcterms:creator <urn:uuid:42ee17c2-388c-456c-910f-669e1097e2ce>, <urn:uuid:5d835535-6e0f-4f2e-94db-b9e7759dac07> ;
-    dcterms:identifier "doi:10.6085/AA/PTS001_021MXTI006R00_20070619.50.1" ;
-    dcterms:title "PISCO: Physical Oceanography: moored temperature data: Point Sur, California, USA (PTS001)" ;
-    a gldata:DigitalObjectRecord .
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7v96/2/cadwsap-s3702754-002.xml>
+    dcterms:creator <urn:uuid:ee00fdfb-fa84-4296-9261-25fa3ea6a2a4> ;
+    dcterms:identifier "ark:/13030/m5hd7v96/2/cadwsap-s3702754-002.xml" ;
+    dcterms:title "DWSAP Assessment for 3702754-002:  RANCHO CORRIDO RV RESORT / WELL 02" ;
+    a ecglview:Dataset .
 
-<https://cn.dataone.org/cn/v1/resolve/doi:10.6085/AA/PURXXX_015ADCP015R00_20000103.50.3>
-    dcterms:creator <urn:uuid:1f6bf111-a9b8-4aa8-ab1a-38e16c99e25a>, <urn:uuid:5d835535-6e0f-4f2e-94db-b9e7759dac07> ;
-    dcterms:identifier "doi:10.6085/AA/PURXXX_015ADCP015R00_20000103.50.3" ;
-    dcterms:title "PISCO: Physical Oceanography: bottom-mounted ADCP data: Purisima Point, California, USA (PUR)" ;
-    a gldata:DigitalObjectRecord .
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7v96/3/cadwsap-s3702754-002.xml>
+    dcterms:creator <urn:uuid:ee00fdfb-fa84-4296-9261-25fa3ea6a2a4> ;
+    dcterms:identifier "ark:/13030/m5hd7v96/3/cadwsap-s3702754-002.xml" ;
+    dcterms:title "DWSAP Assessment for 3702754-002:  RANCHO CORRIDO RV RESORT / WELL 02" ;
+    a ecglview:Dataset .
 
-<https://cn.dataone.org/cn/v1/resolve/doi:10.6085/AA/PURXXX_015MTBD009R00_20030523.50.1>
-    dcterms:creator <urn:uuid:1f6bf111-a9b8-4aa8-ab1a-38e16c99e25a>, <urn:uuid:5d835535-6e0f-4f2e-94db-b9e7759dac07> ;
-    dcterms:identifier "doi:10.6085/AA/PURXXX_015MTBD009R00_20030523.50.1" ;
-    dcterms:title "PISCO: Physical Oceanography: moored temperature data: Purisima Point, California, USA (PUR)" ;
-    a gldata:DigitalObjectRecord .
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vbn/2/cadwsap-s2800609-001.xml>
+    dcterms:creator <urn:uuid:b429c1f8-4004-4a72-a2b7-05cf37c370d8> ;
+    dcterms:identifier "ark:/13030/m5hd7vbn/2/cadwsap-s2800609-001.xml" ;
+    dcterms:title "DWSAP Assessment for 2800609-001:  PHELPS VINEYARDS / LPA REPORTED PRIMARY SOURCE" ;
+    a ecglview:Dataset .
 
-<https://cn.dataone.org/cn/v1/resolve/doi:10.6085/AA/RKPX00_XXXIBTNXTSR01_20070617.50.2>
-    dcterms:creator <urn:uuid:5d835535-6e0f-4f2e-94db-b9e7759dac07>, <urn:uuid:b3b5d140-68c6-4f3d-baf1-83027203b5a0>, <urn:uuid:ddd637e5-4e09-43d6-a650-309c61bd300b> ;
-    dcterms:identifier "doi:10.6085/AA/RKPX00_XXXIBTNXTSR01_20070617.50.2" ;
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vbn/3/cadwsap-s2800609-001.xml>
+    dcterms:creator <urn:uuid:b429c1f8-4004-4a72-a2b7-05cf37c370d8> ;
+    dcterms:identifier "ark:/13030/m5hd7vbn/3/cadwsap-s2800609-001.xml" ;
+    dcterms:title "DWSAP Assessment for 2800609-001:  PHELPS VINEYARDS / LPA REPORTED PRIMARY SOURCE" ;
+    a ecglview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vc3/2/cadwsap-s1910009-007.xml>
+    dcterms:creator <urn:uuid:34612fa0-c6d9-411f-93ad-4783d9b6d349> ;
+    dcterms:identifier "ark:/13030/m5hd7vc3/2/cadwsap-s1910009-007.xml" ;
+    dcterms:title "DWSAP Assessment for 1910009-007:  VALLEY COUNTY WATER DIST. / WELL 07 LANTE STREET" ;
+    a ecglview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vc3/3/cadwsap-s1910009-007.xml>
+    dcterms:creator <urn:uuid:34612fa0-c6d9-411f-93ad-4783d9b6d349> ;
+    dcterms:identifier "ark:/13030/m5hd7vc3/3/cadwsap-s1910009-007.xml" ;
+    dcterms:title "DWSAP Assessment for 1910009-007:  VALLEY COUNTY WATER DIST. / WELL 07 LANTE STREET" ;
+    a ecglview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vdj/2/cadwsap-s3610120-013.xml>
+    dcterms:creator <urn:uuid:04d3fd7b-8689-4a3f-b671-b59f893ac018> ;
+    dcterms:identifier "ark:/13030/m5hd7vdj/2/cadwsap-s3610120-013.xml" ;
+    dcterms:title "DWSAP Assessment for 3610120-013:  PHELAN PINON HILLS CSD / WELL 12" ;
+    a ecglview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vdj/3/cadwsap-s3610120-013.xml>
+    dcterms:creator <urn:uuid:04d3fd7b-8689-4a3f-b671-b59f893ac018> ;
+    dcterms:identifier "ark:/13030/m5hd7vdj/3/cadwsap-s3610120-013.xml" ;
+    dcterms:title "DWSAP Assessment for 3610120-013:  PHELAN PINON HILLS CSD / WELL 12" ;
+    a ecglview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vf0/2/cadwsap-s4310012-026.xml>
+    dcterms:creator <urn:uuid:1d8153a3-0705-474d-9b76-773a84af10ae> ;
+    dcterms:identifier "ark:/13030/m5hd7vf0/2/cadwsap-s4310012-026.xml" ;
+    dcterms:title "DWSAP Assessment for 4310012-026:  CITY OF SANTA CLARA / WELL 24" ;
+    a ecglview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vf0/3/cadwsap-s4310012-026.xml>
+    dcterms:creator <urn:uuid:1d8153a3-0705-474d-9b76-773a84af10ae> ;
+    dcterms:identifier "ark:/13030/m5hd7vf0/3/cadwsap-s4310012-026.xml" ;
+    dcterms:title "DWSAP Assessment for 4310012-026:  CITY OF SANTA CLARA / WELL 24" ;
+    a ecglview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vgf/2/cadwsap-s4710003-002.xml>
+    dcterms:creator <urn:uuid:cd236035-bb3f-4d50-871b-33d742c9d821> ;
+    dcterms:identifier "ark:/13030/m5hd7vgf/2/cadwsap-s4710003-002.xml" ;
+    dcterms:title "DWSAP Assessment for 4710003-002:  TOWN OF FORT JONES / WELL 01 - STANDBY - 5 FT. DIAM. WELL" ;
+    a ecglview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vgf/3/cadwsap-s4710003-002.xml>
+    dcterms:creator <urn:uuid:cd236035-bb3f-4d50-871b-33d742c9d821> ;
+    dcterms:identifier "ark:/13030/m5hd7vgf/3/cadwsap-s4710003-002.xml" ;
+    dcterms:title "DWSAP Assessment for 4710003-002:  TOWN OF FORT JONES / WELL 01 - STANDBY - 5 FT. DIAM. WELL" ;
+    a ecglview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vhw/2/cadwsap-s3710010-009.xml>
+    dcterms:creator <urn:uuid:8b7d9b10-11dc-409d-b1e7-7a08bfb2d2c5> ;
+    dcterms:identifier "ark:/13030/m5hd7vhw/2/cadwsap-s3710010-009.xml" ;
+    dcterms:title "DWSAP Assessment for 3710010-009:  HELIX WATER DISTRICT / WELL 101" ;
+    a ecglview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vhw/3/cadwsap-s3710010-009.xml>
+    dcterms:creator <urn:uuid:8b7d9b10-11dc-409d-b1e7-7a08bfb2d2c5> ;
+    dcterms:identifier "ark:/13030/m5hd7vhw/3/cadwsap-s3710010-009.xml" ;
+    dcterms:title "DWSAP Assessment for 3710010-009:  HELIX WATER DISTRICT / WELL 101" ;
+    a ecglview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vjb/2/cadwsap-s1400110-001.xml>
+    dcterms:creator <urn:uuid:54e707ac-c96a-4266-969d-c9df9585fe23> ;
+    dcterms:identifier "ark:/13030/m5hd7vjb/2/cadwsap-s1400110-001.xml" ;
+    dcterms:title "DWSAP Assessment for 1400110-001:  PARK WEST MUTUAL WATER COMPANY / WELL 01 NE" ;
+    a ecglview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vjb/3/cadwsap-s1400110-001.xml>
+    dcterms:creator <urn:uuid:54e707ac-c96a-4266-969d-c9df9585fe23> ;
+    dcterms:identifier "ark:/13030/m5hd7vjb/3/cadwsap-s1400110-001.xml" ;
+    dcterms:title "DWSAP Assessment for 1400110-001:  PARK WEST MUTUAL WATER COMPANY / WELL 01 NE" ;
+    a ecglview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vks/2/cadwsap-s3910024-003.xml>
+    dcterms:creator <urn:uuid:d49d3ad6-ffb7-4807-a8e9-45d614f505e2> ;
+    dcterms:identifier "ark:/13030/m5hd7vks/2/cadwsap-s3910024-003.xml" ;
+    dcterms:title "DWSAP Assessment for 3910024-003:  SAN JOAQUIN COUNTY - WILKINSON MANOR / WELL 03 - BLACK OAK ESTATES WELL" ;
+    a ecglview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vks/3/cadwsap-s3910024-003.xml>
+    dcterms:creator <urn:uuid:d49d3ad6-ffb7-4807-a8e9-45d614f505e2> ;
+    dcterms:identifier "ark:/13030/m5hd7vks/3/cadwsap-s3910024-003.xml" ;
+    dcterms:title "DWSAP Assessment for 3910024-003:  SAN JOAQUIN COUNTY - WILKINSON MANOR / WELL 03 - BLACK OAK ESTATES WELL" ;
+    a ecglview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vm7/2/cadwsap-s2300832-004.xml>
+    dcterms:creator <urn:uuid:f4303265-418d-44df-b122-c88e18216052> ;
+    dcterms:identifier "ark:/13030/m5hd7vm7/2/cadwsap-s2300832-004.xml" ;
+    dcterms:title "DWSAP Assessment for 2300832-004:  HILLS RANCH MUTUAL WATER COMPANY / WELL 14 - INACTIVE" ;
+    a ecglview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vm7/3/cadwsap-s2300832-004.xml>
+    dcterms:creator <urn:uuid:f4303265-418d-44df-b122-c88e18216052> ;
+    dcterms:identifier "ark:/13030/m5hd7vm7/3/cadwsap-s2300832-004.xml" ;
+    dcterms:title "DWSAP Assessment for 2300832-004:  HILLS RANCH MUTUAL WATER COMPANY / WELL 14 - INACTIVE" ;
+    a ecglview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vnp/2/cadwsap-s1009256-001.xml>
+    dcterms:creator <urn:uuid:16702a60-a86a-4b50-8d8b-45be12218eff> ;
+    dcterms:identifier "ark:/13030/m5hd7vnp/2/cadwsap-s1009256-001.xml" ;
+    dcterms:title "DWSAP Assessment for 1009256-001:  PG&E HELMS HQ/POWERHOUSE / MAIN WELL 75GPM" ;
+    a ecglview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vnp/3/cadwsap-s1009256-001.xml>
+    dcterms:creator <urn:uuid:16702a60-a86a-4b50-8d8b-45be12218eff> ;
+    dcterms:identifier "ark:/13030/m5hd7vnp/3/cadwsap-s1009256-001.xml" ;
+    dcterms:title "DWSAP Assessment for 1009256-001:  PG&E HELMS HQ/POWERHOUSE / MAIN WELL 75GPM" ;
+    a ecglview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vp4/2/cadwsap-s1910081-003.xml>
+    dcterms:creator <urn:uuid:d06f8a9c-3ceb-4da4-9450-7b8feab0305e> ;
+    dcterms:identifier "ark:/13030/m5hd7vp4/2/cadwsap-s1910081-003.xml" ;
+    dcterms:title "DWSAP Assessment for 1910081-003:  LYNWOOD PARK MUTUAL WATER CO. / WELL 03 - MONA" ;
+    a ecglview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vp4/3/cadwsap-s1910081-003.xml>
+    dcterms:creator <urn:uuid:d06f8a9c-3ceb-4da4-9450-7b8feab0305e> ;
+    dcterms:identifier "ark:/13030/m5hd7vp4/3/cadwsap-s1910081-003.xml" ;
+    dcterms:title "DWSAP Assessment for 1910081-003:  LYNWOOD PARK MUTUAL WATER CO. / WELL 03 - MONA" ;
+    a ecglview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vqk/2/cadwsap-s5710006-013.xml>
+    dcterms:creator <urn:uuid:0d796ce4-5ee8-4207-a0ab-30b6416326c6> ;
+    dcterms:identifier "ark:/13030/m5hd7vqk/2/cadwsap-s5710006-013.xml" ;
+    dcterms:title "DWSAP Assessment for 5710006-013:  CITY OF WOODLAND / WELL 14 - UNTREATED" ;
+    a ecglview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vqk/3/cadwsap-s5710006-013.xml>
+    dcterms:creator <urn:uuid:0d796ce4-5ee8-4207-a0ab-30b6416326c6> ;
+    dcterms:identifier "ark:/13030/m5hd7vqk/3/cadwsap-s5710006-013.xml" ;
+    dcterms:title "DWSAP Assessment for 5710006-013:  CITY OF WOODLAND / WELL 14 - UNTREATED" ;
+    a ecglview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vr1/2/cadwsap-s3410010-021.xml>
+    dcterms:creator <urn:uuid:9cbaab81-1013-42d8-b1bf-064674f11e89> ;
+    dcterms:identifier "ark:/13030/m5hd7vr1/2/cadwsap-s3410010-021.xml" ;
+    dcterms:title "DWSAP Assessment for 3410010-021:  CALAM - SUBURBAN / COUNTRYSIDE WAY" ;
+    a ecglview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vr1/3/cadwsap-s3410010-021.xml>
+    dcterms:creator <urn:uuid:9cbaab81-1013-42d8-b1bf-064674f11e89> ;
+    dcterms:identifier "ark:/13030/m5hd7vr1/3/cadwsap-s3410010-021.xml" ;
+    dcterms:title "DWSAP Assessment for 3410010-021:  CALAM - SUBURBAN / COUNTRYSIDE WAY" ;
+    a ecglview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vsg/2/cadwsap-s5510006-003.xml>
+    dcterms:creator <urn:uuid:fbbb8143-ac2b-43f4-8ec7-3b68064a25b5> ;
+    dcterms:identifier "ark:/13030/m5hd7vsg/2/cadwsap-s5510006-003.xml" ;
+    dcterms:title "DWSAP Assessment for 5510006-003:  MI-WUK VILLAGE MUT WTR CO / WELL 01" ;
+    a ecglview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vsg/3/cadwsap-s5510006-003.xml>
+    dcterms:creator <urn:uuid:fbbb8143-ac2b-43f4-8ec7-3b68064a25b5> ;
+    dcterms:identifier "ark:/13030/m5hd7vsg/3/cadwsap-s5510006-003.xml" ;
+    dcterms:title "DWSAP Assessment for 5510006-003:  MI-WUK VILLAGE MUT WTR CO / WELL 01" ;
+    a ecglview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vtx/2/cadwsap-s5301012-001.xml>
+    dcterms:creator <urn:uuid:cd236035-bb3f-4d50-871b-33d742c9d821> ;
+    dcterms:identifier "ark:/13030/m5hd7vtx/2/cadwsap-s5301012-001.xml" ;
+    dcterms:title "DWSAP Assessment for 5301012-001:  TRINITY RIVER LODGE / WELL 01" ;
+    a ecglview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vtx/3/cadwsap-s5301012-001.xml>
+    dcterms:creator <urn:uuid:cd236035-bb3f-4d50-871b-33d742c9d821> ;
+    dcterms:identifier "ark:/13030/m5hd7vtx/3/cadwsap-s5301012-001.xml" ;
+    dcterms:title "DWSAP Assessment for 5301012-001:  TRINITY RIVER LODGE / WELL 01" ;
+    a ecglview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vvc/3/cadwsap-s2310009-002.xml>
+    dcterms:creator <urn:uuid:f4303265-418d-44df-b122-c88e18216052> ;
+    dcterms:identifier "ark:/13030/m5hd7vvc/3/cadwsap-s2310009-002.xml" ;
+    dcterms:title "DWSAP Assessment for 2310009-002:  BROOKTRAILS TOWNSHIP CSD / LAKE EMILY INTAKE" ;
+    a ecglview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vx8/2/cadwsap-s2310006-015.xml>
+    dcterms:creator <urn:uuid:f4303265-418d-44df-b122-c88e18216052> ;
+    dcterms:identifier "ark:/13030/m5hd7vx8/2/cadwsap-s2310006-015.xml" ;
+    dcterms:title "DWSAP Assessment for 2310006-015:  MILLVIEW COUNTY WATER DISTRICT / WELL 14 - SURFACE INFLUENCED" ;
+    a ecglview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vx8/3/cadwsap-s2310006-015.xml>
+    dcterms:creator <urn:uuid:f4303265-418d-44df-b122-c88e18216052> ;
+    dcterms:identifier "ark:/13030/m5hd7vx8/3/cadwsap-s2310006-015.xml" ;
+    dcterms:title "DWSAP Assessment for 2310006-015:  MILLVIEW COUNTY WATER DISTRICT / WELL 14 - SURFACE INFLUENCED" ;
+    a ecglview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vzq/3/cadwsap-s2610701-005.xml>
+    dcterms:creator <urn:uuid:04d3fd7b-8689-4a3f-b671-b59f893ac018> ;
+    dcterms:identifier "ark:/13030/m5hd7vzq/3/cadwsap-s2610701-005.xml" ;
+    dcterms:title "DWSAP Assessment for 2610701-005:  USMC HOUSING - COLEVILLE / WELL 05" ;
+    a ecglview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7w0k/3/cadwsap-s3310001-128.xml>
+    dcterms:creator <urn:uuid:7e31f73c-7315-4d22-8f39-59484a65f0f4> ;
+    dcterms:identifier "ark:/13030/m5hd7w0k/3/cadwsap-s3310001-128.xml" ;
+    dcterms:title "DWSAP Assessment for 3310001-128:  COACHELLA VWD: COVE COMMUNITY / WELL 4720-1" ;
+    a ecglview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5j102rc/2/cadwsap-s4000221-001.xml>
+    dcterms:creator <urn:uuid:1c02e82b-3f66-42d1-8e70-cc6af471b5f6> ;
+    dcterms:identifier "ark:/13030/m5j102rc/2/cadwsap-s4000221-001.xml" ;
+    dcterms:title "DWSAP Assessment for 4000221-001:  LAETITIA VINEYARD & WINERY INC / WELL 03" ;
+    a ecglview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5j102rc/3/cadwsap-s4000221-001.xml>
+    dcterms:creator <urn:uuid:1c02e82b-3f66-42d1-8e70-cc6af471b5f6> ;
+    dcterms:identifier "ark:/13030/m5j102rc/3/cadwsap-s4000221-001.xml" ;
+    dcterms:title "DWSAP Assessment for 4000221-001:  LAETITIA VINEYARD & WINERY INC / WELL 03" ;
+    a ecglview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5j102st/2/cadwsap-s1010026-008.xml>
+    dcterms:creator <urn:uuid:fbbb8143-ac2b-43f4-8ec7-3b68064a25b5> ;
+    dcterms:identifier "ark:/13030/m5j102st/2/cadwsap-s1010026-008.xml" ;
+    dcterms:title "DWSAP Assessment for 1010026-008:  PINEDALE COUNTY WATER DISTRICT / WELL 08" ;
+    a ecglview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5j102st/3/cadwsap-s1010026-008.xml>
+    dcterms:creator <urn:uuid:fbbb8143-ac2b-43f4-8ec7-3b68064a25b5> ;
+    dcterms:identifier "ark:/13030/m5j102st/3/cadwsap-s1010026-008.xml" ;
+    dcterms:title "DWSAP Assessment for 1010026-008:  PINEDALE COUNTY WATER DISTRICT / WELL 08" ;
+    a ecglview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5j102t8/2/cadwsap-s5402027-001.xml>
+    dcterms:creator <urn:uuid:e6d9dd30-c3c0-47af-909c-81b8513acbcc> ;
+    dcterms:identifier "ark:/13030/m5j102t8/2/cadwsap-s5402027-001.xml" ;
+    dcterms:title "DWSAP Assessment for 5402027-001:  TULARE COUNTY ROAD YARD #2 PWS / WELL 01" ;
+    a ecglview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5j102t8/3/cadwsap-s5402027-001.xml>
+    dcterms:creator <urn:uuid:e6d9dd30-c3c0-47af-909c-81b8513acbcc> ;
+    dcterms:identifier "ark:/13030/m5j102t8/3/cadwsap-s5402027-001.xml" ;
+    dcterms:title "DWSAP Assessment for 5402027-001:  TULARE COUNTY ROAD YARD #2 PWS / WELL 01" ;
+    a ecglview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5j102vq/2/cadwsap-s3310009-021.xml>
+    dcterms:creator <urn:uuid:8bcca0ad-6052-4457-b0b5-e4b65c3836b0> ;
+    dcterms:identifier "ark:/13030/m5j102vq/2/cadwsap-s3310009-021.xml" ;
+    dcterms:title "DWSAP Assessment for 3310009-021:  EASTERN MUNICIPAL WD / WELL 14 - RIVERBED 02" ;
+    a ecglview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5j102vq/3/cadwsap-s3310009-021.xml>
+    dcterms:creator <urn:uuid:8bcca0ad-6052-4457-b0b5-e4b65c3836b0> ;
+    dcterms:identifier "ark:/13030/m5j102vq/3/cadwsap-s3310009-021.xml" ;
+    dcterms:title "DWSAP Assessment for 3310009-021:  EASTERN MUNICIPAL WD / WELL 14 - RIVERBED 02" ;
+    a ecglview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5j102w5/2/cadwsap-s5410010-006.xml>
+    dcterms:creator <urn:uuid:d663d514-dc8d-4dcc-bcd8-dfecab49ad7d> ;
+    dcterms:identifier "ark:/13030/m5j102w5/2/cadwsap-s5410010-006.xml" ;
+    dcterms:title "DWSAP Assessment for 5410010-006:  PORTERVILLE, CITY OF / WELL C-4 - RAW" ;
+    a ecglview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5j103d9/3/cadwsap-s4910305-002.xml>
+    dcterms:creator <urn:uuid:225d3b9c-18af-4976-9f83-1a4de79911ad> ;
+    dcterms:identifier "ark:/13030/m5j103d9/3/cadwsap-s4910305-002.xml" ;
+    dcterms:title "DWSAP Assessment for 4910305-002:  CSP-JACK LONDON STATE HISTORIC PARK / SPRING" ;
+    a ecglview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5j103fr/2/cadwsap-s3310001-063.xml>
+    dcterms:creator <urn:uuid:7e31f73c-7315-4d22-8f39-59484a65f0f4> ;
+    dcterms:identifier "ark:/13030/m5j103fr/2/cadwsap-s3310001-063.xml" ;
+    dcterms:title "DWSAP Assessment for 3310001-063:  COACHELLA VWD: COVE COMMUNITY / WELL 5613-1" ;
+    a ecglview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5j103fr/3/cadwsap-s3310001-063.xml>
+    dcterms:creator <urn:uuid:7e31f73c-7315-4d22-8f39-59484a65f0f4> ;
+    dcterms:identifier "ark:/13030/m5j103fr/3/cadwsap-s3310001-063.xml" ;
+    dcterms:title "DWSAP Assessment for 3310001-063:  COACHELLA VWD: COVE COMMUNITY / WELL 5613-1" ;
+    a ecglview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/doi:10.6085/AA/RKPX00_XXXITBPXLCR03_20130822.50.1>
+    dcterms:creator <urn:uuid:5be5c398-1bfd-48ff-9667-2d87d280e967>, <urn:uuid:badcb28f-3936-4ef2-8045-65d99df04757>, <urn:uuid:d1033b95-84ec-488f-bb72-41235d2de3e9> ;
+    dcterms:identifier "doi:10.6085/AA/RKPX00_XXXITBPXLCR03_20130822.50.1" ;
     dcterms:title "PISCO: Intertidal: site temperature data: Rocky Point, Oregon, USA (RKPX00)" ;
-    a gldata:DigitalObjectRecord .
-
-<https://cn.dataone.org/cn/v1/resolve/doi:10.6085/AA/SCPXXX_015MTBD003R00_20060403.50.3>
-    dcterms:creator <urn:uuid:1f6bf111-a9b8-4aa8-ab1a-38e16c99e25a>, <urn:uuid:5d835535-6e0f-4f2e-94db-b9e7759dac07> ;
-    dcterms:identifier "doi:10.6085/AA/SCPXXX_015MTBD003R00_20060403.50.3" ;
-    dcterms:title "PISCO: Physical Oceanography: moored temperature data: Santa Cruz Island, California, USA (SCP)" ;
-    a gldata:DigitalObjectRecord .
-
-<https://cn.dataone.org/cn/v1/resolve/doi:10.6085/AA/SH15XX_015MXTI004R00_20040617.50.5>
-    dcterms:creator <urn:uuid:5d835535-6e0f-4f2e-94db-b9e7759dac07>, <urn:uuid:79991ed2-b36e-415c-b844-941babe76662> ;
-    dcterms:identifier "doi:10.6085/AA/SH15XX_015MXTI004R00_20040617.50.5" ;
-    dcterms:title "PISCO: Physical Oceanography: moored temperature data: Strawberry Hill, Oregon, USA (SH15)" ;
-    a gldata:DigitalObjectRecord .
-
-<https://cn.dataone.org/cn/v1/resolve/doi:10.6085/AA/SHB001_021MXTI012R00_20070214.50.1>
-    dcterms:creator <urn:uuid:42ee17c2-388c-456c-910f-669e1097e2ce>, <urn:uuid:5d835535-6e0f-4f2e-94db-b9e7759dac07> ;
-    dcterms:identifier "doi:10.6085/AA/SHB001_021MXTI012R00_20070214.50.1" ;
-    dcterms:title "PISCO: Physical Oceanography: moored temperature data: Sand Hill Bluff, California, USA (SHB001)" ;
-    a gldata:DigitalObjectRecord .
-
-<https://cn.dataone.org/cn/v1/resolve/doi:10.6085/AA/SHB002_008MXTI008R00_20010927.50.2>
-    dcterms:creator <urn:uuid:42ee17c2-388c-456c-910f-669e1097e2ce>, <urn:uuid:5d835535-6e0f-4f2e-94db-b9e7759dac07> ;
-    dcterms:identifier "doi:10.6085/AA/SHB002_008MXTI008R00_20010927.50.2" ;
-    dcterms:title "PISCO: Physical Oceanography: moored temperature data: Sand Hill Bluff, California, USA (SHB002)" ;
-    a gldata:DigitalObjectRecord .
-
-<https://cn.dataone.org/cn/v1/resolve/doi:10.6085/AA/SHLX00_XXXITBDXMMR02_20080308.50.1>
-    dcterms:creator <urn:uuid:5d835535-6e0f-4f2e-94db-b9e7759dac07>, <urn:uuid:b3b5d140-68c6-4f3d-baf1-83027203b5a0>, <urn:uuid:ddd637e5-4e09-43d6-a650-309c61bd300b> ;
-    dcterms:identifier "doi:10.6085/AA/SHLX00_XXXITBDXMMR02_20080308.50.1" ;
-    dcterms:title "PISCO: Intertidal: mussel growth temperature data: Strawberry Hill, Oregon, USA (SHLX00)" ;
-    a gldata:DigitalObjectRecord .
-
-<https://cn.dataone.org/cn/v1/resolve/doi:10.6085/AA/SHN15X_015MTBD014R00_20060925.50.2>
-    dcterms:creator <urn:uuid:5d835535-6e0f-4f2e-94db-b9e7759dac07>, <urn:uuid:79991ed2-b36e-415c-b844-941babe76662> ;
-    dcterms:identifier "doi:10.6085/AA/SHN15X_015MTBD014R00_20060925.50.2" ;
-    dcterms:title "PISCO: Physical Oceanography: moored temperature data: Strawberry Hill North 15m, Oregon, USA (SHN15X)" ;
-    a gldata:DigitalObjectRecord .
-
-<https://cn.dataone.org/cn/v1/resolve/doi:10.6085/AA/SMGXXX_015MTBD003R00_20041123.50.4>
-    dcterms:creator <urn:uuid:1f6bf111-a9b8-4aa8-ab1a-38e16c99e25a>, <urn:uuid:5d835535-6e0f-4f2e-94db-b9e7759dac07> ;
-    dcterms:identifier "doi:10.6085/AA/SMGXXX_015MTBD003R00_20041123.50.4" ;
-    dcterms:title "PISCO: Physical Oceanography: moored temperature data: Santa Cruz Island, California, USA (SMG)" ;
-    a gldata:DigitalObjectRecord .
-
-<https://cn.dataone.org/cn/v1/resolve/doi:10.6085/AA/SMGXXX_015MTBD014R00_20001108.50.1>
-    dcterms:creator <urn:uuid:1f6bf111-a9b8-4aa8-ab1a-38e16c99e25a>, <urn:uuid:5d835535-6e0f-4f2e-94db-b9e7759dac07> ;
-    dcterms:identifier "doi:10.6085/AA/SMGXXX_015MTBD014R00_20001108.50.1" ;
-    dcterms:title "PISCO: Physical Oceanography: moored temperature data: Santa Cruz Island, California, USA (SMG)" ;
-    a gldata:DigitalObjectRecord .
-
-<https://cn.dataone.org/cn/v1/resolve/doi:10.6085/AA/SMGXXX_015MTBD014R00_20010130.50.3>
-    dcterms:creator <urn:uuid:1f6bf111-a9b8-4aa8-ab1a-38e16c99e25a>, <urn:uuid:5d835535-6e0f-4f2e-94db-b9e7759dac07> ;
-    dcterms:identifier "doi:10.6085/AA/SMGXXX_015MTBD014R00_20010130.50.3" ;
-    dcterms:title "PISCO: Physical Oceanography: moored temperature data: Santa Cruz Island, California, USA (SMG)" ;
-    a gldata:DigitalObjectRecord .
-
-<https://cn.dataone.org/cn/v1/resolve/doi:10.6085/AA/SMSXXX_015MTBD003R00_20070507.50.3>
-    dcterms:creator <urn:uuid:1f6bf111-a9b8-4aa8-ab1a-38e16c99e25a>, <urn:uuid:5d835535-6e0f-4f2e-94db-b9e7759dac07>, <urn:uuid:a479e8a4-5e84-4c48-8fca-439f1a6cde68> ;
-    dcterms:identifier "doi:10.6085/AA/SMSXXX_015MTBD003R00_20070507.50.3" ;
-    dcterms:title "PISCO: Physical Oceanography: moored temperature data: San Miguel Island, California, USA (SMS)" ;
-    a gldata:DigitalObjectRecord .
-
-<https://cn.dataone.org/cn/v1/resolve/doi:10.6085/AA/SQP001_021MXTI012R00_20020124.50.1>
-    dcterms:creator <urn:uuid:42ee17c2-388c-456c-910f-669e1097e2ce>, <urn:uuid:5d835535-6e0f-4f2e-94db-b9e7759dac07> ;
-    dcterms:identifier "doi:10.6085/AA/SQP001_021MXTI012R00_20020124.50.1" ;
-    dcterms:title "PISCO: Physical Oceanography: moored temperature data: Soquel Point, California, USA (SQP001)" ;
-    a gldata:DigitalObjectRecord .
-
-<https://cn.dataone.org/cn/v1/resolve/doi:10.6085/AA/SRKX00_XXXIBTNXTSR01_20100614.50.1>
-    dcterms:creator <urn:uuid:5d835535-6e0f-4f2e-94db-b9e7759dac07>, <urn:uuid:b3b5d140-68c6-4f3d-baf1-83027203b5a0>, <urn:uuid:ddd637e5-4e09-43d6-a650-309c61bd300b> ;
-    dcterms:identifier "doi:10.6085/AA/SRKX00_XXXIBTNXTSR01_20100614.50.1" ;
-    dcterms:title "PISCO: Intertidal: site temperature data: Seal Rock, Oregon, USA (SRKX00)" ;
-    a gldata:DigitalObjectRecord .
-
-<https://cn.dataone.org/cn/v1/resolve/doi:10.6085/AA/SUN001_026MTBD005R00_20080724.50.1>
-    dcterms:creator <urn:uuid:37534213-42f4-4e3c-9885-4855d572d74e>, <urn:uuid:42ee17c2-388c-456c-910f-669e1097e2ce>, <urn:uuid:5d835535-6e0f-4f2e-94db-b9e7759dac07> ;
-    dcterms:identifier "doi:10.6085/AA/SUN001_026MTBD005R00_20080724.50.1" ;
-    dcterms:title "MBNMS/PISCO: Physical Oceanography: moored temperature data: Sunset Point, California, USA (SUN001)" ;
-    a gldata:DigitalObjectRecord .
-
-<https://cn.dataone.org/cn/v1/resolve/doi:10.6085/AA/SWC001_022MXTI005R00_20040411.50.5>
-    dcterms:creator <urn:uuid:42ee17c2-388c-456c-910f-669e1097e2ce>, <urn:uuid:5d835535-6e0f-4f2e-94db-b9e7759dac07> ;
-    dcterms:identifier "doi:10.6085/AA/SWC001_022MXTI005R00_20040411.50.5" ;
-    dcterms:title "PISCO: Physical Oceanography: moored temperature data: Stillwater Cove, California, USA (SWC001)" ;
-    a gldata:DigitalObjectRecord .
-
-<https://cn.dataone.org/cn/v1/resolve/doi:10.6085/AA/TPT001_018MTBD000R00_20020906.50.5>
-    dcterms:creator <urn:uuid:42ee17c2-388c-456c-910f-669e1097e2ce>, <urn:uuid:5d835535-6e0f-4f2e-94db-b9e7759dac07> ;
-    dcterms:identifier "doi:10.6085/AA/TPT001_018MTBD000R00_20020906.50.5" ;
-    dcterms:title "PISCO: Physical Oceanography: moored temperature data: Terrace Point, California, USA (TPT001)" ;
-    a gldata:DigitalObjectRecord .
-
-<https://cn.dataone.org/cn/v1/resolve/doi:10.6085/AA/TPT001_018MXTI011R00_20001119.50.3>
-    dcterms:creator <urn:uuid:42ee17c2-388c-456c-910f-669e1097e2ce>, <urn:uuid:5d835535-6e0f-4f2e-94db-b9e7759dac07> ;
-    dcterms:identifier "doi:10.6085/AA/TPT001_018MXTI011R00_20001119.50.3" ;
-    dcterms:title "PISCO: Physical Oceanography: moored temperature data: Terrace Point, California, USA (TPT001)" ;
-    a gldata:DigitalObjectRecord .
-
-<https://cn.dataone.org/cn/v1/resolve/doi:10.6085/AA/TRLXXX_015MTBD014R00_20001213.50.2>
-    dcterms:creator <urn:uuid:1f6bf111-a9b8-4aa8-ab1a-38e16c99e25a>, <urn:uuid:5d835535-6e0f-4f2e-94db-b9e7759dac07> ;
-    dcterms:identifier "doi:10.6085/AA/TRLXXX_015MTBD014R00_20001213.50.2" ;
-    dcterms:title "PISCO: Physical Oceanography: moored temperature data: Santa Cruz Island, California, USA (TRL)" ;
-    a gldata:DigitalObjectRecord .
-
-<https://cn.dataone.org/cn/v1/resolve/doi:10.6085/AA/WES001_030MTBD021R00_20100416.50.1>
-    dcterms:creator <urn:uuid:37534213-42f4-4e3c-9885-4855d572d74e>, <urn:uuid:42ee17c2-388c-456c-910f-669e1097e2ce>, <urn:uuid:5d835535-6e0f-4f2e-94db-b9e7759dac07> ;
-    dcterms:identifier "doi:10.6085/AA/WES001_030MTBD021R00_20100416.50.1" ;
-    dcterms:title "MBNMS/PISCO: Physical Oceanography: moored temperature data: Weston Beach, California, USA (WES001)" ;
-    a gldata:DigitalObjectRecord .
-
-<https://cn.dataone.org/cn/v1/resolve/doi:10.6085/AA/WINXXX_015MTBD009R00_20031002.50.3>
-    dcterms:creator <urn:uuid:1f6bf111-a9b8-4aa8-ab1a-38e16c99e25a>, <urn:uuid:5d835535-6e0f-4f2e-94db-b9e7759dac07> ;
-    dcterms:identifier "doi:10.6085/AA/WINXXX_015MTBD009R00_20031002.50.3" ;
-    dcterms:title "PISCO: Physical Oceanography: moored temperature data: Middle Anacapa Island, California, USA (WIN)" ;
-    a gldata:DigitalObjectRecord .
-
-<https://cn.dataone.org/cn/v1/resolve/doi:10.6085/AA/WINXXX_015MTBD009R00_20050416.50.2>
-    dcterms:creator <urn:uuid:1f6bf111-a9b8-4aa8-ab1a-38e16c99e25a>, <urn:uuid:5d835535-6e0f-4f2e-94db-b9e7759dac07> ;
-    dcterms:identifier "doi:10.6085/AA/WINXXX_015MTBD009R00_20050416.50.2" ;
-    dcterms:title "PISCO: Physical Oceanography: moored temperature data: Middle Anacapa Island, California, USA (WIN)" ;
-    a gldata:DigitalObjectRecord .
-
-<https://cn.dataone.org/cn/v1/resolve/doi:10.6085/AA/YB15XX_015MXTI009R00_20000710.50.3>
-    dcterms:creator <urn:uuid:5d835535-6e0f-4f2e-94db-b9e7759dac07>, <urn:uuid:79991ed2-b36e-415c-b844-941babe76662> ;
-    dcterms:identifier "doi:10.6085/AA/YB15XX_015MXTI009R00_20000710.50.3" ;
-    dcterms:title "PISCO: Physical Oceanography: moored temperature data: Yahats Beach, Oregon, USA (YB15)" ;
-    a gldata:DigitalObjectRecord .
-
-<https://cn.dataone.org/cn/v1/resolve/doi:10.6085/AA/YB15XX_015MXTI009R00_20020716.50.1>
-    dcterms:creator <urn:uuid:5d835535-6e0f-4f2e-94db-b9e7759dac07>, <urn:uuid:79991ed2-b36e-415c-b844-941babe76662> ;
-    dcterms:identifier "doi:10.6085/AA/YB15XX_015MXTI009R00_20020716.50.1" ;
-    dcterms:title "PISCO: Physical Oceanography: moored temperature data: Yahats Beach, Oregon, USA (YB15)" ;
-    a gldata:DigitalObjectRecord .
-
-<https://cn.dataone.org/cn/v1/resolve/doi:10.6085/AA/YBHX00_XXXITBPXHSR01_20120603.50.1>
-    dcterms:creator <urn:uuid:5d835535-6e0f-4f2e-94db-b9e7759dac07>, <urn:uuid:b3b5d140-68c6-4f3d-baf1-83027203b5a0>, <urn:uuid:ddd637e5-4e09-43d6-a650-309c61bd300b> ;
-    dcterms:identifier "doi:10.6085/AA/YBHX00_XXXITBPXHSR01_20120603.50.1" ;
-    dcterms:title "PISCO: Intertidal: site temperature data: Yachats Beach, Oregon, USA (YBHX00)" ;
-    a gldata:DigitalObjectRecord .
-
-<https://cn.dataone.org/cn/v1/resolve/doi:10.6085/AA/YBHX00_XXXITBPXLSR02_20130625.50.1>
-    dcterms:creator <urn:uuid:5d835535-6e0f-4f2e-94db-b9e7759dac07>, <urn:uuid:b3b5d140-68c6-4f3d-baf1-83027203b5a0>, <urn:uuid:ddd637e5-4e09-43d6-a650-309c61bd300b> ;
-    dcterms:identifier "doi:10.6085/AA/YBHX00_XXXITBPXLSR02_20130625.50.1" ;
-    dcterms:title "PISCO: Intertidal: site temperature data: Yachats Beach, Oregon, USA (YBHX00)" ;
-    a gldata:DigitalObjectRecord .
-
-<https://cn.dataone.org/cn/v1/resolve/http://dx.doi.org/10.5061/dryad.09qc0/1?ver=2013-12-04T10:58:06.912-05:00>
-    dcterms:creator <urn:uuid:29af6231-7eaa-4bc6-8a26-4a3840a7f92b>, <urn:uuid:35376810-8580-4d32-b506-577016e0a83c>, <urn:uuid:6ec5e0d9-c2fc-4af8-b748-c9d76fff68f5>, <urn:uuid:ccf63e54-c5b0-4829-bbaa-f2a71325b7f9>, <urn:uuid:d641a95c-19c7-459d-9624-444130fc7b2a>, <urn:uuid:ff1c5ba5-5900-4096-8957-1676e668199d>, <urn:uuid:ff30bfc0-8474-4b1d-a133-ab2c9c68aeb1> ;
-    dcterms:identifier "http://dx.doi.org/10.5061/dryad.09qc0/1?ver=2013-12-04T10:58:06.912-05:00" ;
-    dcterms:title "Datasets Huijben et al 2013 PLoS Path" ;
-    a gldata:DigitalObjectRecord .
-
-<https://cn.dataone.org/cn/v1/resolve/http://dx.doi.org/10.5061/dryad.12c6b/2?ver=2014-03-10T15:37:43.381-04:00>
-    dcterms:creator <urn:uuid:21c1faa1-c08c-443b-b651-112eb1545f05>, <urn:uuid:2540954c-26f9-4497-b262-38cd1f7456f7>, <urn:uuid:2a973ed1-b9cf-40e3-8596-106b478a8afd>, <urn:uuid:45a4d761-eff2-462d-b2d1-fdc965735d7a>, <urn:uuid:5e4580f5-e663-4977-baa4-9f7c9fc43936>, <urn:uuid:66e5845b-e4fd-444d-894c-8e9af572ece5>, <urn:uuid:73063754-53be-4cff-a907-d4fc91fe06fa>, <urn:uuid:8516d4b8-fac6-469e-bbf9-b7fa61f1acfa>, <urn:uuid:c7ca8d01-0360-48fd-afad-ebc8fdedda19>, <urn:uuid:d9f27233-2cc3-478c-bbc8-3ec5579e9700>, <urn:uuid:deb63285-3822-4c07-bda3-24127b6d1955> ;
-    dcterms:identifier "http://dx.doi.org/10.5061/dryad.12c6b/2?ver=2014-03-10T15:37:43.381-04:00" ;
-    dcterms:title "Generic Fitness" ;
-    a gldata:DigitalObjectRecord .
-
-<https://cn.dataone.org/cn/v1/resolve/http://dx.doi.org/10.5061/dryad.1bt4q?ver=2014-04-10T11:14:42.104-04:00>
-    dcterms:creator <urn:uuid:5d3f0264-3908-403a-a20d-b9d3752bf604>, <urn:uuid:89698919-c138-43a0-9289-fae0fa2c926f>, <urn:uuid:e6a53828-1560-464a-bd48-85438976b5ba>, <urn:uuid:f00c9a79-ce2e-472d-8a70-9a160a252184> ;
-    dcterms:identifier "http://dx.doi.org/10.5061/dryad.1bt4q?ver=2014-04-10T11:14:42.104-04:00" ;
-    dcterms:title "Data from: Cytochrome P450 gene Cyp337 and heritability of fitness traits in the Glanville fritillary butterfly" ;
-    a gldata:DigitalObjectRecord .
-
-<https://cn.dataone.org/cn/v1/resolve/http://dx.doi.org/10.5061/dryad.369q9/1?ver=2013-03-26T13:45:34.292-04:00>
-    dcterms:creator <urn:uuid:26107ddf-725d-4a32-b943-68c78ce1da41>, <urn:uuid:511cecea-fcfb-4df1-972b-eae8f5105c25>, <urn:uuid:8f919f3b-e858-45ab-95ca-be72a81db7e8>, <urn:uuid:95f13ea3-2f39-469d-a2d4-14d6d14b10a9>, <urn:uuid:c8f9ce34-dea3-4b5e-8cd2-a6b75f1e478f>, <urn:uuid:f1313ca6-18f7-4ab7-860d-0309a42c47b2>, <urn:uuid:f936568e-1872-4baa-9560-4ceddee787cb> ;
-    dcterms:identifier "http://dx.doi.org/10.5061/dryad.369q9/1?ver=2013-03-26T13:45:34.292-04:00" ;
-    dcterms:title "Collection sites and sample sizes" ;
-    a gldata:DigitalObjectRecord .
-
-<https://cn.dataone.org/cn/v1/resolve/http://dx.doi.org/10.5061/dryad.369q9/4?ver=2013-03-26T13:46:44.211-04:00>
-    dcterms:creator <urn:uuid:26107ddf-725d-4a32-b943-68c78ce1da41>, <urn:uuid:511cecea-fcfb-4df1-972b-eae8f5105c25>, <urn:uuid:8f919f3b-e858-45ab-95ca-be72a81db7e8>, <urn:uuid:95f13ea3-2f39-469d-a2d4-14d6d14b10a9>, <urn:uuid:c8f9ce34-dea3-4b5e-8cd2-a6b75f1e478f>, <urn:uuid:f1313ca6-18f7-4ab7-860d-0309a42c47b2>, <urn:uuid:f936568e-1872-4baa-9560-4ceddee787cb> ;
-    dcterms:identifier "http://dx.doi.org/10.5061/dryad.369q9/4?ver=2013-03-26T13:46:44.211-04:00" ;
-    dcterms:title "Tegeticula antithetica genotypes" ;
-    a gldata:DigitalObjectRecord .
-
-<https://cn.dataone.org/cn/v1/resolve/http://dx.doi.org/10.5061/dryad.369q9/5?ver=2013-03-26T13:47:14.988-04:00>
-    dcterms:creator <urn:uuid:26107ddf-725d-4a32-b943-68c78ce1da41>, <urn:uuid:511cecea-fcfb-4df1-972b-eae8f5105c25>, <urn:uuid:8f919f3b-e858-45ab-95ca-be72a81db7e8>, <urn:uuid:95f13ea3-2f39-469d-a2d4-14d6d14b10a9>, <urn:uuid:c8f9ce34-dea3-4b5e-8cd2-a6b75f1e478f>, <urn:uuid:f1313ca6-18f7-4ab7-860d-0309a42c47b2>, <urn:uuid:f936568e-1872-4baa-9560-4ceddee787cb> ;
-    dcterms:identifier "http://dx.doi.org/10.5061/dryad.369q9/5?ver=2013-03-26T13:47:14.988-04:00" ;
-    dcterms:title "Joshua tree phenotypic measurements" ;
-    a gldata:DigitalObjectRecord .
-
-<https://cn.dataone.org/cn/v1/resolve/http://dx.doi.org/10.5061/dryad.369q9?ver=2013-06-10T14:43:40.559-04:00>
-    dcterms:creator <urn:uuid:26107ddf-725d-4a32-b943-68c78ce1da41>, <urn:uuid:511cecea-fcfb-4df1-972b-eae8f5105c25>, <urn:uuid:8f919f3b-e858-45ab-95ca-be72a81db7e8>, <urn:uuid:95f13ea3-2f39-469d-a2d4-14d6d14b10a9>, <urn:uuid:c8f9ce34-dea3-4b5e-8cd2-a6b75f1e478f>, <urn:uuid:f1313ca6-18f7-4ab7-860d-0309a42c47b2>, <urn:uuid:f936568e-1872-4baa-9560-4ceddee787cb> ;
-    dcterms:identifier "http://dx.doi.org/10.5061/dryad.369q9?ver=2013-06-10T14:43:40.559-04:00" ;
-    dcterms:title "Data from: Effects of gene flow on phenotype matching between two varieties of Joshua tree (Yucca brevifolia; Agavaceae) and their pollinators" ;
-    a gldata:DigitalObjectRecord .
-
-<https://cn.dataone.org/cn/v1/resolve/http://dx.doi.org/10.5061/dryad.42f2q?ver=2013-10-01T14:11:47.455-04:00>
-    dcterms:creator <urn:uuid:0092b16d-99c1-4463-82ef-7a8123ceff85>, <urn:uuid:19f426f2-f644-42bf-9e79-673e910340bb>, <urn:uuid:4d62dfcf-fdda-43e7-b922-be0521a173f0>, <urn:uuid:d77fefe5-deea-491d-8fec-72bb80900d27> ;
-    dcterms:identifier "http://dx.doi.org/10.5061/dryad.42f2q?ver=2013-10-01T14:11:47.455-04:00" ;
-    dcterms:title "Data from: Diet and phylogeny shape the gut microbiota of Antarctic seals: a comparison of wild and captive animals" ;
-    a gldata:DigitalObjectRecord .
-
-<https://cn.dataone.org/cn/v1/resolve/http://dx.doi.org/10.5061/dryad.6v0h65g3/4?ver=2013-05-03T02:30:10.805-04:00>
-    dcterms:creator <urn:uuid:134d9059-6d21-4275-a067-828786a5c90d>, <urn:uuid:34b7b005-505c-42ab-a02a-b5716519d34a>, <urn:uuid:42c7d873-d77c-4fb4-be6a-738ecf6ade23>, <urn:uuid:8b238252-9fd1-4024-9141-33f2db473c32>, <urn:uuid:a8995024-dbc4-4405-a494-b16255c36efb> ;
-    dcterms:identifier "http://dx.doi.org/10.5061/dryad.6v0h65g3/4?ver=2013-05-03T02:30:10.805-04:00" ;
-    dcterms:title "data_trait_eggsize" ;
-    a gldata:DigitalObjectRecord .
-
-<https://cn.dataone.org/cn/v1/resolve/http://dx.doi.org/10.5061/dryad.77rf2/3?ver=2014-06-06T17:18:58.606-04:00>
-    dcterms:creator <urn:uuid:29e8ef7e-54f9-4680-a38d-56907ac1273e>, <urn:uuid:9f1d9a89-abbf-4a04-bb49-07106d5c73dc>, <urn:uuid:b88d4e08-221a-4364-af2b-0c3b24b3133e> ;
-    dcterms:identifier "http://dx.doi.org/10.5061/dryad.77rf2/3?ver=2014-06-06T17:18:58.606-04:00" ;
-    dcterms:title "CHIONACTIS_mtDNA_ND1_Matrix" ;
-    a gldata:DigitalObjectRecord .
-
-<https://cn.dataone.org/cn/v1/resolve/http://dx.doi.org/10.5061/dryad.7919?ver=2011-09-02T13:22:18.836-04:00>
-    dcterms:creator <urn:uuid:072bb9ea-dcb8-433f-aacb-c11ce9fc1160>, <urn:uuid:0ddbfd28-0415-4b52-9084-e5577f2f4b48>, <urn:uuid:305c3fab-ca21-4b8f-ac71-76ae4bd7ac8d>, <urn:uuid:44c410fd-0dca-451e-a458-31f0e64453bc>, <urn:uuid:51677055-9524-44f7-8ce6-288221556e0f>, <urn:uuid:6e73e975-8196-4439-aac7-0a67d1e7ccb3>, <urn:uuid:88b96954-ddd8-4649-939c-f07959a74b46>, <urn:uuid:993211d9-a56f-434b-81eb-ce2a4835cca3>, <urn:uuid:9a66ca88-4d1b-471b-bba5-6e377ad042ea>, <urn:uuid:b459fcea-6d62-4940-8a1b-a216aa5baad5>, <urn:uuid:c3c871d5-4d5a-4d44-8535-6eb1d2276a08>, <urn:uuid:dc65eb14-cc7d-4212-83fc-f5d76d6d9dab>, <urn:uuid:ed06a516-fab4-4290-9a7d-6e1cf0421669> ;
-    dcterms:identifier "http://dx.doi.org/10.5061/dryad.7919?ver=2011-09-02T13:22:18.836-04:00" ;
-    dcterms:title "Data from: Sweet drinks are made of this: conservation genetics of an endemic palm species from the Dominican Republic" ;
-    a gldata:DigitalObjectRecord .
-
-<https://cn.dataone.org/cn/v1/resolve/http://dx.doi.org/10.5061/dryad.8343/4?ver=2013-07-18T14:06:58.440-04:00>
-    dcterms:creator <urn:uuid:0878319e-4de6-4de1-9657-53f943cfa0d3>, <urn:uuid:729dbe1b-1cd9-403b-bb25-2068ff0f2265>, <urn:uuid:78674a9b-0fd2-4865-a789-897455437c23> ;
-    dcterms:identifier "http://dx.doi.org/10.5061/dryad.8343/4?ver=2013-07-18T14:06:58.440-04:00" ;
-    dcterms:title "phylogenetic trees for Ceanothus" ;
-    a gldata:DigitalObjectRecord .
-
-<https://cn.dataone.org/cn/v1/resolve/http://dx.doi.org/10.5061/dryad.8961?ver=2011-09-02T12:45:43.709-04:00>
-    dcterms:creator <urn:uuid:1457da5f-0a20-4e36-98a1-ddb12cf10330>, <urn:uuid:4d629d72-95fd-4809-863e-f39a100c5464>, <urn:uuid:738d66cf-bcfb-4367-83e6-62c683c8711e>, <urn:uuid:ad53be4d-f66c-48e1-b82c-2f80ecb34dda>, <urn:uuid:afe9fa70-0341-41b4-b495-fea8677b3a13> ;
-    dcterms:identifier "http://dx.doi.org/10.5061/dryad.8961?ver=2011-09-02T12:45:43.709-04:00" ;
-    dcterms:title "Data from: Model sensitivity and use of the comparative finite element method in mammalian jaw mechanics: mandible performance in the Gray Wolf" ;
-    a gldata:DigitalObjectRecord .
-
-<https://cn.dataone.org/cn/v1/resolve/http://dx.doi.org/10.5061/dryad.8b490/1?ver=2013-10-25T02:30:14.242-04:00>
-    dcterms:creator <urn:uuid:83680ca3-ad25-4c8a-96a1-f9906e7f94ba>, <urn:uuid:c03f3763-9312-4915-9032-947fa916b5d1> ;
-    dcterms:identifier "http://dx.doi.org/10.5061/dryad.8b490/1?ver=2013-10-25T02:30:14.242-04:00" ;
-    dcterms:title "Amphiacusta sanctaecrucis morphological and microsatellite data" ;
-    a gldata:DigitalObjectRecord .
-
-<https://cn.dataone.org/cn/v1/resolve/http://dx.doi.org/10.5061/dryad.dh7kh/3?ver=2013-05-28T14:27:35.095-04:00>
-    dcterms:creator <urn:uuid:a6d99c80-ccc6-4b61-8652-7cd0b20441c9> ;
-    dcterms:identifier "http://dx.doi.org/10.5061/dryad.dh7kh/3?ver=2013-05-28T14:27:35.095-04:00" ;
-    dcterms:title "19_taxon_dataset_small_chromosome" ;
-    a gldata:DigitalObjectRecord .
-
-<https://cn.dataone.org/cn/v1/resolve/http://dx.doi.org/10.5061/dryad.h2p05/5?ver=2014-06-09T13:23:09.510-04:00>
-    dcterms:creator <urn:uuid:104482b2-a66c-4cc8-b3ae-2717cbaea2f6>, <urn:uuid:12c84a76-b8de-4613-a56f-372990869924>, <urn:uuid:e9eb583b-b0cf-4b0e-8947-ba456882663a> ;
-    dcterms:identifier "http://dx.doi.org/10.5061/dryad.h2p05/5?ver=2014-06-09T13:23:09.510-04:00" ;
-    dcterms:title "BaumsEtAl_14_DRYAD_NetworkOutfile" ;
-    a gldata:DigitalObjectRecord .
-
-<https://cn.dataone.org/cn/v1/resolve/http://dx.doi.org/10.5061/dryad.hc257/7?ver=2012-11-21T14:27:10.076-05:00>
-    dcterms:creator <urn:uuid:24fd4e54-83e7-4716-be00-5ee52a077774>, <urn:uuid:92ddf370-7fd2-4855-a187-6e9cf5da2f10>, <urn:uuid:a14d5301-d5d3-462d-baa5-06eb865f15d0>, <urn:uuid:c1e37117-44a1-4724-8f5e-e4a4d1d01721>, <urn:uuid:d5e55958-39cd-4888-badc-fd9f6f0b5a9b>, <urn:uuid:f143e062-5f29-49e7-be52-34e068440a28> ;
-    dcterms:identifier "http://dx.doi.org/10.5061/dryad.hc257/7?ver=2012-11-21T14:27:10.076-05:00" ;
-    dcterms:title "Eleutherodactylus antillensis mtDNA control region (CR) alignment + 2 outgroups" ;
-    a gldata:DigitalObjectRecord .
-
-<https://cn.dataone.org/cn/v1/resolve/http://dx.doi.org/10.5061/dryad.nt898/3?ver=2014-05-15T11:17:10.372-04:00>
-    dcterms:creator <urn:uuid:01d39854-66c5-490b-b41f-923918d8c7bd>, <urn:uuid:664b987b-924a-42f2-ae82-7a08f3a0b544>, <urn:uuid:91e546bb-ccbb-46c3-9b5a-d40b4b99329e>, <urn:uuid:9c5dd2aa-ed1c-40e3-a764-a1e8142734eb>, <urn:uuid:cecb9b6c-f67c-47ad-9fb8-e755afbe0b41>, <urn:uuid:e6f87c24-c541-4a37-900d-85db22f5c5c4> ;
-    dcterms:identifier "http://dx.doi.org/10.5061/dryad.nt898/3?ver=2014-05-15T11:17:10.372-04:00" ;
-    dcterms:title "GraphicalModels_Example_1a" ;
-    a gldata:DigitalObjectRecord .
-
-<https://cn.dataone.org/cn/v1/resolve/http://dx.doi.org/10.5061/dryad.td28r/7?ver=2014-06-10T13:55:55.563-04:00>
-    dcterms:creator <urn:uuid:128d0cf1-6ed0-4c0d-9c09-2b9afa8dad60>, <urn:uuid:2ce998db-e83e-42d6-afe5-5d1df26e9c0d>, <urn:uuid:c0af382e-940d-49ae-a4ee-825dbb80444d>, <urn:uuid:c185bf1a-696b-4381-9a41-d1412480786d> ;
-    dcterms:identifier "http://dx.doi.org/10.5061/dryad.td28r/7?ver=2014-06-10T13:55:55.563-04:00" ;
-    dcterms:title "Linear Mixed Models (mtDNA) Input File" ;
-    a gldata:DigitalObjectRecord .
-
-<https://cn.dataone.org/cn/v1/resolve/http://dx.doi.org/10.5061/dryad.v5m8v?ver=2014-01-06T13:59:35.610-05:00>
-    dcterms:creator <urn:uuid:0c99cc98-19df-4929-92b8-c0c714943dcb>, <urn:uuid:0e45d38c-b928-4c07-9a07-b7e9d7841cf7>, <urn:uuid:16b4fd09-98c0-45a5-af1d-17242e34d7cc>, <urn:uuid:20d036df-e04b-4d4b-b3bc-b9dcda948162>, <urn:uuid:36a6317e-3172-44f2-88f3-8ed69218bc52>, <urn:uuid:39d8eb83-c002-4153-9597-525c71e5b9d1>, <urn:uuid:3c870389-c880-48c2-921b-b06a789ed67a>, <urn:uuid:3d10063c-03a3-4773-a9cc-3677498060e0>, <urn:uuid:451fb090-cc96-4986-be6c-492d08c5cd51>, <urn:uuid:4ab12d84-75cf-461c-9c48-2518a7968ed8>, <urn:uuid:4bd368e8-262a-4269-a052-4f2d5cd860ff>, <urn:uuid:4daad16b-3752-4512-86f3-f44471d892e8>, <urn:uuid:4dc2f9f6-9072-42f7-aabb-1b5934ccfd08>, <urn:uuid:61187921-90e6-483e-ab12-475aef68cc99>, <urn:uuid:63a5fd00-0f3c-4e86-a11e-7b11f1cf00f5>, <urn:uuid:65dd5164-6496-4ce7-b1e7-721725608e04>, <urn:uuid:74633ecf-761d-4cc6-a09a-118f98830c7d>, <urn:uuid:857b8439-886a-45bf-9831-117ad64c2b42>, <urn:uuid:86eb7585-c2aa-4caa-9cdc-c79b381946cd>, <urn:uuid:93a48d0a-537a-41a7-992b-b8c9f8a1a699>, <urn:uuid:979133fe-3fca-43bb-b5bc-fdf1fc86bf60>, <urn:uuid:9cb93c49-34e5-4a2c-b37e-d3e7785d36bf>, <urn:uuid:a0bbf6f0-ffeb-483c-98a9-5e0abfe15a0a>, <urn:uuid:a2580711-5ac8-41d6-8816-1f206ce9ec1a>, <urn:uuid:a9184c0c-9179-4a97-b6fd-075d15ad8eb5>, <urn:uuid:b2c7288c-9c76-485f-acb5-9d73c0463b5d>, <urn:uuid:bb2ae597-9193-4e59-8981-279714eb0c97>, <urn:uuid:be207ddb-a8f2-4ebd-9fdf-54364b9923ed>, <urn:uuid:ce2018bb-f49a-404e-8a76-f04f2b41f4ca>, <urn:uuid:cefd029b-71ba-46ad-89e0-93843e9f873e>, <urn:uuid:ea44b322-b4d4-4f38-9c9e-3b2075f323a4>, <urn:uuid:f266c6c4-6d2f-41ab-a9b9-81b699934f77>, <urn:uuid:f85adb26-3774-4db7-9983-d76400af1f86>, <urn:uuid:fa4eba55-3b8b-40ce-bc14-601d392935bc>, <urn:uuid:fc3d5be6-efc1-465b-a583-496512acac3c> ;
-    dcterms:identifier "http://dx.doi.org/10.5061/dryad.v5m8v?ver=2014-01-06T13:59:35.610-05:00" ;
-    dcterms:title "Data from: High-resolution chemical dissection of a model eukaryote reveals targets, pathways and gene functions" ;
-    a gldata:DigitalObjectRecord .
-
-<https://cn.dataone.org/cn/v1/resolve/kubi.lifemapper.sdm.layers.508.eml>
-    dcterms:creator <urn:uuid:8e2a2658-235f-439e-a896-cfc0af015276> ;
-    dcterms:identifier "kubi.lifemapper.sdm.layers.508.eml" ;
-    dcterms:title "BIO6, Min Temperature of Coldest Month, 2010-2039, IPCC AR4 Scenario A2, NIES" ;
-    a gldata:DigitalObjectRecord .
-
-<https://cn.dataone.org/cn/v1/resolve/peggym.1102.20>
-    dcterms:creator <urn:uuid:9bbca0aa-6f4f-4539-89e2-6e0cc524f1e0> ;
-    dcterms:identifier "peggym.1102.20" ;
-    dcterms:title "Richtersveld National Park Climate data (2008-2010)" ;
-    a gldata:DigitalObjectRecord .
-
-<urn:uuid:0092b16d-99c1-4463-82ef-7a8123ceff85>
-    datacite:hasIdentifier <http://fakeorcid.org/0092b16d99c1446382ef7a8123ceff85> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Nelson, Tiffanie M." .
-
-<urn:uuid:011da526-3a3b-4029-93f2-2f75013919fa>
-    datacite:hasIdentifier <http://fakeorcid.org/011da5263a3b402993f22f75013919fa> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Shu-Hui Wu" .
-
-<urn:uuid:01d39854-66c5-490b-b41f-923918d8c7bd>
-    datacite:hasIdentifier <http://fakeorcid.org/01d3985466c5490bb41f923918d8c7bd> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Heath, Tracy" .
-
-<urn:uuid:072bb9ea-dcb8-433f-aacb-c11ce9fc1160>
-    datacite:hasIdentifier <http://fakeorcid.org/072bb9eadcb8433faacbc11ce9fc1160> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Abdo, Melissa" .
-
-<urn:uuid:0878319e-4de6-4de1-9657-53f943cfa0d3>
-    datacite:hasIdentifier <http://fakeorcid.org/0878319e4de64de1965753f943cfa0d3> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Lancaster, Lesley T." .
-
-<urn:uuid:0c4347bd-48aa-4753-b759-e4f022a9b332>
-    datacite:hasIdentifier <http://fakeorcid.org/0c4347bd48aa4753b759e4f022a9b332> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Chung chih hsin" .
-
-<urn:uuid:0c99cc98-19df-4929-92b8-c0c714943dcb>
-    datacite:hasIdentifier <http://fakeorcid.org/0c99cc9819df492992b8c0c714943dcb> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Filipuzzi, Ireos" .
-
-<urn:uuid:0ddbfd28-0415-4b52-9084-e5577f2f4b48>
-    datacite:hasIdentifier <http://fakeorcid.org/0ddbfd2804154b529084e5577f2f4b48> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Jiménez, Francisco" .
-
-<urn:uuid:0e45d38c-b928-4c07-9a07-b7e9d7841cf7>
-    datacite:hasIdentifier <http://fakeorcid.org/0e45d38cb9284c079a07b7e9d7841cf7> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Melin, Nicolas" .
-
-<urn:uuid:104482b2-a66c-4cc8-b3ae-2717cbaea2f6>
-    datacite:hasIdentifier <http://fakeorcid.org/104482b2a66c4cc8b3ae2717cbaea2f6> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Baums, Iliana B." .
-
-<urn:uuid:10943ec2-a009-4ac5-8e5e-80b324a5375b>
-    datacite:hasIdentifier <http://fakeorcid.org/10943ec2a0094ac58e5e80b324a5375b> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Chen-Lung Ho" .
-
-<urn:uuid:120f6df5-31ff-43bb-8627-a7eb9c91095d>
-    datacite:hasIdentifier <http://fakeorcid.org/120f6df531ff43bb8627a7eb9c91095d> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Los Angeles Dept. of Water and Power" .
-
-<urn:uuid:128d0cf1-6ed0-4c0d-9c09-2b9afa8dad60>
-    datacite:hasIdentifier <http://fakeorcid.org/128d0cf16ed04c0d9c092b9afa8dad60> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Harrison, Richard G." .
-
-<urn:uuid:12c84a76-b8de-4613-a56f-372990869924>
-    datacite:hasIdentifier <http://fakeorcid.org/12c84a76b8de4613a56f372990869924> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "LaJeunesse, Todd C." .
-
-<urn:uuid:134d9059-6d21-4275-a067-828786a5c90d>
-    datacite:hasIdentifier <http://fakeorcid.org/134d90596d214275a067828786a5c90d> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Forstmeier, Wolfgang" .
-
-<urn:uuid:1457da5f-0a20-4e36-98a1-ddb12cf10330>
-    datacite:hasIdentifier <http://fakeorcid.org/1457da5f0a204e3698a1ddb12cf10330> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "McNitt-Gray, Jill L." .
-
-<urn:uuid:16b4fd09-98c0-45a5-af1d-17242e34d7cc>
-    datacite:hasIdentifier <http://fakeorcid.org/16b4fd0998c045a5af1d17242e34d7cc> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Cerino, Raffaele" .
-
-<urn:uuid:18610579-b907-42fc-9b3a-8262ad6f9647>
-    datacite:hasIdentifier <http://fakeorcid.org/18610579b90742fc9b3a8262ad6f9647> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Olympic Coast National Marine Sanctuary (OCNMS)" .
-
-<urn:uuid:19f426f2-f644-42bf-9e79-673e910340bb>
-    datacite:hasIdentifier <http://fakeorcid.org/19f426f2f64442bf9e79673e910340bb> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Brown, Mark V." .
-
-<urn:uuid:1f6bf111-a9b8-4aa8-ab1a-38e16c99e25a>
-    datacite:hasIdentifier <http://fakeorcid.org/1f6bf111a9b84aa8ab1a38e16c99e25a> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Libe Washburn" .
-
-<urn:uuid:20d036df-e04b-4d4b-b3bc-b9dcda948162>
-    datacite:hasIdentifier <http://fakeorcid.org/20d036dfe04b4d4bb3bcb9dcda948162> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Nigsch, Florian" .
-
-<urn:uuid:21c1faa1-c08c-443b-b651-112eb1545f05>
-    datacite:hasIdentifier <http://fakeorcid.org/21c1faa1c08c443bb651112eb1545f05> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Cruveiller, Stéphane" .
-
-<urn:uuid:24fd4e54-83e7-4716-be00-5ee52a077774>
-    datacite:hasIdentifier <http://fakeorcid.org/24fd4e5483e74716be005ee52a077774> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Barker, Brittany S." .
-
-<urn:uuid:24fe0cf7-0efb-4d59-b3f1-e540a180efc4>
-    datacite:hasIdentifier <http://fakeorcid.org/24fe0cf70efb4d59b3f1e540a180efc4> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Pete Raimondi" .
-
-<urn:uuid:2540954c-26f9-4497-b262-38cd1f7456f7>
-    datacite:hasIdentifier <http://fakeorcid.org/2540954c26f94497b26238cd1f7456f7> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Lenski, Richard E." .
-
-<urn:uuid:26107ddf-725d-4a32-b943-68c78ce1da41>
-    datacite:hasIdentifier <http://fakeorcid.org/26107ddf725d4a32b94368c78ce1da41> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Drummond, Christopher" .
-
-<urn:uuid:27a5270e-bd7f-496d-9e1f-1f9b64a0346f>
-    datacite:hasIdentifier <http://fakeorcid.org/27a5270ebd7f496d9e1f1f9b64a0346f> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Hsu Hsiao_Chi" .
-
-<urn:uuid:29af6231-7eaa-4bc6-8a26-4a3840a7f92b>
-    datacite:hasIdentifier <http://fakeorcid.org/29af62317eaa4bc68a264a3840a7f92b> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Tomasello, Danielle" .
-
-<urn:uuid:29e8ef7e-54f9-4680-a38d-56907ac1273e>
-    datacite:hasIdentifier <http://fakeorcid.org/29e8ef7e54f94680a38d56907ac1273e> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Fisher, Robert N." .
-
-<urn:uuid:2a973ed1-b9cf-40e3-8596-106b478a8afd>
-    datacite:hasIdentifier <http://fakeorcid.org/2a973ed1b9cf40e38596106b478a8afd> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Schneider, Dominique" .
-
-<urn:uuid:2ab116f0-0e46-470c-ae3e-413b5b889d8b>
-    datacite:hasIdentifier <http://fakeorcid.org/2ab116f00e46470cae3e413b5b889d8b> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Irvine Ranch WD - Los Alisos System" .
-
-<urn:uuid:2ce998db-e83e-42d6-afe5-5d1df26e9c0d>
-    datacite:hasIdentifier <http://fakeorcid.org/2ce998dbe83e42d6afe55d1df26e9c0d> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Bogdanowicz, Steven M." .
-
-<urn:uuid:2d69a59d-84bd-4061-823e-8d6f73ff102a>
-    datacite:hasIdentifier <http://fakeorcid.org/2d69a59d84bd4061823e8d6f73ff102a> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Tuolumne County" .
-
-<urn:uuid:2f2a4f41-5c71-4b5a-8074-febdebc42457>
-    datacite:hasIdentifier <http://fakeorcid.org/2f2a4f415c714b5a8074febdebc42457> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Madera County" .
-
-<urn:uuid:300374af-d77a-4802-bb80-37c73401b600>
-    datacite:hasIdentifier <http://fakeorcid.org/300374afd77a4802bb8037c73401b600> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Lin" .
-
-<urn:uuid:305c3fab-ca21-4b8f-ac71-76ae4bd7ac8d>
-    datacite:hasIdentifier <http://fakeorcid.org/305c3fabca214b8fac7176ae4bd7ac8d> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Veloz, Alberto" .
-
-<urn:uuid:320c3d2c-ea77-4504-ae18-0fc635bb3180>
-    datacite:hasIdentifier <http://fakeorcid.org/320c3d2cea774504ae180fc635bb3180> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "CDPH Merced District" .
-
-<urn:uuid:34b7b005-505c-42ab-a02a-b5716519d34a>
-    datacite:hasIdentifier <http://fakeorcid.org/34b7b005505c42aba02ab5716519d34a> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Ellegren, Hans" .
-
-<urn:uuid:35376810-8580-4d32-b506-577016e0a83c>
-    datacite:hasIdentifier <http://fakeorcid.org/3537681085804d32b506577016e0a83c> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Read, Andrew F." .
-
-<urn:uuid:36a6317e-3172-44f2-88f3-8ed69218bc52>
-    datacite:hasIdentifier <http://fakeorcid.org/36a6317e317244f288f38ed69218bc52> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Aust, Thomas" .
-
-<urn:uuid:37534213-42f4-4e3c-9885-4855d572d74e>
-    datacite:hasIdentifier <http://fakeorcid.org/3753421342f44e3c98854855d572d74e> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Monterey Bay National Marine Sanctuary" .
-
-<urn:uuid:39d8eb83-c002-4153-9597-525c71e5b9d1>
-    datacite:hasIdentifier <http://fakeorcid.org/39d8eb83c00241539597525c71e5b9d1> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Schmitt, Esther K." .
-
-<urn:uuid:3c870389-c880-48c2-921b-b06a789ed67a>
-    datacite:hasIdentifier <http://fakeorcid.org/3c870389c88048c2921bb06a789ed67a> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Plikat, Uwe" .
-
-<urn:uuid:3d10063c-03a3-4773-a9cc-3677498060e0>
-    datacite:hasIdentifier <http://fakeorcid.org/3d10063c03a34773a9cc3677498060e0> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Oakeley, Edward J." .
-
-<urn:uuid:42c7d873-d77c-4fb4-be6a-738ecf6ade23>
-    datacite:hasIdentifier <http://fakeorcid.org/42c7d873d77c4fb4be6a738ecf6ade23> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Kempenaers, Bart" .
-
-<urn:uuid:42ee17c2-388c-456c-910f-669e1097e2ce>
-    datacite:hasIdentifier <http://fakeorcid.org/42ee17c2388c456c910f669e1097e2ce> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Margaret McManus" .
-
-<urn:uuid:44c410fd-0dca-451e-a458-31f0e64453bc>
-    datacite:hasIdentifier <http://fakeorcid.org/44c410fd0dca451ea45831f0e64453bc> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Peguero, Brígido" .
-
-<urn:uuid:451fb090-cc96-4986-be6c-492d08c5cd51>
-    datacite:hasIdentifier <http://fakeorcid.org/451fb090cc964986be6c492d08c5cd51> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Riedl, Ralph" .
-
-<urn:uuid:45a4d761-eff2-462d-b2d1-fdc965735d7a>
-    datacite:hasIdentifier <http://fakeorcid.org/45a4d761eff2462db2d1fdc965735d7a> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Médigue, Claudine" .
-
-<urn:uuid:4a852ab1-40cf-4df5-87e5-de2d52d4623e>
-    datacite:hasIdentifier <http://fakeorcid.org/4a852ab140cf4df587e5de2d52d4623e> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Rancho Pauma Mutual Water Company" .
-
-<urn:uuid:4ab12d84-75cf-461c-9c48-2518a7968ed8>
-    datacite:hasIdentifier <http://fakeorcid.org/4ab12d8475cf461c9c482518a7968ed8> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Porter, Jeffrey A." .
-
-<urn:uuid:4bd368e8-262a-4269-a052-4f2d5cd860ff>
-    datacite:hasIdentifier <http://fakeorcid.org/4bd368e8262a4269a0524f2d5cd860ff> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Sadlish, Heather" .
-
-<urn:uuid:4c9a01e5-ed94-40f9-a507-f5c130ab18df>
-    datacite:hasIdentifier <http://fakeorcid.org/4c9a01e5ed9440f9a507f5c130ab18df> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Shann-Jye Moore" .
-
-<urn:uuid:4d629d72-95fd-4809-863e-f39a100c5464>
-    datacite:hasIdentifier <http://fakeorcid.org/4d629d7295fd4809863ef39a100c5464> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Tseng, Zhijie Jack" .
-
-<urn:uuid:4d62dfcf-fdda-43e7-b922-be0521a173f0>
-    datacite:hasIdentifier <http://fakeorcid.org/4d62dfcffdda43e7b922be0521a173f0> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Rogers, Tracey L." .
-
-<urn:uuid:4daad16b-3752-4512-86f3-f44471d892e8>
-    datacite:hasIdentifier <http://fakeorcid.org/4daad16b3752451286f3f44471d892e8> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Fishman, Mark C." .
-
-<urn:uuid:4db76bb1-c9b0-4ed8-9153-06cd3e86cd8e>
-    datacite:hasIdentifier <http://fakeorcid.org/4db76bb1c9b04ed8915306cd3e86cd8e> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Hsy-Yu Tzeng" .
-
-<urn:uuid:4dc2f9f6-9072-42f7-aabb-1b5934ccfd08>
-    datacite:hasIdentifier <http://fakeorcid.org/4dc2f9f6907242f7aabb1b5934ccfd08> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Petersen, Frank" .
-
-<urn:uuid:4f858cd7-4e9c-4c29-9bf7-a5270a0efc57>
-    datacite:hasIdentifier <http://fakeorcid.org/4f858cd74e9c4c299bf7a5270a0efc57> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Jenn-Che Wang" .
-
-<urn:uuid:511cecea-fcfb-4df1-972b-eae8f5105c25>
-    datacite:hasIdentifier <http://fakeorcid.org/511ceceafcfb4df1972beae8f5105c25> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Pellmyr, Olle" .
-
-<urn:uuid:51677055-9524-44f7-8ce6-288221556e0f>
-    datacite:hasIdentifier <http://fakeorcid.org/51677055952444f78ce6288221556e0f> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Moynihan, Jeremy" .
-
-<urn:uuid:5d3f0264-3908-403a-a20d-b9d3752bf604>
-    datacite:hasIdentifier <http://fakeorcid.org/5d3f02643908403aa20db9d3752bf604> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Wong, Swee C." .
-
-<urn:uuid:5d835535-6e0f-4f2e-94db-b9e7759dac07>
-    datacite:hasIdentifier <http://fakeorcid.org/5d8355356e0f4f2e94dbb9e7759dac07> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Partnership for Interdisciplinary Studies of Coastal Oceans (PISCO)" .
-
-<urn:uuid:5e4580f5-e663-4977-baa4-9f7c9fc43936>
-    datacite:hasIdentifier <http://fakeorcid.org/5e4580f5e6634977baa49f7c9fc43936> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Plucain, Jessica" .
-
-<urn:uuid:61187921-90e6-483e-ab12-475aef68cc99>
-    datacite:hasIdentifier <http://fakeorcid.org/6118792190e6483eab12475aef68cc99> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Chang, Lena" .
-
-<urn:uuid:62a909d6-f834-4bc4-b2a2-add6182d3c2d>
-    datacite:hasIdentifier <http://fakeorcid.org/62a909d6f8344bc4b2a2add6182d3c2d> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "City of Vacaville" .
-
-<urn:uuid:63a5fd00-0f3c-4e86-a11e-7b11f1cf00f5>
-    datacite:hasIdentifier <http://fakeorcid.org/63a5fd000f3c4e86a11e7b11f1cf00f5> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Baeriswyl, Lukas" .
-
-<urn:uuid:65dd5164-6496-4ce7-b1e7-721725608e04>
-    datacite:hasIdentifier <http://fakeorcid.org/65dd516464964ce7b1e7721725608e04> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Knapp, Britta" .
-
-<urn:uuid:664b987b-924a-42f2-ae82-7a08f3a0b544>
-    datacite:hasIdentifier <http://fakeorcid.org/664b987b924a42f2ae827a08f3a0b544> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Höhna, Sebastian" .
-
-<urn:uuid:66e5845b-e4fd-444d-894c-8e9af572ece5>
-    datacite:hasIdentifier <http://fakeorcid.org/66e5845be4fd444d894c8e9af572ece5> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Hindré, Thomas" .
-
-<urn:uuid:6be0846b-9e57-4afa-8847-d931abdef867>
-    datacite:hasIdentifier <http://fakeorcid.org/6be0846b9e574afa8847d931abdef867> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Merced County" .
-
-<urn:uuid:6e73e975-8196-4439-aac7-0a67d1e7ccb3>
-    datacite:hasIdentifier <http://fakeorcid.org/6e73e97581964439aac70a67d1e7ccb3> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Maunder, Michael" .
-
-<urn:uuid:6ec5e0d9-c2fc-4af8-b748-c9d76fff68f5>
-    datacite:hasIdentifier <http://fakeorcid.org/6ec5e0d9c2fc4af8b748c9d76fff68f5> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Sim, Derek G." .
-
-<urn:uuid:70511810-23f7-48bc-b90c-65d1409f3e12>
-    datacite:hasIdentifier <http://fakeorcid.org/7051181023f748bcb90c65d1409f3e12> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Carol Blanchette" .
-
-<urn:uuid:729dbe1b-1cd9-403b-bb25-2068ff0f2265>
-    datacite:hasIdentifier <http://fakeorcid.org/729dbe1b1cd9403bbb252068ff0f2265> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Ree, Richard H." .
-
-<urn:uuid:73063754-53be-4cff-a907-d4fc91fe06fa>
-    datacite:hasIdentifier <http://fakeorcid.org/7306375453be4cffa907d4fc91fe06fa> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Tenaillon, Olivier" .
-
-<urn:uuid:738d66cf-bcfb-4367-83e6-62c683c8711e>
-    datacite:hasIdentifier <http://fakeorcid.org/738d66cfbcfb436783e662c683c8711e> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Enciso, Reyes" .
-
-<urn:uuid:74633ecf-761d-4cc6-a09a-118f98830c7d>
-    datacite:hasIdentifier <http://fakeorcid.org/74633ecf761d4cc6a09a118f98830c7d> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Schuierer, Sven" .
-
-<urn:uuid:78674a9b-0fd2-4865-a789-897455437c23>
-    datacite:hasIdentifier <http://fakeorcid.org/78674a9b0fd24865a789897455437c23> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Goldberg, Emma E." .
-
-<urn:uuid:79991ed2-b36e-415c-b844-941babe76662>
-    datacite:hasIdentifier <http://fakeorcid.org/79991ed2b36e415cb844941babe76662> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Jack Barth" .
-
-<urn:uuid:7f90c41f-812b-4647-9026-5493a346fea5>
-    datacite:hasIdentifier <http://fakeorcid.org/7f90c41f812b464790265493a346fea5> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Shu-Tzong Lin" .
-
-<urn:uuid:83680ca3-ad25-4c8a-96a1-f9906e7f94ba>
-    datacite:hasIdentifier <http://fakeorcid.org/83680ca3ad254c8a96a1f9906e7f94ba> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Oneal, Elen" .
-
-<urn:uuid:8516d4b8-fac6-469e-bbf9-b7fa61f1acfa>
-    datacite:hasIdentifier <http://fakeorcid.org/8516d4b8fac6469ebbf9b7fa61f1acfa> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Marx, Christopher J." .
-
-<urn:uuid:857b8439-886a-45bf-9831-117ad64c2b42>
-    datacite:hasIdentifier <http://fakeorcid.org/857b8439886a45bf9831117ad64c2b42> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Hartmann, Nicole" .
-
-<urn:uuid:86eb7585-c2aa-4caa-9cdc-c79b381946cd>
-    datacite:hasIdentifier <http://fakeorcid.org/86eb7585c2aa4caa9cdcc79b381946cd> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Brachat, Sophie" .
-
-<urn:uuid:88b96954-ddd8-4649-939c-f07959a74b46>
-    datacite:hasIdentifier <http://fakeorcid.org/88b96954ddd84649939cf07959a74b46> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Francisco-Ortega, Javier" .
-
-<urn:uuid:89698919-c138-43a0-9289-fae0fa2c926f>
-    datacite:hasIdentifier <http://fakeorcid.org/89698919c13843a09289fae0fa2c926f> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "de Jong, Maaike A." .
-
-<urn:uuid:8b238252-9fd1-4024-9141-33f2db473c32>
-    datacite:hasIdentifier <http://fakeorcid.org/8b2382529fd14024914133f2db473c32> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Schielzeth, Holger" .
-
-<urn:uuid:8e2a2658-235f-439e-a896-cfc0af015276>
-    datacite:hasIdentifier <http://fakeorcid.org/8e2a2658235f439ea896cfc0af015276> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Lifemapper" .
-
-<urn:uuid:8f919f3b-e858-45ab-95ca-be72a81db7e8>
-    datacite:hasIdentifier <http://fakeorcid.org/8f919f3be85845ab95cabe72a81db7e8> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Smith, Christopher I." .
-
-<urn:uuid:91e546bb-ccbb-46c3-9b5a-d40b4b99329e>
-    datacite:hasIdentifier <http://fakeorcid.org/91e546bbccbb46c39b5ad40b4b99329e> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Huelsenbeck, John" .
-
-<urn:uuid:92ddf370-7fd2-4855-a187-6e9cf5da2f10>
-    datacite:hasIdentifier <http://fakeorcid.org/92ddf3707fd24855a1876e9cf5da2f10> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Waide, Robert B." .
-
-<urn:uuid:93a48d0a-537a-41a7-992b-b8c9f8a1a699>
-    datacite:hasIdentifier <http://fakeorcid.org/93a48d0a537a41a7992bb8c9f8a1a699> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Tallarico, John A." .
-
-<urn:uuid:948ce0d9-9eef-481f-9bb1-293af53fd622>
-    datacite:hasIdentifier <http://fakeorcid.org/948ce0d99eef481f9bb1293af53fd622> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "CDPH Lassen District" .
-
-<urn:uuid:95f13ea3-2f39-469d-a2d4-14d6d14b10a9>
-    datacite:hasIdentifier <http://fakeorcid.org/95f13ea32f39469da2d414d6d14b10a9> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Rowley, Daniel J." .
-
-<urn:uuid:979133fe-3fca-43bb-b5bc-fdf1fc86bf60>
-    datacite:hasIdentifier <http://fakeorcid.org/979133fe3fca43bbb5bcfdf1fc86bf60> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Bhullar, Bhupinder" .
-
-<urn:uuid:993211d9-a56f-434b-81eb-ce2a4835cca3>
-    datacite:hasIdentifier <http://fakeorcid.org/993211d9a56f434b81ebce2a4835cca3> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Meerow, Alan W" .
-
-<urn:uuid:99a0bdad-8065-4c9d-a55f-bcb3458a011d>
-    datacite:hasIdentifier <http://fakeorcid.org/99a0bdad80654c9da55fbcb3458a011d> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Jyh-Ren Wang" .
-
-<urn:uuid:9a66ca88-4d1b-471b-bba5-6e377ad042ea>
-    datacite:hasIdentifier <http://fakeorcid.org/9a66ca884d1b471bbba56e377ad042ea> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Griffith, M Patrick" .
-
-<urn:uuid:9bbca0aa-6f4f-4539-89e2-6e0cc524f1e0>
-    datacite:hasIdentifier <http://fakeorcid.org/9bbca0aa6f4f453989e26e0cc524f1e0> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Kruger" .
-
-<urn:uuid:9c5dd2aa-ed1c-40e3-a764-a1e8142734eb>
-    datacite:hasIdentifier <http://fakeorcid.org/9c5dd2aaed1c40e3a764a1e8142734eb> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Landis, Michael" .
-
-<urn:uuid:9cb93c49-34e5-4a2c-b37e-d3e7785d36bf>
-    datacite:hasIdentifier <http://fakeorcid.org/9cb93c4934e54a2cb37ed3e7785d36bf> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Krastel, Philipp" .
-
-<urn:uuid:9f1d9a89-abbf-4a04-bb49-07106d5c73dc>
-    datacite:hasIdentifier <http://fakeorcid.org/9f1d9a89abbf4a04bb4907106d5c73dc> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Vandergast, Amy G." .
-
-<urn:uuid:a0bbf6f0-ffeb-483c-98a9-5e0abfe15a0a>
-    datacite:hasIdentifier <http://fakeorcid.org/a0bbf6f0ffeb483c98a95e0abfe15a0a> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Movva, N. Rao" .
-
-<urn:uuid:a14d5301-d5d3-462d-baa5-06eb865f15d0>
-    datacite:hasIdentifier <http://fakeorcid.org/a14d5301d5d3462dbaa506eb865f15d0> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Montoya, Ashley" .
-
-<urn:uuid:a2580711-5ac8-41d6-8816-1f206ce9ec1a>
-    datacite:hasIdentifier <http://fakeorcid.org/a25807115ac841d688161f206ce9ec1a> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Estoppey, David" .
-
-<urn:uuid:a40d2ce1-6337-4e20-894f-d4f5a9533526>
-    datacite:hasIdentifier <http://fakeorcid.org/a40d2ce163374e20894fd4f5a9533526> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "CDPH Valley District" .
-
-<urn:uuid:a479e8a4-5e84-4c48-8fca-439f1a6cde68>
-    datacite:hasIdentifier <http://fakeorcid.org/a479e8a45e844c488fca439f1a6cde68> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "National Marine Sanctuary Program" .
-
-<urn:uuid:a6d99c80-ccc6-4b61-8652-7cd0b20441c9>
-    datacite:hasIdentifier <http://fakeorcid.org/a6d99c80ccc64b6186527cd0b20441c9> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Dikow, Rebecca B." .
-
-<urn:uuid:a8995024-dbc4-4405-a494-b16255c36efb>
-    datacite:hasIdentifier <http://fakeorcid.org/a8995024dbc44405a494b16255c36efb> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Mueller, Jakob C." .
-
-<urn:uuid:a9184c0c-9179-4a97-b6fd-075d15ad8eb5>
-    datacite:hasIdentifier <http://fakeorcid.org/a9184c0c91794a97b6fd075d15ad8eb5> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Studer, Christian" .
-
-<urn:uuid:ad53be4d-f66c-48e1-b82c-2f80ecb34dda>
-    datacite:hasIdentifier <http://fakeorcid.org/ad53be4df66c48e1b82c2f80ecb34dda> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Flashner, Henryk" .
-
-<urn:uuid:af1b7ca2-eeb6-4fc1-b91c-269e5b6e793f>
-    datacite:hasIdentifier <http://fakeorcid.org/af1b7ca2eeb64fc1b91c269e5b6e793f> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Ho-Ming Chang" .
-
-<urn:uuid:afe1a318-debd-40fb-a75c-c4335ec42d5d>
-    datacite:hasIdentifier <http://fakeorcid.org/afe1a318debd40fba75cc4335ec42d5d> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Wen-Liang Chiou" .
-
-<urn:uuid:afe9fa70-0341-41b4-b495-fea8677b3a13>
-    datacite:hasIdentifier <http://fakeorcid.org/afe9fa70034141b4b495fea8677b3a13> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Wang, Xiaoming" .
-
-<urn:uuid:b2c7288c-9c76-485f-acb5-9d73c0463b5d>
-    datacite:hasIdentifier <http://fakeorcid.org/b2c7288c9c76485facb59d73c0463b5d> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Hohendahl, Annika" .
-
-<urn:uuid:b3b5d140-68c6-4f3d-baf1-83027203b5a0>
-    datacite:hasIdentifier <http://fakeorcid.org/b3b5d14068c64f3dbaf183027203b5a0> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Francis Chan" .
-
-<urn:uuid:b459fcea-6d62-4940-8a1b-a216aa5baad5>
-    datacite:hasIdentifier <http://fakeorcid.org/b459fcea6d6249408a1ba216aa5baad5> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Rodríguez-Peña, Rosa A" .
-
-<urn:uuid:b88d4e08-221a-4364-af2b-0c3b24b3133e>
-    datacite:hasIdentifier <http://fakeorcid.org/b88d4e08221a4364af2b0c3b24b3133e> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Wood, Dustin A." .
-
-<urn:uuid:bb2ae597-9193-4e59-8981-279714eb0c97>
-    datacite:hasIdentifier <http://fakeorcid.org/bb2ae59791934e598981279714eb0c97> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Staedtler, Frank" .
-
-<urn:uuid:be207ddb-a8f2-4ebd-9fdf-54364b9923ed>
-    datacite:hasIdentifier <http://fakeorcid.org/be207ddba8f24ebd9fdf54364b9923ed> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Altorfer, Marc" .
-
-<urn:uuid:c03f3763-9312-4915-9032-947fa916b5d1>
-    datacite:hasIdentifier <http://fakeorcid.org/c03f3763931249159032947fa916b5d1> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Knowles, L. Lacey" .
-
-<urn:uuid:c0af382e-940d-49ae-a4ee-825dbb80444d>
-    datacite:hasIdentifier <http://fakeorcid.org/c0af382e940d49aea4ee825dbb80444d> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Buston, Peter M." .
-
-<urn:uuid:c185bf1a-696b-4381-9a41-d1412480786d>
-    datacite:hasIdentifier <http://fakeorcid.org/c185bf1a696b43819a41d1412480786d> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "D'Aloia, Cassidy C." .
-
-<urn:uuid:c1e37117-44a1-4724-8f5e-e4a4d1d01721>
-    datacite:hasIdentifier <http://fakeorcid.org/c1e3711744a147248f5ee4a4d1d01721> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Aran, Vani S." .
-
-<urn:uuid:c3c871d5-4d5a-4d44-8535-6eb1d2276a08>
-    datacite:hasIdentifier <http://fakeorcid.org/c3c871d54d5a4d4485356eb1d2276a08> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Lewis, Carl" .
-
-<urn:uuid:c7ca8d01-0360-48fd-afad-ebc8fdedda19>
-    datacite:hasIdentifier <http://fakeorcid.org/c7ca8d01036048fdafadebc8fdedda19> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Leiby, Nicholas" .
-
-<urn:uuid:c8f9ce34-dea3-4b5e-8cd2-a6b75f1e478f>
-    datacite:hasIdentifier <http://fakeorcid.org/c8f9ce34dea34b5e8cd2a6b75f1e478f> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Godsoe, William" .
-
-<urn:uuid:ccf63e54-c5b0-4829-bbaa-f2a71325b7f9>
-    datacite:hasIdentifier <http://fakeorcid.org/ccf63e54c5b04829bbaaf2a71325b7f9> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Mideo, Nicole" .
-
-<urn:uuid:ce2018bb-f49a-404e-8a76-f04f2b41f4ca>
-    datacite:hasIdentifier <http://fakeorcid.org/ce2018bbf49a404e8a76f04f2b41f4ca> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Helliwell, Stephen B." .
-
-<urn:uuid:cecb9b6c-f67c-47ad-9fb8-e755afbe0b41>
-    datacite:hasIdentifier <http://fakeorcid.org/cecb9b6cf67c47ad9fb8e755afbe0b41> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Ronquist, Fredrik" .
-
-<urn:uuid:cefd029b-71ba-46ad-89e0-93843e9f873e>
-    datacite:hasIdentifier <http://fakeorcid.org/cefd029b71ba46ad89e093843e9f873e> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Abraham, Yann" .
-
-<urn:uuid:d1a683a9-8f41-4b28-9700-b893707deae2>
-    datacite:hasIdentifier <http://fakeorcid.org/d1a683a98f414b289700b893707deae2> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "CDPH San Diego District" .
-
-<urn:uuid:d5e55958-39cd-4888-badc-fd9f6f0b5a9b>
-    datacite:hasIdentifier <http://fakeorcid.org/d5e5595839cd4888badcfd9f6f0b5a9b> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Cook, Joseph A." .
-
-<urn:uuid:d641a95c-19c7-459d-9624-444130fc7b2a>
-    datacite:hasIdentifier <http://fakeorcid.org/d641a95c19c7459d9624444130fc7b2a> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Day, Troy" .
-
-<urn:uuid:d77fefe5-deea-491d-8fec-72bb80900d27>
-    datacite:hasIdentifier <http://fakeorcid.org/d77fefe5deea491d8fec72bb80900d27> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Carlini, Alejandro R." .
-
-<urn:uuid:d9f27233-2cc3-478c-bbc8-3ec5579e9700>
-    datacite:hasIdentifier <http://fakeorcid.org/d9f272332cc3478cbbc83ec5579e9700> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Harcombe, William R." .
-
-<urn:uuid:dc65eb14-cc7d-4212-83fc-f5d76d6d9dab>
-    datacite:hasIdentifier <http://fakeorcid.org/dc65eb14cc7d421283fcf5d76d6d9dab> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "von Wettberg, Eric" .
-
-<urn:uuid:dd5a3aba-17b4-41eb-88ff-3bd3eca3fe6e>
-    datacite:hasIdentifier <http://fakeorcid.org/dd5a3aba17b441eb88ff3bd3eca3fe6e> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Fresno County" .
-
-<urn:uuid:ddd637e5-4e09-43d6-a650-309c61bd300b>
-    datacite:hasIdentifier <http://fakeorcid.org/ddd637e54e0943d6a650309c61bd300b> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Bruce Menge" .
-
-<urn:uuid:de0e1543-4af1-42be-99ff-cf0c355b603d>
-    datacite:hasIdentifier <http://fakeorcid.org/de0e15434af142be99ffcf0c355b603d> ;
-    a glperson:Person, foaf:Person ;
+    a ecglview:Dataset .
+
+<urn:uuid:04d3fd7b-8689-4a3f-b671-b59f893ac018>
+    datacite:hasIdentifier <http://fakeorcid.org/04d3fd7b86894a3fb671b59f893ac018> ;
+    a ecglview:Person, foaf:Person ;
+    foaf:name "CDPH San Bernardino District" .
+
+<urn:uuid:0d796ce4-5ee8-4207-a0ab-30b6416326c6>
+    datacite:hasIdentifier <http://fakeorcid.org/0d796ce45ee84207a0ab30b6416326c6> ;
+    a ecglview:Person, foaf:Person ;
+    foaf:name "City of Woodland" .
+
+<urn:uuid:0f6b0de4-e9e7-471b-a387-507bb769d527>
+    datacite:hasIdentifier <http://fakeorcid.org/0f6b0de4e9e7471ba387507bb769d527> ;
+    a ecglview:Person, foaf:Person ;
     foaf:name "Stanislaus County" .
 
-<urn:uuid:deb63285-3822-4c07-bda3-24127b6d1955>
-    datacite:hasIdentifier <http://fakeorcid.org/deb6328538224c07bda324127b6d1955> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Le Gac, Mickaël" .
+<urn:uuid:16702a60-a86a-4b50-8d8b-45be12218eff>
+    datacite:hasIdentifier <http://fakeorcid.org/16702a60a86a4b508d8b45be12218eff> ;
+    a ecglview:Person, foaf:Person ;
+    foaf:name "Fresno County" .
 
-<urn:uuid:e416be5c-de83-4028-9dca-309a7694ab41>
-    datacite:hasIdentifier <http://fakeorcid.org/e416be5cde8340289dca309a7694ab41> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Chau-Chin Lin" .
-
-<urn:uuid:e5650776-3a9c-41bd-9f00-ef3aca4037c8>
-    datacite:hasIdentifier <http://fakeorcid.org/e56507763a9c41bd9f00ef3aca4037c8> ;
-    a glperson:Person, foaf:Person ;
+<urn:uuid:1bce15c1-3b8d-46a0-a450-2448567ab837>
+    datacite:hasIdentifier <http://fakeorcid.org/1bce15c13b8d46a0a4502448567ab837> ;
+    a ecglview:Person, foaf:Person ;
     foaf:name "CDPH Santa Barbara District" .
 
-<urn:uuid:e6a53828-1560-464a-bd48-85438976b5ba>
-    datacite:hasIdentifier <http://fakeorcid.org/e6a538281560464abd4885438976b5ba> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Hanski, Ilkka" .
+<urn:uuid:1c02e82b-3f66-42d1-8e70-cc6af471b5f6>
+    datacite:hasIdentifier <http://fakeorcid.org/1c02e82b3f6642d18e70cc6af471b5f6> ;
+    a ecglview:Person, foaf:Person ;
+    foaf:name "San Luis Obispo County" .
 
-<urn:uuid:e6b50987-5355-4942-8fea-9741983c75e3>
-    datacite:hasIdentifier <http://fakeorcid.org/e6b50987535549428fea9741983c75e3> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "California Water Service Company" .
+<urn:uuid:1c52eb11-b456-4b49-b8e8-f1ce815416c6>
+    datacite:hasIdentifier <http://fakeorcid.org/1c52eb11b4564b49b8e8f1ce815416c6> ;
+    a ecglview:Person, foaf:Person ;
+    foaf:name "CDPH Hollywood District" .
 
-<urn:uuid:e6f87c24-c541-4a37-900d-85db22f5c5c4>
-    datacite:hasIdentifier <http://fakeorcid.org/e6f87c24c5414a37900d85db22f5c5c4> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Boussau, Bastien" .
+<urn:uuid:1d171c35-997f-4747-8410-ab541653f48a>
+    datacite:hasIdentifier <http://fakeorcid.org/1d171c35997f47478410ab541653f48a> ;
+    a ecglview:Person, foaf:Person ;
+    foaf:name "CDPH Tehachapi District" .
 
-<urn:uuid:e9eb583b-b0cf-4b0e-8947-ba456882663a>
-    datacite:hasIdentifier <http://fakeorcid.org/e9eb583bb0cf4b0e8947ba456882663a> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Devlin-Durante, Meghann K." .
+<urn:uuid:1d8153a3-0705-474d-9b76-773a84af10ae>
+    datacite:hasIdentifier <http://fakeorcid.org/1d8153a30705474d9b76773a84af10ae> ;
+    a ecglview:Person, foaf:Person ;
+    foaf:name "City of Santa Clara" .
 
-<urn:uuid:ea44b322-b4d4-4f38-9c9e-3b2075f323a4>
-    datacite:hasIdentifier <http://fakeorcid.org/ea44b322b4d44f389c9e3b2075f323a4> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Eichenberger, Juerg" .
+<urn:uuid:1f352e4c-1777-45c3-8fe4-3c85c79f64a8>
+    datacite:hasIdentifier <http://fakeorcid.org/1f352e4c177745c38fe43c85c79f64a8> ;
+    a ecglview:Person, foaf:Person ;
+    foaf:name "California Rural Water Association" .
 
-<urn:uuid:ed06a516-fab4-4290-9a7d-6e1cf0421669>
-    datacite:hasIdentifier <http://fakeorcid.org/ed06a516fab442909a7d6e1cf0421669> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Namoff, Sandra" .
+<urn:uuid:225d3b9c-18af-4976-9f83-1a4de79911ad>
+    datacite:hasIdentifier <http://fakeorcid.org/225d3b9c18af49769f831a4de79911ad> ;
+    a ecglview:Person, foaf:Person ;
+    foaf:name "CDPH Sonoma District" .
 
-<urn:uuid:efeb1a8a-a366-46a0-b21b-5e7ae9c41353>
-    datacite:hasIdentifier <http://fakeorcid.org/efeb1a8aa36646a0b21b5e7ae9c41353> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "CDPH San Francisco District" .
+<urn:uuid:237fd64e-9f9a-48cc-94bb-c1b9852f30e3>
+    datacite:hasIdentifier <http://fakeorcid.org/237fd64e9f9a48cc94bbc1b9852f30e3> ;
+    a ecglview:Person, foaf:Person ;
+    foaf:name "Los Angeles County" .
 
-<urn:uuid:f00c9a79-ce2e-472d-8a70-9a160a252184>
-    datacite:hasIdentifier <http://fakeorcid.org/f00c9a79ce2e472d8a709a160a252184> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Lehtonen, Rainer" .
+<urn:uuid:24896ae6-8126-46f4-9301-84706c3db433>
+    datacite:hasIdentifier <http://fakeorcid.org/24896ae6812646f4930184706c3db433> ;
+    a ecglview:Person, foaf:Person ;
+    foaf:name "Cal Water Service" .
 
-<urn:uuid:f1313ca6-18f7-4ab7-860d-0309a42c47b2>
-    datacite:hasIdentifier <http://fakeorcid.org/f1313ca618f74ab7860d0309a42c47b2> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Yoder, Jeremy B." .
+<urn:uuid:34612fa0-c6d9-411f-93ad-4783d9b6d349>
+    datacite:hasIdentifier <http://fakeorcid.org/34612fa0c6d9411f93ad4783d9b6d349> ;
+    a ecglview:Person, foaf:Person ;
+    foaf:name "Raymond and Main San Gabriel Basins" .
 
-<urn:uuid:f143e062-5f29-49e7-be52-34e068440a28>
-    datacite:hasIdentifier <http://fakeorcid.org/f143e0625f2949e7be5234e068440a28> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Rodríguez-Robles, Javier A." .
+<urn:uuid:366ed812-aa00-4ba9-ba37-eb1c41a05f5b>
+    datacite:hasIdentifier <http://fakeorcid.org/366ed812aa004ba9ba37eb1c41a05f5b> ;
+    a ecglview:Person, foaf:Person ;
+    foaf:name "Tehama County" .
 
-<urn:uuid:f266c6c4-6d2f-41ab-a9b9-81b699934f77>
-    datacite:hasIdentifier <http://fakeorcid.org/f266c6c46d2f41aba9b981b699934f77> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Petitjean, Virginie" .
+<urn:uuid:43c81e2f-9a58-4c92-8f59-434a83379a05>
+    datacite:hasIdentifier <http://fakeorcid.org/43c81e2f9a584c928f59434a83379a05> ;
+    a ecglview:Person, foaf:Person ;
+    foaf:name "San Bernardino County" .
 
-<urn:uuid:f47f6eb5-7701-4dee-9f6e-7b61d51ac23c>
-    datacite:hasIdentifier <http://fakeorcid.org/f47f6eb577014dee9f6e7b61d51ac23c> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Mary Sue Brancato" .
+<urn:uuid:47362c04-125f-4b80-a6a8-db47400a7360>
+    datacite:hasIdentifier <http://fakeorcid.org/47362c04125f4b80a6a8db47400a7360> ;
+    a ecglview:Person, foaf:Person ;
+    foaf:name "Sacramento County" .
 
-<urn:uuid:f649fc73-de2d-4887-8536-c5045b7b8f08>
-    datacite:hasIdentifier <http://fakeorcid.org/f649fc73de2d48878536c5045b7b8f08> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "City of Big Bear Lake, DWP" .
+<urn:uuid:54e707ac-c96a-4266-969d-c9df9585fe23>
+    datacite:hasIdentifier <http://fakeorcid.org/54e707acc96a4266969dc9df9585fe23> ;
+    a ecglview:Person, foaf:Person ;
+    foaf:name "Inyo County" .
 
-<urn:uuid:f85adb26-3774-4db7-9983-d76400af1f86>
-    datacite:hasIdentifier <http://fakeorcid.org/f85adb2637744db79983d76400af1f86> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Wetzel, Stefan" .
+<urn:uuid:5be5c398-1bfd-48ff-9667-2d87d280e967>
+    datacite:hasIdentifier <http://fakeorcid.org/5be5c3981bfd48ff96672d87d280e967> ;
+    a ecglview:Person, foaf:Person ;
+    foaf:name "Bruce Menge" .
 
-<urn:uuid:f936568e-1872-4baa-9560-4ceddee787cb>
-    datacite:hasIdentifier <http://fakeorcid.org/f936568e18724baa95604ceddee787cb> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Flatz, Ramona" .
+<urn:uuid:5deba025-0d63-42db-8226-c3b71d5424d7>
+    datacite:hasIdentifier <http://fakeorcid.org/5deba0250d6342db8226c3b71d5424d7> ;
+    a ecglview:Person, foaf:Person ;
+    foaf:name "Butte County" .
 
-<urn:uuid:fa4eba55-3b8b-40ce-bc14-601d392935bc>
-    datacite:hasIdentifier <http://fakeorcid.org/fa4eba553b8b40cebc14601d392935bc> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Frederiksen, Mathias" .
+<urn:uuid:7e31f73c-7315-4d22-8f39-59484a65f0f4>
+    datacite:hasIdentifier <http://fakeorcid.org/7e31f73c73154d228f3959484a65f0f4> ;
+    a ecglview:Person, foaf:Person ;
+    foaf:name "Coachella Valley Water District" .
 
-<urn:uuid:fc3d5be6-efc1-465b-a583-496512acac3c>
-    datacite:hasIdentifier <http://fakeorcid.org/fc3d5be6efc1465ba583496512acac3c> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Hoepfner, Dominic" .
+<urn:uuid:8a8c2289-1cab-41fa-bc7b-fcd6764e9c58>
+    datacite:hasIdentifier <http://fakeorcid.org/8a8c22891cab41fabc7bfcd6764e9c58> ;
+    a ecglview:Person, foaf:Person ;
+    foaf:name "CDPH Monterey District" .
 
-<urn:uuid:fc45c644-9e25-47a6-b094-989f8fe3e770>
-    datacite:hasIdentifier <http://fakeorcid.org/fc45c6449e2547a6b094989f8fe3e770> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Chyi-Rong Chiou" .
+<urn:uuid:8b7d9b10-11dc-409d-b1e7-7a08bfb2d2c5>
+    datacite:hasIdentifier <http://fakeorcid.org/8b7d9b1011dc409db1e77a08bfb2d2c5> ;
+    a ecglview:Person, foaf:Person ;
+    foaf:name "CDPH San Diego District" .
 
-<urn:uuid:ff1c5ba5-5900-4096-8957-1676e668199d>
-    datacite:hasIdentifier <http://fakeorcid.org/ff1c5ba55900409689571676e668199d> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Huijben, Silvie" .
+<urn:uuid:8bcca0ad-6052-4457-b0b5-e4b65c3836b0>
+    datacite:hasIdentifier <http://fakeorcid.org/8bcca0ad60524457b0b5e4b65c3836b0> ;
+    a ecglview:Person, foaf:Person ;
+    foaf:name "Eastern Municipal Water District" .
 
-<urn:uuid:ff30bfc0-8474-4b1d-a133-ab2c9c68aeb1>
-    datacite:hasIdentifier <http://fakeorcid.org/ff30bfc084744b1da133ab2c9c68aeb1> ;
-    a glperson:Person, foaf:Person ;
-    foaf:name "Bell, Andrew S." .
+<urn:uuid:91a7d05b-6f7a-4f29-a3ab-afbbc39b5cb3>
+    datacite:hasIdentifier <http://fakeorcid.org/91a7d05b6f7a4f29a3abafbbc39b5cb3> ;
+    a ecglview:Person, foaf:Person ;
+    foaf:name "Madera County" .
+
+<urn:uuid:9cbaab81-1013-42d8-b1bf-064674f11e89>
+    datacite:hasIdentifier <http://fakeorcid.org/9cbaab81101342d8b1bf064674f11e89> ;
+    a ecglview:Person, foaf:Person ;
+    foaf:name "California-American Sacramento" .
+
+<urn:uuid:a330e20f-e69d-4107-9f2e-498ed3b490fc>
+    datacite:hasIdentifier <http://fakeorcid.org/a330e20fe69d41079f2e498ed3b490fc> ;
+    a ecglview:Person, foaf:Person ;
+    foaf:name "San Joaquin County" .
+
+<urn:uuid:b429c1f8-4004-4a72-a2b7-05cf37c370d8>
+    datacite:hasIdentifier <http://fakeorcid.org/b429c1f840044a72a2b705cf37c370d8> ;
+    a ecglview:Person, foaf:Person ;
+    foaf:name "Napa County" .
+
+<urn:uuid:badcb28f-3936-4ef2-8045-65d99df04757>
+    datacite:hasIdentifier <http://fakeorcid.org/badcb28f39364ef2804565d99df04757> ;
+    a ecglview:Person, foaf:Person ;
+    foaf:name "Francis Chan" .
+
+<urn:uuid:cc30c0b5-1398-4783-89b1-f6ce7260d2b6>
+    datacite:hasIdentifier <http://fakeorcid.org/cc30c0b51398478389b1f6ce7260d2b6> ;
+    a ecglview:Person, foaf:Person ;
+    foaf:name "CDPH Visalia District" .
+
+<urn:uuid:cd236035-bb3f-4d50-871b-33d742c9d821>
+    datacite:hasIdentifier <http://fakeorcid.org/cd236035bb3f4d50871b33d742c9d821> ;
+    a ecglview:Person, foaf:Person ;
+    foaf:name "CDPH Klamath District" .
+
+<urn:uuid:d06f8a9c-3ceb-4da4-9450-7b8feab0305e>
+    datacite:hasIdentifier <http://fakeorcid.org/d06f8a9c3ceb4da494507b8feab0305e> ;
+    a ecglview:Person, foaf:Person ;
+    foaf:name "CDPH Central District" .
+
+<urn:uuid:d1033b95-84ec-488f-bb72-41235d2de3e9>
+    datacite:hasIdentifier <http://fakeorcid.org/d1033b9584ec488fbb7241235d2de3e9> ;
+    a ecglview:Person, foaf:Person ;
+    foaf:name "Partnership for Interdisciplinary Studies of Coastal Oceans (PISCO)" .
+
+<urn:uuid:d49d3ad6-ffb7-4807-a8e9-45d614f505e2>
+    datacite:hasIdentifier <http://fakeorcid.org/d49d3ad6ffb74807a8e945d614f505e2> ;
+    a ecglview:Person, foaf:Person ;
+    foaf:name "CDPH Stockton District" .
+
+<urn:uuid:d663d514-dc8d-4dcc-bcd8-dfecab49ad7d>
+    datacite:hasIdentifier <http://fakeorcid.org/d663d514dc8d4dccbcd8dfecab49ad7d> ;
+    a ecglview:Person, foaf:Person ;
+    foaf:name "City of Porterville" .
+
+<urn:uuid:dcd99d77-28b3-4617-be76-85c34c3e6188>
+    datacite:hasIdentifier <http://fakeorcid.org/dcd99d7728b34617be7685c34c3e6188> ;
+    a ecglview:Person, foaf:Person ;
+    foaf:name "Shasta County" .
+
+<urn:uuid:e6d9dd30-c3c0-47af-909c-81b8513acbcc>
+    datacite:hasIdentifier <http://fakeorcid.org/e6d9dd30c3c047af909c81b8513acbcc> ;
+    a ecglview:Person, foaf:Person ;
+    foaf:name "Tulare County" .
+
+<urn:uuid:ee00fdfb-fa84-4296-9261-25fa3ea6a2a4>
+    datacite:hasIdentifier <http://fakeorcid.org/ee00fdfbfa844296926125fa3ea6a2a4> ;
+    a ecglview:Person, foaf:Person ;
+    foaf:name "San Diego County" .
+
+<urn:uuid:f4303265-418d-44df-b122-c88e18216052>
+    datacite:hasIdentifier <http://fakeorcid.org/f4303265418d44dfb122c88e18216052> ;
+    a ecglview:Person, foaf:Person ;
+    foaf:name "CDPH Mendocino District" .
+
+<urn:uuid:fba246d8-7ea9-45e3-9479-4eaec5fbee47>
+    datacite:hasIdentifier <http://fakeorcid.org/fba246d87ea945e394794eaec5fbee47> ;
+    a ecglview:Person, foaf:Person ;
+    foaf:name "Calaveras County" .
+
+<urn:uuid:fbbb8143-ac2b-43f4-8ec7-3b68064a25b5>
+    datacite:hasIdentifier <http://fakeorcid.org/fbbb8143ac2b43f48ec73b68064a25b5> ;
+    a ecglview:Person, foaf:Person ;
+    foaf:name "CDPH Merced District" .
+
+<urn:uuid:ffc6790a-48e0-4e0f-be28-1860e3a59bd6>
+    datacite:hasIdentifier <http://fakeorcid.org/ffc6790a48e04e0fbe281860e3a59bd6> ;
+    a ecglview:Person, foaf:Person ;
+    foaf:name "Santa Barbara County" .
 
