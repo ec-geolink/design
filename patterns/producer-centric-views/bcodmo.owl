@@ -76,14 +76,6 @@
         <rdfs:range rdf:resource="&ecglview;Program"/>
     </owl:ObjectProperty>
     
-    <!-- http://schema.geolink.org/dev/bcoview#identifyingURI -->
-        
-    <owl:ObjectProperty rdf:about="&bcodmo;identifyingURI">
-        <rdfs:comment>URI that most of the time maps to a NERC vocabulary term</rdfs:comment>
-        <rdfs:domain rdf:resource="&ecglview;Vessel"/>
-        <rdfs:range rdf:resource="&owl;Thing"/>
-    </owl:ObjectProperty>
-    
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
