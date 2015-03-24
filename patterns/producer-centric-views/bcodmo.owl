@@ -123,9 +123,9 @@
         <rdfs:range rdf:resource="&xsd;anyURI"/>
     </owl:DatatypeProperty>
 
-    <!-- http://schema.geolink.org/dev/bcoview#hasDatasetLandingPage -->
+    <!-- http://schema.geolink.org/dev/bcoview#datasetLandingPage -->
     
-    <owl:DatatypeProperty rdf:about="&bcodmo;hasDatasetLandingPage">
+    <owl:DatatypeProperty rdf:about="&bcodmo;datasetLandingPage">
         <rdfs:comment>Maps to full patterns ???</rdfs:comment>
         <rdfs:domain rdf:resource="&ecglview;Dataset"/>
         <rdfs:range rdf:resource="&xsd;anyURI"/>
@@ -179,23 +179,42 @@
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
-    <!-- http://schema.geolink.org/dev/bcoview#hasStartDate -->
+    <!-- http://schema.geolink.org/dev/bcoview#startDate -->
     
-    <owl:DatatypeProperty rdf:about="&bcodmo;hasStartDate">
+    <owl:DatatypeProperty rdf:about="&bcodmo;startDate">
         <rdfs:comment>Maps to full patterns ???</rdfs:comment>
-        <rdfs:domain rdf:resource="&ecglview;Program"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ecglview;Cruise"/>
+                    <rdf:Description rdf:about="&ecglview;Program"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="&xsd;date"/>
     </owl:DatatypeProperty>
     
-    <!-- http://schema.geolink.org/dev/bcoview#hasEndDate -->
+    <!-- http://schema.geolink.org/dev/bcoview#endDate -->
     
-    <owl:DatatypeProperty rdf:about="&bcodmo;hasEndDate">
+    <owl:DatatypeProperty rdf:about="&bcodmo;endDate">
         <rdfs:comment>Maps to full patterns datatype property ???</rdfs:comment>
-        <rdfs:domain rdf:resource="&ecglview;Program"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ecglview;Cruise"/>
+                    <rdf:Description rdf:about="&ecglview;Program"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="&xsd;date"/>
     </owl:DatatypeProperty>
     
-    
+    <!-- http://schema.geolink.org/dev/view#mediaType -->
+
+    <owl:DatatypeProperty rdf:about="&ecglview;hasChecksum">
+        <rdfs:domain rdf:resource="&ecglview;DigitalObject"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
