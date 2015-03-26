@@ -1,0 +1,2036 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:bcoview="http://schema.geolink.org/dev/bcoview#"
+  xmlns:ecglview="http://schema.geolink.org/dev/view#">
+
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/1">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Rhode Island - Graduate School of Oceanography (URI-GSO)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">URI-GSO</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/2">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Woods Hole Oceanographic Institution (WHOI)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">WHOI</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/3">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Stony Brook University - MSRC - Marine Science Research Center (SUNY-SB MSRC)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">SUNY-SB MSRC</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/4">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Bedford Institute of Oceanography (BIO)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">BIO</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/5">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">National Marine Fisheries Service (NMFS)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">NMFS</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/6">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Southern Maine (USM)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">USM</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/7">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Cornell University (Cornell)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">Cornell</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/8">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Boston University (BU)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">BU</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/9">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Oregon State University (OSU)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">OSU</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/10">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Plymouth Environmental Research Centre - Plymouth Marine Laboratory (PERC)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">PERC</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/11">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Massachusetts Boston - School of Marine Sciences (UMB-SMS)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UMB-SMS</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/12">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Louisiana State University - Coastal Fisheries Institute (LSU-CFI)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">LSU-CFI</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/13">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Alaska Fairbanks - School of Fisheries &amp; Ocean Sciences (UAF)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UAF</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/14">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of New Hampshire - OPAL/EOS (UNH/OPAL)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UNH/OPAL</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/15">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">National Science Foundation (NSF)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">NSF</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/16">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Miami (UM)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UM</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/17">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Coastal and Lagoon Ecosystems Section - CNR - ISMAR</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/18">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Dartmouth College - Thayer School of Engineering</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/19">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Sir Alister Hardy Foundation for Ocean Science (SAHFOS)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">SAHFOS</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/20">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of North Carolina at Chapel Hill (UNC-Chapel Hill)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UNC-Chapel Hill</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/21">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Scientific American Explorations</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/22">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Northeast Fisheries Science Center - Sandy Hook - James Howard Marine Lab (NOAA NEFSC)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">NOAA NEFSC</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/23">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Los Alamos National Laboratory (LANL)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">LANL</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/24">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Massachusetts Institute of Technology - Department of Earth Atmospheric and Planetary Sciences (MIT-EAPS)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">MIT-EAPS</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/25">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">National Oceanic and Atmospheric Administration (NOAA)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">NOAA</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/26">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of California-San Diego - Scripps Institution of Oceanography (UCSD-SIO)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UCSD-SIO</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/27">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Washington (UW)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UW</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/28">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Rutgers University</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/29">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">National Aeronautics and Space Administration (NASA)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">NASA</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/30">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Ohio University - Department of Biological Sciences</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/31">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">BAE SYSTEMS - Research &amp; Technology Analysis &amp; Applied Research Division</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/32">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Dalhousie University - Dept. of Engineering Math</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/33">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of New Hampshire (UNH)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UNH</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/34">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Maine</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/35">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Florida State University - Dept. of Oceanography (FSU - Oce)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">FSU - Oce</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/36">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Miami Rosenstiel School of Marine and Atmospheric Science (UM-RSMAS)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UM-RSMAS</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/37">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Fisheries &amp; Oceans Biological Station</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/38">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Harbor Branch Oceanographic Institution (HBOI)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">HBOI</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/39">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Southern California - Hancock Institute for Marine Studies  (USC-HIMS)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">USC-HIMS</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/40">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Marine Sciences Research Center</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/41">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">MIT Lincoln Laboratory</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/42">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">State University of New Jersey - Institute of Marine and Coastal Sciences </ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/43">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">National Science Foundation - Ocean Sciences (NSF-OCE)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">NSF-OCE</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/44">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Monterey Bay Aquarium Research Institute (MBARI)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">MBARI</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/45">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Institute of Marine Research, Bergen, Norway</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/46">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Union College</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/47">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">North Carolina State University - Department of Marine, Earth and Atmospheric Sciences (NCSU MEAS)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">NCSU MEAS</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/48">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Northwest Fisheries Science Center - Seattle - Seattle (NOAA NWFSC)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">NOAA NWFSC</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/49">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Old Dominion University</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/50">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Western Washington University (WWU)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">WWU</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/51">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Alaska Fairbanks - Juneau Center School of Fishery Ocean Science (UAF-Juneau)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UAF-Juneau</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/52">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Fishery Ocean Sciences</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/53">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of South Florida - College of Marine Sciences (USF)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">USF</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/54">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Stony Brook University - SoMAS - School of Marine and Atmospheric Sciences (SUNY-SB SoMAS)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">SUNY-SB SoMAS</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/55">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">H.T. Harvey &amp; Associates</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/56">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Earth and Space Research Institute</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/57">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University and Community - College System of Nevada Desert Research Institute</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/58">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Tokyo - Ocean Research Institute</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/59">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Naval Research Laboratory</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/60">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Duke University (Duke)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">Duke</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/61">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Princeton University</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/62">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Hawaii</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/63">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Naval Postgraduate School (NPS)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">NPS</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/64">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Texas A&amp;M University (TAMU)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">TAMU</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/65">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Virginia Institute of Marine Science - College of William &amp; Mary (VIMS)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">VIMS</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/66">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Brookhaven National Laboratory</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/67">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Universite de Perpignan</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/68">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Lamont-Doherty Earth Observatory - The Earth Institute at Columbia University (LDEO)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">LDEO</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/69">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">State University of New York</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/70">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Delaware (UDel)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UDel</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/71">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Harvard University</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/72">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Brown University</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/73">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">San Diego State University (SDSU)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">SDSU</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/74">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Skidaway Institute of Oceanography (SkIO)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">SkIO</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/75">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Oregon</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/76">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of California-Santa Barbara (UCSB)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UCSB</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/77">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Louisiana Universities Marine Consortium (LUMCON)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">LUMCON</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/78">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Bermuda Biological Station for Research (BBSR)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">BBSR</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/79">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Moss Landing Marine Laboratories (MLML)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">MLML</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/80">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Tennessee</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/81">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Chicago</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/82">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Southern Mississippi</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/83">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">National Oceanic and Atmospheric Administration - Atlantic Oceanographic and Meteorological Laboratory (NOAA-AOML)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">NOAA-AOML</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/84">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">E.O. Lawrence Berkeley - Lawrence Berkeley National Lab (LBNL)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">LBNL</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/85">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Connecticut</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/86">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Georgia (UGA)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UGA</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/87">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">The Lobster Conservancy</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/88">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Wells National Estuarine Research Reserve</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/89">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Maine Department of Marine Resources (Maine DMR)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">Maine DMR</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/90">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Mt. Holyoke College (MHC)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">MHC</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/91">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Massachusetts Division of Marine Fisheries</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/92">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Gulf of Maine Research Institute (GMRI)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">GMRI</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/93">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Washington State University - School of Biological Sciences</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/94">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Bigelow Laboratory for Ocean Sciences (Bigelow)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">Bigelow</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/95">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Otago - Department of Chemistry</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/96">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">National Institute of Water and Atmospheric Research, New Zealand (NIWA)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">NIWA</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/97">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Fisheries and Oceans Canada, Pacific Region</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/98">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Laval University</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/99">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Massachusetts Dartmouth - School for Marine Science and Technology (UMASSD-SMAST)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UMASSD-SMAST</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/100">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Hokkaido National Fisheries Research Institute (HNFRI)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">HNFRI</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/101">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Alfred Wegener Institute for Polar and Marine Research (AWI)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">AWI</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/102">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Ocean Research Institute, University of Tokyo (ORI)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">ORI</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/103">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">California State University San Marcos (CSUSM)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">CSUSM</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/104">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Sea Education Association (SEA)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">SEA</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/105">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">School of Ocean Sciences, University of Wales, Bangor</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/106">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Plymouth</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/107">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Plymouth Marine Laboratory (PML)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">PML</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/108">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of East Anglia (UEA)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UEA</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/109">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Institute of Antarctic and Southern Ocean Studies, University of Tasmania</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/110">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Centre for Water Research, University of Western Australia - UWA (CWR)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">CWR</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/111">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Université Libre de Bruxelles - Ecologie des Systèmes Aquatiques (ESA-ULB)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">ESA-ULB</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/112">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Central Research Institute of Electric Power Industry (CRIEPI)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">CRIEPI</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/113">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Tohoko National Fisheries Research institute (TNFRI)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">TNFRI</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/114">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Marine Biological Institute of Japan (MBRIJ)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">MBRIJ</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/115">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Hokkaido University</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/116">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Kyoto University</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/117">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">National Institute for Environmental Studies, University of Tokyo (NIES)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">NIES</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/118">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Maryland Center for Environmental Science - Horn Point Laboratory (UMCES/HPL)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UMCES/HPL</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/119">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">United States Geological Survey (USGS)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">USGS</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/120">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of California-Santa Cruz (UC Santa Cruz)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UC Santa Cruz</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/121">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Stony Brook University (SUNY-Stony Brook)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">SUNY-Stony Brook</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/122">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Ecosystems Center, at the Marine Biological Laboratory - Ecosystems Center (MBL)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">MBL</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/123">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">National Aeronautics and Space Administration - Goddard Space Flight Center (NASA-GSFC)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">NASA-GSFC</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/124">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Oregon State University - College of Earth, Ocean and Atmospheric Sciences (OSU-CEOAS)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">OSU-CEOAS</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/125">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">National Oceanic and Atmospheric Administration - Pacific Marine Environmental Laboratory (NOAA-PMEL)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">NOAA-PMEL</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/126">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Hawaii at Manoa - School of Ocean &amp; Earth Science &amp; Technology (SOEST)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">SOEST</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/127">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Kagoshima University - Faculty of Fisheries</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/128">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Antarctic Climate and Ecosystems Cooperative Research Centre (ACE CRC)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">ACE CRC</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/129">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Vrije Universiteit Brussel (VUB)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">VUB</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/130">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Centre Européen de Recherche et d'Enseignement des Géosciences de l'Environnement (CEREGE)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">CEREGE</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/131">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Xiamen University, China</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/132">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Provincetown Center for Coastal Studies (PCCS)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">PCCS</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/133">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Stanford University</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/134">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">National Oceanography Centre - SOTON (NOC)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">NOC</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/135">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">San Francisco State University - Romberg Tiburon Center (SFSU-RTC)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">SFSU-RTC</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/136">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Associated Scientists of Woods Hole (ASWH)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">ASWH</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/137">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">National Oceanic and Atmospheric Administration - Southwest Fisheries Science Center - La Jolla (NOAA SWFSC La Jolla)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">NOAA SWFSC La Jolla</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/138">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Royal Netherlands Institute  for Sea Research (NIOZ)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">NIOZ</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/139">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of South Carolina</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/140">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Universidad de Oriente, Venezuela (UDO)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UDO</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/141">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Alaska,  Anchorage (UAA)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UAA</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/142">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Hollings Marine Lab - College of Charleston - NOAA NCCOS and CofC (HML-CoC)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">HML-CoC</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/143">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Institut Universitaire Européen de la Mer (IUEM)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">IUEM</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/144">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Cape Cod Commercial Fishermen's Alliance (CCCFA)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">CCCFA</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/145">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Bermuda Institute of Ocean Sciences (BIOS)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">BIOS</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/146">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Desert Research Institute (DRI)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">DRI</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/147">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of California-Davis (UC Davis)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UC Davis</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/148">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of California-Davis - Bodega Marine Laboratory (UC Davis-BML)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UC Davis-BML</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/149">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Victoria - School of Earth and Ocean Sciences</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/150">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Estacion de Investigaciones Marinas de Margarita - Fundacion la Salle de Ciencias Naturales (EDIMAR-FLASA)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">EDIMAR-FLASA</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/151">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Rice University</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/152">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of California-Los Angeles (UCLA)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UCLA</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/153">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">The College of William &amp; Mary</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/154">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Southampton Oceanography Centre</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/155">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of British Columbia - Department of Earth and Ocean Sciences (UBC-EOS)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UBC-EOS</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/156">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Abteilung Meereschemie </ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/157">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Pennsylvania State University  (PSU)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">PSU</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/158">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">National Center for Atmospheric Research (NCAR)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">NCAR</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/159">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Department of Geosciences, Guyot Hall </ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/160">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Lawrence Livermore National Laboratory </ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/161">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Japan Marine Science &amp; Technology Center </ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/162">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Nova Southeastern University</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/163">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Maryland - Earth System Science Interdisciplinary Center (UMD ESSIC)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UMD ESSIC</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/164">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Laboratoire des Sciences du Climat et de l'Environnement - Unite Mixte de Recherche CEA-CNRS (LSCE CEA-CNRS)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">LSCE CEA-CNRS</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/165">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Montana</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/166">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Colorado State University - Department of Atmospheric Science (CSU - Atmos)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">CSU - Atmos</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/167">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Northwestern University</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/168">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Wisconsin</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/169">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Tasmania (UTAS)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UTAS</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/170">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Columbia University</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/171">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">National Aeronautics and Space Administration (NASA) HQ (NASA HQ)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">NASA HQ</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/172">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Massachusetts Institute of Technology - Department of Civil and Environmental Engineering (MIT-Dept CEE)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">MIT-Dept CEE</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/173">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University Corporation for Atmospheric research (UCAR)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UCAR</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/174">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">National Aeronautics and Space Administration - Jet Propulsion Laboratory (NASA-JPL)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">NASA-JPL</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/175">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Millersville University - School of Science and Mathematics</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/176">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">College of Charleston (CofC)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">CofC</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/177">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Museo Argentino de Ciencias Naturales, Buenos Aires, Argentina</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/178">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Consultant, National Institute of Oceanography, Kochi, India</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/179">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">National Institute of Oceanography, Kochi, India (NIO)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">NIO</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/180">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Japan Agency for Marine-Earth Science and Technology (JAMSTEC)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">JAMSTEC</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/181">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Institut de Ciències del Mar (CSIC) (CSIC)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">CSIC</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/182">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Georgia Institute of Technology (Georgia Tech)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">Georgia Tech</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/183">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Center for Coastal Margin Observation &amp; Prediction,  Oregon Health &amp; Science University (STCCMOP)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">STCCMOP</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/184">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Southern California - Wrigley Institute for Environmental Studies (USC-WIES)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">USC-WIES</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/185">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">National Oceanographic Data Center (NODC)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">NODC</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/186">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Universidad de Buenos Aires - Naval and Departamento Ciencias de la Atmosfera y los Océanos </ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/187">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Carbon Dioxide Information Analysis Center (CDIAC)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">CDIAC</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/188">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Norwegian Meterological Institute</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/189">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Massachusetts Dartmouth (UMass Dartmouth)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UMass Dartmouth</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/190">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of North Carolina - Wilmington (UNC-Wilmington)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UNC-Wilmington</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/191">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Woods Hole Oceanographic Institution - Biological and Chemical Oceanography Data Management Office (WHOI BCO-DMO)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">WHOI BCO-DMO</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/192">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of North Carolina -  Coastal Studies Institute (UNC-Coastal Studies Institute)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UNC-Coastal Studies Institute</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/193">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of New England - Marine Science Center (UNE-MSC)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UNE-MSC</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/194">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Louisiana State University - Coastal Studies Institute (LSU-CSI)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">LSU-CSI</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/195">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Massachusetts Boston - Environmental Earth and Ocean Sciences (UMB-EEOS)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UMB-EEOS</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/196">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Colorado (CU)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">CU</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/197">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Universidad de Las Palmas de Gran Canaria</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/198">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Australian National University - Climate Change Institute (ANUCCI)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">ANUCCI</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/199">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Cape Grim Baseline Air Pollution Station, Australia (CGBAPS)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">CGBAPS</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/200">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Oregon Health and Science University - OGI School of Science and Engineering (OGI/OHSU)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">OGI/OHSU</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/201">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Iowa (UI)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UI</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/202">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Louisiana State University  - Dept. of Oceanography and Coastal Science (LSU-DOCS)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">LSU-DOCS</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/203">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of California-Santa Barbara - National Center for Ecological Analysis and Synthesis (NCEAS) (UCSB-NCEAS)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UCSB-NCEAS</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/204">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Texas A&amp;M, Corpus Christi (TAMU-CC)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">TAMU-CC</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/205">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">National Taiwan University (Taida)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">Taida</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/206">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Northeast Fisheries Science Center - Woods Hole - Woods Hole (NOAA NEFSC)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">NOAA NEFSC</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/207">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Northeast Fisheries Science Center - Narragansett - Narragansett (NOAA NEFSC)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">NOAA NEFSC</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/208">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Oregon State University - Partnership for Interdisciplinary Studies of Coastal Oceans (OSU-PISCO)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">OSU-PISCO</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/209">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Istituto Nazionale di Oceanografia e di Geofisica Sperimentale (OGS)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">OGS</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/210">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">National Oceanic and Atmospheric Administration - Alaska Fisheries Science Center - Auke Bay Lab (NOAA-AFSC-Auke)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">NOAA-AFSC-Auke</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/211">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Sea Grant - Sea Grant - New York (SGNY)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">SGNY</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/212">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Cell Signaling Technology, Inc.</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/213">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Maine - The Lobster Institute (UMaine-LI)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UMaine-LI</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/214">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Northeast Consortium (NEC)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">NEC</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/215">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Portland State University (PSU)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">PSU</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/216">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Western Ontario</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/217">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Maryland Center for Environmental Science - Appalachian Laboratory (UMCES/AL)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UMCES/AL</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/218">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Brooklyn College CUNY (Brooklyn CUNY)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">Brooklyn CUNY</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/219">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Marine Biological Laboratory (MBL)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">MBL</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/220">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Northwest Florida State College - Mattie Kelly Environmental Institute (NWFSC)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">NWFSC</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/221">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Oregon State University - Cooperative Institute for Marine Resources Studies (OSU-CIMRS)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">OSU-CIMRS</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/222">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Massachusetts Institute of Technology (MIT)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">MIT</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/223">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Maine - Ira C. Darlling Marine Center (U Maine DMC)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">U Maine DMC</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/224">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Washington - Applied Physics Laboratory (UW APL)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UW APL</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/225">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Gulf of Maine Lobster Foundation (GoM-LF)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">GoM-LF</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/226">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Tennessee Knoxville (UTK)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UTK</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/227">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Marine Research Institute of Iceland (MRI)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">MRI</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/228">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">National Oceanic and Atmospheric Administration - Great Lakes Environmental Research Laboratory (NOAA-GLERL)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">NOAA-GLERL</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/229">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Sea Grant - Sea Grant - Oregon (SGOR)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">SGOR</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/230">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Virginia Aquarium</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/231">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Deakin University of Australia (DUA)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">DUA</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/232">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Department of Energy (DOE)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">DOE</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/233">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Oregon State University - Hatfield Marine Science Center (OSU-HMSC)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">OSU-HMSC</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/234">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of California-Santa Barbara - Marine Science Institute (UCSB-MSI)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UCSB-MSI</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/235">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Instituto Nacional de Desenvolvimento das Pescas (INDP)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">INDP</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/236">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Rutgers University - Institute of Marine and Coastal Sciences (Rutgers IMCS)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">Rutgers IMCS</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/237">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Université Pierre et Marie Curie (Paris 6)</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/238">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Chesapeake Bay Laboratories (CBL)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">CBL</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/239">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Alaska Fisheries Science Center (AFSC)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">AFSC</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/240">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Grice Marine Laboratory - College of Charleston (GML-CoC)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">GML-CoC</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/241">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Arizona State University (ASU)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">ASU</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/242">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Dauphin Island Sea Lab (DISL)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">DISL</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/243">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Northwest Fisheries Science Center - Newport - Newport (NOAA NWFSC)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">NOAA NWFSC</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/244">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of California-Irvine (UC Irvine)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UC Irvine</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/245">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Humboldt State University (Humboldt)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">Humboldt</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/246">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Minnesota Duluth - Large Lakes Observatory - University of Minnesota Duluth (LLO-UMD)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">LLO-UMD</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/247">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Oklahoma (OU)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">OU</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/248">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Maryland at Baltimore</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/249">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Massachusetts Boston - Biology Deparment (UMB)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UMB</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/250">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Providence College</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/251">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Roger Williams University (RWU)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">RWU</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/252">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Weizmann Institute of Science</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/253">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of California-Santa Barbara - Biological Sciences (UCSB-LifeSci)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UCSB-LifeSci</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/254">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of California-Santa Barbara - Institute for Computational Earth Systems Science (UCSB-ICESS)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UCSB-ICESS</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/255">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Smith College - Smith College - Department of Biological Sciences </ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/256">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Connecticut - University of Connecticut - Department of Marine Sciences (UConn - AveryPoint Marine Sci)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UConn - AveryPoint Marine Sci</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/257">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">East Carolina University - Institute for Coastal Science and Policy (ECU-ICSP)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">ECU-ICSP</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/258">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Indiana State University (ISU)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">ISU</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/259">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Connecticut - Northeast Undersea Research, Technology, and Education Center (UConn - NURTEC)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UConn - NURTEC</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/260">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of California-San Diego (UCSD)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UCSD</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/261">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">National Oceanic and Atmospheric Administration - Southwest Fisheries Science Center - Environmental Research Division (NOAA SWFSC ERD)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">NOAA SWFSC ERD</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/262">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Farallon Institute for Advanced Ecosystem Research</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/263">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Australian Antarctic Division</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/264">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Mississippi (Ole Miss) - Mississippi Mineral Resources Institute (UM-MMRI)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UM-MMRI</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/265">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Russian Academy of Sciences - P.P.Shirshov Institute of Oceanology (IO-RAS)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">IO-RAS</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/266">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Duke/University of North Carolina Oceanographic Consortium (Duke/UNC Consortium)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">Duke/UNC Consortium</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/267">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Raytheon Polar Services Company (RPSC)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">RPSC</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/268">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Canadian Coast Guard (CCG)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">CCG</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/269">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">California Institute of Technology (Caltech)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">Caltech</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/270">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Colgate University</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/271">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Commonwealth Scientific and Industrial Research Organisation (CSIRO)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">CSIRO</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/272">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Marine Biological Laboratory/Woods Hole Oceanographic Institution Library - Data Library and Archives (MBLWHOI DLA)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">MBLWHOI DLA</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/273">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Institute for Systems Biology (ISB)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">ISB</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/274">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Department of Meteorology at Stockholm University (MISU)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">MISU</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/275">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Swedish Maritime Administration</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/276">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Alabama-Tuscaloosa - Tuscaloosa  (UA/Tuscaloosa)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UA/Tuscaloosa</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/277">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Alabama-Birmingham - Birmingham (UA/Birmingham)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UA/Birmingham</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/278">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Minnesota, Twin Cities (UMTC)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UMTC</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/279">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Bowling Green State University (BGSU)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">BGSU</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/280">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Sonoma State University - Department of Biology</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/281">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">New England Aquarium (NEA)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">NEA</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/282">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Washington Department of Fish and Wildlife</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/283">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Colorado - University of Colorado - Institute of Arctic and Alpine Research (INSTAAR) (UCo - INSTAAR)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UCo - INSTAAR</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/284">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">National Science Foundation - Antarctic Sciences (NSF-ANT)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">NSF-ANT</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/285">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Carnegie Institution for Science (CIS)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">CIS</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/286">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Laboratoire d'Écogéochimie des Environnements Benthiques  - Benthic Ecogeochemistry Laboratory (LECOB)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">LECOB</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/287">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Max Planck Institute for Marine Microbiology (MPI)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">MPI</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/288">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Greifswald</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/289">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Shanghai Jiao Tong University (SJTU)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">SJTU</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/290">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">J. Craig Venter Institute, Inc. (JCVI)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">JCVI</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/291">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Western Washington University - Shannon Point Marine Center - Shannon Point Marine Center (SPMC)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">SPMC</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/292">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">California State University Northridge (CSU-Northridge)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">CSU-Northridge</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/293">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Helmholtz Centre for Environmental Research (UFZ)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UFZ</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/294">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Temple University (Temple)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">Temple</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/295">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of California-Berkeley (UC Berkeley)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UC Berkeley</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/296">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Universidad de Oveido, Spain</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/297">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Alaska, Fairbanks - Institute of Marine Science (UAF-IMS)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UAF-IMS</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/298">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of California-Merced (UC Merced)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UC Merced</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/299">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Texas at Arlington (UT Arlington)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UT Arlington</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/300">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">National Oceanography Centre - Ocean Biogeochemistry &amp; Ecosystems Group (NOC-OBE)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">NOC-OBE</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/301">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Universidad de Concepcion (UdeC)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UdeC</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/302">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Louisiana State University - Center for Wetland Resources (LSU-CWR)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">LSU-CWR</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/303">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Williams College (Williams)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">Williams</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/304">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Institut fur Polarokologie (IPO)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">IPO</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/305">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Puerto Rico - Mayaguez - Mayaguez Campus (UPRM)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UPRM</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/306">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Southern California (USC)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">USC</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/307">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Texas at Austin (UT Austin)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UT Austin</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/308">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Green Eyes LLC</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/309">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Maine Department of Inland Fisheries and Wildlife (Maine IFW)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">Maine IFW</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/310">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Leibniz Institute for Baltic Sea Research Warnemunde Germany</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/312">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Oldenburg - Institute for Chemistry and Biology of the Marine Environment (ICBM)</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/313">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Aarhus University  - Department of Bioscience</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/314">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Bristol, UK</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/315">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Clemson University (Clemson)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">Clemson</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/316">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Zaragoza</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/317">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Wright State University</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/318">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">National Oceanic and Atmospheric Administration  - Milford Laboratroy (NOAA-Milford)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">NOAA-Milford</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/319">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">National Science Foundation  - Arctic Sciences (NSF-ARC)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">NSF-ARC</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/320">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Arkansas State University</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/321">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Auburn University</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/322">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Perry Institute for Marine Science (PIMS)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">PIMS</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/323">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Joliet Junior College</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/324">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Schmidt Ocean Institute (SOI)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">SOI</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/325">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Wayne State University (WSU)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">WSU</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/326">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">EPOC (Environnements et Paleoenvironnements Oceaniques et Continentaux), UMR Universite Bordeaux - CNRS (EPOC UMR CNRS)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">EPOC UMR CNRS</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/327">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Queens College (CUNY QC)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">CUNY QC</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/328">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Michigan State University (MSU)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">MSU</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/329">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Florida Atlantic University (FAU)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">FAU</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/330">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">US Environmental Protection Agency Western Ecology Division (EPA WED)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">EPA WED</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/331">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Florida International University (FIU)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">FIU</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/332">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Shipping Corporation of India Ltd.</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/333">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">National Centre for Antarctic and Ocean Research (NCAOR)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">NCAOR</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/334">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">National Institute of Oceanography, Goa - Biological Oceanography Division (NIO)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">NIO</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/335">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Duke University - Duke University Department of Biology (Duke - Bio)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">Duke - Bio</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/336">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">North Carolina State University - Center for Marine Science and Technology (NCSU CMAST)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">NCSU CMAST</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/337">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Technical University of Denmark - Center for Nuclear Technologies (dtu)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">dtu</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/338">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of St. Andrews</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/339">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Guam Marine Laboratory (UOGML)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UOGML</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/340">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Western Australia - School of Plant Biology</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/341">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Cold Regions Research and Engineering Laboratory (CRREL)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">CRREL</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/342">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Washington - Friday Harbor Laboratories (FHL)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">FHL</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/343">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">United States Coast Guard (USCG)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">USCG</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/344">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of British Columbia - Department of Zoology (UBC-Zoo)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UBC-Zoo</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/345">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">GEOMAR - Helmholtz Centre for Ocean Resarch Kiel (GEOMAR - UFZ)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">GEOMAR - UFZ</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/346">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">National Oceanography Centre - National Marine Facilities Sea Systems (NOC - NMFSS)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">NOC - NMFSS</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/347">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Southampton</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/349">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Monterey Bay National Marine Sanctuary (MBNMS)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">MBNMS</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/472169">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Stanford University - Hopkins - Hopkins Marine Station (Stanford-HMS)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">Stanford-HMS</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/472191">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Center for Biological Research of the Northwest, SC (CIBNOR)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">CIBNOR</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/472221">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Smithsonian Institution - Tennenbaum Marine Observatories Network (TMON)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">TMON</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/472487">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">State University of New York at Buffalo (SUNY - Buffalo)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">SUNY - Buffalo</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/472640">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Florida - School of Forest Resources and Conservation (UF-SFRC)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UF-SFRC</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/472834">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Instituto Portugues do Mar e da Atmosfera (IPMA)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">IPMA</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/473055">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">American University (AU)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">AU</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/473058">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Hong Kong - School of Biological Sciences (HKU-SBS)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">HKU-SBS</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/473668">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Gordon and Betty Moore Foundation (GBMF)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">GBMF</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/474287">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Oklahoma State University (OSU)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">OSU</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/474682">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Yale University (Yale)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">Yale</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/489110">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Palau International Coral Reef Center (PICRC)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">PICRC</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/489337">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">California State University Long Beach (CSULB)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">CSULB</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/489465">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">British Antarctic Survey (BAS)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">BAS</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/490462">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Northeastern University - Marine Science Center (NEU-MSC)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">NEU-MSC</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/491507">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Australian Research Council (ARC) Centre of Excellence for Coral Reef Studies (Coral CoE)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">Coral CoE</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/502586">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Michigan (UMich)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UMich</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/505560">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of San Diego (USD)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">USD</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/505822">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Guelph</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/505888">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Bates College</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/505900">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">United States Environmental Protection Agency (US EPA)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">US EPA</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/506184">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Oregon - Oregon Institute of Marine Biology (OIMB)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">OIMB</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/514247">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of the Virgin Islands Center for Marine and Environmental Studies</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/514803">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Leibniz Institute for Freshwater Ecology and Inland Fisheries (IGB)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">IGB</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/516021">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">California State University Monterey Bay (CSU-MB)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">CSU-MB</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/516097">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Ohio State University</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/516245">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Smithsonian Tropical Research Institute  (STRI)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">STRI</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/516269">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">State University of New York ESF - College of Environmental Science and Forestry (SUNY-ESF)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">SUNY-ESF</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/516273">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Syracuse University (SU)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">SU</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/516720">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Smithsonian Environmental Research Center (SERC)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">SERC</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/517492">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Downeast Institute for Applied Marine Research and Education - The Downeast Institute (DEI)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">DEI</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/520587">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">SRI International (SRI)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">SRI</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/521561">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Seoul National University </ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/522589">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">National Museum of Marine Biology and Aquarium (NMMBA)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">NMMBA</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/522597">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Santa Monica College (SMC)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">SMC</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/522930">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of North Carolina at Chapel Hill - Institute of Marine Sciences (UNC-Chapel Hill-IMS)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UNC-Chapel Hill-IMS</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/523723">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">St. Joseph's College</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/523778">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Center for Coastal and Ocean Mapping (CCOM)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">CCOM</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/526718">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Mississippi - School of Pharmacy, National Center for Natural Products Research  (UM-NCNPR)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UM-NCNPR</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/526859">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Griffith University</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/527484">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Alabama at Birmingham</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/527492">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Oregon Health &amp; Science University - Institute of Environmental Health (IEH/OHSU)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">IEH/OHSU</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/528234">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Centre for Maritime Research and Experimentation (CMRE)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">CMRE</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/528492">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Hawaii at Manoa - Pacific Biosciences Research Center (PBRC)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">PBRC</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/528558">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Maryland Center for Environmental Science - Chesapeake Biological Laboratory (UMCES/CBL)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UMCES/CBL</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/528563">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Old Dominion University - Center for Quantitative Fisheries Ecology (ODU CQFE)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">ODU CQFE</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/528919">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Arizona (UA)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UA</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/529607">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Basel (Universitat Basel)</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/535496">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Dickinson College</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/535503">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Tufts University</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/535513">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">National Science Foundation - Molecular and Cellular Biosciences (NSF-MCB)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">NSF-MCB</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/536472">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Whitman College</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/536476">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Whitman College</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/537072">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Idaho State University</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/537420">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Southern California Marine Institute (SCMI)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">SCMI</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/537422">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Orange County Sanitation District (OCSD)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">OCSD</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/538001">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Strathclyde (U Strathclyde)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">U Strathclyde</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/538023">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Louisiana State University  - School of the Coast and Environment (LSU-SC&amp;E)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">LSU-SC&amp;E</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/540413">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Florida (UF)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UF</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/540419">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Victoria University of Wellington</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/540424">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">McMaster University</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/540431">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Australian Institute of Marine Science (AIMS)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">AIMS</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/541186">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">DOE Joint Genome Institute (DOE JGI)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">DOE JGI</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/541238">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">California State University Los Angeles (Cal State LA)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">Cal State LA</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/541266">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of South Alabama (USA)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">USA</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/541806">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Stockholm University</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/542130">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">North Carolina State University (NCSU)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">NCSU</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/542212">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Coral Reef Research Foundation (CRRF)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">CRRF</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/542221">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of California-Santa Barbara - Earth Research Institute (UCSB-ERI)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UCSB-ERI</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/542317">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">American Museum of Natural History (AMNH)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">AMNH</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/542456">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Texas - Marine Science Institute (UTMSI)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">UTMSI</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/544447">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Colorado State University - Department of Biology (CSU - Biology)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">CSU - Biology</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/544612">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Western Washington University</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/544804">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Swiss Federal Institute of Aquatic Science and Technology - Eidgenossische Anstalt fur Wasserversorgung, Abwasserreinigung und Gewasserschutz (EAWAG)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">EAWAG</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/546325">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Hawaii at Manoa - Hawaii Institute of Marine Biology (HIMB)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">HIMB</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/546786">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Florida Institute of Technology (FIT)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">FIT</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/550509">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">University of Houston</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/551855">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Norwegian University of Science and Technology (NTNU)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">NTNU</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/552214">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">National Oceanic and Atmospheric Administration - Southwest Fisheries Science Center - Santa Cruz (NOAA SWFSC Santa Cruz)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">NOAA SWFSC Santa Cruz</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/552887">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">McGill University - Bellairs Research Institute</ecglview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/553105">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">George Mason University (GMU)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">GMU</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/affiliation/553999">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <ecglview:title xml:lang="en-US">Italian National Research Council (CNR)</ecglview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">CNR</bcoview:acronym>
+  </rdf:Description>
+
+</rdf:RDF>
