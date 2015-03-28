@@ -1,0 +1,1457 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY ecglvoc_L05 "http://schema.geolink.org/dev/voc/nvs/L05#" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY geosparql "http://www.opengis.net/ont/geosparql#" >
+]>
+
+<rdf:RDF xmlns="http://schema.geolink.org/dev/voc/nvs/L05#"
+     xml:base="http://schema.geolink.org/dev/voc/nvs/L05"
+     xmlns:ecglvoc_L05="http://schema.geolink.org/dev/voc/nvs/L05#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:geosparql="http://www.opengis.net/ont/geosparql#">
+
+    <owl:Ontology rdf:about="http://schema.geolink.org/dev/voc/nvs/L05"/>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#364 -->
+    <owl:Class rdf:about="&ecglvoc_L05;364">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/364/"/>
+       <rdfs:label>1000 Hz top-bandwidth multi-channel seismic reflection systems</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#363 -->
+    <owl:Class rdf:about="&ecglvoc_L05;363">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/363/"/>
+       <rdfs:label>1000 Hz top-bandwidth single-channel seismic reflection systems</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#365 -->
+    <owl:Class rdf:about="&ecglvoc_L05;365">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/365/"/>
+       <rdfs:label>2000 Hz top-bandwidth multi-channel seismic reflection systems</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#372 -->
+    <owl:Class rdf:about="&ecglvoc_L05;372">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/372/"/>
+       <rdfs:label>2000 Hz top-bandwidth single-channel seismic reflection systems</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#375 -->
+    <owl:Class rdf:about="&ecglvoc_L05;375">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/375/"/>
+       <rdfs:label>250 Hz top-bandwidth multi-channel seismic reflection systems</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#362 -->
+    <owl:Class rdf:about="&ecglvoc_L05;362">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/362/"/>
+       <rdfs:label>250 Hz top-bandwidth single-channel seismic reflection systems</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#374 -->
+    <owl:Class rdf:about="&ecglvoc_L05;374">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/374/"/>
+       <rdfs:label>60 Hz top-bandwidth multi-channel seismic reflection systems</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#371 -->
+    <owl:Class rdf:about="&ecglvoc_L05;371">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/371/"/>
+       <rdfs:label>60 Hz top-bandwidth single-channel seismic reflection systems</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#366 -->
+    <owl:Class rdf:about="&ecglvoc_L05;366">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/366/"/>
+       <rdfs:label>&gt;2000 Hz top-bandwidth multi-channel seismic reflection systems</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#373 -->
+    <owl:Class rdf:about="&ecglvoc_L05;373">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/373/"/>
+       <rdfs:label>&gt;2000 Hz top-bandwidth single-channel seismic reflection systems</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#367 -->
+    <owl:Class rdf:about="&ecglvoc_L05;367">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/367/"/>
+       <rdfs:label>&gt;2000 Hz top-bandwidth sub-bottom penetrator and mud profiler systems</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#384 -->
+    <owl:Class rdf:about="&ecglvoc_L05;384">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/384/"/>
+       <rdfs:label>ADVs and turbulence probes</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#386 -->
+    <owl:Class rdf:about="&ecglvoc_L05;386">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/386/"/>
+       <rdfs:label>Aerosol physical characterisers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#387 -->
+    <owl:Class rdf:about="&ecglvoc_L05;387">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/387/"/>
+       <rdfs:label>Aethalometers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#AQPL -->
+    <owl:Class rdf:about="&ecglvoc_L05;AQPL">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/AQPL/"/>
+       <rdfs:label>Aquapulse</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#POS16 -->
+    <owl:Class rdf:about="&ecglvoc_L05;POS16">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/POS16/"/>
+       <rdfs:label>Argos GPS-localised transmitters</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#POS17 -->
+    <owl:Class rdf:about="&ecglvoc_L05;POS17">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/POS17/"/>
+       <rdfs:label>Argos doppler-localised transmitters</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#MOD03 -->
+    <owl:Class rdf:about="&ecglvoc_L05;MOD03">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/MOD03/"/>
+       <rdfs:label>Atmosphere models</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#POS10 -->
+    <owl:Class rdf:about="&ecglvoc_L05;POS10">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/POS10/"/>
+       <rdfs:label>Automatic Ranging Grid Overlay DM 54 receivers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#MOD08 -->
+    <owl:Class rdf:about="&ecglvoc_L05;MOD08">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/MOD08/"/>
+       <rdfs:label>Biological and biogeochemical models</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#BOMR -->
+    <owl:Class rdf:about="&ecglvoc_L05;BOMR">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/BOMR/"/>
+       <rdfs:label>Boomer</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#130 -->
+    <owl:Class rdf:about="&ecglvoc_L05;130">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/130/"/>
+       <rdfs:label>CTD</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#131 -->
+    <owl:Class rdf:about="&ecglvoc_L05;131">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/131/"/>
+       <rdfs:label>CTD undulators</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#CHRP -->
+    <owl:Class rdf:about="&ecglvoc_L05;CHRP">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/CHRP/"/>
+       <rdfs:label>Chirp</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#COLCMP -->
+    <owl:Class rdf:about="&ecglvoc_L05;COLCMP">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/COLCMP/"/>
+       <rdfs:label>Colour comparators</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#MOD05 -->
+    <owl:Class rdf:about="&ecglvoc_L05;MOD05">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/MOD05/"/>
+       <rdfs:label>Coupled models</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#POS08 -->
+    <owl:Class rdf:about="&ecglvoc_L05;POS08">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/POS08/"/>
+       <rdfs:label>Decca Navigator System HiFix receivers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#POS01 -->
+    <owl:Class rdf:about="&ecglvoc_L05;POS01">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/POS01/"/>
+       <rdfs:label>Decca Navigator System main chain receivers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#POS04 -->
+    <owl:Class rdf:about="&ecglvoc_L05;POS04">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/POS04/"/>
+       <rdfs:label>Differential Global Positioning System receivers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#FFES -->
+    <owl:Class rdf:about="&ecglvoc_L05;FFES">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/FFES/"/>
+       <rdfs:label>Fish-finder echosounders</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#FLXS -->
+    <owl:Class rdf:about="&ecglvoc_L05;FLXS">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/FLXS/"/>
+       <rdfs:label>Flexichoc</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#FLXT -->
+    <owl:Class rdf:about="&ecglvoc_L05;FLXT">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/FLXT/"/>
+       <rdfs:label>Flexotir</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#GIAG -->
+    <owl:Class rdf:about="&ecglvoc_L05;GIAG">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/GIAG/"/>
+       <rdfs:label>GI-gun</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#LAB39 -->
+    <owl:Class rdf:about="&ecglvoc_L05;LAB39">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/LAB39/"/>
+       <rdfs:label>Geiger counters</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#POS02 -->
+    <owl:Class rdf:about="&ecglvoc_L05;POS02">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/POS02/"/>
+       <rdfs:label>Global Navigation Satellite System receivers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#MOD01 -->
+    <owl:Class rdf:about="&ecglvoc_L05;MOD01">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/MOD01/"/>
+       <rdfs:label>Global models</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#POS21 -->
+    <owl:Class rdf:about="&ecglvoc_L05;POS21">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/POS21/"/>
+       <rdfs:label>Hyperfix receivers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#POS25 -->
+    <owl:Class rdf:about="&ecglvoc_L05;POS25">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/POS25/"/>
+       <rdfs:label>Kinematic Global Positioning System receivers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#POS05 -->
+    <owl:Class rdf:about="&ecglvoc_L05;POS05">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/POS05/"/>
+       <rdfs:label>Long Range Navigation version C receivers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#POS06 -->
+    <owl:Class rdf:about="&ecglvoc_L05;POS06">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/POS06/"/>
+       <rdfs:label>Marine chronometers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#MOD06 -->
+    <owl:Class rdf:about="&ecglvoc_L05;MOD06">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/MOD06/"/>
+       <rdfs:label>Meteorological models</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#POS20 -->
+    <owl:Class rdf:about="&ecglvoc_L05;POS20">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/POS20/"/>
+       <rdfs:label>Motorola Mini-Ranger receivers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#POS03 -->
+    <owl:Class rdf:about="&ecglvoc_L05;POS03">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/POS03/"/>
+       <rdfs:label>NAVSTAR Global Positioning System receivers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#POS18 -->
+    <owl:Class rdf:about="&ecglvoc_L05;POS18">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/POS18/"/>
+       <rdfs:label>Navy Navigation Satellite System receivers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#MOD04 -->
+    <owl:Class rdf:about="&ecglvoc_L05;MOD04">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/MOD04/"/>
+       <rdfs:label>Ocean models</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#POS15 -->
+    <owl:Class rdf:about="&ecglvoc_L05;POS15">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/POS15/"/>
+       <rdfs:label>Omega receivers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#PERMON -->
+    <owl:Class rdf:about="&ecglvoc_L05;PERMON">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/PERMON/"/>
+       <rdfs:label>Performance monitors</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#MOD07 -->
+    <owl:Class rdf:about="&ecglvoc_L05;MOD07">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/MOD07/"/>
+       <rdfs:label>Physical oceanographic models</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#POS14 -->
+    <owl:Class rdf:about="&ecglvoc_L05;POS14">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/POS14/"/>
+       <rdfs:label>Pulse8 receivers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#POS13 -->
+    <owl:Class rdf:about="&ecglvoc_L05;POS13">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/POS13/"/>
+       <rdfs:label>Rana receivers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#MOD02 -->
+    <owl:Class rdf:about="&ecglvoc_L05;MOD02">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/MOD02/"/>
+       <rdfs:label>Regional models</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#POS07 -->
+    <owl:Class rdf:about="&ecglvoc_L05;POS07">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/POS07/"/>
+       <rdfs:label>Sextants</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#SPRK -->
+    <owl:Class rdf:about="&ecglvoc_L05;SPRK">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/SPRK/"/>
+       <rdfs:label>Sparker</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#POS12 -->
+    <owl:Class rdf:about="&ecglvoc_L05;POS12">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/POS12/"/>
+       <rdfs:label>Systeme leger de measure de distance receivers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#POS09 -->
+    <owl:Class rdf:about="&ecglvoc_L05;POS09">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/POS09/"/>
+       <rdfs:label>Toran receivers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#POS11 -->
+    <owl:Class rdf:about="&ecglvoc_L05;POS11">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/POS11/"/>
+       <rdfs:label>Trident receivers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#POS22 -->
+    <owl:Class rdf:about="&ecglvoc_L05;POS22">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/POS22/"/>
+       <rdfs:label>Trisponder navigation systems</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#POS26 -->
+    <owl:Class rdf:about="&ecglvoc_L05;POS26">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/POS26/"/>
+       <rdfs:label>Ultra Short Baseline Positioning Systems</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#VSHC -->
+    <owl:Class rdf:about="&ecglvoc_L05;VSHC">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/VSHC/"/>
+       <rdfs:label>Vaporchoc</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#LAB40 -->
+    <owl:Class rdf:about="&ecglvoc_L05;LAB40">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/LAB40/"/>
+       <rdfs:label>Volume measures</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#LAB26 -->
+    <owl:Class rdf:about="&ecglvoc_L05;LAB26">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/LAB26/"/>
+       <rdfs:label>X-ray diffractometers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#LAB25 -->
+    <owl:Class rdf:about="&ecglvoc_L05;LAB25">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/LAB25/"/>
+       <rdfs:label>X-ray fluorescence analysers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#LAB17 -->
+    <owl:Class rdf:about="&ecglvoc_L05;LAB17">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/LAB17/"/>
+       <rdfs:label>accelerator mass spectrometers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#307 -->
+    <owl:Class rdf:about="&ecglvoc_L05;307">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/307/"/>
+       <rdfs:label>accelerometers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#183 -->
+    <owl:Class rdf:about="&ecglvoc_L05;183">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/183/"/>
+       <rdfs:label>acoustic backscatter sensors</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#357 -->
+    <owl:Class rdf:about="&ecglvoc_L05;357">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/357/"/>
+       <rdfs:label>acoustic tracking systems</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#LAB32 -->
+    <owl:Class rdf:about="&ecglvoc_L05;LAB32">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/LAB32/"/>
+       <rdfs:label>acoustic velocity systems</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#64 -->
+    <owl:Class rdf:about="&ecglvoc_L05;64">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/64/"/>
+       <rdfs:label>active fishing gear</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#353 -->
+    <owl:Class rdf:about="&ecglvoc_L05;353">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/353/"/>
+       <rdfs:label>active fluorometers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#13 -->
+    <owl:Class rdf:about="&ecglvoc_L05;13">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/13/"/>
+       <rdfs:label>aerosol samplers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#SNAG -->
+    <owl:Class rdf:about="&ecglvoc_L05;SNAG">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/SNAG/"/>
+       <rdfs:label>airgun</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#ARAG -->
+    <owl:Class rdf:about="&ecglvoc_L05;ARAG">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/ARAG/"/>
+       <rdfs:label>airgun array</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#379 -->
+    <owl:Class rdf:about="&ecglvoc_L05;379">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/379/"/>
+       <rdfs:label>altimeters</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#101 -->
+    <owl:Class rdf:about="&ecglvoc_L05;101">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/101/"/>
+       <rdfs:label>anemometers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#382 -->
+    <owl:Class rdf:about="&ecglvoc_L05;382">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/382/"/>
+       <rdfs:label>atmospheric gas analysers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#308 -->
+    <owl:Class rdf:about="&ecglvoc_L05;308">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/308/"/>
+       <rdfs:label>atmospheric radiometers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#ATRANS -->
+    <owl:Class rdf:about="&ecglvoc_L05;ATRANS">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/ATRANS/"/>
+       <rdfs:label>atmospheric transparency quantifiers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#LAB10 -->
+    <owl:Class rdf:about="&ecglvoc_L05;LAB10">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/LAB10/"/>
+       <rdfs:label>atomic absorption spectrometers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#LAB04 -->
+    <owl:Class rdf:about="&ecglvoc_L05;LAB04">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/LAB04/"/>
+       <rdfs:label>autoanalysers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#LAB13 -->
+    <owl:Class rdf:about="&ecglvoc_L05;LAB13">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/LAB13/"/>
+       <rdfs:label>balances and scales</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#312 -->
+    <owl:Class rdf:about="&ecglvoc_L05;312">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/312/"/>
+       <rdfs:label>bathymetric LiDARs</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#132 -->
+    <owl:Class rdf:about="&ecglvoc_L05;132">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/132/"/>
+       <rdfs:label>bathythermographs</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#62 -->
+    <owl:Class rdf:about="&ecglvoc_L05;62">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/62/"/>
+       <rdfs:label>beam trawls</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#LAB23 -->
+    <owl:Class rdf:about="&ecglvoc_L05;LAB23">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/LAB23/"/>
+       <rdfs:label>bench fluorometers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#151 -->
+    <owl:Class rdf:about="&ecglvoc_L05;151">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/151/"/>
+       <rdfs:label>benthic incubation chambers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#24 -->
+    <owl:Class rdf:about="&ecglvoc_L05;24">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/24/"/>
+       <rdfs:label>benthos samplers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#BLUMS -->
+    <owl:Class rdf:about="&ecglvoc_L05;BLUMS">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/BLUMS/"/>
+       <rdfs:label>bioluminescence sensors</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#85 -->
+    <owl:Class rdf:about="&ecglvoc_L05;85">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/85/"/>
+       <rdfs:label>biorectors and chemostats</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#313 -->
+    <owl:Class rdf:about="&ecglvoc_L05;313">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/313/"/>
+       <rdfs:label>bird detection radars</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#358 -->
+    <owl:Class rdf:about="&ecglvoc_L05;358">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/358/"/>
+       <rdfs:label>bubble detectors</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#311 -->
+    <owl:Class rdf:about="&ecglvoc_L05;311">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/311/"/>
+       <rdfs:label>cameras</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#LAB38 -->
+    <owl:Class rdf:about="&ecglvoc_L05;LAB38">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/LAB38/"/>
+       <rdfs:label>cavity enhanced absorption spectrometers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#83 -->
+    <owl:Class rdf:about="&ecglvoc_L05;83">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/83/"/>
+       <rdfs:label>centrifuges</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#LAB34 -->
+    <owl:Class rdf:about="&ecglvoc_L05;LAB34">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/LAB34/"/>
+       <rdfs:label>chemiluminescence analysers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#CCOV -->
+    <owl:Class rdf:about="&ecglvoc_L05;CCOV">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/CCOV/"/>
+       <rdfs:label>cloud cover quantifiers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#LAB03 -->
+    <owl:Class rdf:about="&ecglvoc_L05;LAB03">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/LAB03/"/>
+       <rdfs:label>colorimeters</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#58 -->
+    <owl:Class rdf:about="&ecglvoc_L05;58">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/58/"/>
+       <rdfs:label>continuous air samplers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#31 -->
+    <owl:Class rdf:about="&ecglvoc_L05;31">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/31/"/>
+       <rdfs:label>continuous water samplers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#CSEM -->
+    <owl:Class rdf:about="&ecglvoc_L05;CSEM">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/CSEM/"/>
+       <rdfs:label>controlled-source elecromagnetic systems</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#114 -->
+    <owl:Class rdf:about="&ecglvoc_L05;114">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/114/"/>
+       <rdfs:label>current meters</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#115 -->
+    <owl:Class rdf:about="&ecglvoc_L05;115">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/115/"/>
+       <rdfs:label>current profilers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#POS24 -->
+    <owl:Class rdf:about="&ecglvoc_L05;POS24">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/POS24/"/>
+       <rdfs:label>dead reckoning</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#61 -->
+    <owl:Class rdf:about="&ecglvoc_L05;61">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/61/"/>
+       <rdfs:label>demersal trawl nets</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#11 -->
+    <owl:Class rdf:about="&ecglvoc_L05;11">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/11/"/>
+       <rdfs:label>discrete air samplers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#30 -->
+    <owl:Class rdf:about="&ecglvoc_L05;30">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/30/"/>
+       <rdfs:label>discrete water samplers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#351 -->
+    <owl:Class rdf:about="&ecglvoc_L05;351">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/351/"/>
+       <rdfs:label>dissolved gas sensors</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#ERTQ -->
+    <owl:Class rdf:about="&ecglvoc_L05;ERTQ">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/ERTQ/"/>
+       <rdfs:label>earthquake</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#EMSR -->
+    <owl:Class rdf:about="&ecglvoc_L05;EMSR">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/EMSR/"/>
+       <rdfs:label>elecromagnetic sensors</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#LAB08 -->
+    <owl:Class rdf:about="&ecglvoc_L05;LAB08">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/LAB08/"/>
+       <rdfs:label>electron microprobes</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#LAB07 -->
+    <owl:Class rdf:about="&ecglvoc_L05;LAB07">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/LAB07/"/>
+       <rdfs:label>electron microscopes</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#LAB01 -->
+    <owl:Class rdf:about="&ecglvoc_L05;LAB01">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/LAB01/"/>
+       <rdfs:label>elemental analysers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#EQUIL -->
+    <owl:Class rdf:about="&ecglvoc_L05;EQUIL">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/EQUIL/"/>
+       <rdfs:label>equilibrators</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#354 -->
+    <owl:Class rdf:about="&ecglvoc_L05;354">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/354/"/>
+       <rdfs:label>expendable CTDs</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#LAB37 -->
+    <owl:Class rdf:about="&ecglvoc_L05;LAB37">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/LAB37/"/>
+       <rdfs:label>flow cytometers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#LAB36 -->
+    <owl:Class rdf:about="&ecglvoc_L05;LAB36">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/LAB36/"/>
+       <rdfs:label>flow injection analysers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#388 -->
+    <owl:Class rdf:about="&ecglvoc_L05;388">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/388/"/>
+       <rdfs:label>flow meters</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#LAB06 -->
+    <owl:Class rdf:about="&ecglvoc_L05;LAB06">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/LAB06/"/>
+       <rdfs:label>fluorescence microscopes</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#113 -->
+    <owl:Class rdf:about="&ecglvoc_L05;113">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/113/"/>
+       <rdfs:label>fluorometers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#66 -->
+    <owl:Class rdf:about="&ecglvoc_L05;66">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/66/"/>
+       <rdfs:label>flushing drills</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#12 -->
+    <owl:Class rdf:about="&ecglvoc_L05;12">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/12/"/>
+       <rdfs:label>fog samplers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#LAB22 -->
+    <owl:Class rdf:about="&ecglvoc_L05;LAB22">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/LAB22/"/>
+       <rdfs:label>gamma-ray spectrometers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#LAB19 -->
+    <owl:Class rdf:about="&ecglvoc_L05;LAB19">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/LAB19/"/>
+       <rdfs:label>gas chromatograph mass spectrometers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#LAB02 -->
+    <owl:Class rdf:about="&ecglvoc_L05;LAB02">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/LAB02/"/>
+       <rdfs:label>gas chromatographs</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#LAB24 -->
+    <owl:Class rdf:about="&ecglvoc_L05;LAB24">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/LAB24/"/>
+       <rdfs:label>gel permeation chromatographs</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#370 -->
+    <owl:Class rdf:about="&ecglvoc_L05;370">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/370/"/>
+       <rdfs:label>geothermometers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#65 -->
+    <owl:Class rdf:about="&ecglvoc_L05;65">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/65/"/>
+       <rdfs:label>gill nets</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#158 -->
+    <owl:Class rdf:about="&ecglvoc_L05;158">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/158/"/>
+       <rdfs:label>gravimeters</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#EXLH -->
+    <owl:Class rdf:about="&ecglvoc_L05;EXLH">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/EXLH/"/>
+       <rdfs:label>high penetration low resolution explosives</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#LAB11 -->
+    <owl:Class rdf:about="&ecglvoc_L05;LAB11">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/LAB11/"/>
+       <rdfs:label>high performance liquid chromatographs</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#EXHL -->
+    <owl:Class rdf:about="&ecglvoc_L05;EXHL">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/EXHL/"/>
+       <rdfs:label>high resolution low penetration explosives</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#67 -->
+    <owl:Class rdf:about="&ecglvoc_L05;67">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/67/"/>
+       <rdfs:label>high-speed plankton samplers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#369 -->
+    <owl:Class rdf:about="&ecglvoc_L05;369">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/369/"/>
+       <rdfs:label>hydrophones</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#ICEP -->
+    <owl:Class rdf:about="&ecglvoc_L05;ICEP">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/ICEP/"/>
+       <rdfs:label>ice thickness profilers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#82 -->
+    <owl:Class rdf:about="&ecglvoc_L05;82">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/82/"/>
+       <rdfs:label>in-situ incubators</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#182 -->
+    <owl:Class rdf:about="&ecglvoc_L05;182">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/182/"/>
+       <rdfs:label>inapplicable</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#LAB14 -->
+    <owl:Class rdf:about="&ecglvoc_L05;LAB14">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/LAB14/"/>
+       <rdfs:label>inductively-coupled plasma atomic emission spectroscopes</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#LAB15 -->
+    <owl:Class rdf:about="&ecglvoc_L05;LAB15">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/LAB15/"/>
+       <rdfs:label>inductively-coupled plasma mass spectrometers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#POS19 -->
+    <owl:Class rdf:about="&ecglvoc_L05;POS19">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/POS19/"/>
+       <rdfs:label>inertial navigation systems</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#112 -->
+    <owl:Class rdf:about="&ecglvoc_L05;112">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/112/"/>
+       <rdfs:label>inverted echosounders</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#LAB09 -->
+    <owl:Class rdf:about="&ecglvoc_L05;LAB09">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/LAB09/"/>
+       <rdfs:label>ion microprobes</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#LBTG -->
+    <owl:Class rdf:about="&ecglvoc_L05;LBTG">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/LBTG/"/>
+       <rdfs:label>labelling tags</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#LAB33 -->
+    <owl:Class rdf:about="&ecglvoc_L05;LAB33">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/LAB33/"/>
+       <rdfs:label>laboratory autosamplers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#LAB41 -->
+    <owl:Class rdf:about="&ecglvoc_L05;LAB41">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/LAB41/"/>
+       <rdfs:label>laboratory cameras</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#LAB42 -->
+    <owl:Class rdf:about="&ecglvoc_L05;LAB42">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/LAB42/"/>
+       <rdfs:label>laboratory optical rangefinders</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#310 -->
+    <owl:Class rdf:about="&ecglvoc_L05;310">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/310/"/>
+       <rdfs:label>laser altimeters</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#LAB21 -->
+    <owl:Class rdf:about="&ecglvoc_L05;LAB21">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/LAB21/"/>
+       <rdfs:label>liquid scintillation counters</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#116 -->
+    <owl:Class rdf:about="&ecglvoc_L05;116">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/116/"/>
+       <rdfs:label>lowered current profilers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#LAB31 -->
+    <owl:Class rdf:about="&ecglvoc_L05;LAB31">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/LAB31/"/>
+       <rdfs:label>magnetic susceptibility systems</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#159 -->
+    <owl:Class rdf:about="&ecglvoc_L05;159">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/159/"/>
+       <rdfs:label>magnetometers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#90 -->
+    <owl:Class rdf:about="&ecglvoc_L05;90">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/90/"/>
+       <rdfs:label>manual biota samplers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#57 -->
+    <owl:Class rdf:about="&ecglvoc_L05;57">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/57/"/>
+       <rdfs:label>manual rock samplers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#MVBR -->
+    <owl:Class rdf:about="&ecglvoc_L05;MVBR">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/MVBR/"/>
+       <rdfs:label>marine vibroseis</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#LAB16 -->
+    <owl:Class rdf:about="&ecglvoc_L05;LAB16">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/LAB16/"/>
+       <rdfs:label>mass spectrometers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#383 -->
+    <owl:Class rdf:about="&ecglvoc_L05;383">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/383/"/>
+       <rdfs:label>metal analysers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#102 -->
+    <owl:Class rdf:about="&ecglvoc_L05;102">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/102/"/>
+       <rdfs:label>meteorological packages</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#184 -->
+    <owl:Class rdf:about="&ecglvoc_L05;184">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/184/"/>
+       <rdfs:label>microstructure sensors</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#157 -->
+    <owl:Class rdf:about="&ecglvoc_L05;157">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/157/"/>
+       <rdfs:label>multi-beam echosounders</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#154 -->
+    <owl:Class rdf:about="&ecglvoc_L05;154">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/154/"/>
+       <rdfs:label>multi-channel seismic reflection systems</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#MMIS -->
+    <owl:Class rdf:about="&ecglvoc_L05;MMIS">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/MMIS/"/>
+       <rdfs:label>multi-frame imaging sonar</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#68 -->
+    <owl:Class rdf:about="&ecglvoc_L05;68">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/68/"/>
+       <rdfs:label>multinet</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#NATS -->
+    <owl:Class rdf:about="&ecglvoc_L05;NATS">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/NATS/"/>
+       <rdfs:label>natural source</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#69 -->
+    <owl:Class rdf:about="&ecglvoc_L05;69">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/69/"/>
+       <rdfs:label>neuston net</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#LAB18 -->
+    <owl:Class rdf:about="&ecglvoc_L05;LAB18">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/LAB18/"/>
+       <rdfs:label>nuclear magnetic resonance spectrometers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#181 -->
+    <owl:Class rdf:about="&ecglvoc_L05;181">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/181/"/>
+       <rdfs:label>nutrient analysers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#91 -->
+    <owl:Class rdf:about="&ecglvoc_L05;91">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/91/"/>
+       <rdfs:label>observers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#304 -->
+    <owl:Class rdf:about="&ecglvoc_L05;304">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/304/"/>
+       <rdfs:label>ocean colour radiometers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#123 -->
+    <owl:Class rdf:about="&ecglvoc_L05;123">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/123/"/>
+       <rdfs:label>optical backscatter sensors</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#LAB05 -->
+    <owl:Class rdf:about="&ecglvoc_L05;LAB05">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/LAB05/"/>
+       <rdfs:label>optical microscopes</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#355 -->
+    <owl:Class rdf:about="&ecglvoc_L05;355">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/355/"/>
+       <rdfs:label>pH sensors</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#150 -->
+    <owl:Class rdf:about="&ecglvoc_L05;150">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/150/"/>
+       <rdfs:label>particle sizers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#LAB27 -->
+    <owl:Class rdf:about="&ecglvoc_L05;LAB27">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/LAB27/"/>
+       <rdfs:label>particle sizers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#32 -->
+    <owl:Class rdf:about="&ecglvoc_L05;32">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/32/"/>
+       <rdfs:label>particulates samplers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#63 -->
+    <owl:Class rdf:about="&ecglvoc_L05;63">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/63/"/>
+       <rdfs:label>passive fishing gear</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#23 -->
+    <owl:Class rdf:about="&ecglvoc_L05;23">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/23/"/>
+       <rdfs:label>pelagic trawl nets</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#361 -->
+    <owl:Class rdf:about="&ecglvoc_L05;361">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/361/"/>
+       <rdfs:label>penetrometers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#360 -->
+    <owl:Class rdf:about="&ecglvoc_L05;360">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/360/"/>
+       <rdfs:label>piezometers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#352 -->
+    <owl:Class rdf:about="&ecglvoc_L05;352">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/352/"/>
+       <rdfs:label>plankton counters</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#22 -->
+    <owl:Class rdf:about="&ecglvoc_L05;22">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/22/"/>
+       <rdfs:label>plankton nets</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#21 -->
+    <owl:Class rdf:about="&ecglvoc_L05;21">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/21/"/>
+       <rdfs:label>plankton recorders</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#LAB43 -->
+    <owl:Class rdf:about="&ecglvoc_L05;LAB43">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/LAB43/"/>
+       <rdfs:label>plate readers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#385 -->
+    <owl:Class rdf:about="&ecglvoc_L05;385">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/385/"/>
+       <rdfs:label>platform attitude sensors</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#359 -->
+    <owl:Class rdf:about="&ecglvoc_L05;359">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/359/"/>
+       <rdfs:label>plummets</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#381 -->
+    <owl:Class rdf:about="&ecglvoc_L05;381">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/381/"/>
+       <rdfs:label>precipitation gauges</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#14 -->
+    <owl:Class rdf:about="&ecglvoc_L05;14">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/14/"/>
+       <rdfs:label>precipitation samplers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#186 -->
+    <owl:Class rdf:about="&ecglvoc_L05;186">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/186/"/>
+       <rdfs:label>radar altimeters</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#POS23 -->
+    <owl:Class rdf:about="&ecglvoc_L05;POS23">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/POS23/"/>
+       <rdfs:label>radio tracking systems</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#122 -->
+    <owl:Class rdf:about="&ecglvoc_L05;122">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/122/"/>
+       <rdfs:label>radiometers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#103 -->
+    <owl:Class rdf:about="&ecglvoc_L05;103">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/103/"/>
+       <rdfs:label>radiosondes</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#356 -->
+    <owl:Class rdf:about="&ecglvoc_L05;356">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/356/"/>
+       <rdfs:label>redox potential sensors</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#LAB44 -->
+    <owl:Class rdf:about="&ecglvoc_L05;LAB44">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/LAB44/"/>
+       <rdfs:label>refractometers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#53 -->
+    <owl:Class rdf:about="&ecglvoc_L05;53">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/53/"/>
+       <rdfs:label>rock corers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#54 -->
+    <owl:Class rdf:about="&ecglvoc_L05;54">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/54/"/>
+       <rdfs:label>rock dredges</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#LAB29 -->
+    <owl:Class rdf:about="&ecglvoc_L05;LAB29">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/LAB29/"/>
+       <rdfs:label>rulers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#350 -->
+    <owl:Class rdf:about="&ecglvoc_L05;350">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/350/"/>
+       <rdfs:label>salinity sensor</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#LAB30 -->
+    <owl:Class rdf:about="&ecglvoc_L05;LAB30">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/LAB30/"/>
+       <rdfs:label>salinometers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#59 -->
+    <owl:Class rdf:about="&ecglvoc_L05;59">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/59/"/>
+       <rdfs:label>sampling extent markers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#301 -->
+    <owl:Class rdf:about="&ecglvoc_L05;301">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/301/"/>
+       <rdfs:label>satellite positioning systems</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#121 -->
+    <owl:Class rdf:about="&ecglvoc_L05;121">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/121/"/>
+       <rdfs:label>satellite tracking system</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#305 -->
+    <owl:Class rdf:about="&ecglvoc_L05;305">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/305/"/>
+       <rdfs:label>scatterometers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#111 -->
+    <owl:Class rdf:about="&ecglvoc_L05;111">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/111/"/>
+       <rdfs:label>sea level recorders</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#60 -->
+    <owl:Class rdf:about="&ecglvoc_L05;60">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/60/"/>
+       <rdfs:label>sediment dredges</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#50 -->
+    <owl:Class rdf:about="&ecglvoc_L05;50">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/50/"/>
+       <rdfs:label>sediment grabs</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#52 -->
+    <owl:Class rdf:about="&ecglvoc_L05;52">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/52/"/>
+       <rdfs:label>sediment porewater samplers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#378 -->
+    <owl:Class rdf:about="&ecglvoc_L05;378">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/378/"/>
+       <rdfs:label>sediment profile imagers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#55 -->
+    <owl:Class rdf:about="&ecglvoc_L05;55">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/55/"/>
+       <rdfs:label>sediment settling tubes</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#376 -->
+    <owl:Class rdf:about="&ecglvoc_L05;376">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/376/"/>
+       <rdfs:label>sediment surface markers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#33 -->
+    <owl:Class rdf:about="&ecglvoc_L05;33">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/33/"/>
+       <rdfs:label>sediment traps</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#155 -->
+    <owl:Class rdf:about="&ecglvoc_L05;155">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/155/"/>
+       <rdfs:label>seismic refraction systems</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#368 -->
+    <owl:Class rdf:about="&ecglvoc_L05;368">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/368/"/>
+       <rdfs:label>seismometers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#81 -->
+    <owl:Class rdf:about="&ecglvoc_L05;81">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/81/"/>
+       <rdfs:label>shipboard incubators</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#152 -->
+    <owl:Class rdf:about="&ecglvoc_L05;152">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/152/"/>
+       <rdfs:label>sidescan sonars</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#84 -->
+    <owl:Class rdf:about="&ecglvoc_L05;84">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/84/"/>
+       <rdfs:label>sieves and filters</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#156 -->
+    <owl:Class rdf:about="&ecglvoc_L05;156">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/156/"/>
+       <rdfs:label>single-beam echosounders</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#SBAG -->
+    <owl:Class rdf:about="&ecglvoc_L05;SBAG">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/SBAG/"/>
+       <rdfs:label>single-bubble airgun</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#153 -->
+    <owl:Class rdf:about="&ecglvoc_L05;153">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/153/"/>
+       <rdfs:label>single-channel seismic reflection systems</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#56 -->
+    <owl:Class rdf:about="&ecglvoc_L05;56">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/56/"/>
+       <rdfs:label>snow and ice samplers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#185 -->
+    <owl:Class rdf:about="&ecglvoc_L05;185">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/185/"/>
+       <rdfs:label>sound velocity sensors</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#LAB20 -->
+    <owl:Class rdf:about="&ecglvoc_L05;LAB20">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/LAB20/"/>
+       <rdfs:label>spectrophotometers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#380 -->
+    <owl:Class rdf:about="&ecglvoc_L05;380">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/380/"/>
+       <rdfs:label>submarine cables</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#303 -->
+    <owl:Class rdf:about="&ecglvoc_L05;303">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/303/"/>
+       <rdfs:label>surface current radars</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#306 -->
+    <owl:Class rdf:about="&ecglvoc_L05;306">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/306/"/>
+       <rdfs:label>synthetic aperture radars</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#309 -->
+    <owl:Class rdf:about="&ecglvoc_L05;309">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/309/"/>
+       <rdfs:label>terrestrial radiometers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#LAB28 -->
+    <owl:Class rdf:about="&ecglvoc_L05;LAB28">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/LAB28/"/>
+       <rdfs:label>thermal conductivimeters</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#135 -->
+    <owl:Class rdf:about="&ecglvoc_L05;135">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/135/"/>
+       <rdfs:label>thermistor chains</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#133 -->
+    <owl:Class rdf:about="&ecglvoc_L05;133">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/133/"/>
+       <rdfs:label>thermosalinographs</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#TFSAMP -->
+    <owl:Class rdf:about="&ecglvoc_L05;TFSAMP">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/TFSAMP/"/>
+       <rdfs:label>thin film metal samplers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#LAB12 -->
+    <owl:Class rdf:about="&ecglvoc_L05;LAB12">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/LAB12/"/>
+       <rdfs:label>titrators</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#TRTG -->
+    <owl:Class rdf:about="&ecglvoc_L05;TRTG">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/TRTG/"/>
+       <rdfs:label>tracking tags</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#124 -->
+    <owl:Class rdf:about="&ecglvoc_L05;124">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/124/"/>
+       <rdfs:label>transmissometers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#51 -->
+    <owl:Class rdf:about="&ecglvoc_L05;51">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/51/"/>
+       <rdfs:label>unconsolidated sediment corers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#180 -->
+    <owl:Class rdf:about="&ecglvoc_L05;180">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/180/"/>
+       <rdfs:label>underwater cameras</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#999 -->
+    <owl:Class rdf:about="&ecglvoc_L05;999">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/999/"/>
+       <rdfs:label>unknown</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#LAB35 -->
+    <owl:Class rdf:about="&ecglvoc_L05;LAB35">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/LAB35/"/>
+       <rdfs:label>voltammetry analysers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#302 -->
+    <owl:Class rdf:about="&ecglvoc_L05;302">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/302/"/>
+       <rdfs:label>water body temperature sensor</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#377 -->
+    <owl:Class rdf:about="&ecglvoc_L05;377">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/377/"/>
+       <rdfs:label>water level markers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#WPS -->
+    <owl:Class rdf:about="&ecglvoc_L05;WPS">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/WPS/"/>
+       <rdfs:label>water pressure sensors</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#134 -->
+    <owl:Class rdf:about="&ecglvoc_L05;134">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/134/"/>
+       <rdfs:label>water temperature sensor</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#SNWG -->
+    <owl:Class rdf:about="&ecglvoc_L05;SNWG">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/SNWG/"/>
+       <rdfs:label>watergun</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L05#110 -->
+    <owl:Class rdf:about="&ecglvoc_L05;110">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L05/current/110/"/>
+       <rdfs:label>wave recorders</rdfs:label>
+    </owl:Class>
+
+</rdf:RDF>
