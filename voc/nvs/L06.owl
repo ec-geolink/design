@@ -1,0 +1,497 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY ecglvoc_L06 "http://schema.geolink.org/dev/voc/nvs/L06#" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY geosparql "http://www.opengis.net/ont/geosparql#" >
+]>
+
+<rdf:RDF xmlns="http://schema.geolink.org/dev/voc/nvs/L06#"
+     xml:base="http://schema.geolink.org/dev/voc/nvs/L06"
+     xmlns:ecglvoc_L06="http://schema.geolink.org/dev/voc/nvs/L06#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:geosparql="http://www.opengis.net/ont/geosparql#">
+
+    <owl:Ontology rdf:about="http://schema.geolink.org/dev/voc/nvs/L06"/>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#62 -->
+    <owl:Class rdf:about="&ecglvoc_L06;62">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/62/"/>
+       <rdfs:label>aeroplane</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#54 -->
+    <owl:Class rdf:about="&ecglvoc_L06;54">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/54/"/>
+       <rdfs:label>airship</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#96 -->
+    <owl:Class rdf:about="&ecglvoc_L06;96">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/96/"/>
+       <rdfs:label>amphibious crawler</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#95 -->
+    <owl:Class rdf:about="&ecglvoc_L06;95">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/95/"/>
+       <rdfs:label>amphibious vehicle</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#69 -->
+    <owl:Class rdf:about="&ecglvoc_L06;69">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/69/"/>
+       <rdfs:label>autogyro</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#3B -->
+    <owl:Class rdf:about="&ecglvoc_L06;3B">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/3B/"/>
+       <rdfs:label>autonomous surface water vehicle</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#25 -->
+    <owl:Class rdf:about="&ecglvoc_L06;25">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/25/"/>
+       <rdfs:label>autonomous underwater vehicle</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#13 -->
+    <owl:Class rdf:about="&ecglvoc_L06;13">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/13/"/>
+       <rdfs:label>beach/intertidal zone structure</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#50 -->
+    <owl:Class rdf:about="&ecglvoc_L06;50">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/50/"/>
+       <rdfs:label>buoyant aircraft</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#75 -->
+    <owl:Class rdf:about="&ecglvoc_L06;75">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/75/"/>
+       <rdfs:label>cetacean</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#17 -->
+    <owl:Class rdf:about="&ecglvoc_L06;17">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/17/"/>
+       <rdfs:label>coastal structure</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#90 -->
+    <owl:Class rdf:about="&ecglvoc_L06;90">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/90/"/>
+       <rdfs:label>cryosphere</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#72 -->
+    <owl:Class rdf:about="&ecglvoc_L06;72">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/72/"/>
+       <rdfs:label>diver</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#94 -->
+    <owl:Class rdf:about="&ecglvoc_L06;94">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/94/"/>
+       <rdfs:label>drift ice</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#24 -->
+    <owl:Class rdf:about="&ecglvoc_L06;24">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/24/"/>
+       <rdfs:label>drifting manned submersible</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#44 -->
+    <owl:Class rdf:about="&ecglvoc_L06;44">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/44/"/>
+       <rdfs:label>drifting subsurface float</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#46 -->
+    <owl:Class rdf:about="&ecglvoc_L06;46">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/46/"/>
+       <rdfs:label>drifting subsurface profiling float</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#42 -->
+    <owl:Class rdf:about="&ecglvoc_L06;42">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/42/"/>
+       <rdfs:label>drifting surface float</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#9A -->
+    <owl:Class rdf:about="&ecglvoc_L06;9A">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/9A/"/>
+       <rdfs:label>DUKW</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#76 -->
+    <owl:Class rdf:about="&ecglvoc_L06;76">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/76/"/>
+       <rdfs:label>fish</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#36 -->
+    <owl:Class rdf:about="&ecglvoc_L06;36">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/36/"/>
+       <rdfs:label>fishing vessel</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#11 -->
+    <owl:Class rdf:about="&ecglvoc_L06;11">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/11/"/>
+       <rdfs:label>fixed benthic node</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#45 -->
+    <owl:Class rdf:about="&ecglvoc_L06;45">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/45/"/>
+       <rdfs:label>fixed subsurface vertical profiler</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#73 -->
+    <owl:Class rdf:about="&ecglvoc_L06;73">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/73/"/>
+       <rdfs:label>flightless bird</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#47 -->
+    <owl:Class rdf:about="&ecglvoc_L06;47">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/47/"/>
+       <rdfs:label>float</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#52 -->
+    <owl:Class rdf:about="&ecglvoc_L06;52">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/52/"/>
+       <rdfs:label>free-floating balloon</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#51 -->
+    <owl:Class rdf:about="&ecglvoc_L06;51">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/51/"/>
+       <rdfs:label>free-rising balloon</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#64 -->
+    <owl:Class rdf:about="&ecglvoc_L06;64">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/64/"/>
+       <rdfs:label>geostationary orbiting satellite</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#6A -->
+    <owl:Class rdf:about="&ecglvoc_L06;6A">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/6A/"/>
+       <rdfs:label>glider</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#67 -->
+    <owl:Class rdf:about="&ecglvoc_L06;67">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/67/"/>
+       <rdfs:label>helicopter</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#9B -->
+    <owl:Class rdf:about="&ecglvoc_L06;9B">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/9B/"/>
+       <rdfs:label>hovercraft</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#71 -->
+    <owl:Class rdf:about="&ecglvoc_L06;71">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/71/"/>
+       <rdfs:label>human</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#91 -->
+    <owl:Class rdf:about="&ecglvoc_L06;91">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/91/"/>
+       <rdfs:label>ice island</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#92 -->
+    <owl:Class rdf:about="&ecglvoc_L06;92">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/92/"/>
+       <rdfs:label>ice shelf</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#6B -->
+    <owl:Class rdf:about="&ecglvoc_L06;6B">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/6B/"/>
+       <rdfs:label>kite</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#10 -->
+    <owl:Class rdf:about="&ecglvoc_L06;10">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/10/"/>
+       <rdfs:label>land or seafloor</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#77 -->
+    <owl:Class rdf:about="&ecglvoc_L06;77">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/77/"/>
+       <rdfs:label>land-sea mammals</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#14 -->
+    <owl:Class rdf:about="&ecglvoc_L06;14">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/14/"/>
+       <rdfs:label>land/onshore structure</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#15 -->
+    <owl:Class rdf:about="&ecglvoc_L06;15">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/15/"/>
+       <rdfs:label>land/onshore vehicle</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#26 -->
+    <owl:Class rdf:about="&ecglvoc_L06;26">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/26/"/>
+       <rdfs:label>lowered unmanned submersible</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#38 -->
+    <owl:Class rdf:about="&ecglvoc_L06;38">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/38/"/>
+       <rdfs:label>man-powered boat</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#3A -->
+    <owl:Class rdf:about="&ecglvoc_L06;3A">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/3A/"/>
+       <rdfs:label>man-powered small boat</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#66 -->
+    <owl:Class rdf:about="&ecglvoc_L06;66">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/66/"/>
+       <rdfs:label>manned spacecraft</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#19 -->
+    <owl:Class rdf:about="&ecglvoc_L06;19">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/19/"/>
+       <rdfs:label>mesocosm bag</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#41 -->
+    <owl:Class rdf:about="&ecglvoc_L06;41">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/41/"/>
+       <rdfs:label>moored surface buoy</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#48 -->
+    <owl:Class rdf:about="&ecglvoc_L06;48">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/48/"/>
+       <rdfs:label>mooring</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#39 -->
+    <owl:Class rdf:about="&ecglvoc_L06;39">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/39/"/>
+       <rdfs:label>naval vessel</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#60 -->
+    <owl:Class rdf:about="&ecglvoc_L06;60">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/60/"/>
+       <rdfs:label>non-buoyant aircraft</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#16 -->
+    <owl:Class rdf:about="&ecglvoc_L06;16">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/16/"/>
+       <rdfs:label>offshore structure</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#65 -->
+    <owl:Class rdf:about="&ecglvoc_L06;65">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/65/"/>
+       <rdfs:label>orbiting satellite</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#70 -->
+    <owl:Class rdf:about="&ecglvoc_L06;70">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/70/"/>
+       <rdfs:label>organism</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#93 -->
+    <owl:Class rdf:about="&ecglvoc_L06;93">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/93/"/>
+       <rdfs:label>pack ice</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#6C -->
+    <owl:Class rdf:about="&ecglvoc_L06;6C">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/6C/"/>
+       <rdfs:label>parachute</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#21 -->
+    <owl:Class rdf:about="&ecglvoc_L06;21">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/21/"/>
+       <rdfs:label>propelled manned submersible</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#22 -->
+    <owl:Class rdf:about="&ecglvoc_L06;22">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/22/"/>
+       <rdfs:label>propelled unmanned submersible</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#61 -->
+    <owl:Class rdf:about="&ecglvoc_L06;61">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/61/"/>
+       <rdfs:label>research aeroplane</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#31 -->
+    <owl:Class rdf:about="&ecglvoc_L06;31">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/31/"/>
+       <rdfs:label>research vessel</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#18 -->
+    <owl:Class rdf:about="&ecglvoc_L06;18">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/18/"/>
+       <rdfs:label>river station</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#63 -->
+    <owl:Class rdf:about="&ecglvoc_L06;63">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/63/"/>
+       <rdfs:label>rocket</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#68 -->
+    <owl:Class rdf:about="&ecglvoc_L06;68">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/68/"/>
+       <rdfs:label>satellite</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#12 -->
+    <owl:Class rdf:about="&ecglvoc_L06;12">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/12/"/>
+       <rdfs:label>sea bed vehicle</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#74 -->
+    <owl:Class rdf:about="&ecglvoc_L06;74">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/74/"/>
+       <rdfs:label>seabird and duck</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#37 -->
+    <owl:Class rdf:about="&ecglvoc_L06;37">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/37/"/>
+       <rdfs:label>self-propelled boat</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#33 -->
+    <owl:Class rdf:about="&ecglvoc_L06;33">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/33/"/>
+       <rdfs:label>self-propelled small boat</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#30 -->
+    <owl:Class rdf:about="&ecglvoc_L06;30">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/30/"/>
+       <rdfs:label>ship</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#6Z -->
+    <owl:Class rdf:about="&ecglvoc_L06;6Z">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/6Z/"/>
+       <rdfs:label>spacecraft</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#27 -->
+    <owl:Class rdf:about="&ecglvoc_L06;27">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/27/"/>
+       <rdfs:label>sub-surface gliders</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#20 -->
+    <owl:Class rdf:about="&ecglvoc_L06;20">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/20/"/>
+       <rdfs:label>submersible</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#43 -->
+    <owl:Class rdf:about="&ecglvoc_L06;43">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/43/"/>
+       <rdfs:label>subsurface mooring</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#3C -->
+    <owl:Class rdf:about="&ecglvoc_L06;3C">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/3C/"/>
+       <rdfs:label>surface gliders</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#49 -->
+    <owl:Class rdf:about="&ecglvoc_L06;49">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/49/"/>
+       <rdfs:label>surface ice buoy</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#3Z -->
+    <owl:Class rdf:about="&ecglvoc_L06;3Z">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/3Z/"/>
+       <rdfs:label>surface vessel</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#53 -->
+    <owl:Class rdf:about="&ecglvoc_L06;53">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/53/"/>
+       <rdfs:label>tethered balloon</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#23 -->
+    <owl:Class rdf:about="&ecglvoc_L06;23">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/23/"/>
+       <rdfs:label>towed unmanned submersible</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#6D -->
+    <owl:Class rdf:about="&ecglvoc_L06;6D">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/6D/"/>
+       <rdfs:label>unmanned aerial vehicle</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#34 -->
+    <owl:Class rdf:about="&ecglvoc_L06;34">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/34/"/>
+       <rdfs:label>vessel at fixed position</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#32 -->
+    <owl:Class rdf:about="&ecglvoc_L06;32">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/32/"/>
+       <rdfs:label>vessel of opportunity</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#35 -->
+    <owl:Class rdf:about="&ecglvoc_L06;35">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/35/"/>
+       <rdfs:label>vessel of opportunity on fixed route</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#0 -->
+    <owl:Class rdf:about="&ecglvoc_L06;0">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/0/"/>
+       <rdfs:label>unknown</rdfs:label>
+    </owl:Class>
+
+</rdf:RDF>
