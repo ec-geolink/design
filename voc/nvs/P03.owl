@@ -1,0 +1,407 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY ecglvoc_P03 "http://schema.geolink.org/dev/voc/nvs/P03#" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY geosparql "http://www.opengis.net/ont/geosparql#" >
+]>
+
+<rdf:RDF xmlns="http://schema.geolink.org/dev/voc/nvs/P03#"
+     xml:base="http://schema.geolink.org/dev/voc/nvs/P03"
+     xmlns:ecglvoc_P03="http://schema.geolink.org/dev/voc/nvs/P03#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:geosparql="http://www.opengis.net/ont/geosparql#">
+
+    <owl:Ontology rdf:about="http://schema.geolink.org/dev/voc/nvs/P03"/>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#D005 -->
+    <owl:Class rdf:about="&ecglvoc_P03;D005">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/D005/"/>
+       <rdfs:label>Acoustics</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#Z005 -->
+    <owl:Class rdf:about="&ecglvoc_P03;Z005">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/Z005/"/>
+       <rdfs:label>Administration and dimensions</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#C003 -->
+    <owl:Class rdf:about="&ecglvoc_P03;C003">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/C003/"/>
+       <rdfs:label>Amino acids</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#H001 -->
+    <owl:Class rdf:about="&ecglvoc_P03;H001">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/H001/"/>
+       <rdfs:label>Anthropogenic contamination</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#M005 -->
+    <owl:Class rdf:about="&ecglvoc_P03;M005">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/M005/"/>
+       <rdfs:label>Atmospheric chemistry</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#B005 -->
+    <owl:Class rdf:about="&ecglvoc_P03;B005">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/B005/"/>
+       <rdfs:label>Bacteria and viruses</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#B070 -->
+    <owl:Class rdf:about="&ecglvoc_P03;B070">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/B070/"/>
+       <rdfs:label>Biota abundance, biomass and diversity</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#B007 -->
+    <owl:Class rdf:about="&ecglvoc_P03;B007">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/B007/"/>
+       <rdfs:label>Biota composition</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#B015 -->
+    <owl:Class rdf:about="&ecglvoc_P03;B015">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/B015/"/>
+       <rdfs:label>Birds, mammals and reptiles</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#C005 -->
+    <owl:Class rdf:about="&ecglvoc_P03;C005">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/C005/"/>
+       <rdfs:label>Carbon, nitrogen and phosphorus</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#C010 -->
+    <owl:Class rdf:about="&ecglvoc_P03;C010">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/C010/"/>
+       <rdfs:label>Carbonate system</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#H002 -->
+    <owl:Class rdf:about="&ecglvoc_P03;H002">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/H002/"/>
+       <rdfs:label>Construction and structures</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#M015 -->
+    <owl:Class rdf:about="&ecglvoc_P03;M015">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/M015/"/>
+       <rdfs:label>Cryosphere</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#D030 -->
+    <owl:Class rdf:about="&ecglvoc_P03;D030">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/D030/"/>
+       <rdfs:label>Currents</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#D010 -->
+    <owl:Class rdf:about="&ecglvoc_P03;D010">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/D010/"/>
+       <rdfs:label>Currents, sea level and waves</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#B060 -->
+    <owl:Class rdf:about="&ecglvoc_P03;B060">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/B060/"/>
+       <rdfs:label>Disease, damage and mortality</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#C015 -->
+    <owl:Class rdf:about="&ecglvoc_P03;C015">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/C015/"/>
+       <rdfs:label>Dissolved gases</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#C017 -->
+    <owl:Class rdf:about="&ecglvoc_P03;C017">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/C017/"/>
+       <rdfs:label>Fatty acids</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#GPYS -->
+    <owl:Class rdf:about="&ecglvoc_P03;GPYS">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/GPYS/"/>
+       <rdfs:label>Field geophysics</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#B020 -->
+    <owl:Class rdf:about="&ecglvoc_P03;B020">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/B020/"/>
+       <rdfs:label>Fish</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#H004 -->
+    <owl:Class rdf:about="&ecglvoc_P03;H004">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/H004/"/>
+       <rdfs:label>Fisheries</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#O005 -->
+    <owl:Class rdf:about="&ecglvoc_P03;O005">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/O005/"/>
+       <rdfs:label>Fluxes</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#G030 -->
+    <owl:Class rdf:about="&ecglvoc_P03;G030">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/G030/"/>
+       <rdfs:label>Geochronology and stratigraphy</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#GTHM -->
+    <owl:Class rdf:about="&ecglvoc_P03;GTHM">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/GTHM/"/>
+       <rdfs:label>Geothermal measurements</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#G005 -->
+    <owl:Class rdf:about="&ecglvoc_P03;G005">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/G005/"/>
+       <rdfs:label>Gravity, magnetics and bathymetry</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#B050 -->
+    <owl:Class rdf:about="&ecglvoc_P03;B050">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/B050/"/>
+       <rdfs:label>Habitat</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#C020 -->
+    <owl:Class rdf:about="&ecglvoc_P03;C020">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/C020/"/>
+       <rdfs:label>Halocarbons (including freons)</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#H005 -->
+    <owl:Class rdf:about="&ecglvoc_P03;H005">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/H005/"/>
+       <rdfs:label>Human activity</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#C025 -->
+    <owl:Class rdf:about="&ecglvoc_P03;C025">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/C025/"/>
+       <rdfs:label>Hydrocarbons</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#G025 -->
+    <owl:Class rdf:about="&ecglvoc_P03;G025">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/G025/"/>
+       <rdfs:label>Igneous and metamorphic rock geochemistry and geochronology</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#C030 -->
+    <owl:Class rdf:about="&ecglvoc_P03;C030">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/C030/"/>
+       <rdfs:label>Isotopes</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#B055 -->
+    <owl:Class rdf:about="&ecglvoc_P03;B055">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/B055/"/>
+       <rdfs:label>Macroalgae and seagrass</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#C035 -->
+    <owl:Class rdf:about="&ecglvoc_P03;C035">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/C035/"/>
+       <rdfs:label>Metal and metalloid concentrations</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#M010 -->
+    <owl:Class rdf:about="&ecglvoc_P03;M010">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/M010/"/>
+       <rdfs:label>Meteorology</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#B025 -->
+    <owl:Class rdf:about="&ecglvoc_P03;B025">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/B025/"/>
+       <rdfs:label>Microzooplankton</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#C040 -->
+    <owl:Class rdf:about="&ecglvoc_P03;C040">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/C040/"/>
+       <rdfs:label>Nutrients</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#D015 -->
+    <owl:Class rdf:about="&ecglvoc_P03;D015">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/D015/"/>
+       <rdfs:label>Optical properties</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#B027 -->
+    <owl:Class rdf:about="&ecglvoc_P03;B027">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/B027/"/>
+       <rdfs:label>Other biological measurements</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#C045 -->
+    <owl:Class rdf:about="&ecglvoc_P03;C045">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/C045/"/>
+       <rdfs:label>Other inorganic chemical measurements</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#C050 -->
+    <owl:Class rdf:about="&ecglvoc_P03;C050">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/C050/"/>
+       <rdfs:label>Other organic chemical measurements</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#D020 -->
+    <owl:Class rdf:about="&ecglvoc_P03;D020">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/D020/"/>
+       <rdfs:label>Other physical oceanographic measurements</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#C055 -->
+    <owl:Class rdf:about="&ecglvoc_P03;C055">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/C055/"/>
+       <rdfs:label>PCBs and organic micropollutants</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#H003 -->
+    <owl:Class rdf:about="&ecglvoc_P03;H003">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/H003/"/>
+       <rdfs:label>Palaeoclimate</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#B030 -->
+    <owl:Class rdf:about="&ecglvoc_P03;B030">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/B030/"/>
+       <rdfs:label>Phytoplankton and microphytobenthos</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#B035 -->
+    <owl:Class rdf:about="&ecglvoc_P03;B035">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/B035/"/>
+       <rdfs:label>Pigments</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#O010 -->
+    <owl:Class rdf:about="&ecglvoc_P03;O010">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/O010/"/>
+       <rdfs:label>Rate measurements (including production, excretion and grazing)</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#G055 -->
+    <owl:Class rdf:about="&ecglvoc_P03;G055">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/G055/"/>
+       <rdfs:label>Rock and sediment biota</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#G035 -->
+    <owl:Class rdf:about="&ecglvoc_P03;G035">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/G035/"/>
+       <rdfs:label>Rock and sediment chemistry</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#G045 -->
+    <owl:Class rdf:about="&ecglvoc_P03;G045">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/G045/"/>
+       <rdfs:label>Rock and sediment lithology and mineralogy</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#G040 -->
+    <owl:Class rdf:about="&ecglvoc_P03;G040">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/G040/"/>
+       <rdfs:label>Rock and sediment physical properties</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#GSED -->
+    <owl:Class rdf:about="&ecglvoc_P03;GSED">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/GSED/"/>
+       <rdfs:label>Rock and sediment sedimentology</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#D032 -->
+    <owl:Class rdf:about="&ecglvoc_P03;D032">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/D032/"/>
+       <rdfs:label>Sea level</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#G050 -->
+    <owl:Class rdf:about="&ecglvoc_P03;G050">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/G050/"/>
+       <rdfs:label>Sediment pore water chemistry</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#G010 -->
+    <owl:Class rdf:about="&ecglvoc_P03;G010">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/G010/"/>
+       <rdfs:label>Sediment properties</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#G020 -->
+    <owl:Class rdf:about="&ecglvoc_P03;G020">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/G020/"/>
+       <rdfs:label>Sedimentary rock geochemistry and geochronology</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#G060 -->
+    <owl:Class rdf:about="&ecglvoc_P03;G060">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/G060/"/>
+       <rdfs:label>Sedimentation and erosion processes</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#G012 -->
+    <owl:Class rdf:about="&ecglvoc_P03;G012">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/G012/"/>
+       <rdfs:label>Sonar and seismics</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#G015 -->
+    <owl:Class rdf:about="&ecglvoc_P03;G015">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/G015/"/>
+       <rdfs:label>Suspended particulate material</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#T001 -->
+    <owl:Class rdf:about="&ecglvoc_P03;T001">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/T001/"/>
+       <rdfs:label>Terrestrial</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#UWPH -->
+    <owl:Class rdf:about="&ecglvoc_P03;UWPH">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/UWPH/"/>
+       <rdfs:label>Underwater photography</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#D025 -->
+    <owl:Class rdf:about="&ecglvoc_P03;D025">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/D025/"/>
+       <rdfs:label>Water column temperature and salinity</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#D034 -->
+    <owl:Class rdf:about="&ecglvoc_P03;D034">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/D034/"/>
+       <rdfs:label>Waves</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#B040 -->
+    <owl:Class rdf:about="&ecglvoc_P03;B040">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/B040/"/>
+       <rdfs:label>Zoobenthos</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#B045 -->
+    <owl:Class rdf:about="&ecglvoc_P03;B045">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/B045/"/>
+       <rdfs:label>Zooplankton</rdfs:label>
+    </owl:Class>
+
+</rdf:RDF>
