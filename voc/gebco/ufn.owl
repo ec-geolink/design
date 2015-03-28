@@ -1,0 +1,443 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY ecglvoc_ufn "http://schema.geolink.org/dev/voc/gebco/ufn#" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY geosparql "http://www.opengis.net/ont/geosparql#" >
+]>
+
+<rdf:RDF xmlns="http://schema.geolink.org/dev/voc/gebco/ufn#"
+     xml:base="http://schema.geolink.org/dev/voc/gebco/ufn"
+     xmlns:ecglvoc_ufn="http://schema.geolink.org/dev/voc/gebco/ufn#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:geosparql="http://www.opengis.net/ont/geosparql#">
+
+    <owl:Ontology rdf:about="http://schema.geolink.org/dev/voc/gebco/ufn"/>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Abyssal_Plain -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Abyssal_Plain">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Abyssal Plain</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Apron -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Apron">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Apron</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Bank -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Bank">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Bank</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Banks -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Banks">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Banks</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Basin -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Basin">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Basin</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Basin_and_Ridge_Province -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Basin_and_Ridge_Province">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Basin and Ridge Province</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Borderland -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Borderland">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Borderland</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Caldera -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Caldera">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Caldera</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Calderas -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Calderas">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Calderas</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Canyon -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Canyon">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Canyon</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Canyons -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Canyons">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Canyons</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Cap -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Cap">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Cap</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Channel -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Channel">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Channel</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Cone -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Cone">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Cone</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Continental_Slope -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Continental_Slope">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Continental Slope</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Deep -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Deep">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Deep</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Deeps -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Deeps">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Deeps</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Discordance -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Discordance">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Discordance</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Escarpment -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Escarpment">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Escarpment</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Fan -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Fan">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Fan</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Fracture_Zone -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Fracture_Zone">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Fracture Zone</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Fracture_Zone_System -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Fracture_Zone_System">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Fracture Zone System</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Gap -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Gap">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Gap</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Ground -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Ground">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Ground</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Guyot -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Guyot">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Guyot</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Guyots -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Guyots">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Guyots</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Hill -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Hill">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Hill</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Hills -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Hills">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Hills</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Hole -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Hole">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Hole</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Knoll -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Knoll">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Knoll</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Knolls -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Knolls">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Knolls</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Levee -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Levee">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Levee</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Mound -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Mound">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Mound</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Mounds -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Mounds">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Mounds</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Mud_Volcano -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Mud_Volcano">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Mud Volcano</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Pass -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Pass">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Pass</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Passage -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Passage">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Passage</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Peak -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Peak">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Peak</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Plain -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Plain">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Plain</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Plateau -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Plateau">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Plateau</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Promontory -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Promontory">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Promontory</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Province -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Province">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Province</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Reef -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Reef">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Reef</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Reefs -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Reefs">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Reefs</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Ridge -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Ridge">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Ridge</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Ridges -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Ridges">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Ridges</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Rift -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Rift">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Rift</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Rise -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Rise">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Rise</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Saddle -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Saddle">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Saddle</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Seabight -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Seabight">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Seabight</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Seachannel -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Seachannel">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Seachannel</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Sea_Channel -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Sea_Channel">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Sea Channel</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Seamount -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Seamount">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Seamount</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Seamount_Chain -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Seamount_Chain">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Seamount Chain</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Seamount_Group -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Seamount_Group">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Seamount Group</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Seamount_Province -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Seamount_Province">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Seamount Province</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Seamounts -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Seamounts">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Seamounts</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Shelf -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Shelf">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Shelf</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Shoal -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Shoal">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Shoal</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Shoals -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Shoals">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Shoals</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Sill -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Sill">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Sill</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Slope -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Slope">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Slope</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Spur -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Spur">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Spur</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Tablemount -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Tablemount">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Tablemount</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Terrace -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Terrace">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Terrace</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Trench -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Trench">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Trench</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Trough -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Trough">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Trough</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Valley -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Valley">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Valley</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Valleys -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Valleys">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Valleys</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/gebco/ufn#Zone -->
+    <owl:Class rdf:about="&ecglvoc_ufn;Zone">
+       <rdf:Description rdf:about="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
+       <rdfs:label>Zone</rdfs:label>
+    </owl:Class>
+
+</rdf:RDF>
