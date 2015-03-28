@@ -1,0 +1,2717 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY ecglvoc_P02 "http://schema.geolink.org/dev/voc/nvs/P02#" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY geosparql "http://www.opengis.net/ont/geosparql#" >
+]>
+
+<rdf:RDF xmlns="http://schema.geolink.org/dev/voc/nvs/P02#"
+     xml:base="http://schema.geolink.org/dev/voc/nvs/P02"
+     xmlns:ecglvoc_P02="http://schema.geolink.org/dev/voc/nvs/P02#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:geosparql="http://www.opengis.net/ont/geosparql#">
+
+    <owl:Ontology rdf:about="http://schema.geolink.org/dev/voc/nvs/P02"/>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#ASAM -->
+    <owl:Class rdf:about="&ecglvoc_P02;ASAM">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/ASAM/"/>
+       <rdfs:label>Acoustic backscatter in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#NOYS -->
+    <owl:Class rdf:about="&ecglvoc_P02;NOYS">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/NOYS/"/>
+       <rdfs:label>Acoustic noise in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#ACSR -->
+    <owl:Class rdf:about="&ecglvoc_P02;ACSR">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/ACSR/"/>
+       <rdfs:label>Active seismic refraction</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#ADUN -->
+    <owl:Class rdf:about="&ecglvoc_P02;ADUN">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/ADUN/"/>
+       <rdfs:label>Administrative units</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#CAPH -->
+    <owl:Class rdf:about="&ecglvoc_P02;CAPH">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/CAPH/"/>
+       <rdfs:label>Air pressure</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#CDTA -->
+    <owl:Class rdf:about="&ecglvoc_P02;CDTA">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/CDTA/"/>
+       <rdfs:label>Air temperature</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#ALKY -->
+    <owl:Class rdf:about="&ecglvoc_P02;ALKY">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/ALKY/"/>
+       <rdfs:label>Alkalinity, acidity and pH of the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#HAAC -->
+    <owl:Class rdf:about="&ecglvoc_P02;HAAC">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/HAAC/"/>
+       <rdfs:label>Amino acids in sediment</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#AMON -->
+    <owl:Class rdf:about="&ecglvoc_P02;AMON">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/AMON/"/>
+       <rdfs:label>Ammonium concentration parameters in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#ATDP -->
+    <owl:Class rdf:about="&ecglvoc_P02;ATDP">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/ATDP/"/>
+       <rdfs:label>Atmospheric deposition rates</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#ATEM -->
+    <owl:Class rdf:about="&ecglvoc_P02;ATEM">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/ATEM/"/>
+       <rdfs:label>Atmospheric emissions</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#CHUM -->
+    <owl:Class rdf:about="&ecglvoc_P02;CHUM">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/CHUM/"/>
+       <rdfs:label>Atmospheric humidity</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#ATPC -->
+    <owl:Class rdf:about="&ecglvoc_P02;ATPC">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/ATPC/"/>
+       <rdfs:label>Atmospheric particulates</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#ATVS -->
+    <owl:Class rdf:about="&ecglvoc_P02;ATVS">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/ATVS/"/>
+       <rdfs:label>Atmospheric visibility and transparency</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#BATT -->
+    <owl:Class rdf:about="&ecglvoc_P02;BATT">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/BATT/"/>
+       <rdfs:label>Bacteria environmental parameters</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#BNUC -->
+    <owl:Class rdf:about="&ecglvoc_P02;BNUC">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/BNUC/"/>
+       <rdfs:label>Bacteria generic abundance in sediment</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#BNTX -->
+    <owl:Class rdf:about="&ecglvoc_P02;BNTX">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/BNTX/"/>
+       <rdfs:label>Bacteria generic abundance in water bodies</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#BABI -->
+    <owl:Class rdf:about="&ecglvoc_P02;BABI">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/BABI/"/>
+       <rdfs:label>Bacteria in biota</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#CBCC -->
+    <owl:Class rdf:about="&ecglvoc_P02;CBCC">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/CBCC/"/>
+       <rdfs:label>Bacteria morphology and physiology</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#BNTC -->
+    <owl:Class rdf:about="&ecglvoc_P02;BNTC">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/BNTC/"/>
+       <rdfs:label>Bacteria non taxonomy-related biomass expressed as carbon per unit volume of the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#BPBP -->
+    <owl:Class rdf:about="&ecglvoc_P02;BPBP">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/BPBP/"/>
+       <rdfs:label>Bacteria non taxonomy-related biomass expressed as protein per unit volume of the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#BAUC -->
+    <owl:Class rdf:about="&ecglvoc_P02;BAUC">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/BAUC/"/>
+       <rdfs:label>Bacteria taxonomic abundance in sediment</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#BATX -->
+    <owl:Class rdf:about="&ecglvoc_P02;BATX">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/BATX/"/>
+       <rdfs:label>Bacteria taxonomic abundance in water bodies</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#BDWC -->
+    <owl:Class rdf:about="&ecglvoc_P02;BDWC">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/BDWC/"/>
+       <rdfs:label>Bacteria taxonomy-related ash-free dry weight biomass in sediment</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#BATC -->
+    <owl:Class rdf:about="&ecglvoc_P02;BATC">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/BATC/"/>
+       <rdfs:label>Bacteria taxonomy-related biomass expressed as carbon per unit volume of the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#TBGZ -->
+    <owl:Class rdf:about="&ecglvoc_P02;TBGZ">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/TBGZ/"/>
+       <rdfs:label>Bacterial consumption in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#GREF -->
+    <owl:Class rdf:about="&ecglvoc_P02;GREF">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/GREF/"/>
+       <rdfs:label>Bacterial growth</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#UPTH -->
+    <owl:Class rdf:about="&ecglvoc_P02;UPTH">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/UPTH/"/>
+       <rdfs:label>Bacterial production in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#MBAN -->
+    <owl:Class rdf:about="&ecglvoc_P02;MBAN">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/MBAN/"/>
+       <rdfs:label>Bathymetry and Elevation</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#BEPP -->
+    <owl:Class rdf:about="&ecglvoc_P02;BEPP">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/BEPP/"/>
+       <rdfs:label>Benthic primary production</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#GP010 -->
+    <owl:Class rdf:about="&ecglvoc_P02;GP010">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/GP010/"/>
+       <rdfs:label>Bioassay and contaminant biological impact</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#BDRV -->
+    <owl:Class rdf:about="&ecglvoc_P02;BDRV">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/BDRV/"/>
+       <rdfs:label>Biodiversity indices</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#EXUV -->
+    <owl:Class rdf:about="&ecglvoc_P02;EXUV">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/EXUV/"/>
+       <rdfs:label>Biological detritus in the water column suspended particulate material</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#BLUM -->
+    <owl:Class rdf:about="&ecglvoc_P02;BLUM">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/BLUM/"/>
+       <rdfs:label>Bioluminescence parameters</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#LIBI -->
+    <owl:Class rdf:about="&ecglvoc_P02;LIBI">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/LIBI/"/>
+       <rdfs:label>Biota lipid concentrations</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#BPRP -->
+    <owl:Class rdf:about="&ecglvoc_P02;BPRP">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/BPRP/"/>
+       <rdfs:label>Biota properties</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#GP088 -->
+    <owl:Class rdf:about="&ecglvoc_P02;GP088">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/GP088/"/>
+       <rdfs:label>Bird behaviour</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#BRDA -->
+    <owl:Class rdf:about="&ecglvoc_P02;BRDA">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/BRDA/"/>
+       <rdfs:label>Bird counts</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#GP004 -->
+    <owl:Class rdf:about="&ecglvoc_P02;GP004">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/GP004/"/>
+       <rdfs:label>Bird reproduction</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#BRDD -->
+    <owl:Class rdf:about="&ecglvoc_P02;BRDD">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/BRDD/"/>
+       <rdfs:label>Bird taxonomy-related abundance per unit area of surface</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#CBSD -->
+    <owl:Class rdf:about="&ecglvoc_P02;CBSD">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/CBSD/"/>
+       <rdfs:label>Carbon concentrations in sediment</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#CBSP -->
+    <owl:Class rdf:about="&ecglvoc_P02;CBSP">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/CBSP/"/>
+       <rdfs:label>Carbon concentrations in suspended particulate material</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#ACO2 -->
+    <owl:Class rdf:about="&ecglvoc_P02;ACO2">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/ACO2/"/>
+       <rdfs:label>Carbon monoxide and dioxide concentrations in the atmosphere</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#CARS -->
+    <owl:Class rdf:about="&ecglvoc_P02;CARS">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/CARS/"/>
+       <rdfs:label>Carotenoid pigment concentrations in sediment</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#CARO -->
+    <owl:Class rdf:about="&ecglvoc_P02;CARO">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/CARO/"/>
+       <rdfs:label>Carotenoid pigment concentrations in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#CETA -->
+    <owl:Class rdf:about="&ecglvoc_P02;CETA">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/CETA/"/>
+       <rdfs:label>Cetacean abundance</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#CEBH -->
+    <owl:Class rdf:about="&ecglvoc_P02;CEBH">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/CEBH/"/>
+       <rdfs:label>Cetacean behaviour</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#CEMP -->
+    <owl:Class rdf:about="&ecglvoc_P02;CEMP">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/CEMP/"/>
+       <rdfs:label>Cetacean morphology and physiology</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#CEMO -->
+    <owl:Class rdf:about="&ecglvoc_P02;CEMO">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/CEMO/"/>
+       <rdfs:label>Cetacean mortality</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#GP018 -->
+    <owl:Class rdf:about="&ecglvoc_P02;GP018">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/GP018/"/>
+       <rdfs:label>Cetacean reproduction</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#FR11 -->
+    <owl:Class rdf:about="&ecglvoc_P02;FR11">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/FR11/"/>
+       <rdfs:label>Chlorofluorocarbon concentrations in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#CPSD -->
+    <owl:Class rdf:about="&ecglvoc_P02;CPSD">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/CPSD/"/>
+       <rdfs:label>Chlorophyll pigment concentrations in sediment</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#CPWC -->
+    <owl:Class rdf:about="&ecglvoc_P02;CPWC">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/CPWC/"/>
+       <rdfs:label>Chlorophyll pigment concentrations in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#CHEX -->
+    <owl:Class rdf:about="&ecglvoc_P02;CHEX">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/CHEX/"/>
+       <rdfs:label>Cloud cover height and extent</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#CLTY -->
+    <owl:Class rdf:about="&ecglvoc_P02;CLTY">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/CLTY/"/>
+       <rdfs:label>Cloud type</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#COGE -->
+    <owl:Class rdf:about="&ecglvoc_P02;COGE">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/COGE/"/>
+       <rdfs:label>Coastal geomorphology</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#MTWC -->
+    <owl:Class rdf:about="&ecglvoc_P02;MTWC">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/MTWC/"/>
+       <rdfs:label>Colloidal metal concentrations in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#COCC -->
+    <owl:Class rdf:about="&ecglvoc_P02;COCC">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/COCC/"/>
+       <rdfs:label>Colloidal organic carbon concentration in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#ATPX -->
+    <owl:Class rdf:about="&ecglvoc_P02;ATPX">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/ATPX/"/>
+       <rdfs:label>Concentration of adenlylates in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#TADN -->
+    <owl:Class rdf:about="&ecglvoc_P02;TADN">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/TADN/"/>
+       <rdfs:label>Concentration of adenylates in sediment</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#SALK -->
+    <owl:Class rdf:about="&ecglvoc_P02;SALK">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/SALK/"/>
+       <rdfs:label>Concentration of aliphatic hydrocarbons in sediment samples</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#AAWC -->
+    <owl:Class rdf:about="&ecglvoc_P02;AAWC">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/AAWC/"/>
+       <rdfs:label>Concentration of alkanamines (amines) in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#AALK -->
+    <owl:Class rdf:about="&ecglvoc_P02;AALK">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/AALK/"/>
+       <rdfs:label>Concentration of alkanes in the atmosphere</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#DALK -->
+    <owl:Class rdf:about="&ecglvoc_P02;DALK">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/DALK/"/>
+       <rdfs:label>Concentration of alkanes in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#CA11 -->
+    <owl:Class rdf:about="&ecglvoc_P02;CA11">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/CA11/"/>
+       <rdfs:label>Concentration of alkanols (alcohols), phenols and ethers in sediment</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#AEYN -->
+    <owl:Class rdf:about="&ecglvoc_P02;AEYN">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/AEYN/"/>
+       <rdfs:label>Concentration of alkenes and alkynes in the atmosphere</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#AQYN -->
+    <owl:Class rdf:about="&ecglvoc_P02;AQYN">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/AQYN/"/>
+       <rdfs:label>Concentration of alkenes and alkynes in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#AASD -->
+    <owl:Class rdf:about="&ecglvoc_P02;AASD">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/AASD/"/>
+       <rdfs:label>Concentration of alkenones and alkenoates in sediment</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#CAKN -->
+    <owl:Class rdf:about="&ecglvoc_P02;CAKN">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/CAKN/"/>
+       <rdfs:label>Concentration of alkenones and alkenoates in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#TOCH -->
+    <owl:Class rdf:about="&ecglvoc_P02;TOCH">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/TOCH/"/>
+       <rdfs:label>Concentration of carbohydrates, phenols, alkanols (alcohols), aldehydes and ketones in water bodies</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#CASD -->
+    <owl:Class rdf:about="&ecglvoc_P02;CASD">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/CASD/"/>
+       <rdfs:label>Concentration of carbohydrates, phenols, alkanols (alcohols), ethers, aldehydes and ketones in sediment</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#HMSB -->
+    <owl:Class rdf:about="&ecglvoc_P02;HMSB">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/HMSB/"/>
+       <rdfs:label>Concentration of dissolved organic matter in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#HLIC -->
+    <owl:Class rdf:about="&ecglvoc_P02;HLIC">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/HLIC/"/>
+       <rdfs:label>Concentration of inorganic halogens in ice</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#CLCN -->
+    <owl:Class rdf:about="&ecglvoc_P02;CLCN">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/CLCN/"/>
+       <rdfs:label>Concentration of inorganic halogens in sediment</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#CLXX -->
+    <owl:Class rdf:about="&ecglvoc_P02;CLXX">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/CLXX/"/>
+       <rdfs:label>Concentration of inorganic halogens in sediment pore waters</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#HLAT -->
+    <owl:Class rdf:about="&ecglvoc_P02;HLAT">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/HLAT/"/>
+       <rdfs:label>Concentration of inorganic halogens in the atmosphere</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#HLWC -->
+    <owl:Class rdf:about="&ecglvoc_P02;HLWC">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/HLWC/"/>
+       <rdfs:label>Concentration of inorganic halogens in water bodies</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#ISIC -->
+    <owl:Class rdf:about="&ecglvoc_P02;ISIC">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/ISIC/"/>
+       <rdfs:label>Concentration of inorganic sulphur species in ice</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#TRIS -->
+    <owl:Class rdf:about="&ecglvoc_P02;TRIS">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/TRIS/"/>
+       <rdfs:label>Concentration of inorganic sulphur species in sediment</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#SPHT -->
+    <owl:Class rdf:about="&ecglvoc_P02;SPHT">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/SPHT/"/>
+       <rdfs:label>Concentration of inorganic sulphur species in sediment pore water</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#SXCN -->
+    <owl:Class rdf:about="&ecglvoc_P02;SXCN">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/SXCN/"/>
+       <rdfs:label>Concentration of inorganic sulphur species in suspended particulate material</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#SPWC -->
+    <owl:Class rdf:about="&ecglvoc_P02;SPWC">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/SPWC/"/>
+       <rdfs:label>Concentration of inorganic sulphur species in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#NTIC -->
+    <owl:Class rdf:about="&ecglvoc_P02;NTIC">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/NTIC/"/>
+       <rdfs:label>Concentration of nitrates in ice</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#AAMN -->
+    <owl:Class rdf:about="&ecglvoc_P02;AAMN">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/AAMN/"/>
+       <rdfs:label>Concentration of nitrogen species in the atmosphere</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#STOM -->
+    <owl:Class rdf:about="&ecglvoc_P02;STOM">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/STOM/"/>
+       <rdfs:label>Concentration of organic matter in sediments</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#AORG -->
+    <owl:Class rdf:about="&ecglvoc_P02;AORG">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/AORG/"/>
+       <rdfs:label>Concentration of organic matter in the atmosphere</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#OSIC -->
+    <owl:Class rdf:about="&ecglvoc_P02;OSIC">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/OSIC/"/>
+       <rdfs:label>Concentration of organic sulphur species in ice</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#OHAT -->
+    <owl:Class rdf:about="&ecglvoc_P02;OHAT">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/OHAT/"/>
+       <rdfs:label>Concentration of other hydrocarbons in the atmosphere</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#OHWC -->
+    <owl:Class rdf:about="&ecglvoc_P02;OHWC">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/OHWC/"/>
+       <rdfs:label>Concentration of other hydrocarbons in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#BCOC -->
+    <owl:Class rdf:about="&ecglvoc_P02;BCOC">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/BCOC/"/>
+       <rdfs:label>Concentration of other organic contaminants in biota</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#SCOC -->
+    <owl:Class rdf:about="&ecglvoc_P02;SCOC">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/SCOC/"/>
+       <rdfs:label>Concentration of other organic contaminants in sediment samples</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#PCOC -->
+    <owl:Class rdf:about="&ecglvoc_P02;PCOC">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/PCOC/"/>
+       <rdfs:label>Concentration of other organic contaminants in suspended particulate material</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#OCAA -->
+    <owl:Class rdf:about="&ecglvoc_P02;OCAA">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/OCAA/"/>
+       <rdfs:label>Concentration of other organic contaminants in the atmosphere</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#WCOC -->
+    <owl:Class rdf:about="&ecglvoc_P02;WCOC">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/WCOC/"/>
+       <rdfs:label>Concentration of other organic contaminants in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#BCOS -->
+    <owl:Class rdf:about="&ecglvoc_P02;BCOS">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/BCOS/"/>
+       <rdfs:label>Concentration of other substances in biota</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#PTOX -->
+    <owl:Class rdf:about="&ecglvoc_P02;PTOX">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/PTOX/"/>
+       <rdfs:label>Concentration of phycotoxins in biota</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#BCPB -->
+    <owl:Class rdf:about="&ecglvoc_P02;BCPB">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/BCPB/"/>
+       <rdfs:label>Concentration of polychlorobiphenyls (PCBs) in biota</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#SPCB -->
+    <owl:Class rdf:about="&ecglvoc_P02;SPCB">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/SPCB/"/>
+       <rdfs:label>Concentration of polychlorobiphenyls (PCBs) in sediment samples</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#PPCB -->
+    <owl:Class rdf:about="&ecglvoc_P02;PPCB">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/PPCB/"/>
+       <rdfs:label>Concentration of polychlorobiphenyls (PCBs) in suspended particulate material</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#GP048 -->
+    <owl:Class rdf:about="&ecglvoc_P02;GP048">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/GP048/"/>
+       <rdfs:label>Concentration of polychlorobiphenyls (PCBs) in the atmosphere</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#PPWC -->
+    <owl:Class rdf:about="&ecglvoc_P02;PPWC">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/PPWC/"/>
+       <rdfs:label>Concentration of polychlorobiphenyls (PCBs) in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#BCAH -->
+    <owl:Class rdf:about="&ecglvoc_P02;BCAH">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/BCAH/"/>
+       <rdfs:label>Concentration of polycyclic aromatic hydrocarbons (PAHs) in biota</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#SCAH -->
+    <owl:Class rdf:about="&ecglvoc_P02;SCAH">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/SCAH/"/>
+       <rdfs:label>Concentration of polycyclic aromatic hydrocarbons (PAHs) in sediment samples</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#PCAH -->
+    <owl:Class rdf:about="&ecglvoc_P02;PCAH">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/PCAH/"/>
+       <rdfs:label>Concentration of polycyclic aromatic hydrocarbons (PAHs) in suspended particulate material</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#GP050 -->
+    <owl:Class rdf:about="&ecglvoc_P02;GP050">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/GP050/"/>
+       <rdfs:label>Concentration of polycyclic aromatic hydrocarbons (PAHs) in the atmosphere</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#PCHW -->
+    <owl:Class rdf:about="&ecglvoc_P02;PCHW">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/PCHW/"/>
+       <rdfs:label>Concentration of polycyclic aromatic hydrocarbons (PAHs) in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#SPRO -->
+    <owl:Class rdf:about="&ecglvoc_P02;SPRO">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/SPRO/"/>
+       <rdfs:label>Concentration of proteins in sediment</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#WPRO -->
+    <owl:Class rdf:about="&ecglvoc_P02;WPRO">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/WPRO/"/>
+       <rdfs:label>Concentration of proteins in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#SICN -->
+    <owl:Class rdf:about="&ecglvoc_P02;SICN">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/SICN/"/>
+       <rdfs:label>Concentration of silicon species in sediment</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#OPCN -->
+    <owl:Class rdf:about="&ecglvoc_P02;OPCN">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/OPCN/"/>
+       <rdfs:label>Concentration of silicon species in suspended particulate material</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#SIXX -->
+    <owl:Class rdf:about="&ecglvoc_P02;SIXX">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/SIXX/"/>
+       <rdfs:label>Concentration of silicon species in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#TSED -->
+    <owl:Class rdf:about="&ecglvoc_P02;TSED">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/TSED/"/>
+       <rdfs:label>Concentration of suspended particulate material in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#SDNA -->
+    <owl:Class rdf:about="&ecglvoc_P02;SDNA">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/SDNA/"/>
+       <rdfs:label>Concentrations of biopolymers in sediment</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#WDNA -->
+    <owl:Class rdf:about="&ecglvoc_P02;WDNA">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/WDNA/"/>
+       <rdfs:label>Concentrations of biopolymers in water bodies</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#CXAA -->
+    <owl:Class rdf:about="&ecglvoc_P02;CXAA">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/CXAA/"/>
+       <rdfs:label>Concentrations of carboxylic acids and carboxylates in the atmosphere</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#CFTM -->
+    <owl:Class rdf:about="&ecglvoc_P02;CFTM">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/CFTM/"/>
+       <rdfs:label>Contaminant fluxes between the terrestrial and marine environment</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#AYMD -->
+    <owl:Class rdf:about="&ecglvoc_P02;AYMD">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/AYMD/"/>
+       <rdfs:label>Date and time</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#SIGT -->
+    <owl:Class rdf:about="&ecglvoc_P02;SIGT">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/SIGT/"/>
+       <rdfs:label>Density of the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#DPEV -->
+    <owl:Class rdf:about="&ecglvoc_P02;DPEV">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/DPEV/"/>
+       <rdfs:label>Depositional environment</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#D000 -->
+    <owl:Class rdf:about="&ecglvoc_P02;D000">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/D000/"/>
+       <rdfs:label>Diatom taxonomy-related abundance per unit mass of sediment</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#TFAA -->
+    <owl:Class rdf:about="&ecglvoc_P02;TFAA">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/TFAA/"/>
+       <rdfs:label>Dissolved amino acid concentrations in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#OGPW -->
+    <owl:Class rdf:about="&ecglvoc_P02;OGPW">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/OGPW/"/>
+       <rdfs:label>Dissolved concentration parameters for other gases in sediment pore waters</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#SCOX -->
+    <owl:Class rdf:about="&ecglvoc_P02;SCOX">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/SCOX/"/>
+       <rdfs:label>Dissolved concentration parameters for other gases in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#CCPW -->
+    <owl:Class rdf:about="&ecglvoc_P02;CCPW">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/CCPW/"/>
+       <rdfs:label>Dissolved inorganic carbon in sediment pore waters</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#TNRP -->
+    <owl:Class rdf:about="&ecglvoc_P02;TNRP">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/TNRP/"/>
+       <rdfs:label>Dissolved inorganic carbon production and respiration in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#TDIN -->
+    <owl:Class rdf:about="&ecglvoc_P02;TDIN">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/TDIN/"/>
+       <rdfs:label>Dissolved inorganic nitrogen concentration in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#MTWD -->
+    <owl:Class rdf:about="&ecglvoc_P02;MTWD">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/MTWD/"/>
+       <rdfs:label>Dissolved metal concentrations in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#HEXC -->
+    <owl:Class rdf:about="&ecglvoc_P02;HEXC">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/HEXC/"/>
+       <rdfs:label>Dissolved noble gas concentration parameters in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#DOCC -->
+    <owl:Class rdf:about="&ecglvoc_P02;DOCC">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/DOCC/"/>
+       <rdfs:label>Dissolved organic carbon concentration in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#OCPW -->
+    <owl:Class rdf:about="&ecglvoc_P02;OCPW">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/OCPW/"/>
+       <rdfs:label>Dissolved organic carbon concentrations in sediment pore waters</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#DOCU -->
+    <owl:Class rdf:about="&ecglvoc_P02;DOCU">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/DOCU/"/>
+       <rdfs:label>Dissolved organic carbon uptake and production in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#DGPW -->
+    <owl:Class rdf:about="&ecglvoc_P02;DGPW">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/DGPW/"/>
+       <rdfs:label>Dissolved oxygen concentration parameters in sediment pore waters</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#DOXY -->
+    <owl:Class rdf:about="&ecglvoc_P02;DOXY">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/DOXY/"/>
+       <rdfs:label>Dissolved oxygen parameters in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#TDNT -->
+    <owl:Class rdf:about="&ecglvoc_P02;TDNT">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/TDNT/"/>
+       <rdfs:label>Dissolved total and organic nitrogen concentrations in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#TDPX -->
+    <owl:Class rdf:about="&ecglvoc_P02;TDPX">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/TDPX/"/>
+       <rdfs:label>Dissolved total or organic phosphorus concentration in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#MDWD -->
+    <owl:Class rdf:about="&ecglvoc_P02;MDWD">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/MDWD/"/>
+       <rdfs:label>Dissolved trace metalloid concentrations in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#DSCO -->
+    <owl:Class rdf:about="&ecglvoc_P02;DSCO">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/DSCO/"/>
+       <rdfs:label>Distribution coefficients in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#CNDC -->
+    <owl:Class rdf:about="&ecglvoc_P02;CNDC">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/CNDC/"/>
+       <rdfs:label>Electrical conductivity of the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#ENGP -->
+    <owl:Class rdf:about="&ecglvoc_P02;ENGP">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/ENGP/"/>
+       <rdfs:label>Engineering parameters</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#EXCR -->
+    <owl:Class rdf:about="&ecglvoc_P02;EXCR">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/EXCR/"/>
+       <rdfs:label>Excretion rate parameters in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#EXSV -->
+    <owl:Class rdf:about="&ecglvoc_P02;EXSV">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/EXSV/"/>
+       <rdfs:label>Experiment state variables</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#FABD -->
+    <owl:Class rdf:about="&ecglvoc_P02;FABD">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/FABD/"/>
+       <rdfs:label>Fauna abundance per unit area of the bed</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#RSIS -->
+    <owl:Class rdf:about="&ecglvoc_P02;RSIS">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/RSIS/"/>
+       <rdfs:label>Field resistivity,  electromagnetics  and polarisation</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#FATX -->
+    <owl:Class rdf:about="&ecglvoc_P02;FATX">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/FATX/"/>
+       <rdfs:label>Fish abundance in water bodies</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#FCST -->
+    <owl:Class rdf:about="&ecglvoc_P02;FCST">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/FCST/"/>
+       <rdfs:label>Fish and shellfish catch statistics</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#GP085 -->
+    <owl:Class rdf:about="&ecglvoc_P02;GP085">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/GP085/"/>
+       <rdfs:label>Fish behaviour</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#FIBM -->
+    <owl:Class rdf:about="&ecglvoc_P02;FIBM">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/FIBM/"/>
+       <rdfs:label>Fish biomass in water bodies</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#GP005 -->
+    <owl:Class rdf:about="&ecglvoc_P02;GP005">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/GP005/"/>
+       <rdfs:label>Fish disease and parasites</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#FATM -->
+    <owl:Class rdf:about="&ecglvoc_P02;FATM">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/FATM/"/>
+       <rdfs:label>Fish morphology, age and physiology</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#FNTX -->
+    <owl:Class rdf:about="&ecglvoc_P02;FNTX">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/FNTX/"/>
+       <rdfs:label>Fish non taxonomy-related abundance per unit volume of the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#FNTM -->
+    <owl:Class rdf:about="&ecglvoc_P02;FNTM">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/FNTM/"/>
+       <rdfs:label>Fish non taxonomy-related morphology</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#FREP -->
+    <owl:Class rdf:about="&ecglvoc_P02;FREP">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/FREP/"/>
+       <rdfs:label>Fish reproduction</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#FBAB -->
+    <owl:Class rdf:about="&ecglvoc_P02;FBAB">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/FBAB/"/>
+       <rdfs:label>Fish taxonomy-related abundance per unit area of the bed</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#FBAF -->
+    <owl:Class rdf:about="&ecglvoc_P02;FBAF">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/FBAF/"/>
+       <rdfs:label>Fish taxonomy-related ash-free dry weight biomass per unit area of the bed</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#FCNT -->
+    <owl:Class rdf:about="&ecglvoc_P02;FCNT">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/FCNT/"/>
+       <rdfs:label>Fish taxonomy-related counts</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#GP087 -->
+    <owl:Class rdf:about="&ecglvoc_P02;GP087">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/GP087/"/>
+       <rdfs:label>Fishery characterisation</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#GP080 -->
+    <owl:Class rdf:about="&ecglvoc_P02;GP080">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/GP080/"/>
+       <rdfs:label>Fishing by-catch</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#FEFF -->
+    <owl:Class rdf:about="&ecglvoc_P02;FEFF">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/FEFF/"/>
+       <rdfs:label>Fishing effort</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#FDMS -->
+    <owl:Class rdf:about="&ecglvoc_P02;FDMS">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/FDMS/"/>
+       <rdfs:label>Gas fluxes between the water column and the atmosphere</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#DBDX -->
+    <owl:Class rdf:about="&ecglvoc_P02;DBDX">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/DBDX/"/>
+       <rdfs:label>Geological sample density</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#XMGS -->
+    <owl:Class rdf:about="&ecglvoc_P02;XMGS">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/XMGS/"/>
+       <rdfs:label>Geological sample magnetic, electrical and acoustic properties</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#RMAJ -->
+    <owl:Class rdf:about="&ecglvoc_P02;RMAJ">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/RMAJ/"/>
+       <rdfs:label>Geological sample major element chemistry</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#SRAD -->
+    <owl:Class rdf:about="&ecglvoc_P02;SRAD">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/SRAD/"/>
+       <rdfs:label>Geological sample radioactivity</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#GTCH -->
+    <owl:Class rdf:about="&ecglvoc_P02;GTCH">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/GTCH/"/>
+       <rdfs:label>Geotechnics</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#HFLW -->
+    <owl:Class rdf:about="&ecglvoc_P02;HFLW">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/HFLW/"/>
+       <rdfs:label>Geothermal heat flow</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#GRAV -->
+    <owl:Class rdf:about="&ecglvoc_P02;GRAV">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/GRAV/"/>
+       <rdfs:label>Gravity</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#GWAM -->
+    <owl:Class rdf:about="&ecglvoc_P02;GWAM">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/GWAM/"/>
+       <rdfs:label>Groundwater amount</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#GWCH -->
+    <owl:Class rdf:about="&ecglvoc_P02;GWCH">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/GWCH/"/>
+       <rdfs:label>Groundwater chemistry</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#HBCH -->
+    <owl:Class rdf:about="&ecglvoc_P02;HBCH">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/HBCH/"/>
+       <rdfs:label>Habitat characterisation</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#HBEX -->
+    <owl:Class rdf:about="&ecglvoc_P02;HBEX">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/HBEX/"/>
+       <rdfs:label>Habitat extent</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#HZNV -->
+    <owl:Class rdf:about="&ecglvoc_P02;HZNV">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/HZNV/"/>
+       <rdfs:label>Hazards to navigation</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#HFLX -->
+    <owl:Class rdf:about="&ecglvoc_P02;HFLX">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/HFLX/"/>
+       <rdfs:label>Heat fluxes between the water column and the atmosphere</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#APDA -->
+    <owl:Class rdf:about="&ecglvoc_P02;APDA">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/APDA/"/>
+       <rdfs:label>Horizontal platform movement</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#ALAT -->
+    <owl:Class rdf:about="&ecglvoc_P02;ALAT">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/ALAT/"/>
+       <rdfs:label>Horizontal spatial co-ordinates</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#RFVL -->
+    <owl:Class rdf:about="&ecglvoc_P02;RFVL">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/RFVL/"/>
+       <rdfs:label>Horizontal velocity of the water column (currents)</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#SHTA -->
+    <owl:Class rdf:about="&ecglvoc_P02;SHTA">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/SHTA/"/>
+       <rdfs:label>Hydrolytic activity in sediment</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#IAGE -->
+    <owl:Class rdf:about="&ecglvoc_P02;IAGE">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/IAGE/"/>
+       <rdfs:label>Ice age</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#ICEM -->
+    <owl:Class rdf:about="&ecglvoc_P02;ICEM">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/ICEM/"/>
+       <rdfs:label>Ice motion and related parameters</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#IACT -->
+    <owl:Class rdf:about="&ecglvoc_P02;IACT">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/IACT/"/>
+       <rdfs:label>Industrial activity</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#IDIS -->
+    <owl:Class rdf:about="&ecglvoc_P02;IDIS">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/IDIS/"/>
+       <rdfs:label>Industrial discharges</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#RMIN -->
+    <owl:Class rdf:about="&ecglvoc_P02;RMIN">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/RMIN/"/>
+       <rdfs:label>Inorganic chemical composition of sediment or rocks</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#IPRX -->
+    <owl:Class rdf:about="&ecglvoc_P02;IPRX">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/IPRX/"/>
+       <rdfs:label>Inorganic peroxides in water bodies</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#PHAT -->
+    <owl:Class rdf:about="&ecglvoc_P02;PHAT">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/PHAT/"/>
+       <rdfs:label>Inorganic phosphorus species concentrations in the atmosphere</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#SIAT -->
+    <owl:Class rdf:about="&ecglvoc_P02;SIAT">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/SIAT/"/>
+       <rdfs:label>Inorganic silicon species concentrations in the atmosphere</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#IWAB -->
+    <owl:Class rdf:about="&ecglvoc_P02;IWAB">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/IWAB/"/>
+       <rdfs:label>Insect and earthworm taxonomy-related abundance per unit area of the bed</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#INLZ -->
+    <owl:Class rdf:about="&ecglvoc_P02;INLZ">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/INLZ/"/>
+       <rdfs:label>Insect and earthworm taxonomy-related abundance per unit area of the littoral zone</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#IWDX -->
+    <owl:Class rdf:about="&ecglvoc_P02;IWDX">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/IWDX/"/>
+       <rdfs:label>Insect and earthworm taxonomy-related ash-free dry weight biomass per unit area of the bed</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#IALZ -->
+    <owl:Class rdf:about="&ecglvoc_P02;IALZ">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/IALZ/"/>
+       <rdfs:label>Insect and earthworm taxonomy-related ash-free dry weight biomass per unit area of the littoral zone</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#IATX -->
+    <owl:Class rdf:about="&ecglvoc_P02;IATX">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/IATX/"/>
+       <rdfs:label>Insecta taxonomy-related abundance per unit volume of the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#IATC -->
+    <owl:Class rdf:about="&ecglvoc_P02;IATC">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/IATC/"/>
+       <rdfs:label>Insecta taxonomy-related biomass expressed as carbon per unit volume of the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#LGCR -->
+    <owl:Class rdf:about="&ecglvoc_P02;LGCR">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/LGCR/"/>
+       <rdfs:label>Lagrangian currents and transport rates in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#LSST -->
+    <owl:Class rdf:about="&ecglvoc_P02;LSST">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/LSST/"/>
+       <rdfs:label>Land surface temperature</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#LVEG -->
+    <owl:Class rdf:about="&ecglvoc_P02;LVEG">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/LVEG/"/>
+       <rdfs:label>Land vegetation</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#PPAB -->
+    <owl:Class rdf:about="&ecglvoc_P02;PPAB">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/PPAB/"/>
+       <rdfs:label>Light absorption in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#EXCO -->
+    <owl:Class rdf:about="&ecglvoc_P02;EXCO">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/EXCO/"/>
+       <rdfs:label>Light extinction and diffusion coefficients</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#LITH -->
+    <owl:Class rdf:about="&ecglvoc_P02;LITH">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/LITH/"/>
+       <rdfs:label>Lithology</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#LITT -->
+    <owl:Class rdf:about="&ecglvoc_P02;LITT">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/LITT/"/>
+       <rdfs:label>Litter abundance and type</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#LWRD -->
+    <owl:Class rdf:about="&ecglvoc_P02;LWRD">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/LWRD/"/>
+       <rdfs:label>Long-wave radiation</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#GP012 -->
+    <owl:Class rdf:about="&ecglvoc_P02;GP012">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/GP012/"/>
+       <rdfs:label>Macroalgae and seagrass infection and damage</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#ACNT -->
+    <owl:Class rdf:about="&ecglvoc_P02;ACNT">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/ACNT/"/>
+       <rdfs:label>Macroalgae and seagrass taxonomy-related counts</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#PU02 -->
+    <owl:Class rdf:about="&ecglvoc_P02;PU02">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/PU02/"/>
+       <rdfs:label>Macroalgae generic abundance in water bodies</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#MMAN -->
+    <owl:Class rdf:about="&ecglvoc_P02;MMAN">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/MMAN/"/>
+       <rdfs:label>Magnetics</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#MMST -->
+    <owl:Class rdf:about="&ecglvoc_P02;MMST">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/MMST/"/>
+       <rdfs:label>Man-made structures</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#MARC -->
+    <owl:Class rdf:about="&ecglvoc_P02;MARC">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/MARC/"/>
+       <rdfs:label>Marine archaeology</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#MLES -->
+    <owl:Class rdf:about="&ecglvoc_P02;MLES">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/MLES/"/>
+       <rdfs:label>Marine environment leisure usage</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#TMES -->
+    <owl:Class rdf:about="&ecglvoc_P02;TMES">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/TMES/"/>
+       <rdfs:label>Metadata parameters</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#BCMT -->
+    <owl:Class rdf:about="&ecglvoc_P02;BCMT">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/BCMT/"/>
+       <rdfs:label>Metal concentrations in biota</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#MTSD -->
+    <owl:Class rdf:about="&ecglvoc_P02;MTSD">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/MTSD/"/>
+       <rdfs:label>Metal concentrations in sediment</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#MTPW -->
+    <owl:Class rdf:about="&ecglvoc_P02;MTPW">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/MTPW/"/>
+       <rdfs:label>Metal concentrations in sediment pore waters</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#MTSP -->
+    <owl:Class rdf:about="&ecglvoc_P02;MTSP">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/MTSP/"/>
+       <rdfs:label>Metal concentrations in suspended particulate material</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#MTAT -->
+    <owl:Class rdf:about="&ecglvoc_P02;MTAT">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/MTAT/"/>
+       <rdfs:label>Metal concentrations in the atmosphere</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#MTIC -->
+    <owl:Class rdf:about="&ecglvoc_P02;MTIC">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/MTIC/"/>
+       <rdfs:label>Metal concentrations in the cryosphere</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#SCDO -->
+    <owl:Class rdf:about="&ecglvoc_P02;SCDO">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/SCDO/"/>
+       <rdfs:label>Metal fluxes between the bed and the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#ZNLG -->
+    <owl:Class rdf:about="&ecglvoc_P02;ZNLG">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/ZNLG/"/>
+       <rdfs:label>Metal ligand parameters in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#CDRU -->
+    <owl:Class rdf:about="&ecglvoc_P02;CDRU">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/CDRU/"/>
+       <rdfs:label>Metal uptake rates in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#MZBN -->
+    <owl:Class rdf:about="&ecglvoc_P02;MZBN">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/MZBN/"/>
+       <rdfs:label>Microzooplankton generic abundance in water bodies</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#MZCT -->
+    <owl:Class rdf:about="&ecglvoc_P02;MZCT">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/MZCT/"/>
+       <rdfs:label>Microzooplankton grazing</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#MZBC -->
+    <owl:Class rdf:about="&ecglvoc_P02;MZBC">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/MZBC/"/>
+       <rdfs:label>Microzooplankton non taxonomy-related biomass expressed as carbon per unit volume of the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#MATX -->
+    <owl:Class rdf:about="&ecglvoc_P02;MATX">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/MATX/"/>
+       <rdfs:label>Microzooplankton taxonomic abundance in water bodies</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#MATC -->
+    <owl:Class rdf:about="&ecglvoc_P02;MATC">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/MATC/"/>
+       <rdfs:label>Microzooplankton taxonomy-related biomass expressed as carbon per unit volume of the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#A999 -->
+    <owl:Class rdf:about="&ecglvoc_P02;A999">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/A999/"/>
+       <rdfs:label>Microzooplankton taxonomy-related biosurface area per unit volume of the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#V999 -->
+    <owl:Class rdf:about="&ecglvoc_P02;V999">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/V999/"/>
+       <rdfs:label>Microzooplankton taxonomy-related biovolume per unit volume of the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#MINC -->
+    <owl:Class rdf:about="&ecglvoc_P02;MINC">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/MINC/"/>
+       <rdfs:label>Mineral chemistry</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#CLAY -->
+    <owl:Class rdf:about="&ecglvoc_P02;CLAY">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/CLAY/"/>
+       <rdfs:label>Mineralogical composition</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#RBHY -->
+    <owl:Class rdf:about="&ecglvoc_P02;RBHY">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/RBHY/"/>
+       <rdfs:label>Molecular biology parameters</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#MPMN -->
+    <owl:Class rdf:about="&ecglvoc_P02;MPMN">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/MPMN/"/>
+       <rdfs:label>Moored instrument depth</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#NTUP -->
+    <owl:Class rdf:about="&ecglvoc_P02;NTUP">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/NTUP/"/>
+       <rdfs:label>New production in water bodies</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#NTRA -->
+    <owl:Class rdf:about="&ecglvoc_P02;NTRA">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/NTRA/"/>
+       <rdfs:label>Nitrate concentration parameters in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#NTRZ -->
+    <owl:Class rdf:about="&ecglvoc_P02;NTRZ">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/NTRZ/"/>
+       <rdfs:label>Nitrate+nitrite concentration parameters in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#AMOX -->
+    <owl:Class rdf:about="&ecglvoc_P02;AMOX">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/AMOX/"/>
+       <rdfs:label>Nitrification rate in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#NTRI -->
+    <owl:Class rdf:about="&ecglvoc_P02;NTRI">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/NTRI/"/>
+       <rdfs:label>Nitrite concentration parameters in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#NTSD -->
+    <owl:Class rdf:about="&ecglvoc_P02;NTSD">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/NTSD/"/>
+       <rdfs:label>Nitrogen concentrations in sediment</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#NTSP -->
+    <owl:Class rdf:about="&ecglvoc_P02;NTSP">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/NTSP/"/>
+       <rdfs:label>Nitrogen concentrations in suspended particulate material</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#NTPW -->
+    <owl:Class rdf:about="&ecglvoc_P02;NTPW">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/NTPW/"/>
+       <rdfs:label>Nutrient concentrations in sediment pore waters</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#SAMO -->
+    <owl:Class rdf:about="&ecglvoc_P02;SAMO">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/SAMO/"/>
+       <rdfs:label>Nutrient fluxes between the bed and the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#R410 -->
+    <owl:Class rdf:about="&ecglvoc_P02;R410">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/R410/"/>
+       <rdfs:label>Ocean colour and earth-leaving visible waveband spectral radiation</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#OPBS -->
+    <owl:Class rdf:about="&ecglvoc_P02;OPBS">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/OPBS/"/>
+       <rdfs:label>Optical backscatter</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#CSDE -->
+    <owl:Class rdf:about="&ecglvoc_P02;CSDE">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/CSDE/"/>
+       <rdfs:label>Organic sulphur compound dynamics in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#OMBI -->
+    <owl:Class rdf:about="&ecglvoc_P02;OMBI">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/OMBI/"/>
+       <rdfs:label>Organometallic species concentration parameters in biota</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#OMPW -->
+    <owl:Class rdf:about="&ecglvoc_P02;OMPW">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/OMPW/"/>
+       <rdfs:label>Organometallic species concentration parameters in sediments</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#OMWC -->
+    <owl:Class rdf:about="&ecglvoc_P02;OMWC">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/OMWC/"/>
+       <rdfs:label>Organometallic species concentration parameters in water bodies</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#DMST -->
+    <owl:Class rdf:about="&ecglvoc_P02;DMST">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/DMST/"/>
+       <rdfs:label>Organosulphur species concentration parameters in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#SICO -->
+    <owl:Class rdf:about="&ecglvoc_P02;SICO">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/SICO/"/>
+       <rdfs:label>Other fluxes between the bed and the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#DCMX -->
+    <owl:Class rdf:about="&ecglvoc_P02;DCMX">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/DCMX/"/>
+       <rdfs:label>Other halocarbon concentrations in water bodies</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#HLDE -->
+    <owl:Class rdf:about="&ecglvoc_P02;HLDE">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/HLDE/"/>
+       <rdfs:label>Other halocarbon dynamics in water bodies</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#OMET -->
+    <owl:Class rdf:about="&ecglvoc_P02;OMET">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/OMET/"/>
+       <rdfs:label>Other meteorological measurements</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#DENS -->
+    <owl:Class rdf:about="&ecglvoc_P02;DENS">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/DENS/"/>
+       <rdfs:label>Other physical and chemical properties of suspended particulate material</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#KRTS -->
+    <owl:Class rdf:about="&ecglvoc_P02;KRTS">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/KRTS/"/>
+       <rdfs:label>Other wave statistics</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#GOXP -->
+    <owl:Class rdf:about="&ecglvoc_P02;GOXP">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/GOXP/"/>
+       <rdfs:label>Oxygen production and respiration in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#OZON -->
+    <owl:Class rdf:about="&ecglvoc_P02;OZON">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/OZON/"/>
+       <rdfs:label>Ozone and oxygen concentrations in the atmosphere</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#PCLM -->
+    <owl:Class rdf:about="&ecglvoc_P02;PCLM">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/PCLM/"/>
+       <rdfs:label>Palaeoclimatic indicators and parameters</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#PCO2 -->
+    <owl:Class rdf:about="&ecglvoc_P02;PCO2">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/PCO2/"/>
+       <rdfs:label>Partial pressure (pCO2) and fugacity (fCO2) of carbon dioxide in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#DAAW -->
+    <owl:Class rdf:about="&ecglvoc_P02;DAAW">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/DAAW/"/>
+       <rdfs:label>Particulate amino acid concentrations in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#CING -->
+    <owl:Class rdf:about="&ecglvoc_P02;CING">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/CING/"/>
+       <rdfs:label>Particulate inorganic carbon concentrations in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#MTWP -->
+    <owl:Class rdf:about="&ecglvoc_P02;MTWP">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/MTWP/"/>
+       <rdfs:label>Particulate metal concentrations in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#CORG -->
+    <owl:Class rdf:about="&ecglvoc_P02;CORG">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/CORG/"/>
+       <rdfs:label>Particulate total and organic carbon concentrations in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#NTOT -->
+    <owl:Class rdf:about="&ecglvoc_P02;NTOT">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/NTOT/"/>
+       <rdfs:label>Particulate total and organic nitrogen concentrations in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#TPHS -->
+    <owl:Class rdf:about="&ecglvoc_P02;TPHS">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/TPHS/"/>
+       <rdfs:label>Particulate total and organic phosphorus concentrations in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#MDWP -->
+    <owl:Class rdf:about="&ecglvoc_P02;MDWP">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/MDWP/"/>
+       <rdfs:label>Particulate trace metalloid concentrations in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#PASR -->
+    <owl:Class rdf:about="&ecglvoc_P02;PASR">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/PASR/"/>
+       <rdfs:label>Passive seismic refraction</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#PEBI -->
+    <owl:Class rdf:about="&ecglvoc_P02;PEBI">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/PEBI/"/>
+       <rdfs:label>Pesticide concentrations in biota</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#PESD -->
+    <owl:Class rdf:about="&ecglvoc_P02;PESD">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/PESD/"/>
+       <rdfs:label>Pesticide concentrations in sediment</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#PEWB -->
+    <owl:Class rdf:about="&ecglvoc_P02;PEWB">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/PEWB/"/>
+       <rdfs:label>Pesticide concentrations in water bodies</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#PHSD -->
+    <owl:Class rdf:about="&ecglvoc_P02;PHSD">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/PHSD/"/>
+       <rdfs:label>Phaeopigment concentrations in sediment</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#PHWC -->
+    <owl:Class rdf:about="&ecglvoc_P02;PHWC">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/PHWC/"/>
+       <rdfs:label>Phaeopigment concentrations in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#PHBI -->
+    <owl:Class rdf:about="&ecglvoc_P02;PHBI">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/PHBI/"/>
+       <rdfs:label>Pharmaceutical concentrations in biota</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#PHSE -->
+    <owl:Class rdf:about="&ecglvoc_P02;PHSE">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/PHSE/"/>
+       <rdfs:label>Pharmaceutical concentrations in sediments</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#PHWB -->
+    <owl:Class rdf:about="&ecglvoc_P02;PHWB">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/PHWB/"/>
+       <rdfs:label>Pharmaceutical concentrations in water bodies</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#PHOS -->
+    <owl:Class rdf:about="&ecglvoc_P02;PHOS">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/PHOS/"/>
+       <rdfs:label>Phosphate concentration parameters in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#PXSD -->
+    <owl:Class rdf:about="&ecglvoc_P02;PXSD">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/PXSD/"/>
+       <rdfs:label>Phosphorus concentrations in sediment</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#PXSP -->
+    <owl:Class rdf:about="&ecglvoc_P02;PXSP">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/PXSP/"/>
+       <rdfs:label>Phosphorus concentrations in suspended particulate material</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#PHYC -->
+    <owl:Class rdf:about="&ecglvoc_P02;PHYC">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/PHYC/"/>
+       <rdfs:label>Phycobolin pigment concentrations in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#PNTX -->
+    <owl:Class rdf:about="&ecglvoc_P02;PNTX">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/PNTX/"/>
+       <rdfs:label>Phytoplankton generic abundance in water bodies</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#CNTX -->
+    <owl:Class rdf:about="&ecglvoc_P02;CNTX">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/CNTX/"/>
+       <rdfs:label>Phytoplankton generic biomass in water bodies</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#PHYG -->
+    <owl:Class rdf:about="&ecglvoc_P02;PHYG">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/PHYG/"/>
+       <rdfs:label>Phytoplankton growth</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#PATX -->
+    <owl:Class rdf:about="&ecglvoc_P02;PATX">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/PATX/"/>
+       <rdfs:label>Phytoplankton taxonomic abundance in water bodies</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#CATX -->
+    <owl:Class rdf:about="&ecglvoc_P02;CATX">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/CATX/"/>
+       <rdfs:label>Phytoplankton taxonomic biomass in water bodies</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#AATX -->
+    <owl:Class rdf:about="&ecglvoc_P02;AATX">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/AATX/"/>
+       <rdfs:label>Phytoplankton taxonomic surface area in water bodies</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#VATX -->
+    <owl:Class rdf:about="&ecglvoc_P02;VATX">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/VATX/"/>
+       <rdfs:label>Phytoplankton taxonomic volume in water bodies</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#PYTT -->
+    <owl:Class rdf:about="&ecglvoc_P02;PYTT">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/PYTT/"/>
+       <rdfs:label>Plankton abundance per unit volume of the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#CYEU -->
+    <owl:Class rdf:about="&ecglvoc_P02;CYEU">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/CYEU/"/>
+       <rdfs:label>Plankton biomass expressed as carbon per unit volume of the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#HEAD -->
+    <owl:Class rdf:about="&ecglvoc_P02;HEAD">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/HEAD/"/>
+       <rdfs:label>Platform or instrument orientation</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#GP001 -->
+    <owl:Class rdf:about="&ecglvoc_P02;GP001">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/GP001/"/>
+       <rdfs:label>Pollution events</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#CPRP -->
+    <owl:Class rdf:about="&ecglvoc_P02;CPRP">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/CPRP/"/>
+       <rdfs:label>Precipitation and evaporation</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#RWCH -->
+    <owl:Class rdf:about="&ecglvoc_P02;RWCH">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/RWCH/"/>
+       <rdfs:label>Precipitation chemistry</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#PPRD -->
+    <owl:Class rdf:about="&ecglvoc_P02;PPRD">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/PPRD/"/>
+       <rdfs:label>Primary production in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#ACFL -->
+    <owl:Class rdf:about="&ecglvoc_P02;ACFL">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/ACFL/"/>
+       <rdfs:label>Quality control flags</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#QDMD -->
+    <owl:Class rdf:about="&ecglvoc_P02;QDMD">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/QDMD/"/>
+       <rdfs:label>Quantity of material dumped</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#RBSC -->
+    <owl:Class rdf:about="&ecglvoc_P02;RBSC">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/RBSC/"/>
+       <rdfs:label>Radar backscatter</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#GERA -->
+    <owl:Class rdf:about="&ecglvoc_P02;GERA">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/GERA/"/>
+       <rdfs:label>Radiation geophysics</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#BRAD -->
+    <owl:Class rdf:about="&ecglvoc_P02;BRAD">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/BRAD/"/>
+       <rdfs:label>Radioactivity in biota</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#WRAD -->
+    <owl:Class rdf:about="&ecglvoc_P02;WRAD">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/WRAD/"/>
+       <rdfs:label>Radioactivity in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#XRFC -->
+    <owl:Class rdf:about="&ecglvoc_P02;XRFC">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/XRFC/"/>
+       <rdfs:label>Raw X-Ray fluorometer (XRF) output from sediment samples</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#LERR -->
+    <owl:Class rdf:about="&ecglvoc_P02;LERR">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/LERR/"/>
+       <rdfs:label>Raw current meter output parameters</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#FVLT -->
+    <owl:Class rdf:about="&ecglvoc_P02;FVLT">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/FVLT/"/>
+       <rdfs:label>Raw fluorometer output</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#RGAS -->
+    <owl:Class rdf:about="&ecglvoc_P02;RGAS">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/RGAS/"/>
+       <rdfs:label>Raw gas analyser output</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#NUTV -->
+    <owl:Class rdf:about="&ecglvoc_P02;NUTV">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/NUTV/"/>
+       <rdfs:label>Raw in-situ nutrient analyser output</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#LVLT -->
+    <owl:Class rdf:about="&ecglvoc_P02;LVLT">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/LVLT/"/>
+       <rdfs:label>Raw light meter output</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#OXYC -->
+    <owl:Class rdf:about="&ecglvoc_P02;OXYC">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/OXYC/"/>
+       <rdfs:label>Raw oxygen sensor output</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#TVLT -->
+    <owl:Class rdf:about="&ecglvoc_P02;TVLT">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/TVLT/"/>
+       <rdfs:label>Raw suspended particulate material concentration sensor output</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#TCNT -->
+    <owl:Class rdf:about="&ecglvoc_P02;TCNT">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/TCNT/"/>
+       <rdfs:label>Raw temperature and/or salinity instrument output</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#RPOT -->
+    <owl:Class rdf:about="&ecglvoc_P02;RPOT">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/RPOT/"/>
+       <rdfs:label>Redox potential in sediment</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#IS4R -->
+    <owl:Class rdf:about="&ecglvoc_P02;IS4R">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/IS4R/"/>
+       <rdfs:label>Reduction rates in bed sediments</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#ACYC -->
+    <owl:Class rdf:about="&ecglvoc_P02;ACYC">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/ACYC/"/>
+       <rdfs:label>Reference numbers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#AMUP -->
+    <owl:Class rdf:about="&ecglvoc_P02;AMUP">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/AMUP/"/>
+       <rdfs:label>Regenerated production in water bodies</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#GP068 -->
+    <owl:Class rdf:about="&ecglvoc_P02;GP068">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/GP068/"/>
+       <rdfs:label>Reptile abundance</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#GP067 -->
+    <owl:Class rdf:about="&ecglvoc_P02;GP067">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/GP067/"/>
+       <rdfs:label>Reptile disease and parasites</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#GP069 -->
+    <owl:Class rdf:about="&ecglvoc_P02;GP069">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/GP069/"/>
+       <rdfs:label>Reptile reproduction</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#RVDS -->
+    <owl:Class rdf:about="&ecglvoc_P02;RVDS">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/RVDS/"/>
+       <rdfs:label>River flow and discharge</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#RAGE -->
+    <owl:Class rdf:about="&ecglvoc_P02;RAGE">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/RAGE/"/>
+       <rdfs:label>Rock age</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#RALT -->
+    <owl:Class rdf:about="&ecglvoc_P02;RALT">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/RALT/"/>
+       <rdfs:label>Rock alteration</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#ROGS -->
+    <owl:Class rdf:about="&ecglvoc_P02;ROGS">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/ROGS/"/>
+       <rdfs:label>Rock grain size</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#RPER -->
+    <owl:Class rdf:about="&ecglvoc_P02;RPER">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/RPER/"/>
+       <rdfs:label>Rock porosity and permeability</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#RTMP -->
+    <owl:Class rdf:about="&ecglvoc_P02;RTMP">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/RTMP/"/>
+       <rdfs:label>Rock temperature</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#RTCO -->
+    <owl:Class rdf:about="&ecglvoc_P02;RTCO">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/RTCO/"/>
+       <rdfs:label>Rock thermal conductivity</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#PSAL -->
+    <owl:Class rdf:about="&ecglvoc_P02;PSAL">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/PSAL/"/>
+       <rdfs:label>Salinity of the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#ASLV -->
+    <owl:Class rdf:about="&ecglvoc_P02;ASLV">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/ASLV/"/>
+       <rdfs:label>Sea level</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#PREX -->
+    <owl:Class rdf:about="&ecglvoc_P02;PREX">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/PREX/"/>
+       <rdfs:label>Sea level expressed as pressure</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#SBPH -->
+    <owl:Class rdf:about="&ecglvoc_P02;SBPH">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/SBPH/"/>
+       <rdfs:label>Seabed photography</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#FOCA -->
+    <owl:Class rdf:about="&ecglvoc_P02;FOCA">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/FOCA/"/>
+       <rdfs:label>Seal abundance</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#SEBH -->
+    <owl:Class rdf:about="&ecglvoc_P02;SEBH">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/SEBH/"/>
+       <rdfs:label>Seal behaviour</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#SEMP -->
+    <owl:Class rdf:about="&ecglvoc_P02;SEMP">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/SEMP/"/>
+       <rdfs:label>Seal morphology and physiology</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#SEMO -->
+    <owl:Class rdf:about="&ecglvoc_P02;SEMO">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/SEMO/"/>
+       <rdfs:label>Seal mortality</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#GP025 -->
+    <owl:Class rdf:about="&ecglvoc_P02;GP025">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/GP025/"/>
+       <rdfs:label>Seal reproduction</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#SECC -->
+    <owl:Class rdf:about="&ecglvoc_P02;SECC">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/SECC/"/>
+       <rdfs:label>Secchi disk depth</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#XKEY -->
+    <owl:Class rdf:about="&ecglvoc_P02;XKEY">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/XKEY/"/>
+       <rdfs:label>Security tags and keys</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#RACC -->
+    <owl:Class rdf:about="&ecglvoc_P02;RACC">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/RACC/"/>
+       <rdfs:label>Sediment accumulation rate</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#SDAC -->
+    <owl:Class rdf:about="&ecglvoc_P02;SDAC">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/SDAC/"/>
+       <rdfs:label>Sediment acoustics</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#SAGE -->
+    <owl:Class rdf:about="&ecglvoc_P02;SAGE">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/SAGE/"/>
+       <rdfs:label>Sediment age</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#MNGS -->
+    <owl:Class rdf:about="&ecglvoc_P02;MNGS">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/MNGS/"/>
+       <rdfs:label>Sediment grain size parameters</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#CD10 -->
+    <owl:Class rdf:about="&ecglvoc_P02;CD10">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/CD10/"/>
+       <rdfs:label>Sediment lipid concentrations</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#GHDX -->
+    <owl:Class rdf:about="&ecglvoc_P02;GHDX">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/GHDX/"/>
+       <rdfs:label>Sediment microfossil morphology parameters</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#SPOL -->
+    <owl:Class rdf:about="&ecglvoc_P02;SPOL">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/SPOL/"/>
+       <rdfs:label>Sediment pollen content</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#REFF -->
+    <owl:Class rdf:about="&ecglvoc_P02;REFF">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/REFF/"/>
+       <rdfs:label>Sediment resistivity</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#BEST -->
+    <owl:Class rdf:about="&ecglvoc_P02;BEST">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/BEST/"/>
+       <rdfs:label>Sediment resuspension</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#STCO -->
+    <owl:Class rdf:about="&ecglvoc_P02;STCO">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/STCO/"/>
+       <rdfs:label>Sediment thermal conductivity</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#WCWT -->
+    <owl:Class rdf:about="&ecglvoc_P02;WCWT">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/WCWT/"/>
+       <rdfs:label>Sediment water content, porosity and surface area</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#SSTR -->
+    <owl:Class rdf:about="&ecglvoc_P02;SSTR">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/SSTR/"/>
+       <rdfs:label>Sedimentary structure</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#A01X -->
+    <owl:Class rdf:about="&ecglvoc_P02;A01X">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/A01X/"/>
+       <rdfs:label>Sedimentation flux of alkenones and alkenoates in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#AAFX -->
+    <owl:Class rdf:about="&ecglvoc_P02;AAFX">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/AAFX/"/>
+       <rdfs:label>Sedimentation flux of amino acids and associated compounds in water bodies</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#FPFX -->
+    <owl:Class rdf:about="&ecglvoc_P02;FPFX">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/FPFX/"/>
+       <rdfs:label>Sedimentation flux of biological detritus in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#CBFX -->
+    <owl:Class rdf:about="&ecglvoc_P02;CBFX">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/CBFX/"/>
+       <rdfs:label>Sedimentation flux of carbohydates in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#TCFX -->
+    <owl:Class rdf:about="&ecglvoc_P02;TCFX">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/TCFX/"/>
+       <rdfs:label>Sedimentation flux of carbon, nitrogen or organic matter in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#PCFX -->
+    <owl:Class rdf:about="&ecglvoc_P02;PCFX">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/PCFX/"/>
+       <rdfs:label>Sedimentation flux of identified biota expressed as carbon in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#PNFX -->
+    <owl:Class rdf:about="&ecglvoc_P02;PNFX">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/PNFX/"/>
+       <rdfs:label>Sedimentation flux of identified biota in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#MLFX -->
+    <owl:Class rdf:about="&ecglvoc_P02;MLFX">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/MLFX/"/>
+       <rdfs:label>Sedimentation flux of metallic and metalloid elements and isotopes in water bodies</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#OPFX -->
+    <owl:Class rdf:about="&ecglvoc_P02;OPFX">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/OPFX/"/>
+       <rdfs:label>Sedimentation flux of non-metallic inorganic species in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#AXFX -->
+    <owl:Class rdf:about="&ecglvoc_P02;AXFX">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/AXFX/"/>
+       <rdfs:label>Sedimentation flux of pigments in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#LIFX -->
+    <owl:Class rdf:about="&ecglvoc_P02;LIFX">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/LIFX/"/>
+       <rdfs:label>Sedimentation flux of terrestrially derived material in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#MSFX -->
+    <owl:Class rdf:about="&ecglvoc_P02;MSFX">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/MSFX/"/>
+       <rdfs:label>Sedimentation flux quantification in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#SRFL -->
+    <owl:Class rdf:about="&ecglvoc_P02;SRFL">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/SRFL/"/>
+       <rdfs:label>Seismic reflection</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#SRFR -->
+    <owl:Class rdf:about="&ecglvoc_P02;SRFR">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/SRFR/"/>
+       <rdfs:label>Seismic refraction</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#SABB -->
+    <owl:Class rdf:about="&ecglvoc_P02;SABB">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/SABB/"/>
+       <rdfs:label>Shellfish abundance and biomass in water bodies</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#SATM -->
+    <owl:Class rdf:about="&ecglvoc_P02;SATM">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/SATM/"/>
+       <rdfs:label>Shellfish morphology, age and physiology</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#SREP -->
+    <owl:Class rdf:about="&ecglvoc_P02;SREP">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/SREP/"/>
+       <rdfs:label>Shellfish reproduction</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#SSCN -->
+    <owl:Class rdf:about="&ecglvoc_P02;SSCN">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/SSCN/"/>
+       <rdfs:label>Side-scan sonar</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#SLCA -->
+    <owl:Class rdf:about="&ecglvoc_P02;SLCA">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/SLCA/"/>
+       <rdfs:label>Silicate concentration parameters in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#PSST -->
+    <owl:Class rdf:about="&ecglvoc_P02;PSST">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/PSST/"/>
+       <rdfs:label>Skin temperature of the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#ICHM -->
+    <owl:Class rdf:about="&ecglvoc_P02;ICHM">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/ICHM/"/>
+       <rdfs:label>Snow and ice chemistry</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#CRYS -->
+    <owl:Class rdf:about="&ecglvoc_P02;CRYS">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/CRYS/"/>
+       <rdfs:label>Snow and ice mass, thickness and extent</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#IPHY -->
+    <owl:Class rdf:about="&ecglvoc_P02;IPHY">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/IPHY/"/>
+       <rdfs:label>Snow and ice physical properties and characteristics</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#CSLR -->
+    <owl:Class rdf:about="&ecglvoc_P02;CSLR">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/CSLR/"/>
+       <rdfs:label>Solar Radiation</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#SVEL -->
+    <owl:Class rdf:about="&ecglvoc_P02;SVEL">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/SVEL/"/>
+       <rdfs:label>Sound velocity and travel time in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#WVSP -->
+    <owl:Class rdf:about="&ecglvoc_P02;WVSP">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/WVSP/"/>
+       <rdfs:label>Spectral wave data parameters</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#SPAG -->
+    <owl:Class rdf:about="&ecglvoc_P02;SPAG">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/SPAG/"/>
+       <rdfs:label>Speleothem age</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#IRBO -->
+    <owl:Class rdf:about="&ecglvoc_P02;IRBO">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/IRBO/"/>
+       <rdfs:label>Stable isotope enrichment in biota</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#IRIC -->
+    <owl:Class rdf:about="&ecglvoc_P02;IRIC">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/IRIC/"/>
+       <rdfs:label>Stable isotope enrichment in ice and snow</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#SSTB -->
+    <owl:Class rdf:about="&ecglvoc_P02;SSTB">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/SSTB/"/>
+       <rdfs:label>Stable isotope enrichment in sediment</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#SIPW -->
+    <owl:Class rdf:about="&ecglvoc_P02;SIPW">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/SIPW/"/>
+       <rdfs:label>Stable isotope enrichment in sediment pore waters</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#IRSP -->
+    <owl:Class rdf:about="&ecglvoc_P02;IRSP">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/IRSP/"/>
+       <rdfs:label>Stable isotope enrichment in speleothems</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#ISAT -->
+    <owl:Class rdf:about="&ecglvoc_P02;ISAT">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/ISAT/"/>
+       <rdfs:label>Stable isotope enrichment in the atmosphere</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#WSTB -->
+    <owl:Class rdf:about="&ecglvoc_P02;WSTB">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/WSTB/"/>
+       <rdfs:label>Stable isotope enrichment in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#MXLM -->
+    <owl:Class rdf:about="&ecglvoc_P02;MXLM">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/MXLM/"/>
+       <rdfs:label>Structure and stability of the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#SUAT -->
+    <owl:Class rdf:about="&ecglvoc_P02;SUAT">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/SUAT/"/>
+       <rdfs:label>Sulphur species concentrations in the atmosphere</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#SACT -->
+    <owl:Class rdf:about="&ecglvoc_P02;SACT">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/SACT/"/>
+       <rdfs:label>Surfactant concentrations in water bodies</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#ABAG -->
+    <owl:Class rdf:about="&ecglvoc_P02;ABAG">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/ABAG/"/>
+       <rdfs:label>Suspended particulate material aggregates</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#SPGS -->
+    <owl:Class rdf:about="&ecglvoc_P02;SPGS">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/SPGS/"/>
+       <rdfs:label>Suspended particulate material grain size parameters</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#MDSV -->
+    <owl:Class rdf:about="&ecglvoc_P02;MDSV">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/MDSV/"/>
+       <rdfs:label>Suspended particulate material setting velocity parameters</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#STMP -->
+    <owl:Class rdf:about="&ecglvoc_P02;STMP">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/STMP/"/>
+       <rdfs:label>Temperature of geological units</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#TEMP -->
+    <owl:Class rdf:about="&ecglvoc_P02;TEMP">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/TEMP/"/>
+       <rdfs:label>Temperature of the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#PTDZ -->
+    <owl:Class rdf:about="&ecglvoc_P02;PTDZ">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/PTDZ/"/>
+       <rdfs:label>Temperature variation in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#TD00 -->
+    <owl:Class rdf:about="&ecglvoc_P02;TD00">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/TD00/"/>
+       <rdfs:label>Terrestrial detritus in the water column suspended particulate material</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#COAS -->
+    <owl:Class rdf:about="&ecglvoc_P02;COAS">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/COAS/"/>
+       <rdfs:label>Terrestrial mapping</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#LWET -->
+    <owl:Class rdf:about="&ecglvoc_P02;LWET">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/LWET/"/>
+       <rdfs:label>Terrestrial water content</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#SR3D -->
+    <owl:Class rdf:about="&ecglvoc_P02;SR3D">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/SR3D/"/>
+       <rdfs:label>Three-dimensional seismic reflection</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#TCO2 -->
+    <owl:Class rdf:about="&ecglvoc_P02;TCO2">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/TCO2/"/>
+       <rdfs:label>Total dissolved inorganic carbon (TCO2) concentration in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#MTWT -->
+    <owl:Class rdf:about="&ecglvoc_P02;MTWT">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/MTWT/"/>
+       <rdfs:label>Total metal concentrations in water bodies</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#MDBO -->
+    <owl:Class rdf:about="&ecglvoc_P02;MDBO">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/MDBO/"/>
+       <rdfs:label>Trace metalloid concentrations in biota</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#MDSD -->
+    <owl:Class rdf:about="&ecglvoc_P02;MDSD">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/MDSD/"/>
+       <rdfs:label>Trace metalloid concentrations in sediment</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#MDPW -->
+    <owl:Class rdf:about="&ecglvoc_P02;MDPW">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/MDPW/"/>
+       <rdfs:label>Trace metalloid concentrations in sediment pore water</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#ATTN -->
+    <owl:Class rdf:about="&ecglvoc_P02;ATTN">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/ATTN/"/>
+       <rdfs:label>Transmittance and attenuance of the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#TRAN -->
+    <owl:Class rdf:about="&ecglvoc_P02;TRAN">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/TRAN/"/>
+       <rdfs:label>Transport activity</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#VDFC -->
+    <owl:Class rdf:about="&ecglvoc_P02;VDFC">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/VDFC/"/>
+       <rdfs:label>Transport in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#EPSI -->
+    <owl:Class rdf:about="&ecglvoc_P02;EPSI">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/EPSI/"/>
+       <rdfs:label>Turbulence in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#SR2D -->
+    <owl:Class rdf:about="&ecglvoc_P02;SR2D">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/SR2D/"/>
+       <rdfs:label>Two-dimensional seismic reflection</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#UVRD -->
+    <owl:Class rdf:about="&ecglvoc_P02;UVRD">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/UVRD/"/>
+       <rdfs:label>Ultra-violet (UV) radiation</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#CPCN -->
+    <owl:Class rdf:about="&ecglvoc_P02;CPCN">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/CPCN/"/>
+       <rdfs:label>Unclassified pigment concentrations in sediment</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#OPWC -->
+    <owl:Class rdf:about="&ecglvoc_P02;OPWC">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/OPWC/"/>
+       <rdfs:label>Unclassified pigment concentrations in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#ZZZZ -->
+    <owl:Class rdf:about="&ecglvoc_P02;ZZZZ">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/ZZZZ/"/>
+       <rdfs:label>Unspecified</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#PHUP -->
+    <owl:Class rdf:about="&ecglvoc_P02;PHUP">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/PHUP/"/>
+       <rdfs:label>Uptake of other nutrients in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#UREA -->
+    <owl:Class rdf:about="&ecglvoc_P02;UREA">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/UREA/"/>
+       <rdfs:label>Urea concentration parameters in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#CMFL -->
+    <owl:Class rdf:about="&ecglvoc_P02;CMFL">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/CMFL/"/>
+       <rdfs:label>Variable fluorescence parameters</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#APZA -->
+    <owl:Class rdf:about="&ecglvoc_P02;APZA">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/APZA/"/>
+       <rdfs:label>Vertical platform movement</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#AHGT -->
+    <owl:Class rdf:about="&ecglvoc_P02;AHGT">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/AHGT/"/>
+       <rdfs:label>Vertical spatial coordinates</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#LRZA -->
+    <owl:Class rdf:about="&ecglvoc_P02;LRZA">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/LRZA/"/>
+       <rdfs:label>Vertical velocity of the water column (currents)</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#VIRU -->
+    <owl:Class rdf:about="&ecglvoc_P02;VIRU">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/VIRU/"/>
+       <rdfs:label>Virus abundance in water bodies</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#VSRA -->
+    <owl:Class rdf:about="&ecglvoc_P02;VSRA">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/VSRA/"/>
+       <rdfs:label>Visible waveband radiance and irradiance measurements in the atmosphere</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#VSRW -->
+    <owl:Class rdf:about="&ecglvoc_P02;VSRW">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/VSRW/"/>
+       <rdfs:label>Visible waveband radiance and irradiance measurements in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#F001 -->
+    <owl:Class rdf:about="&ecglvoc_P02;F001">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/F001/"/>
+       <rdfs:label>Water body lipid concentrations</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#WBRX -->
+    <owl:Class rdf:about="&ecglvoc_P02;WBRX">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/WBRX/"/>
+       <rdfs:label>Water body redox potential</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#WCTR -->
+    <owl:Class rdf:about="&ecglvoc_P02;WCTR">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/WCTR/"/>
+       <rdfs:label>Water body released tracers</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#WCPH -->
+    <owl:Class rdf:about="&ecglvoc_P02;WCPH">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/WCPH/"/>
+       <rdfs:label>Water column photography</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#WQBI -->
+    <owl:Class rdf:about="&ecglvoc_P02;WQBI">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/WQBI/"/>
+       <rdfs:label>Water quality bioindicators</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#GWDR -->
+    <owl:Class rdf:about="&ecglvoc_P02;GWDR">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/GWDR/"/>
+       <rdfs:label>Wave direction</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#WVST -->
+    <owl:Class rdf:about="&ecglvoc_P02;WVST">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/WVST/"/>
+       <rdfs:label>Wave height and period statistics</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#HEAV -->
+    <owl:Class rdf:about="&ecglvoc_P02;HEAV">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/HEAV/"/>
+       <rdfs:label>Wave height estimates</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#EWSB -->
+    <owl:Class rdf:about="&ecglvoc_P02;EWSB">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/EWSB/"/>
+       <rdfs:label>Wind strength and direction</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#WSTR -->
+    <owl:Class rdf:about="&ecglvoc_P02;WSTR">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/WSTR/"/>
+       <rdfs:label>Wind stress and shear</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#ZADX -->
+    <owl:Class rdf:about="&ecglvoc_P02;ZADX">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/ZADX/"/>
+       <rdfs:label>Zoobenthos dry weight biomass</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#MFAB -->
+    <owl:Class rdf:about="&ecglvoc_P02;MFAB">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/MFAB/"/>
+       <rdfs:label>Zoobenthos generic abundance</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#MFWW -->
+    <owl:Class rdf:about="&ecglvoc_P02;MFWW">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/MFWW/"/>
+       <rdfs:label>Zoobenthos non taxonomy-related wet weight biomass per unit area of the bed</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#ZBTX -->
+    <owl:Class rdf:about="&ecglvoc_P02;ZBTX">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/ZBTX/"/>
+       <rdfs:label>Zoobenthos taxonomic abundance</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#MFLZ -->
+    <owl:Class rdf:about="&ecglvoc_P02;MFLZ">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/MFLZ/"/>
+       <rdfs:label>Zoobenthos taxonomy-related abundance per unit area of the littoral zone</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#MFAZ -->
+    <owl:Class rdf:about="&ecglvoc_P02;MFAZ">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/MFAZ/"/>
+       <rdfs:label>Zoobenthos taxonomy-related ash-free dry weight biomass per unit area of the littoral zone</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#ZOOB -->
+    <owl:Class rdf:about="&ecglvoc_P02;ZOOB">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/ZOOB/"/>
+       <rdfs:label>Zoobenthos taxonomy-related counts</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#ZWTX -->
+    <owl:Class rdf:about="&ecglvoc_P02;ZWTX">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/ZWTX/"/>
+       <rdfs:label>Zoobenthos taxonomy-related wet weight biomass per unit area of the bed</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#DVLP -->
+    <owl:Class rdf:about="&ecglvoc_P02;DVLP">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/DVLP/"/>
+       <rdfs:label>Zooplankton and zoobenthos development stage parameters</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#BLEN -->
+    <owl:Class rdf:about="&ecglvoc_P02;BLEN">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/BLEN/"/>
+       <rdfs:label>Zooplankton and zoobenthos morphological parameters</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#ZFIT -->
+    <owl:Class rdf:about="&ecglvoc_P02;ZFIT">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/ZFIT/"/>
+       <rdfs:label>Zooplankton and zoobenthos physiological condition parameters</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#MSBO -->
+    <owl:Class rdf:about="&ecglvoc_P02;MSBO">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/MSBO/"/>
+       <rdfs:label>Zooplankton ash-free dry weight biomass per unit volume of the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#ZV00 -->
+    <owl:Class rdf:about="&ecglvoc_P02;ZV00">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/ZV00/"/>
+       <rdfs:label>Zooplankton biovolume</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#MSIC -->
+    <owl:Class rdf:about="&ecglvoc_P02;MSIC">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/MSIC/"/>
+       <rdfs:label>Zooplankton carbon biomass per unit area of the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#ZCMP -->
+    <owl:Class rdf:about="&ecglvoc_P02;ZCMP">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/ZCMP/"/>
+       <rdfs:label>Zooplankton chemical composition</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#FPRT -->
+    <owl:Class rdf:about="&ecglvoc_P02;FPRT">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/FPRT/"/>
+       <rdfs:label>Zooplankton defecation rates in the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#MSBD -->
+    <owl:Class rdf:about="&ecglvoc_P02;MSBD">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/MSBD/"/>
+       <rdfs:label>Zooplankton dry weight biomass per unit volume of the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#MEPH -->
+    <owl:Class rdf:about="&ecglvoc_P02;MEPH">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/MEPH/"/>
+       <rdfs:label>Zooplankton egg hatch proportion</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#FCRT -->
+    <owl:Class rdf:about="&ecglvoc_P02;FCRT">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/FCRT/"/>
+       <rdfs:label>Zooplankton feeding</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#GRZO -->
+    <owl:Class rdf:about="&ecglvoc_P02;GRZO">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/GRZO/"/>
+       <rdfs:label>Zooplankton growth rates</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#GPIG -->
+    <owl:Class rdf:about="&ecglvoc_P02;GPIG">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/GPIG/"/>
+       <rdfs:label>Zooplankton gut pigments</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#ZNTX -->
+    <owl:Class rdf:about="&ecglvoc_P02;ZNTX">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/ZNTX/"/>
+       <rdfs:label>Zooplankton non taxonomy-related abundance per unit volume of the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#ZNTC -->
+    <owl:Class rdf:about="&ecglvoc_P02;ZNTC">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/ZNTC/"/>
+       <rdfs:label>Zooplankton non taxonomy-related biomass expressed as carbon per unit volume of the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#ZNTN -->
+    <owl:Class rdf:about="&ecglvoc_P02;ZNTN">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/ZNTN/"/>
+       <rdfs:label>Zooplankton non taxonomy-related biomass expressed as nitrogen per unit volume of the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#ZNTP -->
+    <owl:Class rdf:about="&ecglvoc_P02;ZNTP">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/ZNTP/"/>
+       <rdfs:label>Zooplankton non taxonomy-related biomass expressed as protein per unit volume of the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#MSEP -->
+    <owl:Class rdf:about="&ecglvoc_P02;MSEP">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/MSEP/"/>
+       <rdfs:label>Zooplankton reproduction rate parameters</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#ZATX -->
+    <owl:Class rdf:about="&ecglvoc_P02;ZATX">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/ZATX/"/>
+       <rdfs:label>Zooplankton taxonomy-related abundance per unit volume of the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#ZCTC -->
+    <owl:Class rdf:about="&ecglvoc_P02;ZCTC">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/ZCTC/"/>
+       <rdfs:label>Zooplankton taxonomy-related biomass expressed as carbon per unit volume of the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#ZCTN -->
+    <owl:Class rdf:about="&ecglvoc_P02;ZCTN">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/ZCTN/"/>
+       <rdfs:label>Zooplankton taxonomy-related biomass expressed as nitrogen per unit volume of the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#ZATP -->
+    <owl:Class rdf:about="&ecglvoc_P02;ZATP">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/ZATP/"/>
+       <rdfs:label>Zooplankton taxonomy-related biomass expressed as protein per unit volume of the water column</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P02#GP079 -->
+    <owl:Class rdf:about="&ecglvoc_P02;GP079">
+       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P02/current/GP079/"/>
+       <rdfs:label>Zooplankton wet weight biomass</rdfs:label>
+    </owl:Class>
+
+</rdf:RDF>
