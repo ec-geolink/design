@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY ecglvoc_local "http://schema.geolink.org/dev/voc/local#" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY geosparql "http://www.opengis.net/ont/geosparql#" >
+]>
+
+<rdf:RDF xmlns="http://schema.geolink.org/dev/voc/local#"
+     xml:base="http://schema.geolink.org/dev/voc/local"
+     xmlns:ecglvoc_local="http://schema.geolink.org/dev/voc/local#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:geosparql="http://www.opengis.net/ont/geosparql#">
+
+    <owl:Ontology rdf:about="http://schema.geolink.org/dev/voc/local"/>
+
+    <!-- http://schema.geolink.org/dev/voc/local#cruisetype_operational -->
+    <owl:Class rdf:about="&ecglvoc_local;cruisetype_operational">
+       <rdfs:label>Cruise: Operational</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/local#cruisetype_transit -->
+    <owl:Class rdf:about="&ecglvoc_local;cruisetype_transit">
+       <rdfs:label>Cruise: Transit</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/local#cruisetype_maintenance -->
+    <owl:Class rdf:about="&ecglvoc_local;cruisetype_maintenance">
+       <rdfs:label>Cruise: Maintenance</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/local#roletype_scientist -->
+    <owl:Class rdf:about="&ecglvoc_local;roletype_scientist">
+       <rdfs:label>Role: Scientist</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/local#roletype_scientist_chief -->
+    <owl:Class rdf:about="&ecglvoc_local;roletype_scientist_chief">
+       <rdfs:label>Role: Scientist, Chief</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/local#roletype_scientist_co-chief -->
+    <owl:Class rdf:about="&ecglvoc_local;roletype_scientist_co-chief">
+       <rdfs:label>Role: Scientist, Co-Chief</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/local#roletype_student -->
+    <owl:Class rdf:about="&ecglvoc_local;roletype_student">
+       <rdfs:label>Role: Student</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/local#roletype_student_graduate -->
+    <owl:Class rdf:about="&ecglvoc_local;roletype_student_graduate">
+       <rdfs:label>Role: Student, Graduate</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/local#roletype_student_undergraduate -->
+    <owl:Class rdf:about="&ecglvoc_local;roletype_student_undergraduate">
+       <rdfs:label>Role: Student, Undergraduate</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/local#roletype_educator -->
+    <owl:Class rdf:about="&ecglvoc_local;roletype_educator">
+       <rdfs:label>Role: Educator</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/local#roletype_technician -->
+    <owl:Class rdf:about="&ecglvoc_local;roletype_technician">
+       <rdfs:label>Role: Technician</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/local#roletype_technician_resident_lead -->
+    <owl:Class rdf:about="&ecglvoc_local;roletype_technician_resident_lead">
+       <rdfs:label>Role: Technician, Resident, Lead</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/local#roletype_technician_resident -->
+    <owl:Class rdf:about="&ecglvoc_local;roletype_technician_resident">
+       <rdfs:label>Role: Technician, Resident</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/local#roletype_inspector -->
+    <owl:Class rdf:about="&ecglvoc_local;roletype_inspector">
+       <rdfs:label>Role: Inspector</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/local#roletype_observer -->
+    <owl:Class rdf:about="&ecglvoc_local;roletype_observer">
+       <rdfs:label>Role: Observer</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/local#roletype_observer_foreign -->
+    <owl:Class rdf:about="&ecglvoc_local;roletype_observer_foreign">
+       <rdfs:label>Role: Observer, Foreign</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/local#roletype_captain -->
+    <owl:Class rdf:about="&ecglvoc_local;roletype_captain">
+       <rdfs:label>Role: Captain</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/local#roletype_chief_engineer -->
+    <owl:Class rdf:about="&ecglvoc_local;roletype_chief_engineer">
+       <rdfs:label>Role: Chief Engineer</rdfs:label>
+    </owl:Class>
+
+    <!-- http://schema.geolink.org/dev/voc/local#roletype_other -->
+    <owl:Class rdf:about="&ecglvoc_local;roletype_other">
+       <rdfs:label>Role: Other</rdfs:label>
+    </owl:Class>
+
+</rdf:RDF>
