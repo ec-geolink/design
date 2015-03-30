@@ -5,10 +5,10 @@
     <!ENTITY foaf "http://xmlns.com/foaf/0.1/" >
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY ecglview "http://schema.geolink.org/dev/view#" >
     <!ENTITY geosparql "http://www.opengis.net/ont/geosparql#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-    <!ENTITY ecglview "http://schema.geolink.org/dev/view#" >
 ]>
 
 
@@ -109,7 +109,6 @@
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="&ecglview;Organization"/>
-                    <rdf:Description rdf:about="&ecglview;Person"/>
                     <rdf:Description rdf:about="&ecglview;Place"/>
                 </owl:unionOf>
             </owl:Class>
@@ -205,15 +204,6 @@
     <owl:ObjectProperty rdf:about="&ecglview;hasFormatType">
         <rdfs:domain rdf:resource="&ecglview;DigitalObject"/>
         <rdfs:range rdf:resource="&ecglview;FormatType"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://schema.geolink.org/dev/view#hasGender -->
-
-    <owl:ObjectProperty rdf:about="&ecglview;hasGender">
-        <rdfs:range rdf:resource="&ecglview;Gender"/>
-        <rdfs:domain rdf:resource="&ecglview;Person"/>
     </owl:ObjectProperty>
     
 
@@ -476,6 +466,12 @@
 -   ?X :matches [ :identifier ?ID ; :hasScheme ?S ]</rdfs:comment>
         <rdfs:range>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="&ecglview;identifier"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="&ecglview;hasScheme"/>
                 <owl:someValuesFrom rdf:resource="&xsd;string"/>
             </owl:Restriction>
@@ -495,12 +491,6 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
-        <rdfs:range>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ecglview;identifier"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -536,15 +526,6 @@
     <!-- http://schema.geolink.org/dev/view#description -->
 
     <owl:DatatypeProperty rdf:about="&ecglview;description">
-        <rdfs:range rdf:resource="&xsd;string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://schema.geolink.org/dev/view#email -->
-
-    <owl:DatatypeProperty rdf:about="&ecglview;email">
-        <rdfs:domain rdf:resource="&ecglview;Person"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -802,12 +783,6 @@
     <!-- http://schema.geolink.org/dev/view#FormatType -->
 
     <owl:Class rdf:about="&ecglview;FormatType"/>
-    
-
-
-    <!-- http://schema.geolink.org/dev/view#Gender -->
-
-    <owl:Class rdf:about="&ecglview;Gender"/>
     
 
 
