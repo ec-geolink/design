@@ -220,13 +220,13 @@
 	
     <!-- http://schema.geolink.org/dev/bcoview#Repository -->
 
-    <owl:Class rdf:about="&bcoview;Repository">
+    <owl:Class rdf:about="&bcodmo;Repository">
     	<owl:disjointWith rdf:resource="ecglview;Organization"/>
     </owl:Class>
     
     <!-- http://schema.geolink.org/dev/bcoview#Project -->
 
-    <owl:Class rdf:about="&bcoview;Project"/>
+    <owl:Class rdf:about="&bcodmo;Project"/>
 
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
