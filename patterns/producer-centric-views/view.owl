@@ -2,6 +2,7 @@
 
 
 <!DOCTYPE rdf:RDF [
+    <!ENTITY dcterms "http://purl.org/dc/terms/" >
     <!ENTITY foaf "http://xmlns.com/foaf/0.1/" >
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
@@ -19,6 +20,7 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:dcterms="http://purl.org/dc/terms/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:foaf="http://xmlns.com/foaf/0.1/">
     <owl:Ontology rdf:about="http://schema.geolink.org/dev/view"/>
@@ -45,6 +47,12 @@
     <!-- http://www.opengis.net/ont/geosparql#wktLiteral -->
 
     <rdfs:Datatype rdf:about="&geosparql;wktLiteral"/>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML -->
+
+    <rdfs:Datatype rdf:about="&rdf;HTML"/>
     
 
 
@@ -524,9 +532,34 @@
     
 
 
+    <!-- http://purl.org/dc/terms/abstract -->
+
+    <owl:DatatypeProperty rdf:about="&dcterms;abstract"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+    <owl:DatatypeProperty rdf:about="&dcterms;description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/identifier -->
+
+    <owl:DatatypeProperty rdf:about="&dcterms;identifier"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+    <owl:DatatypeProperty rdf:about="&dcterms;title"/>
+    
+
+
     <!-- http://schema.geolink.org/dev/view#abstract -->
 
     <owl:DatatypeProperty rdf:about="&ecglview;abstract">
+        <rdfs:subPropertyOf rdf:resource="&dcterms;abstract"/>
         <rdfs:range rdf:resource="&xsd;string"/>
         <rdfs:domain>
             <owl:Class>
@@ -544,8 +577,29 @@
     <!-- http://schema.geolink.org/dev/view#description -->
 
     <owl:DatatypeProperty rdf:about="&ecglview;description">
-        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:subPropertyOf rdf:resource="&dcterms;description"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&rdf;HTML"/>
+                    <rdf:Description rdf:about="&xsd;string"/>
+                </owl:unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
     </owl:DatatypeProperty>
+    <owl:Axiom>
+        <rdfs:comment>Note that rdfs:Literal includes both xsd:string and rdf:HTML</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&ecglview;description"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;range"/>
+        <owl:annotatedTarget>
+            <rdfs:Datatype>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&rdf;HTML"/>
+                    <rdf:Description rdf:about="&xsd;string"/>
+                </owl:unionOf>
+            </rdfs:Datatype>
+        </owl:annotatedTarget>
+    </owl:Axiom>
     
 
 
@@ -662,6 +716,7 @@
         <rdfs:comment>The domain of this property also includes (possibly blank) nodes that act as the range of the &apos;matches&apos; property. Graph patterns for data using this property can either be of the form:
 -   ?X :identifier ?ID
 -   ?X :matches [ :identifier ?ID ; :hasScheme ?S ]</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&dcterms;identifier"/>
         <rdfs:range rdf:resource="&xsd;string"/>
         <rdfs:domain>
             <owl:Class>
@@ -725,6 +780,7 @@
     <!-- http://schema.geolink.org/dev/view#title -->
 
     <owl:DatatypeProperty rdf:about="&ecglview;title">
+        <rdfs:subPropertyOf rdf:resource="&dcterms;title"/>
         <rdfs:range rdf:resource="&xsd;string"/>
         <rdfs:domain>
             <owl:Class>
