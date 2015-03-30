@@ -152,6 +152,15 @@
     
 
 
+    <!-- http://schema.geolink.org/dev/view#hasCoPrincipalInvestigator -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;hasCoPrincipalInvestigator">
+        <rdfs:domain rdf:resource="&ecglview;Award"/>
+        <rdfs:range rdf:resource="&ecglview;Person"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://schema.geolink.org/dev/view#hasCruise -->
 
     <owl:ObjectProperty rdf:about="&ecglview;hasCruise">
@@ -313,6 +322,15 @@
     <owl:ObjectProperty rdf:about="&ecglview;hasPlaceType">
         <rdfs:domain rdf:resource="&ecglview;Place"/>
         <rdfs:range rdf:resource="&ecglview;PlaceType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#hasPrincipalInvestigator -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;hasPrincipalInvestigator">
+        <rdfs:domain rdf:resource="&ecglview;Award"/>
+        <rdfs:range rdf:resource="&ecglview;Person"/>
     </owl:ObjectProperty>
     
 
