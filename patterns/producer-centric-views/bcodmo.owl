@@ -71,8 +71,8 @@
     <!-- http://schema.geolink.org/dev/bcoview#isAssociatedWithProgram -->
     
     <owl:ObjectProperty rdf:about="&bcodmo;isAssociatedWithProgram">
-        <rdfs:comment>Maps to full patterns Program:isAssociatedWithProgram</rdfs:comment>
-        <rdfs:domain rdf:resource="&ecglview;Program"/>
+        <rdfs:comment>Maps to full patterns ??? Program:isAssociatedWithProgram</rdfs:comment>
+        <rdfs:domain rdf:resource="&ecglview;Project"/>
         <rdfs:range rdf:resource="&ecglview;Program"/>
     </owl:ObjectProperty>
     
@@ -217,7 +217,16 @@
     //
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
+	
+    <!-- http://schema.geolink.org/dev/bcoview#Repository -->
 
+    <owl:Class rdf:about="&bcoview;Repository">
+    	<owl:disjointWith rdf:resource="ecglview;Organization"/>
+    </owl:Class>
+    
+    <!-- http://schema.geolink.org/dev/bcoview#Project -->
+
+    <owl:Class rdf:about="&bcoview;Project"/>
 
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
