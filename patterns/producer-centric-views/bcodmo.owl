@@ -49,6 +49,14 @@
         </rdfs:range>
     </owl:ObjectProperty>
 
+    <!-- http://schema.geolink.org/dev/bcoview#matchesR2RCruise -->
+    
+    <owl:ObjectProperty rdf:about="&bcodmo;matchesR2RCruise">
+        <rdfs:comment>Maps to full patterns ???</rdfs:comment>
+        <rdfs:domain rdf:resource="&ecglview;Cruise"/>
+        <rdfs:range rdf:resource="&ecglview;Cruise"/>
+    </owl:ObjectProperty>
+    
     <!-- http://schema.geolink.org/dev/bcoview#isPartOfDataset -->
     
     <owl:ObjectProperty rdf:about="&bcodmo;isPartOfDataset">
