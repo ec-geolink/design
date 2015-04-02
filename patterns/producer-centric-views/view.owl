@@ -23,7 +23,9 @@
      xmlns:dcterms="http://purl.org/dc/terms/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:foaf="http://xmlns.com/foaf/0.1/">
-    <owl:Ontology rdf:about="http://schema.geolink.org/dev/view"/>
+    <owl:Ontology rdf:about="http://schema.geolink.org/dev/view">
+        <owl:imports rdf:resource="http://schema.geolink.org/dev/voc/gebco/featuretype"/>
+    </owl:Ontology>
     
 
 
