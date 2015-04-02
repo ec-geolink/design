@@ -135,15 +135,8 @@
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ecglview;Participant"/>
                     <rdf:Description rdf:about="&ecglview;Person"/>
-                    <owl:Restriction>
-                        <owl:onProperty>
-                            <rdf:Description>
-                                <owl:inverseOf rdf:resource="&ecglview;hasParticipation"/>
-                            </rdf:Description>
-                        </owl:onProperty>
-                        <owl:someValuesFrom rdf:resource="&owl;Thing"/>
-                    </owl:Restriction>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -178,6 +171,7 @@
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="&ecglview;Dataset"/>
                     <rdf:Description rdf:about="&ecglview;DigitalObject"/>
+                    <rdf:Description rdf:about="&ecglview;PhysicalSample"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -194,6 +188,15 @@
     
 
 
+    <!-- http://schema.geolink.org/dev/view#hasDataset -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;hasDataset">
+        <rdfs:range rdf:resource="&ecglview;Dataset"/>
+        <rdfs:domain rdf:resource="&ecglview;PhysicalSample"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://schema.geolink.org/dev/view#hasEndPortCall -->
 
     <owl:ObjectProperty rdf:about="&ecglview;hasEndPortCall">
@@ -202,16 +205,25 @@
         <rdfs:domain rdf:resource="&ecglview;Cruise"/>
         <rdfs:range>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ecglview;hasTimeStamp"/>
-                <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
-            </owl:Restriction>
-        </rdfs:range>
-        <rdfs:range>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="&ecglview;atPort"/>
                 <owl:someValuesFrom rdf:resource="&ecglview;Place"/>
             </owl:Restriction>
         </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ecglview;hasTimeStamp"/>
+                <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#hasFeatureType -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;hasFeatureType">
+        <rdfs:domain rdf:resource="&ecglview;Feature"/>
+        <rdfs:range rdf:resource="&ecglview;FeatureType"/>
     </owl:ObjectProperty>
     
 
@@ -274,14 +286,14 @@
         <rdfs:domain rdf:resource="&ecglview;Cruise"/>
         <rdfs:range>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ecglview;atPort"/>
-                <owl:someValuesFrom rdf:resource="&ecglview;Place"/>
+                <owl:onProperty rdf:resource="&ecglview;hasTimeStamp"/>
+                <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
             </owl:Restriction>
         </rdfs:range>
         <rdfs:range>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ecglview;hasTimeStamp"/>
-                <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
+                <owl:onProperty rdf:resource="&ecglview;atPort"/>
+                <owl:someValuesFrom rdf:resource="&ecglview;Place"/>
             </owl:Restriction>
         </rdfs:range>
     </owl:ObjectProperty>
@@ -297,30 +309,33 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/view#hasParticipation -->
+    <!-- http://schema.geolink.org/dev/view#hasOriginFeature -->
 
-    <owl:ObjectProperty rdf:about="&ecglview;hasParticipation">
-        <rdfs:comment>The range of this property consists of (possibly blank) nodes that act as the domain of the &apos;hasRoleType&apos;, &apos;isPerformedBy&apos;, and &apos;hasAffiliation&apos; property. Graph patterns for data using this property can be of the form:
--   ?X :hasParticipation [ :hasRoleType ?RT ; :isPerformedBy ?P; :hasAffiliation ?O ]</rdfs:comment>
-        <rdfs:domain rdf:resource="&ecglview;Cruise"/>
-        <rdfs:range>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ecglview;hasAffiliation"/>
-                <owl:someValuesFrom rdf:resource="&ecglview;Organization"/>
-            </owl:Restriction>
-        </rdfs:range>
-        <rdfs:range>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ecglview;hasRoleType"/>
-                <owl:someValuesFrom rdf:resource="&ecglview;RoleType"/>
-            </owl:Restriction>
-        </rdfs:range>
-        <rdfs:range>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ecglview;isPerformedBy"/>
-                <owl:someValuesFrom rdf:resource="&ecglview;Person"/>
-            </owl:Restriction>
-        </rdfs:range>
+    <owl:ObjectProperty rdf:about="&ecglview;hasOriginFeature">
+        <rdfs:range rdf:resource="&ecglview;Feature"/>
+        <rdfs:domain rdf:resource="&ecglview;PhysicalSample"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#hasParticipant -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;hasParticipant">
+        <rdfs:comment>The range of this property includes instances of Participant that act as the domain of the &apos;hasRoleType&apos;, &apos;isPerformedBy&apos;, and &apos;hasAffiliation&apos; property. Graph patterns for data using this property can be of the form:
+?X :hasParticipation ?Y.  ?Y a :Participant; :hasRoleType ?RT ; :isPerformedBy ?P; :hasAffiliation ?O.</rdfs:comment>
+        <rdfs:range rdf:resource="&ecglview;Participant"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ecglview;Award"/>
+                    <rdf:Description rdf:about="&ecglview;Cruise"/>
+                    <rdf:Description rdf:about="&ecglview;Dataset"/>
+                    <rdf:Description rdf:about="&ecglview;PhysicalSample"/>
+                    <rdf:Description rdf:about="&ecglview;Program"/>
+                    <rdf:Description rdf:about="&ecglview;Publication"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
     </owl:ObjectProperty>
     
 
@@ -364,12 +379,13 @@
     <!-- http://schema.geolink.org/dev/view#hasRepository -->
 
     <owl:ObjectProperty rdf:about="&ecglview;hasRepository">
-        <rdfs:range rdf:resource="&ecglview;Organization"/>
+        <rdfs:range rdf:resource="&ecglview;Repository"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="&ecglview;Dataset"/>
                     <rdf:Description rdf:about="&ecglview;DigitalObject"/>
+                    <rdf:Description rdf:about="&ecglview;PhysicalSample"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -382,17 +398,8 @@
     <owl:ObjectProperty rdf:about="&ecglview;hasRoleType">
         <rdfs:comment>The domain of this property consists of (possibly blank) nodes that act as the range of &apos;hasParticipation&apos; property. Graph patterns for data using this property can either be of the form:
 -   ?X :hasParticipation [ :hasRoleType ?RT ; :isPerformedBy ?P; :hasAffiliation ?O ]</rdfs:comment>
+        <rdfs:domain rdf:resource="&ecglview;Participant"/>
         <rdfs:range rdf:resource="&ecglview;RoleType"/>
-        <rdfs:domain>
-            <owl:Restriction>
-                <owl:onProperty>
-                    <rdf:Description>
-                        <owl:inverseOf rdf:resource="&ecglview;hasParticipation"/>
-                    </rdf:Description>
-                </owl:onProperty>
-                <owl:someValuesFrom rdf:resource="&owl;Thing"/>
-            </owl:Restriction>
-        </rdfs:domain>
     </owl:ObjectProperty>
     
 
@@ -423,14 +430,14 @@
         <rdfs:domain rdf:resource="&ecglview;Cruise"/>
         <rdfs:range>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ecglview;atPort"/>
-                <owl:someValuesFrom rdf:resource="&ecglview;Place"/>
+                <owl:onProperty rdf:resource="&ecglview;hasTimeStamp"/>
+                <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
             </owl:Restriction>
         </rdfs:range>
         <rdfs:range>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ecglview;hasTimeStamp"/>
-                <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
+                <owl:onProperty rdf:resource="&ecglview;atPort"/>
+                <owl:someValuesFrom rdf:resource="&ecglview;Place"/>
             </owl:Restriction>
         </rdfs:range>
     </owl:ObjectProperty>
@@ -469,54 +476,8 @@
     <owl:ObjectProperty rdf:about="&ecglview;isPerformedBy">
         <rdfs:comment>The domain of this property consists of (possibly blank) nodes that act as the range of &apos;hasParticipation&apos; property. Graph patterns for data using this property can either be of the form:
 -   ?X :hasParticipation [ :hasRoleType ?RT ; :isPerformedBy ?P; :hasAffiliation ?O ]</rdfs:comment>
+        <rdfs:domain rdf:resource="&ecglview;Participant"/>
         <rdfs:range rdf:resource="&ecglview;Person"/>
-        <rdfs:domain>
-            <owl:Restriction>
-                <owl:onProperty>
-                    <rdf:Description>
-                        <owl:inverseOf rdf:resource="&ecglview;hasParticipation"/>
-                    </rdf:Description>
-                </owl:onProperty>
-                <owl:someValuesFrom rdf:resource="&owl;Thing"/>
-            </owl:Restriction>
-        </rdfs:domain>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://schema.geolink.org/dev/view#matches -->
-
-    <owl:ObjectProperty rdf:about="&ecglview;matches">
-        <rdfs:comment>The range of this property consists of (possibly blank) nodes that act as the domain of the &apos;hasScheme&apos; property. Graph patterns for data using this property can either be of the form:
--   ?X :identifier ?ID
--   ?X :matches [ :identifier ?ID ; :hasScheme ?S ]</rdfs:comment>
-        <rdfs:range>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ecglview;identifier"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:range>
-        <rdfs:range>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ecglview;hasScheme"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:range>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&ecglview;Award"/>
-                    <rdf:Description rdf:about="&ecglview;Cruise"/>
-                    <rdf:Description rdf:about="&ecglview;Dataset"/>
-                    <rdf:Description rdf:about="&ecglview;DigitalObject"/>
-                    <rdf:Description rdf:about="&ecglview;Instrument"/>
-                    <rdf:Description rdf:about="&ecglview;Organization"/>
-                    <rdf:Description rdf:about="&ecglview;Person"/>
-                    <rdf:Description rdf:about="&ecglview;Place"/>
-                    <rdf:Description rdf:about="&ecglview;Program"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
     </owl:ObjectProperty>
     
 
@@ -532,34 +493,9 @@
     
 
 
-    <!-- http://purl.org/dc/terms/abstract -->
-
-    <owl:DatatypeProperty rdf:about="&dcterms;abstract"/>
-    
-
-
-    <!-- http://purl.org/dc/terms/description -->
-
-    <owl:DatatypeProperty rdf:about="&dcterms;description"/>
-    
-
-
-    <!-- http://purl.org/dc/terms/identifier -->
-
-    <owl:DatatypeProperty rdf:about="&dcterms;identifier"/>
-    
-
-
-    <!-- http://purl.org/dc/terms/title -->
-
-    <owl:DatatypeProperty rdf:about="&dcterms;title"/>
-    
-
-
     <!-- http://schema.geolink.org/dev/view#abstract -->
 
     <owl:DatatypeProperty rdf:about="&ecglview;abstract">
-        <rdfs:subPropertyOf rdf:resource="&dcterms;abstract"/>
         <rdfs:range rdf:resource="&xsd;string"/>
         <rdfs:domain>
             <owl:Class>
@@ -567,6 +503,8 @@
                     <rdf:Description rdf:about="&ecglview;Award"/>
                     <rdf:Description rdf:about="&ecglview;Cruise"/>
                     <rdf:Description rdf:about="&ecglview;Dataset"/>
+                    <rdf:Description rdf:about="&ecglview;Program"/>
+                    <rdf:Description rdf:about="&ecglview;Publication"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -574,10 +512,18 @@
     
 
 
+    <!-- http://schema.geolink.org/dev/view#acronym -->
+
+    <owl:DatatypeProperty rdf:about="&ecglview;acronym">
+        <rdfs:domain rdf:resource="&ecglview;Program"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://schema.geolink.org/dev/view#description -->
 
     <owl:DatatypeProperty rdf:about="&ecglview;description">
-        <rdfs:subPropertyOf rdf:resource="&dcterms;description"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:unionOf rdf:parseType="Collection">
@@ -621,11 +567,68 @@
     
 
 
+    <!-- http://schema.geolink.org/dev/view#hasElevation -->
+
+    <owl:DatatypeProperty rdf:about="&ecglview;hasElevation">
+        <rdfs:domain rdf:resource="&ecglview;PhysicalSample"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#hasEndDate -->
+
+    <owl:DatatypeProperty rdf:about="&ecglview;hasEndDate">
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ecglview;Award"/>
+                    <rdf:Description rdf:about="&ecglview;Program"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#hasGeologicAge -->
+
+    <owl:DatatypeProperty rdf:about="&ecglview;hasGeologicAge">
+        <rdfs:domain rdf:resource="&ecglview;PhysicalSample"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&xsd;anyURI"/>
+                    <rdf:Description rdf:about="&xsd;string"/>
+                </owl:unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://schema.geolink.org/dev/view#hasGeometry -->
 
     <owl:DatatypeProperty rdf:about="&ecglview;hasGeometry">
         <rdfs:domain rdf:resource="&ecglview;Place"/>
         <rdfs:range rdf:resource="&geosparql;wktLiteral"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#hasMaterialType -->
+
+    <owl:DatatypeProperty rdf:about="&ecglview;hasMaterialType">
+        <rdfs:domain rdf:resource="&ecglview;PhysicalSample"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&xsd;anyURI"/>
+                    <rdf:Description rdf:about="&xsd;string"/>
+                </owl:unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
     </owl:DatatypeProperty>
     
 
@@ -639,23 +642,82 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/view#hasScheme -->
+    <!-- http://schema.geolink.org/dev/view#hasPosition -->
 
-    <owl:DatatypeProperty rdf:about="&ecglview;hasScheme">
-        <rdfs:comment>The domain of this property consists of (possibly blank) nodes that act as the range of the &apos;matches&apos; property. Graph patterns for data using this property can either be of the form:
--   ?X :identifier ?ID
--   ?X :matches [ :identifier ?ID ; :hasScheme ?S ]</rdfs:comment>
+    <owl:DatatypeProperty rdf:about="&ecglview;hasPosition">
+        <rdfs:range rdf:resource="&geosparql;wktLiteral"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ecglview;Feature"/>
+                    <rdf:Description rdf:about="&ecglview;PhysicalSample"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#hasProject -->
+
+    <owl:DatatypeProperty rdf:about="&ecglview;hasProject">
         <rdfs:range rdf:resource="&xsd;string"/>
         <rdfs:domain>
-            <owl:Restriction>
-                <owl:onProperty>
-                    <rdf:Description>
-                        <owl:inverseOf rdf:resource="&ecglview;matches"/>
-                    </rdf:Description>
-                </owl:onProperty>
-                <owl:someValuesFrom rdf:resource="&owl;Thing"/>
-            </owl:Restriction>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ecglview;Cruise"/>
+                    <rdf:Description rdf:about="&ecglview;Dataset"/>
+                </owl:unionOf>
+            </owl:Class>
         </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#hasSamplingType -->
+
+    <owl:DatatypeProperty rdf:about="&ecglview;hasSamplingType">
+        <rdfs:domain rdf:resource="&ecglview;PhysicalSample"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&xsd;anyURI"/>
+                    <rdf:Description rdf:about="&xsd;string"/>
+                </owl:unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#hasStartDate -->
+
+    <owl:DatatypeProperty rdf:about="&ecglview;hasStartDate">
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ecglview;Award"/>
+                    <rdf:Description rdf:about="&ecglview;Program"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#hasTectonicSetting -->
+
+    <owl:DatatypeProperty rdf:about="&ecglview;hasTectonicSetting">
+        <rdfs:domain rdf:resource="&ecglview;PhysicalSample"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&xsd;anyURI"/>
+                    <rdf:Description rdf:about="&xsd;string"/>
+                </owl:unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
     </owl:DatatypeProperty>
     
 
@@ -716,7 +778,6 @@
         <rdfs:comment>The domain of this property also includes (possibly blank) nodes that act as the range of the &apos;matches&apos; property. Graph patterns for data using this property can either be of the form:
 -   ?X :identifier ?ID
 -   ?X :matches [ :identifier ?ID ; :hasScheme ?S ]</rdfs:comment>
-        <rdfs:subPropertyOf rdf:resource="&dcterms;identifier"/>
         <rdfs:range rdf:resource="&xsd;string"/>
         <rdfs:domain>
             <owl:Class>
@@ -730,17 +791,89 @@
                     <rdf:Description rdf:about="&ecglview;Person"/>
                     <rdf:Description rdf:about="&ecglview;Place"/>
                     <rdf:Description rdf:about="&ecglview;Program"/>
-                    <owl:Restriction>
-                        <owl:onProperty>
-                            <rdf:Description>
-                                <owl:inverseOf rdf:resource="&ecglview;matches"/>
-                            </rdf:Description>
-                        </owl:onProperty>
-                        <owl:someValuesFrom rdf:resource="&owl;Thing"/>
-                    </owl:Restriction>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#matches -->
+
+    <owl:DatatypeProperty rdf:about="&ecglview;matches">
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ecglview;Award"/>
+                    <rdf:Description rdf:about="&ecglview;Cruise"/>
+                    <rdf:Description rdf:about="&ecglview;Dataset"/>
+                    <rdf:Description rdf:about="&ecglview;DigitalObject"/>
+                    <rdf:Description rdf:about="&ecglview;Feature"/>
+                    <rdf:Description rdf:about="&ecglview;Instrument"/>
+                    <rdf:Description rdf:about="&ecglview;Organization"/>
+                    <rdf:Description rdf:about="&ecglview;Person"/>
+                    <rdf:Description rdf:about="&ecglview;PhysicalSample"/>
+                    <rdf:Description rdf:about="&ecglview;Place"/>
+                    <rdf:Description rdf:about="&ecglview;Program"/>
+                    <rdf:Description rdf:about="&ecglview;Publication"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#nameFamily -->
+
+    <owl:DatatypeProperty rdf:about="&ecglview;nameFamily">
+        <rdfs:domain rdf:resource="&ecglview;Person"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#nameFull -->
+
+    <owl:DatatypeProperty rdf:about="&ecglview;nameFull">
+        <rdfs:domain rdf:resource="&ecglview;Person"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#nameGiven -->
+
+    <owl:DatatypeProperty rdf:about="&ecglview;nameGiven">
+        <rdfs:domain rdf:resource="&ecglview;Person"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#nameMiddle -->
+
+    <owl:DatatypeProperty rdf:about="&ecglview;nameMiddle">
+        <rdfs:domain rdf:resource="&ecglview;Person"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#namePrefix -->
+
+    <owl:DatatypeProperty rdf:about="&ecglview;namePrefix">
+        <rdfs:domain rdf:resource="&ecglview;Person"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#nameSuffix -->
+
+    <owl:DatatypeProperty rdf:about="&ecglview;nameSuffix">
+        <rdfs:domain rdf:resource="&ecglview;Person"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
 
@@ -756,6 +889,7 @@
                     <rdf:Description rdf:about="&ecglview;Cruise"/>
                     <rdf:Description rdf:about="&ecglview;Dataset"/>
                     <rdf:Description rdf:about="&ecglview;DigitalObject"/>
+                    <rdf:Description rdf:about="&ecglview;Feature"/>
                     <rdf:Description rdf:about="&ecglview;Instrument"/>
                     <rdf:Description rdf:about="&ecglview;Organization"/>
                     <rdf:Description rdf:about="&ecglview;Person"/>
@@ -780,7 +914,6 @@
     <!-- http://schema.geolink.org/dev/view#title -->
 
     <owl:DatatypeProperty rdf:about="&ecglview;title">
-        <rdfs:subPropertyOf rdf:resource="&dcterms;title"/>
         <rdfs:range rdf:resource="&xsd;string"/>
         <rdfs:domain>
             <owl:Class>
@@ -789,6 +922,7 @@
                     <rdf:Description rdf:about="&ecglview;Cruise"/>
                     <rdf:Description rdf:about="&ecglview;Dataset"/>
                     <rdf:Description rdf:about="&ecglview;DigitalObject"/>
+                    <rdf:Description rdf:about="&ecglview;Feature"/>
                     <rdf:Description rdf:about="&ecglview;Instrument"/>
                     <rdf:Description rdf:about="&ecglview;Organization"/>
                     <rdf:Description rdf:about="&ecglview;Person"/>
@@ -830,12 +964,6 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/view#CruiseParticipant -->
-
-    <owl:Class rdf:about="&ecglview;CruiseParticipant"/>
-    
-
-
     <!-- http://schema.geolink.org/dev/view#CruiseType -->
 
     <owl:Class rdf:about="&ecglview;CruiseType"/>
@@ -851,6 +979,18 @@
     <!-- http://schema.geolink.org/dev/view#DigitalObject -->
 
     <owl:Class rdf:about="&ecglview;DigitalObject"/>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#Feature -->
+
+    <owl:Class rdf:about="&ecglview;Feature"/>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#FeatureType -->
+
+    <owl:Class rdf:about="&ecglview;FeatureType"/>
     
 
 
@@ -881,6 +1021,12 @@
     <!-- http://schema.geolink.org/dev/view#Organization -->
 
     <owl:Class rdf:about="&ecglview;Organization"/>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#Participant -->
+
+    <owl:Class rdf:about="&ecglview;Participant"/>
     
 
 
@@ -917,6 +1063,18 @@
     <!-- http://schema.geolink.org/dev/view#Program -->
 
     <owl:Class rdf:about="&ecglview;Program"/>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#Publication -->
+
+    <owl:Class rdf:about="&ecglview;Publication"/>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#Repository -->
+
+    <owl:Class rdf:about="&ecglview;Repository"/>
     
 
 
