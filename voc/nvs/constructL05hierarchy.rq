@@ -7,6 +7,7 @@ PREFIX xml: <http://www.w3.org/XML/1998/namespace>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX glvoc_L05: <http://schema.geolink.org/dev/voc/nvs/L05#>
 PREFIX glview: <http://schema.geolink.org/dev/view#>
 PREFIX L05: <http://vocab.nerc.ac.uk/collection/L05/current/>
@@ -14,16 +15,20 @@ PREFIX L05: <http://vocab.nerc.ac.uk/collection/L05/current/>
 CONSTRUCT {
 	?VV rdfs:subClassOf ?WW .
 	<http://schema.geolink.org/dev/voc/nvs/L05hierarchy> a owl:Ontology ;
-		rdfs:comment "This ontology captures SeaVoX platform category hierarchy from the NERC vocabulary server"@en ;
+		dcterms:date ?ONTODATE ;
+		owl:versionInfo ?ONTOVERS ;
+		rdfs:comment "This ontology captures SeaDataNet device category hierarchy from the NERC vocabulary server"@en ;
 		rdfs:seeAlso <http://vocab.nerc.ac.uk/collection/L05/> .		  
   ?VV a owl:Class ;		rdfs:subClassOf ?WW .
 	?WW a owl:Class .
 		
 }
 WHERE {
-	SELECT DISTINCT ?VV ?WW 
+	SELECT DISTINCT ?VV ?WW ?ONTODATE ?ONTOVERS
 	WHERE {
-		{ <http://vocab.nerc.ac.uk/collection/L05/current/> skos:member ?V, ?W.	
+		{ <http://vocab.nerc.ac.uk/collection/L05/current/> dcterms:date ?ONTODATE ;
+																												owl:versionInfo ?ONTOVERS ;
+																												skos:member ?V, ?W.	
 			{ ?V skos:broader ?W . } UNION { ?W skos:narrower ?V . }
 			BIND (REPLACE(str(?V),"vocab.nerc.ac.uk/collection/L05/current/","schema.geolink.org/dev/voc/nvs/L05#","i") AS ?VN)						
 			BIND (IRI(SUBSTR(?VN,1,STRLEN(?VN)-1)) AS ?VV)

@@ -5,7 +5,7 @@
     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
     xmlns:glview="http://schema.geolink.org/dev/view#"
     xmlns:owl="http://www.w3.org/2002/07/owl#"
-    xmlns:dc="http://purl.org/dc/terms/"
+    xmlns:dcterms="http://purl.org/dc/terms/"
     xmlns:dce="http://purl.org/dc/elements/1.1/"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
     xmlns:void="http://rdfs.org/ns/void#"
@@ -14,6 +14,8 @@
   <owl:Ontology rdf:about="http://schema.geolink.org/dev/voc/nvs/L06hierarchy">
     <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/"/>
     <rdfs:comment xml:lang="en">This ontology captures SeaVoX platform category hierarchy from the NERC vocabulary server</rdfs:comment>
+    <owl:versionInfo>11</owl:versionInfo>
+    <dcterms:date>2015-03-27 02:00:03.0</dcterms:date>
   </owl:Ontology>
   <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#73">
     <rdfs:subClassOf>

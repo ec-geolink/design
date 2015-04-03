@@ -4,7 +4,7 @@
     xmlns:glvoc_L05="http://schema.geolink.org/dev/voc/nvs/L05#"
     xmlns:glview="http://schema.geolink.org/dev/view#"
     xmlns:owl="http://www.w3.org/2002/07/owl#"
-    xmlns:dc="http://purl.org/dc/terms/"
+    xmlns:dcterms="http://purl.org/dc/terms/"
     xmlns:dce="http://purl.org/dc/elements/1.1/"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
     xmlns:void="http://rdfs.org/ns/void#"
@@ -13,7 +13,9 @@
     xmlns:grg="http://www.isotc211.org/schemas/grg/">
   <owl:Ontology rdf:about="http://schema.geolink.org/dev/voc/nvs/L05hierarchy">
     <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L05/"/>
-    <rdfs:comment xml:lang="en">This ontology captures SeaVoX platform category hierarchy from the NERC vocabulary server</rdfs:comment>
+    <rdfs:comment xml:lang="en">This ontology captures SeaDataNet device category hierarchy from the NERC vocabulary server</rdfs:comment>
+    <owl:versionInfo>49</owl:versionInfo>
+    <dcterms:date>2015-02-12 02:00:03.0</dcterms:date>
   </owl:Ontology>
   <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L05#374">
     <rdfs:subClassOf>
