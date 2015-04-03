@@ -130,9 +130,7 @@
     <!-- http://schema.geolink.org/dev/view#hasAffiliation -->
 
     <owl:ObjectProperty rdf:about="&ecglview;hasAffiliation">
-        <rdfs:comment>The domain of this property includes persons or (possibly blank) nodes that act as the range of &apos;hasParticipation&apos; property. Graph patterns for data using this property can either be of the form:
-- ?X :hasAffiliation ?O .
-- ?X :hasParticipation [ :hasRoleType ?RT ; :isPerformedBy ?P; :hasAffiliation ?O ]</rdfs:comment>
+        <rdfs:comment>The domain of this property includes, besides persons, also instances of Participant class that act as the range of &apos;hasParticipant&apos; property.</rdfs:comment>
         <rdfs:range rdf:resource="&ecglview;Organization"/>
         <rdfs:domain>
             <owl:Class>
@@ -288,14 +286,14 @@
         <rdfs:domain rdf:resource="&ecglview;Cruise"/>
         <rdfs:range>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ecglview;atPort"/>
-                <owl:someValuesFrom rdf:resource="&ecglview;Place"/>
+                <owl:onProperty rdf:resource="&ecglview;hasTimeStamp"/>
+                <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
             </owl:Restriction>
         </rdfs:range>
         <rdfs:range>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ecglview;hasTimeStamp"/>
-                <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
+                <owl:onProperty rdf:resource="&ecglview;atPort"/>
+                <owl:someValuesFrom rdf:resource="&ecglview;Place"/>
             </owl:Restriction>
         </rdfs:range>
     </owl:ObjectProperty>
@@ -438,16 +436,25 @@
         <rdfs:domain rdf:resource="&ecglview;Cruise"/>
         <rdfs:range>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ecglview;atPort"/>
-                <owl:someValuesFrom rdf:resource="&ecglview;Place"/>
-            </owl:Restriction>
-        </rdfs:range>
-        <rdfs:range>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="&ecglview;hasTimeStamp"/>
                 <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
             </owl:Restriction>
         </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ecglview;atPort"/>
+                <owl:someValuesFrom rdf:resource="&ecglview;Place"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#hasSubOrganization -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;hasSubOrganization">
+        <rdfs:range rdf:resource="&ecglview;Organization"/>
+        <rdfs:domain rdf:resource="&ecglview;Organization"/>
     </owl:ObjectProperty>
     
 
@@ -936,6 +943,7 @@
                     <rdf:Description rdf:about="&ecglview;Person"/>
                     <rdf:Description rdf:about="&ecglview;Place"/>
                     <rdf:Description rdf:about="&ecglview;Program"/>
+                    <rdf:Description rdf:about="&ecglview;Publication"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
