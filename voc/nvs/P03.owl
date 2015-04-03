@@ -1,407 +1,919 @@
-<?xml version="1.0"?>
-
-<!DOCTYPE rdf:RDF [
-    <!ENTITY ecglvoc_P03 "http://schema.geolink.org/dev/voc/nvs/P03#" >
-    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
-    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
-    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY geosparql "http://www.opengis.net/ont/geosparql#" >
-]>
-
-<rdf:RDF xmlns="http://schema.geolink.org/dev/voc/nvs/P03#"
-     xml:base="http://schema.geolink.org/dev/voc/nvs/P03"
-     xmlns:ecglvoc_P03="http://schema.geolink.org/dev/voc/nvs/P03#"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:geosparql="http://www.opengis.net/ont/geosparql#">
-
-    <owl:Ontology rdf:about="http://schema.geolink.org/dev/voc/nvs/P03"/>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#D005 -->
-    <owl:Class rdf:about="&ecglvoc_P03;D005">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/D005/"/>
-       <rdfs:label>Acoustics</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#Z005 -->
-    <owl:Class rdf:about="&ecglvoc_P03;Z005">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/Z005/"/>
-       <rdfs:label>Administration and dimensions</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#C003 -->
-    <owl:Class rdf:about="&ecglvoc_P03;C003">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/C003/"/>
-       <rdfs:label>Amino acids</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#H001 -->
-    <owl:Class rdf:about="&ecglvoc_P03;H001">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/H001/"/>
-       <rdfs:label>Anthropogenic contamination</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#M005 -->
-    <owl:Class rdf:about="&ecglvoc_P03;M005">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/M005/"/>
-       <rdfs:label>Atmospheric chemistry</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#B005 -->
-    <owl:Class rdf:about="&ecglvoc_P03;B005">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/B005/"/>
-       <rdfs:label>Bacteria and viruses</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#B070 -->
-    <owl:Class rdf:about="&ecglvoc_P03;B070">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/B070/"/>
-       <rdfs:label>Biota abundance, biomass and diversity</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#B007 -->
-    <owl:Class rdf:about="&ecglvoc_P03;B007">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/B007/"/>
-       <rdfs:label>Biota composition</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#B015 -->
-    <owl:Class rdf:about="&ecglvoc_P03;B015">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/B015/"/>
-       <rdfs:label>Birds, mammals and reptiles</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#C005 -->
-    <owl:Class rdf:about="&ecglvoc_P03;C005">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/C005/"/>
-       <rdfs:label>Carbon, nitrogen and phosphorus</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#C010 -->
-    <owl:Class rdf:about="&ecglvoc_P03;C010">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/C010/"/>
-       <rdfs:label>Carbonate system</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#H002 -->
-    <owl:Class rdf:about="&ecglvoc_P03;H002">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/H002/"/>
-       <rdfs:label>Construction and structures</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#M015 -->
-    <owl:Class rdf:about="&ecglvoc_P03;M015">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/M015/"/>
-       <rdfs:label>Cryosphere</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#D030 -->
-    <owl:Class rdf:about="&ecglvoc_P03;D030">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/D030/"/>
-       <rdfs:label>Currents</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#D010 -->
-    <owl:Class rdf:about="&ecglvoc_P03;D010">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/D010/"/>
-       <rdfs:label>Currents, sea level and waves</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#B060 -->
-    <owl:Class rdf:about="&ecglvoc_P03;B060">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/B060/"/>
-       <rdfs:label>Disease, damage and mortality</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#C015 -->
-    <owl:Class rdf:about="&ecglvoc_P03;C015">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/C015/"/>
-       <rdfs:label>Dissolved gases</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#C017 -->
-    <owl:Class rdf:about="&ecglvoc_P03;C017">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/C017/"/>
-       <rdfs:label>Fatty acids</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#GPYS -->
-    <owl:Class rdf:about="&ecglvoc_P03;GPYS">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/GPYS/"/>
-       <rdfs:label>Field geophysics</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#B020 -->
-    <owl:Class rdf:about="&ecglvoc_P03;B020">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/B020/"/>
-       <rdfs:label>Fish</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#H004 -->
-    <owl:Class rdf:about="&ecglvoc_P03;H004">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/H004/"/>
-       <rdfs:label>Fisheries</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#O005 -->
-    <owl:Class rdf:about="&ecglvoc_P03;O005">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/O005/"/>
-       <rdfs:label>Fluxes</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#G030 -->
-    <owl:Class rdf:about="&ecglvoc_P03;G030">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/G030/"/>
-       <rdfs:label>Geochronology and stratigraphy</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#GTHM -->
-    <owl:Class rdf:about="&ecglvoc_P03;GTHM">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/GTHM/"/>
-       <rdfs:label>Geothermal measurements</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#G005 -->
-    <owl:Class rdf:about="&ecglvoc_P03;G005">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/G005/"/>
-       <rdfs:label>Gravity, magnetics and bathymetry</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#B050 -->
-    <owl:Class rdf:about="&ecglvoc_P03;B050">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/B050/"/>
-       <rdfs:label>Habitat</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#C020 -->
-    <owl:Class rdf:about="&ecglvoc_P03;C020">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/C020/"/>
-       <rdfs:label>Halocarbons (including freons)</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#H005 -->
-    <owl:Class rdf:about="&ecglvoc_P03;H005">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/H005/"/>
-       <rdfs:label>Human activity</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#C025 -->
-    <owl:Class rdf:about="&ecglvoc_P03;C025">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/C025/"/>
-       <rdfs:label>Hydrocarbons</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#G025 -->
-    <owl:Class rdf:about="&ecglvoc_P03;G025">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/G025/"/>
-       <rdfs:label>Igneous and metamorphic rock geochemistry and geochronology</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#C030 -->
-    <owl:Class rdf:about="&ecglvoc_P03;C030">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/C030/"/>
-       <rdfs:label>Isotopes</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#B055 -->
-    <owl:Class rdf:about="&ecglvoc_P03;B055">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/B055/"/>
-       <rdfs:label>Macroalgae and seagrass</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#C035 -->
-    <owl:Class rdf:about="&ecglvoc_P03;C035">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/C035/"/>
-       <rdfs:label>Metal and metalloid concentrations</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#M010 -->
-    <owl:Class rdf:about="&ecglvoc_P03;M010">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/M010/"/>
-       <rdfs:label>Meteorology</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#B025 -->
-    <owl:Class rdf:about="&ecglvoc_P03;B025">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/B025/"/>
-       <rdfs:label>Microzooplankton</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#C040 -->
-    <owl:Class rdf:about="&ecglvoc_P03;C040">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/C040/"/>
-       <rdfs:label>Nutrients</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#D015 -->
-    <owl:Class rdf:about="&ecglvoc_P03;D015">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/D015/"/>
-       <rdfs:label>Optical properties</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#B027 -->
-    <owl:Class rdf:about="&ecglvoc_P03;B027">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/B027/"/>
-       <rdfs:label>Other biological measurements</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#C045 -->
-    <owl:Class rdf:about="&ecglvoc_P03;C045">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/C045/"/>
-       <rdfs:label>Other inorganic chemical measurements</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#C050 -->
-    <owl:Class rdf:about="&ecglvoc_P03;C050">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/C050/"/>
-       <rdfs:label>Other organic chemical measurements</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#D020 -->
-    <owl:Class rdf:about="&ecglvoc_P03;D020">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/D020/"/>
-       <rdfs:label>Other physical oceanographic measurements</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#C055 -->
-    <owl:Class rdf:about="&ecglvoc_P03;C055">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/C055/"/>
-       <rdfs:label>PCBs and organic micropollutants</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#H003 -->
-    <owl:Class rdf:about="&ecglvoc_P03;H003">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/H003/"/>
-       <rdfs:label>Palaeoclimate</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#B030 -->
-    <owl:Class rdf:about="&ecglvoc_P03;B030">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/B030/"/>
-       <rdfs:label>Phytoplankton and microphytobenthos</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#B035 -->
-    <owl:Class rdf:about="&ecglvoc_P03;B035">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/B035/"/>
-       <rdfs:label>Pigments</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#O010 -->
-    <owl:Class rdf:about="&ecglvoc_P03;O010">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/O010/"/>
-       <rdfs:label>Rate measurements (including production, excretion and grazing)</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#G055 -->
-    <owl:Class rdf:about="&ecglvoc_P03;G055">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/G055/"/>
-       <rdfs:label>Rock and sediment biota</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#G035 -->
-    <owl:Class rdf:about="&ecglvoc_P03;G035">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/G035/"/>
-       <rdfs:label>Rock and sediment chemistry</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#G045 -->
-    <owl:Class rdf:about="&ecglvoc_P03;G045">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/G045/"/>
-       <rdfs:label>Rock and sediment lithology and mineralogy</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#G040 -->
-    <owl:Class rdf:about="&ecglvoc_P03;G040">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/G040/"/>
-       <rdfs:label>Rock and sediment physical properties</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#GSED -->
-    <owl:Class rdf:about="&ecglvoc_P03;GSED">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/GSED/"/>
-       <rdfs:label>Rock and sediment sedimentology</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#D032 -->
-    <owl:Class rdf:about="&ecglvoc_P03;D032">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/D032/"/>
-       <rdfs:label>Sea level</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#G050 -->
-    <owl:Class rdf:about="&ecglvoc_P03;G050">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/G050/"/>
-       <rdfs:label>Sediment pore water chemistry</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#G010 -->
-    <owl:Class rdf:about="&ecglvoc_P03;G010">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/G010/"/>
-       <rdfs:label>Sediment properties</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#G020 -->
-    <owl:Class rdf:about="&ecglvoc_P03;G020">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/G020/"/>
-       <rdfs:label>Sedimentary rock geochemistry and geochronology</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#G060 -->
-    <owl:Class rdf:about="&ecglvoc_P03;G060">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/G060/"/>
-       <rdfs:label>Sedimentation and erosion processes</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#G012 -->
-    <owl:Class rdf:about="&ecglvoc_P03;G012">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/G012/"/>
-       <rdfs:label>Sonar and seismics</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#G015 -->
-    <owl:Class rdf:about="&ecglvoc_P03;G015">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/G015/"/>
-       <rdfs:label>Suspended particulate material</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#T001 -->
-    <owl:Class rdf:about="&ecglvoc_P03;T001">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/T001/"/>
-       <rdfs:label>Terrestrial</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#UWPH -->
-    <owl:Class rdf:about="&ecglvoc_P03;UWPH">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/UWPH/"/>
-       <rdfs:label>Underwater photography</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#D025 -->
-    <owl:Class rdf:about="&ecglvoc_P03;D025">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/D025/"/>
-       <rdfs:label>Water column temperature and salinity</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#D034 -->
-    <owl:Class rdf:about="&ecglvoc_P03;D034">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/D034/"/>
-       <rdfs:label>Waves</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#B040 -->
-    <owl:Class rdf:about="&ecglvoc_P03;B040">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/B040/"/>
-       <rdfs:label>Zoobenthos</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/nvs/P03#B045 -->
-    <owl:Class rdf:about="&ecglvoc_P03;B045">
-       <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/P03/current/B045/"/>
-       <rdfs:label>Zooplankton</rdfs:label>
-    </owl:Class>
-
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+    xmlns:glview="http://schema.geolink.org/dev/view#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:dcterms="http://purl.org/dc/terms/"
+    xmlns:dce="http://purl.org/dc/elements/1.1/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:glvoc_P03="http://schema.geolink.org/dev/voc/nvs/P03#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:grg="http://www.isotc211.org/schemas/grg/">
+  <owl:Ontology rdf:about="http://schema.geolink.org/dev/voc/nvs/P03">
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/"/>
+    <rdfs:comment xml:lang="en">This ontology captures measurement types from SeaDataNet Agreed Parameter Groups as hosted in the NERC vocabulary server</rdfs:comment>
+    <owl:versionInfo>22</owl:versionInfo>
+    <dcterms:date>2015-02-04 02:00:02.0</dcterms:date>
+    <rdfs:label>SeaDataNet Agreed Parameter Groups</rdfs:label>
+  </owl:Ontology>
+  <owl:Class rdf:about="http://schema.geolink.org/dev/view#MeasurementType"/>
+  <owl:Class rdf:about="http://schema.geolink.org/dev/view#Measurement"/>
+  <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C003">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#C003"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/C003/"/>
+    <rdfs:comment xml:lang="en">This group contains parameters pertaining to amino acid concentrations.  Amino acids are defined as carboxylic acids with an amino group at the alpha position.  The grouping covers concentrations of these compounds in the water column (mass of amino acid per unit mass/volume of water) or their content in sediment or suspended particulate matter.  The grouping does not include amino acid fluxes or rate variables, such as bacterial production by leucine uptake.</rdfs:comment>
+    <rdfs:label xml:lang="en">Amino acids</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#D010">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#D010"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/D010/"/>
+    <rdfs:comment xml:lang="en">This APG contains all parameters pertaining to the measurement of:   Eulerian currents  Lagrangian currents (except drifter position)  Vertical currents  River flow velocity  Wave height  Wave period  Wave direction  Wave energy spectra  Sea level relative to a terrestrial datum  Water column height at a fixed location</rdfs:comment>
+    <rdfs:label xml:lang="en">Currents, sea level and waves</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C017">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#C017"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/C017/"/>
+    <rdfs:comment xml:lang="en">This group incorporates the parameters relating to the fatty acid content of sediment or suspended particulate material. Contents are expressed either as 'concentrations' (SPM fatty acid per unit volume of water) or 'contents' (quantity of fatty acid per unit mass of sediment or SPM).  Fatty acids are considered as the naturally occurring continuous chain, saturated and unsaturated aliphatic acids. In their ester form these are the constituents of the fats, waxes and oils of plants and animals. Simpler carboxylic acids with an alkyl or alkenyl group, sometimes loosely termed 'fatty acids' are not included.</rdfs:comment>
+    <rdfs:label xml:lang="en">Fatty acids</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#D020">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#D020"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/D020/"/>
+    <rdfs:comment xml:lang="en">This is a 'safety net' category to cover physical oceanographic parameters that cannot be mapped to other Agreed Parameter Groups. It should be regarded as a transitional grouping: if a significant number of related parameters map to this group then the creation of an additional group should be discussed and agreed.  The following parameters within the BODC Parameter Dictionary currently (May 2003) fall into this category.   Parameters derived from temperature and salinity, such as density anomaly and Brunt-Vaisala frequency.  The volume to mass (litres to kilograms) conversion parameter.  Parameters measured by in-situ turbulence probes (e.g. FLY probe), such as temperature dissipation rate, turbulent kinetic energy dissipation and diffusivity.   The BODC parameters 'PRES' (sea pressure in decibars) and 'ADEP' (depth in metres) are also included in this group. This is because there is an ambiguity problem with these parameters assigned to both measurements of tidal height by water level recorders (obviously Currents, Sea Level and Waves APG) and to the 'z' spatial co-ordinate for CTD and radiosonde data (obviously Administration and Dimensions APG). This problem will be addressed in a planned future restructuring of the BODC database by setting up and applying two separate codes.  Pressure channels in current meter records pose additional problems as the data may either be used as a measure of tidal height or to monitor the depth of the instrument, looking primarily for knockdown. Current thinking is to assign the 'tidal height' pressure code in this case as the pressure record rarely provides an accurate estimate of the instrument's 'z' co-ordinate.</rdfs:comment>
+    <rdfs:label xml:lang="en">Other physical oceanographic measurements</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B007">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#B007"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/B007/"/>
+    <rdfs:comment xml:lang="en">This group contains all parameters relating to the composition of organisms or their constituent parts. It may include any analytical measurements on biological material, but is specifically designed for heavy metal and organic contaminant biota pollution monitoring data.</rdfs:comment>
+    <rdfs:label xml:lang="en">Biota composition</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G012">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#G012"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/G012/"/>
+    <rdfs:comment xml:lang="en">Parameters associated with determination of sub-floor structure based on the propogation of acoustic energy and acoustic imaging of the sea floor.</rdfs:comment>
+    <rdfs:label xml:lang="en">Sonar and seismics</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B070">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#B070"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/B070/"/>
+    <rdfs:comment xml:lang="en">All parameters of any dimensionality (per unit volume, area or simply counts) quantifying the numbers, mass or diversity (species variation) of biota in water bodies, sediment or the atmosphere.</rdfs:comment>
+    <rdfs:label xml:lang="en">Biota abundance, biomass and diversity</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B040">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#B040"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/B040/"/>
+    <rdfs:comment xml:lang="en">This group contains state variables for animals, other than fish, that live on the sea floor or in the sediment.  Most parameters pertain to the abundance, expressed as numbers or biomass per unit area of sea floor, of species, genera or less rigorous groupings of animals. However any other properties of these entities that are  not rates or fluxes  could be included.</rdfs:comment>
+    <rdfs:label xml:lang="en">Zoobenthos</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G045">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#G045"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/G045/"/>
+    <rdfs:comment xml:lang="en">Parameters pertaining to the petrological characterisation and component minerals of rocks (including speleotherms) and unlithified sediment.</rdfs:comment>
+    <rdfs:label xml:lang="en">Rock and sediment lithology and mineralogy</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B050">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#B050"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/B050/"/>
+    <rdfs:comment xml:lang="en">Grouping of parameters that characterise, spatially define, label or classify places where organisms are found.</rdfs:comment>
+    <rdfs:label xml:lang="en">Habitat</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C050">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#C050"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/C050/"/>
+    <rdfs:comment xml:lang="en">This is a 'safety net' category to cover organic chemical parameters that cannot be mapped to other Agreed Parameter Groups. It should be regarded as a transitional grouping: if a significant number of related parameters map to this group then the creation of an additional group should be discussed and agreed.  The following parameters within the BODC Parameter Dictionary currently (May 2003) fall into this category.   Alkenones, alkanols and alkenoate concentrations.  Organometallic compound and ligand, such as dimethyl arsenic and Fe-organic ligand, concentrations.  Organosulphur compound, such as dimethyl sulphoxide and DMSP, concentrations. Note that dimethyl sulphide has been categorised as a dissolved gas.  Biomarker compound, such as DNA, RNA and ATP, concentrations.  Carbohydrate concentrations.  Protein concentrations.  Amine concentrations.</rdfs:comment>
+    <rdfs:label xml:lang="en">Other organic chemical measurements</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#M010">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#M010"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/M010/"/>
+    <rdfs:comment xml:lang="en">Physical phenomena and properties of the atmosphere including air temperature, air pressure, humidity, precipitation, wind velocity and radiation.</rdfs:comment>
+    <rdfs:label xml:lang="en">Meteorology</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B060">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#B060"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/B060/"/>
+    <rdfs:comment xml:lang="en">Parameters pertaining to all types of diseases, infections, poisonings and physical damage in any type of biota.</rdfs:comment>
+    <rdfs:label xml:lang="en">Disease, damage and mortality</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#O005">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#O005"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/O005/"/>
+    <rdfs:comment xml:lang="en">This group contains parameter codes that relate to the rate of transfer of material across real or virtual interfaces. The current (May 2003) BODC Parameter Dictionary includes two types of flux:   Vertical fluxes of mass, chemical species and biological entities through the water column (sediment trap fluxes).  Fluxes of chemical species between the water column and the underlying sediment, including sediment oxygen demand.   However, other categories, such as the estuary discharge fluxes, are envisaged in the future.  Note that this APG has been given 'priority' status to enable modellers to easily ascertain the extent of rate variable availability. Flux parameters are included in this APG in preference to any other APG that might seem appropriate.</rdfs:comment>
+    <rdfs:label xml:lang="en">Fluxes</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B030">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#B030"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/B030/"/>
+    <rdfs:comment xml:lang="en">Parameters related to autotrophic organisms smaller than 200 microns that are free-floating in water bodies, live in sediment or on the seabed.</rdfs:comment>
+    <rdfs:label xml:lang="en">Phytoplankton and microphytobenthos</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C035">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#C035"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/C035/"/>
+    <rdfs:comment xml:lang="en">Parameters pertaining to metal and trace metalloid (i.e. excluding Si) concentrations in any material.</rdfs:comment>
+    <rdfs:label xml:lang="en">Metal and metalloid concentrations</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B025">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#B025"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/B025/"/>
+    <rdfs:comment xml:lang="en">This group incorporates all state variables pertaining to microzooplankton, defined as heterotrophic organisms smaller than 200 microns in length. The term covers organisms sometimes referred to as picozooplankton or nanozooplankton.  Most parameters express the abundance, either as cell counts or biomass, of various types of microzooplankton, but may include other properties such as cell volume. Rates (including grazing parameters) and fluxes are not included here (see Rates and Fluxes APGs).</rdfs:comment>
+    <rdfs:label xml:lang="en">Microzooplankton</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G025">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#G025"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/G025/"/>
+    <rdfs:comment xml:lang="en">This APG includes all geochemical and parameters for igneous rocks, metamorphic rocks and high-temperature mineral deposits. Age parameters include parameters relating to both geochemical and stratigraphic techniques.</rdfs:comment>
+    <rdfs:label xml:lang="en">Igneous and metamorphic rock geochemistry and geochronology</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G005">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#G005"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/G005/"/>
+    <rdfs:comment xml:lang="en">Parameters related to the strength and characteristics of the Earth's magnetic and gravity fields and the spatial variation in water body depth.</rdfs:comment>
+    <rdfs:label xml:lang="en">Gravity, magnetics and bathymetry</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B035">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#B035"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/B035/"/>
+    <rdfs:comment xml:lang="en">This group incorporates plant pigment concentration parameters and uncalibrated readings from instruments that make in-situ pigment measurements, such as fluorometer voltages.  The grouping includes measurements on pigments in the particulate phase of the water column (expressed as pigment mass per unit volume/mass of water), pigments in sediment (expressed as pigment mass per unit mass or volume of sediment) and zooplankton gut pigment contents (expressed as pigment mass per individual).</rdfs:comment>
+    <rdfs:label xml:lang="en">Pigments</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#D030">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#D030"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/D030/"/>
+    <rdfs:comment xml:lang="en">This APG contains all parameters pertaining to the measurement of:   Eulerian currents  Lagrangian currents (except drifter position)  Vertical currents  River flow velocity</rdfs:comment>
+    <rdfs:label xml:lang="en">Currents</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C005">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#C005"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/C005/"/>
+    <rdfs:comment xml:lang="en">This group contains the state variable parameters pertaining to carbon, nitrogen and phosphorus that do not obviously belong in other groupings. Consequently, this grouping should be considered as an 'others' category and its contents should be periodically reviewed with a view to the creation of additional groupings should this be deemed necessary.  In the case of carbon, parameters are split between this grouping and the Carbonate System APG. The latter are clearly defined and this group contains anything that is left. Current (May 2003) carbon parameters in this grouping from the BODC Parameter Dictionary include:   Measurements of the calcite concentration in the water column expressed in terms of carbon concentration per unit volume/mass of water.  Particulate organic (or total) carbon concentration.  Dissolved organic carbon concentration.  Total, organic and/or inorganic carbon content (mass carbon per unit mass of substrate) of sediment or suspended particulate material.   For nitrogen, the parameters are split between this APG and Nutrients. Again, the latter is more clearly defined, leaving the rest for this grouping. Current (May 2003) nitrogen parameters in this grouping from the BODC Parameter Dictionary include:   Particulate nitrogen ("PON") concentration.  Dissolved total nitrogen.  Nitrogen content of sediment.   For phosphorus, the parameters are again split between this APG and Nutrients, which is the more clearly defined. Current (May 2003) phosphorus parameters in this grouping from the BODC Parameter Dictionary include:   Particulate total and organic phosphorus concentration.  Dissolved total phosphorus.  Phosphorus content of sediment or SPM.</rdfs:comment>
+    <rdfs:label xml:lang="en">Carbon, nitrogen and phosphorus</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#H002">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#H002"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/H002/"/>
+    <rdfs:comment xml:lang="en">Parameters describing the nature and impact of coastal and offshore man-made objects and the process of creating them.</rdfs:comment>
+    <rdfs:label xml:lang="en">Construction and structures</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#UWPH">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#UWPH"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/UWPH/"/>
+    <rdfs:comment xml:lang="en">Still or video digital images taken below the surface of the water column</rdfs:comment>
+    <rdfs:label xml:lang="en">Underwater photography</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C015">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#C015"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/C015/"/>
+    <rdfs:comment xml:lang="en">This group incorporates dissolved gas concentrations and/or saturations, excluding:   Gases that are incorporated into the water column through chemical reaction and quantified as the products of the reaction, such as ammonia and carbon dioxide.  Gases that belong to other chemical-type APGs. For example, methane parameters are placed in the Hydrocarbons APG and not Dissolved Gases.   Gases are defined as substances with a boiling point below 50 &amp;deg;C at atmospheric pressure (terrestrial conditions extreme limit).  The group also includes:   Parameters collected by instruments making in-situ measurements of dissolved gas concentration, such as oxygen membrane current and temperature.  Parameters required for data standardisation, such as oxygen fixation temperature.  Parameters required for the interpretation of gas concentration parameters, such as the temperature and pressure at which the concentration has been calculated if these differ from the in-situ conditions for the sample.   This APG should represents dissolved gases that do not fit in any other category and consequently its contents should be periodically reviewed to see if further classes need to be specified.</rdfs:comment>
+    <rdfs:label xml:lang="en">Dissolved gases</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C020">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#C020"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/C020/"/>
+    <rdfs:comment xml:lang="en">Parameters concerning all compounds of carbon covalently bonded to and one or members of the halogen group (fluorine, chlorine, bromine or iodine) but with no other functional groups.  It includes naturally generated compounds (usually short-chain haloalkanes and haloalkenes), man-made freons and contaminants such as organochlorine pesticides.</rdfs:comment>
+    <rdfs:label xml:lang="en">Halocarbons (including freons)</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C030">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#C030"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/C030/"/>
+    <rdfs:comment xml:lang="en">This group contains parameter codes relating to the abundance of both radioactive and stable isotopes. All types of substrate are included - water, SPM, sediment and biological material.</rdfs:comment>
+    <rdfs:label xml:lang="en">Isotopes</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#GTHM">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#GTHM"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/GTHM/"/>
+    <rdfs:comment xml:lang="en">Parameters pertaining to the distribution of the degree of hotness in geologic units (including bodies of unconsolidated sediment), heat transfer in the Earth and the thermal properties of rocks, minerals and sediments.</rdfs:comment>
+    <rdfs:label xml:lang="en">Geothermal measurements</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C055">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#C055"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/C055/"/>
+    <rdfs:comment xml:lang="en">This group is designed to bring together parameters pertaining to concentrations of extremely toxic organic chemicals in air, water, SPM, sediment or biological material. It has been set up as an alternative miscellaneous APG to 'Other Organic Chemical Measurements' to assist searches for environmentally significant substances.  The inclusion of a parameter in this grouping has to be subjective to some extent. The following types of substance have been included for the current (May 2003) version of the BODC Parameter Dictionary.   Polychlorobiphenols (PCBs)  Pesticides  Herbicides  Anti-fouling agents</rdfs:comment>
+    <rdfs:label xml:lang="en">PCBs and organic micropollutants</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C040">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#C040"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/C040/"/>
+    <rdfs:comment xml:lang="en">This group contains parameter codes describing the concentrations of the substances that provide the essential basic elements - nitrogen, phosphorus and silicon - to the phytoplankton. The species covered are:   Nitrogen - nitrate, nitrite, ammonium and urea.  Phosphorus - orthophosphate  Silicon - hydrosilicic acid, commonly termed 'silicate'.   The grouping also covers uncalibrated analytical or in-situ instrument outputs, such as monochromatic optical absorbances at the appropriate wavelengths for nutrient determination.</rdfs:comment>
+    <rdfs:label xml:lang="en">Nutrients</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G055">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#G055"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/G055/"/>
+    <rdfs:comment xml:lang="en">Parameters pertaining to flora, fauna and their fossil remains in rocks and unlithified sediment. Includes zoobenthos, phytobenthos and palaeontology.</rdfs:comment>
+    <rdfs:label xml:lang="en">Rock and sediment biota</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G060">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#G060"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/G060/"/>
+    <rdfs:comment xml:lang="en">Parameters pertaining to the removal and deposition of unlithified sediments.</rdfs:comment>
+    <rdfs:label xml:lang="en">Sedimentation and erosion processes</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C010">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#C010"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/C010/"/>
+    <rdfs:comment xml:lang="en">This group incorporates the state variables that describe the concentration of dissolved inorganic carbon and the status of the equilibrium between this and the atmospheric carbon dioxide concentration.  These are:   Carbon dioxide partial pressure/fugacity.  Total alkalinity.  pH  Dissolved inorganic carbon (TCO 2 )   The group also includes parameters that are essential for the interpretation of the data, such as the temperature at which a parameter was collected or to which it has been recalculated.</rdfs:comment>
+    <rdfs:label xml:lang="en">Carbonate system</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B055">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#B055"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/B055/"/>
+    <rdfs:comment xml:lang="en">Parameters pertaining to plants in the taxonomic groups Rhodophycota, Chromphycota and Chlorophycota (seaweeds/macroalgae) and Charophyta plus Anthophyta (seagrass)</rdfs:comment>
+    <rdfs:label xml:lang="en">Macroalgae and seagrass</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#H001">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#H001"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/H001/"/>
+    <rdfs:comment xml:lang="en">Parameters describing the abundance, nature and impact of material added to the environment by the activities of man.</rdfs:comment>
+    <rdfs:label xml:lang="en">Anthropogenic contamination</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#D015">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#D015"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/D015/"/>
+    <rdfs:comment xml:lang="en">This APG contains parameters pertaining to the optical properties of seawater. Assigning parameters to this group encounters two areas of difficulty.  Optical techniques, such as transmissometers and nephelometers, are used to quantify SPM concentration. The 'usual' parameter for transmissometer measurements is optical attenuance (or its natural log), which is clearly an optical property. Consequently, attenuance, percentage transmission and their precursor voltages have been included in this APG. However, the usual calibrated parameter from a nephelometer is turbidity, which is clearly more closely related to the suspended load of the water column. Consequently, nephelometer parameters, including raw voltages, have been included in the Suspended Particulate Matter APG.  Light intensity, such as downwelling irradiance, may be measured by sensors placed either above or below the surface of the water. It might be argued that the latter belonged in the Meteorology APG. However, some irradiance records include measurements both above and below the sea surface to quantify light loss across the air-sea interface. Consequently, both surface and subsurface irradiance have been placed in the Optical Properties APG.</rdfs:comment>
+    <rdfs:label xml:lang="en">Optical properties</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#Z005">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#Z005"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/Z005/"/>
+    <rdfs:comment xml:lang="en">This APG is primarily intended for parameters that specify the dimensions:   x, y (e.g. latitude, longitude)  z (e.g. height above sea level/sea floor, depth/pressure)  t (e.g. date/time, elapsed time)   However, there are other parameters, such as general purpose quality control flags, sequence numbers, platform orientation (heading)/velocity, sampling duration/quantity (e.g. volume filtered) that have been included in the BODC dictionary mapping. It is inevitable that a grouping such as this will become the final resting place for parameters that do not fit into any other existing APG. The mappings to this group therefore require periodical review.  Note the potential for problems with confusion between pressure/depth as a z co-ordinate, as a sea level parameter (variation with time), or as a seafloor topography (bathymetry) measurement. Each of these should be assigned a different parameter if sensible grouping is to be possible. BODC currently has problems in this area that have been temporarily resolved by mapping ambiguous pressure/depth parameters into the Other Physical Oceanographic Measurements APG until the problems can be resolved as part of a planned future database restructure.</rdfs:comment>
+    <rdfs:label xml:lang="en">Administration and dimensions</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G015">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#G015"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/G015/"/>
+    <rdfs:comment xml:lang="en">Parameters pertaining to material in suspension within water bodies.</rdfs:comment>
+    <rdfs:label xml:lang="en">Suspended particulate material</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#T001">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#T001"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/T001/"/>
+    <rdfs:comment xml:lang="en">This APG contains parameters related to the characterisation of the land surface. These are usually, but not exclusively, determined by remote sensing techniques. Data types falling within the scope of the group are:   Land surface temperature  Land vegetation  Vertical currents  Terrestrial water content  Terrestrial mapping and the geo-location of features such as coastlines</rdfs:comment>
+    <rdfs:label xml:lang="en">Terrestrial</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#O010">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#O010"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/O010/"/>
+    <rdfs:comment xml:lang="en">This group contains parameter codes that relate to the rate of change of quantity of any chemical species or biological entity. Rates mey be the result of biological (e.g. production), chemical (e.g. photochemical degradation) or biogeochemical (e.g. particulate phase metal uptake rate) processes. The current (May 2003) BODC Parameter Dictionary includes the following types of rate:   Primary production ( 14 C uptake rate)  Photosynthesis kinetics (P:I experiments)  New/regenerated ( 15 N) production  Calcification  Nitrification  Nutrient uptake rates  Bacterial production, including thymidine/leucine uptake  Metal uptake rates  Egg production rates  Bacterial and phytoplankton grazing rates  Food clearance rates  Chemical photoproduction and degradation rates  DOC production/uptake  DMS/DMSP/DMSO dynamics  Excretion and faecal pellet production rates  Oxygen/DIC production/respiration  Hydrolysis rates  Growth efficiency/rates  Sulphate reduction rates   Some experimental condition parameters, such as incubation temperatures and durations, are also included.  Note that this APG has been given 'priority' status to enable modellers to easily ascertain the extent of rate variable availability. Rate parameters are included in this APG in preference to any other APG that might seem appropriate.</rdfs:comment>
+    <rdfs:label xml:lang="en">Rate measurements (including production, excretion and grazing)</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#H004">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#H004"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/H004/"/>
+    <rdfs:comment xml:lang="en">Parameters related to any aspect of the taking of water-living fauna from the wild</rdfs:comment>
+    <rdfs:label xml:lang="en">Fisheries</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#GSED">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#GSED"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/GSED/"/>
+    <rdfs:comment xml:lang="en">Parameters pertaining to the sedimentological characterisation (e.g. structure, formation) of rocks (including speleothems) and unlithified sediment</rdfs:comment>
+    <rdfs:label xml:lang="en">Rock and sediment sedimentology</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#M005">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#M005"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/M005/"/>
+    <rdfs:comment xml:lang="en">Parameters quantifying and characterising the solid, liquid and gaseous materials that make up the Earth's atmosphere</rdfs:comment>
+    <rdfs:label xml:lang="en">Atmospheric chemistry</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G035">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#G035"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/G035/"/>
+    <rdfs:comment xml:lang="en">Parameters pertaining to the chemistry (including isotopic composition) of rocks (including speleotherms) and unlithified sediment.</rdfs:comment>
+    <rdfs:label xml:lang="en">Rock and sediment chemistry</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C045">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#C045"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/C045/"/>
+    <rdfs:comment xml:lang="en">This is a 'safety net' category to cover inorganic chemical parameters that cannot be mapped to other Agreed Parameter Groups. It should be regarded as a transitional grouping: if a significant number of related parameters map to this group then the creation of an additional group should be discussed and agreed.  The following parameters within the BODC Parameter Dictionary currently (May 2003) fall into this category.   Non-metal concentrations in the water column, suspended particulate material and sediment.  Element distribution coefficients between dissolved and particulate phases.  Thermodynamic data such as ligand binding strengths.  Redox potentials.  Uncalibrated analytical instrument output, such as XRF counts for element-specific peaks.</rdfs:comment>
+    <rdfs:label xml:lang="en">Other inorganic chemical measurements</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#M015">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#M015"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/M015/"/>
+    <rdfs:comment xml:lang="en">This group incorporates all parameters pertaining to frozen precipitation, lying snow and ice, permafrost, icebergs, glaciers and ice caps.</rdfs:comment>
+    <rdfs:label xml:lang="en">Cryosphere</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#H003">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#H003"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/H003/"/>
+    <rdfs:comment xml:lang="en">Measurements and parameterisations from which the climatic conditions in the recent or geological past may be determined or described.</rdfs:comment>
+    <rdfs:label xml:lang="en">Palaeoclimate</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C025">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#C025"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/C025/"/>
+    <rdfs:comment xml:lang="en">This group contains parameter codes describing the concentrations of the compounds of carbon and hydrogen. All compounds conforming to this definition are placed in this APG, including aromatic compounds, even polycyclic aromatic hydrocarbons traditionally categorised as 'pollutants'. This is to circumvent problems deciding which hydrocarbons are pollutants and which are not.</rdfs:comment>
+    <rdfs:label xml:lang="en">Hydrocarbons</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#D034">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#D034"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/D034/"/>
+    <rdfs:comment xml:lang="en">This APG contains all parameters pertaining to the measurement of:   Wave height  Wave period  Wave direction  Wave energy spectra</rdfs:comment>
+    <rdfs:label xml:lang="en">Waves</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#GPYS">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#GPYS"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/GPYS/"/>
+    <rdfs:comment xml:lang="en">In-situ measurements of physical phenomena designed to elucidate the composition and structure of underlying geological units</rdfs:comment>
+    <rdfs:label xml:lang="en">Field geophysics</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B045">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#B045"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/B045/"/>
+    <rdfs:comment xml:lang="en">This group incorporates all state variables pertaining to zooplankton, which are defined for the purposes of this grouping as any heterotrophic organisms in the water column that are not mammals, reptiles or fish.  Most parameters in this group express the abundance, either as cell counts or biomass, of various types of zooplankton. However, the group also includes parameters that describe any other property of these entities that are  not rates or fluxes , such as the concentrations of faecal pellets or eggs in the water column or sediment.</rdfs:comment>
+    <rdfs:label xml:lang="en">Zooplankton</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B015">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#B015"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/B015/"/>
+    <rdfs:comment xml:lang="en">This group incorporates all variables pertaining to birds, mammals and reptiles, including abundance, biomass, biological function and state of health.</rdfs:comment>
+    <rdfs:label xml:lang="en">Birds, mammals and reptiles</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B005">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#B005"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/B005/"/>
+    <rdfs:comment xml:lang="en">This group incorporates all state variables pertaining to bacteria (Kingdom Monera)and viruses. Note that Monera includes both Phylum Bacteria and Phylum Cyanophycota (cyanobacteria but sometimes called blue-green algae).  Most parameters in this group express the abundance, either as cell counts or biomass, of various types of bacteria or viruses. However, the group also includes parameters that describe any other property of these entities that are  not rates or fluxes  . Examples include cell size, cell volume and the proportion of the population associated with the particulate phase.</rdfs:comment>
+    <rdfs:label xml:lang="en">Bacteria and viruses</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G020">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#G020"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/G020/"/>
+    <rdfs:comment xml:lang="en">This APG covers geochemical and age data collected from fully lithified sediments (i.e. sedimentary rocks), water-deposited minerals (e.g. tufa and speleothems) and hard biological deposits (e.g. coral reefs). The group includes both geochemical and stratigraphic geochronological parameters</rdfs:comment>
+    <rdfs:label xml:lang="en">Sedimentary rock geochemistry and geochronology</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G030">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#G030"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/G030/"/>
+    <rdfs:comment xml:lang="en">Parameters pertaining to the absolute and stratigraphic age of rocks (including speleotherms) and unlithified sediment.</rdfs:comment>
+    <rdfs:label xml:lang="en">Geochronology and stratigraphy</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G050">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#G050"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/G050/"/>
+    <rdfs:comment xml:lang="en">Parameters pertaining to the chemistry of the interstitial pore waters in unlithified sediments.</rdfs:comment>
+    <rdfs:label xml:lang="en">Sediment pore water chemistry</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G040">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#G040"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/G040/"/>
+    <rdfs:comment xml:lang="en">Parameters pertaining to the physical properties of rocks (including speleotherms) and unlithified sediment.</rdfs:comment>
+    <rdfs:label xml:lang="en">Rock and sediment physical properties</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B020">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#B020"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/B020/"/>
+    <rdfs:comment xml:lang="en">This group incorporates all state variables pertaining to fish, such as abundance, biomass and fisheries data.</rdfs:comment>
+    <rdfs:label xml:lang="en">Fish</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G010">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#G010"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/G010/"/>
+    <rdfs:comment xml:lang="en">This group includes parameters pertaining to the physical properties of sediment. 'Sediment' can include both bottom and suspended particulate material if the property is equally applicable whether or not the sediment is in suspension.  This category will inevitably end up as a 'catch all' for sediment parameters that cannot be mapped to other APGs, and consequently its composition should be periodically reviewed. The BODC Parameter Dictionary currently (May 2003) includes the following types of parameter in this grouping:   Sediment cohesive strength (e.g. erosion stress and shear velocity).  Mineralogy (including organic matter content).  Dating and accumulation rate.  Porosity and water content  Grain size and density.  Magnetic susceptibility and resistivity.</rdfs:comment>
+    <rdfs:label xml:lang="en">Sediment properties</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#H005">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#H005"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/H005/"/>
+    <rdfs:comment xml:lang="en">Parameters quantifying the level of any type of human activity, generally in the context of environmental considerations</rdfs:comment>
+    <rdfs:label xml:lang="en">Human activity</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#D005">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#D005"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/D005/"/>
+    <rdfs:comment xml:lang="en">This group contains parameter codes relating to the propagation of sound through seawater, such as signal amplitude, noise, signal return, travel time and sound velocity.</rdfs:comment>
+    <rdfs:label xml:lang="en">Acoustics</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#D032">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#D032"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/D032/"/>
+    <rdfs:comment xml:lang="en">This APG contains all parameters pertaining to the measurement of:   Sea level relative to a terrestrial datum  Water column height at a fixed location</rdfs:comment>
+    <rdfs:label xml:lang="en">Sea level</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#D025">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#D025"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/D025/"/>
+    <rdfs:comment xml:lang="en">This APG includes the parameters associated with the in-situ measurement of water column temperature (including potential temperature) and salinity (including conductivity).  Parameters derived from either temperature or salinity (but not temperature AND salinity), such as temperature gradient or temperature variance, are also included.</rdfs:comment>
+    <rdfs:label xml:lang="en">Water column temperature and salinity</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
+  <glview:MeasurementType rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B027">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#B027"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Measurement"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/B027/"/>
+    <rdfs:comment xml:lang="en">This is a 'safety net' category to cover biological parameters that cannot be mapped to other Agreed Parameter Groups. It should be regarded as a transitional grouping: if a significant number of related parameters map to this group then the creation of an additional group should be discussed and agreed.  The following parameters within the BODC Parameter Dictionary currently (May 2003) fall into this category.   Specimen length (mean and standard deviation)  Exuvia  Growth coefficient and standard error  Algal fragment abundance  Total plankton abundance  Pollen abundance  Fungal spore abundance  Transparent exopolymer particle abundance  Genetic parameters such as RuBisCO hybridisation</rdfs:comment>
+    <rdfs:label xml:lang="en">Other biological measurements</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:MeasurementType>
 </rdf:RDF>

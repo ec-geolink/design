@@ -1,0 +1,43 @@
+## This query is issued to NERC vocabulary server's SPARQL endpoint at http://vocab.nerc.ac.uk/sparql/
+## Then, the result is saved into XML format as P02.owl
+
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+## PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+## PREFIX geosparql: <http://www.opengis.net/ont/geosparql#>
+## PREFIX time: <http://www.w3.org/2006/time#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX glvoc_P02: <http://schema.geolink.org/dev/voc/nvs/P02#>
+PREFIX glview: <http://schema.geolink.org/dev/view#>
+
+CONSTRUCT {
+  <http://schema.geolink.org/dev/voc/nvs/P02> a owl:Ontology ;
+		rdfs:label ?ONTOL ;
+		dcterms:date ?ONTODATE ;
+		owl:versionInfo ?ONTOVERS ;
+    rdfs:comment "This ontology captures measurement types from SeaDataNet Parameter Discovery Vocabulary as hosted in the NERC vocabulary server"@en ;
+		rdfs:seeAlso <http://vocab.nerc.ac.uk/collection/P02/> .
+  glview:Measurement a owl:Class .
+  glview:MeasurementType a owl:Class .
+  glview:hasMeasurementType a owl:ObjectProperty .  
+  ?CLASS a owl:Class, owl:NamedIndividual, glview:MeasurementType ;
+    rdfs:label ?L ;
+    rdfs:comment ?DEF ;
+		rdfs:seeAlso ?Y ;	 
+		rdfs:subClassOf glview:Measurement ;
+		owl:equivalentClass [ a owl:Restriction ; owl:onProperty glview:hasMeasurementType ; owl:hasValue ?CLASS ].
+}
+WHERE {
+  <http://vocab.nerc.ac.uk/collection/P02/current/> skos:prefLabel ?ONTOL ; 
+																										dcterms:date ?ONTODATE ;
+																										owl:versionInfo ?ONTOVERS ;
+																										skos:member ?Y .
+  ?Y skos:prefLabel ?L ;
+     skos:definition ?DEF .
+  BIND (REPLACE(str(?Y),"vocab.nerc.ac.uk/collection/P02/current/","schema.geolink.org/dev/voc/nvs/P02#","i") AS ?Z)    
+  BIND (IRI(SUBSTR(?Z,1,STRLEN(?Z)-1)) AS ?CLASS)
+}
