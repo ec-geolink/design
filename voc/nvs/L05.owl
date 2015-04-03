@@ -4,7 +4,7 @@
     xmlns:glvoc_l05="http://schema.geolink.org/dev/voc/nvs/L05#"
     xmlns:glview="http://schema.geolink.org/dev/view#"
     xmlns:owl="http://www.w3.org/2002/07/owl#"
-    xmlns:dc="http://purl.org/dc/terms/"
+    xmlns:dcterms="http://purl.org/dc/terms/"
     xmlns:dce="http://purl.org/dc/elements/1.1/"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
     xmlns:void="http://rdfs.org/ns/void#"
@@ -14,6 +14,9 @@
     <owl:imports rdf:resource="http://schema.geolink.org/dev/voc/nvs/L05hierarchy"/>
     <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L05/"/>
     <rdfs:comment xml:lang="en">This ontology captures instrument types from SeaDataNet device categories as hosted in the NERC vocabulary server</rdfs:comment>
+    <owl:versionInfo>49</owl:versionInfo>
+    <dcterms:date>2015-02-12 02:00:03.0</dcterms:date>
+    <rdfs:label>SeaDataNet device categories</rdfs:label>
   </owl:Ontology>
   <owl:Class rdf:about="http://schema.geolink.org/dev/view#Instrument"/>
   <owl:Class rdf:about="http://schema.geolink.org/dev/view#InstrumentType"/>
@@ -235,20 +238,6 @@
     <rdfs:label xml:lang="en">airgun</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </glview:InstrumentType>
-  <glview:InstrumentType rdf:about="http://schema.geolink.org/dev/voc/nvs/L05#301">
-    <owl:equivalentClass>
-      <owl:Restriction>
-        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/L05#301"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasInstrumentType"/>
-      </owl:Restriction>
-    </owl:equivalentClass>
-    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Instrument"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L05/current/301/"/>
-    <rdfs:comment xml:lang="en">A network of statellites that generate signals that allow a receiver to determine its position such as GPS.</rdfs:comment>
-    <rdfs:label xml:lang="en">satellite positioning systems</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </glview:InstrumentType>
   <glview:InstrumentType rdf:about="http://schema.geolink.org/dev/voc/nvs/L05#180">
     <owl:equivalentClass>
       <owl:Restriction>
@@ -261,6 +250,20 @@
     <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L05/current/180/"/>
     <rdfs:comment xml:lang="en">All types of photographic equipment that may be deployed underwater including stills, video, film and digital systems.</rdfs:comment>
     <rdfs:label xml:lang="en">underwater cameras</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:InstrumentType>
+  <glview:InstrumentType rdf:about="http://schema.geolink.org/dev/voc/nvs/L05#301">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/L05#301"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasInstrumentType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Instrument"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L05/current/301/"/>
+    <rdfs:comment xml:lang="en">A network of statellites that generate signals that allow a receiver to determine its position such as GPS.</rdfs:comment>
+    <rdfs:label xml:lang="en">satellite positioning systems</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </glview:InstrumentType>
   <glview:InstrumentType rdf:about="http://schema.geolink.org/dev/voc/nvs/L05#ERTQ">
@@ -361,20 +364,6 @@
     <rdfs:label xml:lang="en">sediment traps</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </glview:InstrumentType>
-  <glview:InstrumentType rdf:about="http://schema.geolink.org/dev/voc/nvs/L05#182">
-    <owl:equivalentClass>
-      <owl:Restriction>
-        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/L05#182"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasInstrumentType"/>
-      </owl:Restriction>
-    </owl:equivalentClass>
-    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Instrument"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L05/current/182/"/>
-    <rdfs:comment xml:lang="en">There is no appropriate value. To be used in cases where metadata elements cannot be set null due to schema constraints.</rdfs:comment>
-    <rdfs:label xml:lang="en">inapplicable</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </glview:InstrumentType>
   <glview:InstrumentType rdf:about="http://schema.geolink.org/dev/voc/nvs/L05#GIAG">
     <owl:equivalentClass>
       <owl:Restriction>
@@ -387,6 +376,20 @@
     <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L05/current/GIAG/"/>
     <rdfs:comment xml:lang="en">A marine seismic source where a pair of conventional airguns (one, the generator, fires in the conventional manner; the second, known as the injector) fires some milliseconds later to prevent bubble from collapsing. Could be used in true GI mode (volume of injector twice of volume of generator), harmonic mode (same volume of generator and injector) or true airgun (no delay between generator and injector).</rdfs:comment>
     <rdfs:label xml:lang="en">GI-gun</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:InstrumentType>
+  <glview:InstrumentType rdf:about="http://schema.geolink.org/dev/voc/nvs/L05#182">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/L05#182"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasInstrumentType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Instrument"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L05/current/182/"/>
+    <rdfs:comment xml:lang="en">There is no appropriate value. To be used in cases where metadata elements cannot be set null due to schema constraints.</rdfs:comment>
+    <rdfs:label xml:lang="en">inapplicable</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </glview:InstrumentType>
   <glview:InstrumentType rdf:about="http://schema.geolink.org/dev/voc/nvs/L05#386">
@@ -1775,6 +1778,20 @@
     <rdfs:label xml:lang="en">laboratory optical rangefinders</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </glview:InstrumentType>
+  <glview:InstrumentType rdf:about="http://schema.geolink.org/dev/voc/nvs/L05#358">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/L05#358"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasInstrumentType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Instrument"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L05/current/358/"/>
+    <rdfs:comment xml:lang="en">Instruments that measure the concentration and size of air bubbles in the water column.</rdfs:comment>
+    <rdfs:label xml:lang="en">bubble detectors</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:InstrumentType>
   <glview:InstrumentType rdf:about="http://schema.geolink.org/dev/voc/nvs/L05#POS21">
     <owl:equivalentClass>
       <owl:Restriction>
@@ -1795,20 +1812,6 @@
   "#text": "."
 }</rdfs:comment>
     <rdfs:label xml:lang="en">Hyperfix receivers</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </glview:InstrumentType>
-  <glview:InstrumentType rdf:about="http://schema.geolink.org/dev/voc/nvs/L05#358">
-    <owl:equivalentClass>
-      <owl:Restriction>
-        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/L05#358"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasInstrumentType"/>
-      </owl:Restriction>
-    </owl:equivalentClass>
-    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Instrument"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L05/current/358/"/>
-    <rdfs:comment xml:lang="en">Instruments that measure the concentration and size of air bubbles in the water column.</rdfs:comment>
-    <rdfs:label xml:lang="en">bubble detectors</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </glview:InstrumentType>
   <glview:InstrumentType rdf:about="http://schema.geolink.org/dev/voc/nvs/L05#LAB21">
@@ -1996,20 +1999,6 @@
     <rdfs:label xml:lang="en">atomic absorption spectrometers</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </glview:InstrumentType>
-  <glview:InstrumentType rdf:about="http://schema.geolink.org/dev/voc/nvs/L05#SNWG">
-    <owl:equivalentClass>
-      <owl:Restriction>
-        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/L05#SNWG"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasInstrumentType"/>
-      </owl:Restriction>
-    </owl:equivalentClass>
-    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Instrument"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L05/current/SNWG/"/>
-    <rdfs:comment xml:lang="en">A marine seismic energy source divided into two chambers, the firing chamber, which contains compressed air, and the other chamber, which is filled with water. When the gun is fired, the compressed air forces the shuttle downward and this expels the water from the lower chamber. The shot of water leaving the gun creates a void behind it and the collapse of water into this void creates an acoustic wave.</rdfs:comment>
-    <rdfs:label xml:lang="en">watergun</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </glview:InstrumentType>
   <glview:InstrumentType rdf:about="http://schema.geolink.org/dev/voc/nvs/L05#PERMON">
     <owl:equivalentClass>
       <owl:Restriction>
@@ -2022,6 +2011,20 @@
     <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L05/current/PERMON/"/>
     <rdfs:comment xml:lang="en">Sensors or instruments that monitor whether a platform or environmental sensors on the platform are functioning.</rdfs:comment>
     <rdfs:label xml:lang="en">Performance monitors</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:InstrumentType>
+  <glview:InstrumentType rdf:about="http://schema.geolink.org/dev/voc/nvs/L05#SNWG">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/L05#SNWG"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasInstrumentType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Instrument"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L05/current/SNWG/"/>
+    <rdfs:comment xml:lang="en">A marine seismic energy source divided into two chambers, the firing chamber, which contains compressed air, and the other chamber, which is filled with water. When the gun is fired, the compressed air forces the shuttle downward and this expels the water from the lower chamber. The shot of water leaving the gun creates a void behind it and the collapse of water into this void creates an acoustic wave.</rdfs:comment>
+    <rdfs:label xml:lang="en">watergun</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </glview:InstrumentType>
   <glview:InstrumentType rdf:about="http://schema.geolink.org/dev/voc/nvs/L05#LAB02">
@@ -2094,20 +2097,6 @@
     <rdfs:label xml:lang="en">Volume measures</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </glview:InstrumentType>
-  <glview:InstrumentType rdf:about="http://schema.geolink.org/dev/voc/nvs/L05#356">
-    <owl:equivalentClass>
-      <owl:Restriction>
-        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/L05#356"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasInstrumentType"/>
-      </owl:Restriction>
-    </owl:equivalentClass>
-    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Instrument"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L05/current/356/"/>
-    <rdfs:comment xml:lang="en">Instruments that measure the tendency of the water column to either gain or lose electrons when it is subject to change by introduction of a new species.</rdfs:comment>
-    <rdfs:label xml:lang="en">redox potential sensors</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </glview:InstrumentType>
   <glview:InstrumentType rdf:about="http://schema.geolink.org/dev/voc/nvs/L05#POS23">
     <owl:equivalentClass>
       <owl:Restriction>
@@ -2123,6 +2112,20 @@
   "#text": "."
 }</rdfs:comment>
     <rdfs:label xml:lang="en">radio tracking systems</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:InstrumentType>
+  <glview:InstrumentType rdf:about="http://schema.geolink.org/dev/voc/nvs/L05#356">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/L05#356"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasInstrumentType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Instrument"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L05/current/356/"/>
+    <rdfs:comment xml:lang="en">Instruments that measure the tendency of the water column to either gain or lose electrons when it is subject to change by introduction of a new species.</rdfs:comment>
+    <rdfs:label xml:lang="en">redox potential sensors</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </glview:InstrumentType>
   <glview:InstrumentType rdf:about="http://schema.geolink.org/dev/voc/nvs/L05#150">
@@ -2700,20 +2703,6 @@
     <rdfs:label xml:lang="en">single-channel seismic reflection systems</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </glview:InstrumentType>
-  <glview:InstrumentType rdf:about="http://schema.geolink.org/dev/voc/nvs/L05#LAB34">
-    <owl:equivalentClass>
-      <owl:Restriction>
-        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/L05#LAB34"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasInstrumentType"/>
-      </owl:Restriction>
-    </owl:equivalentClass>
-    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Instrument"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L05/current/LAB34/"/>
-    <rdfs:comment xml:lang="en">Laboratory apparatus that detemines the concentration of a chemical species by quantification of the electromagnetic radiation (usually visible light) produced by a chemical reaction.</rdfs:comment>
-    <rdfs:label xml:lang="en">chemiluminescence analysers</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </glview:InstrumentType>
   <glview:InstrumentType rdf:about="http://schema.geolink.org/dev/voc/nvs/L05#366">
     <owl:equivalentClass>
       <owl:Restriction>
@@ -2726,6 +2715,20 @@
     <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L05/current/366/"/>
     <rdfs:comment xml:lang="en">An energy source with a frequency up to &gt;2000 Hz (sampling interval lower than 0.25 msec) plus a multiple strings of towed hydrophones (streamers) that determine geologic structure by detecting waves reflected by subsurface layers.</rdfs:comment>
     <rdfs:label xml:lang="en">&gt;2000 Hz top-bandwidth multi-channel seismic reflection systems</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:InstrumentType>
+  <glview:InstrumentType rdf:about="http://schema.geolink.org/dev/voc/nvs/L05#LAB34">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/L05#LAB34"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasInstrumentType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Instrument"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L05/current/LAB34/"/>
+    <rdfs:comment xml:lang="en">Laboratory apparatus that detemines the concentration of a chemical species by quantification of the electromagnetic radiation (usually visible light) produced by a chemical reaction.</rdfs:comment>
+    <rdfs:label xml:lang="en">chemiluminescence analysers</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </glview:InstrumentType>
   <glview:InstrumentType rdf:about="http://schema.geolink.org/dev/voc/nvs/L05#MOD07">
@@ -2868,20 +2871,6 @@
     <rdfs:label xml:lang="en">flow meters</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </glview:InstrumentType>
-  <glview:InstrumentType rdf:about="http://schema.geolink.org/dev/voc/nvs/L05#LBTG">
-    <owl:equivalentClass>
-      <owl:Restriction>
-        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/L05#LBTG"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasInstrumentType"/>
-      </owl:Restriction>
-    </owl:equivalentClass>
-    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Instrument"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L05/current/LBTG/"/>
-    <rdfs:comment xml:lang="en">Passive devices attached to captured organisms to specifically identify them when recaptured after release.</rdfs:comment>
-    <rdfs:label xml:lang="en">labelling tags</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </glview:InstrumentType>
   <glview:InstrumentType rdf:about="http://schema.geolink.org/dev/voc/nvs/L05#EXLH">
     <owl:equivalentClass>
       <owl:Restriction>
@@ -2894,6 +2883,20 @@
     <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L05/current/EXLH/"/>
     <rdfs:comment xml:lang="en">Groups all explosives that allows high penetration but low resolution surveys.</rdfs:comment>
     <rdfs:label xml:lang="en">high penetration low resolution explosives</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:InstrumentType>
+  <glview:InstrumentType rdf:about="http://schema.geolink.org/dev/voc/nvs/L05#LBTG">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/L05#LBTG"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasInstrumentType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Instrument"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L05/current/LBTG/"/>
+    <rdfs:comment xml:lang="en">Passive devices attached to captured organisms to specifically identify them when recaptured after release.</rdfs:comment>
+    <rdfs:label xml:lang="en">labelling tags</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </glview:InstrumentType>
   <glview:InstrumentType rdf:about="http://schema.geolink.org/dev/voc/nvs/L05#ARAG">

@@ -6,7 +6,7 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX xml: <http://www.w3.org/XML/1998/namespace>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-## PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
 ## PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 ## PREFIX geosparql: <http://www.opengis.net/ont/geosparql#>
 ## PREFIX time: <http://www.w3.org/2006/time#>
@@ -16,6 +16,9 @@ PREFIX glview: <http://schema.geolink.org/dev/view#>
 
 CONSTRUCT {
   <http://schema.geolink.org/dev/voc/nvs/L05> a owl:Ontology ;
+		rdfs:label ?ONTOL ;
+		dcterms:date ?ONTODATE ;
+		owl:versionInfo ?ONTOVERS ;
     rdfs:comment "This ontology captures instrument types from SeaDataNet device categories as hosted in the NERC vocabulary server"@en ;
 		rdfs:seeAlso <http://vocab.nerc.ac.uk/collection/L05/> ;
 		owl:imports <http://schema.geolink.org/dev/voc/nvs/L05hierarchy> .
@@ -34,13 +37,12 @@ CONSTRUCT {
 						   owl:hasValue ?CLASS ].
 }
 WHERE {
-  <http://vocab.nerc.ac.uk/collection/L05/current/> skos:member ?Y .
+  <http://vocab.nerc.ac.uk/collection/L05/current/> skos:prefLabel ?ONTOL ; 
+																										dcterms:date ?ONTODATE ;
+																										owl:versionInfo ?ONTOVERS ;
+																										skos:member ?Y .
   ?Y skos:prefLabel ?L ;
      skos:definition ?DEF .
-  FILTER (REGEX(str(?Y), "nerc", "i"))  
-  BIND (REPLACE(str(?Y),"vocab.nerc.ac.uk/collection/L05/current/","schema.geolink.org/dev/voc/nvs/L05#","i") AS ?Z)
-  BIND (STRLEN(?Z)-1 AS ?LEN)
-  BIND (SUBSTR(?Z,1,?LEN) AS ?ZZ)
-  BIND (IRI(?ZZ) AS ?CLASS)
-
+  BIND (REPLACE(str(?Y),"vocab.nerc.ac.uk/collection/L05/current/","schema.geolink.org/dev/voc/nvs/L05#","i") AS ?Z)    
+  BIND (IRI(SUBSTR(?Z,1,STRLEN(?Z)-1)) AS ?CLASS)
 }

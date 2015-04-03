@@ -5,7 +5,7 @@
     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
     xmlns:glview="http://schema.geolink.org/dev/view#"
     xmlns:owl="http://www.w3.org/2002/07/owl#"
-    xmlns:dc="http://purl.org/dc/terms/"
+    xmlns:dcterms="http://purl.org/dc/terms/"
     xmlns:dce="http://purl.org/dc/elements/1.1/"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
     xmlns:void="http://rdfs.org/ns/void#"
@@ -15,6 +15,9 @@
     <owl:imports rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06hierarchy"/>
     <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/"/>
     <rdfs:comment xml:lang="en">This ontology captures SeaVoX platform categories (e.g., vessel, mooring, etc.) as hosted in the NERC vocabulary server</rdfs:comment>
+    <owl:versionInfo>11</owl:versionInfo>
+    <dcterms:date>2015-03-27 02:00:03.0</dcterms:date>
+    <rdfs:label>SeaVoX Platform Categories</rdfs:label>
   </owl:Ontology>
   <owl:Class rdf:about="http://schema.geolink.org/dev/view#Platform"/>
   <owl:Class rdf:about="http://schema.geolink.org/dev/view#PlatformType"/>
@@ -299,20 +302,6 @@
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </glview:PlatformType>
-  <glview:PlatformType rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#94">
-    <owl:equivalentClass>
-      <owl:Restriction>
-        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#94"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasPlatformType"/>
-      </owl:Restriction>
-    </owl:equivalentClass>
-    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Platform"/>
-    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/94/"/>
-    <rdfs:comment xml:lang="en">Sea ice not connected to land with an ice concetration of under 70 per cent.</rdfs:comment>
-    <rdfs:label xml:lang="en">drift ice</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </glview:PlatformType>
   <glview:PlatformType rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#71">
     <owl:equivalentClass>
       <owl:Restriction>
@@ -324,6 +313,20 @@
     <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/71/"/>
     <rdfs:comment xml:lang="en">A human being without specialised equipment operating on land or the surface of the water column.</rdfs:comment>
     <rdfs:label xml:lang="en">human</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:PlatformType>
+  <glview:PlatformType rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#94">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#94"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasPlatformType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Platform"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/94/"/>
+    <rdfs:comment xml:lang="en">Sea ice not connected to land with an ice concetration of under 70 per cent.</rdfs:comment>
+    <rdfs:label xml:lang="en">drift ice</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </glview:PlatformType>
@@ -509,20 +512,6 @@
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </glview:PlatformType>
-  <glview:PlatformType rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#62">
-    <owl:equivalentClass>
-      <owl:Restriction>
-        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#62"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasPlatformType"/>
-      </owl:Restriction>
-    </owl:equivalentClass>
-    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Platform"/>
-    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/62/"/>
-    <rdfs:comment xml:lang="en">A fixed-wing self-propelled aircraft.</rdfs:comment>
-    <rdfs:label xml:lang="en">aeroplane</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </glview:PlatformType>
   <glview:PlatformType rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#43">
     <owl:equivalentClass>
       <owl:Restriction>
@@ -534,6 +523,20 @@
     <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/43/"/>
     <rdfs:comment xml:lang="en">A collection of oceanographic instruments attached to wires suspended between anchors on the seabed and buoyant spheres in the water column.</rdfs:comment>
     <rdfs:label xml:lang="en">subsurface mooring</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:PlatformType>
+  <glview:PlatformType rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#62">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#62"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasPlatformType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Platform"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/62/"/>
+    <rdfs:comment xml:lang="en">A fixed-wing self-propelled aircraft.</rdfs:comment>
+    <rdfs:label xml:lang="en">aeroplane</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </glview:PlatformType>
@@ -999,20 +1002,6 @@
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </glview:PlatformType>
-  <glview:PlatformType rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#66">
-    <owl:equivalentClass>
-      <owl:Restriction>
-        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#66"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasPlatformType"/>
-      </owl:Restriction>
-    </owl:equivalentClass>
-    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Platform"/>
-    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/66/"/>
-    <rdfs:comment xml:lang="en">A vehicle operating beyond the Earth's atmosphere with human occupants.</rdfs:comment>
-    <rdfs:label xml:lang="en">manned spacecraft</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </glview:PlatformType>
   <glview:PlatformType rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#47">
     <owl:equivalentClass>
       <owl:Restriction>
@@ -1024,6 +1013,20 @@
     <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/47/"/>
     <rdfs:comment xml:lang="en">A free-floating platform either on the surface of the water column or at a predetermined depth within the water column.</rdfs:comment>
     <rdfs:label xml:lang="en">float</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </glview:PlatformType>
+  <glview:PlatformType rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#66">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#66"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasPlatformType"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/view#Platform"/>
+    <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/66/"/>
+    <rdfs:comment xml:lang="en">A vehicle operating beyond the Earth's atmosphere with human occupants.</rdfs:comment>
+    <rdfs:label xml:lang="en">manned spacecraft</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </glview:PlatformType>
