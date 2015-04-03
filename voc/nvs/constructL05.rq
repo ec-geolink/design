@@ -16,8 +16,9 @@ PREFIX glview: <http://schema.geolink.org/dev/view#>
 
 CONSTRUCT {
   <http://schema.geolink.org/dev/voc/nvs/L05> a owl:Ontology ;
-     rdfs:comment "This ontology captures instrument types from SeaDataNet device categories as hosted in the NERC vocabulary server"@en ;
-	 rdfs:seeAlso <http://vocab.nerc.ac.uk/collection/L05/>.
+    rdfs:comment "This ontology captures instrument types from SeaDataNet device categories as hosted in the NERC vocabulary server"@en ;
+		rdfs:seeAlso <http://vocab.nerc.ac.uk/collection/L05/> ;
+		owl:imports <http://schema.geolink.org/dev/voc/nvs/L05hierarchy> .
   glview:Instrument a owl:Class .
   glview:InstrumentType a owl:Class .
   glview:hasInstrumentType a owl:ObjectProperty .  
