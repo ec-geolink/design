@@ -20,10 +20,10 @@
    xmlns:geosparql="http://www.opengis.net/ont/geosparql#">
 
    <owl:Ontology rdf:about="http://schema.geolink.org/dev/voc/gebco/featuretype">
+      <rdfs:comment>GeoLink project (2015); http://www.geolink.org/</rdfs:comment>
       <rdfs:comment>This ontology captures the classification (feature types) used by the IHO-IOC GEBCO Gazetteer of Undersea Feature Names, IHO publication B-8</rdfs:comment>
       <rdfs:seeAlso rdf:resource="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
-      <!-- GeoLink project (2015); http://www.geolink.org/ -->
-      <!-- Note use of OWL 2 Punning as per http://www.w3.org/TR/owl2-new-features/#F12:_Punning -->
+      <rdfs:comment>Uses OWL 2 Punning as per http://www.w3.org/TR/owl2-new-features/#F12:_Punning</rdfs:comment>
    </owl:Ontology>
    <owl:ObjectProperty rdf:about="&glview;hasFeatureType"/>
    <owl:Class rdf:about="&glview;Feature"/>
