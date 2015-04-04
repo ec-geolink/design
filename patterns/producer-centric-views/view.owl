@@ -26,6 +26,7 @@
     <owl:Ontology rdf:about="http://schema.geolink.org/dev/view">
         <owl:imports rdf:resource="http://schema.geolink.org/dev/voc/gebco/featuretype"/>
         <owl:imports rdf:resource="http://schema.geolink.org/dev/voc/nvs/L05"/>
+        <owl:imports rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06"/>
         <owl:imports rdf:resource="http://schema.geolink.org/dev/voc/nvs/L22"/>
     </owl:Ontology>
     
@@ -207,14 +208,14 @@
         <rdfs:domain rdf:resource="&ecglview;Cruise"/>
         <rdfs:range>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ecglview;hasTimeStamp"/>
-                <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
+                <owl:onProperty rdf:resource="&ecglview;atPort"/>
+                <owl:someValuesFrom rdf:resource="&ecglview;Place"/>
             </owl:Restriction>
         </rdfs:range>
         <rdfs:range>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ecglview;atPort"/>
-                <owl:someValuesFrom rdf:resource="&ecglview;Place"/>
+                <owl:onProperty rdf:resource="&ecglview;hasTimeStamp"/>
+                <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
             </owl:Restriction>
         </rdfs:range>
     </owl:ObjectProperty>
@@ -288,14 +289,14 @@
         <rdfs:domain rdf:resource="&ecglview;Cruise"/>
         <rdfs:range>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ecglview;atPort"/>
-                <owl:someValuesFrom rdf:resource="&ecglview;Place"/>
+                <owl:onProperty rdf:resource="&ecglview;hasTimeStamp"/>
+                <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
             </owl:Restriction>
         </rdfs:range>
         <rdfs:range>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ecglview;hasTimeStamp"/>
-                <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
+                <owl:onProperty rdf:resource="&ecglview;atPort"/>
+                <owl:someValuesFrom rdf:resource="&ecglview;Place"/>
             </owl:Restriction>
         </rdfs:range>
     </owl:ObjectProperty>
@@ -347,6 +348,15 @@
     <owl:ObjectProperty rdf:about="&ecglview;hasPlaceType">
         <rdfs:domain rdf:resource="&ecglview;Place"/>
         <rdfs:range rdf:resource="&ecglview;PlaceType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#hasPlatformType -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;hasPlatformType">
+        <rdfs:domain rdf:resource="&ecglview;Platform"/>
+        <rdfs:range rdf:resource="&ecglview;PlatformType"/>
     </owl:ObjectProperty>
     
 
@@ -438,14 +448,14 @@
         <rdfs:domain rdf:resource="&ecglview;Cruise"/>
         <rdfs:range>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ecglview;atPort"/>
-                <owl:someValuesFrom rdf:resource="&ecglview;Place"/>
+                <owl:onProperty rdf:resource="&ecglview;hasTimeStamp"/>
+                <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
             </owl:Restriction>
         </rdfs:range>
         <rdfs:range>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ecglview;hasTimeStamp"/>
-                <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
+                <owl:onProperty rdf:resource="&ecglview;atPort"/>
+                <owl:someValuesFrom rdf:resource="&ecglview;Place"/>
             </owl:Restriction>
         </rdfs:range>
     </owl:ObjectProperty>
@@ -1072,6 +1082,18 @@
     
 
 
+    <!-- http://schema.geolink.org/dev/view#Platform -->
+
+    <owl:Class rdf:about="&ecglview;Platform"/>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#PlatformType -->
+
+    <owl:Class rdf:about="&ecglview;PlatformType"/>
+    
+
+
     <!-- http://schema.geolink.org/dev/view#PortCall -->
 
     <owl:Class rdf:about="&ecglview;PortCall"/>
@@ -1104,7 +1126,16 @@
 
     <!-- http://schema.geolink.org/dev/view#Vessel -->
 
-    <owl:Class rdf:about="&ecglview;Vessel"/>
+    <owl:Class rdf:about="&ecglview;Vessel">
+        <owl:equivalentClass rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#3Z"/>
+        <rdfs:subClassOf rdf:resource="&ecglview;Platform"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#3Z -->
+
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#3Z"/>
 </rdf:RDF>
 
 
