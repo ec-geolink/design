@@ -11,41 +11,52 @@ PREFIX dcterms: <http://purl.org/dc/terms/>
 ## PREFIX geosparql: <http://www.opengis.net/ont/geosparql#>
 ## PREFIX time: <http://www.w3.org/2006/time#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-PREFIX glvoc_l05: <http://schema.geolink.org/dev/voc/nvs/L05#>
+PREFIX glvoc_L05: <http://schema.geolink.org/dev/voc/nvs/L05#>
 PREFIX glview: <http://schema.geolink.org/dev/view#>
 
 CONSTRUCT {
-  <http://schema.geolink.org/dev/voc/nvs/L05> a owl:Ontology ;
-		rdfs:label ?ONTOL ;
-		dcterms:date ?ONTODATE ;
-		owl:versionInfo ?ONTOVERS ;
-    rdfs:comment "This ontology captures instrument types from SeaDataNet device categories as hosted in the NERC vocabulary server"@en ;
-		rdfs:seeAlso <http://vocab.nerc.ac.uk/collection/L05/> ;
-		owl:imports <http://schema.geolink.org/dev/voc/nvs/L05hierarchy> .
-  glview:Instrument a owl:Class .
-  glview:InstrumentType a owl:Class .
-  glview:hasInstrumentType a owl:ObjectProperty .  
-  ?CLASS a owl:Class ;
-    rdfs:label ?L ;
-    rdfs:comment ?DEF ;
-		rdfs:seeAlso ?Y ;
-		a owl:NamedIndividual ;
-		a glview:InstrumentType ;
-		rdfs:subClassOf glview:Instrument .
+	<http://schema.geolink.org/dev/voc/nvs/L05> a owl:Ontology ;
+				rdfs:label ?ontolabel ;
+				dcterms:date ?ontodate ;
+				owl:versionInfo ?ontovers ;
+				rdfs:comment "This ontology captures SeaVoX Instrument categories (e.g., vessel, mooring, etc.) as hosted in the NERC vocabulary server"@en ;
+				rdfs:seeAlso <http://vocab.nerc.ac.uk/collection/L05/> .
 	
-	[]	a owl:Restriction ;
-			owl:onProperty glview:hasInstrumentType ;
-			owl:someValuesFrom [	a owl:Class ; owl:oneOf ( ?CLASS ) ] ;
-			rdfs:subClassOf ?CLASS .
-	 
+	glview:Instrument a owl:Class .
+	glview:InstrumentType a owl:Class .
+	glview:hasInstrumentType a owl:ObjectProperty .
+	
+	?sub ?pred1 ?obj1a, ?obj1b, ?obj1c ; 
+		rdfs:label ?label ;
+		rdfs:comment ?def ;
+		rdfs:seeAlso ?Y ;
+		?pred2 ?obj2.	
 }
 WHERE {
-  <http://vocab.nerc.ac.uk/collection/L05/current/> skos:prefLabel ?ONTOL ; 
-																										dcterms:date ?ONTODATE ;
-																										owl:versionInfo ?ONTOVERS ;
-																										skos:member ?Y .
-  ?Y skos:prefLabel ?L ;
-     skos:definition ?DEF .
-  BIND (REPLACE(str(?Y),"vocab.nerc.ac.uk/collection/L05/current/","schema.geolink.org/dev/voc/nvs/L05#","i") AS ?Z)    
-  BIND (IRI(SUBSTR(?Z,1,STRLEN(?Z)-1)) AS ?CLASS)
+	SELECT 	DISTINCT 	
+		?ontolabel ?ontodate ?ontovers
+		?sub ?Y ?label ?def
+		?pred1 ?obj1a ?obj1b ?obj1c 
+		?pred2 ?obj2
+	WHERE {
+	  VALUES ( ?graphsource ?graphdest ) { ( <http://vocab.nerc.ac.uk/collection/L05/current/> <http://schema.geolink.org/dev/voc/nvs/L05> ) }
+		?graphsource skos:member ?Y ; skos:prefLabel ?ontolabel ; dcterms:date ?ontodate ; owl:versionInfo ?ontovers .	
+		?Y skos:prefLabel ?label; skos:definition ?def .
+		{	?graphsource skos:member ?Z.
+			?Y skos:broader ?Z .		
+		} UNION {		
+			FILTER NOT EXISTS { ?graphsource skos:member ?Z . ?Y skos:broader ?Z .}	
+		}
+		
+		BIND ( replace( replace( str(?Y), str(?graphsource), "", "i"), "/", "", "i") as ?yname )
+		BIND ( iri(concat(str(?graphdest), "#", ?yname )) as ?sub )		
+		BIND ( rdf:type as ?pred1 )
+		BIND ( owl:Class as ?obj1a )
+		BIND ( owl:NamedIndividual as ?obj1b )
+		BIND ( glview:InstrumentType as ?obj1c )
+		BIND ( rdfs:subClassOf as ?pred2 )	
+		BIND ( if( !bound(?Z), glview:Instrument, replace( replace( str(?Z), str(?graphsource), "", "i"), "/", "", "i") ) as ?zname )
+		BIND ( if( !bound(?Z), glview:Instrument,  iri(concat(str(?graphdest), "#", ?zname )) ) as ?obj2 )
+			
+	}
 }
