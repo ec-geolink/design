@@ -30,7 +30,11 @@ CONSTRUCT {
 		rdfs:label ?label ;
 		rdfs:comment ?def ;
 		rdfs:seeAlso ?Y ;
-		?pred2 ?obj2.	
+		?pred2 ?obj2.
+	[] 	a owl:Restriction; 
+		owl:onProperty glview:hasInstrumentType; 
+		owl:someValuesFrom [ a owl:Class ; owl:oneOf ( ?sub ) ] ;
+		rdfs:subClassOf ?sub .
 }
 WHERE {
 	SELECT 	DISTINCT 	
