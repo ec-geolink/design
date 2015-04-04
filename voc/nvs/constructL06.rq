@@ -15,12 +15,12 @@ PREFIX glvoc_L06: <http://schema.geolink.org/dev/voc/nvs/L06#>
 PREFIX glview: <http://schema.geolink.org/dev/view#>
 
 CONSTRUCT {
-	<http://schema.geolink.org/dev/voc/nvs/L06> a owl:Ontology ;
-				rdfs:label ?ontolabel ;
-				dcterms:date ?ontodate ;
-				owl:versionInfo ?ontovers ;
-				rdfs:comment "This ontology captures SeaVoX platform categories (e.g., vessel, mooring, etc.) as hosted in the NERC vocabulary server"@en ;
-				rdfs:seeAlso <http://vocab.nerc.ac.uk/collection/L06/> .
+	?graphdest a owl:Ontology ;
+		rdfs:label ?ontolabel ;
+		dcterms:date ?ontodate ;
+		owl:versionInfo ?ontovers ;
+		rdfs:comment "This ontology captures SeaVoX platform categories (e.g., vessel, mooring, etc.) as hosted in the NERC vocabulary server"@en ;
+		rdfs:seeAlso <http://vocab.nerc.ac.uk/collection/L06/> .
 	
 	glview:Platform a owl:Class .
 	glview:PlatformType a owl:Class .
@@ -37,7 +37,8 @@ CONSTRUCT {
 		rdfs:subClassOf ?sub .
 }
 WHERE {
-	SELECT 	DISTINCT 	
+	SELECT 	DISTINCT 
+		?graphdest
 		?ontolabel ?ontodate ?ontovers
 		?sub ?Y ?label ?def
 		?pred1 ?obj1a ?obj1b ?obj1c 
