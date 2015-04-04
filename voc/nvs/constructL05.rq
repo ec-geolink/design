@@ -26,15 +26,18 @@ CONSTRUCT {
   glview:InstrumentType a owl:Class .
   glview:hasInstrumentType a owl:ObjectProperty .  
   ?CLASS a owl:Class ;
-     rdfs:label ?L ;
-     rdfs:comment ?DEF ;
-	 rdfs:seeAlso ?Y ;
-	 a owl:NamedIndividual ;
-	 a glview:InstrumentType ;
-	 rdfs:subClassOf glview:Instrument ;
-	 owl:equivalentClass [ a owl:Restriction ; 
-	                       owl:onProperty glview:hasInstrumentType ;
-						   owl:hasValue ?CLASS ].
+    rdfs:label ?L ;
+    rdfs:comment ?DEF ;
+		rdfs:seeAlso ?Y ;
+		a owl:NamedIndividual ;
+		a glview:InstrumentType ;
+		rdfs:subClassOf glview:Instrument .
+	
+	[]	a owl:Restriction ;
+			owl:onProperty glview:hasInstrumentType ;
+			owl:someValuesFrom [	a owl:Class ; owl:oneOf ( ?CLASS ) ] ;
+			rdfs:subClassOf ?CLASS .
+	 
 }
 WHERE {
   <http://vocab.nerc.ac.uk/collection/L05/current/> skos:prefLabel ?ONTOL ; 

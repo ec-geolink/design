@@ -27,8 +27,11 @@ CONSTRUCT {
 		rdfs:label ?VL ;
 		rdfs:comment ?VDEF ;
 		rdfs:seeAlso ?V ;		
-		rdfs:subClassOf glview:Platform ;
-		owl:equivalentClass [ a owl:Restriction ; owl:onProperty glview:hasPlatformType ; owl:hasValue ?VV ]. 
+		rdfs:subClassOf glview:Platform .
+	[]	a owl:Restriction ;
+			owl:onProperty glview:hasPlatformType ;
+			owl:someValuesFrom [	a owl:Class ; owl:oneOf ( ?VV ) ] ;
+			rdfs:subClassOf ?VV .
 }
 WHERE {
 	<http://vocab.nerc.ac.uk/collection/L06/current/> skos:prefLabel ?ONTOL ; 
