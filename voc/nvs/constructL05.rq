@@ -12,56 +12,57 @@ PREFIX dcterms: <http://purl.org/dc/terms/>
 ## PREFIX time: <http://www.w3.org/2006/time#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX glvoc_L05: <http://schema.geolink.org/dev/voc/nvs/L05#>
+PREFIX glvoc_L22: <http://schema.geolink.org/dev/voc/nvs/L22#>
 PREFIX glview: <http://schema.geolink.org/dev/view#>
 
 CONSTRUCT {
-	?graphdest a owl:Ontology ;
-		rdfs:label ?ontolabel ;
-		dcterms:date ?ontodate ;
-		owl:versionInfo ?ontovers ;
+	?L05destURI a owl:Ontology ;
+		rdfs:label ?L05graphdestLabel ;
+		dcterms:date ?L05graphdestDate ;
+		owl:versionInfo ?L05graphdestVers ;
 		rdfs:comment "This ontology captures SeaDataNet device categories from NERC vocabulary server"@en ;
-		rdfs:seeAlso <http://vocab.nerc.ac.uk/collection/L05/> .
+		rdfs:seeAlso ?L05sourceURI .
 	
 	glview:Instrument a owl:Class .
 	glview:InstrumentType a owl:Class .
 	glview:hasInstrumentType a owl:ObjectProperty .
 	
-	?sub ?pred1 ?obj1a, ?obj1b, ?obj1c ; 
-		rdfs:label ?label ;
-		rdfs:comment ?def ;
-		rdfs:seeAlso ?Y ;
-		?pred2 ?obj2.
+	?L05destTermURI a owl:Class, owl:NamedIndividual, glview:InstrumentType ; 
+		rdfs:label ?L05destTermLabel ;
+		rdfs:comment ?L05destTermDef ;
+		rdfs:seeAlso ?L05destTermSeeAlso ;
+		rdfs:subClassOf ?L05destSuperTermURI.
 	[] 	a owl:Restriction; 
 		owl:onProperty glview:hasInstrumentType; 
-		owl:someValuesFrom [ a owl:Class ; owl:oneOf ( ?sub ) ] ;
-		rdfs:subClassOf ?sub .
+		owl:someValuesFrom [ a owl:Class ; owl:oneOf ( ?L05destTermURI ) ] ;
+		rdfs:subClassOf ?L05destTermURI .	
+		
 }
 WHERE {
-	SELECT 	DISTINCT
-		?graphdest
-		?ontolabel ?ontodate ?ontovers
-		?sub ?Y ?label ?def
-		?pred1 ?obj1a ?obj1b ?obj1c 
-		?pred2 ?obj2
+	SELECT 	DISTINCT *
 	WHERE {
-	  VALUES ( ?graphsource ?graphdest ) { ( <http://vocab.nerc.ac.uk/collection/L05/current/> <http://schema.geolink.org/dev/voc/nvs/L05> ) }
-		?graphsource skos:member ?Y ; skos:prefLabel ?ontolabel ; dcterms:date ?ontodate ; owl:versionInfo ?ontovers .	
-		?Y skos:prefLabel ?label; skos:definition ?def .
-		{	?graphsource skos:member ?Z.
-			?Y skos:broader ?Z .		
-		} UNION {		
-			FILTER NOT EXISTS { ?graphsource skos:member ?Z . ?Y skos:broader ?Z .}	
-		}
+		VALUES ( ?L05sourceURI ?L05destURI ) { ( <http://vocab.nerc.ac.uk/collection/L05/current/> <http://schema.geolink.org/dev/voc/nvs/L05> ) }
+		?L05sourceURI skos:member ?L05sourceTermURI ; 
+			skos:prefLabel ?L05graphdestLabel ; 
+			dcterms:date ?L05graphdestDate ; 
+			owl:versionInfo ?L05graphdestVers .	
 		
-		BIND ( replace( replace( str(?Y), str(?graphsource), "", "i"), "/", "", "i") as ?yname )
-		BIND ( iri(concat(str(?graphdest), "#", ?yname )) as ?sub )		
-		BIND ( rdf:type as ?pred1 )
-		BIND ( owl:Class as ?obj1a )
-		BIND ( owl:NamedIndividual as ?obj1b )
-		BIND ( glview:InstrumentType as ?obj1c )
-		BIND ( rdfs:subClassOf as ?pred2 )	
-		BIND ( if( !bound(?Z), glview:Instrument, replace( replace( str(?Z), str(?graphsource), "", "i"), "/", "", "i") ) as ?zname )
-		BIND ( if( !bound(?Z), glview:Instrument,  iri(concat(str(?graphdest), "#", ?zname )) ) as ?obj2 )
-			
+		?L05sourceTermURI skos:prefLabel ?L05sourceTermLabel;  skos:definition ?L05sourceTermDef .
+		{	?L05sourceURI skos:member ?L05sourceSuperTermURI.
+			?L05sourceTermURI skos:broader ?L05sourceSuperTermURI .		
+		} UNION {		
+			FILTER NOT EXISTS { ?L05sourceURI skos:member ?L05sourceSuperTermURI . ?L05sourceTermURI skos:broader ?L05sourceSuperTermURI .}	
+		}
+		BIND ( ?L05sourceTermLabel as ?L05destTermLabel )
+		BIND ( ?L05sourceTermDef as ?L05destTermDef )
+		BIND ( ?L05sourceTermURI as ?L05destTermSeeAlso )
+		BIND ( replace( replace( str(?L05sourceTermURI), str(?L05sourceURI), "", "i"), "/", "", "i") as ?L05term )
+		BIND ( iri(concat(str(?L05destURI), "#", ?L05term )) as ?L05destTermURI )					
+		BIND ( 
+			if( !bound(?L05sourceSuperTermURI), 
+				glview:Instrument, 
+				iri(concat(str(?L05destURI), "#", replace(replace(str(?L05sourceSuperTermURI), str(?L05sourceURI), "", "i"), "/", "", "i") )) ) 
+			as ?L05destSuperTermURI )
+	
 	}
 }
