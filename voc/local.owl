@@ -145,6 +145,12 @@
     <owl:Class rdf:about="&ecglvoc_local;roletype_co-principal_investigator">
        <rdfs:label>Role: Co-Principal Investigator</rdfs:label>
     </owl:Class>
+    
+    <!-- http://schema.geolink.org/dev/voc/local#roletype_program_manager -->
+    <!-- DOMAIN OF: FundingAward -->
+    <owl:Class rdf:about="&ecglvoc_local;roletype_co-roletype_program_manager">
+       <rdfs:label>Role: Program Manager</rdfs:label>
+    </owl:Class>
 
     <!-- http://schema.geolink.org/dev/voc/local#roletype_author -->
     <!-- DOMAIN OF: Publication -->
