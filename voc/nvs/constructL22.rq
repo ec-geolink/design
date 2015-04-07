@@ -21,27 +21,26 @@ CONSTRUCT {
 		rdfs:label ?L22graphdestLabel ;
 		dcterms:date ?L22graphdestDate ;
 		owl:versionInfo ?L22graphdestVers ;
-		rdfs:comment "This ontology captures SeaVoX device catalogue from NERC vocabulary server"@en ;		
-		rdfs:seeAlso ?L22sourceURI .
+		rdfs:comment "This ontology captures SeaVoX device catalogue from NERC vocabulary server with mapping to SeaDataNet device categories"@en ;		
+		rdfs:seeAlso ?L22sourceURI, ?L05sourceURI ;
+		owl:imports ?L05destURI .
 	
 	glview:Instrument a owl:Class .
 	glview:InstrumentType a owl:Class .
 	glview:hasInstrumentType a owl:ObjectProperty .
 
-	?L05destSuperTermURI a owl:Class, owl:NamedIndividual .	
 	?L22destTermURI a owl:Class, owl:NamedIndividual, glview:InstrumentType ; 
 		rdfs:label ?L22destTermLabel ;
 		rdfs:comment ?L22destTermDef ;
-		rdfs:seeAlso ?L22destTermSeeAlso ;
-		rdfs:subClassOf ?L22destSuperTermURI, ?L05destSuperTermURI.
-	
-	?L22destTermURI ?owlSameAsPred ?L05destSameTermURI ; ?owlEquivClassPred ?L05destSameTermURI .
-	?L05destSameTermURIDecl a owl:Class, owl:NamedIndividual .
+		rdfs:seeAlso ?L22destTermSeeAlso .
 	[] 	a owl:Restriction; 
 		owl:onProperty glview:hasInstrumentType; 
 		owl:someValuesFrom [ a owl:Class ; owl:oneOf ( ?L22destTermURI ) ] ;
 		rdfs:subClassOf ?L22destTermURI .	
-		
+	
+	?L22destTermURI ?L22toL22destTermRelation ?L22destSuperTermURI .
+	?L22destTermURI ?L22toL05destTermRelation ?L05destTermURI .
+	
 }
 WHERE {
 	SELECT 	DISTINCT *
@@ -58,21 +57,11 @@ WHERE {
 			FILTER NOT EXISTS { ?L22sourceURI skos:member ?L22sourceSuperTermURI . ?L22sourceTermURI skos:broader ?L22sourceSuperTermURI .}				
 		}
 		VALUES ( ?L05sourceURI ?L05destURI ) { ( <http://vocab.nerc.ac.uk/collection/L05/current/> <http://schema.geolink.org/dev/voc/nvs/L05> ) }
-		{	?L05sourceURI skos:member ?L05sourceSuperTermURI .
-			?L22sourceTermURI skos:broader ?L05sourceSuperTermURI .			
+		{	?L05sourceURI skos:member ?L05sourceTermURI .
+			?L22sourceTermURI ?L22toL05termrelation ?L05sourceTermURI .	
+			FILTER (?L22toL05termrelation in (skos:broader, owl:sameAs))
 		} UNION {
-			FILTER NOT EXISTS { 
-				?L05sourceURI skos:member ?L05sourceSuperTermURI . 
-				?L22sourceTermURI skos:broader ?L05sourceSuperTermURI . 		
-			}
-		}
-		{	?L05sourceURI skos:member ?L05sourceSameTermURI .
-			?L22sourceTermURI owl:sameAs ?L05sourceSameTermURI .
-		} UNION {
-			FILTER NOT EXISTS { 
-				?L05sourceURI skos:member ?L05sourceSameTermURI . 
-				?L22sourceTermURI owl:sameAs ?L05sourceSameTermURI . 
-			}
+			FILTER NOT EXISTS {	?L05sourceURI skos:member ?L05sourceTermURI . 	?L22sourceTermURI skos:broader/owl:sameAs ?L05sourceTermURI .	}
 		}
 		
 		BIND ( ?L22sourceTermLabel as ?L22destTermLabel )
@@ -84,32 +73,35 @@ WHERE {
 		BIND (	
 			if(bound(?L22sourceSuperTermURI),
 				iri(concat(str(?L22destURI), "#", replace(replace(str(?L22sourceSuperTermURI), str(?L22sourceURI), "", "i"), "/", "", "i") )),
-				if(bound(?L05sourceSuperTermURI),
-					iri(concat(str(?L05destURI), "#", replace(replace(str(?L05sourceSuperTermURI), str(?L05sourceURI), "", "i"), "/", "", "i") )),
+				if(bound(?L05sourceTermURI) && ?L22toL05termrelation in(skos:broader, owl:sameAs),
+					iri(concat(str(?L05destURI), "#", replace(replace(str(?L05sourceTermURI), str(?L05sourceURI), "", "i"), "/", "", "i") )),
 					glview:Instrument
 				)
 			)				 
-			as ?L22destSuperTermURI )
-		
+		as ?L22destSuperTermURI )
+		BIND (	
+			if(bound(?L22sourceSuperTermURI),
+				rdfs:subClassOf,
+				if(bound(?L05sourceTermURI) && ?L22toL05termrelation = skos:broader,
+					rdfs:subClassOf,
+					if(bound(?L05sourceTermURI) && ?L22toL05termrelation = owl:sameAs,
+						owl:equivalentClass,
+						rdfs:subClassOf
+					)
+				)
+			)				 
+		as ?L22toL22destTermRelation )
 		BIND (
-			if (bound(?L05sourceSuperTermURI),
-				iri(concat(str(?L05destURI), "#", replace(replace(str(?L05sourceSuperTermURI), str(?L05sourceURI), "", "i"), "/", "", "i") )),
+			if(bound(?L05sourceTermURI) && ?L22toL05termrelation in(skos:broader, owl:sameAs),
+				iri(concat(str(?L05destURI), "#", replace(replace(str(?L05sourceTermURI), str(?L05sourceURI), "", "i"), "/", "", "i") )),
 				if (bound(?L22sourceSuperTermURI),
 					iri(concat(str(?L22destURI), "#", replace(replace(str(?L22sourceSuperTermURI), str(?L22sourceURI), "", "i"), "/", "", "i") )),
 					glview:Instrument
 				)
 			)
-			as ?L05destSuperTermURI)
-		
-		BIND (if (bound(?L05sourceSameTermURI), owl:sameAs, rdf:type) as ?owlSameAsPred )
-		BIND (if (bound(?L05sourceSameTermURI), owl:equivalentClass, rdf:type) as ?owlEquivClassPred )		
-		BIND (
-			if (bound(?L05sourceSameTermURI), 
-				iri(concat(str(?L05destURI), "#", replace(replace(str(?L05sourceSameTermURI), str(?L05sourceURI), "", "i"), "/", "", "i") )), 
-				owl:Class
-			)
-			as ?L05destSameTermURI)
-		BIND(if (bound(?L05sourceSameTermURI), ?L05destSameTermURI, ?L22destTermURI) as ?L05destSameTermURIDecl)
+		as ?L05destTermURI)
+		BIND ( if(bound(?L05sourceTermURI) && ?L22toL05termrelation = owl:sameAs,	owl:equivalentClass, rdfs:subClassOf) as ?L22toL05destTermRelation)
+				
 	}
 }
 

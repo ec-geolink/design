@@ -18,8 +18,7 @@ PREFIX glview: <http://schema.geolink.org/dev/view#>
 CONSTRUCT {
 	?L05destURI a owl:Ontology ;
 		rdfs:label ?L05graphdestLabel ;
-		dcterms:date ?L05graphdestDate ;
-		owl:versionInfo ?L05graphdestVers ;
+		dcterms:date ?L05graphdestDate ;		
 		rdfs:comment "This ontology captures SeaDataNet device categories from NERC vocabulary server"@en ;
 		rdfs:seeAlso ?L05sourceURI .
 	
@@ -44,8 +43,7 @@ WHERE {
 		VALUES ( ?L05sourceURI ?L05destURI ) { ( <http://vocab.nerc.ac.uk/collection/L05/current/> <http://schema.geolink.org/dev/voc/nvs/L05> ) }
 		?L05sourceURI skos:member ?L05sourceTermURI ; 
 			skos:prefLabel ?L05graphdestLabel ; 
-			dcterms:date ?L05graphdestDate ; 
-			owl:versionInfo ?L05graphdestVers .	
+			dcterms:date ?L05graphdestDate .	
 		
 		?L05sourceTermURI skos:prefLabel ?L05sourceTermLabel;  skos:definition ?L05sourceTermDef .
 		{	?L05sourceURI skos:member ?L05sourceSuperTermURI.
