@@ -31,31 +31,6 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    <!-- http://schema.geolink.org/dev/bcoview#hasRoleIn -->
-    
-    <owl:ObjectProperty rdf:about="&bcodmo;hasRoleIn">
-        <rdfs:comment>Maps to full patterns object property AgentRole:hasAgentRoleIn</rdfs:comment>
-        <rdfs:domain rdf:resource="&ecglview;Role"/>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&ecglview;Award"/>
-                    <rdf:Description rdf:about="&ecglview;Cruise"/>
-                    <rdf:Description rdf:about="&ecglview;Dataset"/>
-                    <rdf:Description rdf:about="&ecglview;DigitalObject"/>
-                    <rdf:Description rdf:about="&ecglview;Program"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
-    </owl:ObjectProperty>
-
-    <!-- http://schema.geolink.org/dev/bcoview#matchesR2RCruise -->
-    
-    <owl:ObjectProperty rdf:about="&bcodmo;matchesR2RCruise">
-        <rdfs:comment>Maps to full patterns ???</rdfs:comment>
-        <rdfs:domain rdf:resource="&ecglview;Cruise"/>
-        <rdfs:range rdf:resource="&ecglview;Cruise"/>
-    </owl:ObjectProperty>
     
     <!-- http://schema.geolink.org/dev/bcoview#isPartOfDataset -->
     
@@ -106,28 +81,6 @@
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
-    <!-- http://schema.geolink.org/dev/bcoview#website -->
-        
-    <owl:DatatypeProperty rdf:about="&bcodmo;website">
-        <rdfs:comment>Maps to full patterns data property InformationObject:hasWebpage</rdfs:comment>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&ecglview;Award"/>
-                    <rdf:Description rdf:about="&ecglview;Cruise"/>
-                    <rdf:Description rdf:about="&ecglview;Dataset"/>
-                    <rdf:Description rdf:about="&ecglview;DigitalObject"/>
-                    <rdf:Description rdf:about="&ecglview;Instrument"/>
-                    <rdf:Description rdf:about="&ecglview;Organization"/>
-                    <rdf:Description rdf:about="&ecglview;Person"/>
-                    <rdf:Description rdf:about="&ecglview;Vessel"/>
-                    <rdf:Description rdf:about="&ecglview;Program"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
-        <rdfs:range rdf:resource="&xsd;anyURI"/>
-    </owl:DatatypeProperty>
-
     <!-- http://schema.geolink.org/dev/bcoview#datasetLandingPage -->
     
     <owl:DatatypeProperty rdf:about="&bcodmo;datasetLandingPage">
@@ -135,84 +88,7 @@
         <rdfs:domain rdf:resource="&ecglview;Dataset"/>
         <rdfs:range rdf:resource="&xsd;anyURI"/>
     </owl:DatatypeProperty>
-    
-    <!-- http://schema.geolink.org/dev/bcoview#description -->
-    
-    <owl:DatatypeProperty rdf:about="&bcodmo;description">
-        <rdfs:comment>Maps to full patterns ???</rdfs:comment>
-        <rdfs:domain rdf:resource="&ecglview;Dataset"/>
-        <rdfs:range rdf:resource="&rdf;HTML"/>
-    </owl:DatatypeProperty>
-    
-    <!-- http://schema.geolink.org/dev/bcoview#briefDescription -->
-    
-    <owl:DatatypeProperty rdf:about="&bcodmo;briefDescription">
-        <rdfs:comment>Maps to full patterns ???</rdfs:comment>
-        <rdfs:domain rdf:resource="&ecglview;Dataset"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-    </owl:DatatypeProperty>
-    
-    <!-- http://schema.geolink.org/dev/bcoview#acquisitionDescription -->
-    
-    <owl:DatatypeProperty rdf:about="&bcodmo;acquisitionDescription">
-        <rdfs:comment>Maps to full patterns ???</rdfs:comment>
-        <rdfs:domain rdf:resource="&ecglview;Dataset"/>
-        <rdfs:range rdf:resource="&rdf;HTML"/>
-    </owl:DatatypeProperty>
-    
-    <!-- http://schema.geolink.org/dev/bcoview#processingDescription -->
-    
-    <owl:DatatypeProperty rdf:about="&bcodmo;processingDescription">
-        <rdfs:comment>Maps to full patterns ???</rdfs:comment>
-        <rdfs:domain rdf:resource="&ecglview;Dataset"/>
-        <rdfs:range rdf:resource="&rdf;HTML"/>
-    </owl:DatatypeProperty>
-    
-    <!-- http://schema.geolink.org/dev/bcoview#givenName -->
-    
-    <owl:DatatypeProperty rdf:about="&bcodmo;givenName">
-        <rdfs:comment>Maps to full patterns datatype property PersonName:firstOrGivenName</rdfs:comment>
-        <rdfs:domain rdf:resource="&ecglview;Person"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-    </owl:DatatypeProperty>
-    
-    <!-- http://schema.geolink.org/dev/bcoview#surname -->
-    
-    <owl:DatatypeProperty rdf:about="&bcodmo;surname">
-        <rdfs:comment>Maps to full patterns datatype property PersonName:familyOrSurname</rdfs:comment>
-        <rdfs:domain rdf:resource="&ecglview;Person"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-    </owl:DatatypeProperty>
-    
-    <!-- http://schema.geolink.org/dev/bcoview#startDate -->
-    
-    <owl:DatatypeProperty rdf:about="&bcodmo;startDate">
-        <rdfs:comment>Maps to full patterns ???</rdfs:comment>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&ecglview;Cruise"/>
-                    <rdf:Description rdf:about="&ecglview;Program"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
-        <rdfs:range rdf:resource="&xsd;date"/>
-    </owl:DatatypeProperty>
-    
-    <!-- http://schema.geolink.org/dev/bcoview#endDate -->
-    
-    <owl:DatatypeProperty rdf:about="&bcodmo;endDate">
-        <rdfs:comment>Maps to full patterns datatype property ???</rdfs:comment>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&ecglview;Cruise"/>
-                    <rdf:Description rdf:about="&ecglview;Program"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
-        <rdfs:range rdf:resource="&xsd;date"/>
-    </owl:DatatypeProperty>
+
     
 
     <!-- 
@@ -223,104 +99,10 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 	
-    <!-- http://schema.geolink.org/dev/bcoview#Repository -->
-
-    <owl:Class rdf:about="&bcodmo;Repository">
-    	<owl:disjointWith rdf:resource="ecglview;Organization"/>
-    </owl:Class>
-    
+   
     <!-- http://schema.geolink.org/dev/bcoview#Project -->
 
     <owl:Class rdf:about="&bcodmo;Project"/>
 
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Named Individuals
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-     
-    <!-- http://schema.geolink.org/dev/bcoview#website#program_manager_role -->
-	
-	<owl:NamedIndividual rdf:about="&bcodmo;program_manager_role">
-	    <rdfs:comment>Program Manager for an Award</rdfs:comment>
-	</owl:NamedIndividual>
-	
-	<owl:NamedIndividual rdf:about="&bcodmo;chief_scientist_role">
-	    <rdfs:comment>Chief Scientist</rdfs:comment>
-	</owl:NamedIndividual>
-	
-	<owl:NamedIndividual rdf:about="&bcodmo;student_role">
-	    <rdfs:comment>Student</rdfs:comment>
-	</owl:NamedIndividual>
-	
-	<owl:NamedIndividual rdf:about="&bcodmo;co_chief_scientist_role">
-	    <rdfs:comment>Co-Chief Scientist</rdfs:comment>
-	</owl:NamedIndividual>
-	
-	<owl:NamedIndividual rdf:about="&bcodmo;scientist_role">
-	    <rdfs:comment>Scientist</rdfs:comment>
-	</owl:NamedIndividual>
-	
-	<owl:NamedIndividual rdf:about="&bcodmo;guest_role">
-	    <rdfs:comment>Guest</rdfs:comment>
-	</owl:NamedIndividual>
-	
-	<owl:NamedIndividual rdf:about="&bcodmo;originator_role">
-	    <rdfs:comment>Originator</rdfs:comment>
-	</owl:NamedIndividual>
-	
-	<owl:NamedIndividual rdf:about="&bcodmo;contact_role">
-	    <rdfs:comment>Contact</rdfs:comment>
-	</owl:NamedIndividual>
-	
-	<owl:NamedIndividual rdf:about="&bcodmo;analyst_role">
-	    <rdfs:comment>Analyst</rdfs:comment>
-	</owl:NamedIndividual>
-	
-	<owl:NamedIndividual rdf:about="&bcodmo;technician_role">
-	    <rdfs:comment>Technician</rdfs:comment>
-	</owl:NamedIndividual>
-	
-	<owl:NamedIndividual rdf:about="&bcodmo;curator_role">
-	    <rdfs:comment>Curator)</rdfs:comment>
-	</owl:NamedIndividual>
-	
-	<owl:NamedIndividual rdf:about="&bcodmo;data_manager_role">
-	    <rdfs:comment>Data Manager</rdfs:comment>
-	</owl:NamedIndividual>
-	
-	<owl:NamedIndividual rdf:about="&bcodmo;principal_investigator_role">
-	    <rdfs:comment>Principal Investigator</rdfs:comment>
-	</owl:NamedIndividual>
-	
-	<owl:NamedIndividual rdf:about="&bcodmo;data_publisher_role">
-	    <rdfs:comment>Data Publisher</rdfs:comment>
-	</owl:NamedIndividual>
-	
-	<owl:NamedIndividual rdf:about="&bcodmo;co_principal_investigator_role">
-	    <rdfs:comment>Co-Principal Investigator</rdfs:comment>
-	</owl:NamedIndividual>
-	
-	<owl:NamedIndividual rdf:about="&bcodmo;captain_role">
-	    <rdfs:comment>Captain</rdfs:comment>
-	</owl:NamedIndividual>
-	
-	<owl:NamedIndividual rdf:about="&bcodmo;lead_principal_investigator_role">
-	    <rdfs:comment>Lead Principal Investigator</rdfs:comment>
-	</owl:NamedIndividual>
-	
-	<owl:NamedIndividual rdf:about="&bcodmo;project_coordinator_role">
-	    <rdfs:comment>Project Coordinator</rdfs:comment>
-	</owl:NamedIndividual>
-	
-	<owl:NamedIndividual rdf:about="&bcodmo;international_collaborator_role">
-	    <rdfs:comment>International Collaborator (may be equivalent to Foreign Observer?)</rdfs:comment>
-	</owl:NamedIndividual>
-	
-	<owl:NamedIndividual rdf:about="&bcodmo;bcodmo_data_manager_role">
-	    <rdfs:comment>BCO-DMO Data Manager</rdfs:comment>
-	</owl:NamedIndividual>
 
 </rdf:RDF>
