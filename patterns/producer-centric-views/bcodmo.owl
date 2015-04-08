@@ -64,6 +64,15 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+
+    <!-- http://schema.geolink.org/dev/bcoview#synonym -->
+    
+    <owl:DatatypeProperty rdf:about="&bcodmo;synonym">
+        <rdfs:comment></rdfs:comment>
+        <rdfs:domain rdf:resource="&ecglview;Cruise"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
     <!-- http://schema.geolink.org/dev/bcoview#acronym -->
     
     <owl:DatatypeProperty rdf:about="&bcodmo;acronym">
