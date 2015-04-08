@@ -22,7 +22,7 @@ CONSTRUCT {
 		rdfs:comment "This ontology captures SeaDataNet Agreed Parameter Groups from NERC vocabulary server"@en ;
 		rdfs:seeAlso ?P03sourceURI .
 	
-	glview:Measurement a owl:Class .
+	glvoc_P03:SeaDataNetParameter a owl:Class .
 	glview:MeasurementType a owl:Class .
 	glview:hasMeasurementType a owl:ObjectProperty .
 	
@@ -54,7 +54,7 @@ WHERE {
 	BIND ( iri(concat(str(?P03destURI), "#", ?P03term )) as ?P03destTermURI )					
 	BIND ( 
 		if( !bound(?P03sourceSuperTermURI), 
-			glview:Measurement, 
+			iri(concat(str(?P03destURI), "#SeaDataNetParameter")), 
 			iri(concat(str(?P03destURI), "#", replace(replace(str(?P03sourceSuperTermURI), str(?P03sourceURI), "", "i"), "/", "", "i") )) ) 
 		as ?P03destSuperTermURI )
 }

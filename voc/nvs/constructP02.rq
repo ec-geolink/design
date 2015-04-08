@@ -25,7 +25,7 @@ CONSTRUCT {
 		rdfs:seeAlso ?P02sourceURI, ?P03sourceURI ;
 		owl:imports ?P03destURI .
 	
-	glview:Measurement a owl:Class .
+	glvoc_P02:SeaDataNetParameter a owl:Class; rdfs:subClassOf glvoc_P03:SeaDataNetParameter .
 	glview:MeasurementType a owl:Class .
 	glview:hasMeasurementType a owl:ObjectProperty .
 
@@ -36,7 +36,8 @@ CONSTRUCT {
 	[] 	a owl:Restriction; 
 		owl:onProperty glview:hasMeasurementType; 
 		owl:someValuesFrom [ a owl:Class ; owl:oneOf ( ?P02destTermURI ) ] ;
-		rdfs:subClassOf ?P02destTermURI .		
+		rdfs:subClassOf ?P02destTermURI .
+	?P02destTermURI rdfs:subClassOf glvoc_P02:SeaDataNetParameter .
 	?P02destTermURI ?P02toP02relationURI ?P02destSuperTermURI .
 	?P02destTermURI ?P02toP03destRelationURI ?P03destTermURI .
 }
@@ -70,7 +71,9 @@ WHERE {
 				FILTER ( ?P02toP03sourceRelationURI IN (owl:sameAs, skos:broader) ) }
 	
 	BIND (	if(!bound(?P03sourceTermURI), 
-				if(!bound(?P02sourceSuperTermURI), glview:Measurement, ?P02destSuperTermURI),
+				if(!bound(?P02sourceSuperTermURI), 
+					iri(concat(str(?P02destURI), "#SeaDataNetParameter")), 
+					?P02destSuperTermURI),
 				iri(concat(str(?P03destURI), "#", replace(replace(str(?P03sourceTermURI), str(?P03sourceURI), "", "i"), "/", "", "i") )))
 	as ?P03destTermURI )
 	
