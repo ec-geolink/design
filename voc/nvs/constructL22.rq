@@ -40,6 +40,7 @@ CONSTRUCT {
 	
 	?L22destTermURI ?L22toL22destTermRelation ?L22destSuperTermURI .
 	?L22destTermURI ?L22toL05destTermRelation ?L05destTermURI .
+	?L22destTermURI ?L22defaultRelation ?glviewInstrumentOrOWLCLass .
 	
 }
 WHERE {
@@ -50,22 +51,17 @@ WHERE {
 			skos:prefLabel ?L22graphdestLabel ; 
 			dcterms:date ?L22graphdestDate ; 
 			owl:versionInfo ?L22graphdestVers .			
-		?L22sourceTermURI skos:prefLabel ?L22sourceTermLabel;  skos:definition ?L22sourceTermDef .
-		{	?L22sourceURI skos:member ?L22sourceSuperTermURI.
-			?L22sourceTermURI skos:broader ?L22sourceSuperTermURI .		
-		} UNION {		
-			FILTER NOT EXISTS { ?L22sourceURI skos:member ?L22sourceSuperTermURI . ?L22sourceTermURI skos:broader ?L22sourceSuperTermURI .}				
-		}
+		OPTIONAL { ?L22sourceTermURI skos:prefLabel ?L22sourceTermLabel . }
+		OPTIONAL { ?L22sourceTermURI skos:definition ?L22sourceTermDef .}
+		OPTIONAL {	?L22sourceURI skos:member ?L22sourceSuperTermURI.
+					?L22sourceTermURI skos:broader ?L22sourceSuperTermURI .	} 
 		VALUES ( ?L05sourceURI ?L05destURI ) { ( <http://vocab.nerc.ac.uk/collection/L05/current/> <http://schema.geolink.org/dev/voc/nvs/L05> ) }
-		{	?L05sourceURI skos:member ?L05sourceTermURI .
-			?L22sourceTermURI ?L22toL05termrelation ?L05sourceTermURI .	
-			FILTER (?L22toL05termrelation in (skos:broader, owl:sameAs))
-		} UNION {
-			FILTER NOT EXISTS {	?L05sourceURI skos:member ?L05sourceTermURI . 	?L22sourceTermURI skos:broader/owl:sameAs ?L05sourceTermURI .	}
-		}
+		OPTIONAL {	?L05sourceURI skos:member ?L05sourceTermURI .
+					?L22sourceTermURI ?L22toL05termrelation ?L05sourceTermURI .	
+					FILTER (?L22toL05termrelation in (skos:broader, owl:sameAs)) } 
 		
-		BIND ( ?L22sourceTermLabel as ?L22destTermLabel )
-		BIND ( ?L22sourceTermDef as ?L22destTermDef )
+		BIND ( if(bound(?L22sourceTermLabel), ?L22sourceTermLabel, "") as ?L22destTermLabel )
+		BIND ( if(bound(?L22sourceTermDef), ?L22sourceTermDef, "") as ?L22destTermDef )
 		BIND ( ?L22sourceTermURI as ?L22destTermSeeAlso )
 		BIND ( replace( replace( str(?L22sourceTermURI), str(?L22sourceURI), "", "i"), "/", "", "i") as ?L22term )
 		BIND ( iri(concat(str(?L22destURI), "#", ?L22term )) as ?L22destTermURI )		
@@ -73,35 +69,25 @@ WHERE {
 		BIND (	
 			if(bound(?L22sourceSuperTermURI),
 				iri(concat(str(?L22destURI), "#", replace(replace(str(?L22sourceSuperTermURI), str(?L22sourceURI), "", "i"), "/", "", "i") )),
-				if(bound(?L05sourceTermURI) && ?L22toL05termrelation in(skos:broader, owl:sameAs),
-					iri(concat(str(?L05destURI), "#", replace(replace(str(?L05sourceTermURI), str(?L05sourceURI), "", "i"), "/", "", "i") )),
-					glview:Instrument
-				)
-			)				 
+				owl:Class )				 
 		as ?L22destSuperTermURI )
-		BIND (	
-			if(bound(?L22sourceSuperTermURI),
-				rdfs:subClassOf,
-				if(bound(?L05sourceTermURI) && ?L22toL05termrelation = skos:broader,
+		BIND (	if(bound(?L22sourceSuperTermURI), rdfs:subClassOf, rdf:type ) as ?L22toL22destTermRelation )
+		BIND (	if(bound(?L05sourceTermURI),
+					iri(concat(str(?L05destURI), "#", replace(replace(str(?L05sourceTermURI), str(?L05sourceURI), "", "i"), "/", "", "i") )),
+					owl:Class )
+		as ?L05destTermURI )
+		BIND ( 	if(bound(?L05sourceTermURI),	
+					if(?L22toL05termrelation = owl:sameAs, owl:equivalentClass, rdfs:subClassOf ), 
+					rdf:type ) 
+		as ?L22toL05destTermRelation)
+		BIND (	if( (!bound(?L05sourceTermURI) && !bound(?L22sourceSuperTermURI)) || (bound(?L05sourceTermURI) && ?L22toL05termrelation = owl:sameAs), 
+					glview:Instrument,
+					owl:Class )
+		as ?glviewInstrumentOrOWLCLass )
+		BIND (	if( (!bound(?L05sourceTermURI) && !bound(?L22sourceSuperTermURI)) || (bound(?L05sourceTermURI) && ?L22toL05termrelation = owl:sameAs), 
 					rdfs:subClassOf,
-					if(bound(?L05sourceTermURI) && ?L22toL05termrelation = owl:sameAs,
-						owl:equivalentClass,
-						rdfs:subClassOf
-					)
-				)
-			)				 
-		as ?L22toL22destTermRelation )
-		BIND (
-			if(bound(?L05sourceTermURI) && ?L22toL05termrelation in(skos:broader, owl:sameAs),
-				iri(concat(str(?L05destURI), "#", replace(replace(str(?L05sourceTermURI), str(?L05sourceURI), "", "i"), "/", "", "i") )),
-				if (bound(?L22sourceSuperTermURI),
-					iri(concat(str(?L22destURI), "#", replace(replace(str(?L22sourceSuperTermURI), str(?L22sourceURI), "", "i"), "/", "", "i") )),
-					glview:Instrument
-				)
-			)
-		as ?L05destTermURI)
-		BIND ( if(bound(?L05sourceTermURI) && ?L22toL05termrelation = owl:sameAs,	owl:equivalentClass, rdfs:subClassOf) as ?L22toL05destTermRelation)
-				
+					rdf:type )
+		as ?L22defaultRelation)
 	}
 }
 

@@ -37,30 +37,25 @@ CONSTRUCT {
 		rdfs:subClassOf ?L05destTermURI .	
 		
 }
-WHERE {
-	SELECT 	DISTINCT *
-	WHERE {
-		VALUES ( ?L05sourceURI ?L05destURI ) { ( <http://vocab.nerc.ac.uk/collection/L05/current/> <http://schema.geolink.org/dev/voc/nvs/L05> ) }
-		?L05sourceURI skos:member ?L05sourceTermURI ; 
-			skos:prefLabel ?L05graphdestLabel ; 
-			dcterms:date ?L05graphdestDate .	
-		
-		?L05sourceTermURI skos:prefLabel ?L05sourceTermLabel;  skos:definition ?L05sourceTermDef .
-		{	?L05sourceURI skos:member ?L05sourceSuperTermURI.
-			?L05sourceTermURI skos:broader ?L05sourceSuperTermURI .		
-		} UNION {		
-			FILTER NOT EXISTS { ?L05sourceURI skos:member ?L05sourceSuperTermURI . ?L05sourceTermURI skos:broader ?L05sourceSuperTermURI .}	
-		}
-		BIND ( ?L05sourceTermLabel as ?L05destTermLabel )
-		BIND ( ?L05sourceTermDef as ?L05destTermDef )
-		BIND ( ?L05sourceTermURI as ?L05destTermSeeAlso )
-		BIND ( replace( replace( str(?L05sourceTermURI), str(?L05sourceURI), "", "i"), "/", "", "i") as ?L05term )
-		BIND ( iri(concat(str(?L05destURI), "#", ?L05term )) as ?L05destTermURI )					
-		BIND ( 
-			if( !bound(?L05sourceSuperTermURI), 
-				glview:Instrument, 
-				iri(concat(str(?L05destURI), "#", replace(replace(str(?L05sourceSuperTermURI), str(?L05sourceURI), "", "i"), "/", "", "i") )) ) 
-			as ?L05destSuperTermURI )
+WHERE {	
+	VALUES ( ?L05sourceURI ?L05destURI ) { ( <http://vocab.nerc.ac.uk/collection/L05/current/> <http://schema.geolink.org/dev/voc/nvs/L05> ) }
+	?L05sourceURI skos:member ?L05sourceTermURI ; 
+		skos:prefLabel ?L05graphdestLabel ; 
+		dcterms:date ?L05graphdestDate .	
 	
-	}
+	OPTIONAL { ?L05sourceTermURI skos:prefLabel ?L05sourceTermLabel. }
+	OPTIONAL { ?L05sourceTermURI skos:definition ?L05sourceTermDef . }
+	OPTIONAL {	?L05sourceURI skos:member ?L05sourceSuperTermURI.
+				?L05sourceTermURI skos:broader ?L05sourceSuperTermURI .	} 
+	BIND ( if(bound(?L05sourceTermLabel), ?L05sourceTermLabel, "") as ?L05destTermLabel )
+	BIND ( if(bound(?L05sourceTermDef), ?L05sourceTermDef, "") as ?L05destTermDef )
+	BIND ( ?L05sourceTermURI as ?L05destTermSeeAlso )
+	BIND ( replace( replace( str(?L05sourceTermURI), str(?L05sourceURI), "", "i"), "/", "", "i") as ?L05term )
+	BIND ( iri(concat(str(?L05destURI), "#", ?L05term )) as ?L05destTermURI )					
+	BIND ( 
+		if( !bound(?L05sourceSuperTermURI), 
+			glview:Instrument, 
+			iri(concat(str(?L05destURI), "#", replace(replace(str(?L05sourceSuperTermURI), str(?L05sourceURI), "", "i"), "/", "", "i") )) ) 
+		as ?L05destSuperTermURI )
+
 }
