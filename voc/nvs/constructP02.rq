@@ -1,5 +1,6 @@
 ## This query is issued to NERC vocabulary server's SPARQL endpoint at http://vocab.nerc.ac.uk/sparql/
 ## Then, the result is saved into XML format as P02.owl
+## Assumption: P03.owl is also generated
 
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -12,32 +13,69 @@ PREFIX dcterms: <http://purl.org/dc/terms/>
 ## PREFIX time: <http://www.w3.org/2006/time#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX glvoc_P02: <http://schema.geolink.org/dev/voc/nvs/P02#>
+PREFIX glvoc_P03: <http://schema.geolink.org/dev/voc/nvs/P03#>
 PREFIX glview: <http://schema.geolink.org/dev/view#>
 
 CONSTRUCT {
-  <http://schema.geolink.org/dev/voc/nvs/P02> a owl:Ontology ;
-		rdfs:label ?ONTOL ;
-		dcterms:date ?ONTODATE ;
-		owl:versionInfo ?ONTOVERS ;
-    rdfs:comment "This ontology captures measurement types from SeaDataNet Parameter Discovery Vocabulary as hosted in the NERC vocabulary server"@en ;
-		rdfs:seeAlso <http://vocab.nerc.ac.uk/collection/P02/> .
-  glview:Measurement a owl:Class .
-  glview:MeasurementType a owl:Class .
-  glview:hasMeasurementType a owl:ObjectProperty .  
-  ?CLASS a owl:Class, owl:NamedIndividual, glview:MeasurementType ;
-    rdfs:label ?L ;
-    rdfs:comment ?DEF ;
-		rdfs:seeAlso ?Y ;	 
-		rdfs:subClassOf glview:Measurement ;
-		owl:equivalentClass [ a owl:Restriction ; owl:onProperty glview:hasMeasurementType ; owl:hasValue ?CLASS ].
+	?P02destURI a owl:Ontology ;
+		rdfs:label ?P02graphdestLabel ;
+		dcterms:date ?P02graphdestDate ;
+		owl:versionInfo ?P02graphdestVers ;
+		rdfs:comment "This ontology captures SeaDataNet Parameter Discovery Vocabulary from NERC vocabulary server with mapping to SeaDataNet Agreed Parameter Groups"@en ;		
+		rdfs:seeAlso ?P02sourceURI, ?P03sourceURI ;
+		owl:imports ?P03destURI .
+	
+	glview:Measurement a owl:Class .
+	glview:MeasurementType a owl:Class .
+	glview:hasMeasurementType a owl:ObjectProperty .
+
+	?P02destTermURI a owl:Class, owl:NamedIndividual, glview:MeasurementType ; 
+		rdfs:label ?P02destTermLabel ;
+		rdfs:comment ?P02destTermDef ;
+		rdfs:seeAlso ?P02destTermSeeAlso .
+	[] 	a owl:Restriction; 
+		owl:onProperty glview:hasMeasurementType; 
+		owl:someValuesFrom [ a owl:Class ; owl:oneOf ( ?P02destTermURI ) ] ;
+		rdfs:subClassOf ?P02destTermURI .		
+	?P02destTermURI ?P02toP02relationURI ?P02destSuperTermURI .
+	?P02destTermURI ?P02toP03destRelationURI ?P03destTermURI .
 }
 WHERE {
-  <http://vocab.nerc.ac.uk/collection/P02/current/> skos:prefLabel ?ONTOL ; 
-																										dcterms:date ?ONTODATE ;
-																										owl:versionInfo ?ONTOVERS ;
-																										skos:member ?Y .
-  ?Y skos:prefLabel ?L ;
-     skos:definition ?DEF .
-  BIND (REPLACE(str(?Y),"vocab.nerc.ac.uk/collection/P02/current/","schema.geolink.org/dev/voc/nvs/P02#","i") AS ?Z)    
-  BIND (IRI(SUBSTR(?Z,1,STRLEN(?Z)-1)) AS ?CLASS)
+	VALUES ( ?P02sourceURI ?P02destURI ) { ( <http://vocab.nerc.ac.uk/collection/P02/current/> <http://schema.geolink.org/dev/voc/nvs/P02> ) }		
+	VALUES ( ?P03sourceURI ?P03destURI ) { ( <http://vocab.nerc.ac.uk/collection/P03/current/> <http://schema.geolink.org/dev/voc/nvs/P03> ) }
+	
+	?P02sourceURI skos:member ?P02sourceTermURI ; 
+		skos:prefLabel ?P02graphdestLabel ; 
+		dcterms:date ?P02graphdestDate ; 
+		owl:versionInfo ?P02graphdestVers .
+	OPTIONAL { ?P02sourceTermURI skos:prefLabel ?P02sourceTermLabel . }
+	OPTIONAL { ?P02sourceTermURI skos:definition ?P02sourceTermDef . }
+	OPTIONAL { ?P02sourceURI skos:member ?P02sourceSuperTermURI . ?P02sourceTermURI skos:broader ?P02sourceSuperTermURI .}
+	
+	
+	BIND ( if(bound(?P02sourceTermLabel), ?P02sourceTermLabel, ""@en) as ?P02destTermLabel )
+	BIND ( if(bound(?P02sourceTermDef), ?P02sourceTermDef, ""@en) as ?P02destTermDef )
+	BIND ( ?P02sourceTermURI as ?P02destTermSeeAlso )
+	BIND ( replace( replace( str(?P02sourceTermURI), str(?P02sourceURI), "", "i"), "/", "", "i") as ?P02term )
+	BIND ( iri(concat(str(?P02destURI), "#", ?P02term )) as ?P02destTermURI )
+	BIND ( 
+		if (!bound(?P02sourceSuperTermURI), 
+			owl:Class, 
+			iri(concat(str(?P02destURI), "#", replace(replace(str(?P02sourceSuperTermURI), str(?P02sourceURI), "", "i"), "/", "", "i") ))) 
+	as ?P02destSuperTermURI)
+	BIND ( if (!bound(?P02sourceSuperTermURI), rdf:type, rdfs:subClassOf) as ?P02toP02relationURI )
+	
+	OPTIONAL { 	?P03sourceURI skos:member ?P03sourceTermURI . 
+				?P02sourceTermURI ?P02toP03sourceRelationURI ?P03sourceTermURI .
+				FILTER ( ?P02toP03sourceRelationURI IN (owl:sameAs, skos:broader) ) }
+	
+	BIND (	if(!bound(?P03sourceTermURI), 
+				if(!bound(?P02sourceSuperTermURI), glview:Measurement, ?P02destSuperTermURI),
+				iri(concat(str(?P03destURI), "#", replace(replace(str(?P03sourceTermURI), str(?P03sourceURI), "", "i"), "/", "", "i") )))
+	as ?P03destTermURI )
+	
+	BIND (	if(!bound(?P03sourceTermURI), rdfs:subClassOf, if(?P02toP03sourceRelationURI = owl:sameAs, owl:equivalentClass, rdfs:subClassOf))
+	as ?P02toP03destRelationURI)
 }
+
+
