@@ -28,6 +28,8 @@
         <owl:imports rdf:resource="http://schema.geolink.org/dev/voc/nvs/L05"/>
         <owl:imports rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06"/>
         <owl:imports rdf:resource="http://schema.geolink.org/dev/voc/nvs/L22"/>
+        <owl:imports rdf:resource="http://schema.geolink.org/dev/voc/nvs/P02"/>
+        <owl:imports rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03"/>
     </owl:Ontology>
     
 
@@ -208,14 +210,14 @@
         <rdfs:domain rdf:resource="&ecglview;Cruise"/>
         <rdfs:range>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ecglview;atPort"/>
-                <owl:someValuesFrom rdf:resource="&ecglview;Place"/>
+                <owl:onProperty rdf:resource="&ecglview;hasTimeStamp"/>
+                <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
             </owl:Restriction>
         </rdfs:range>
         <rdfs:range>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ecglview;hasTimeStamp"/>
-                <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
+                <owl:onProperty rdf:resource="&ecglview;atPort"/>
+                <owl:someValuesFrom rdf:resource="&ecglview;Place"/>
             </owl:Restriction>
         </rdfs:range>
     </owl:ObjectProperty>
@@ -448,14 +450,14 @@
         <rdfs:domain rdf:resource="&ecglview;Cruise"/>
         <rdfs:range>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ecglview;hasTimeStamp"/>
-                <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
+                <owl:onProperty rdf:resource="&ecglview;atPort"/>
+                <owl:someValuesFrom rdf:resource="&ecglview;Place"/>
             </owl:Restriction>
         </rdfs:range>
         <rdfs:range>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ecglview;atPort"/>
-                <owl:someValuesFrom rdf:resource="&ecglview;Place"/>
+                <owl:onProperty rdf:resource="&ecglview;hasTimeStamp"/>
+                <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
             </owl:Restriction>
         </rdfs:range>
     </owl:ObjectProperty>
