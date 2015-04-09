@@ -14626,5 +14626,80 @@
     <glview:hasRoleType rdf:resource="http://schema.geolink.org/dev/voc/local#roletype_program_manager"/>
     <glview:hasAffiliation rdf:resource="http://geolink.bco-dmo.org/id/organization/355"/>
   </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/award/555545">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Award"/>
+    <glview:hasSponsor rdf:resource="http://geolink.bco-dmo.org/id/organization/355"/>
+    <glview:identifier rdf:datatype="xsd:string">OCE-1259691</glview:identifier>
+    <glview:title rdf:datatype="xsd:string">OCE-1259691</glview:title>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=1259691</glview:seeAlso>
+    <glview:hasParticipant rdf:resource="http://geolink.bco-dmo.org/id/award/555545#program_manager-50534"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/award/555545#program_manager-50534">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Role"/>
+    <glview:isPerformedBy rdf:resource="http://geolink.bco-dmo.org/id/person/50534"/>
+    <glview:hasRoleType rdf:resource="http://schema.geolink.org/dev/voc/local#roletype_program_manager"/>
+    <glview:hasAffiliation rdf:resource="http://geolink.bco-dmo.org/id/organization/355"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/award/555555">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Award"/>
+    <glview:hasSponsor rdf:resource="http://geolink.bco-dmo.org/id/organization/355"/>
+    <glview:identifier rdf:datatype="xsd:string">OCE-1357168</glview:identifier>
+    <glview:title rdf:datatype="xsd:string">OCE-1357168</glview:title>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=1357168</glview:seeAlso>
+    <glview:hasParticipant rdf:resource="http://geolink.bco-dmo.org/id/award/555555#program_manager-50446"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/award/555555#program_manager-50446">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Role"/>
+    <glview:isPerformedBy rdf:resource="http://geolink.bco-dmo.org/id/person/50446"/>
+    <glview:hasRoleType rdf:resource="http://schema.geolink.org/dev/voc/local#roletype_program_manager"/>
+    <glview:hasAffiliation rdf:resource="http://geolink.bco-dmo.org/id/organization/355"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/award/555561">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Award"/>
+    <glview:hasSponsor rdf:resource="http://geolink.bco-dmo.org/id/organization/355"/>
+    <glview:identifier rdf:datatype="xsd:string">OCE-1357169</glview:identifier>
+    <glview:title rdf:datatype="xsd:string">OCE-1357169</glview:title>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=1357169</glview:seeAlso>
+    <glview:hasParticipant rdf:resource="http://geolink.bco-dmo.org/id/award/555561#program_manager-50446"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/award/555561#program_manager-50446">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Role"/>
+    <glview:isPerformedBy rdf:resource="http://geolink.bco-dmo.org/id/person/50446"/>
+    <glview:hasRoleType rdf:resource="http://schema.geolink.org/dev/voc/local#roletype_program_manager"/>
+    <glview:hasAffiliation rdf:resource="http://geolink.bco-dmo.org/id/organization/355"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/award/555566">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Award"/>
+    <glview:hasSponsor rdf:resource="http://geolink.bco-dmo.org/id/organization/355"/>
+    <glview:identifier rdf:datatype="xsd:string">OCE-1260199</glview:identifier>
+    <glview:title rdf:datatype="xsd:string">OCE-1260199</glview:title>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=1260199</glview:seeAlso>
+    <glview:hasParticipant rdf:resource="http://geolink.bco-dmo.org/id/award/555566#program_manager-50534"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/award/555566#program_manager-50534">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Role"/>
+    <glview:isPerformedBy rdf:resource="http://geolink.bco-dmo.org/id/person/50534"/>
+    <glview:hasRoleType rdf:resource="http://schema.geolink.org/dev/voc/local#roletype_program_manager"/>
+    <glview:hasAffiliation rdf:resource="http://geolink.bco-dmo.org/id/organization/355"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/award/555571">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Award"/>
+    <glview:hasSponsor rdf:resource="http://geolink.bco-dmo.org/id/organization/355"/>
+    <glview:identifier rdf:datatype="xsd:string">OCE-1260232</glview:identifier>
+    <glview:title rdf:datatype="xsd:string">OCE-1260232</glview:title>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=1260232</glview:seeAlso>
+    <glview:hasParticipant rdf:resource="http://geolink.bco-dmo.org/id/award/555571#program_manager-50534"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/award/555571#program_manager-50534">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Role"/>
+    <glview:isPerformedBy rdf:resource="http://geolink.bco-dmo.org/id/person/50534"/>
+    <glview:hasRoleType rdf:resource="http://schema.geolink.org/dev/voc/local#roletype_program_manager"/>
+    <glview:hasAffiliation rdf:resource="http://geolink.bco-dmo.org/id/organization/355"/>
+  </rdf:Description>
 
 </rdf:RDF>
