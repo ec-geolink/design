@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:bcoview="http://schema.geolink.org/dev/bcoview#"
+  xmlns:glview="http://schema.geolink.org/dev/view#">
+
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/authority/1">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <glview:title xml:lang="en-US">International Council for the Exploration of the Sea</glview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">ICES</bcoview:acronym>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://www.ices.dk/indexfla.asp</glview:seeAlso>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/authority/158">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <glview:title xml:lang="en-US">Rolling Deck to Repository</glview:title>
+    <bcoview:acronym rdf:datatype="xsd:string">R2R</bcoview:acronym>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://rvdata.us</glview:seeAlso>
+  </rdf:Description>
+
+</rdf:RDF>

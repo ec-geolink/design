@@ -1,0 +1,903 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:bcoview="http://schema.geolink.org/dev/bcoview#"
+  xmlns:glview="http://schema.geolink.org/dev/view#">
+
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/53986">
+    <glview:title xml:lang="en-US">R/V Albatross IV</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/53987">
+    <glview:title xml:lang="en-US">R/V Cape Hatteras</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://www.rvcapehatteras.org/</glview:seeAlso>
+    <bcoview:acronym rdf:datatype="xsd:string">CH</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/53988">
+    <glview:title xml:lang="en-US">R/V Columbus Iselin</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/53989">
+    <glview:title xml:lang="en-US">CCGS Cygnus</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://www.ccg-gcc.gc.ca/e0003343</glview:seeAlso>
+    <bcoview:acronym rdf:datatype="xsd:string">CY</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/53990">
+    <glview:title xml:lang="en-US">R/V Delaware</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/53991">
+    <glview:title xml:lang="en-US">R/V Edwin Link</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/53992">
+    <glview:title xml:lang="en-US">R/V Endeavor</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://www.gso.uri.edu/rv-endeavor/rv-endeavor</glview:seeAlso>
+    <bcoview:acronym rdf:datatype="xsd:string">EN</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/53993">
+    <glview:title xml:lang="en-US">R/V Hudson</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <bcoview:acronym rdf:datatype="xsd:string">HUD</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/53994">
+    <glview:title xml:lang="en-US">R/V Knorr</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://www.whoi.edu/page.do?pid=8157</glview:seeAlso>
+    <bcoview:acronym rdf:datatype="xsd:string">KN</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/53995">
+    <glview:title xml:lang="en-US">R/V Sea Diver</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/53996">
+    <glview:title xml:lang="en-US">F/V Isabel S</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/53997">
+    <glview:title xml:lang="en-US">R/V Oceanus</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://www.whoi.edu/page.do?pid=8158</glview:seeAlso>
+    <bcoview:acronym rdf:datatype="xsd:string">OC</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/53998">
+    <glview:title xml:lang="en-US">R/V Parizeau</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/53999">
+    <glview:title xml:lang="en-US">R/V Susan and Caitlyn</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54000">
+    <glview:title xml:lang="en-US">R/V Seward Johnson</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <bcoview:acronym rdf:datatype="xsd:string">SJ</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54002">
+    <glview:title xml:lang="en-US">R/V McArthur</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54003">
+    <glview:title xml:lang="en-US">R/V Atlantis</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://www.whoi.edu/page.do?pid=8143</glview:seeAlso>
+    <bcoview:acronym rdf:datatype="xsd:string">AT</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54004">
+    <glview:title xml:lang="en-US">R/V Elakha</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://www.shipops.oregonstate.edu/ops/elakha/</glview:seeAlso>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54005">
+    <glview:title xml:lang="en-US">R/V Maurice Ewing</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54006">
+    <glview:title xml:lang="en-US">F/V Frosti</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54007">
+    <glview:title xml:lang="en-US">F/V Great Pacific</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54008">
+    <glview:title xml:lang="en-US">R/V Alpha Helix</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://www.sfos.uaf.edu/helix/</glview:seeAlso>
+    <bcoview:acronym rdf:datatype="xsd:string">HX</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54009">
+    <glview:title xml:lang="en-US">R/V Kilo Moana</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://www.soest.hawaii.edu/UMC/KiloMoana.htm</glview:seeAlso>
+    <bcoview:acronym rdf:datatype="xsd:string">KM</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54010">
+    <glview:title xml:lang="en-US">R/V Miller Freeman</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54011">
+    <glview:title xml:lang="en-US">R/V New Horizon</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://shipsked.ucsd.edu/Ships/New_Horizon/</glview:seeAlso>
+    <bcoview:acronym rdf:datatype="xsd:string">NH</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54012">
+    <glview:title xml:lang="en-US">R/V Pandalus</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54013">
+    <glview:title xml:lang="en-US">R/V Roger Revelle</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://shipsked.ucsd.edu/Ships/Roger_Revelle/</glview:seeAlso>
+    <bcoview:acronym rdf:datatype="xsd:string">RR</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54014">
+    <glview:title xml:lang="en-US">NOAA Ship Ronald H. Brown</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <bcoview:acronym rdf:datatype="xsd:string">RHB</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54015">
+    <glview:title xml:lang="en-US">F/V Sea Eagle</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54016">
+    <glview:title xml:lang="en-US">R/V Sacajawea</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54017">
+    <glview:title xml:lang="en-US">R/V Thomas G. Thompson</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://www.ocean.washington.edu/story/RV+Thomas+G+Thompson</glview:seeAlso>
+    <bcoview:acronym rdf:datatype="xsd:string">TN</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54018">
+    <glview:title xml:lang="en-US">R/V Wecoma</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://www.shipops.oregonstate.edu/ops/wecoma/</glview:seeAlso>
+    <bcoview:acronym rdf:datatype="xsd:string">W</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54020">
+    <glview:title xml:lang="en-US">ARSV Lawrence M. Gould</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://www.usap.gov/vesselScienceAndOperations/contentHandler.cfm?id=1626</glview:seeAlso>
+    <bcoview:acronym rdf:datatype="xsd:string">LMG</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54021">
+    <glview:title xml:lang="en-US">RVIB Nathaniel B. Palmer</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54022">
+    <glview:title xml:lang="en-US">R/V Delaware II</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54023">
+    <glview:title xml:lang="en-US">SSV Corwith Cramer</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://www.sea.edu/ships_crew</glview:seeAlso>
+    <bcoview:acronym rdf:datatype="xsd:string">C</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54024">
+    <glview:title xml:lang="en-US">SSV Robert C. Seamans</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54038">
+    <glview:title xml:lang="en-US">R/V Malcolm Baldridge</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54039">
+    <glview:title xml:lang="en-US">R/V Discoverer</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54040">
+    <glview:title xml:lang="en-US">R/V Atlantis II</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <bcoview:acronym rdf:datatype="xsd:string">A2</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54041">
+    <glview:title xml:lang="en-US">RRS Charles Darwin</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54048">
+    <glview:title xml:lang="en-US">F/V Maureen R</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54049">
+    <glview:title xml:lang="en-US">F/V Shearwater</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54050">
+    <glview:title xml:lang="en-US">F/V Skimmer</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54051">
+    <glview:title xml:lang="en-US">F/V Lady Irene</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54052">
+    <glview:title xml:lang="en-US">F/V Adventurer</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54053">
+    <glview:title xml:lang="en-US">F/V Lady Regena</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54054">
+    <glview:title xml:lang="en-US">F/V Robert Michael,F/V Tara Lynn</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54055">
+    <glview:title xml:lang="en-US">F/V Krystal James</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54056">
+    <glview:title xml:lang="en-US">R/V Hakuho-maru</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54057">
+    <glview:title xml:lang="en-US">R/V Melville</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://shipsked.ucsd.edu/Ships/Melville/</glview:seeAlso>
+    <bcoview:acronym rdf:datatype="xsd:string">MV</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54058">
+    <glview:title xml:lang="en-US">USCGC Polar Star</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54059">
+    <glview:title xml:lang="en-US">R/V Tangaroa</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54060">
+    <glview:title xml:lang="en-US">R/V El Puma</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54061">
+    <glview:title xml:lang="en-US">CCGS John P. Tully</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54062">
+    <glview:title xml:lang="en-US">R/V Kaiyo-Maru</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54063">
+    <glview:title xml:lang="en-US">R/V Polarstern</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54064">
+    <glview:title xml:lang="en-US">R/V Cape Henlopen</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54065">
+    <glview:title xml:lang="en-US">B/O Hermano Gines</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54066">
+    <glview:title xml:lang="en-US">R/V Anton Bruun</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54067">
+    <glview:title xml:lang="en-US">F/V Jennifer &amp; Emily</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54068">
+    <glview:title xml:lang="en-US">F/V Tenacious</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54069">
+    <glview:title xml:lang="en-US">F/V North Star</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54070">
+    <glview:title xml:lang="en-US">R/V Shearwater</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54071">
+    <glview:title xml:lang="en-US">R/V Argo</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54072">
+    <glview:title xml:lang="en-US">R/V Conrad</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://www.ldeo.columbia.edu/res/fac/CORE_REPOSITORY/RHP5b.html</glview:seeAlso>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54073">
+    <glview:title xml:lang="en-US">RRS Discovery</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54074">
+    <glview:title xml:lang="en-US">R/V Diamantina</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54075">
+    <glview:title xml:lang="en-US">R/V Gascoyne</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54076">
+    <glview:title xml:lang="en-US">Kagoshima-Maru</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54077">
+    <glview:title xml:lang="en-US">Kistna</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54078">
+    <glview:title xml:lang="en-US">Koyo-Maru</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54079">
+    <glview:title xml:lang="en-US">R/V Meteor</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54080">
+    <glview:title xml:lang="en-US">R/V Natal</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54081">
+    <glview:title xml:lang="en-US">Oshoro-Maru</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54082">
+    <glview:title xml:lang="en-US">R/V Pioneer</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54083">
+    <glview:title xml:lang="en-US">Umitaka-Maru</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54084">
+    <glview:title xml:lang="en-US">Varuna</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54085">
+    <glview:title xml:lang="en-US">Vityaz</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54086">
+    <glview:title xml:lang="en-US">Zulfiquar</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54090">
+    <glview:title xml:lang="en-US">R/V Tansei Maru</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54092">
+    <glview:title xml:lang="en-US">R/V Kaiyo-Maru No 3</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54100">
+    <glview:title xml:lang="en-US">F/V Jeanne C.</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54102">
+    <glview:title xml:lang="en-US">R/V John V. Vickers</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54103">
+    <glview:title xml:lang="en-US">R/V Weatherbird II</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54104">
+    <glview:title xml:lang="en-US">F/V Ocean Reporter</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54105">
+    <glview:title xml:lang="en-US">R/V Yuzhmorgeologiya</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54106">
+    <glview:title xml:lang="en-US">F/V Riena Marie</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54107">
+    <glview:title xml:lang="en-US">F/V Ellen Diane</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54108">
+    <glview:title xml:lang="en-US">F/V Lady Shannon, F/V Rachel T</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54109">
+    <glview:title xml:lang="en-US">F/V Survivor</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54110">
+    <glview:title xml:lang="en-US">Fishing Vessels</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54113">
+    <glview:title xml:lang="en-US">R/V John N. Cobb</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54114">
+    <glview:title xml:lang="en-US">R/V Pelican</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://www.lumcon.edu/Pelican/</glview:seeAlso>
+    <bcoview:acronym rdf:datatype="xsd:string">PE</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54116">
+    <glview:title xml:lang="en-US">R/V Point Sur</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://marineops.mlml.calstate.edu/PointSur</glview:seeAlso>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54119">
+    <glview:title xml:lang="en-US">ORI</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54120">
+    <glview:title xml:lang="en-US">F/V Irene Renee II</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54121">
+    <glview:title xml:lang="en-US">R/V Jose Olaya</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54122">
+    <glview:title xml:lang="en-US">R/V Atlantic Explorer</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://www.bios.edu/ship_operations/about_rv_ae.html</glview:seeAlso>
+    <bcoview:acronym rdf:datatype="xsd:string">AE</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54124">
+    <glview:title xml:lang="en-US">R/V Gulf Challenger</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://marine.unh.edu/facilities/vessels/rv-challenger.html</glview:seeAlso>
+    <bcoview:acronym rdf:datatype="xsd:string">GC</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54125">
+    <glview:title xml:lang="en-US">F/V Miss Fitz</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54128">
+    <glview:title xml:lang="en-US">R/V F.G. Walton Smith</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://www.rsmas.miami.edu/resources/marine-department/fg-walton-smith/</glview:seeAlso>
+    <bcoview:acronym rdf:datatype="xsd:string">WS</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54129">
+    <glview:title xml:lang="en-US">F/V Barbara L. Peters</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54130">
+    <glview:title xml:lang="en-US">R/V C_N</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54133">
+    <glview:title xml:lang="en-US">R/V Seward Johnson II</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54135">
+    <glview:title xml:lang="en-US">R/V Bjarni Saemundsson</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <bcoview:acronym rdf:datatype="xsd:string">B</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54136">
+    <glview:title xml:lang="en-US">F/V Time-n-Tide</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54137">
+    <glview:title xml:lang="en-US">R/V Abel-J</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54138">
+    <glview:title xml:lang="en-US">R/V Argo M</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54139">
+    <glview:title xml:lang="en-US">R/V Argus</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54140">
+    <glview:title xml:lang="en-US">R/V Belogorsk</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54141">
+    <glview:title xml:lang="en-US">R/V Evrika</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54142">
+    <glview:title xml:lang="en-US">R/V Henry B. Bigelow</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54143">
+    <glview:title xml:lang="en-US">R/V Isabel-S</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54144">
+    <glview:title xml:lang="en-US">F/V Katahdin</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54145">
+    <glview:title xml:lang="en-US">KELEZ</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54146">
+    <glview:title xml:lang="en-US">R/V Mount Mitchell</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54147">
+    <glview:title xml:lang="en-US">R/V Nogliki</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54148">
+    <glview:title xml:lang="en-US">R/V Nordic Pride</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54149">
+    <glview:title xml:lang="en-US">R/V Oregon II</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54150">
+    <glview:title xml:lang="en-US">RELENTLESS</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54151">
+    <glview:title xml:lang="en-US">R/V Hugh R. Sharp</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://www.ceoe.udel.edu/marine/rvSharp.shtml</glview:seeAlso>
+    <bcoview:acronym rdf:datatype="xsd:string">HRS</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54152">
+    <glview:title xml:lang="en-US">R/V Wieczno</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54153">
+    <glview:title xml:lang="en-US">R/V Yubileiniy</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54154">
+    <glview:title xml:lang="en-US">R/V Chain</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <bcoview:acronym rdf:datatype="xsd:string">CH</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54155">
+    <glview:title xml:lang="en-US">Unknown Vessel</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54156">
+    <glview:title xml:lang="en-US">Zodiac</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54157">
+    <glview:title xml:lang="en-US">R/V Aliot</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54158">
+    <glview:title xml:lang="en-US">R/V Advance II</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54159">
+    <glview:title xml:lang="en-US">R/V Delta Mar</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54160">
+    <glview:title xml:lang="en-US">R/V Ekliptika</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54161">
+    <glview:title xml:lang="en-US">R/V Gosnold</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54162">
+    <glview:title xml:lang="en-US">R/V Gyre</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54163">
+    <glview:title xml:lang="en-US">F/V Karen Elizabeth</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54164">
+    <glview:title xml:lang="en-US">R/V Marion C</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54165">
+    <glview:title xml:lang="en-US">F/V Nobska</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54171">
+    <glview:title xml:lang="en-US">R/V Llyr</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54176">
+    <glview:title xml:lang="en-US">F/V Stormy Weather</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54177">
+    <glview:title xml:lang="en-US">R/V Connecticut</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://www.marinesciences.uconn.edu/MSTC/Vesselops/rvct.html</glview:seeAlso>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54178">
+    <glview:title xml:lang="en-US">R/V Islandia</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54179">
+    <glview:title xml:lang="en-US">R/V Akvanavt</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://www.ocean.ru/eng/content/view/22/35/</glview:seeAlso>
+    <bcoview:acronym rdf:datatype="xsd:string">AV</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54180">
+    <glview:title xml:lang="en-US">R/V Ashamba</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54181">
+    <glview:title xml:lang="en-US">R/V Tioga</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://www.whoi.edu/main/ships/tioga</glview:seeAlso>
+    <bcoview:acronym rdf:datatype="xsd:string">TI</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54182">
+    <glview:title xml:lang="en-US">R/V Blue Heron</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://www.d.umn.edu/llo/facilities/blueheron.html</glview:seeAlso>
+    <bcoview:acronym rdf:datatype="xsd:string">BH</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54185">
+    <glview:title xml:lang="en-US">R/V Clifford A. Barnes</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://www.ocean.washington.edu/vessels/CAB/cab.html</glview:seeAlso>
+    <bcoview:acronym rdf:datatype="xsd:string">CB</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54186">
+    <glview:title xml:lang="en-US">R/V Ka`imikai-O-Kanaloa</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://www.soest.hawaii.edu/UMC/RVKOK.htm</glview:seeAlso>
+    <bcoview:acronym rdf:datatype="xsd:string">KOK</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54187">
+    <glview:title xml:lang="en-US">R/V Aurora Australis</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://www.antarctica.gov.au/living-and-working/travel-and-logistics/ships/aurora-australis</glview:seeAlso>
+    <bcoview:acronym rdf:datatype="xsd:string">AU</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54189">
+    <glview:title xml:lang="en-US">R/V Southern Surveyor</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://www.csiro.au/Organisation-Structure/National-Facilities/Marine-National-Facility.aspx</glview:seeAlso>
+    <bcoview:acronym rdf:datatype="xsd:string">SS</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54193">
+    <glview:title xml:lang="en-US">F/V Kirsten Lee</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54195">
+    <glview:title xml:lang="en-US">R/V Oden</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://www.sjofartsverket.se/en/About-us/Activities/Icebreaking/Our-Icebreakers/Research-VesselIcebreaker-Oden/Icebreaker-Oden/</glview:seeAlso>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54220">
+    <glview:title xml:lang="en-US">R/V Challenger</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://www.mstc.uconn.edu/MSTC/Vesselops/rv_small.html</glview:seeAlso>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54221">
+    <glview:title xml:lang="en-US">R/V Lowell Weicker</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://www.mstc.uconn.edu/MSTC/Vesselops/rv_lw.html</glview:seeAlso>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54227">
+    <glview:title xml:lang="en-US">R/V MIRAI</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://www.jamstec.go.jp/e/about/equipment/ships/mirai.html</glview:seeAlso>
+    <bcoview:acronym rdf:datatype="xsd:string">MIRAI</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54231">
+    <glview:title xml:lang="en-US">R/V Moana Wave</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://www.soest.hawaii.edu/UMC/</glview:seeAlso>
+    <bcoview:acronym rdf:datatype="xsd:string">MW</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54232">
+    <glview:title xml:lang="en-US">R/V Savannah</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://www.skio.usg.edu/?p=resources/rvsavannah/index</glview:seeAlso>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54242">
+    <glview:title xml:lang="en-US">R/V E.O. Wilson</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://www.disl.org/loc_fac/loc_vessels.html</glview:seeAlso>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54253">
+    <glview:title xml:lang="en-US">R/V Sonne</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://www.deutsche-meeresforschung.de/en/id2627.htm</glview:seeAlso>
+    <bcoview:acronym rdf:datatype="xsd:string">SO</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54254">
+    <glview:title xml:lang="en-US">R/V Kay-Kay II</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://oceanografia.udec.cl/research/infraestructure</glview:seeAlso>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54256">
+    <glview:title xml:lang="en-US">R/V Falkor</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://www.schmidtocean.org/story/show/47</glview:seeAlso>
+    <bcoview:acronym rdf:datatype="xsd:string">FK</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54260">
+    <glview:title xml:lang="en-US">R/V Sagar Sampada</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://www.researchvessels.org/ship_info_display.asp?shipID=38</glview:seeAlso>
+    <bcoview:acronym rdf:datatype="xsd:string">SS</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54261">
+    <glview:title xml:lang="en-US">R/V Sagar Kanya</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://www.researchvessels.org/ship_info_display.asp?shipID=310</glview:seeAlso>
+    <bcoview:acronym rdf:datatype="xsd:string">SK</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54271">
+    <glview:title xml:lang="en-US">F/V GIMAR I</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54278">
+    <glview:title xml:lang="en-US">USCGC NEAH BAY</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://www.uscg.mil/datasheet/140wtgb.asp</glview:seeAlso>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54280">
+    <glview:title xml:lang="en-US">CCGS GRIFFON</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://www.ccg-gcc.gc.ca/Fleet/Vessel?vessel_id=68</glview:seeAlso>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54281">
+    <glview:title xml:lang="en-US">USCGC MACKINAW</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://www.uscg.mil/d9/cgcMackinaw/</glview:seeAlso>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54283">
+    <glview:title xml:lang="en-US">RRS James Cook</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://noc.ac.uk/research-at-sea/ships/rrs-james-cook</glview:seeAlso>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54285">
+    <glview:title xml:lang="en-US">UNCW 20-ft Center Console Boat</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54287">
+    <glview:title xml:lang="en-US">R/V Pelagia</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://www.nioz.nl/vessels</glview:seeAlso>
+    <bcoview:acronym rdf:datatype="xsd:string">64PE</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/54288">
+    <glview:title xml:lang="en-US">R/V R4107</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://montereybay.noaa.gov/marineops/about/r4107/welcome.html</glview:seeAlso>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/472154">
+    <glview:title xml:lang="en-US">Chartered Vessel</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/472156">
+    <glview:title xml:lang="en-US">R/V Pacific Storm</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://mmi.oregonstate.edu/research-vessels</glview:seeAlso>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/472192">
+    <glview:title xml:lang="en-US">R/V BIP XII</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://www.cibnor.mx/es/investigacion/ecologia-pesquera/buque-bip-xii</glview:seeAlso>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/474260">
+    <glview:title xml:lang="en-US">R/V Terrapin</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/489111">
+    <glview:title xml:lang="en-US">PICRC Small Boats</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/489469">
+    <glview:title xml:lang="en-US">RRS James Clark Ross</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://www.antarctica.ac.uk/living_and_working/research_ships/rrs_james_clark_ross/</glview:seeAlso>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/505592">
+    <glview:title xml:lang="en-US">Pfister small boat</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <bcoview:acronym rdf:datatype="xsd:string">Pfister_small_boat</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/514216">
+    <glview:title xml:lang="en-US">F/V Ezyduzit</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://www.capecodsharkhunters.com/default.html</glview:seeAlso>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/516246">
+    <glview:title xml:lang="en-US">R/V Urraca</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://strs.unols.org/public/diu_ship_view.aspx?ship_id=10024</glview:seeAlso>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/516247">
+    <glview:title xml:lang="en-US">R/V Benjamin</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/521575">
+    <glview:title xml:lang="en-US">R/V JOIDES Resolution</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://www-odp.tamu.edu/resolutn.html</glview:seeAlso>
+    <bcoview:acronym rdf:datatype="xsd:string">JRES</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/523628">
+    <glview:title xml:lang="en-US">R/V Ira C.</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://www.dmc.maine.edu/vessels.html</glview:seeAlso>
+    <bcoview:acronym rdf:datatype="xsd:string">IC</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/523769">
+    <glview:title xml:lang="en-US">USCGC Healy</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://www.uscg.mil/pacarea/cgcHealy/</glview:seeAlso>
+    <bcoview:acronym rdf:datatype="xsd:string">HLY</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/528565">
+    <glview:title xml:lang="en-US">Menhaden Nurseries</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/536288">
+    <glview:title xml:lang="en-US">R/V Yellowfin</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://scmi.us/rv-yellowfin</glview:seeAlso>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/537423">
+    <glview:title xml:lang="en-US">R/V Nerissa</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/542006">
+    <glview:title xml:lang="en-US">F/V Super Horse</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://maritime-connector.com/ship/anne-rowe-7337220/</glview:seeAlso>
+    <bcoview:acronym rdf:datatype="xsd:string">SH</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/542102">
+    <glview:title xml:lang="en-US">R/V Gloria Michelle</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://www.nefsc.noaa.gov/gloria_michelle/</glview:seeAlso>
+    <bcoview:acronym rdf:datatype="xsd:string">GM</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/542213">
+    <glview:title xml:lang="en-US">Small boats - CRRF</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/542389">
+    <glview:title xml:lang="en-US">R/V Atlantis</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <bcoview:acronym rdf:datatype="xsd:string">AT</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/542993">
+    <glview:title xml:lang="en-US">R/V Gaia</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/551068">
+    <glview:title xml:lang="en-US">F/V Admiral Arciszewski</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <bcoview:acronym rdf:datatype="xsd:string">AA</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/551861">
+    <glview:title xml:lang="en-US">R/V Gunnerus</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://www.ntnu.edu/oceans/gunnerus</glview:seeAlso>
+    <bcoview:acronym rdf:datatype="xsd:string">GU</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/553109">
+    <glview:title xml:lang="en-US">R/V Hi'ialakai</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">http://www.moc.noaa.gov/hi/</glview:seeAlso>
+    <bcoview:acronym rdf:datatype="xsd:string">HI</bcoview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/554000">
+    <glview:title xml:lang="en-US">R/V Urania</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform/555389">
+    <glview:title xml:lang="en-US">Maria S. Merian</glview:title>
+    <glview:hasPlatformType rdf:resource="http://geolink.bco-dmo.org/id/platform_type/105"/>
+    <glview:seeAlso rdf:datatype="xsd:anyURI">https://www.ldf.uni-hamburg.de/en/merian.html</glview:seeAlso>
+    <bcoview:acronym rdf:datatype="xsd:string">MSM</bcoview:acronym>
+  </rdf:Description>
+
+</rdf:RDF>

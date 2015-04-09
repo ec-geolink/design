@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:bcoview="http://schema.geolink.org/dev/bcoview#"
+  xmlns:glview="http://schema.geolink.org/dev/view#">
+
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform_type/106">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#PlatformType"/>
+    <glview:title xml:lang="en-US">aircraft</glview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform_type/118">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#PlatformType"/>
+    <glview:title xml:lang="en-US">AUV</glview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform_type/119">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#PlatformType"/>
+    <glview:title xml:lang="en-US">dock</glview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform_type/115">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#PlatformType"/>
+    <glview:title xml:lang="en-US">float</glview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform_type/116">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#PlatformType"/>
+    <glview:title xml:lang="en-US">glider</glview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform_type/103">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#PlatformType"/>
+    <glview:title xml:lang="en-US">island</glview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform_type/114">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#PlatformType"/>
+    <glview:title xml:lang="en-US">laboratory</glview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform_type/112">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#PlatformType"/>
+    <glview:title xml:lang="en-US">model</glview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform_type/102">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#PlatformType"/>
+    <glview:title xml:lang="en-US">mooring</glview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform_type/169">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#PlatformType"/>
+    <glview:title xml:lang="en-US">ROV</glview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform_type/104">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#PlatformType"/>
+    <glview:title xml:lang="en-US">satellite</glview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform_type/149">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#PlatformType"/>
+    <glview:title xml:lang="en-US">shoreside</glview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform_type/113">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#PlatformType"/>
+    <glview:title xml:lang="en-US">stationary vessel</glview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform_type/108">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#PlatformType"/>
+    <glview:title xml:lang="en-US">submarine-manned</glview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform_type/111">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#PlatformType"/>
+    <glview:title xml:lang="en-US">synthesis</glview:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geolink.bco-dmo.org/id/platform_type/105">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#PlatformType"/>
+    <glview:title xml:lang="en-US">vessel</glview:title>
+  </rdf:Description>
+
+</rdf:RDF>
