@@ -1,0 +1,41 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX glvoc_C17: <http://schema.geolink.org/dev/voc/nvs/C17#>
+PREFIX glview: <http://schema.geolink.org/dev/view#>
+
+
+CONSTRUCT {
+	
+	?C17destTermURI a glview:Platform ; 
+					rdfs:label ?C17destTermLabel ; 
+					rdfs:comment ?C17destTermDef ; 
+					rdfs:seeAlso ?C17sourceTermURI 	.	
+	?C17destTermURI a ?L06destTermURI .	
+}
+WHERE {
+	VALUES ( ?C17sourceURI ?C17destURI ) { ( <http://vocab.nerc.ac.uk/collection/C17/current/> <http://schema.geolink.org/dev/voc/nvs/C17> ) }
+	VALUES ( ?L06sourceURI ?L06destURI ) { ( <http://vocab.nerc.ac.uk/collection/L06/current/> <http://schema.geolink.org/dev/voc/nvs/L06> ) }
+	BIND ( concat(str(?C17destURI), "#") as ?C17destPrefix ) 
+	BIND ( concat(str(?L06destURI), "#") as ?L06destPrefix ) 
+	?C17sourceURI 	skos:member ?C17sourceTermURI ; 
+					skos:prefLabel ?C17destGraphLabel ; 
+					dcterms:date ?C17destGraphDate; 
+					owl:versionInfo ?C17destOWLVers .
+	OPTIONAL { ?C17sourceTermURI skos:prefLabel ?C17sourceTermLabel . }
+	OPTIONAL { ?C17sourceTermURI skos:definition ?C17sourceTermDef . }
+	OPTIONAL { ?C17soourceTermURI dcterms:date ?C17sourceTermDate . }
+	OPTIONAL { ?L06sourceURI skos:member ?L06sourceTermURI . ?C17sourceTermURI skos:broader ?L06sourceTermURI . }
+	
+	BIND(iri(concat(?C17destPrefix, replace(replace(str(?C17sourceTermURI), str(?C17sourceURI), "", "i"), "/", "", "i") )) as ?C17destTermURI)
+	BIND(if(bound(?C17sourceTermLabel), ?C17sourceTermLabel, "") as ?C17destTermLabel)
+	BIND(if(bound(?C17sourceTermDef), ?C17sourceTermDef, ?C17destTermLabel) as ?C17destTermDef)
+	BIND(if(bound(?C17sourceTermDate), ?C17sourceTermDate, ?C17destGraphDate) as ?C17destTermDate)
+	BIND(if(bound(?L06sourceTermURI), iri(concat(?L06destPrefix, replace(replace(str(?L06sourceTermURI), str(?L06sourceURI), "", "i"), "/", "", "i") )), glview:Platform) 
+		as ?L06destTermURI)	
+	BIND(if(bound(?L06sourceTermURI), glview:hasPlatformType, rdf:type) as ?C17typePred)
+} 
