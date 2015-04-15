@@ -17,7 +17,7 @@ CONSTRUCT {
 	?C17destTermURI a ?L06destTermURI .	
 }
 WHERE {
-	VALUES ( ?C17sourceURI ?C17destURI ) { ( <http://vocab.nerc.ac.uk/collection/C17/current/> <http://data.geolink.org/id/platform/> ) }
+	VALUES ( ?C17sourceURI ?C17destURI ) { ( <http://vocab.nerc.ac.uk/collection/C17/current/> <http://data.geolink.org/id/platform/ices/> ) }
 	VALUES ( ?L06sourceURI ?L06destURI ) { ( <http://vocab.nerc.ac.uk/collection/L06/current/> <http://schema.geolink.org/dev/voc/nvs/L06> ) }
 	BIND ( str(?C17destURI) as ?C17destPrefix ) 
 	BIND ( concat(str(?L06destURI), "#") as ?L06destPrefix ) 
