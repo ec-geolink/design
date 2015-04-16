@@ -5,12 +5,30 @@ import re
 import csv
 import uuid
 import sys
+import unicodedata
 
 featureNs = Namespace('http://data.geolink.org/id/feature/gebco/')
 glview = Namespace('http://schema.geolink.org/dev/view#')
 featuretypeNs = Namespace('http://schema.geolink.org/dev/voc/gebco/featuretype#')
 geosparqlNs = Namespace('http://www.opengis.net/ont/geosparql#')
 geosfNs = Namespace('http://www.opengis.net/ont/sf#')
+
+def unicode_to_ascii(text):
+##    print(text)
+    table = {}
+    for c in text:
+        n = unicodedata.name(c[0][0])
+        prog = re.compile(r"(CAPITAL|SMALL)\s+LETTER\s+(\w+)\s+\w+")
+        result = prog.search(n)
+        if result != None:
+            table[c] = result.group(2)
+            if result.group(1) == 'SMALL':
+                table[c] = table[c].lower()
+##            print(n, ' == ', result.groups())
+##        else:
+##            print(n, result)
+    
+    return text.translate(str.maketrans(table))
 
 def getGeometry(wktText):
     types = {'multipoint':geosfNs.MultiPoint,
@@ -46,7 +64,9 @@ def run(fname):
             label = dct['Specific Term'] + ' ' + dct['Generic Term']
             if label not in uridict: uridict[label] = 1
             else: uridict[label] += 1
-            baseName = label.replace(' ', '_') + '_' + str(uridict[label])
+            baseName = label.replace(' ', '_') + '_' + str(uridict[label])            
+            baseName = unicode_to_ascii(baseName)
+##            print(baseName)
             featureURI = featureNs[baseName]
             theClass = featuretypeNs[dct['Generic Term'].replace(' ', '_')]
             g.add( (featureURI, RDF.type, theClass) )
