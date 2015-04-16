@@ -88,6 +88,10 @@ def run(fname):
         foutname = fname[:fname.rfind('.')]
         with open(foutname+'.rdf', mode='w',encoding='utf-8') as rdffile:            
             print(g.serialize(format='xml').decode(), file=rdffile)
+        print(foutname+'.rdf generated')
+        with open(foutname+'.ttl', mode='w',encoding='utf-8') as rdffile:            
+            print(g.serialize(format='turtle').decode(), file=rdffile)
+        print(foutname+'.ttl generated')
        
 if __name__ == '__main__':
     finput = 'features.csv'    
