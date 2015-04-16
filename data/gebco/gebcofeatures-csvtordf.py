@@ -77,10 +77,11 @@ def run(fname):
 ##            print()
 ##            if stop: break
         g.bind('rdf', RDF)
+        g.bind('rdfs', RDFS)        
+        g.bind('dcterms', DCTERMS)
         g.bind('glview', glview)
         g.bind('data_gebco', featureNs)
-        g.bind('glvoc_gebco', featuretypeNs)
-        g.bind('dcterms', DCTERMS)
+        g.bind('glvoc_gebco', featuretypeNs)        
         g.bind('geosparql', geosparqlNs)
         g.bind('geosf', geosfNs)
         print (len(g))
