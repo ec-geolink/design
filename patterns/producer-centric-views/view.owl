@@ -30,6 +30,8 @@
         <owl:imports rdf:resource="http://schema.geolink.org/dev/voc/nvs/L22"/>
         <owl:imports rdf:resource="http://schema.geolink.org/dev/voc/nvs/P02"/>
         <owl:imports rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03"/>
+        <rdfs:label>GeoLink Patterns : Producer-centric default View</rdfs:label>
+        <rdfs:comment>A producer-centric ontology providing a conceptual View into the GeoLink patterns.</rdfs:comment>
     </owl:Ontology>
     
 
@@ -47,19 +49,28 @@
 
     <!-- http://www.opengis.net/ont/geosparql#gmlLiteral -->
 
-    <rdfs:Datatype rdf:about="&geosparql;gmlLiteral"/>
+    <rdfs:Datatype rdf:about="&geosparql;gmlLiteral">
+        <rdfs:label>geosparql:gmlLiteral</rdfs:label>
+        <rdfs:comment>Enables the use of Geography Markup Language strings</rdfs:comment>
+    </rdfs:Datatype>
     
 
 
     <!-- http://www.opengis.net/ont/geosparql#wktLiteral -->
 
-    <rdfs:Datatype rdf:about="&geosparql;wktLiteral"/>
+    <rdfs:Datatype rdf:about="&geosparql;wktLiteral">
+        <rdfs:label>geosparql:wktLiteral</rdfs:label>
+        <rdfs:comment>Enables the use of Well Known Text strings</rdfs:comment>
+    </rdfs:Datatype>
     
 
 
     <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML -->
 
-    <rdfs:Datatype rdf:about="&rdf;HTML"/>
+    <rdfs:Datatype rdf:about="&rdf;HTML">
+        <rdfs:label>rdf:HTML</rdfs:label>
+        <rdfs:comment>Enables the use of HTML strings</rdfs:comment>
+    </rdfs:Datatype>
     
 
 
@@ -77,6 +88,7 @@
     <!-- http://schema.geolink.org/dev/view#atPort -->
 
     <owl:ObjectProperty rdf:about="&ecglview;atPort">
+        <rdfs:label>atPort</rdfs:label>
         <rdfs:comment>The domain of this property consists of (possibly blank) nodes that act as the range of &apos;hasStartPortCall&apos;, &apos;hasMidPortCall&apos;, or &apos;hasEndPortCall&apos; properties. Graph patterns for data using this property can either be of the form:
 -   ?X :hasStartPortCall [ :atPort ?PL ; :hasTimeStamp ?T ]
 -   ?X :hasMidPortCall [ :atPort ?PL ; :hasTimeStamp ?T ]
@@ -119,6 +131,7 @@
     <!-- http://schema.geolink.org/dev/view#fromCountry -->
 
     <owl:ObjectProperty rdf:about="&ecglview;fromCountry">
+        <rdfs:label>fromCountry</rdfs:label>
         <rdfs:range rdf:resource="&ecglview;Country"/>
         <rdfs:domain>
             <owl:Class>
@@ -135,6 +148,7 @@
     <!-- http://schema.geolink.org/dev/view#hasAffiliation -->
 
     <owl:ObjectProperty rdf:about="&ecglview;hasAffiliation">
+        <rdfs:label>hasAffiliation</rdfs:label>
         <rdfs:comment>The domain of this property includes, besides persons, also instances of Participant class that act as the range of &apos;hasParticipant&apos; property.</rdfs:comment>
         <rdfs:range rdf:resource="&ecglview;Organization"/>
         <rdfs:domain>
@@ -152,6 +166,7 @@
     <!-- http://schema.geolink.org/dev/view#hasAward -->
 
     <owl:ObjectProperty rdf:about="&ecglview;hasAward">
+        <rdfs:label>hasAward</rdfs:label>
         <rdfs:range rdf:resource="&ecglview;Award"/>
         <rdfs:domain rdf:resource="&ecglview;Cruise"/>
     </owl:ObjectProperty>
@@ -161,6 +176,7 @@
     <!-- http://schema.geolink.org/dev/view#hasCoPrincipalInvestigator -->
 
     <owl:ObjectProperty rdf:about="&ecglview;hasCoPrincipalInvestigator">
+        <rdfs:label>hasCoPrincipalInvestigator</rdfs:label>
         <rdfs:domain rdf:resource="&ecglview;Award"/>
         <rdfs:range rdf:resource="&ecglview;Person"/>
     </owl:ObjectProperty>
@@ -170,6 +186,7 @@
     <!-- http://schema.geolink.org/dev/view#hasCruise -->
 
     <owl:ObjectProperty rdf:about="&ecglview;hasCruise">
+        <rdfs:label>hasCruise</rdfs:label>
         <rdfs:range rdf:resource="&ecglview;Cruise"/>
         <rdfs:domain>
             <owl:Class>
@@ -187,6 +204,7 @@
     <!-- http://schema.geolink.org/dev/view#hasCruiseType -->
 
     <owl:ObjectProperty rdf:about="&ecglview;hasCruiseType">
+        <rdfs:label>hasCruiseType</rdfs:label>
         <rdfs:domain rdf:resource="&ecglview;Cruise"/>
         <rdfs:range rdf:resource="&ecglview;CruiseType"/>
     </owl:ObjectProperty>
@@ -196,6 +214,7 @@
     <!-- http://schema.geolink.org/dev/view#hasDataset -->
 
     <owl:ObjectProperty rdf:about="&ecglview;hasDataset">
+        <rdfs:label>hasDataset</rdfs:label>
         <rdfs:range rdf:resource="&ecglview;Dataset"/>
         <rdfs:domain rdf:resource="&ecglview;PhysicalSample"/>
     </owl:ObjectProperty>
@@ -205,6 +224,7 @@
     <!-- http://schema.geolink.org/dev/view#hasEndPortCall -->
 
     <owl:ObjectProperty rdf:about="&ecglview;hasEndPortCall">
+        <rdfs:label>hasEndPortCall</rdfs:label>
         <rdfs:comment>The range of this property consists of (possibly blank) nodes that act as the domain of the &apos;atPort&apos; and &apos;hasTimeStamp&apos; property. Graph patterns for data using this property can be of the form:
 -   ?X :hasEndPortCall [ :atPort ?PL ; :hasTimeStamp ?T ]</rdfs:comment>
         <rdfs:domain rdf:resource="&ecglview;Cruise"/>
@@ -227,6 +247,7 @@
     <!-- http://schema.geolink.org/dev/view#hasFeatureType -->
 
     <owl:ObjectProperty rdf:about="&ecglview;hasFeatureType">
+        <rdfs:label>hasFeatureType</rdfs:label>
         <rdfs:domain rdf:resource="&ecglview;Feature"/>
         <rdfs:range rdf:resource="&ecglview;FeatureType"/>
     </owl:ObjectProperty>
@@ -236,6 +257,7 @@
     <!-- http://schema.geolink.org/dev/view#hasFormatType -->
 
     <owl:ObjectProperty rdf:about="&ecglview;hasFormatType">
+        <rdfs:label>hasFormatType</rdfs:label>
         <rdfs:domain rdf:resource="&ecglview;DigitalObject"/>
         <rdfs:range rdf:resource="&ecglview;FormatType"/>
     </owl:ObjectProperty>
@@ -245,6 +267,7 @@
     <!-- http://schema.geolink.org/dev/view#hasInstrument -->
 
     <owl:ObjectProperty rdf:about="&ecglview;hasInstrument">
+        <rdfs:label>hasInstrument</rdfs:label>
         <rdfs:range rdf:resource="&ecglview;Instrument"/>
         <rdfs:domain>
             <owl:Class>
@@ -261,6 +284,7 @@
     <!-- http://schema.geolink.org/dev/view#hasInstrumentType -->
 
     <owl:ObjectProperty rdf:about="&ecglview;hasInstrumentType">
+        <rdfs:label>hasInstrumentType</rdfs:label>
         <rdfs:domain rdf:resource="&ecglview;Instrument"/>
         <rdfs:range rdf:resource="&ecglview;InstrumentType"/>
     </owl:ObjectProperty>
@@ -270,6 +294,7 @@
     <!-- http://schema.geolink.org/dev/view#hasMeasurementType -->
 
     <owl:ObjectProperty rdf:about="&ecglview;hasMeasurementType">
+        <rdfs:label>hasMeasurementType</rdfs:label>
         <rdfs:range rdf:resource="&ecglview;MeasurementType"/>
         <rdfs:domain>
             <owl:Class>
@@ -286,6 +311,7 @@
     <!-- http://schema.geolink.org/dev/view#hasMidPortCall -->
 
     <owl:ObjectProperty rdf:about="&ecglview;hasMidPortCall">
+        <rdfs:label>hasMidPortCall</rdfs:label>
         <rdfs:comment>The range of this property consists of (possibly blank) nodes that act as the domain of the &apos;atPort&apos; and &apos;hasTimeStamp&apos; property. Graph patterns for data using this property can be of the form:
 -   ?X :hasMidPortCall [ :atPort ?PL ; :hasTimeStamp ?T ]</rdfs:comment>
         <rdfs:domain rdf:resource="&ecglview;Cruise"/>
@@ -308,6 +334,7 @@
     <!-- http://schema.geolink.org/dev/view#hasOperator -->
 
     <owl:ObjectProperty rdf:about="&ecglview;hasOperator">
+        <rdfs:label>hasOperator</rdfs:label>
         <rdfs:domain rdf:resource="&ecglview;Cruise"/>
         <rdfs:range rdf:resource="&ecglview;Organization"/>
     </owl:ObjectProperty>
@@ -317,6 +344,7 @@
     <!-- http://schema.geolink.org/dev/view#hasOriginFeature -->
 
     <owl:ObjectProperty rdf:about="&ecglview;hasOriginFeature">
+        <rdfs:label>hasOriginFeature</rdfs:label>
         <rdfs:range rdf:resource="&ecglview;Feature"/>
         <rdfs:domain rdf:resource="&ecglview;PhysicalSample"/>
     </owl:ObjectProperty>
@@ -326,6 +354,7 @@
     <!-- http://schema.geolink.org/dev/view#hasParticipant -->
 
     <owl:ObjectProperty rdf:about="&ecglview;hasParticipant">
+        <rdfs:label>hasParticipant</rdfs:label>
         <rdfs:comment>The range of this property includes instances of Participant that act as the domain of the &apos;hasRoleType&apos;, &apos;isPerformedBy&apos;, and &apos;hasAffiliation&apos; property. Graph patterns for data using this property can be of the form:
 ?X :hasParticipant ?Y.  ?Y a :Participant; :hasRoleType ?RT ; :isPerformedBy ?P; :hasAffiliation ?O.</rdfs:comment>
         <rdfs:range rdf:resource="&ecglview;Participant"/>
@@ -348,6 +377,7 @@
     <!-- http://schema.geolink.org/dev/view#hasPlaceType -->
 
     <owl:ObjectProperty rdf:about="&ecglview;hasPlaceType">
+        <rdfs:label>hasPlaceType</rdfs:label>
         <rdfs:domain rdf:resource="&ecglview;Place"/>
         <rdfs:range rdf:resource="&ecglview;PlaceType"/>
     </owl:ObjectProperty>
@@ -357,6 +387,7 @@
     <!-- http://schema.geolink.org/dev/view#hasPlatformType -->
 
     <owl:ObjectProperty rdf:about="&ecglview;hasPlatformType">
+        <rdfs:label>hasPlatformType</rdfs:label>
         <rdfs:domain rdf:resource="&ecglview;Platform"/>
         <rdfs:range rdf:resource="&ecglview;PlatformType"/>
     </owl:ObjectProperty>
@@ -366,6 +397,7 @@
     <!-- http://schema.geolink.org/dev/view#hasPrincipalInvestigator -->
 
     <owl:ObjectProperty rdf:about="&ecglview;hasPrincipalInvestigator">
+        <rdfs:label>hasPrincipalInvestigator</rdfs:label>
         <rdfs:domain rdf:resource="&ecglview;Award"/>
         <rdfs:range rdf:resource="&ecglview;Person"/>
     </owl:ObjectProperty>
@@ -375,6 +407,7 @@
     <!-- http://schema.geolink.org/dev/view#hasProgram -->
 
     <owl:ObjectProperty rdf:about="&ecglview;hasProgram">
+        <rdfs:label>hasProgram</rdfs:label>
         <rdfs:domain rdf:resource="&ecglview;Cruise"/>
         <rdfs:range rdf:resource="&ecglview;Program"/>
     </owl:ObjectProperty>
@@ -383,13 +416,16 @@
 
     <!-- http://schema.geolink.org/dev/view#hasReferenceTo -->
 
-    <owl:ObjectProperty rdf:about="&ecglview;hasReferenceTo"/>
+    <owl:ObjectProperty rdf:about="&ecglview;hasReferenceTo">
+        <rdfs:label>hasReferenceTo</rdfs:label>
+    </owl:ObjectProperty>
     
 
 
     <!-- http://schema.geolink.org/dev/view#hasRelatedCruise -->
 
     <owl:ObjectProperty rdf:about="&ecglview;hasRelatedCruise">
+        <rdfs:label>hasRelatedCruise</rdfs:label>
         <rdfs:range rdf:resource="&ecglview;Cruise"/>
         <rdfs:domain rdf:resource="&ecglview;Cruise"/>
     </owl:ObjectProperty>
@@ -399,6 +435,7 @@
     <!-- http://schema.geolink.org/dev/view#hasRepository -->
 
     <owl:ObjectProperty rdf:about="&ecglview;hasRepository">
+        <rdfs:label>hasRepository</rdfs:label>
         <rdfs:range rdf:resource="&ecglview;Repository"/>
         <rdfs:domain>
             <owl:Class>
@@ -416,6 +453,7 @@
     <!-- http://schema.geolink.org/dev/view#hasRoleType -->
 
     <owl:ObjectProperty rdf:about="&ecglview;hasRoleType">
+        <rdfs:label>hasRoleType</rdfs:label>
         <rdfs:comment>The domain of this property consists of (possibly blank) nodes that act as the range of &apos;hasParticipation&apos; property. Graph patterns for data using this property can either be of the form:
 -   ?X :hasParticipation [ :hasRoleType ?RT ; :isPerformedBy ?P; :hasAffiliation ?O ]</rdfs:comment>
         <rdfs:domain rdf:resource="&ecglview;Participant"/>
@@ -427,6 +465,7 @@
     <!-- http://schema.geolink.org/dev/view#hasScheduler -->
 
     <owl:ObjectProperty rdf:about="&ecglview;hasScheduler">
+        <rdfs:label>hasScheduler</rdfs:label>
         <rdfs:domain rdf:resource="&ecglview;Cruise"/>
         <rdfs:range rdf:resource="&ecglview;Organization"/>
     </owl:ObjectProperty>
@@ -436,6 +475,7 @@
     <!-- http://schema.geolink.org/dev/view#hasSponsor -->
 
     <owl:ObjectProperty rdf:about="&ecglview;hasSponsor">
+        <rdfs:label>hasSponsor</rdfs:label>
         <rdfs:domain rdf:resource="&ecglview;Award"/>
         <rdfs:range rdf:resource="&ecglview;Organization"/>
     </owl:ObjectProperty>
@@ -445,6 +485,7 @@
     <!-- http://schema.geolink.org/dev/view#hasStartPortCall -->
 
     <owl:ObjectProperty rdf:about="&ecglview;hasStartPortCall">
+        <rdfs:label>hasStartPortCall</rdfs:label>
         <rdfs:comment>The range of this property consists of (possibly blank) nodes that act as the domain of the &apos;atPort&apos; and &apos;hasTimeStamp&apos; property. Graph patterns for data using this property can be of the form:
 -   ?X :hasStartPortCall [ :atPort ?PL ; :hasTimeStamp ?T ]</rdfs:comment>
         <rdfs:domain rdf:resource="&ecglview;Cruise"/>
@@ -467,6 +508,7 @@
     <!-- http://schema.geolink.org/dev/view#hasSubOrganization -->
 
     <owl:ObjectProperty rdf:about="&ecglview;hasSubOrganization">
+        <rdfs:label>hasSubOrganization</rdfs:label>
         <rdfs:range rdf:resource="&ecglview;Organization"/>
         <rdfs:domain rdf:resource="&ecglview;Organization"/>
     </owl:ObjectProperty>
@@ -476,6 +518,7 @@
     <!-- http://schema.geolink.org/dev/view#hasVendor -->
 
     <owl:ObjectProperty rdf:about="&ecglview;hasVendor">
+        <rdfs:label>hasVendor</rdfs:label>
         <rdfs:domain rdf:resource="&ecglview;Instrument"/>
         <rdfs:range rdf:resource="&ecglview;Organization"/>
     </owl:ObjectProperty>
@@ -485,6 +528,7 @@
     <!-- http://schema.geolink.org/dev/view#hasVessel -->
 
     <owl:ObjectProperty rdf:about="&ecglview;hasVessel">
+        <rdfs:label>hasVessel</rdfs:label>
         <rdfs:domain rdf:resource="&ecglview;Cruise"/>
         <rdfs:range rdf:resource="&ecglview;Vessel"/>
     </owl:ObjectProperty>
@@ -494,6 +538,7 @@
     <!-- http://schema.geolink.org/dev/view#isPartOf -->
 
     <owl:ObjectProperty rdf:about="&ecglview;isPartOf">
+        <rdfs:label>isPartOf</rdfs:label>
         <rdfs:range rdf:resource="&ecglview;Dataset"/>
         <rdfs:domain rdf:resource="&ecglview;DigitalObject"/>
     </owl:ObjectProperty>
@@ -503,6 +548,7 @@
     <!-- http://schema.geolink.org/dev/view#isPerformedBy -->
 
     <owl:ObjectProperty rdf:about="&ecglview;isPerformedBy">
+        <rdfs:label>isPerformedBy</rdfs:label>
         <rdfs:comment>The domain of this property consists of (possibly blank) nodes that act as the range of &apos;hasParticipation&apos; property. Graph patterns for data using this property can either be of the form:
 -   ?X :hasParticipation [ :hasRoleType ?RT ; :isPerformedBy ?P; :hasAffiliation ?O ]</rdfs:comment>
         <rdfs:domain rdf:resource="&ecglview;Participant"/>
@@ -525,6 +571,7 @@
     <!-- http://schema.geolink.org/dev/view#abstract -->
 
     <owl:DatatypeProperty rdf:about="&ecglview;abstract">
+        <rdfs:label>abstract</rdfs:label>
         <rdfs:range rdf:resource="&xsd;string"/>
         <rdfs:domain>
             <owl:Class>
@@ -544,6 +591,7 @@
     <!-- http://schema.geolink.org/dev/view#acronym -->
 
     <owl:DatatypeProperty rdf:about="&ecglview;acronym">
+        <rdfs:label>acronym</rdfs:label>
         <rdfs:domain rdf:resource="&ecglview;Program"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
@@ -553,6 +601,7 @@
     <!-- http://schema.geolink.org/dev/view#description -->
 
     <owl:DatatypeProperty rdf:about="&ecglview;description">
+        <rdfs:label>descriptionny</rdfs:label>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:unionOf rdf:parseType="Collection">
@@ -581,6 +630,7 @@
     <!-- http://schema.geolink.org/dev/view#hasByteLength -->
 
     <owl:DatatypeProperty rdf:about="&ecglview;hasByteLength">
+        <rdfs:label>hasByteLength</rdfs:label>
         <rdfs:domain rdf:resource="&ecglview;DigitalObject"/>
         <rdfs:range rdf:resource="&xsd;int"/>
     </owl:DatatypeProperty>
@@ -590,6 +640,7 @@
     <!-- http://schema.geolink.org/dev/view#hasChecksum -->
 
     <owl:DatatypeProperty rdf:about="&ecglview;hasChecksum">
+        <rdfs:label>hasChecksum</rdfs:label>
         <rdfs:domain rdf:resource="&ecglview;DigitalObject"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
@@ -599,6 +650,7 @@
     <!-- http://schema.geolink.org/dev/view#hasElevation -->
 
     <owl:DatatypeProperty rdf:about="&ecglview;hasElevation">
+        <rdfs:label>hasElevation</rdfs:label>
         <rdfs:domain rdf:resource="&ecglview;PhysicalSample"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
@@ -608,6 +660,7 @@
     <!-- http://schema.geolink.org/dev/view#hasEndDate -->
 
     <owl:DatatypeProperty rdf:about="&ecglview;hasEndDate">
+        <rdfs:label>hasEndDate</rdfs:label>
         <rdfs:range rdf:resource="&xsd;dateTime"/>
         <rdfs:domain>
             <owl:Class>
@@ -624,6 +677,7 @@
     <!-- http://schema.geolink.org/dev/view#hasGeologicAge -->
 
     <owl:DatatypeProperty rdf:about="&ecglview;hasGeologicAge">
+        <rdfs:label>hasGeologicAge</rdfs:label>
         <rdfs:domain rdf:resource="&ecglview;PhysicalSample"/>
         <rdfs:range>
             <rdfs:Datatype>
@@ -640,6 +694,7 @@
     <!-- http://schema.geolink.org/dev/view#hasGeometry -->
 
     <owl:DatatypeProperty rdf:about="&ecglview;hasGeometry">
+        <rdfs:label>hasGeometry</rdfs:label>
         <rdfs:domain rdf:resource="&ecglview;Place"/>
         <rdfs:range rdf:resource="&geosparql;wktLiteral"/>
     </owl:DatatypeProperty>
@@ -649,6 +704,7 @@
     <!-- http://schema.geolink.org/dev/view#hasMaterialType -->
 
     <owl:DatatypeProperty rdf:about="&ecglview;hasMaterialType">
+        <rdfs:label>hasMaterialType</rdfs:label>
         <rdfs:domain rdf:resource="&ecglview;PhysicalSample"/>
         <rdfs:range>
             <rdfs:Datatype>
@@ -665,6 +721,7 @@
     <!-- http://schema.geolink.org/dev/view#hasModel -->
 
     <owl:DatatypeProperty rdf:about="&ecglview;hasModel">
+        <rdfs:label>hasModel</rdfs:label>
         <rdfs:domain rdf:resource="&ecglview;Instrument"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
@@ -674,6 +731,7 @@
     <!-- http://schema.geolink.org/dev/view#hasPosition -->
 
     <owl:DatatypeProperty rdf:about="&ecglview;hasPosition">
+        <rdfs:label>hasPosition</rdfs:label>
         <rdfs:range rdf:resource="&geosparql;wktLiteral"/>
         <rdfs:domain>
             <owl:Class>
@@ -690,6 +748,7 @@
     <!-- http://schema.geolink.org/dev/view#hasProject -->
 
     <owl:DatatypeProperty rdf:about="&ecglview;hasProject">
+        <rdfs:label>hasProject</rdfs:label>
         <rdfs:range rdf:resource="&xsd;string"/>
         <rdfs:domain>
             <owl:Class>
@@ -706,6 +765,7 @@
     <!-- http://schema.geolink.org/dev/view#hasSamplingType -->
 
     <owl:DatatypeProperty rdf:about="&ecglview;hasSamplingType">
+        <rdfs:label>hasSamplingType</rdfs:label>
         <rdfs:domain rdf:resource="&ecglview;PhysicalSample"/>
         <rdfs:range>
             <rdfs:Datatype>
@@ -722,6 +782,7 @@
     <!-- http://schema.geolink.org/dev/view#hasStartDate -->
 
     <owl:DatatypeProperty rdf:about="&ecglview;hasStartDate">
+        <rdfs:label>hasStartDate</rdfs:label>
         <rdfs:range rdf:resource="&xsd;dateTime"/>
         <rdfs:domain>
             <owl:Class>
@@ -738,6 +799,7 @@
     <!-- http://schema.geolink.org/dev/view#hasTectonicSetting -->
 
     <owl:DatatypeProperty rdf:about="&ecglview;hasTectonicSetting">
+        <rdfs:label>hasTectonicSetting</rdfs:label>
         <rdfs:domain rdf:resource="&ecglview;PhysicalSample"/>
         <rdfs:range>
             <rdfs:Datatype>
@@ -754,6 +816,7 @@
     <!-- http://schema.geolink.org/dev/view#hasTimeStamp -->
 
     <owl:DatatypeProperty rdf:about="&ecglview;hasTimeStamp">
+        <rdfs:label>hasTimeStamp</rdfs:label>
         <rdfs:comment>The domain of this property consists of (possibly blank) nodes that act as the range of &apos;hasStartPortCall&apos;, &apos;hasMidPortCall&apos;, or &apos;hasEndPortCall&apos; properties. Graph patterns for data using this property can either be of the form:
 -   ?X :hasStartPortCall [ :atPort ?PL ; :hasTimeStamp ?T ]
 -   ?X :hasMidPortCall [ :atPort ?PL ; :hasTimeStamp ?T ]
@@ -795,6 +858,7 @@
     <!-- http://schema.geolink.org/dev/view#hasTrack -->
 
     <owl:DatatypeProperty rdf:about="&ecglview;hasTrack">
+        <rdfs:label>hasTrack</rdfs:label>
         <rdfs:domain rdf:resource="&ecglview;Cruise"/>
         <rdfs:range rdf:resource="&geosparql;wktLiteral"/>
     </owl:DatatypeProperty>
@@ -804,6 +868,7 @@
     <!-- http://schema.geolink.org/dev/view#identifier -->
 
     <owl:DatatypeProperty rdf:about="&ecglview;identifier">
+        <rdfs:label>identifier</rdfs:label>
         <rdfs:comment>The domain of this property also includes (possibly blank) nodes that act as the range of the &apos;matches&apos; property. Graph patterns for data using this property can either be of the form:
 -   ?X :identifier ?ID
 -   ?X :matches [ :identifier ?ID ; :hasScheme ?S ]</rdfs:comment>
@@ -830,6 +895,7 @@
     <!-- http://schema.geolink.org/dev/view#matches -->
 
     <owl:DatatypeProperty rdf:about="&ecglview;matches">
+        <rdfs:label>matches</rdfs:label>
         <rdfs:range rdf:resource="&xsd;anyURI"/>
         <rdfs:domain>
             <owl:Class>
@@ -856,6 +922,7 @@
     <!-- http://schema.geolink.org/dev/view#nameFamily -->
 
     <owl:DatatypeProperty rdf:about="&ecglview;nameFamily">
+        <rdfs:label>nameFamily</rdfs:label>
         <rdfs:domain rdf:resource="&ecglview;Person"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
@@ -865,6 +932,7 @@
     <!-- http://schema.geolink.org/dev/view#nameFull -->
 
     <owl:DatatypeProperty rdf:about="&ecglview;nameFull">
+        <rdfs:label>nameFull</rdfs:label>
         <rdfs:domain rdf:resource="&ecglview;Person"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
@@ -874,6 +942,7 @@
     <!-- http://schema.geolink.org/dev/view#nameGiven -->
 
     <owl:DatatypeProperty rdf:about="&ecglview;nameGiven">
+        <rdfs:label>nameGiven</rdfs:label>
         <rdfs:domain rdf:resource="&ecglview;Person"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
@@ -883,6 +952,7 @@
     <!-- http://schema.geolink.org/dev/view#nameMiddle -->
 
     <owl:DatatypeProperty rdf:about="&ecglview;nameMiddle">
+        <rdfs:label>nameMiddle</rdfs:label>
         <rdfs:domain rdf:resource="&ecglview;Person"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
@@ -892,6 +962,7 @@
     <!-- http://schema.geolink.org/dev/view#namePrefix -->
 
     <owl:DatatypeProperty rdf:about="&ecglview;namePrefix">
+        <rdfs:label>namePrefix</rdfs:label>
         <rdfs:domain rdf:resource="&ecglview;Person"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
@@ -901,6 +972,7 @@
     <!-- http://schema.geolink.org/dev/view#nameSuffix -->
 
     <owl:DatatypeProperty rdf:about="&ecglview;nameSuffix">
+        <rdfs:label>nameSuffix</rdfs:label>
         <rdfs:domain rdf:resource="&ecglview;Person"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
@@ -910,6 +982,7 @@
     <!-- http://schema.geolink.org/dev/view#seeAlso -->
 
     <owl:DatatypeProperty rdf:about="&ecglview;seeAlso">
+        <rdfs:label>seeAlso</rdfs:label>
         <rdfs:range rdf:resource="&xsd;anyURI"/>
         <rdfs:domain>
             <owl:Class>
@@ -934,6 +1007,7 @@
     <!-- http://schema.geolink.org/dev/view#source -->
 
     <owl:DatatypeProperty rdf:about="&ecglview;source">
+        <rdfs:label>source</rdfs:label>
         <rdfs:domain rdf:resource="&ecglview;DigitalObject"/>
         <rdfs:range rdf:resource="&xsd;anyURI"/>
     </owl:DatatypeProperty>
@@ -943,6 +1017,7 @@
     <!-- http://schema.geolink.org/dev/view#title -->
 
     <owl:DatatypeProperty rdf:about="&ecglview;title">
+        <rdfs:label>title</rdfs:label>
         <rdfs:range rdf:resource="&xsd;string"/>
         <rdfs:domain>
             <owl:Class>
@@ -979,6 +1054,7 @@
     <!-- http://schema.geolink.org/dev/view#Award -->
 
     <owl:Class rdf:about="&ecglview;Award">
+        <rdfs:label>Award</rdfs:label>
         <rdfs:comment>Funding provided by an Organization enabling Participation.</rdfs:comment>
     </owl:Class>
     
@@ -987,6 +1063,7 @@
     <!-- http://schema.geolink.org/dev/view#Country -->
 
     <owl:Class rdf:about="&ecglview;Country">
+        <rdfs:label>Country</rdfs:label>
         <rdfs:comment>A formally recognized, governed nation of Persons with a defined territory</rdfs:comment>
     </owl:Class>
     
@@ -995,6 +1072,7 @@
     <!-- http://schema.geolink.org/dev/view#Cruise -->
 
     <owl:Class rdf:about="&ecglview;Cruise">
+        <rdfs:label>Cruise</rdfs:label>
         <rdfs:comment>An event occuring on a Vessel traversing a Trajectory.</rdfs:comment>
     </owl:Class>
     
@@ -1003,6 +1081,7 @@
     <!-- http://schema.geolink.org/dev/view#CruiseType -->
 
     <owl:Class rdf:about="&ecglview;CruiseType">
+        <rdfs:label>CruiseType</rdfs:label>
         <rdfs:comment>The type of Cruise - operational, transit, etc.</rdfs:comment>
     </owl:Class>
     
@@ -1011,6 +1090,7 @@
     <!-- http://schema.geolink.org/dev/view#Dataset -->
 
     <owl:Class rdf:about="&ecglview;Dataset">
+        <rdfs:label>Dataset</rdfs:label>
         <rdfs:comment>A collection of Measurements.</rdfs:comment>
     </owl:Class>
     
@@ -1019,6 +1099,7 @@
     <!-- http://schema.geolink.org/dev/view#DigitalObject -->
 
     <owl:Class rdf:about="&ecglview;DigitalObject">
+        <rdfs:label>DigitalObject</rdfs:label>
         <rdfs:comment>A digital representation of a Thing</rdfs:comment>
     </owl:Class>
     
@@ -1027,6 +1108,7 @@
     <!-- http://schema.geolink.org/dev/view#Feature -->
 
     <owl:Class rdf:about="&ecglview;Feature">
+        <rdfs:label>Feature</rdfs:label>
         <rdfs:comment>A significant locality where observations are made.</rdfs:comment>
     </owl:Class>
     
@@ -1035,6 +1117,7 @@
     <!-- http://schema.geolink.org/dev/view#FeatureType -->
 
     <owl:Class rdf:about="&ecglview;FeatureType">
+        <rdfs:label>FeatureType</rdfs:label>
         <rdfs:comment>The type of spatial feature - linestring, multipoint, etc.</rdfs:comment>
     </owl:Class>
     
@@ -1043,6 +1126,7 @@
     <!-- http://schema.geolink.org/dev/view#FormatType -->
 
     <owl:Class rdf:about="&ecglview;FormatType">
+        <rdfs:label>FormatType</rdfs:label>
         <rdfs:comment>The type of data format for a DigitalObject</rdfs:comment>
     </owl:Class>
     
@@ -1051,6 +1135,7 @@
     <!-- http://schema.geolink.org/dev/view#Instrument -->
 
     <owl:Class rdf:about="&ecglview;Instrument">
+        <rdfs:label>Instrument</rdfs:label>
         <rdfs:comment>A specific instance of an Instrument being used to make observations resulting in a Dataset.</rdfs:comment>
     </owl:Class>
     
@@ -1059,6 +1144,7 @@
     <!-- http://schema.geolink.org/dev/view#InstrumentType -->
 
     <owl:Class rdf:about="&ecglview;InstrumentType">
+        <rdfs:label>InstrumentType</rdfs:label>
         <rdfs:comment>The type of Instrument being used to make observations - CTD, ADCP, microscope.</rdfs:comment>
     </owl:Class>
     
@@ -1067,6 +1153,7 @@
     <!-- http://schema.geolink.org/dev/view#MeasurementType -->
 
     <owl:Class rdf:about="&ecglview;MeasurementType">
+        <rdfs:label>MeasurementType</rdfs:label>
         <rdfs:comment>The type of Measreument being recorded - latitude, longitude, depth, salinity.</rdfs:comment>
     </owl:Class>
     
@@ -1075,6 +1162,7 @@
     <!-- http://schema.geolink.org/dev/view#Organization -->
 
     <owl:Class rdf:about="&ecglview;Organization">
+        <rdfs:label>Organization</rdfs:label>
         <rdfs:comment>A physical or virtual collection of Agents in some formally recognized capacity of significance.</rdfs:comment>
     </owl:Class>
     
@@ -1083,6 +1171,7 @@
     <!-- http://schema.geolink.org/dev/view#Participant -->
 
     <owl:Class rdf:about="&ecglview;Participant">
+        <rdfs:label>Participant</rdfs:label>
         <rdfs:comment>A Person performing a certain RoleType on a Thing - possibly associated with an Organization at the time of participation</rdfs:comment>
     </owl:Class>
     
@@ -1091,6 +1180,7 @@
     <!-- http://schema.geolink.org/dev/view#Person -->
 
     <owl:Class rdf:about="&ecglview;Person">
+        <rdfs:label>Person</rdfs:label>
         <rdfs:comment>A homo sapien Agent of some significance</rdfs:comment>
     </owl:Class>
     
@@ -1099,6 +1189,7 @@
     <!-- http://schema.geolink.org/dev/view#PhysicalSample -->
 
     <owl:Class rdf:about="&ecglview;PhysicalSample">
+        <rdfs:label>PhysicalSample</rdfs:label>
         <rdfs:comment>An object of observation that may be preserved, catalogued, and/or preserved.</rdfs:comment>
     </owl:Class>
     
@@ -1107,6 +1198,7 @@
     <!-- http://schema.geolink.org/dev/view#Place -->
 
     <owl:Class rdf:about="&ecglview;Place">
+        <rdfs:label>Place</rdfs:label>
         <rdfs:comment>A location with at least some type of spatial extent.</rdfs:comment>
     </owl:Class>
     
@@ -1115,6 +1207,7 @@
     <!-- http://schema.geolink.org/dev/view#PlaceType -->
 
     <owl:Class rdf:about="&ecglview;PlaceType">
+        <rdfs:label>PlaceType</rdfs:label>
         <rdfs:comment>A common descriptor for a type of Place - ocean, shoreline, island, etc.</rdfs:comment>
     </owl:Class>
     
@@ -1123,6 +1216,7 @@
     <!-- http://schema.geolink.org/dev/view#Platform -->
 
     <owl:Class rdf:about="&ecglview;Platform">
+        <rdfs:label>Platform</rdfs:label>
         <rdfs:comment>A physical object of significance enabling observations resulting in a Dataset</rdfs:comment>
     </owl:Class>
     
@@ -1131,6 +1225,7 @@
     <!-- http://schema.geolink.org/dev/view#PlatformType -->
 
     <owl:Class rdf:about="&ecglview;PlatformType">
+        <rdfs:label>PlatformType</rdfs:label>
         <rdfs:comment>A type of Platform - vessel, glider, float, laboratory, etc.</rdfs:comment>
     </owl:Class>
     
@@ -1139,6 +1234,7 @@
     <!-- http://schema.geolink.org/dev/view#PortCall -->
 
     <owl:Class rdf:about="&ecglview;PortCall">
+        <rdfs:label>PortCall</rdfs:label>
         <rdfs:comment>A designated, specific port visited by a Vessel for some significant reason - the start or end of a mission; transfer of passengers, goods, or equipment.</rdfs:comment>
     </owl:Class>
     
@@ -1147,6 +1243,7 @@
     <!-- http://schema.geolink.org/dev/view#Program -->
 
     <owl:Class rdf:about="&ecglview;Program">
+        <rdfs:label>Program</rdfs:label>
         <rdfs:comment>A formally recognized scientific effort receiving significant funding, requiring large scale coordination</rdfs:comment>
     </owl:Class>
     
@@ -1155,6 +1252,7 @@
     <!-- http://schema.geolink.org/dev/view#Publication -->
 
     <owl:Class rdf:about="&ecglview;Publication">
+        <rdfs:label>Publication</rdfs:label>
         <rdfs:comment>A citable, creative work.</rdfs:comment>
     </owl:Class>
     
@@ -1163,6 +1261,7 @@
     <!-- http://schema.geolink.org/dev/view#Repository -->
 
     <owl:Class rdf:about="&ecglview;Repository">
+        <rdfs:label>Repository</rdfs:label>
         <rdfs:comment>A recognized, formal entity responsible for curating a certain set of Datasets or DigitalObjects</rdfs:comment>
     </owl:Class>
     
@@ -1171,6 +1270,7 @@
     <!-- http://schema.geolink.org/dev/view#RoleType -->
 
     <owl:Class rdf:about="&ecglview;RoleType">
+        <rdfs:label>RoleType</rdfs:label>
         <rdfs:comment>A specific type of role performed by an Agent - Principal Investigator, Chief Scientist, Publisher, etc.</rdfs:comment>
     </owl:Class>
     
@@ -1179,6 +1279,7 @@
     <!-- http://schema.geolink.org/dev/view#Vessel -->
 
     <owl:Class rdf:about="&ecglview;Vessel">
+        <rdfs:label>Vessel</rdfs:label>
         <owl:equivalentClass rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#3Z"/>
         <rdfs:subClassOf rdf:resource="&ecglview;Platform"/>
         <rdfs:comment>The platform enabling a Cruise</rdfs:comment>
@@ -1188,7 +1289,9 @@
 
     <!-- http://schema.geolink.org/dev/voc/nvs/L06#3Z -->
 
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#3Z"/>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#3Z">
+        <rdfs:label>NERC Vocabulary Server : Vocabulary L06 : Term 3Z</rdfs:label>
+    </rdf:Description>
 </rdf:RDF>
 
 
