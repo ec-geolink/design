@@ -978,151 +978,201 @@
 
     <!-- http://schema.geolink.org/dev/view#Award -->
 
-    <owl:Class rdf:about="&ecglview;Award"/>
+    <owl:Class rdf:about="&ecglview;Award">
+        <rdfs:comment>Funding provided by an Organization enabling Participation.</rdfs:comment>
+    </owl:Class>
     
 
 
     <!-- http://schema.geolink.org/dev/view#Country -->
 
-    <owl:Class rdf:about="&ecglview;Country"/>
+    <owl:Class rdf:about="&ecglview;Country">
+        <rdfs:comment>A formally recognized, governed nation of Persons with a defined territory</rdfs:comment>
+    </owl:Class>
     
 
 
     <!-- http://schema.geolink.org/dev/view#Cruise -->
 
-    <owl:Class rdf:about="&ecglview;Cruise"/>
+    <owl:Class rdf:about="&ecglview;Cruise">
+        <rdfs:comment>An event occuring on a Vessel traversing a Trajectory.</rdfs:comment>
+    </owl:Class>
     
 
 
     <!-- http://schema.geolink.org/dev/view#CruiseType -->
 
-    <owl:Class rdf:about="&ecglview;CruiseType"/>
+    <owl:Class rdf:about="&ecglview;CruiseType">
+        <rdfs:comment>The type of Cruise - operational, transit, etc.</rdfs:comment>
+    </owl:Class>
     
 
 
     <!-- http://schema.geolink.org/dev/view#Dataset -->
 
-    <owl:Class rdf:about="&ecglview;Dataset"/>
+    <owl:Class rdf:about="&ecglview;Dataset">
+        <rdfs:comment>A collection of Measurements.</rdfs:comment>
+    </owl:Class>
     
 
 
     <!-- http://schema.geolink.org/dev/view#DigitalObject -->
 
-    <owl:Class rdf:about="&ecglview;DigitalObject"/>
+    <owl:Class rdf:about="&ecglview;DigitalObject">
+        <rdfs:comment>A digital representation of a Thing</rdfs:comment>
+    </owl:Class>
     
 
 
     <!-- http://schema.geolink.org/dev/view#Feature -->
 
-    <owl:Class rdf:about="&ecglview;Feature"/>
+    <owl:Class rdf:about="&ecglview;Feature">
+        <rdfs:comment>A significant locality where observations are made.</rdfs:comment>
+    </owl:Class>
     
 
 
     <!-- http://schema.geolink.org/dev/view#FeatureType -->
 
-    <owl:Class rdf:about="&ecglview;FeatureType"/>
+    <owl:Class rdf:about="&ecglview;FeatureType">
+        <rdfs:comment>The type of spatial feature - linestring, multipoint, etc.</rdfs:comment>
+    </owl:Class>
     
 
 
     <!-- http://schema.geolink.org/dev/view#FormatType -->
 
-    <owl:Class rdf:about="&ecglview;FormatType"/>
+    <owl:Class rdf:about="&ecglview;FormatType">
+        <rdfs:comment>The type of data format for a DigitalObject</rdfs:comment>
+    </owl:Class>
     
 
 
     <!-- http://schema.geolink.org/dev/view#Instrument -->
 
-    <owl:Class rdf:about="&ecglview;Instrument"/>
+    <owl:Class rdf:about="&ecglview;Instrument">
+        <rdfs:comment>A specific instance of an Instrument being used to make observations resulting in a Dataset.</rdfs:comment>
+    </owl:Class>
     
 
 
     <!-- http://schema.geolink.org/dev/view#InstrumentType -->
 
-    <owl:Class rdf:about="&ecglview;InstrumentType"/>
+    <owl:Class rdf:about="&ecglview;InstrumentType">
+        <rdfs:comment>The type of Instrument being used to make observations - CTD, ADCP, microscope.</rdfs:comment>
+    </owl:Class>
     
 
 
     <!-- http://schema.geolink.org/dev/view#MeasurementType -->
 
-    <owl:Class rdf:about="&ecglview;MeasurementType"/>
+    <owl:Class rdf:about="&ecglview;MeasurementType">
+        <rdfs:comment>The type of Measreument being recorded - latitude, longitude, depth, salinity.</rdfs:comment>
+    </owl:Class>
     
 
 
     <!-- http://schema.geolink.org/dev/view#Organization -->
 
-    <owl:Class rdf:about="&ecglview;Organization"/>
+    <owl:Class rdf:about="&ecglview;Organization">
+        <rdfs:comment>A physical or virtual collection of Agents in some formally recognized capacity of significance.</rdfs:comment>
+    </owl:Class>
     
 
 
     <!-- http://schema.geolink.org/dev/view#Participant -->
 
-    <owl:Class rdf:about="&ecglview;Participant"/>
+    <owl:Class rdf:about="&ecglview;Participant">
+        <rdfs:comment>A Person performing a certain RoleType on a Thing - possibly associated with an Organization at the time of participation</rdfs:comment>
+    </owl:Class>
     
 
 
     <!-- http://schema.geolink.org/dev/view#Person -->
 
-    <owl:Class rdf:about="&ecglview;Person"/>
+    <owl:Class rdf:about="&ecglview;Person">
+        <rdfs:comment>A homo sapien Agent of some significance</rdfs:comment>
+    </owl:Class>
     
 
 
     <!-- http://schema.geolink.org/dev/view#PhysicalSample -->
 
-    <owl:Class rdf:about="&ecglview;PhysicalSample"/>
+    <owl:Class rdf:about="&ecglview;PhysicalSample">
+        <rdfs:comment>An object of observation that may be preserved, catalogued, and/or preserved.</rdfs:comment>
+    </owl:Class>
     
 
 
     <!-- http://schema.geolink.org/dev/view#Place -->
 
-    <owl:Class rdf:about="&ecglview;Place"/>
+    <owl:Class rdf:about="&ecglview;Place">
+        <rdfs:comment>A location with at least some type of spatial extent.</rdfs:comment>
+    </owl:Class>
     
 
 
     <!-- http://schema.geolink.org/dev/view#PlaceType -->
 
-    <owl:Class rdf:about="&ecglview;PlaceType"/>
+    <owl:Class rdf:about="&ecglview;PlaceType">
+        <rdfs:comment>A common descriptor for a type of Place - ocean, shoreline, island, etc.</rdfs:comment>
+    </owl:Class>
     
 
 
     <!-- http://schema.geolink.org/dev/view#Platform -->
 
-    <owl:Class rdf:about="&ecglview;Platform"/>
+    <owl:Class rdf:about="&ecglview;Platform">
+        <rdfs:comment>A physical object of significance enabling observations resulting in a Dataset</rdfs:comment>
+    </owl:Class>
     
 
 
     <!-- http://schema.geolink.org/dev/view#PlatformType -->
 
-    <owl:Class rdf:about="&ecglview;PlatformType"/>
+    <owl:Class rdf:about="&ecglview;PlatformType">
+        <rdfs:comment>A type of Platform - vessel, glider, float, laboratory, etc.</rdfs:comment>
+    </owl:Class>
     
 
 
     <!-- http://schema.geolink.org/dev/view#PortCall -->
 
-    <owl:Class rdf:about="&ecglview;PortCall"/>
+    <owl:Class rdf:about="&ecglview;PortCall">
+        <rdfs:comment>A designated, specific port visited by a Vessel for some significant reason - the start or end of a mission; transfer of passengers, goods, or equipment.</rdfs:comment>
+    </owl:Class>
     
 
 
     <!-- http://schema.geolink.org/dev/view#Program -->
 
-    <owl:Class rdf:about="&ecglview;Program"/>
+    <owl:Class rdf:about="&ecglview;Program">
+        <rdfs:comment>A formally recognized scientific effort receiving significant funding, requiring large scale coordination</rdfs:comment>
+    </owl:Class>
     
 
 
     <!-- http://schema.geolink.org/dev/view#Publication -->
 
-    <owl:Class rdf:about="&ecglview;Publication"/>
+    <owl:Class rdf:about="&ecglview;Publication">
+        <rdfs:comment>A citable, creative work.</rdfs:comment>
+    </owl:Class>
     
 
 
     <!-- http://schema.geolink.org/dev/view#Repository -->
 
-    <owl:Class rdf:about="&ecglview;Repository"/>
+    <owl:Class rdf:about="&ecglview;Repository">
+        <rdfs:comment>A recognized, formal entity responsible for curating a certain set of Datasets or DigitalObjects</rdfs:comment>
+    </owl:Class>
     
 
 
     <!-- http://schema.geolink.org/dev/view#RoleType -->
 
-    <owl:Class rdf:about="&ecglview;RoleType"/>
+    <owl:Class rdf:about="&ecglview;RoleType">
+        <rdfs:comment>A specific type of role performed by an Agent - Principal Investigator, Chief Scientist, Publisher, etc.</rdfs:comment>
+    </owl:Class>
     
 
 
@@ -1131,6 +1181,7 @@
     <owl:Class rdf:about="&ecglview;Vessel">
         <owl:equivalentClass rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#3Z"/>
         <rdfs:subClassOf rdf:resource="&ecglview;Platform"/>
+        <rdfs:comment>The platform enabling a Cruise</rdfs:comment>
     </owl:Class>
     
 
