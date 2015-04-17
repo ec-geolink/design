@@ -11,8 +11,7 @@ PREFIX glview: <http://schema.geolink.org/dev/view#>
 CONSTRUCT {
 	
 	?C17destTermURI a glview:Platform ; 
-					rdfs:label ?C17destTermLabel ; 
-					rdfs:comment ?C17destTermDef ; 
+					rdfs:label ?C17destTermLabel ; 	
 					rdfs:seeAlso ?C17sourceTermURI 	.	
 	?C17destTermURI a ?L06destTermURI .	
 }
@@ -25,16 +24,12 @@ WHERE {
 					skos:prefLabel ?C17destGraphLabel ; 
 					dcterms:date ?C17destGraphDate; 
 					owl:versionInfo ?C17destOWLVers .
-	OPTIONAL { ?C17sourceTermURI skos:prefLabel ?C17sourceTermLabel . }
-	OPTIONAL { ?C17sourceTermURI skos:definition ?C17sourceTermDef . }
-	OPTIONAL { ?C17sourceTermURI dcterms:date ?C17sourceTermDate . }
+	OPTIONAL { ?C17sourceTermURI skos:prefLabel ?C17sourceTermLabel . }	
 	OPTIONAL { ?C17sourceTermURI skos:broader ?L06sourceTermURI . 
 			FILTER(strstarts(str(?L06sourceTermURI), str(?L06sourceURI))) }
 	
 	BIND(iri(concat(?C17destPrefix, replace(replace(str(?C17sourceTermURI), str(?C17sourceURI), "", "i"), "/", "", "i") )) as ?C17destTermURI)
 	BIND(if(bound(?C17sourceTermLabel), ?C17sourceTermLabel, "") as ?C17destTermLabel)
-	BIND(if(bound(?C17sourceTermDef), ?C17sourceTermDef, ?C17destTermLabel) as ?C17destTermDef)
-	BIND(if(bound(?C17sourceTermDate), ?C17sourceTermDate, ?C17destGraphDate) as ?C17destTermDate)
 	BIND(if(bound(?L06sourceTermURI), iri(concat(?L06destPrefix, replace(replace(str(?L06sourceTermURI), str(?L06sourceURI), "", "i"), "/", "", "i") )), glview:Platform) 
 		as ?L06destTermURI)	
 	BIND(if(bound(?L06sourceTermURI), glview:hasPlatformType, rdf:type) as ?C17typePred)
