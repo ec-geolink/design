@@ -28,7 +28,6 @@ CONSTRUCT {
 	
 	?L05destTermURI a owl:Class, owl:NamedIndividual, glview:InstrumentType ; 
 		rdfs:label ?L05destTermLabel ;
-		rdfs:comment ?L05destTermDef ;
 		rdfs:seeAlso ?L05destTermSeeAlso ;
 		rdfs:subClassOf ?L05destSuperTermURI.
 	[] 	a owl:Restriction; 
@@ -44,11 +43,9 @@ WHERE {
 		dcterms:date ?L05graphdestDate .	
 	
 	OPTIONAL { ?L05sourceTermURI skos:prefLabel ?L05sourceTermLabel. }
-	OPTIONAL { ?L05sourceTermURI skos:definition ?L05sourceTermDef . }
 	OPTIONAL {	?L05sourceURI skos:member ?L05sourceSuperTermURI.
 				?L05sourceTermURI skos:broader ?L05sourceSuperTermURI .	} 
 	BIND ( if(bound(?L05sourceTermLabel), ?L05sourceTermLabel, "") as ?L05destTermLabel )
-	BIND ( if(bound(?L05sourceTermDef), ?L05sourceTermDef, "") as ?L05destTermDef )
 	BIND ( ?L05sourceTermURI as ?L05destTermSeeAlso )
 	BIND ( replace( replace( str(?L05sourceTermURI), str(?L05sourceURI), "", "i"), "/", "", "i") as ?L05term )
 	BIND ( iri(concat(str(?L05destURI), "#", ?L05term )) as ?L05destTermURI )					

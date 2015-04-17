@@ -15,53 +15,43 @@ PREFIX glvoc_L06: <http://schema.geolink.org/dev/voc/nvs/L06#>
 PREFIX glview: <http://schema.geolink.org/dev/view#>
 
 CONSTRUCT {
-	?graphdest a owl:Ontology ;
-		rdfs:label ?ontolabel ;
-		dcterms:date ?ontodate ;
-		owl:versionInfo ?ontovers ;
+	?L06destURI a owl:Ontology ;
+		rdfs:label ?L06graphdestLabel ;
+		dcterms:date ?L06graphdestDate ;
 		rdfs:comment "This ontology captures SeaVoX platform categories (e.g., vessel, mooring, etc.) as hosted in the NERC vocabulary server"@en ;
-		rdfs:seeAlso <http://vocab.nerc.ac.uk/collection/L06/> .
+		rdfs:seeAlso ?L06sourceURI .
 	
 	glview:Platform a owl:Class .
 	glview:PlatformType a owl:Class .
 	glview:hasPlatformType a owl:ObjectProperty .
 	
-	?sub ?pred1 ?obj1a, ?obj1b, ?obj1c ; 
-		rdfs:label ?label ;
-		rdfs:comment ?def ;
-		rdfs:seeAlso ?Y ;
-		?pred2 ?obj2.
+	?L06destTermURI a owl:Class, owl:NamedIndividual, glview:PlatformType ; 
+		rdfs:label ?L06destTermLabel ;
+		rdfs:seeAlso ?L06destTermSeeAlso ;
+		rdfs:subClassOf ?L06destSuperTermURI.
 	[] 	a owl:Restriction; 
-		owl:onProperty glview:hasInstrumentType; 
-		owl:someValuesFrom [ a owl:Class ; owl:oneOf ( ?sub ) ] ;
-		rdfs:subClassOf ?sub .
-}
-WHERE {
-	SELECT 	DISTINCT 
-		?graphdest
-		?ontolabel ?ontodate ?ontovers
-		?sub ?Y ?label ?def
-		?pred1 ?obj1a ?obj1b ?obj1c 
-		?pred2 ?obj2
-	WHERE {
-	  VALUES ( ?graphsource ?graphdest ) { ( <http://vocab.nerc.ac.uk/collection/L06/current/> <http://schema.geolink.org/dev/voc/nvs/L06> ) }
-		?graphsource skos:member ?Y ; skos:prefLabel ?ontolabel ; dcterms:date ?ontodate ; owl:versionInfo ?ontovers .	
-		?Y skos:prefLabel ?label; skos:definition ?def .
-		{	?graphsource skos:member ?Z.
-			?Y skos:broader ?Z .		
-		} UNION {		
-			FILTER NOT EXISTS { ?graphsource skos:member ?Z . ?Y skos:broader ?Z .}	
-		}
+		owl:onProperty glview:hasPlatformType; 
+		owl:someValuesFrom [ a owl:Class ; owl:oneOf ( ?L06destTermURI ) ] ;
+		rdfs:subClassOf ?L06destTermURI .	
 		
-		BIND ( replace( replace( str(?Y), str(?graphsource), "", "i"), "/", "", "i") as ?yname )
-		BIND ( iri(concat(str(?graphdest), "#", ?yname )) as ?sub )		
-		BIND ( rdf:type as ?pred1 )
-		BIND ( owl:Class as ?obj1a )
-		BIND ( owl:NamedIndividual as ?obj1b )
-		BIND ( glview:PlatformType as ?obj1c )
-		BIND ( rdfs:subClassOf as ?pred2 )	
-		BIND ( if( !bound(?Z), glview:Platform, replace( replace( str(?Z), str(?graphsource), "", "i"), "/", "", "i") ) as ?zname )
-		BIND ( if( !bound(?Z), glview:Platform,  iri(concat(str(?graphdest), "#", ?zname )) ) as ?obj2 )
-			
-	}
+}
+WHERE {	
+	VALUES ( ?L06sourceURI ?L06destURI ) { ( <http://vocab.nerc.ac.uk/collection/L06/current/> <http://schema.geolink.org/dev/voc/nvs/L06> ) }
+	?L06sourceURI skos:member ?L06sourceTermURI ; 
+		skos:prefLabel ?L06graphdestLabel ; 
+		dcterms:date ?L06graphdestDate .	
+	
+	OPTIONAL { ?L06sourceTermURI skos:prefLabel ?L06sourceTermLabel. }
+	OPTIONAL {	?L06sourceURI skos:member ?L06sourceSuperTermURI.
+				?L06sourceTermURI skos:broader ?L06sourceSuperTermURI .	} 
+	BIND ( if(bound(?L06sourceTermLabel), ?L06sourceTermLabel, "") as ?L06destTermLabel )
+	BIND ( ?L06sourceTermURI as ?L06destTermSeeAlso )
+	BIND ( replace( replace( str(?L06sourceTermURI), str(?L06sourceURI), "", "i"), "/", "", "i") as ?L06term )
+	BIND ( iri(concat(str(?L06destURI), "#", ?L06term )) as ?L06destTermURI )					
+	BIND ( 
+		if( !bound(?L06sourceSuperTermURI), 
+			glview:Platform, 
+			iri(concat(str(?L06destURI), "#", replace(replace(str(?L06sourceSuperTermURI), str(?L06sourceURI), "", "i"), "/", "", "i") )) ) 
+		as ?L06destSuperTermURI )
+
 }

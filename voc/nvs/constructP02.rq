@@ -31,7 +31,6 @@ CONSTRUCT {
 
 	?P02destTermURI a owl:Class, owl:NamedIndividual, glview:MeasurementType ; 
 		rdfs:label ?P02destTermLabel ;
-		rdfs:comment ?P02destTermDef ;
 		rdfs:seeAlso ?P02destTermSeeAlso .
 	[] 	a owl:Restriction; 
 		owl:onProperty glview:hasMeasurementType; 
@@ -55,7 +54,6 @@ WHERE {
 	
 	
 	BIND ( if(bound(?P02sourceTermLabel), ?P02sourceTermLabel, ""@en) as ?P02destTermLabel )
-	BIND ( if(bound(?P02sourceTermDef), ?P02sourceTermDef, ""@en) as ?P02destTermDef )
 	BIND ( ?P02sourceTermURI as ?P02destTermSeeAlso )
 	BIND ( replace( replace( str(?P02sourceTermURI), str(?P02sourceURI), "", "i"), "/", "", "i") as ?P02term )
 	BIND ( iri(concat(str(?P02destURI), "#", ?P02term )) as ?P02destTermURI )

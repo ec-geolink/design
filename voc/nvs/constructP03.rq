@@ -28,7 +28,6 @@ CONSTRUCT {
 	
 	?P03destTermURI a owl:Class, owl:NamedIndividual, glview:MeasurementType ; 
 		rdfs:label ?P03destTermLabel ;
-		rdfs:comment ?P03destTermDef ;
 		rdfs:seeAlso ?P03destTermSeeAlso ;
 		rdfs:subClassOf ?P03destSuperTermURI.
 	[] 	a owl:Restriction; 
@@ -43,12 +42,10 @@ WHERE {
 		skos:prefLabel ?P03graphdestLabel ; 
 		dcterms:date ?P03graphdestDate .	
 	
-	OPTIONAL { ?P03sourceTermURI skos:prefLabel ?P03sourceTermLabel . } 
-	OPTIONAL { ?P03sourceTermURI skos:definition ?P03sourceTermDef . }
+	OPTIONAL { ?P03sourceTermURI skos:prefLabel ?P03sourceTermLabel . } 	
 	OPTIONAL {	?P03sourceURI skos:member ?P03sourceSuperTermURI.
 				?P03sourceTermURI skos:broader ?P03sourceSuperTermURI.	}
-	BIND ( if (bound(?P03sourceTermLabel), ?P03sourceTermLabel, "") as ?P03destTermLabel )
-	BIND ( if (bound(?P03sourceTermDef), ?P03sourceTermDef, "") as ?P03destTermDef )
+	BIND ( if (bound(?P03sourceTermLabel), ?P03sourceTermLabel, "") as ?P03destTermLabel )	
 	BIND ( ?P03sourceTermURI as ?P03destTermSeeAlso )
 	BIND ( replace( replace( str(?P03sourceTermURI), str(?P03sourceURI), "", "i"), "/", "", "i") as ?P03term )
 	BIND ( iri(concat(str(?P03destURI), "#", ?P03term )) as ?P03destTermURI )					
