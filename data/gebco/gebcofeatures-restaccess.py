@@ -176,10 +176,10 @@ def run():
         feat_id = feature['id']
         
         label = ' '.join([feat_name,type_name]).strip()
-        name_in_uri = '_'.join([feat_name_in_uri,type_name_in_uri, str(feat_id)])
-        name_in_uri = unicode_to_ascii(name_in_uri)
-        
-        featureURI = featureNs[name_in_uri]
+##        name_in_uri = '_'.join([feat_name_in_uri,type_name_in_uri, str(feat_id)])
+##        name_in_uri = unicode_to_ascii(name_in_uri)
+        name_in_uri = 'feature'+str(feat_id)
+        featureURI = featureNs[name_in_uri]        
         if feature['type']:
             typeURI = featuretypeNs[type_name_in_uri]
         else:
