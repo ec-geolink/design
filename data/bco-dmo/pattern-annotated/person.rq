@@ -1,0 +1,23 @@
+PREFIX glview: <http://schema.geolink.org/dev/view#>
+PREFIX ecglpr: <http://schema.geolink.org/dev/person#>
+PREFIX ecglpi: <http://schema.geolink.org/dev/personalinfoitem#>
+PREFIX ecglpn: <http://schema.geolink.org/dev/personname#>
+PREFIX data_pn: <http://data.geolink.org/id/personname/>
+PREFIX bcodmopr: <http://geolink.bco-dmo.org/id/person/>
+CONSTRUCT {
+    ?personURI a ecglpr:Person ;
+        ecglpr:hasPersonalInfoItem ?pinfoURI .
+    ?pinfoURI a ecglpi:PersonalInfoItem, ecglpr:PersonalInfoItem, ecglpn:PersonName; 
+        ecglpn:fullNameAsString ?fullname ;
+        ecglpn:firstOrGivenName ?givenname ;
+        ecglpn:familyOrSurname ?familyname .
+} 
+WHERE {
+    VALUES ?data_pn { <http://data.geolink.org/id/personname/> }
+    VALUES ?bcodmopr { <http://geolink.bco-dmo.org/id/person/>}
+    ?personURI  a glview:Person ;
+        glview:nameFull ?fullname ;
+        glview:nameGiven ?givenname ;
+        glview:nameFamily ?familyname .
+    BIND(URI(CONCAT( STR(?data_pn), "bcodmopersonname", STRAFTER(STR(?personURI),  STR(?bcodmopr) ) ))  AS ?pinfoURI)
+}
