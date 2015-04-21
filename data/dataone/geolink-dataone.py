@@ -7,31 +7,67 @@
 # Matt Jones, NCEAS 2015
 
 def getDataList():
-    d1query = "https://cn.dataone.org/cn/v1/query/solr/?fl=identifier,title,author,authorLastName,origin,submitter,rightsHolder,relatedOrganizations,contactOrganization,documents,resourceMap&q=formatType:METADATA&rows=100&start=20000"
+    d1query = "https://cn.dataone.org/cn/v1/query/solr/?fl=identifier,title,author,authorLastName,origin,submitter,rightsHolder,relatedOrganizations,contactOrganization,documents,resourceMap&q=formatType:METADATA+AND+(datasource:*LTER+OR+datasource:*KNB+OR+datasource:*PISCO)+AND+-obsoletedBy:*&rows=100&start=0"
+    #d1query = "https://cn.dataone.org/cn/v1/query/solr/?fl=identifier,title,author,authorLastName,origin,submitter,rightsHolder,relatedOrganizations,contactOrganization,documents,resourceMap&q=formatType:METADATA&rows=100&start=20000"
     res = urllib2.urlopen(d1query)
     content = res.read()
     xmldoc = ET.fromstring(content)
     return(xmldoc)
 
 def addStatement(model, s, p, o):
-    if (type(o)!="RDF.Node"):
-        obj = RDF.Node(o)
+    # Assume subject is a URI string if it is not an RDF.Node
+    if (type(s) is not RDF.Node):
+        s_node = RDF.Uri(s)
     else:
-        obj = o
-    statement=RDF.Statement(RDF.Uri(s), RDF.Uri(p), obj)
+        s_node = s
+    # Assume predicate is a URI string if it is not an RDF.Node
+    if (type(p) is not RDF.Node):
+        p_node = RDF.Uri(p)
+    else:
+        p_node = p
+    # Assume object is a literal if it is not an RDF.Node
+    if (type(o) is not RDF.Node):
+        o_node = RDF.Node(o)
+    else:
+        o_node = o
+    statement=RDF.Statement(s_node, p_node, o_node)
     if statement is None:
         raise Exception("new RDF.Statement failed")
+    print(statement)
     model.add_statement(statement)
-    
+
 def addDataset(model, doc, ns, personhash):
     d1base = "https://cn.dataone.org/cn/v1/resolve/"
+
+    # Identifier and Dataset
     element = doc.find("./str[@name='identifier']")
     identifier = element.text
-    addStatement(model, d1base+identifier, "http://www.w3.org/1999/02/22-rdf-syntax-ns#type", RDF.Uri(ns["ecglview"]+"Dataset"))
-    addStatement(model, d1base+identifier, ns["dcterms"]+"identifier", identifier)
+    addStatement(model, d1base+identifier, "http://www.w3.org/1999/02/22-rdf-syntax-ns#type", RDF.Uri(ns["glview"]+"Dataset"))
+    id_blank_node = RDF.Node(blank=identifier)
+    addStatement(model, id_blank_node, "http://www.w3.org/1999/02/22-rdf-syntax-ns#type", RDF.Uri(ns["datacite"]+"ResourceIdentifier"))
+    addStatement(model, d1base+identifier, ns["glview"]+"identifier", id_blank_node)
+    addStatement(model, id_blank_node, ns["glview"]+"hasIdentifierValue", identifier)
+    if (identifier.startswith("doi:") | 
+            identifier.startswith("http://doi.org/") | identifier.startswith("https://doi.org/") | 
+            identifier.startswith("https://dx.doi.org/") | identifier.startswith("https://dx.doi.org/")):
+        scheme = 'doi'
+    elif (identifier.startswith("ark:")):
+        scheme = 'ark'
+    elif (identifier.startswith("http:")):
+        scheme = 'uri'
+    elif (identifier.startswith("https:")):
+        scheme = 'uri'
+    elif (identifier.startswith("urn:")):
+        scheme = 'urn'
+    else:
+        scheme = 'local-resource-identifier-scheme'
+    addStatement(model, id_blank_node, ns["glview"]+"hasIdentifierScheme", RDF.Uri(ns["datacite"]+scheme))
+
+    # Title
     title_element = doc.find("./str[@name='title']")
-    addStatement(model, d1base+identifier, ns["dcterms"]+"title", title_element.text)
+    addStatement(model, d1base+identifier, ns["glview"]+"title", title_element.text)
     
+    # Creators
     originlist = doc.findall("./arr[@name='origin']/str")
     for creatornode in originlist:
         creator = creatornode.text
@@ -39,7 +75,7 @@ def addDataset(model, doc, ns, personhash):
             # Add it
             newid = uuid.uuid4()
             p_uuid = newid.urn
-            p_orcid = "http://fakeorcid.org/" + newid.hex
+            p_orcid = "http://myfakeorcid.org/" + newid.hex
             p_data = [p_uuid, p_orcid]
             personhash[creator] = p_data
         else:
@@ -48,34 +84,28 @@ def addDataset(model, doc, ns, personhash):
             p_uuid = p_data[0]
             p_orcid = p_data[1]
             
-        addStatement(model, p_uuid, "http://www.w3.org/1999/02/22-rdf-syntax-ns#type", RDF.Uri(ns["ecglview"]+"Person"))
+        # Person
+        addStatement(model, p_uuid, "http://www.w3.org/1999/02/22-rdf-syntax-ns#type", RDF.Uri(ns["glview"]+"Person"))
         addStatement(model, p_uuid, "http://www.w3.org/1999/02/22-rdf-syntax-ns#type", RDF.Uri(ns["foaf"]+"Person"))
         addStatement(model, p_uuid, ns["foaf"]+"name", creator)
+        addStatement(model, RDF.Uri(d1base+identifier), RDF.Uri(ns["dcterms"]+"creator"), RDF.Uri(p_uuid))
         
+        # ORCID
         pi_node = RDF.Node(RDF.Uri(p_orcid))
-        s1=RDF.Statement(pi_node, RDF.Uri("http://www.w3.org/1999/02/22-rdf-syntax-ns#type"), RDF.Uri(ns["datacite"]+"PersonalIdentifier"))       
-        model.add_statement(s1)
-        s2=RDF.Statement(pi_node, RDF.Uri(ns["datacite"]+"usesIdentifierScheme"), RDF.Uri(ns["datacite"]+"orcid"))       
-        model.add_statement(s2)
-        s3=RDF.Statement(RDF.Uri(p_uuid), RDF.Uri(ns["datacite"]+"hasIdentifier"), pi_node)
-        model.add_statement(s3)
-        s4=RDF.Statement(RDF.Uri(d1base+identifier), RDF.Uri(ns["dcterms"]+"creator"), RDF.Uri(p_uuid))
-        model.add_statement(s4)
+        addStatement(model, pi_node, RDF.Uri("http://www.w3.org/1999/02/22-rdf-syntax-ns#type"), RDF.Uri(ns["datacite"]+"PersonalIdentifier"))       
+        addStatement(model, pi_node, RDF.Uri(ns["datacite"]+"usesIdentifierScheme"), RDF.Uri(ns["datacite"]+"orcid"))       
+        addStatement(model, RDF.Uri(p_uuid), RDF.Uri(ns["datacite"]+"hasIdentifier"), pi_node)
         model.sync()
 
-# TODO:
-# <http://lod.bco-dmo.org/id/person/50377> rdf:type olperson:Person ;
-#                                          olperson:hasPersonalInfoItem <http://lod.bco-dmo.org/id/person/50377#info> .
-#
-# <http://lod.bco-dmo.org/id/person/50377#info> rdf:type olpersoninfo:PersonalInfoItem ;
-#                                               olpersoninfo:isPersonalInfoItemOf <http://lod.bco-dmo.org/id/person/50377> ;
-#                                               olpersoninfo:hasPersonalInfoType <http://schema.geolink.org/person-name#person_name> ;
-#                                              olpersoninfo:hasPersonalInfoValue <http://lod.bco-dmo.org/id/person/50377#name> .
-#
-# <http://lod.bco-dmo.org/id/person/50377#name> rdf:type olpersonname:PersonName ;
-#                                               olpersonname:fullNameAsString "Dr Dian  J. Gifford"@en-US ;
-#                                               olpersonname:firstOrGivenName "Dian"@en-US ;
-#                                               olpersonname:familyOrSurname "Gifford"@en-US .
+
+    # Submitters
+    # Rights holders
+    # Repository
+    # Landing page
+    # Funding
+    # MeasurementType
+
+    # Data Objects
 
 def createModel():
     storage=RDF.Storage(storage_name="hashes", name="geolink", options_string="new='yes',hash-type='memory',dir='.'")
@@ -120,7 +150,7 @@ def main():
         "geosparql": "http://www.opengis.net/ont/geosparql#",
         "rdfs":  "http://www.w3.org/2000/01/rdf-schema#",
         "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-        "ecglview": "http://schema.geolink.org/dev/view#"
+        "glview": "http://schema.geolink.org/dev/view#"
     }
     xmldoc = getDataList()
     doclist = xmldoc.findall(".//doc")
