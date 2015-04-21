@@ -601,7 +601,7 @@
     <!-- http://schema.geolink.org/dev/view#description -->
 
     <owl:DatatypeProperty rdf:about="&ecglview;description">
-        <rdfs:label>descriptionny</rdfs:label>
+        <rdfs:label>description</rdfs:label>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:unionOf rdf:parseType="Collection">
