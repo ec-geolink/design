@@ -7,7 +7,7 @@
 # Matt Jones, NCEAS 2015
 
 def getDataList():
-    d1query = "https://cn.dataone.org/cn/v1/query/solr/?fl=identifier,title,author,authorLastName,origin,submitter,rightsHolder,relatedOrganizations,contactOrganization,documents,resourceMap&q=formatType:METADATA+AND+(datasource:*LTER+OR+datasource:*KNB+OR+datasource:*PISCO)+AND+-obsoletedBy:*&rows=100&start=0"
+    d1query = "https://cn.dataone.org/cn/v1/query/solr/?fl=identifier,title,author,authorLastName,origin,submitter,rightsHolder,relatedOrganizations,contactOrganization,documents,resourceMap,authoritativeMN&q=formatType:METADATA+AND+(datasource:*LTER+OR+datasource:*KNB+OR+datasource:*PISCO)+AND+-obsoletedBy:*&rows=100&start=0"
     #d1query = "https://cn.dataone.org/cn/v1/query/solr/?fl=identifier,title,author,authorLastName,origin,submitter,rightsHolder,relatedOrganizations,contactOrganization,documents,resourceMap&q=formatType:METADATA&rows=100&start=20000"
     res = urllib2.urlopen(d1query)
     content = res.read()
@@ -33,7 +33,7 @@ def addStatement(model, s, p, o):
     statement=RDF.Statement(s_node, p_node, o_node)
     if statement is None:
         raise Exception("new RDF.Statement failed")
-    print(statement)
+    #print(statement)
     model.add_statement(statement)
 
 def addDataset(model, doc, ns, personhash):
@@ -85,27 +85,35 @@ def addDataset(model, doc, ns, personhash):
             p_orcid = p_data[1]
             
         # Person
-        addStatement(model, p_uuid, "http://www.w3.org/1999/02/22-rdf-syntax-ns#type", RDF.Uri(ns["glview"]+"Person"))
-        addStatement(model, p_uuid, "http://www.w3.org/1999/02/22-rdf-syntax-ns#type", RDF.Uri(ns["foaf"]+"Person"))
-        addStatement(model, p_uuid, ns["foaf"]+"name", creator)
-        addStatement(model, RDF.Uri(d1base+identifier), RDF.Uri(ns["dcterms"]+"creator"), RDF.Uri(p_uuid))
+        person_blank_node = RDF.Node(blank=p_uuid)
+        addStatement(model, person_blank_node, "http://www.w3.org/1999/02/22-rdf-syntax-ns#type", RDF.Uri(ns["glview"]+"Person"))
+        addStatement(model, person_blank_node, "http://www.w3.org/1999/02/22-rdf-syntax-ns#type", RDF.Uri(ns["foaf"]+"Person"))
+        #addStatement(model, person_blank_node, ns["foaf"]+"name", creator)
+        addStatement(model, person_blank_node, ns["glview"]+"nameFull", creator)
+        addStatement(model, RDF.Uri(d1base+identifier), RDF.Uri(ns["glview"]+"hasParticipant"), person_blank_node)
+        addStatement(model, RDF.Uri(d1base+identifier), RDF.Uri(ns["dcterms"]+"creator"), person_blank_node)
         
         # ORCID
-        pi_node = RDF.Node(RDF.Uri(p_orcid))
-        addStatement(model, pi_node, RDF.Uri("http://www.w3.org/1999/02/22-rdf-syntax-ns#type"), RDF.Uri(ns["datacite"]+"PersonalIdentifier"))       
-        addStatement(model, pi_node, RDF.Uri(ns["datacite"]+"usesIdentifierScheme"), RDF.Uri(ns["datacite"]+"orcid"))       
-        addStatement(model, RDF.Uri(p_uuid), RDF.Uri(ns["datacite"]+"hasIdentifier"), pi_node)
+        #pi_node = RDF.Node(RDF.Uri(p_orcid))
+        #addStatement(model, pi_node, RDF.Uri("http://www.w3.org/1999/02/22-rdf-syntax-ns#type"), RDF.Uri(ns["datacite"]+"PersonalIdentifier"))       
+        #addStatement(model, pi_node, RDF.Uri(ns["datacite"]+"usesIdentifierScheme"), RDF.Uri(ns["datacite"]+"orcid"))       
+        #addStatement(model, RDF.Uri(p_uuid), RDF.Uri(ns["datacite"]+"hasIdentifier"), pi_node)
         model.sync()
 
 
     # Submitters
     # Rights holders
+
     # Repository
+    authMN = doc.find("./str[@name='authoritativeMN']")
+    #addStatement(model, authMN.text, "http://www.w3.org/1999/02/22-rdf-syntax-ns#type", RDF.Uri(ns["glview"]+"Repository"))
+    addStatement(model, d1base+identifier, ns["glview"]+"hasRepository", authMN.text)
+
     # Landing page
     # Funding
     # MeasurementType
-
     # Data Objects
+    model.sync()
 
 def createModel():
     storage=RDF.Storage(storage_name="hashes", name="geolink", options_string="new='yes',hash-type='memory',dir='.'")
@@ -116,6 +124,25 @@ def createModel():
     if model is None:
         raise Exception("new RDF.model failed")
     return model
+
+def addRepositories(model, ns):
+    node_hash = {}
+    d1query = "https://cn.dataone.org/cn/v1/node"
+    res = urllib2.urlopen(d1query)
+    content = res.read()
+    xmldoc = ET.fromstring(content)
+    nodelist = xmldoc.findall(".//node")
+    for n in nodelist:
+        node_id = n.find('identifier').text
+        node_name = n.find('name').text
+        node_desc = n.find('description').text
+        node_base_url = n.find('baseURL').text
+        node_hash[node_id] = [node_name, node_desc, node_base_url]
+        addStatement(model, node_id, "http://www.w3.org/1999/02/22-rdf-syntax-ns#type", RDF.Uri(ns["glview"]+"Repository"))
+        addStatement(model, node_id, "http://www.w3.org/1999/02/22-rdf-syntax-ns#type", RDF.Uri(ns["glview"]+"Organization"))
+        addStatement(model, node_id, RDF.Uri(ns["foaf"]+"name"), node_name)
+        addStatement(model, node_id, RDF.Uri(ns["glview"]+"description"), node_desc)
+    return(node_hash)
 
 def serialize(model, ns, filename, format):
     # Format can be one of:
@@ -152,10 +179,12 @@ def main():
         "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
         "glview": "http://schema.geolink.org/dev/view#"
     }
+    nodes = addRepositories(model, ns)
     xmldoc = getDataList()
     doclist = xmldoc.findall(".//doc")
     print(len(doclist))
     for d in doclist:
+        None
         addDataset(model, d, ns, personhash)
         
     print("Model size before serialize: " + str(model.size()))

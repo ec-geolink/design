@@ -1,988 +1,1625 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix ecglview: <http://schema.geolink.org/dev/view#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix geosparql: <http://www.opengis.net/ont/geosparql#> .
 @prefix datacite: <http://purl.org/spar/datacite/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix glview: <http://schema.geolink.org/dev/view#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-<http://fakeorcid.org/04d3fd7b86894a3fb671b59f893ac018>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/0d796ce45ee84207a0ab30b6416326c6>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/0f6b0de4e9e7471ba387507bb769d527>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/16702a60a86a4b508d8b45be12218eff>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/1bce15c13b8d46a0a4502448567ab837>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/1c02e82b3f6642d18e70cc6af471b5f6>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/1c52eb11b4564b49b8e8f1ce815416c6>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/1d171c35997f47478410ab541653f48a>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/1d8153a30705474d9b76773a84af10ae>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/1f352e4c177745c38fe43c85c79f64a8>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/225d3b9c18af49769f831a4de79911ad>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/237fd64e9f9a48cc94bbc1b9852f30e3>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/24896ae6812646f4930184706c3db433>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/34612fa0c6d9411f93ad4783d9b6d349>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/366ed812aa004ba9ba37eb1c41a05f5b>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/43c81e2f9a584c928f59434a83379a05>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/47362c04125f4b80a6a8db47400a7360>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/54e707acc96a4266969dc9df9585fe23>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/5be5c3981bfd48ff96672d87d280e967>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/5deba0250d6342db8226c3b71d5424d7>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/7e31f73c73154d228f3959484a65f0f4>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/8a8c22891cab41fabc7bfcd6764e9c58>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/8b7d9b1011dc409db1e77a08bfb2d2c5>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/8bcca0ad60524457b0b5e4b65c3836b0>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/91a7d05b6f7a4f29a3abafbbc39b5cb3>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/9cbaab81101342d8b1bf064674f11e89>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/a330e20fe69d41079f2e498ed3b490fc>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/b429c1f840044a72a2b705cf37c370d8>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/badcb28f39364ef2804565d99df04757>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/cc30c0b51398478389b1f6ce7260d2b6>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/cd236035bb3f4d50871b33d742c9d821>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/d06f8a9c3ceb4da494507b8feab0305e>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/d1033b9584ec488fbb7241235d2de3e9>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/d49d3ad6ffb74807a8e945d614f505e2>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/d663d514dc8d4dccbcd8dfecab49ad7d>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/dcd99d7728b34617be7685c34c3e6188>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/e6d9dd30c3c047af909c81b8513acbcc>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/ee00fdfbfa844296926125fa3ea6a2a4>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/f4303265418d44dfb122c88e18216052>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/fba246d87ea945e394794eaec5fbee47>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/fbbb8143ac2b43f48ec73b68064a25b5>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<http://fakeorcid.org/ffc6790a48e04e0fbe281860e3a59bd6>
-    datacite:usesIdentifierScheme datacite:orcid ;
-    a datacite:PersonalIdentifier .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5h99569/2/cadwsap-s3910012-089.xml>
-    dcterms:creator <urn:uuid:d49d3ad6-ffb7-4807-a8e9-45d614f505e2> ;
-    dcterms:identifier "ark:/13030/m5h99569/2/cadwsap-s3910012-089.xml" ;
-    dcterms:title "DWSAP Assessment for 3910012-089:  CITY OF STOCKTON / WELL SSS8" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5h995sx/2/cadwsap-s3610052-038.xml>
-    dcterms:creator <urn:uuid:04d3fd7b-8689-4a3f-b671-b59f893ac018> ;
-    dcterms:identifier "ark:/13030/m5h995sx/2/cadwsap-s3610052-038.xml" ;
-    dcterms:title "DWSAP Assessment for 3610052-038:  VICTOR VALLEY WATER DISTRICT / WELL 141" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7tg1/2/cadwsap-s5200547-001.xml>
-    dcterms:creator <urn:uuid:366ed812-aa00-4ba9-ba37-eb1c41a05f5b> ;
-    dcterms:identifier "ark:/13030/m5hd7tg1/2/cadwsap-s5200547-001.xml" ;
-    dcterms:title "DWSAP Assessment for 5200547-001:  GATEWAY MOBILE HOME PARK / WELL 01" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7tg1/3/cadwsap-s5200547-001.xml>
-    dcterms:creator <urn:uuid:366ed812-aa00-4ba9-ba37-eb1c41a05f5b> ;
-    dcterms:identifier "ark:/13030/m5hd7tg1/3/cadwsap-s5200547-001.xml" ;
-    dcterms:title "DWSAP Assessment for 5200547-001:  GATEWAY MOBILE HOME PARK / WELL 01" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7thg/2/cadwsap-s5000487-001.xml>
-    dcterms:creator <urn:uuid:0f6b0de4-e9e7-471b-a387-507bb769d527> ;
-    dcterms:identifier "ark:/13030/m5hd7thg/2/cadwsap-s5000487-001.xml" ;
-    dcterms:title "DWSAP Assessment for 5000487-001:  J & J FARM FRESH PRODUCE & BAKERY / LPA REPORTED PRIMARY SOURCE" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7thg/3/cadwsap-s5000487-001.xml>
-    dcterms:creator <urn:uuid:0f6b0de4-e9e7-471b-a387-507bb769d527> ;
-    dcterms:identifier "ark:/13030/m5hd7thg/3/cadwsap-s5000487-001.xml" ;
-    dcterms:title "DWSAP Assessment for 5000487-001:  J & J FARM FRESH PRODUCE & BAKERY / LPA REPORTED PRIMARY SOURCE" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7tjx/2/cadwsap-s3910001-009.xml>
-    dcterms:creator <urn:uuid:24896ae6-8126-46f4-9301-84706c3db433> ;
-    dcterms:identifier "ark:/13030/m5hd7tjx/2/cadwsap-s3910001-009.xml" ;
-    dcterms:title "DWSAP Assessment for 3910001-009:  CALIFORNIA WATER SERVICE - STOCKTON / WELL 09-01 - INACTIVE" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7tjx/3/cadwsap-s3910001-009.xml>
-    dcterms:creator <urn:uuid:24896ae6-8126-46f4-9301-84706c3db433> ;
-    dcterms:identifier "ark:/13030/m5hd7tjx/3/cadwsap-s3910001-009.xml" ;
-    dcterms:title "DWSAP Assessment for 3910001-009:  CALIFORNIA WATER SERVICE - STOCKTON / WELL 09-01 - INACTIVE" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7tkc/2/cadwsap-s0500045-001.xml>
-    dcterms:creator <urn:uuid:fba246d8-7ea9-45e3-9479-4eaec5fbee47> ;
-    dcterms:identifier "ark:/13030/m5hd7tkc/2/cadwsap-s0500045-001.xml" ;
-    dcterms:title "DWSAP Assessment for 0500045-001:  MERCED OUTBOARD CLUB / SOURCE 01 - SPRING" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7tkc/3/cadwsap-s0500045-001.xml>
-    dcterms:creator <urn:uuid:fba246d8-7ea9-45e3-9479-4eaec5fbee47> ;
-    dcterms:identifier "ark:/13030/m5hd7tkc/3/cadwsap-s0500045-001.xml" ;
-    dcterms:title "DWSAP Assessment for 0500045-001:  MERCED OUTBOARD CLUB / SOURCE 01 - SPRING" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7tmt/2/cadwsap-s1910024-002.xml>
-    dcterms:creator <urn:uuid:1c52eb11-b456-4b49-b8e8-f1ce815416c6> ;
-    dcterms:identifier "ark:/13030/m5hd7tmt/2/cadwsap-s1910024-002.xml" ;
-    dcterms:title "DWSAP Assessment for 1910024-002:  GSWC - CLAREMONT / BERKELEY WELL 01" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7tmt/3/cadwsap-s1910024-002.xml>
-    dcterms:creator <urn:uuid:1c52eb11-b456-4b49-b8e8-f1ce815416c6> ;
-    dcterms:identifier "ark:/13030/m5hd7tmt/3/cadwsap-s1910024-002.xml" ;
-    dcterms:title "DWSAP Assessment for 1910024-002:  GSWC - CLAREMONT / BERKELEY WELL 01" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7tn8/2/cadwsap-s3610086-005.xml>
-    dcterms:creator <urn:uuid:04d3fd7b-8689-4a3f-b671-b59f893ac018> ;
-    dcterms:identifier "ark:/13030/m5hd7tn8/2/cadwsap-s3610086-005.xml" ;
-    dcterms:title "DWSAP Assessment for 3610086-005:  WEST END CONSOLIDATED WATER COMPANY / WEST END WELL 03" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7tn8/3/cadwsap-s3610086-005.xml>
-    dcterms:creator <urn:uuid:04d3fd7b-8689-4a3f-b671-b59f893ac018> ;
-    dcterms:identifier "ark:/13030/m5hd7tn8/3/cadwsap-s3610086-005.xml" ;
-    dcterms:title "DWSAP Assessment for 3610086-005:  WEST END CONSOLIDATED WATER COMPANY / WEST END WELL 03" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7tpq/2/cadwsap-s1510017-034.xml>
-    dcterms:creator <urn:uuid:1d171c35-997f-4747-8410-ab541653f48a> ;
-    dcterms:identifier "ark:/13030/m5hd7tpq/2/cadwsap-s1510017-034.xml" ;
-    dcterms:title "DWSAP Assessment for 1510017-034:  INDIAN WELLS VALLEY W.D. / WELL 31" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7tpq/3/cadwsap-s1510017-034.xml>
-    dcterms:creator <urn:uuid:1d171c35-997f-4747-8410-ab541653f48a> ;
-    dcterms:identifier "ark:/13030/m5hd7tpq/3/cadwsap-s1510017-034.xml" ;
-    dcterms:title "DWSAP Assessment for 1510017-034:  INDIAN WELLS VALLEY W.D. / WELL 31" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7tq5/2/cadwsap-s4500082-002.xml>
-    dcterms:creator <urn:uuid:dcd99d77-28b3-4617-be76-85c34c3e6188> ;
-    dcterms:identifier "ark:/13030/m5hd7tq5/2/cadwsap-s4500082-002.xml" ;
-    dcterms:title "DWSAP Assessment for 4500082-002:  MIDWAY MOBILEHOME PARK / WELL 02 -  DESTROYED" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7tq5/3/cadwsap-s4500082-002.xml>
-    dcterms:creator <urn:uuid:dcd99d77-28b3-4617-be76-85c34c3e6188> ;
-    dcterms:identifier "ark:/13030/m5hd7tq5/3/cadwsap-s4500082-002.xml" ;
-    dcterms:title "DWSAP Assessment for 4500082-002:  MIDWAY MOBILEHOME PARK / WELL 02 -  DESTROYED" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7trm/2/cadwsap-s4900897-004.xml>
-    dcterms:creator <urn:uuid:225d3b9c-18af-4976-9f83-1a4de79911ad> ;
-    dcterms:identifier "ark:/13030/m5hd7trm/2/cadwsap-s4900897-004.xml" ;
-    dcterms:title "DWSAP Assessment for 4900897-004:  RODNEY STRONG VINEYARDS / WELL 04" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7trm/3/cadwsap-s4900897-004.xml>
-    dcterms:creator <urn:uuid:225d3b9c-18af-4976-9f83-1a4de79911ad> ;
-    dcterms:identifier "ark:/13030/m5hd7trm/3/cadwsap-s4900897-004.xml" ;
-    dcterms:title "DWSAP Assessment for 4900897-004:  RODNEY STRONG VINEYARDS / WELL 04" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7ts2/2/cadwsap-s3610300-001.xml>
-    dcterms:creator <urn:uuid:04d3fd7b-8689-4a3f-b671-b59f893ac018> ;
-    dcterms:identifier "ark:/13030/m5hd7ts2/2/cadwsap-s3610300-001.xml" ;
-    dcterms:title "DWSAP Assessment for 3610300-001:  PROVIDENCE MTNS SRA / COOKS WELL" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7ts2/3/cadwsap-s3610300-001.xml>
-    dcterms:creator <urn:uuid:04d3fd7b-8689-4a3f-b671-b59f893ac018> ;
-    dcterms:identifier "ark:/13030/m5hd7ts2/3/cadwsap-s3610300-001.xml" ;
-    dcterms:title "DWSAP Assessment for 3610300-001:  PROVIDENCE MTNS SRA / COOKS WELL" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7tth/2/cadwsap-s4010027-001.xml>
-    dcterms:creator <urn:uuid:1bce15c1-3b8d-46a0-a450-2448567ab837> ;
-    dcterms:identifier "ark:/13030/m5hd7tth/2/cadwsap-s4010027-001.xml" ;
-    dcterms:title "DWSAP Assessment for 4010027-001:  NACIMIENTO WATER COMPANY / WELL 01 - STANDBY" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7tth/3/cadwsap-s4010027-001.xml>
-    dcterms:creator <urn:uuid:1bce15c1-3b8d-46a0-a450-2448567ab837> ;
-    dcterms:identifier "ark:/13030/m5hd7tth/3/cadwsap-s4010027-001.xml" ;
-    dcterms:title "DWSAP Assessment for 4010027-001:  NACIMIENTO WATER COMPANY / WELL 01 - STANDBY" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7tvz/2/cadwsap-s1900305-003.xml>
-    dcterms:creator <urn:uuid:237fd64e-9f9a-48cc-94bb-c1b9852f30e3> ;
-    dcterms:identifier "ark:/13030/m5hd7tvz/2/cadwsap-s1900305-003.xml" ;
-    dcterms:title "DWSAP Assessment for 1900305-003:  CHALLENGER MEMORIAL YOUTH CENTER / WELL 03" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7tvz/3/cadwsap-s1900305-003.xml>
-    dcterms:creator <urn:uuid:237fd64e-9f9a-48cc-94bb-c1b9852f30e3> ;
-    dcterms:identifier "ark:/13030/m5hd7tvz/3/cadwsap-s1900305-003.xml" ;
-    dcterms:title "DWSAP Assessment for 1900305-003:  CHALLENGER MEMORIAL YOUTH CENTER / WELL 03" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7twd/2/cadwsap-s1510001-009.xml>
-    dcterms:creator <urn:uuid:cc30c0b5-1398-4783-89b1-f6ce7260d2b6> ;
-    dcterms:identifier "ark:/13030/m5hd7twd/2/cadwsap-s1510001-009.xml" ;
-    dcterms:title "DWSAP Assessment for 1510001-009:  ARVIN COMMUNITY SERVICES DIST / WELL 08 - BEFORE PTA (BENZENE)" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7twd/3/cadwsap-s1510001-009.xml>
-    dcterms:creator <urn:uuid:cc30c0b5-1398-4783-89b1-f6ce7260d2b6> ;
-    dcterms:identifier "ark:/13030/m5hd7twd/3/cadwsap-s1510001-009.xml" ;
-    dcterms:title "DWSAP Assessment for 1510001-009:  ARVIN COMMUNITY SERVICES DIST / WELL 08 - BEFORE PTA (BENZENE)" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7txv/2/cadwsap-s3500833-001.xml>
-    dcterms:creator <urn:uuid:8a8c2289-1cab-41fa-bc7b-fcd6764e9c58> ;
-    dcterms:identifier "ark:/13030/m5hd7txv/2/cadwsap-s3500833-001.xml" ;
-    dcterms:title "DWSAP Assessment for 3500833-001:  SAN BENITO COUNTY HISTORICAL PARK-INAC / WELL 01 - INACTIVE" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7txv/3/cadwsap-s3500833-001.xml>
-    dcterms:creator <urn:uuid:8a8c2289-1cab-41fa-bc7b-fcd6764e9c58> ;
-    dcterms:identifier "ark:/13030/m5hd7txv/3/cadwsap-s3500833-001.xml" ;
-    dcterms:title "DWSAP Assessment for 3500833-001:  SAN BENITO COUNTY HISTORICAL PARK-INAC / WELL 01 - INACTIVE" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7tz9/2/cadwsap-s3901031-001.xml>
-    dcterms:creator <urn:uuid:a330e20f-e69d-4107-9f2e-498ed3b490fc> ;
-    dcterms:identifier "ark:/13030/m5hd7tz9/2/cadwsap-s3901031-001.xml" ;
-    dcterms:title "DWSAP Assessment for 3901031-001:  ORCHARD RESTAURANT / WELL HEAD" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7tz9/3/cadwsap-s3901031-001.xml>
-    dcterms:creator <urn:uuid:a330e20f-e69d-4107-9f2e-498ed3b490fc> ;
-    dcterms:identifier "ark:/13030/m5hd7tz9/3/cadwsap-s3901031-001.xml" ;
-    dcterms:title "DWSAP Assessment for 3901031-001:  ORCHARD RESTAURANT / WELL HEAD" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7v05/2/cadwsap-s3901337-002.xml>
-    dcterms:creator <urn:uuid:a330e20f-e69d-4107-9f2e-498ed3b490fc> ;
-    dcterms:identifier "ark:/13030/m5hd7v05/2/cadwsap-s3901337-002.xml" ;
-    dcterms:title "DWSAP Assessment for 3901337-002:  MORADA ESTATES N PWS #46 / WELL#2" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7v05/3/cadwsap-s3901337-002.xml>
-    dcterms:creator <urn:uuid:a330e20f-e69d-4107-9f2e-498ed3b490fc> ;
-    dcterms:identifier "ark:/13030/m5hd7v05/3/cadwsap-s3901337-002.xml" ;
-    dcterms:title "DWSAP Assessment for 3901337-002:  MORADA ESTATES N PWS #46 / WELL#2" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7v1m/2/cadwsap-s5410016-028.xml>
-    dcterms:creator <urn:uuid:24896ae6-8126-46f4-9301-84706c3db433> ;
-    dcterms:identifier "ark:/13030/m5hd7v1m/2/cadwsap-s5410016-028.xml" ;
-    dcterms:title "DWSAP Assessment for 5410016-028:  CWS - VISALIA / WELL 24-01 - RAW" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7v1m/3/cadwsap-s5410016-028.xml>
-    dcterms:creator <urn:uuid:24896ae6-8126-46f4-9301-84706c3db433> ;
-    dcterms:identifier "ark:/13030/m5hd7v1m/3/cadwsap-s5410016-028.xml" ;
-    dcterms:title "DWSAP Assessment for 5410016-028:  CWS - VISALIA / WELL 24-01 - RAW" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7v22/2/cadwsap-s0400013-002.xml>
-    dcterms:creator <urn:uuid:5deba025-0d63-42db-8226-c3b71d5424d7> ;
-    dcterms:identifier "ark:/13030/m5hd7v22/2/cadwsap-s0400013-002.xml" ;
-    dcterms:title "DWSAP Assessment for 0400013-002:  MERRY MOUNTAIN MUTUAL / WELL #2 (BY REDWOOD TANK)" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7v22/3/cadwsap-s0400013-002.xml>
-    dcterms:creator <urn:uuid:5deba025-0d63-42db-8226-c3b71d5424d7> ;
-    dcterms:identifier "ark:/13030/m5hd7v22/3/cadwsap-s0400013-002.xml" ;
-    dcterms:title "DWSAP Assessment for 0400013-002:  MERRY MOUNTAIN MUTUAL / WELL #2 (BY REDWOOD TANK)" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7v3h/2/cadwsap-s4000215-001.xml>
-    dcterms:creator <urn:uuid:1c02e82b-3f66-42d1-8e70-cc6af471b5f6> ;
-    dcterms:identifier "ark:/13030/m5hd7v3h/2/cadwsap-s4000215-001.xml" ;
-    dcterms:title "DWSAP Assessment for 4000215-001:  WILLIAMS WATER CO / WELL 01" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7v3h/3/cadwsap-s4000215-001.xml>
-    dcterms:creator <urn:uuid:1c02e82b-3f66-42d1-8e70-cc6af471b5f6> ;
-    dcterms:identifier "ark:/13030/m5hd7v3h/3/cadwsap-s4000215-001.xml" ;
-    dcterms:title "DWSAP Assessment for 4000215-001:  WILLIAMS WATER CO / WELL 01" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7v4z/2/cadwsap-s3600065-004.xml>
-    dcterms:creator <urn:uuid:43c81e2f-9a58-4c92-8f59-434a83379a05> ;
-    dcterms:identifier "ark:/13030/m5hd7v4z/2/cadwsap-s3600065-004.xml" ;
-    dcterms:title "DWSAP Assessment for 3600065-004:  ARROWHEAD SPRINGS/CAMPUS CRUSADE / FOOTBALL WELL" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7v4z/3/cadwsap-s3600065-004.xml>
-    dcterms:creator <urn:uuid:43c81e2f-9a58-4c92-8f59-434a83379a05> ;
-    dcterms:identifier "ark:/13030/m5hd7v4z/3/cadwsap-s3600065-004.xml" ;
-    dcterms:title "DWSAP Assessment for 3600065-004:  ARROWHEAD SPRINGS/CAMPUS CRUSADE / FOOTBALL WELL" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7v5d/2/cadwsap-s4200866-001.xml>
-    dcterms:creator <urn:uuid:ffc6790a-48e0-4e0f-be28-1860e3a59bd6> ;
-    dcterms:identifier "ark:/13030/m5hd7v5d/2/cadwsap-s4200866-001.xml" ;
-    dcterms:title "DWSAP Assessment for 4200866-001:  FIRESTONE VINEYARD / WELL # 1" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7v5d/3/cadwsap-s4200866-001.xml>
-    dcterms:creator <urn:uuid:ffc6790a-48e0-4e0f-be28-1860e3a59bd6> ;
-    dcterms:identifier "ark:/13030/m5hd7v5d/3/cadwsap-s4200866-001.xml" ;
-    dcterms:title "DWSAP Assessment for 4200866-001:  FIRESTONE VINEYARD / WELL # 1" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7v6v/2/cadwsap-s2000506-003.xml>
-    dcterms:creator <urn:uuid:91a7d05b-6f7a-4f29-a3ab-afbbc39b5cb3> ;
-    dcterms:identifier "ark:/13030/m5hd7v6v/2/cadwsap-s2000506-003.xml" ;
-    dcterms:title "DWSAP Assessment for 2000506-003:  SIERRA LINDA MUTUAL WATER CO / SOURCE WELL 3- ABANDONED" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7v6v/3/cadwsap-s2000506-003.xml>
-    dcterms:creator <urn:uuid:91a7d05b-6f7a-4f29-a3ab-afbbc39b5cb3> ;
-    dcterms:identifier "ark:/13030/m5hd7v6v/3/cadwsap-s2000506-003.xml" ;
-    dcterms:title "DWSAP Assessment for 2000506-003:  SIERRA LINDA MUTUAL WATER CO / SOURCE WELL 3- ABANDONED" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7v79/2/cadwsap-s3400107-001.xml>
-    dcterms:creator <urn:uuid:47362c04-125f-4b80-a6a8-db47400a7360> ;
-    dcterms:identifier "ark:/13030/m5hd7v79/2/cadwsap-s3400107-001.xml" ;
-    dcterms:title "DWSAP Assessment for 3400107-001:  RIVER S EDGE MARINA & RESORT / MAIN WELL" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7v79/3/cadwsap-s3400107-001.xml>
-    dcterms:creator <urn:uuid:47362c04-125f-4b80-a6a8-db47400a7360> ;
-    dcterms:identifier "ark:/13030/m5hd7v79/3/cadwsap-s3400107-001.xml" ;
-    dcterms:title "DWSAP Assessment for 3400107-001:  RIVER S EDGE MARINA & RESORT / MAIN WELL" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7v8r/2/cadwsap-s3210004-009.xml>
-    dcterms:creator <urn:uuid:1f352e4c-1777-45c3-8fe4-3c85c79f64a8> ;
-    dcterms:identifier "ark:/13030/m5hd7v8r/2/cadwsap-s3210004-009.xml" ;
-    dcterms:title "DWSAP Assessment for 3210004-009:  QUINCY COMMUNITY S.D. / NEW NORTON WELL - STANDBY" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7v8r/3/cadwsap-s3210004-009.xml>
-    dcterms:creator <urn:uuid:1f352e4c-1777-45c3-8fe4-3c85c79f64a8> ;
-    dcterms:identifier "ark:/13030/m5hd7v8r/3/cadwsap-s3210004-009.xml" ;
-    dcterms:title "DWSAP Assessment for 3210004-009:  QUINCY COMMUNITY S.D. / NEW NORTON WELL - STANDBY" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7v96/2/cadwsap-s3702754-002.xml>
-    dcterms:creator <urn:uuid:ee00fdfb-fa84-4296-9261-25fa3ea6a2a4> ;
-    dcterms:identifier "ark:/13030/m5hd7v96/2/cadwsap-s3702754-002.xml" ;
-    dcterms:title "DWSAP Assessment for 3702754-002:  RANCHO CORRIDO RV RESORT / WELL 02" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7v96/3/cadwsap-s3702754-002.xml>
-    dcterms:creator <urn:uuid:ee00fdfb-fa84-4296-9261-25fa3ea6a2a4> ;
-    dcterms:identifier "ark:/13030/m5hd7v96/3/cadwsap-s3702754-002.xml" ;
-    dcterms:title "DWSAP Assessment for 3702754-002:  RANCHO CORRIDO RV RESORT / WELL 02" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vbn/2/cadwsap-s2800609-001.xml>
-    dcterms:creator <urn:uuid:b429c1f8-4004-4a72-a2b7-05cf37c370d8> ;
-    dcterms:identifier "ark:/13030/m5hd7vbn/2/cadwsap-s2800609-001.xml" ;
-    dcterms:title "DWSAP Assessment for 2800609-001:  PHELPS VINEYARDS / LPA REPORTED PRIMARY SOURCE" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vbn/3/cadwsap-s2800609-001.xml>
-    dcterms:creator <urn:uuid:b429c1f8-4004-4a72-a2b7-05cf37c370d8> ;
-    dcterms:identifier "ark:/13030/m5hd7vbn/3/cadwsap-s2800609-001.xml" ;
-    dcterms:title "DWSAP Assessment for 2800609-001:  PHELPS VINEYARDS / LPA REPORTED PRIMARY SOURCE" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vc3/2/cadwsap-s1910009-007.xml>
-    dcterms:creator <urn:uuid:34612fa0-c6d9-411f-93ad-4783d9b6d349> ;
-    dcterms:identifier "ark:/13030/m5hd7vc3/2/cadwsap-s1910009-007.xml" ;
-    dcterms:title "DWSAP Assessment for 1910009-007:  VALLEY COUNTY WATER DIST. / WELL 07 LANTE STREET" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vc3/3/cadwsap-s1910009-007.xml>
-    dcterms:creator <urn:uuid:34612fa0-c6d9-411f-93ad-4783d9b6d349> ;
-    dcterms:identifier "ark:/13030/m5hd7vc3/3/cadwsap-s1910009-007.xml" ;
-    dcterms:title "DWSAP Assessment for 1910009-007:  VALLEY COUNTY WATER DIST. / WELL 07 LANTE STREET" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vdj/2/cadwsap-s3610120-013.xml>
-    dcterms:creator <urn:uuid:04d3fd7b-8689-4a3f-b671-b59f893ac018> ;
-    dcterms:identifier "ark:/13030/m5hd7vdj/2/cadwsap-s3610120-013.xml" ;
-    dcterms:title "DWSAP Assessment for 3610120-013:  PHELAN PINON HILLS CSD / WELL 12" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vdj/3/cadwsap-s3610120-013.xml>
-    dcterms:creator <urn:uuid:04d3fd7b-8689-4a3f-b671-b59f893ac018> ;
-    dcterms:identifier "ark:/13030/m5hd7vdj/3/cadwsap-s3610120-013.xml" ;
-    dcterms:title "DWSAP Assessment for 3610120-013:  PHELAN PINON HILLS CSD / WELL 12" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vf0/2/cadwsap-s4310012-026.xml>
-    dcterms:creator <urn:uuid:1d8153a3-0705-474d-9b76-773a84af10ae> ;
-    dcterms:identifier "ark:/13030/m5hd7vf0/2/cadwsap-s4310012-026.xml" ;
-    dcterms:title "DWSAP Assessment for 4310012-026:  CITY OF SANTA CLARA / WELL 24" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vf0/3/cadwsap-s4310012-026.xml>
-    dcterms:creator <urn:uuid:1d8153a3-0705-474d-9b76-773a84af10ae> ;
-    dcterms:identifier "ark:/13030/m5hd7vf0/3/cadwsap-s4310012-026.xml" ;
-    dcterms:title "DWSAP Assessment for 4310012-026:  CITY OF SANTA CLARA / WELL 24" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vgf/2/cadwsap-s4710003-002.xml>
-    dcterms:creator <urn:uuid:cd236035-bb3f-4d50-871b-33d742c9d821> ;
-    dcterms:identifier "ark:/13030/m5hd7vgf/2/cadwsap-s4710003-002.xml" ;
-    dcterms:title "DWSAP Assessment for 4710003-002:  TOWN OF FORT JONES / WELL 01 - STANDBY - 5 FT. DIAM. WELL" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vgf/3/cadwsap-s4710003-002.xml>
-    dcterms:creator <urn:uuid:cd236035-bb3f-4d50-871b-33d742c9d821> ;
-    dcterms:identifier "ark:/13030/m5hd7vgf/3/cadwsap-s4710003-002.xml" ;
-    dcterms:title "DWSAP Assessment for 4710003-002:  TOWN OF FORT JONES / WELL 01 - STANDBY - 5 FT. DIAM. WELL" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vhw/2/cadwsap-s3710010-009.xml>
-    dcterms:creator <urn:uuid:8b7d9b10-11dc-409d-b1e7-7a08bfb2d2c5> ;
-    dcterms:identifier "ark:/13030/m5hd7vhw/2/cadwsap-s3710010-009.xml" ;
-    dcterms:title "DWSAP Assessment for 3710010-009:  HELIX WATER DISTRICT / WELL 101" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vhw/3/cadwsap-s3710010-009.xml>
-    dcterms:creator <urn:uuid:8b7d9b10-11dc-409d-b1e7-7a08bfb2d2c5> ;
-    dcterms:identifier "ark:/13030/m5hd7vhw/3/cadwsap-s3710010-009.xml" ;
-    dcterms:title "DWSAP Assessment for 3710010-009:  HELIX WATER DISTRICT / WELL 101" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vjb/2/cadwsap-s1400110-001.xml>
-    dcterms:creator <urn:uuid:54e707ac-c96a-4266-969d-c9df9585fe23> ;
-    dcterms:identifier "ark:/13030/m5hd7vjb/2/cadwsap-s1400110-001.xml" ;
-    dcterms:title "DWSAP Assessment for 1400110-001:  PARK WEST MUTUAL WATER COMPANY / WELL 01 NE" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vjb/3/cadwsap-s1400110-001.xml>
-    dcterms:creator <urn:uuid:54e707ac-c96a-4266-969d-c9df9585fe23> ;
-    dcterms:identifier "ark:/13030/m5hd7vjb/3/cadwsap-s1400110-001.xml" ;
-    dcterms:title "DWSAP Assessment for 1400110-001:  PARK WEST MUTUAL WATER COMPANY / WELL 01 NE" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vks/2/cadwsap-s3910024-003.xml>
-    dcterms:creator <urn:uuid:d49d3ad6-ffb7-4807-a8e9-45d614f505e2> ;
-    dcterms:identifier "ark:/13030/m5hd7vks/2/cadwsap-s3910024-003.xml" ;
-    dcterms:title "DWSAP Assessment for 3910024-003:  SAN JOAQUIN COUNTY - WILKINSON MANOR / WELL 03 - BLACK OAK ESTATES WELL" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vks/3/cadwsap-s3910024-003.xml>
-    dcterms:creator <urn:uuid:d49d3ad6-ffb7-4807-a8e9-45d614f505e2> ;
-    dcterms:identifier "ark:/13030/m5hd7vks/3/cadwsap-s3910024-003.xml" ;
-    dcterms:title "DWSAP Assessment for 3910024-003:  SAN JOAQUIN COUNTY - WILKINSON MANOR / WELL 03 - BLACK OAK ESTATES WELL" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vm7/2/cadwsap-s2300832-004.xml>
-    dcterms:creator <urn:uuid:f4303265-418d-44df-b122-c88e18216052> ;
-    dcterms:identifier "ark:/13030/m5hd7vm7/2/cadwsap-s2300832-004.xml" ;
-    dcterms:title "DWSAP Assessment for 2300832-004:  HILLS RANCH MUTUAL WATER COMPANY / WELL 14 - INACTIVE" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vm7/3/cadwsap-s2300832-004.xml>
-    dcterms:creator <urn:uuid:f4303265-418d-44df-b122-c88e18216052> ;
-    dcterms:identifier "ark:/13030/m5hd7vm7/3/cadwsap-s2300832-004.xml" ;
-    dcterms:title "DWSAP Assessment for 2300832-004:  HILLS RANCH MUTUAL WATER COMPANY / WELL 14 - INACTIVE" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vnp/2/cadwsap-s1009256-001.xml>
-    dcterms:creator <urn:uuid:16702a60-a86a-4b50-8d8b-45be12218eff> ;
-    dcterms:identifier "ark:/13030/m5hd7vnp/2/cadwsap-s1009256-001.xml" ;
-    dcterms:title "DWSAP Assessment for 1009256-001:  PG&E HELMS HQ/POWERHOUSE / MAIN WELL 75GPM" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vnp/3/cadwsap-s1009256-001.xml>
-    dcterms:creator <urn:uuid:16702a60-a86a-4b50-8d8b-45be12218eff> ;
-    dcterms:identifier "ark:/13030/m5hd7vnp/3/cadwsap-s1009256-001.xml" ;
-    dcterms:title "DWSAP Assessment for 1009256-001:  PG&E HELMS HQ/POWERHOUSE / MAIN WELL 75GPM" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vp4/2/cadwsap-s1910081-003.xml>
-    dcterms:creator <urn:uuid:d06f8a9c-3ceb-4da4-9450-7b8feab0305e> ;
-    dcterms:identifier "ark:/13030/m5hd7vp4/2/cadwsap-s1910081-003.xml" ;
-    dcterms:title "DWSAP Assessment for 1910081-003:  LYNWOOD PARK MUTUAL WATER CO. / WELL 03 - MONA" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vp4/3/cadwsap-s1910081-003.xml>
-    dcterms:creator <urn:uuid:d06f8a9c-3ceb-4da4-9450-7b8feab0305e> ;
-    dcterms:identifier "ark:/13030/m5hd7vp4/3/cadwsap-s1910081-003.xml" ;
-    dcterms:title "DWSAP Assessment for 1910081-003:  LYNWOOD PARK MUTUAL WATER CO. / WELL 03 - MONA" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vqk/2/cadwsap-s5710006-013.xml>
-    dcterms:creator <urn:uuid:0d796ce4-5ee8-4207-a0ab-30b6416326c6> ;
-    dcterms:identifier "ark:/13030/m5hd7vqk/2/cadwsap-s5710006-013.xml" ;
-    dcterms:title "DWSAP Assessment for 5710006-013:  CITY OF WOODLAND / WELL 14 - UNTREATED" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vqk/3/cadwsap-s5710006-013.xml>
-    dcterms:creator <urn:uuid:0d796ce4-5ee8-4207-a0ab-30b6416326c6> ;
-    dcterms:identifier "ark:/13030/m5hd7vqk/3/cadwsap-s5710006-013.xml" ;
-    dcterms:title "DWSAP Assessment for 5710006-013:  CITY OF WOODLAND / WELL 14 - UNTREATED" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vr1/2/cadwsap-s3410010-021.xml>
-    dcterms:creator <urn:uuid:9cbaab81-1013-42d8-b1bf-064674f11e89> ;
-    dcterms:identifier "ark:/13030/m5hd7vr1/2/cadwsap-s3410010-021.xml" ;
-    dcterms:title "DWSAP Assessment for 3410010-021:  CALAM - SUBURBAN / COUNTRYSIDE WAY" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vr1/3/cadwsap-s3410010-021.xml>
-    dcterms:creator <urn:uuid:9cbaab81-1013-42d8-b1bf-064674f11e89> ;
-    dcterms:identifier "ark:/13030/m5hd7vr1/3/cadwsap-s3410010-021.xml" ;
-    dcterms:title "DWSAP Assessment for 3410010-021:  CALAM - SUBURBAN / COUNTRYSIDE WAY" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vsg/2/cadwsap-s5510006-003.xml>
-    dcterms:creator <urn:uuid:fbbb8143-ac2b-43f4-8ec7-3b68064a25b5> ;
-    dcterms:identifier "ark:/13030/m5hd7vsg/2/cadwsap-s5510006-003.xml" ;
-    dcterms:title "DWSAP Assessment for 5510006-003:  MI-WUK VILLAGE MUT WTR CO / WELL 01" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vsg/3/cadwsap-s5510006-003.xml>
-    dcterms:creator <urn:uuid:fbbb8143-ac2b-43f4-8ec7-3b68064a25b5> ;
-    dcterms:identifier "ark:/13030/m5hd7vsg/3/cadwsap-s5510006-003.xml" ;
-    dcterms:title "DWSAP Assessment for 5510006-003:  MI-WUK VILLAGE MUT WTR CO / WELL 01" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vtx/2/cadwsap-s5301012-001.xml>
-    dcterms:creator <urn:uuid:cd236035-bb3f-4d50-871b-33d742c9d821> ;
-    dcterms:identifier "ark:/13030/m5hd7vtx/2/cadwsap-s5301012-001.xml" ;
-    dcterms:title "DWSAP Assessment for 5301012-001:  TRINITY RIVER LODGE / WELL 01" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vtx/3/cadwsap-s5301012-001.xml>
-    dcterms:creator <urn:uuid:cd236035-bb3f-4d50-871b-33d742c9d821> ;
-    dcterms:identifier "ark:/13030/m5hd7vtx/3/cadwsap-s5301012-001.xml" ;
-    dcterms:title "DWSAP Assessment for 5301012-001:  TRINITY RIVER LODGE / WELL 01" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vvc/3/cadwsap-s2310009-002.xml>
-    dcterms:creator <urn:uuid:f4303265-418d-44df-b122-c88e18216052> ;
-    dcterms:identifier "ark:/13030/m5hd7vvc/3/cadwsap-s2310009-002.xml" ;
-    dcterms:title "DWSAP Assessment for 2310009-002:  BROOKTRAILS TOWNSHIP CSD / LAKE EMILY INTAKE" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vx8/2/cadwsap-s2310006-015.xml>
-    dcterms:creator <urn:uuid:f4303265-418d-44df-b122-c88e18216052> ;
-    dcterms:identifier "ark:/13030/m5hd7vx8/2/cadwsap-s2310006-015.xml" ;
-    dcterms:title "DWSAP Assessment for 2310006-015:  MILLVIEW COUNTY WATER DISTRICT / WELL 14 - SURFACE INFLUENCED" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vx8/3/cadwsap-s2310006-015.xml>
-    dcterms:creator <urn:uuid:f4303265-418d-44df-b122-c88e18216052> ;
-    dcterms:identifier "ark:/13030/m5hd7vx8/3/cadwsap-s2310006-015.xml" ;
-    dcterms:title "DWSAP Assessment for 2310006-015:  MILLVIEW COUNTY WATER DISTRICT / WELL 14 - SURFACE INFLUENCED" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7vzq/3/cadwsap-s2610701-005.xml>
-    dcterms:creator <urn:uuid:04d3fd7b-8689-4a3f-b671-b59f893ac018> ;
-    dcterms:identifier "ark:/13030/m5hd7vzq/3/cadwsap-s2610701-005.xml" ;
-    dcterms:title "DWSAP Assessment for 2610701-005:  USMC HOUSING - COLEVILLE / WELL 05" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5hd7w0k/3/cadwsap-s3310001-128.xml>
-    dcterms:creator <urn:uuid:7e31f73c-7315-4d22-8f39-59484a65f0f4> ;
-    dcterms:identifier "ark:/13030/m5hd7w0k/3/cadwsap-s3310001-128.xml" ;
-    dcterms:title "DWSAP Assessment for 3310001-128:  COACHELLA VWD: COVE COMMUNITY / WELL 4720-1" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5j102rc/2/cadwsap-s4000221-001.xml>
-    dcterms:creator <urn:uuid:1c02e82b-3f66-42d1-8e70-cc6af471b5f6> ;
-    dcterms:identifier "ark:/13030/m5j102rc/2/cadwsap-s4000221-001.xml" ;
-    dcterms:title "DWSAP Assessment for 4000221-001:  LAETITIA VINEYARD & WINERY INC / WELL 03" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5j102rc/3/cadwsap-s4000221-001.xml>
-    dcterms:creator <urn:uuid:1c02e82b-3f66-42d1-8e70-cc6af471b5f6> ;
-    dcterms:identifier "ark:/13030/m5j102rc/3/cadwsap-s4000221-001.xml" ;
-    dcterms:title "DWSAP Assessment for 4000221-001:  LAETITIA VINEYARD & WINERY INC / WELL 03" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5j102st/2/cadwsap-s1010026-008.xml>
-    dcterms:creator <urn:uuid:fbbb8143-ac2b-43f4-8ec7-3b68064a25b5> ;
-    dcterms:identifier "ark:/13030/m5j102st/2/cadwsap-s1010026-008.xml" ;
-    dcterms:title "DWSAP Assessment for 1010026-008:  PINEDALE COUNTY WATER DISTRICT / WELL 08" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5j102st/3/cadwsap-s1010026-008.xml>
-    dcterms:creator <urn:uuid:fbbb8143-ac2b-43f4-8ec7-3b68064a25b5> ;
-    dcterms:identifier "ark:/13030/m5j102st/3/cadwsap-s1010026-008.xml" ;
-    dcterms:title "DWSAP Assessment for 1010026-008:  PINEDALE COUNTY WATER DISTRICT / WELL 08" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5j102t8/2/cadwsap-s5402027-001.xml>
-    dcterms:creator <urn:uuid:e6d9dd30-c3c0-47af-909c-81b8513acbcc> ;
-    dcterms:identifier "ark:/13030/m5j102t8/2/cadwsap-s5402027-001.xml" ;
-    dcterms:title "DWSAP Assessment for 5402027-001:  TULARE COUNTY ROAD YARD #2 PWS / WELL 01" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5j102t8/3/cadwsap-s5402027-001.xml>
-    dcterms:creator <urn:uuid:e6d9dd30-c3c0-47af-909c-81b8513acbcc> ;
-    dcterms:identifier "ark:/13030/m5j102t8/3/cadwsap-s5402027-001.xml" ;
-    dcterms:title "DWSAP Assessment for 5402027-001:  TULARE COUNTY ROAD YARD #2 PWS / WELL 01" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5j102vq/2/cadwsap-s3310009-021.xml>
-    dcterms:creator <urn:uuid:8bcca0ad-6052-4457-b0b5-e4b65c3836b0> ;
-    dcterms:identifier "ark:/13030/m5j102vq/2/cadwsap-s3310009-021.xml" ;
-    dcterms:title "DWSAP Assessment for 3310009-021:  EASTERN MUNICIPAL WD / WELL 14 - RIVERBED 02" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5j102vq/3/cadwsap-s3310009-021.xml>
-    dcterms:creator <urn:uuid:8bcca0ad-6052-4457-b0b5-e4b65c3836b0> ;
-    dcterms:identifier "ark:/13030/m5j102vq/3/cadwsap-s3310009-021.xml" ;
-    dcterms:title "DWSAP Assessment for 3310009-021:  EASTERN MUNICIPAL WD / WELL 14 - RIVERBED 02" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5j102w5/2/cadwsap-s5410010-006.xml>
-    dcterms:creator <urn:uuid:d663d514-dc8d-4dcc-bcd8-dfecab49ad7d> ;
-    dcterms:identifier "ark:/13030/m5j102w5/2/cadwsap-s5410010-006.xml" ;
-    dcterms:title "DWSAP Assessment for 5410010-006:  PORTERVILLE, CITY OF / WELL C-4 - RAW" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5j103d9/3/cadwsap-s4910305-002.xml>
-    dcterms:creator <urn:uuid:225d3b9c-18af-4976-9f83-1a4de79911ad> ;
-    dcterms:identifier "ark:/13030/m5j103d9/3/cadwsap-s4910305-002.xml" ;
-    dcterms:title "DWSAP Assessment for 4910305-002:  CSP-JACK LONDON STATE HISTORIC PARK / SPRING" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5j103fr/2/cadwsap-s3310001-063.xml>
-    dcterms:creator <urn:uuid:7e31f73c-7315-4d22-8f39-59484a65f0f4> ;
-    dcterms:identifier "ark:/13030/m5j103fr/2/cadwsap-s3310001-063.xml" ;
-    dcterms:title "DWSAP Assessment for 3310001-063:  COACHELLA VWD: COVE COMMUNITY / WELL 5613-1" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/ark:/13030/m5j103fr/3/cadwsap-s3310001-063.xml>
-    dcterms:creator <urn:uuid:7e31f73c-7315-4d22-8f39-59484a65f0f4> ;
-    dcterms:identifier "ark:/13030/m5j103fr/3/cadwsap-s3310001-063.xml" ;
-    dcterms:title "DWSAP Assessment for 3310001-063:  COACHELLA VWD: COVE COMMUNITY / WELL 5613-1" ;
-    a ecglview:Dataset .
-
-<https://cn.dataone.org/cn/v1/resolve/doi:10.6085/AA/RKPX00_XXXITBPXLCR03_20130822.50.1>
-    dcterms:creator <urn:uuid:5be5c398-1bfd-48ff-9667-2d87d280e967>, <urn:uuid:badcb28f-3936-4ef2-8045-65d99df04757>, <urn:uuid:d1033b95-84ec-488f-bb72-41235d2de3e9> ;
-    dcterms:identifier "doi:10.6085/AA/RKPX00_XXXITBPXLCR03_20130822.50.1" ;
-    dcterms:title "PISCO: Intertidal: site temperature data: Rocky Point, Oregon, USA (RKPX00)" ;
-    a ecglview:Dataset .
-
-<urn:uuid:04d3fd7b-8689-4a3f-b671-b59f893ac018>
-    datacite:hasIdentifier <http://fakeorcid.org/04d3fd7b86894a3fb671b59f893ac018> ;
-    a ecglview:Person, foaf:Person ;
-    foaf:name "CDPH San Bernardino District" .
-
-<urn:uuid:0d796ce4-5ee8-4207-a0ab-30b6416326c6>
-    datacite:hasIdentifier <http://fakeorcid.org/0d796ce45ee84207a0ab30b6416326c6> ;
-    a ecglview:Person, foaf:Person ;
-    foaf:name "City of Woodland" .
-
-<urn:uuid:0f6b0de4-e9e7-471b-a387-507bb769d527>
-    datacite:hasIdentifier <http://fakeorcid.org/0f6b0de4e9e7471ba387507bb769d527> ;
-    a ecglview:Person, foaf:Person ;
-    foaf:name "Stanislaus County" .
-
-<urn:uuid:16702a60-a86a-4b50-8d8b-45be12218eff>
-    datacite:hasIdentifier <http://fakeorcid.org/16702a60a86a4b508d8b45be12218eff> ;
-    a ecglview:Person, foaf:Person ;
-    foaf:name "Fresno County" .
-
-<urn:uuid:1bce15c1-3b8d-46a0-a450-2448567ab837>
-    datacite:hasIdentifier <http://fakeorcid.org/1bce15c13b8d46a0a4502448567ab837> ;
-    a ecglview:Person, foaf:Person ;
-    foaf:name "CDPH Santa Barbara District" .
-
-<urn:uuid:1c02e82b-3f66-42d1-8e70-cc6af471b5f6>
-    datacite:hasIdentifier <http://fakeorcid.org/1c02e82b3f6642d18e70cc6af471b5f6> ;
-    a ecglview:Person, foaf:Person ;
-    foaf:name "San Luis Obispo County" .
-
-<urn:uuid:1c52eb11-b456-4b49-b8e8-f1ce815416c6>
-    datacite:hasIdentifier <http://fakeorcid.org/1c52eb11b4564b49b8e8f1ce815416c6> ;
-    a ecglview:Person, foaf:Person ;
-    foaf:name "CDPH Hollywood District" .
-
-<urn:uuid:1d171c35-997f-4747-8410-ab541653f48a>
-    datacite:hasIdentifier <http://fakeorcid.org/1d171c35997f47478410ab541653f48a> ;
-    a ecglview:Person, foaf:Person ;
-    foaf:name "CDPH Tehachapi District" .
-
-<urn:uuid:1d8153a3-0705-474d-9b76-773a84af10ae>
-    datacite:hasIdentifier <http://fakeorcid.org/1d8153a30705474d9b76773a84af10ae> ;
-    a ecglview:Person, foaf:Person ;
-    foaf:name "City of Santa Clara" .
-
-<urn:uuid:1f352e4c-1777-45c3-8fe4-3c85c79f64a8>
-    datacite:hasIdentifier <http://fakeorcid.org/1f352e4c177745c38fe43c85c79f64a8> ;
-    a ecglview:Person, foaf:Person ;
-    foaf:name "California Rural Water Association" .
-
-<urn:uuid:225d3b9c-18af-4976-9f83-1a4de79911ad>
-    datacite:hasIdentifier <http://fakeorcid.org/225d3b9c18af49769f831a4de79911ad> ;
-    a ecglview:Person, foaf:Person ;
-    foaf:name "CDPH Sonoma District" .
-
-<urn:uuid:237fd64e-9f9a-48cc-94bb-c1b9852f30e3>
-    datacite:hasIdentifier <http://fakeorcid.org/237fd64e9f9a48cc94bbc1b9852f30e3> ;
-    a ecglview:Person, foaf:Person ;
-    foaf:name "Los Angeles County" .
-
-<urn:uuid:24896ae6-8126-46f4-9301-84706c3db433>
-    datacite:hasIdentifier <http://fakeorcid.org/24896ae6812646f4930184706c3db433> ;
-    a ecglview:Person, foaf:Person ;
-    foaf:name "Cal Water Service" .
-
-<urn:uuid:34612fa0-c6d9-411f-93ad-4783d9b6d349>
-    datacite:hasIdentifier <http://fakeorcid.org/34612fa0c6d9411f93ad4783d9b6d349> ;
-    a ecglview:Person, foaf:Person ;
-    foaf:name "Raymond and Main San Gabriel Basins" .
-
-<urn:uuid:366ed812-aa00-4ba9-ba37-eb1c41a05f5b>
-    datacite:hasIdentifier <http://fakeorcid.org/366ed812aa004ba9ba37eb1c41a05f5b> ;
-    a ecglview:Person, foaf:Person ;
-    foaf:name "Tehama County" .
-
-<urn:uuid:43c81e2f-9a58-4c92-8f59-434a83379a05>
-    datacite:hasIdentifier <http://fakeorcid.org/43c81e2f9a584c928f59434a83379a05> ;
-    a ecglview:Person, foaf:Person ;
-    foaf:name "San Bernardino County" .
-
-<urn:uuid:47362c04-125f-4b80-a6a8-db47400a7360>
-    datacite:hasIdentifier <http://fakeorcid.org/47362c04125f4b80a6a8db47400a7360> ;
-    a ecglview:Person, foaf:Person ;
-    foaf:name "Sacramento County" .
-
-<urn:uuid:54e707ac-c96a-4266-969d-c9df9585fe23>
-    datacite:hasIdentifier <http://fakeorcid.org/54e707acc96a4266969dc9df9585fe23> ;
-    a ecglview:Person, foaf:Person ;
-    foaf:name "Inyo County" .
-
-<urn:uuid:5be5c398-1bfd-48ff-9667-2d87d280e967>
-    datacite:hasIdentifier <http://fakeorcid.org/5be5c3981bfd48ff96672d87d280e967> ;
-    a ecglview:Person, foaf:Person ;
-    foaf:name "Bruce Menge" .
-
-<urn:uuid:5deba025-0d63-42db-8226-c3b71d5424d7>
-    datacite:hasIdentifier <http://fakeorcid.org/5deba0250d6342db8226c3b71d5424d7> ;
-    a ecglview:Person, foaf:Person ;
-    foaf:name "Butte County" .
-
-<urn:uuid:7e31f73c-7315-4d22-8f39-59484a65f0f4>
-    datacite:hasIdentifier <http://fakeorcid.org/7e31f73c73154d228f3959484a65f0f4> ;
-    a ecglview:Person, foaf:Person ;
-    foaf:name "Coachella Valley Water District" .
-
-<urn:uuid:8a8c2289-1cab-41fa-bc7b-fcd6764e9c58>
-    datacite:hasIdentifier <http://fakeorcid.org/8a8c22891cab41fabc7bfcd6764e9c58> ;
-    a ecglview:Person, foaf:Person ;
-    foaf:name "CDPH Monterey District" .
-
-<urn:uuid:8b7d9b10-11dc-409d-b1e7-7a08bfb2d2c5>
-    datacite:hasIdentifier <http://fakeorcid.org/8b7d9b1011dc409db1e77a08bfb2d2c5> ;
-    a ecglview:Person, foaf:Person ;
-    foaf:name "CDPH San Diego District" .
-
-<urn:uuid:8bcca0ad-6052-4457-b0b5-e4b65c3836b0>
-    datacite:hasIdentifier <http://fakeorcid.org/8bcca0ad60524457b0b5e4b65c3836b0> ;
-    a ecglview:Person, foaf:Person ;
-    foaf:name "Eastern Municipal Water District" .
-
-<urn:uuid:91a7d05b-6f7a-4f29-a3ab-afbbc39b5cb3>
-    datacite:hasIdentifier <http://fakeorcid.org/91a7d05b6f7a4f29a3abafbbc39b5cb3> ;
-    a ecglview:Person, foaf:Person ;
-    foaf:name "Madera County" .
-
-<urn:uuid:9cbaab81-1013-42d8-b1bf-064674f11e89>
-    datacite:hasIdentifier <http://fakeorcid.org/9cbaab81101342d8b1bf064674f11e89> ;
-    a ecglview:Person, foaf:Person ;
-    foaf:name "California-American Sacramento" .
-
-<urn:uuid:a330e20f-e69d-4107-9f2e-498ed3b490fc>
-    datacite:hasIdentifier <http://fakeorcid.org/a330e20fe69d41079f2e498ed3b490fc> ;
-    a ecglview:Person, foaf:Person ;
-    foaf:name "San Joaquin County" .
-
-<urn:uuid:b429c1f8-4004-4a72-a2b7-05cf37c370d8>
-    datacite:hasIdentifier <http://fakeorcid.org/b429c1f840044a72a2b705cf37c370d8> ;
-    a ecglview:Person, foaf:Person ;
-    foaf:name "Napa County" .
-
-<urn:uuid:badcb28f-3936-4ef2-8045-65d99df04757>
-    datacite:hasIdentifier <http://fakeorcid.org/badcb28f39364ef2804565d99df04757> ;
-    a ecglview:Person, foaf:Person ;
-    foaf:name "Francis Chan" .
-
-<urn:uuid:cc30c0b5-1398-4783-89b1-f6ce7260d2b6>
-    datacite:hasIdentifier <http://fakeorcid.org/cc30c0b51398478389b1f6ce7260d2b6> ;
-    a ecglview:Person, foaf:Person ;
-    foaf:name "CDPH Visalia District" .
-
-<urn:uuid:cd236035-bb3f-4d50-871b-33d742c9d821>
-    datacite:hasIdentifier <http://fakeorcid.org/cd236035bb3f4d50871b33d742c9d821> ;
-    a ecglview:Person, foaf:Person ;
-    foaf:name "CDPH Klamath District" .
-
-<urn:uuid:d06f8a9c-3ceb-4da4-9450-7b8feab0305e>
-    datacite:hasIdentifier <http://fakeorcid.org/d06f8a9c3ceb4da494507b8feab0305e> ;
-    a ecglview:Person, foaf:Person ;
-    foaf:name "CDPH Central District" .
-
-<urn:uuid:d1033b95-84ec-488f-bb72-41235d2de3e9>
-    datacite:hasIdentifier <http://fakeorcid.org/d1033b9584ec488fbb7241235d2de3e9> ;
-    a ecglview:Person, foaf:Person ;
-    foaf:name "Partnership for Interdisciplinary Studies of Coastal Oceans (PISCO)" .
-
-<urn:uuid:d49d3ad6-ffb7-4807-a8e9-45d614f505e2>
-    datacite:hasIdentifier <http://fakeorcid.org/d49d3ad6ffb74807a8e945d614f505e2> ;
-    a ecglview:Person, foaf:Person ;
-    foaf:name "CDPH Stockton District" .
-
-<urn:uuid:d663d514-dc8d-4dcc-bcd8-dfecab49ad7d>
-    datacite:hasIdentifier <http://fakeorcid.org/d663d514dc8d4dccbcd8dfecab49ad7d> ;
-    a ecglview:Person, foaf:Person ;
-    foaf:name "City of Porterville" .
-
-<urn:uuid:dcd99d77-28b3-4617-be76-85c34c3e6188>
-    datacite:hasIdentifier <http://fakeorcid.org/dcd99d7728b34617be7685c34c3e6188> ;
-    a ecglview:Person, foaf:Person ;
-    foaf:name "Shasta County" .
-
-<urn:uuid:e6d9dd30-c3c0-47af-909c-81b8513acbcc>
-    datacite:hasIdentifier <http://fakeorcid.org/e6d9dd30c3c047af909c81b8513acbcc> ;
-    a ecglview:Person, foaf:Person ;
-    foaf:name "Tulare County" .
-
-<urn:uuid:ee00fdfb-fa84-4296-9261-25fa3ea6a2a4>
-    datacite:hasIdentifier <http://fakeorcid.org/ee00fdfbfa844296926125fa3ea6a2a4> ;
-    a ecglview:Person, foaf:Person ;
-    foaf:name "San Diego County" .
-
-<urn:uuid:f4303265-418d-44df-b122-c88e18216052>
-    datacite:hasIdentifier <http://fakeorcid.org/f4303265418d44dfb122c88e18216052> ;
-    a ecglview:Person, foaf:Person ;
-    foaf:name "CDPH Mendocino District" .
-
-<urn:uuid:fba246d8-7ea9-45e3-9479-4eaec5fbee47>
-    datacite:hasIdentifier <http://fakeorcid.org/fba246d87ea945e394794eaec5fbee47> ;
-    a ecglview:Person, foaf:Person ;
-    foaf:name "Calaveras County" .
-
-<urn:uuid:fbbb8143-ac2b-43f4-8ec7-3b68064a25b5>
-    datacite:hasIdentifier <http://fakeorcid.org/fbbb8143ac2b43f48ec73b68064a25b5> ;
-    a ecglview:Person, foaf:Person ;
-    foaf:name "CDPH Merced District" .
-
-<urn:uuid:ffc6790a-48e0-4e0f-be28-1860e3a59bd6>
-    datacite:hasIdentifier <http://fakeorcid.org/ffc6790a48e04e0fbe281860e3a59bd6> ;
-    a ecglview:Person, foaf:Person ;
-    foaf:name "Santa Barbara County" .
+<https://cn.dataone.org/cn/v1/resolve/doi:10.6073/AA/knb-lter-and.3179.6>
+    dcterms:creator _:urnzuuidz94af036dz2a8ez453czaa8az0c4e70f0e5e3 ;
+    glview:hasParticipant _:urnzuuidz94af036dz2a8ez453czaa8az0c4e70f0e5e3 ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:doi ;
+        glview:hasIdentifierValue "doi:10.6073/AA/knb-lter-and.3179.6" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Dendrochronology study of fire history, Little River Watershed, Douglas County, Oregon" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/doi:10.6073/AA/knb-lter-arc.1439.1>
+    dcterms:creator _:urnzuuidz49bfa88ez4db4z4442z8f57zde3b691fe753 ;
+    glview:hasParticipant _:urnzuuidz49bfa88ez4db4z4442z8f57zde3b691fe753 ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:doi ;
+        glview:hasIdentifierValue "doi:10.6073/AA/knb-lter-arc.1439.1" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "89scpt03.txt" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/farshid25.41.1>
+    dcterms:creator _:urnzuuidz107df290zd6daz4168zb394z9e442ed99c00 ;
+    glview:hasParticipant _:urnzuuidz107df290zd6daz4168zb394z9e442ed99c00 ;
+    glview:hasRepository "urn:node:KNB" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "farshid25.41.1" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "The Americas N&P database" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-enchilada-meteo.1.1>
+    dcterms:creator _:urnzuuidza84a0042z4cedz442fza968z9142ae741ed8 ;
+    glview:hasParticipant _:urnzuuidza84a0042z4cedz442fza968z9142ae741ed8 ;
+    glview:hasRepository "urn:node:KNB" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-enchilada-meteo.1.1" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Meteorological data from La Cortadura Reserve, Coatepec, Veracruz, Mexico (2008-2010)" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-enchilada.hydro1.5>
+    dcterms:creator _:urnzuuidz7dbdffe2z6fcez4743za37bzd91585ff8214 ;
+    glview:hasParticipant _:urnzuuidz7dbdffe2z6fcez4743za37bzd91585ff8214 ;
+    glview:hasRepository "urn:node:KNB" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-enchilada.hydro1.5" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Continuous streamflow measurements from three different headwater tropical montane catchments in central Veracruz, Mexico (2008-2010)" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-and.5229.2>
+    dcterms:creator _:urnzuuidz36bfc7b0zbce5z4be5zb06fze3139472f98b ;
+    glview:hasParticipant _:urnzuuidz36bfc7b0zbce5z4be5zb06fze3139472f98b ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-and.5229.2" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Adult Stewardship in 25 Natural Areas in the Portland-Vancouver Metropolitan Area from September 2011 through June 2012" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-arc.10019.3>
+    dcterms:creator _:urnzuuidzc28e95c3z67abz4d95zb23ez87025a5766b0 ;
+    glview:hasParticipant _:urnzuuidzc28e95c3z67abz4d95zb23ez87025a5766b0 ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-arc.10019.3" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Soil and canopy temperature data from the Arctic LTER Moist Acidic Tussock Experimental plots for 2006, Toolik Filed Station, North Slope, Alaska." ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-arc.10267.1>
+    dcterms:creator _:urnzuuidze1d0eddcz3a08z4117z8520z1691950e0cec ;
+    glview:hasParticipant _:urnzuuidze1d0eddcz3a08z4117z8520z1691950e0cec ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-arc.10267.1" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Nutrient and chemical data for various lakes near Toolik Research Station, Arctic LTER, Summer 1983." ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-arc.10350.2>
+    dcterms:creator _:urnzuuidz26924437z621dz46e5zbb09z3986aa41209e, _:urnzuuidze9fbf722z759az4565zbe9bzf8a998c83e0f, _:urnzuuidzf00a6b1bz2499z440az8015zc1f242f15186 ;
+    glview:hasParticipant _:urnzuuidz26924437z621dz46e5zbb09z3986aa41209e, _:urnzuuidze9fbf722z759az4565zbe9bzf8a998c83e0f, _:urnzuuidzf00a6b1bz2499z440az8015zc1f242f15186 ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-arc.10350.2" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Dissolved and gaseous 14C from experimental plots near Toolik Lake, AK from 2003" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-arc.10370.1>
+    dcterms:creator _:urnzuuidz26924437z621dz46e5zbb09z3986aa41209e, _:urnzuuidze9fbf722z759az4565zbe9bzf8a998c83e0f, _:urnzuuidzf00a6b1bz2499z440az8015zc1f242f15186 ;
+    glview:hasParticipant _:urnzuuidz26924437z621dz46e5zbb09z3986aa41209e, _:urnzuuidze9fbf722z759az4565zbe9bzf8a998c83e0f, _:urnzuuidzf00a6b1bz2499z440az8015zc1f242f15186 ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-arc.10370.1" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Methane flux from experiemental plots near Toolik Lake, AK from 2003" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-arc.10372.1>
+    dcterms:creator _:urnzuuidz26924437z621dz46e5zbb09z3986aa41209e, _:urnzuuidze9fbf722z759az4565zbe9bzf8a998c83e0f, _:urnzuuidzf00a6b1bz2499z440az8015zc1f242f15186 ;
+    glview:hasParticipant _:urnzuuidz26924437z621dz46e5zbb09z3986aa41209e, _:urnzuuidze9fbf722z759az4565zbe9bzf8a998c83e0f, _:urnzuuidzf00a6b1bz2499z440az8015zc1f242f15186 ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-arc.10372.1" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Methane flux from experiemental plots near Toolik Lake, AK from 2003" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-arc.10373.1>
+    dcterms:creator _:urnzuuidz26924437z621dz46e5zbb09z3986aa41209e, _:urnzuuidze9fbf722z759az4565zbe9bzf8a998c83e0f, _:urnzuuidzf00a6b1bz2499z440az8015zc1f242f15186 ;
+    glview:hasParticipant _:urnzuuidz26924437z621dz46e5zbb09z3986aa41209e, _:urnzuuidze9fbf722z759az4565zbe9bzf8a998c83e0f, _:urnzuuidzf00a6b1bz2499z440az8015zc1f242f15186 ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-arc.10373.1" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Methane flux from experiemental plots near Toolik Lake, AK from 2003" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-arc.10376.1>
+    dcterms:creator _:urnzuuidz26924437z621dz46e5zbb09z3986aa41209e, _:urnzuuidz79ab3f08zf08ez4ae2zb617z9e0f8b9ca740, _:urnzuuidzf00a6b1bz2499z440az8015zc1f242f15186 ;
+    glview:hasParticipant _:urnzuuidz26924437z621dz46e5zbb09z3986aa41209e, _:urnzuuidz79ab3f08zf08ez4ae2zb617z9e0f8b9ca740, _:urnzuuidzf00a6b1bz2499z440az8015zc1f242f15186 ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-arc.10376.1" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Microbial Respirations from experiemental plots near Toolik Lake, AK for 2003" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-arc.10378.1>
+    dcterms:creator _:urnzuuidz26924437z621dz46e5zbb09z3986aa41209e, _:urnzuuidze9fbf722z759az4565zbe9bzf8a998c83e0f, _:urnzuuidzf00a6b1bz2499z440az8015zc1f242f15186 ;
+    glview:hasParticipant _:urnzuuidz26924437z621dz46e5zbb09z3986aa41209e, _:urnzuuidze9fbf722z759az4565zbe9bzf8a998c83e0f, _:urnzuuidzf00a6b1bz2499z440az8015zc1f242f15186 ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-arc.10378.1" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Methane flux from experiemental plots near Toolik Lake, AK from 2004" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-arc.10380.1>
+    dcterms:creator _:urnzuuidz26924437z621dz46e5zbb09z3986aa41209e, _:urnzuuidze9fbf722z759az4565zbe9bzf8a998c83e0f, _:urnzuuidzf00a6b1bz2499z440az8015zc1f242f15186 ;
+    glview:hasParticipant _:urnzuuidz26924437z621dz46e5zbb09z3986aa41209e, _:urnzuuidze9fbf722z759az4565zbe9bzf8a998c83e0f, _:urnzuuidzf00a6b1bz2499z440az8015zc1f242f15186 ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-arc.10380.1" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Pre-labeled dissolved inorganic carbon, carbon dioxide, and methane from experiemental plots near Toolik Lake, AK from 2004" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-arc.10382.1>
+    dcterms:creator _:urnzuuidz26924437z621dz46e5zbb09z3986aa41209e, _:urnzuuidz79ab3f08zf08ez4ae2zb617z9e0f8b9ca740, _:urnzuuidzf00a6b1bz2499z440az8015zc1f242f15186 ;
+    glview:hasParticipant _:urnzuuidz26924437z621dz46e5zbb09z3986aa41209e, _:urnzuuidz79ab3f08zf08ez4ae2zb617z9e0f8b9ca740, _:urnzuuidzf00a6b1bz2499z440az8015zc1f242f15186 ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-arc.10382.1" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Microbial Respirations from experiemental plots near Toolik Lake, AK for 2004" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-arc.10384.1>
+    dcterms:creator _:urnzuuidz26924437z621dz46e5zbb09z3986aa41209e, _:urnzuuidze9fbf722z759az4565zbe9bzf8a998c83e0f, _:urnzuuidzf00a6b1bz2499z440az8015zc1f242f15186 ;
+    glview:hasParticipant _:urnzuuidz26924437z621dz46e5zbb09z3986aa41209e, _:urnzuuidze9fbf722z759az4565zbe9bzf8a998c83e0f, _:urnzuuidzf00a6b1bz2499z440az8015zc1f242f15186 ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-arc.10384.1" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Methane flux from experiemental plots near Toolik Lake, AK from 2005" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-arc.1129.2>
+    dcterms:creator _:urnzuuidz3872465dzc137z47dbzaa5az6f0d284c2fe9 ;
+    glview:hasParticipant _:urnzuuidz3872465dzc137z47dbzaa5az6f0d284c2fe9 ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-arc.1129.2" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "This file contains total numbers of the 22 different types of critters (depending on species, size, maturity, or all three) caught from the two drift distance experiments on the Kuparuk River in 1989, Arctic LTER 1989." ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-arc.1141.2>
+    dcterms:creator _:urnzuuidz3872465dzc137z47dbzaa5az6f0d284c2fe9 ;
+    glview:hasParticipant _:urnzuuidz3872465dzc137z47dbzaa5az6f0d284c2fe9 ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-arc.1141.2" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "This is an Oksrukuyuk Creek bottom sample, Arctic LTER 1989." ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-arc.1147.2>
+    dcterms:creator _:urnzuuidz3872465dzc137z47dbzaa5az6f0d284c2fe9 ;
+    glview:hasParticipant _:urnzuuidz3872465dzc137z47dbzaa5az6f0d284c2fe9 ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-arc.1147.2" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "This is an Oksrukuyuk Creek bottom sample, Arctic LTER 1989." ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-arc.1156.2>
+    dcterms:creator _:urnzuuidz3872465dzc137z47dbzaa5az6f0d284c2fe9 ;
+    glview:hasParticipant _:urnzuuidz3872465dzc137z47dbzaa5az6f0d284c2fe9 ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-arc.1156.2" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Total numbers and species of insects taken from the Oksrukuyuk Creek drift samples during the summer of 1989 , Arctic LTER 1989." ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-arc.1187.2>
+    dcterms:creator _:urnzuuidz3872465dzc137z47dbzaa5az6f0d284c2fe9 ;
+    glview:hasParticipant _:urnzuuidz3872465dzc137z47dbzaa5az6f0d284c2fe9 ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-arc.1187.2" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "This is an Oksrukuyuk Creek bottom sample, Arctic LTER 1990." ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-arc.1202.2>
+    dcterms:creator _:urnzuuidz3872465dzc137z47dbzaa5az6f0d284c2fe9 ;
+    glview:hasParticipant _:urnzuuidz3872465dzc137z47dbzaa5az6f0d284c2fe9 ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-arc.1202.2" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Total numbers, measurements and species of insects taken from the Oksrukuyuk Creek DRIFT samples during the summer of 1991, Arctic LTER 1991." ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-arc.1207.2>
+    dcterms:creator _:urnzuuidzc7c77c74z8cbez4b05z84aez2a26093287bf ;
+    glview:hasParticipant _:urnzuuidzc7c77c74z8cbez4b05z84aez2a26093287bf ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-arc.1207.2" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Total numbers and species of insects taken from the Kuparuk River rock scrubbings during the summer of 1993-1994, Arctic LTER 1993 to 1994." ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-arc.1327.2>
+    dcterms:creator _:urnzuuidz8e89c018zeb02z4c31z96aez9c840e4556fb ;
+    glview:hasParticipant _:urnzuuidz8e89c018zeb02z4c31z96aez9c840e4556fb ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-arc.1327.2" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Temperature data for Oksrukuyik Creek for June 16 -August 20,2002, Arctic LTER 2002." ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-arc.1341.2>
+    dcterms:creator _:urnzuuidz5741c885z513cz4438zb5d6z510b78e1407c ;
+    glview:hasParticipant _:urnzuuidz5741c885z513cz4438zb5d6z510b78e1407c ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-arc.1341.2" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Temperature data for the Kuparuk River for June-August 1991, Arctic LTER 1991." ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-arc.1366.2>
+    dcterms:creator _:urnzuuidz8e89c018zeb02z4c31z96aez9c840e4556fb ;
+    glview:hasParticipant _:urnzuuidz8e89c018zeb02z4c31z96aez9c840e4556fb ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-arc.1366.2" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Hourly temperature data for Oksrukuyik Creek for June 14-August 18,1997, Arctic LTER 1997." ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-arc.1426.5>
+    dcterms:creator _:urnzuuidz37a8e983z654cz4701zbfccz0b6241a7b02b, _:urnzuuidzc00bb788z4098z40b6za62ez9f735dadbf4f, _:urnzuuidzc28e95c3z67abz4d95zb23ez87025a5766b0, _:urnzuuidze1d0eddcz3a08z4117z8520z1691950e0cec, _:urnzuuidzf00a6b1bz2499z440az8015zc1f242f15186 ;
+    glview:hasParticipant _:urnzuuidz37a8e983z654cz4701zbfccz0b6241a7b02b, _:urnzuuidzc00bb788z4098z40b6za62ez9f735dadbf4f, _:urnzuuidzc28e95c3z67abz4d95zb23ez87025a5766b0, _:urnzuuidze1d0eddcz3a08z4117z8520z1691950e0cec, _:urnzuuidzf00a6b1bz2499z440az8015zc1f242f15186 ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-arc.1426.5" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Arctic LTER 1992: Methane and carbon dioxide emissions were monitored in control, greenhouse, and nitrogen and phosphorus fertilized plots of three different plant communities." ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-arc.1461.3>
+    dcterms:creator _:urnzuuidz49bfa88ez4db4z4442z8f57zde3b691fe753 ;
+    glview:hasParticipant _:urnzuuidz49bfa88ez4db4z4442z8f57zde3b691fe753 ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-arc.1461.3" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Arctic LTER 1988: Eriophorum was collected ____ from crest to footslope along a water track draining into Toolik Lake." ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-arc.1463.2>
+    dcterms:creator _:urnzuuidz10c732d4z966ez4dbazb088z9f177f17f9fb ;
+    glview:hasParticipant _:urnzuuidz10c732d4z966ez4dbazb088z9f177f17f9fb ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-arc.1463.2" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Arctic LTER 1999:  Hourly data from the Toolik Moist Non-acidic Tussock Experimental plots (MNT)." ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-arc.1473.2>
+    dcterms:creator _:urnzuuidz10c732d4z966ez4dbazb088z9f177f17f9fb ;
+    glview:hasParticipant _:urnzuuidz10c732d4z966ez4dbazb088z9f177f17f9fb ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-arc.1473.2" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Arctic LTER 2002:  Soil temperature data from the Toolik Moist Non-acidic Tussock Experimental plots (MNT)." ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-arc.1546.3>
+    dcterms:creator _:urnzuuidzc28e95c3z67abz4d95zb23ez87025a5766b0 ;
+    glview:hasParticipant _:urnzuuidzc28e95c3z67abz4d95zb23ez87025a5766b0 ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-arc.1546.3" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Hourly weather data from the Toolik Tussock Experimental plots, Arctic LTER 2002." ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-arc.1551.3>
+    dcterms:creator _:urnzuuidzc28e95c3z67abz4d95zb23ez87025a5766b0 ;
+    glview:hasParticipant _:urnzuuidzc28e95c3z67abz4d95zb23ez87025a5766b0 ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-arc.1551.3" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Soil temperature data from the Toolik Tussock Experimental plots, Arctic LTER 1990." ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-arc.1564.3>
+    dcterms:creator _:urnzuuidzc28e95c3z67abz4d95zb23ez87025a5766b0 ;
+    glview:hasParticipant _:urnzuuidzc28e95c3z67abz4d95zb23ez87025a5766b0 ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-arc.1564.3" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Daily weather and soil temperature data from the Toolik Tussock Experimental plots, Arctic LTER 1996." ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-arc.1565.3>
+    dcterms:creator _:urnzuuidzc28e95c3z67abz4d95zb23ez87025a5766b0 ;
+    glview:hasParticipant _:urnzuuidzc28e95c3z67abz4d95zb23ez87025a5766b0 ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-arc.1565.3" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Hourly weather data from the Toolik Tussock Experimental plots, Arctic LTER 1996." ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-arc.1572.2>
+    dcterms:creator _:urnzuuidzf9c09062zfef1z495cza3b6z00e99ee0423a ;
+    glview:hasParticipant _:urnzuuidzf9c09062zfef1z495cza3b6z00e99ee0423a ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-arc.1572.2" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Arctic LTER 2000:  Hourly weather data from a wet sedge site at the Arctic Tundra LTER site at Toolik Lake." ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-arc.943.4>
+    dcterms:creator _:urnzuuidz281f91a3z6b30z4265z9f99z5faea1e2900f, _:urnzuuidz2c4e14dazf392z4973z9997za20cf60a461e ;
+    glview:hasParticipant _:urnzuuidz281f91a3z6b30z4265z9f99z5faea1e2900f, _:urnzuuidz2c4e14dazf392z4973z9997za20cf60a461e ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-arc.943.4" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Zooplankton density for lake samples collected near Toolik Lake Arctic LTER in the summer of 2002." ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-arc.950.3>
+    dcterms:creator _:urnzuuidz281f91a3z6b30z4265z9f99z5faea1e2900f, _:urnzuuidz2c4e14dazf392z4973z9997za20cf60a461e ;
+    glview:hasParticipant _:urnzuuidz281f91a3z6b30z4265z9f99z5faea1e2900f, _:urnzuuidz2c4e14dazf392z4973z9997za20cf60a461e ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-arc.950.3" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Zooplankton density for lake samples collected near Toolik Lake Arctic LTER in the summer of 1988" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-arc.954.3>
+    dcterms:creator _:urnzuuidzbc5fa82cze30cz469eza85az877277becf0f ;
+    glview:hasParticipant _:urnzuuidzbc5fa82cze30cz469eza85az877277becf0f ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-arc.954.3" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Biomass and numbers of microplankton (20-200um) in Arctic LTER lakes, including ciliated protozoans, rotifers and nauplii, Arctic LTER, summer 1990." ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-arc.956.3>
+    dcterms:creator _:urnzuuidzbc5fa82cze30cz469eza85az877277becf0f ;
+    glview:hasParticipant _:urnzuuidzbc5fa82cze30cz469eza85az877277becf0f ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-arc.956.3" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Biomass and numbers of microplankton (20-200um) in Arctic LTER lakes, including ciliated protozoans, rotifers and nauplii, Arctic LTER, summer 1991." ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-arc.958.3>
+    dcterms:creator _:urnzuuidz281f91a3z6b30z4265z9f99z5faea1e2900f, _:urnzuuidz2c4e14dazf392z4973z9997za20cf60a461e ;
+    glview:hasParticipant _:urnzuuidz281f91a3z6b30z4265z9f99z5faea1e2900f, _:urnzuuidz2c4e14dazf392z4973z9997za20cf60a461e ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-arc.958.3" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Zooplankton density for lake samples collected near Toolik Lake Arctic LTER in the summer of 1992" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-arc.986.9>
+    dcterms:creator _:urnzuuidz26924437z621dz46e5zbb09z3986aa41209e ;
+    glview:hasParticipant _:urnzuuidz26924437z621dz46e5zbb09z3986aa41209e ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-arc.986.9" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Bacterial Production Data for lakes and lake inlets/outlets samples collected summer 2002, Arctic LTER, Toolik Research Station, Alaska." ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-arc.988.9>
+    dcterms:creator _:urnzuuidz26924437z621dz46e5zbb09z3986aa41209e ;
+    glview:hasParticipant _:urnzuuidz26924437z621dz46e5zbb09z3986aa41209e ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-arc.988.9" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Bacterial Production Data for lakes and lake inlets/outlets samples collected summer 2004, Arctic LTER, Toolik Research Station, Alaska." ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-arc.989.9>
+    dcterms:creator _:urnzuuidz26924437z621dz46e5zbb09z3986aa41209e ;
+    glview:hasParticipant _:urnzuuidz26924437z621dz46e5zbb09z3986aa41209e ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-arc.989.9" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Bacterial Production Data for lakes and lake inlets/outlets samples collected summer 2005, Arctic LTER, Toolik Research Station, Alaska." ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-bes.564.56>
+    dcterms:creator _:urnzuuidz6ae7e031z63c7z4b17zb644z4616d7eacc8c ;
+    glview:hasParticipant _:urnzuuidz6ae7e031z63c7z4b17zb644z4616d7eacc8c ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-bes.564.56" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Stream chemistry data for Rognel Heights (urban) watershed - Spreadsheet format BES ID 564-" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-bes.572.56>
+    dcterms:creator _:urnzuuidz6ae7e031z63c7z4b17zb644z4616d7eacc8c ;
+    glview:hasParticipant _:urnzuuidz6ae7e031z63c7z4b17zb644z4616d7eacc8c ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-bes.572.56" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Stream chemistry for Gwynns Falls at Glyndon (suburban) watershed - Spreadsheet format BES ID 572-" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-bnz.110.17>
+    dcterms:creator _:urnzuuidz5a0dc5bbz169bz4c24z922cz83717605d5bd ;
+    glview:hasParticipant _:urnzuuidz5a0dc5bbz169bz4c24z922cz83717605d5bd ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-bnz.110.17" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Tree regeneration after fire: Aspen removal experiment, soil moisture and pH 2001" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-bnz.343.16>
+    dcterms:creator _:urnzuuidz2bc794abzbd24z498aza486z4a12970855d4 ;
+    glview:hasParticipant _:urnzuuidz2bc794abzbd24z498aza486z4a12970855d4 ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-bnz.343.16" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Pre-fire and Post-re species abundance (Braun-blaunquet abundance methods) for 14 sites from 2001-2006." ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-bnz.35.17>
+    dcterms:creator _:urnzuuidzff8d974fz0d54z49c0z8146z9085fbb08100 ;
+    glview:hasParticipant _:urnzuuidzff8d974fz0d54z49c0z8146z9085fbb08100 ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-bnz.35.17" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Bonanza Creek Experimental Forest Beetles Per Trap 1975-2012 - Werner" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-bnz.368.15>
+    dcterms:creator _:urnzuuidz90fd4795zc5d9z4395zaf67zbca375224e1b ;
+    glview:hasParticipant _:urnzuuidz90fd4795zc5d9z4395zaf67zbca375224e1b ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-bnz.368.15" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Stem diameter of trees and shrubs in thinleaf alder sites along the Tanana River floodplains and severity of stem canker infection of alder in 2006." ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-bnz.38.17>
+    dcterms:creator _:urnzuuidz9ebab4b5zc585z45f5zaf99z10264ac05586 ;
+    glview:hasParticipant _:urnzuuidz9ebab4b5zc585z45f5zaf99z10264ac05586 ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-bnz.38.17" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Hectares of Alaskan Forested Ecosystems Infested by Phytophagous and Phloeophagus Insects, 1955-2008" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-bnz.386.15>
+    dcterms:creator _:urnzuuidz0cef255cz585bz434az9c4cze4a3a8f5a07d ;
+    glview:hasParticipant _:urnzuuidz0cef255cz585bz434az9c4cze4a3a8f5a07d ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-bnz.386.15" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Caribou-Poker Creeks Research Watershed: Hourly Snow Pillow Measurements" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-bnz.41.17>
+    dcterms:creator _:urnzuuidz5a0dc5bbz169bz4c24z922cz83717605d5bd ;
+    glview:hasParticipant _:urnzuuidz5a0dc5bbz169bz4c24z922cz83717605d5bd ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-bnz.41.17" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Tree regeneration after fire: Effects of burn severity,  CPCRW vegetative cover analysis" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-bnz.410.13>
+    dcterms:creator _:urnzuuidz90f13691zc1c7z4d78z9a13z4947bb7019ac ;
+    glview:hasParticipant _:urnzuuidz90f13691zc1c7z4d78z9a13z4947bb7019ac ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-bnz.410.13" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Log Decomposition Dynamics in Interior Alaska 3 - Disk Data" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-cap.148.9>
+    dcterms:creator _:urnzuuidz72858265za118z4b5bzae10z149d228566cb, _:urnzuuidz73f07ff3z8f26z4d69z8739z9f6610959403 ;
+    glview:hasParticipant _:urnzuuidz72858265za118z4b5bzae10z149d228566cb, _:urnzuuidz73f07ff3z8f26z4d69z8739z9f6610959403 ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-cap.148.9" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Hohokam canals as multi-use facilities: Pre-historic canal system in the central Arizona-Phoenix metropolitan area" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-cap.160.10>
+    dcterms:creator _:urnzuuidz5be0b87ez88c0z4114zb43ez8936ebd25e10, _:urnzuuidz6186e2d9z21cbz4a54zbf4az8e39bece72a4, _:urnzuuidz84e49926z614bz4566z9719z46cbda809c40 ;
+    glview:hasParticipant _:urnzuuidz5be0b87ez88c0z4114zb43ez8936ebd25e10, _:urnzuuidz6186e2d9z21cbz4a54zbf4az8e39bece72a4, _:urnzuuidz84e49926z614bz4566z9719z46cbda809c40 ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-cap.160.10" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Point count bird censusing - long term study in central Arizona-Phoenix: Study sites" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-cap.21.9>
+    dcterms:creator _:urnzuuidzb69d5d1cz4002z4ee6zbb8fz3f47b37ae681 ;
+    glview:hasParticipant _:urnzuuidzb69d5d1cz4002z4ee6zbb8fz3f47b37ae681 ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-cap.21.9" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Regional E-Atlas of the Greater Phoenix region, Arizona: housing affordability, 2000" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-cap.36.9>
+    dcterms:creator _:urnzuuidz23a53540z5742z4315z8ebdz447581376e9a, _:urnzuuidz31c6772czd781z4c27za425z35cda4dcec5a, _:urnzuuidz3fa8d0a1z972bz4954z99ecz6b6ceabccad1, _:urnzuuidz6914f04fz7706z40d4z9481z4587947541da ;
+    glview:hasParticipant _:urnzuuidz23a53540z5742z4315z8ebdz447581376e9a, _:urnzuuidz31c6772czd781z4c27za425z35cda4dcec5a, _:urnzuuidz3fa8d0a1z972bz4954z99ecz6b6ceabccad1, _:urnzuuidz6914f04fz7706z40d4z9481z4587947541da ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-cap.36.9" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Land use effects on temperature and humidity along an urban-rural transect gradient in central Arizona-Phoenix, 1999" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-cap.45.9>
+    dcterms:creator _:urnzuuidzcd3776c9z58d2z4b75zaaacz9ac92d0546f1 ;
+    glview:hasParticipant _:urnzuuidzcd3776c9z58d2z4b75zaaacz9ac92d0546f1 ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-cap.45.9" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Scorpion stings in urban environments in the central Arizona-Phoenix area: 1996-1997" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-cap.517.5>
+    dcterms:creator _:urnzuuidze121648aze11bz448czb8ecz1d861d9187d0 ;
+    glview:hasParticipant _:urnzuuidze121648aze11bz448czb8ecz1d861d9187d0 ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-cap.517.5" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "End of the first growth period in 2004-2005 (Day of Year)" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-cap.518.5>
+    dcterms:creator _:urnzuuidze121648aze11bz448czb8ecz1d861d9187d0 ;
+    glview:hasParticipant _:urnzuuidze121648aze11bz448czb8ecz1d861d9187d0 ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-cap.518.5" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "End of the second growth period in 2001-2002 (Day of Year)" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-fce.1056.3>
+    dcterms:creator _:urnzuuidz0d812751zf466z4e58zbdf4z58a98b9fdd55 ;
+    glview:hasParticipant _:urnzuuidz0d812751zf466z4e58zbdf4z58a98b9fdd55 ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-fce.1056.3" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Microbial Sampling from Shark River Slough and Taylor Slough, Everglades National Park, South Florida (FCE) from January 2001 to Present" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-fce.1070.3>
+    dcterms:creator _:urnzuuidz448d0947z694cz43b8zbf9bz3e2335131270, _:urnzuuidze6bc366ez9409z4090z8b6az470ba2dc948e ;
+    glview:hasParticipant _:urnzuuidz448d0947z694cz43b8zbf9bz3e2335131270, _:urnzuuidze6bc366ez9409z4090z8b6az470ba2dc948e ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-fce.1070.3" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Sawgrass Above and Below Ground Total Nitrogen and Total Carbon from the Shark River Slough, Everglades National Park (FCE), from September 2002 to Present" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-fce.1071.3>
+    dcterms:creator _:urnzuuidz448d0947z694cz43b8zbf9bz3e2335131270, _:urnzuuidze6bc366ez9409z4090z8b6az470ba2dc948e ;
+    glview:hasParticipant _:urnzuuidz448d0947z694cz43b8zbf9bz3e2335131270, _:urnzuuidze6bc366ez9409z4090z8b6az470ba2dc948e ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-fce.1071.3" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Sawgrass Above and Below Ground Total Phosphorus from the Shark River Slough, Everglades National Park (FCE), from September 2002 to Present" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-fce.1074.4>
+    dcterms:creator _:urnzuuidz448d0947z694cz43b8zbf9bz3e2335131270, _:urnzuuidze6bc366ez9409z4090z8b6az470ba2dc948e ;
+    glview:hasParticipant _:urnzuuidz448d0947z694cz43b8zbf9bz3e2335131270, _:urnzuuidze6bc366ez9409z4090z8b6az470ba2dc948e ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-fce.1074.4" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Water Quality Data (Extensive) from the Shark River Slough, Everglades National Park (FCE), from April 1996 to Present" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-fce.1075.4>
+    dcterms:creator _:urnzuuidz448d0947z694cz43b8zbf9bz3e2335131270, _:urnzuuidze6bc366ez9409z4090z8b6az470ba2dc948e ;
+    glview:hasParticipant _:urnzuuidz448d0947z694cz43b8zbf9bz3e2335131270, _:urnzuuidze6bc366ez9409z4090z8b6az470ba2dc948e ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-fce.1075.4" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Water Quality Data (Grab Samples) from the Taylor Slough, Everglades National Park (FCE), from May 2001 to Present" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-fce.1079.4>
+    dcterms:creator _:urnzuuidz448d0947z694cz43b8zbf9bz3e2335131270, _:urnzuuidze6bc366ez9409z4090z8b6az470ba2dc948e ;
+    glview:hasParticipant _:urnzuuidz448d0947z694cz43b8zbf9bz3e2335131270, _:urnzuuidze6bc366ez9409z4090z8b6az470ba2dc948e ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-fce.1079.4" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Water Quality Data (Extensive) from the Taylor Slough, Everglades National Park (FCE), South Florida from July 1999 to Present" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-fce.1080.3>
+    dcterms:creator _:urnzuuidz448d0947z694cz43b8zbf9bz3e2335131270, _:urnzuuidze6bc366ez9409z4090z8b6az470ba2dc948e ;
+    glview:hasParticipant _:urnzuuidz448d0947z694cz43b8zbf9bz3e2335131270, _:urnzuuidze6bc366ez9409z4090z8b6az470ba2dc948e ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-fce.1080.3" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Water Quality Data (Grab Samples) from the Taylor Slough, Everglades National Park (FCE), South Florida from September 1999 to Present" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-fce.1092.5>
+    dcterms:creator _:urnzuuidz448d0947z694cz43b8zbf9bz3e2335131270, _:urnzuuidze6bc366ez9409z4090z8b6az470ba2dc948e ;
+    glview:hasParticipant _:urnzuuidz448d0947z694cz43b8zbf9bz3e2335131270, _:urnzuuidze6bc366ez9409z4090z8b6az470ba2dc948e ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-fce.1092.5" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Precipitation from the Shark River Slough, Everglades National Park (FCE), South Florida from November 2000 to Present" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-fce.1093.4>
+    dcterms:creator _:urnzuuidz448d0947z694cz43b8zbf9bz3e2335131270, _:urnzuuidze6bc366ez9409z4090z8b6az470ba2dc948e ;
+    glview:hasParticipant _:urnzuuidz448d0947z694cz43b8zbf9bz3e2335131270, _:urnzuuidze6bc366ez9409z4090z8b6az470ba2dc948e ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-fce.1093.4" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Water Levels from the Taylor Slough, Everglades National Park (FCE), South Florida from April 1996 to Present" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-fce.1098.3>
+    dcterms:creator _:urnzuuidz448d0947z694cz43b8zbf9bz3e2335131270, _:urnzuuidze6bc366ez9409z4090z8b6az470ba2dc948e ;
+    glview:hasParticipant _:urnzuuidz448d0947z694cz43b8zbf9bz3e2335131270, _:urnzuuidze6bc366ez9409z4090z8b6az470ba2dc948e ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-fce.1098.3" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Water Levels from the Taylor Slough,  Everglades National Park (FCE), South Florida from August 1999 to Present" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-gce.431.8>
+    dcterms:creator _:urnzuuidzba36947ez8e8cz4106z9ebez5244a9432535, _:urnzuuidzd2f12929zeba2z4b53zb52bz2f366d0b56d7 ;
+    glview:hasParticipant _:urnzuuidzba36947ez8e8cz4106z9ebez5244a9432535, _:urnzuuidzd2f12929zeba2z4b53zb52bz2f366d0b56d7 ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-gce.431.8" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "GCE-LTER Altamaha River Plant Community Monitoring Survey in October 2012" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-hfr.155.8>
+    dcterms:creator _:urnzuuidzb757c361z3df7z497dza316zf0eae2bb2873 ;
+    glview:hasParticipant _:urnzuuidzb757c361z3df7z497dza316zf0eae2bb2873 ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-hfr.155.8" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Harvard Forest Snow Pillow since 2009" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-pie.252.1>
+    dcterms:creator _:urnzuuidz9801f577z10c8z412azb825zc7d2dfb9d1a7 ;
+    glview:hasParticipant _:urnzuuidz9801f577z10c8z412azb825zc7d2dfb9d1a7 ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-pie.252.1" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Digital Elevation Model - Ipswich Watershed - Idrisi Raster File" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-pie.255.1>
+    dcterms:creator _:urnzuuidz57217c17z3b07z4c43zb7c3z38f6503535a5 ;
+    glview:hasParticipant _:urnzuuidz57217c17z3b07z4c43zb7c3z38f6503535a5 ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-pie.255.1" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Land Use, Anderson Level I - Ipswich Watershed - 1991 - Idrisi Raster File" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-pie.258.1>
+    dcterms:creator _:urnzuuidz075ba760z9279z4e64z9834z2812bb95a3bb ;
+    glview:hasParticipant _:urnzuuidz075ba760z9279z4e64z9834z2812bb95a3bb ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-pie.258.1" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Nutrient Sample Sites - Ipswich Watershed - 1999 through 2002 - Idrisi Raster File" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-pie.261.1>
+    dcterms:creator _:urnzuuidz57217c17z3b07z4c43zb7c3z38f6503535a5 ;
+    glview:hasParticipant _:urnzuuidz57217c17z3b07z4c43zb7c3z38f6503535a5 ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-pie.261.1" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Status and Custodianship of Designated Open Space - Ipswich Watershed - Idrisi Raster File" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-pie.264.1>
+    dcterms:creator _:urnzuuidz3654b630z0f71z4477zaccezf8c7c53f513f ;
+    glview:hasParticipant _:urnzuuidz3654b630z0f71z4477zaccezf8c7c53f513f ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-pie.264.1" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Single Mask File of All Towns that are Fully or Partially in the Ipswich Watershed - Idrisi Raster File" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-pie.267.1>
+    dcterms:creator _:urnzuuidz075ba760z9279z4e64z9834z2812bb95a3bb ;
+    glview:hasParticipant _:urnzuuidz075ba760z9279z4e64z9834z2812bb95a3bb ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-pie.267.1" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Wetland Areas - Ipswich Watershed - Idrisi Raster File" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-pie.270.1>
+    dcterms:creator _:urnzuuidz143d35b5z5d45z4089z9fe7z090ae82a639b ;
+    glview:hasParticipant _:urnzuuidz143d35b5z5d45z4089z9fe7z090ae82a639b ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-pie.270.1" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Land Use, Anderson Level I, 7 Categories - Ipswich and Parker River Watersheds - 1971 - Idrisi Raster File" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-pie.271.1>
+    dcterms:creator _:urnzuuidz143d35b5z5d45z4089z9fe7z090ae82a639b ;
+    glview:hasParticipant _:urnzuuidz143d35b5z5d45z4089z9fe7z090ae82a639b ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-pie.271.1" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Land Use, Anderson Level I, 7 Categories - Ipswich and Parker River Watersheds - 1985 - Idrisi Raster File" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-pie.272.1>
+    dcterms:creator _:urnzuuidz143d35b5z5d45z4089z9fe7z090ae82a639b ;
+    glview:hasParticipant _:urnzuuidz143d35b5z5d45z4089z9fe7z090ae82a639b ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-pie.272.1" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Land Use, Anderson Level I, 7 Categories - Ipswich and Parker River Watersheds - 1991 - Idrisi Raster File" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-pie.273.1>
+    dcterms:creator _:urnzuuidz143d35b5z5d45z4089z9fe7z090ae82a639b ;
+    glview:hasParticipant _:urnzuuidz143d35b5z5d45z4089z9fe7z090ae82a639b ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-pie.273.1" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Land Use, Anderson Level I, 7 Categories - Ipswich and Parker River Watersheds - 1999 - Idrisi Raster File" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-pie.274.1>
+    dcterms:creator _:urnzuuidz7f74c469ze001z4701za923zada6f87f85c2 ;
+    glview:hasParticipant _:urnzuuidz7f74c469ze001z4701za923zada6f87f85c2 ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-pie.274.1" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Land Use, 21 Categories - Ipswich and Parker River Watersheds - 1971 - Idrisi Raster File" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-pie.275.1>
+    dcterms:creator _:urnzuuidz7f74c469ze001z4701za923zada6f87f85c2 ;
+    glview:hasParticipant _:urnzuuidz7f74c469ze001z4701za923zada6f87f85c2 ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-pie.275.1" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Land Use, 21 Categories - Ipswich and Parker River Watersheds - 1985 - Idrisi Raster File" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-pie.277.1>
+    dcterms:creator _:urnzuuidz143d35b5z5d45z4089z9fe7z090ae82a639b ;
+    glview:hasParticipant _:urnzuuidz143d35b5z5d45z4089z9fe7z090ae82a639b ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-pie.277.1" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Land Use, 21 Categories - Ipswich and Parker River Watersheds - 1999 - Idrisi Raster File" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-pie.278.1>
+    dcterms:creator _:urnzuuidz143d35b5z5d45z4089z9fe7z090ae82a639b ;
+    glview:hasParticipant _:urnzuuidz143d35b5z5d45z4089z9fe7z090ae82a639b ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-pie.278.1" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Land Use, 37 Categories - Ipswich and Parker River Watersheds - 1985 - Idrisi Raster File" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-pie.283.1>
+    dcterms:creator _:urnzuuidz143d35b5z5d45z4089z9fe7z090ae82a639b ;
+    glview:hasParticipant _:urnzuuidz143d35b5z5d45z4089z9fe7z090ae82a639b ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-pie.283.1" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Individual Towns that are Fully or Partially in the Ipswich and Parker River Watersheds - Idrisi Raster File" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-pie.287.1>
+    dcterms:creator _:urnzuuidz678ee5a3zc3cdz41cbz8fe1zd7db3f5ef18c ;
+    glview:hasParticipant _:urnzuuidz678ee5a3zc3cdz41cbz8fe1zd7db3f5ef18c ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-pie.287.1" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Stream Order for drainage to streams in the Ipswich or Parker River Network - ASCII Raster File" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-pie.290.1>
+    dcterms:creator _:urnzuuidz678ee5a3zc3cdz41cbz8fe1zd7db3f5ef18c ;
+    glview:hasParticipant _:urnzuuidz678ee5a3zc3cdz41cbz8fe1zd7db3f5ef18c ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-pie.290.1" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Contributing drainage areas - Parker and Ipswich Watersheds - ASCII Raster File" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-sev.15.25199>
+    dcterms:creator _:urnzuuidz3c8a88a1z0ed8z4a9bz9108z4a1f55cebe89 ;
+    glview:hasParticipant _:urnzuuidz3c8a88a1z0ed8z4a9bz9108z4a1f55cebe89 ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-sev.15.25199" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Burn Exclosure Rodent Population Study at the Sevilleta National Wildlife Refuge, New Mexico, (1991-1993)" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-sev.22.35079>
+    dcterms:creator _:urnzuuidz3c8a88a1z0ed8z4a9bz9108z4a1f55cebe89 ;
+    glview:hasParticipant _:urnzuuidz3c8a88a1z0ed8z4a9bz9108z4a1f55cebe89 ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-sev.22.35079" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Litter Fall Collection Study in Pinyon-Juniper, Cottowood, and Spruce-Fir-Aspen Forests at the Sevilleta NWR, Bosque del Apache NWR, and the Cibola National Forest, New Mexico (1992-1993)" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-sev.25.44125>
+    dcterms:creator _:urnzuuidzb6363f9dzc19cz4b44z8f30z154e1413f00f ;
+    glview:hasParticipant _:urnzuuidzb6363f9dzc19cz4b44z8f30z154e1413f00f ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-sev.25.44125" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Pinon-Juniper Plant Dimension Study at the Sevilleta National Wildlife Refuge, New Mexico: 1989-1999" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-sev.27.50402>
+    dcterms:creator _:urnzuuidz048d9307z6ed8z4533za47azbc087a8d0b7a ;
+    glview:hasParticipant _:urnzuuidz048d9307z6ed8z4533za47azbc087a8d0b7a ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-sev.27.50402" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Biannual Grass Demography Study at the Sevilleta National Wildlife Refuge, New Mexico: 1989-1993" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-sev.29.61108>
+    dcterms:creator _:urnzuuidz70155f2az268az499ezaa6czd7034fad17bc ;
+    glview:hasParticipant _:urnzuuidz70155f2az268az499ezaa6czd7034fad17bc ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-sev.29.61108" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Ground Arthropod Community Survey in Grassland, Shrubland, and Woodland at the Sevilleta National Wildlife Refuge, New Mexico (1992-2004)" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-sev.78.82694>
+    dcterms:creator _:urnzuuidz68746a88z9e11z4b52z867cz9cdb5399f8e6 ;
+    glview:hasParticipant _:urnzuuidz68746a88z9e11z4b52z867cz9cdb5399f8e6 ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-sev.78.82694" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Time Domain Reflectometry at the Sevilleta National Wildlife Refuge, New Mexico, (1996-2005)" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-sgs.112.12>
+    dcterms:creator _:urnzuuidz58be3823z1cafz4807z914bz666190475415 ;
+    glview:hasParticipant _:urnzuuidz58be3823z1cafz4807z914bz666190475415 ;
+    glview:hasRepository "urn:node:LTER" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "knb-lter-sgs.112.12" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "SGS-LTER Standard Met Data: 1971-2010 Manually Collected Soil Temperature Data in English Units on the Central Plains Experimental Range, Nunn, Colorado, USA 1971-2008" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/nceas.987.2>
+    dcterms:creator _:urnzuuidz50ac5fb4z4f9fz44d0zbfb7z702c53309c37, _:urnzuuidz589bbe24z0014z41a8z9056z9838f7dc2806, _:urnzuuidze2aa76bdzf729z4737z9d1ez3838ae8b93d3 ;
+    glview:hasParticipant _:urnzuuidz50ac5fb4z4f9fz44d0zbfb7z702c53309c37, _:urnzuuidz589bbe24z0014z41a8z9056z9838f7dc2806, _:urnzuuidze2aa76bdzf729z4737z9d1ez3838ae8b93d3 ;
+    glview:hasRepository "urn:node:KNB" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "nceas.987.2" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "Introduced annual grass increases regional fire activity across the arid western USA 1980-2009" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/urn:uuid:589949fe-9dd4-425a-991a-69c50eb2e377>
+    dcterms:creator _:urnzuuidz92aa016cz083cz495fzafb7zc1aa6c0ad1c4 ;
+    glview:hasParticipant _:urnzuuidz92aa016cz083cz495fzafb7zc1aa6c0ad1c4 ;
+    glview:hasRepository "urn:node:KNB" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:urn ;
+        glview:hasIdentifierValue "urn:uuid:589949fe-9dd4-425a-991a-69c50eb2e377" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "testing reml KNB" ;
+    a glview:Dataset .
+
+<https://cn.dataone.org/cn/v1/resolve/urn:uuid:90d455cd-3066-423a-a526-c3fb114a31b8>
+    dcterms:creator _:urnzuuidz92aa016cz083cz495fzafb7zc1aa6c0ad1c4 ;
+    glview:hasParticipant _:urnzuuidz92aa016cz083cz495fzafb7zc1aa6c0ad1c4 ;
+    glview:hasRepository "urn:node:KNB" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:urn ;
+        glview:hasIdentifierValue "urn:uuid:90d455cd-3066-423a-a526-c3fb114a31b8" ;
+        a datacite:ResourceIdentifier
+    ] ;
+    glview:title "reml example" ;
+    a glview:Dataset .
+
+<urn:node:CDL>
+    glview:description "A cross-domain repository for data and metadata provided by the California Digital Library at the University of California" ;
+    a glview:Organization, glview:Repository ;
+    foaf:name "Merritt Repository" .
+
+<urn:node:CLOEBIRD>
+    glview:description "eBird collects observational data on birds from around the world with a date range from 1800 to current. eBird is a valuable data resource for science and conservation, collecting millions of bird observations per month." ;
+    a glview:Organization, glview:Repository ;
+    foaf:name "Cornell Lab of Ornithology - eBird" .
+
+<urn:node:CN>
+    glview:description "Round Robin Router for Production Coordinating Nodes" ;
+    a glview:Organization, glview:Repository ;
+    foaf:name "cn" .
+
+<urn:node:CNORC1>
+    glview:description "Oak Ridge National Laboratory Coordinating Node" ;
+    a glview:Organization, glview:Repository ;
+    foaf:name "cn-orc-1" .
+
+<urn:node:CNUCSB1>
+    glview:description "University of California Santa Barbara Coordinating Node" ;
+    a glview:Organization, glview:Repository ;
+    foaf:name "cn-ucsb-1" .
+
+<urn:node:CNUNM1>
+    glview:description "University of New Mexico Coordinating Node" ;
+    a glview:Organization, glview:Repository ;
+    foaf:name "cn-unm-1" .
+
+<urn:node:DRYAD>
+    glview:description "Dryad is an international repository of data underlying peer-reviewed scientific and medical literature." ;
+    a glview:Organization, glview:Repository ;
+    foaf:name "Dryad Digital Repository" .
+
+<urn:node:EDACGSTORE>
+    glview:description "Earth Data Analysis Center's (EDAC) Geographical Storage, Transformation and Retrieval Engine (GSTORE) platform archives data produced by various NM organizations, including NM EPSCoR and RGIS. GSTORE primarily houses GIS and other digital documents relevant to state agencies, local government, and scientific researchers. See RGIS and NM EPSCoR for more information on the scope of data. It currently uses the FGDC metadata standard to describe all of its holdings." ;
+    a glview:Organization, glview:Repository ;
+    foaf:name "EDAC Gstore Repository" .
+
+<urn:node:EDORA>
+    glview:description "Environmental Data for the Oak Ridge Area (EDORA), including the Walker Branch Watershed.  These projects have all contributed to a more complete understanding of how forest watersheds function and have provided insights into the solution of energy-related problems associated with air pollution, contaminant transport, and forest nutrient dynamics. This is one of a few sites in the world characterized by long-term, intensive environmental studies." ;
+    a glview:Organization, glview:Repository ;
+    foaf:name "Environmental Data for the Oak Ridge Area (EDORA)" .
+
+<urn:node:ESA>
+    glview:description "The data sets registered here are associated with articles published in the journals of the Ecological Society of America." ;
+    a glview:Organization, glview:Repository ;
+    foaf:name "ESA Data Registry" .
+
+<urn:node:GLEON>
+    glview:description "Data archive for the Global Lakes Ecological Observatory Network (GLEON), an international community of Lake researchers." ;
+    a glview:Organization, glview:Repository ;
+    foaf:name "GLEON Data Repository" .
+
+<urn:node:GOA>
+    glview:description "The Gulf of Alaska Data Portal archives environmental observations arising from monitoring and experimentation in the Gulf of Alaska and related regions, and particularly in oil-impacted regions of Prince William Sound and locations on the southern coast of Alaska. Many data sets are time series data spanning multiple decades and continuing through the present.  The Gulf of Alaska Data Portal provides long-term, consistent, scientific data that is critical to allow us to detect and understand ecosystem changes and shifts that directly or indirectly (e.g. through food web relationships) influence the species and ecosystem services of the Gulf of Alaska." ;
+    a glview:Organization, glview:Repository ;
+    foaf:name "Gulf of Alaska Data Portal" .
+
+<urn:node:IOE>
+    glview:description "The Montana Institute on Ecosystems (IoE) Data Repository archives and manages ecological research collections produced investigators within the Montana University System. The Montana IoE Data Repository is also the primary archive for data products generated by Montana EPSCoR projects." ;
+    a glview:Organization, glview:Repository ;
+    foaf:name "Montana IoE Data Repository" .
+
+<urn:node:KNB>
+    glview:description "The Knowledge Network for Biocomplexity (KNB) is a national network intended to facilitate ecological and environmental research on biocomplexity." ;
+    a glview:Organization, glview:Repository ;
+    foaf:name "KNB Data Repository" .
+
+<urn:node:KUBI>
+    glview:description "This DataONE Member Node is operated by The University of Kansas Biodiversity Institute.  The contents of this node are predicted climate layers used for species distribution models." ;
+    a glview:Organization, glview:Repository ;
+    foaf:name "University of Kansas - Biodiversity Institute" .
+
+<urn:node:LTER>
+    glview:description "The U.S. Long Term Ecological Research Network (LTER) data include ecological observations from the study of pattern and control of primary production, movement of both organic and inorganic matter, disturbance patterns, and the spatial and temporal distribution of populations selected to represent trophic structure. The data originates from 27 sites across the conterminous United States of America, Alaska, Antarctica, Puerto Rico, and French Polynesia and spans a period from over 100 years ago to the present." ;
+    a glview:Organization, glview:Repository ;
+    foaf:name "U.S. LTER Network" .
+
+<urn:node:LTER_EUROPE>
+    glview:description "DataOne LTER_Europe Member Node Implemented in Matacat" ;
+    a glview:Organization, glview:Repository ;
+    foaf:name "LTER Europe Member Node" .
+
+<urn:node:ONEShare>
+    glview:description "A repository for tabular data and metadata created using the DataUp tool, sponsored by the California Digital Library and the University of New Mexico" ;
+    a glview:Organization, glview:Repository ;
+    foaf:name "ONEShare Repository" .
+
+<urn:node:ORNLDAAC>
+    glview:description "The ORNL DAAC archives data produced by NASA's Terrestrial Ecology Program. The DAAC provides data and information relevant to biogeochemical dynamics, ecological data, and environmental processes, critical for understanding the dynamics relating to the biological, geological, and chemical components of Earth's environment. " ;
+    a glview:Organization, glview:Repository ;
+    foaf:name "ORNL DAAC" .
+
+<urn:node:PISCO>
+    glview:description "The Partnership for Interdisciplinary Studies of Coastal Oceans is a long-term ecosystem research and monitoring program established with the goals of understanding dynamics of the coastal ocean ecosystem along the U.S. west coast,  sharing that knowledge so ocean managers and policy makers can take science&#8208;based decisions regarding coastal and marine stewardship, and producing a new generation of scientists trained in interdisciplinary collaborative approaches." ;
+    a glview:Organization, glview:Repository ;
+    foaf:name "PISCO MN" .
+
+<urn:node:RGD>
+    glview:description "Regional and global biogeochemical dynamics data can be used to improve our understanding of the structure and function of various ecosystems; to enable prediction across spatial and temporal scales; and to parameterize and validate terrestrial ecosystem models." ;
+    a glview:Organization, glview:Repository ;
+    foaf:name "Regional and Global biogeochemical dynamics Data (RGD)" .
+
+<urn:node:SANPARKS>
+    glview:description "The South African National Park Data Repository is the primary source for comprehensive information about scientific and research data sets collected throughout the South African National Park System." ;
+    a glview:Organization, glview:Repository ;
+    foaf:name "SANParks Data Repository" .
+
+<urn:node:SEAD>
+    glview:description """SEAD Virtual Archive is part of the SEAD DataNet project [http://sead-data.net/]. 
+ SEAD Virtual Archive is a thin virtualization layer on top of multiple university Institutional Repositories focusing on preservation of long-tail scientific data.""" ;
+    a glview:Organization, glview:Repository ;
+    foaf:name "SEAD Virtual Archive" .
+
+<urn:node:TFRI>
+    glview:description "TFRI emphasizes the sustainable management and multi-purpose utilization of forests" ;
+    a glview:Organization, glview:Repository ;
+    foaf:name "TFRI Data Catalog" .
+
+<urn:node:USANPN>
+    glview:description "DataONE member node hosting annual phenology datasets for the USA-NPN." ;
+    a glview:Organization, glview:Repository ;
+    foaf:name "USA National Phenology Network" .
+
+<urn:node:USGSCSAS>
+    glview:description "US Geological Survey Core Science Metadata Clearinghouse archives metadata records describing datasets largely focused on wildlife biology, ecology, environmental science, temperature, geospatial data layers documenting land cover and stewardship (ownership and management), and more." ;
+    a glview:Organization, glview:Repository ;
+    foaf:name "USGS Core Sciences Clearinghouse" .
+
+<urn:node:US_MPC>
+    glview:description "The Minnesota Population Center disseminates integrated census and survey data from the U.S. and around the world; spatial boundary data for U.S. and international administrative units; and global environmental data on topics including land use, land cover, and climate. MPC data holdings include microdata (describing individuals and households), area-level data (describing places), and raster data. The data are designed to be interoperable for spatiotemporal comparisons and MPC data access systems include tools for integrating across data sets and formats." ;
+    a glview:Organization, glview:Repository ;
+    foaf:name "Minnesota Population Center" .
+
+<urn:node:mnORC1>
+    glview:description "A server that provides replica storage across the DataONE Network for all participating institutions" ;
+    a glview:Organization, glview:Repository ;
+    foaf:name "DataONE ORC Dedicated Replica Server" .
+
+<urn:node:mnUCSB1>
+    glview:description "A server that provides replica storage across the DataONE Network for all participating institutions" ;
+    a glview:Organization, glview:Repository ;
+    foaf:name "DataONE UCSB Dedicated Replica Server" .
+
+<urn:node:mnUNM1>
+    glview:description "A server that provides replica storage across the DataONE Network for all participating institutions" ;
+    a glview:Organization, glview:Repository ;
+    foaf:name "DataONE UNM Dedicated Replica Server" .
+
+_:urn:uuid:048d9307-6ed8-4533-a47a-bc087a8d0b7a
+    glview:nameFull "Douglas I. Moore" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:075ba760-9279-4e64-9834-2812bb95a3bb
+    glview:nameFull "Stephen Aldrich" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:0cef255c-585b-434a-9c4c-e4a3a8f5a07d
+    glview:nameFull "Jamie Hollingsworth" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:0d812751-f466-4e58-bdf4-58a98b9fdd55
+    glview:nameFull "Joseph Boyer" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:107df290-d6da-4168-b394-9e442ed99c00
+    glview:nameFull "Brian Enquist" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:10c732d4-966e-4dba-b088-9f177f17f9fb
+    glview:nameFull "Sarah Hobbie" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:143d35b5-5d45-4089-9fe7-090ae82a639b
+    glview:nameFull "John Connors" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:23a53540-5742-4315-8ebd-447581376e9a
+    glview:nameFull "Chris A Martin" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:26924437-621d-46e5-bb09-3986aa41209e
+    glview:nameFull "George Kling" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:281f91a3-6b30-4265-9f99-5faea1e2900f
+    glview:nameFull "Christopher Leucke" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:2bc794ab-bd24-498a-a486-4a12970855d4
+    glview:nameFull "Emily Bernhardt" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:2c4e14da-f392-4973-9997-a20cf60a461e
+    glview:nameFull "John O'Brien" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:31c6772c-d781-4c27-a425-35cda4dcec5a
+    glview:nameFull "Jo Blank" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:3654b630-0f71-4477-acce-f8c7c53f513f
+    glview:nameFull "Stephen P Aldrich" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:36bfc7b0-bce5-4be5-b06f-e3139472f98b
+    glview:nameFull "Test" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:37a8e983-654c-4701-bfcc-0b6241a7b02b
+    glview:nameFull "Ed Rastetter" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:3872465d-c137-47db-aa5a-6f0d284c2fe9
+    glview:nameFull "Anne Hershey" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:3c8a88a1-0ed8-4a9b-9108-4a1f55cebe89
+    glview:nameFull "Robert Parmenter" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:3fa8d0a1-972b-4954-99ec-6b6ceabccad1
+    glview:nameFull "Kathleen A. Peterson" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:448d0947-694c-43b8-bf9b-3e2335131270
+    glview:nameFull "Daniel Childers||Global Institute of Sustainability| School of Sustainability" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:49bfa88e-4db4-4442-8f57-de3b691fe753
+    glview:nameFull "Donald Schell" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:50ac5fb4-4f9f-44d0-bfb7-702c53309c37
+    glview:nameFull "National Center for Ecological Analysis and Synthesis" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:57217c17-3b07-4c43-b7c3-38f6503535a5
+    glview:nameFull "Diana Huffaker" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:5741c885-513c-4438-b5d6-510b78e1407c
+    glview:nameFull "B.J.Peterson" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:589bbe24-0014-41a8-9056-9838f7dc2806
+    glview:nameFull "Jennifer Balch" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:58be3823-1caf-4807-914b-666190475415
+    glview:nameFull "Bill Parton" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:5a0dc5bb-169b-4c24-922c-83717605d5bd
+    glview:nameFull "Jill Johnstone" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:5be0b87e-88c0-4114-b43e-8936ebd25e10
+    glview:nameFull "Madhusudan V. Katti" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:6186e2d9-21cb-4a54-bf4a-8e39bece72a4
+    glview:nameFull "Paige S. Warren" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:678ee5a3-c3cd-41cb-8fe1-d7db3f5ef18c
+    glview:nameFull "Wilfred Wollheim" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:68746a88-9e11-4b52-867c-9cdb5399f8e6
+    glview:nameFull "James Gosz" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:6914f04f-7706-40d4-9481-4587947541da
+    glview:nameFull "Linda Brooke Stabler" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:6ae7e031-63c7-4b17-b644-4616d7eacc8c
+    glview:nameFull "Peter Groffman ,     Email: groffmanp@ecostudies.org" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:70155f2a-268a-499e-aa6c-d7034fad17bc
+    glview:nameFull "David Lightfoot" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:72858265-a118-4b5b-ae10-149d228566cb
+    glview:nameFull "Ryan Arp" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:73f07ff3-8f26-4d69-8739-9f6610959403
+    glview:nameFull "Peter H. McCartney" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:79ab3f08-f08e-4ae2-b617-9e0f8b9ca740
+    glview:nameFull "Loretta Johnson" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:7dbdffe2-6fce-4743-a37b-d91585ff8214
+    glview:nameFull "Lyssette E. Munoz-Villers" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:7f74c469-e001-4701-a923-ada6f87f85c2
+    glview:nameFull "John Connors, HERO-CM" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:84e49926-614b-4566-9719-46cbda809c40
+    glview:nameFull "Eyal Shochat" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:8e89c018-eb02-4c31-96ae-9c840e4556fb
+    glview:nameFull "B.J. Peterson" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:90f13691-c1c7-4d78-9a13-4947bb7019ac
+    glview:nameFull "John Yarie" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:90fd4795-c5d9-4395-af67-bca375224e1b
+    glview:nameFull "Dana Rachel Nossov" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:92aa016c-083c-495f-afb7-c1aa6c0ad1c4
+    glview:nameFull "Carl Boettiger" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:94af036d-2a8e-453c-aa8a-0c4e70f0e5e3
+    glview:nameFull "Frederick J. Swanson" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:9801f577-10c8-412a-b825-c7d2dfb9d1a7
+    glview:nameFull "Takashi Tada" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:9ebab4b5-c585-45f5-af99-10264ac05586
+    glview:nameFull "Richard A. Werner" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:a84a0042-4ced-442f-a968-9142ae741ed8
+    glview:nameFull "Friso Holwerda" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:b6363f9d-c19c-4b44-8f30-154e1413f00f
+    glview:nameFull "Jim Gosz" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:b69d5d1c-4002-4ee6-bb8f-3f47b37ae681
+    glview:nameFull "Arizona State University W. P. Carey School of Business Center for Business Research" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:b757c361-3df7-497d-a316-f0eae2bb2873
+    glview:nameFull "Emery Boose" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:ba36947e-8e8c-4106-9ebe-5244a9432535
+    glview:nameFull "Steven C. Pennings" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:bc5fa82c-e30c-469e-a85a-877277becf0f
+    glview:nameFull "Parke Rublee" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:c00bb788-4098-40b6-a62e-9f735dadbf4f
+    glview:nameFull "Joshua Schimel" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:c28e95c3-67ab-4d95-b23e-87025a5766b0
+    glview:nameFull "Gus Shaver" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:c7c77c74-8cbe-4b05-84ae-2a26093287bf
+    glview:nameFull "A. Hershey" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:cd3776c9-58d2-4b75-aaac-9ac92d0546f1
+    glview:nameFull "Nancy E. McIntyre" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:d2f12929-eba2-4b53-b52b-2f366d0b56d7
+    glview:nameFull "Georgia Coastal Ecosystems LTER Project" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:e121648a-e11b-448c-b8ec-1d861d9187d0
+    glview:nameFull "Alexander Buyantuyev" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:e1d0eddc-3a08-4117-8520-1691950e0cec
+    glview:nameFull "Anne Giblin" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:e2aa76bd-f729-4737-9d1e-3838ae8b93d3
+    glview:nameFull "NCEAS 12141: Balch: Relative influence of fuels, climate, and ignition on fire frequency across earth's ecosystems" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:e6bc366e-9409-4090-8b6a-470ba2dc948e
+    glview:nameFull "Tiffany Troxler" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:e9fbf722-759a-4565-be9b-f8a998c83e0f
+    glview:nameFull "Martin Sommerkorn" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:f00a6b1b-2499-440a-8015-c1f242f15186
+    glview:nameFull "Knute Nadelhoffer" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:f9c09062-fef1-495c-a3b6-00e99ee0423a
+    glview:nameFull "GUS SHAVER" ;
+    a glview:Person, foaf:Person .
+
+_:urn:uuid:ff8d974f-0d54-49c0-8146-9085fbb08100
+    glview:nameFull "James J. Kruse" ;
+    a glview:Person, foaf:Person .
 
