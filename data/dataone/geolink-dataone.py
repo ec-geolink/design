@@ -74,7 +74,7 @@ def addDataset(model, doc, ns, personhash):
         if (creator not in personhash):
             # Add it
             newid = uuid.uuid4()
-            p_uuid = newid.urn
+            p_uuid = newid.hex
             p_orcid = "http://myfakeorcid.org/" + newid.hex
             p_data = [p_uuid, p_orcid]
             personhash[creator] = p_data
