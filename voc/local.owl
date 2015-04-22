@@ -58,12 +58,28 @@
     
 
 
+    <!-- http://schema.geolink.org/dev/voc/local#roletype_creator -->
+
+    <owl:Class rdf:about="&ecglvoc_local;roletype_creator">
+        <rdfs:label>Role: Creator</rdfs:label>
+    </owl:Class>
+
+
+
     <!-- http://schema.geolink.org/dev/voc/local#roletype_author -->
 
     <owl:Class rdf:about="&ecglvoc_local;roletype_author">
         <rdfs:label>Role: Author</rdfs:label>
     </owl:Class>
     
+
+
+    <!-- http://schema.geolink.org/dev/voc/local#roletype_rightsholder -->
+
+    <owl:Class rdf:about="&ecglvoc_local;roletype_rightsholder">
+        <rdfs:label>Role: Rights Holder</rdfs:label>
+    </owl:Class>
+
 
 
     <!-- http://schema.geolink.org/dev/voc/local#roletype_captain -->
