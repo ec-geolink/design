@@ -7,7 +7,7 @@
 # Matt Jones, NCEAS 2015
 
 def getDataList():
-    d1query = "https://cn.dataone.org/cn/v1/query/solr/?fl=identifier,title,author,authorLastName,origin,submitter,rightsHolder,relatedOrganizations,contactOrganization,documents,resourceMap,authoritativeMN&q=formatType:METADATA+AND+(datasource:*LTER+OR+datasource:*KNB+OR+datasource:*PISCO)+AND+-obsoletedBy:*&rows=100&start=0"
+    d1query = "https://cn.dataone.org/cn/v1/query/solr/?fl=identifier,title,abstract,author,authorLastName,origin,submitter,rightsHolder,documents,resourceMap,authoritativeMN&q=formatType:METADATA+AND+(datasource:*LTER+OR+datasource:*KNB+OR+datasource:*PISCO)+AND+-obsoletedBy:*&rows=2000&start=0"
     #d1query = "https://cn.dataone.org/cn/v1/query/solr/?fl=identifier,title,author,authorLastName,origin,submitter,rightsHolder,relatedOrganizations,contactOrganization,documents,resourceMap&q=formatType:METADATA&rows=100&start=20000"
     res = urllib2.urlopen(d1query)
     content = res.read()
@@ -65,8 +65,14 @@ def addDataset(model, doc, ns, personhash):
 
     # Title
     title_element = doc.find("./str[@name='title']")
-    addStatement(model, d1base+identifier, ns["glview"]+"title", title_element.text)
-    
+    if (title_element is not None):
+        addStatement(model, d1base+identifier, ns["glview"]+"title", title_element.text)
+
+    # Abstract
+    abstract_element = doc.find("./str[@name='abstract']")
+    if (abstract_element is not None):
+        addStatement(model, d1base+identifier, ns["glview"]+"description", abstract_element.text)
+
     # Creators
     originlist = doc.findall("./arr[@name='origin']/str")
     for creatornode in originlist:
@@ -101,18 +107,28 @@ def addDataset(model, doc, ns, personhash):
         model.sync()
 
 
-    # Submitters
-    # Rights holders
+    # TODO: Add Submitters
+
+    # TODO: Add Rights holders
 
     # Repository
     authMN = doc.find("./str[@name='authoritativeMN']")
-    #addStatement(model, authMN.text, "http://www.w3.org/1999/02/22-rdf-syntax-ns#type", RDF.Uri(ns["glview"]+"Repository"))
     addStatement(model, d1base+identifier, ns["glview"]+"hasRepository", authMN.text)
+    model.sync()
 
-    # Landing page
-    # Funding
-    # MeasurementType
+    # TODO: Add Landing page
+    # TODO: Add Funding
+    # TODO: Add MeasurementType
+
     # Data Objects
+    data_list = doc.findall("./arr[@name='documents']/str")
+    for data_id_node in data_list:
+        data_id = data_id_node.text
+        addStatement(model, d1base+data_id, "http://www.w3.org/1999/02/22-rdf-syntax-ns#type", RDF.Uri(ns["glview"]+"DigitalObject"))
+        addStatement(model, d1base+data_id, ns["glview"]+"isPartOf", RDF.Uri(d1base+identifier))
+        # TODO: Add Checksum
+        # TODO: Add Size
+        # TODO: Add Format
     model.sync()
 
 def createModel():
