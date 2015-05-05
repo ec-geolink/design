@@ -31,7 +31,6 @@ CONSTRUCT {
 
 	?L22destTermURI a owl:Class, owl:NamedIndividual, glview:InstrumentType ; 
 		rdfs:label ?L22destTermLabel ;
-		rdfs:comment ?L22destTermDef ;
 		rdfs:seeAlso ?L22destTermSeeAlso .
 	[] 	a owl:Restriction; 
 		owl:onProperty glview:hasInstrumentType; 
@@ -52,7 +51,6 @@ WHERE {
 			dcterms:date ?L22graphdestDate ; 
 			owl:versionInfo ?L22graphdestVers .			
 		OPTIONAL { ?L22sourceTermURI skos:prefLabel ?L22sourceTermLabel . }
-		OPTIONAL { ?L22sourceTermURI skos:definition ?L22sourceTermDef .}
 		OPTIONAL {	?L22sourceURI skos:member ?L22sourceSuperTermURI.
 					?L22sourceTermURI skos:broader ?L22sourceSuperTermURI .	} 
 		VALUES ( ?L05sourceURI ?L05destURI ) { ( <http://vocab.nerc.ac.uk/collection/L05/current/> <http://schema.geolink.org/dev/voc/nvs/L05> ) }
@@ -61,7 +59,6 @@ WHERE {
 					FILTER (?L22toL05termrelation in (skos:broader, owl:sameAs)) } 
 		
 		BIND ( if(bound(?L22sourceTermLabel), ?L22sourceTermLabel, "") as ?L22destTermLabel )
-		BIND ( if(bound(?L22sourceTermDef), ?L22sourceTermDef, "") as ?L22destTermDef )
 		BIND ( ?L22sourceTermURI as ?L22destTermSeeAlso )
 		BIND ( replace( replace( str(?L22sourceTermURI), str(?L22sourceURI), "", "i"), "/", "", "i") as ?L22term )
 		BIND ( iri(concat(str(?L22destURI), "#", ?L22term )) as ?L22destTermURI )		
