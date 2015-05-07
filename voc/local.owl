@@ -19,7 +19,9 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:ecglvoc_local="http://schema.geolink.org/dev/voc/local#">
-    <owl:Ontology rdf:about="http://schema.geolink.org/dev/voc/local"/>
+    <owl:Ontology rdf:about="http://schema.geolink.org/dev/voc/local">
+        <rdfs:comment>This ontology contains all GeoLink&apos;s own internal controlled vocabulary that is not obtained by adopting a well-known external controlled vocabulary</rdfs:comment>
+    </owl:Ontology>
     
 
 
@@ -58,28 +60,12 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/local#roletype_creator -->
-
-    <owl:Class rdf:about="&ecglvoc_local;roletype_creator">
-        <rdfs:label>Role: Creator</rdfs:label>
-    </owl:Class>
-
-
-
     <!-- http://schema.geolink.org/dev/voc/local#roletype_author -->
 
     <owl:Class rdf:about="&ecglvoc_local;roletype_author">
         <rdfs:label>Role: Author</rdfs:label>
     </owl:Class>
     
-
-
-    <!-- http://schema.geolink.org/dev/voc/local#roletype_rightsholder -->
-
-    <owl:Class rdf:about="&ecglvoc_local;roletype_rightsholder">
-        <rdfs:label>Role: Rights Holder</rdfs:label>
-    </owl:Class>
-
 
 
     <!-- http://schema.geolink.org/dev/voc/local#roletype_captain -->
@@ -106,18 +92,18 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/local#roletype_co-program_manager -->
-
-    <owl:Class rdf:about="&ecglvoc_local;roletype_co-program_manager">
-        <rdfs:label>Role: Program Manager</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://schema.geolink.org/dev/voc/local#roletype_contributor -->
 
     <owl:Class rdf:about="&ecglvoc_local;roletype_contributor">
         <rdfs:label>Role: Contributor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/local#roletype_creator -->
+
+    <owl:Class rdf:about="&ecglvoc_local;roletype_creator">
+        <rdfs:label>Role: Creator</rdfs:label>
     </owl:Class>
     
 
@@ -182,6 +168,22 @@
 
     <owl:Class rdf:about="&ecglvoc_local;roletype_principal_investigator">
         <rdfs:label>Role: Principal Investigator</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/local#roletype_program_manager -->
+
+    <owl:Class rdf:about="&ecglvoc_local;roletype_program_manager">
+        <rdfs:label>Role: Program Manager</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/local#roletype_rightsholder -->
+
+    <owl:Class rdf:about="&ecglvoc_local;roletype_rightsholder">
+        <rdfs:label>Role: Rights Holder</rdfs:label>
     </owl:Class>
     
 

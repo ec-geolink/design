@@ -24,14 +24,15 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:foaf="http://xmlns.com/foaf/0.1/">
     <owl:Ontology rdf:about="http://schema.geolink.org/dev/view">
+        <rdfs:label>GeoLink Patterns : Producer-centric default View</rdfs:label>
+        <rdfs:comment>A producer-centric ontology providing a conceptual View into the GeoLink patterns.</rdfs:comment>
+        <owl:imports rdf:resource="http://schema.geolink.org/dev/voc/local"/>
         <owl:imports rdf:resource="http://schema.geolink.org/dev/voc/gebco/featuretype"/>
         <owl:imports rdf:resource="http://schema.geolink.org/dev/voc/nvs/L05"/>
         <owl:imports rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06"/>
         <owl:imports rdf:resource="http://schema.geolink.org/dev/voc/nvs/L22"/>
         <owl:imports rdf:resource="http://schema.geolink.org/dev/voc/nvs/P02"/>
         <owl:imports rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03"/>
-        <rdfs:label>GeoLink Patterns : Producer-centric default View</rdfs:label>
-        <rdfs:comment>A producer-centric ontology providing a conceptual View into the GeoLink patterns.</rdfs:comment>
     </owl:Ontology>
     
 
@@ -89,41 +90,9 @@
 
     <owl:ObjectProperty rdf:about="&ecglview;atPort">
         <rdfs:label>atPort</rdfs:label>
-        <rdfs:comment>The domain of this property consists of (possibly blank) nodes that act as the range of &apos;hasStartPortCall&apos;, &apos;hasMidPortCall&apos;, or &apos;hasEndPortCall&apos; properties. Graph patterns for data using this property can either be of the form:
--   ?X :hasStartPortCall [ :atPort ?PL ; :hasTimeStamp ?T ]
--   ?X :hasMidPortCall [ :atPort ?PL ; :hasTimeStamp ?T ]
--   ?X :hasEndPortCall [ :atPort ?PL ; :hasTimeStamp ?T ]</rdfs:comment>
+        <rdfs:comment>The domain of this property is PortCall, which acts as the range of &apos;hasStartPortCall&apos;, &apos;hasMidPortCall&apos;, or &apos;hasEndPortCall&apos; properties.</rdfs:comment>
         <rdfs:range rdf:resource="&ecglview;Place"/>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty>
-                            <rdf:Description>
-                                <owl:inverseOf rdf:resource="&ecglview;hasEndPortCall"/>
-                            </rdf:Description>
-                        </owl:onProperty>
-                        <owl:someValuesFrom rdf:resource="&owl;Thing"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty>
-                            <rdf:Description>
-                                <owl:inverseOf rdf:resource="&ecglview;hasMidPortCall"/>
-                            </rdf:Description>
-                        </owl:onProperty>
-                        <owl:someValuesFrom rdf:resource="&owl;Thing"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty>
-                            <rdf:Description>
-                                <owl:inverseOf rdf:resource="&ecglview;hasStartPortCall"/>
-                            </rdf:Description>
-                        </owl:onProperty>
-                        <owl:someValuesFrom rdf:resource="&owl;Thing"/>
-                    </owl:Restriction>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
+        <rdfs:domain rdf:resource="&ecglview;PortCall"/>
     </owl:ObjectProperty>
     
 
@@ -133,6 +102,7 @@
     <owl:ObjectProperty rdf:about="&ecglview;fromCountry">
         <rdfs:label>fromCountry</rdfs:label>
         <rdfs:range rdf:resource="&ecglview;Country"/>
+        <owl:inverseOf rdf:resource="&ecglview;isCountryOf"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -225,21 +195,10 @@
 
     <owl:ObjectProperty rdf:about="&ecglview;hasEndPortCall">
         <rdfs:label>hasEndPortCall</rdfs:label>
-        <rdfs:comment>The range of this property consists of (possibly blank) nodes that act as the domain of the &apos;atPort&apos; and &apos;hasTimeStamp&apos; property. Graph patterns for data using this property can be of the form:
--   ?X :hasEndPortCall [ :atPort ?PL ; :hasTimeStamp ?T ]</rdfs:comment>
+        <rdfs:comment>The range of this property is PortCall that acts as the domain of the &apos;atPort&apos; and &apos;hasTimeStamp&apos; property. Graph patterns for data using this property can be of the form:
+-   ?X :hasEndPortCall ?Y . ?Y a PortCall;  :atPort ?PL ; :hasTimeStamp ?T.</rdfs:comment>
         <rdfs:domain rdf:resource="&ecglview;Cruise"/>
-        <rdfs:range>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ecglview;hasTimeStamp"/>
-                <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
-            </owl:Restriction>
-        </rdfs:range>
-        <rdfs:range>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ecglview;atPort"/>
-                <owl:someValuesFrom rdf:resource="&ecglview;Place"/>
-            </owl:Restriction>
-        </rdfs:range>
+        <rdfs:range rdf:resource="&ecglview;PortCall"/>
     </owl:ObjectProperty>
     
 
@@ -312,21 +271,10 @@
 
     <owl:ObjectProperty rdf:about="&ecglview;hasMidPortCall">
         <rdfs:label>hasMidPortCall</rdfs:label>
-        <rdfs:comment>The range of this property consists of (possibly blank) nodes that act as the domain of the &apos;atPort&apos; and &apos;hasTimeStamp&apos; property. Graph patterns for data using this property can be of the form:
--   ?X :hasMidPortCall [ :atPort ?PL ; :hasTimeStamp ?T ]</rdfs:comment>
+        <rdfs:comment>The range of this property is PortCall that acts as the domain of the &apos;atPort&apos; and &apos;hasTimeStamp&apos; property. Graph patterns for data using this property can be of the form:
+-   ?X :hasEndPortCall ?Y . ?Y a PortCall;  :atPort ?PL ; :hasTimeStamp ?T.</rdfs:comment>
         <rdfs:domain rdf:resource="&ecglview;Cruise"/>
-        <rdfs:range>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ecglview;hasTimeStamp"/>
-                <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
-            </owl:Restriction>
-        </rdfs:range>
-        <rdfs:range>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ecglview;atPort"/>
-                <owl:someValuesFrom rdf:resource="&ecglview;Place"/>
-            </owl:Restriction>
-        </rdfs:range>
+        <rdfs:range rdf:resource="&ecglview;PortCall"/>
     </owl:ObjectProperty>
     
 
@@ -347,6 +295,15 @@
         <rdfs:label>hasOriginFeature</rdfs:label>
         <rdfs:range rdf:resource="&ecglview;Feature"/>
         <rdfs:domain rdf:resource="&ecglview;PhysicalSample"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#hasPart -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;hasPart">
+        <rdfs:label>hasPart</rdfs:label>
+        <owl:inverseOf rdf:resource="&ecglview;isPartOf"/>
     </owl:ObjectProperty>
     
 
@@ -425,9 +382,11 @@
     <!-- http://schema.geolink.org/dev/view#hasRelatedCruise -->
 
     <owl:ObjectProperty rdf:about="&ecglview;hasRelatedCruise">
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
         <rdfs:label>hasRelatedCruise</rdfs:label>
         <rdfs:range rdf:resource="&ecglview;Cruise"/>
         <rdfs:domain rdf:resource="&ecglview;Cruise"/>
+        <owl:inverseOf rdf:resource="&ecglview;hasRelatedCruise"/>
     </owl:ObjectProperty>
     
 
@@ -454,8 +413,8 @@
 
     <owl:ObjectProperty rdf:about="&ecglview;hasRoleType">
         <rdfs:label>hasRoleType</rdfs:label>
-        <rdfs:comment>The domain of this property consists of (possibly blank) nodes that act as the range of &apos;hasParticipation&apos; property. Graph patterns for data using this property can either be of the form:
--   ?X :hasParticipation [ :hasRoleType ?RT ; :isPerformedBy ?P; :hasAffiliation ?O ]</rdfs:comment>
+        <rdfs:comment>The domain of this property is Participant that acts as the range of &apos;hasParticipant&apos; property. Graph patterns for data using this property can be of the form:
+-   ?X :hasParticipation ?Y . ?Y a :Participant;  :hasRoleType ?RT ; :isPerformedBy ?P; :hasAffiliation ?O .</rdfs:comment>
         <rdfs:domain rdf:resource="&ecglview;Participant"/>
         <rdfs:range rdf:resource="&ecglview;RoleType"/>
     </owl:ObjectProperty>
@@ -486,21 +445,10 @@
 
     <owl:ObjectProperty rdf:about="&ecglview;hasStartPortCall">
         <rdfs:label>hasStartPortCall</rdfs:label>
-        <rdfs:comment>The range of this property consists of (possibly blank) nodes that act as the domain of the &apos;atPort&apos; and &apos;hasTimeStamp&apos; property. Graph patterns for data using this property can be of the form:
--   ?X :hasStartPortCall [ :atPort ?PL ; :hasTimeStamp ?T ]</rdfs:comment>
+        <rdfs:comment>The range of this property is PortCall that acts as the domain of the &apos;atPort&apos; and &apos;hasTimeStamp&apos; property. Graph patterns for data using this property can be of the form:
+-   ?X :hasEndPortCall ?Y . ?Y a PortCall;  :atPort ?PL ; :hasTimeStamp ?T.</rdfs:comment>
         <rdfs:domain rdf:resource="&ecglview;Cruise"/>
-        <rdfs:range>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ecglview;atPort"/>
-                <owl:someValuesFrom rdf:resource="&ecglview;Place"/>
-            </owl:Restriction>
-        </rdfs:range>
-        <rdfs:range>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&ecglview;hasTimeStamp"/>
-                <owl:someValuesFrom rdf:resource="&xsd;dateTime"/>
-            </owl:Restriction>
-        </rdfs:range>
+        <rdfs:range rdf:resource="&ecglview;PortCall"/>
     </owl:ObjectProperty>
     
 
@@ -535,6 +483,149 @@
     
 
 
+    <!-- http://schema.geolink.org/dev/view#isAffiliationOf -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;isAffiliationOf">
+        <rdfs:label>isAffiliationOf</rdfs:label>
+        <owl:inverseOf rdf:resource="&ecglview;hasAffiliation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#isAwardOf -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;isAwardOf">
+        <rdfs:label>isAwardOf</rdfs:label>
+        <owl:inverseOf rdf:resource="&ecglview;hasAward"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#isCoPrincipalInvestigatorOf -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;isCoPrincipalInvestigatorOf">
+        <rdfs:label>isCoPrincipalInvestigatorOf</rdfs:label>
+        <owl:inverseOf rdf:resource="&ecglview;hasCoPrincipalInvestigator"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#isCountryOf -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;isCountryOf">
+        <rdfs:label>isCountryOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#isCruiseOf -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;isCruiseOf">
+        <rdfs:label>isCruiseOf</rdfs:label>
+        <owl:inverseOf rdf:resource="&ecglview;hasCruise"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#isCruiseTypeOf -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;isCruiseTypeOf">
+        <rdfs:label>isCruiseTypeOf</rdfs:label>
+        <owl:inverseOf rdf:resource="&ecglview;hasCruiseType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#isDatasetOf -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;isDatasetOf">
+        <rdfs:label>isDatasetOf</rdfs:label>
+        <owl:inverseOf rdf:resource="&ecglview;hasDataset"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#isEndPortCallOf -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;isEndPortCallOf">
+        <rdfs:label>isEndPortCallOf</rdfs:label>
+        <owl:inverseOf rdf:resource="&ecglview;hasEndPortCall"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#isFeatureTypeOf -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;isFeatureTypeOf">
+        <rdfs:label>isFeatureTypeOf</rdfs:label>
+        <owl:inverseOf rdf:resource="&ecglview;hasFeatureType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#isFormatTypeOf -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;isFormatTypeOf">
+        <rdfs:label>isFormatTypeOf</rdfs:label>
+        <owl:inverseOf rdf:resource="&ecglview;hasFormatType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#isInstrumentOf -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;isInstrumentOf">
+        <rdfs:label>isInstrumentOf</rdfs:label>
+        <owl:inverseOf rdf:resource="&ecglview;hasInstrument"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#isInstrumentTypeOf -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;isInstrumentTypeOf">
+        <rdfs:label>isInstrumentTypeOf</rdfs:label>
+        <owl:inverseOf rdf:resource="&ecglview;hasInstrumentType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#isMeasurementTypeOf -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;isMeasurementTypeOf">
+        <rdfs:label>isMeasurementTypeOf</rdfs:label>
+        <owl:inverseOf rdf:resource="&ecglview;hasMeasurementType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#isMidPortCallOf -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;isMidPortCallOf">
+        <rdfs:label>isMidPortCallOf</rdfs:label>
+        <owl:inverseOf rdf:resource="&ecglview;hasMidPortCall"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#isOperatorOf -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;isOperatorOf">
+        <rdfs:label>isOperatorOf</rdfs:label>
+        <owl:inverseOf rdf:resource="&ecglview;hasOperator"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#isOriginFeatureOf -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;isOriginFeatureOf">
+        <rdfs:label>isOriginFeatureOf</rdfs:label>
+        <owl:inverseOf rdf:resource="&ecglview;hasOriginFeature"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://schema.geolink.org/dev/view#isPartOf -->
 
     <owl:ObjectProperty rdf:about="&ecglview;isPartOf">
@@ -545,14 +636,156 @@
     
 
 
+    <!-- http://schema.geolink.org/dev/view#isParticipantOf -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;isParticipantOf">
+        <rdfs:label>isParticipantOf</rdfs:label>
+        <owl:inverseOf rdf:resource="&ecglview;hasParticipant"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://schema.geolink.org/dev/view#isPerformedBy -->
 
     <owl:ObjectProperty rdf:about="&ecglview;isPerformedBy">
         <rdfs:label>isPerformedBy</rdfs:label>
-        <rdfs:comment>The domain of this property consists of (possibly blank) nodes that act as the range of &apos;hasParticipation&apos; property. Graph patterns for data using this property can either be of the form:
--   ?X :hasParticipation [ :hasRoleType ?RT ; :isPerformedBy ?P; :hasAffiliation ?O ]</rdfs:comment>
         <rdfs:domain rdf:resource="&ecglview;Participant"/>
         <rdfs:range rdf:resource="&ecglview;Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#isPlaceTypeOf -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;isPlaceTypeOf">
+        <rdfs:label>isPlaceTypeOf</rdfs:label>
+        <owl:inverseOf rdf:resource="&ecglview;hasPlaceType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#isPlatformTypeOf -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;isPlatformTypeOf">
+        <rdfs:label>isPlatformTypeOf</rdfs:label>
+        <owl:inverseOf rdf:resource="&ecglview;hasPlatformType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#isPortOf -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;isPortOf">
+        <rdfs:label>isPortOf</rdfs:label>
+        <owl:inverseOf rdf:resource="&ecglview;atPort"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#isPrincipalInvestigatorOf -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;isPrincipalInvestigatorOf">
+        <rdfs:label>isPrincipalInvestigatorOf</rdfs:label>
+        <owl:inverseOf rdf:resource="&ecglview;hasPrincipalInvestigator"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#isProgramOf -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;isProgramOf">
+        <rdfs:label>isProgramOf</rdfs:label>
+        <owl:inverseOf rdf:resource="&ecglview;hasProgram"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#isReferencedBy -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;isReferencedBy">
+        <rdfs:label>isReferencedBy</rdfs:label>
+        <owl:inverseOf rdf:resource="&ecglview;hasReferenceTo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#isRepositoryOf -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;isRepositoryOf">
+        <rdfs:label>isRepositoryOf</rdfs:label>
+        <owl:inverseOf rdf:resource="&ecglview;hasRepository"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#isRoleTypeOf -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;isRoleTypeOf">
+        <rdfs:label>isRoleTypeOf</rdfs:label>
+        <owl:inverseOf rdf:resource="&ecglview;hasRoleType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#isSchedulerOf -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;isSchedulerOf">
+        <rdfs:label>isSchedulerOf</rdfs:label>
+        <owl:inverseOf rdf:resource="&ecglview;hasScheduler"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#isSponsorOf -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;isSponsorOf">
+        <rdfs:label>isSponsorOf</rdfs:label>
+        <owl:inverseOf rdf:resource="&ecglview;hasSponsor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#isStartPortCallOf -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;isStartPortCallOf">
+        <rdfs:label>isStartPortCallOf</rdfs:label>
+        <owl:inverseOf rdf:resource="&ecglview;hasStartPortCall"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#isSubOrganizationOf -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;isSubOrganizationOf">
+        <rdfs:label>isSubOrganizationOf</rdfs:label>
+        <owl:inverseOf rdf:resource="&ecglview;hasSubOrganization"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#isVendorOf -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;isVendorOf">
+        <rdfs:label>isVendorOf</rdfs:label>
+        <owl:inverseOf rdf:resource="&ecglview;hasVendor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#isVesselOf -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;isVesselOf">
+        <rdfs:label>isVesselOf</rdfs:label>
+        <owl:inverseOf rdf:resource="&ecglview;hasVessel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#performs -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;performs">
+        <rdfs:label>performs</rdfs:label>
+        <owl:inverseOf rdf:resource="&ecglview;isPerformedBy"/>
     </owl:ObjectProperty>
     
 
@@ -1172,7 +1405,7 @@
 
     <owl:Class rdf:about="&ecglview;Participant">
         <rdfs:label>Participant</rdfs:label>
-        <rdfs:comment>A Person performing a certain RoleType on a Thing - possibly associated with an Organization at the time of participation</rdfs:comment>
+        <rdfs:comment>A reification of the 4-ary relation representing a participation of a Person, who is affiliated to an Organization, in a Cruise with a certain RoleType.</rdfs:comment>
     </owl:Class>
     
 
