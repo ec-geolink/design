@@ -1050,40 +1050,9 @@
 
     <owl:DatatypeProperty rdf:about="&ecglview;hasTimeStamp">
         <rdfs:label>hasTimeStamp</rdfs:label>
-        <rdfs:comment>The domain of this property consists of (possibly blank) nodes that act as the range of &apos;hasStartPortCall&apos;, &apos;hasMidPortCall&apos;, or &apos;hasEndPortCall&apos; properties. Graph patterns for data using this property can either be of the form:
--   ?X :hasStartPortCall [ :atPort ?PL ; :hasTimeStamp ?T ]
--   ?X :hasMidPortCall [ :atPort ?PL ; :hasTimeStamp ?T ]
--   ?X :hasEndPortCall [ :atPort ?PL ; :hasTimeStamp ?T ]</rdfs:comment>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty>
-                            <rdf:Description>
-                                <owl:inverseOf rdf:resource="&ecglview;hasEndPortCall"/>
-                            </rdf:Description>
-                        </owl:onProperty>
-                        <owl:someValuesFrom rdf:resource="&owl;Thing"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty>
-                            <rdf:Description>
-                                <owl:inverseOf rdf:resource="&ecglview;hasMidPortCall"/>
-                            </rdf:Description>
-                        </owl:onProperty>
-                        <owl:someValuesFrom rdf:resource="&owl;Thing"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty>
-                            <rdf:Description>
-                                <owl:inverseOf rdf:resource="&ecglview;hasStartPortCall"/>
-                            </rdf:Description>
-                        </owl:onProperty>
-                        <owl:someValuesFrom rdf:resource="&owl;Thing"/>
-                    </owl:Restriction>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
+        <rdfs:comment>The domain of this property is PortCall that acts as the range of &apos;hasStartPortCall&apos;, &apos;hasMidPortCall&apos;, or &apos;hasEndPortCall&apos; properties.</rdfs:comment>
+        <rdfs:domain rdf:resource="&ecglview;PortCall"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
     </owl:DatatypeProperty>
     
 
