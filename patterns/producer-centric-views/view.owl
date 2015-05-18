@@ -359,6 +359,7 @@
         <rdfs:label>hasFeatureType</rdfs:label>
         <rdfs:domain rdf:resource="&ecglview;Feature"/>
         <rdfs:range rdf:resource="&ecglview;FeatureType"/>
+        <rdfs:subPropertyOf rdf:resource="&ecglview;hasPlaceType"/>
     </owl:ObjectProperty>
     
 
@@ -1677,6 +1678,7 @@
 
     <owl:Class rdf:about="&ecglview;Feature">
         <rdfs:label>Feature</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ecglview;Place"/>
         <rdfs:comment>A significant locality where observations are made.</rdfs:comment>
     </owl:Class>
     
@@ -1686,7 +1688,8 @@
 
     <owl:Class rdf:about="&ecglview;FeatureType">
         <rdfs:label>FeatureType</rdfs:label>
-        <rdfs:comment>The type of spatial feature - linestring, multipoint, etc.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="&ecglview;PlaceType"/>
+        <rdfs:comment>The type of spatial feature - from gazetteer</rdfs:comment>
     </owl:Class>
     
 
