@@ -141,6 +141,22 @@
     
 
 
+    <!-- http://schema.geolink.org/dev/voc/local#roletype_collector -->
+
+    <owl:Class rdf:about="&glvoc_local;roletype_collector">
+        <rdfs:subClassOf rdf:resource="&glview;Participant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/local#roletype_contact -->
+
+    <owl:Class rdf:about="&glvoc_local;roletype_contact">
+        <rdfs:subClassOf rdf:resource="&glview;Participant"/>
+    </owl:Class>
+    
+
+
     <!-- http://schema.geolink.org/dev/voc/local#roletype_contributor -->
 
     <owl:Class rdf:about="&glvoc_local;roletype_contributor">
@@ -376,6 +392,22 @@
     
 
 
+    <!-- http://schema.geolink.org/dev/voc/local#roletype_collector -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_local;roletype_collector">
+        <rdf:type rdf:resource="&glview;RoleType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/local#roletype_contact -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_local;roletype_contact">
+        <rdf:type rdf:resource="&glview;RoleType"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://schema.geolink.org/dev/voc/local#roletype_contributor -->
 
     <owl:NamedIndividual rdf:about="&glvoc_local;roletype_contributor">
@@ -597,6 +629,9 @@
     <rdf:Description rdf:about="&glvoc_local;roletype_observer_foreign">
         <rdfs:label>Role: Observer, Foreign</rdfs:label>
     </rdf:Description>
+    <rdf:Description rdf:about="&glvoc_local;roletype_collector">
+        <rdfs:comment>Role: Collector (used by PhysicalSample)</rdfs:comment>
+    </rdf:Description>
     <rdf:Description rdf:about="&glvoc_local;roletype_technician_resident_lead">
         <rdfs:label>Role: Technician, Resident, Lead</rdfs:label>
     </rdf:Description>
@@ -624,6 +659,9 @@
     <rdf:Description rdf:about="&glvoc_local;roletype_other">
         <rdfs:label>Role: Other</rdfs:label>
     </rdf:Description>
+    <rdf:Description rdf:about="&glvoc_local;roletype_contact">
+        <rdfs:label>Role: Contact</rdfs:label>
+    </rdf:Description>
     <rdf:Description rdf:about="&glvoc_local;roletype_scientist_co-chief">
         <rdfs:label>Role: Scientist, Co-Chief</rdfs:label>
     </rdf:Description>
@@ -648,17 +686,6 @@
      -->
 
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&glvoc_local;roletype_principal_investigator"/>
-        <owl:onProperty rdf:resource="&glview;hasRoleType"/>
-        <owl:someValuesFrom>
-            <owl:Class>
-                <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&glvoc_local;roletype_principal_investigator"/>
-                </owl:oneOf>
-            </owl:Class>
-        </owl:someValuesFrom>
-    </owl:Restriction>
-    <owl:Restriction>
         <rdfs:subClassOf rdf:resource="&glvoc_local;roletype_educator"/>
         <owl:onProperty rdf:resource="&glview;hasRoleType"/>
         <owl:someValuesFrom>
@@ -670,23 +697,45 @@
         </owl:someValuesFrom>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&glvoc_local;roletype_contributor"/>
+        <rdfs:subClassOf rdf:resource="&glvoc_local;roletype_rightsholder"/>
         <owl:onProperty rdf:resource="&glview;hasRoleType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&glvoc_local;roletype_contributor"/>
+                    <rdf:Description rdf:about="&glvoc_local;roletype_rightsholder"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&glvoc_local;roletype_scientist_co-chief"/>
+        <rdfs:subClassOf rdf:resource="&glvoc_local;roletype_author"/>
         <owl:onProperty rdf:resource="&glview;hasRoleType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&glvoc_local;roletype_scientist_co-chief"/>
+                    <rdf:Description rdf:about="&glvoc_local;roletype_author"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&glvoc_local;roletype_scientist"/>
+        <owl:onProperty rdf:resource="&glview;hasRoleType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&glvoc_local;roletype_scientist"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&glvoc_local;roletype_editor"/>
+        <owl:onProperty rdf:resource="&glview;hasRoleType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&glvoc_local;roletype_editor"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
@@ -703,12 +752,56 @@
         </owl:someValuesFrom>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&glvoc_local;roletype_program_manager"/>
+        <rdfs:subClassOf rdf:resource="&glvoc_local;roletype_technician_resident_lead"/>
         <owl:onProperty rdf:resource="&glview;hasRoleType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&glvoc_local;roletype_program_manager"/>
+                    <rdf:Description rdf:about="&glvoc_local;roletype_technician_resident_lead"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&glvoc_local;roletype_technician_resident"/>
+        <owl:onProperty rdf:resource="&glview;hasRoleType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&glvoc_local;roletype_technician_resident"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&glvoc_local;roletype_observer_foreign"/>
+        <owl:onProperty rdf:resource="&glview;hasRoleType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&glvoc_local;roletype_observer_foreign"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&glvoc_local;cruisetype_maintenance"/>
+        <owl:onProperty rdf:resource="&glview;hasCruiseType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&glvoc_local;cruisetype_maintenance"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&glvoc_local;roletype_student_graduate"/>
+        <owl:onProperty rdf:resource="&glview;hasRoleType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&glvoc_local;roletype_student_graduate"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
@@ -736,111 +829,34 @@
         </owl:someValuesFrom>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&glvoc_local;roletype_author"/>
+        <rdfs:subClassOf rdf:resource="&glvoc_local;roletype_program_manager"/>
         <owl:onProperty rdf:resource="&glview;hasRoleType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&glvoc_local;roletype_author"/>
+                    <rdf:Description rdf:about="&glvoc_local;roletype_program_manager"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&glvoc_local;roletype_chief_engineer"/>
-        <owl:onProperty rdf:resource="&glview;hasRoleType"/>
-        <owl:someValuesFrom>
-            <owl:Class>
-                <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&glvoc_local;roletype_chief_engineer"/>
-                </owl:oneOf>
-            </owl:Class>
-        </owl:someValuesFrom>
-    </owl:Restriction>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&glvoc_local;roletype_student"/>
-        <owl:onProperty rdf:resource="&glview;hasRoleType"/>
-        <owl:someValuesFrom>
-            <owl:Class>
-                <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&glvoc_local;roletype_student"/>
-                </owl:oneOf>
-            </owl:Class>
-        </owl:someValuesFrom>
-    </owl:Restriction>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&glvoc_local;roletype_scientist_chief"/>
-        <owl:onProperty rdf:resource="&glview;hasRoleType"/>
-        <owl:someValuesFrom>
-            <owl:Class>
-                <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&glvoc_local;roletype_scientist_chief"/>
-                </owl:oneOf>
-            </owl:Class>
-        </owl:someValuesFrom>
-    </owl:Restriction>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&glvoc_local;roletype_co-principal_investigator"/>
-        <owl:onProperty rdf:resource="&glview;hasRoleType"/>
-        <owl:someValuesFrom>
-            <owl:Class>
-                <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&glvoc_local;roletype_co-principal_investigator"/>
-                </owl:oneOf>
-            </owl:Class>
-        </owl:someValuesFrom>
-    </owl:Restriction>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&glvoc_local;roletype_rightsholder"/>
-        <owl:onProperty rdf:resource="&glview;hasRoleType"/>
-        <owl:someValuesFrom>
-            <owl:Class>
-                <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&glvoc_local;roletype_rightsholder"/>
-                </owl:oneOf>
-            </owl:Class>
-        </owl:someValuesFrom>
-    </owl:Restriction>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&glvoc_local;roletype_technician_resident_lead"/>
-        <owl:onProperty rdf:resource="&glview;hasRoleType"/>
-        <owl:someValuesFrom>
-            <owl:Class>
-                <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&glvoc_local;roletype_technician_resident_lead"/>
-                </owl:oneOf>
-            </owl:Class>
-        </owl:someValuesFrom>
-    </owl:Restriction>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&glvoc_local;roletype_creator"/>
-        <owl:onProperty rdf:resource="&glview;hasRoleType"/>
-        <owl:someValuesFrom>
-            <owl:Class>
-                <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&glvoc_local;roletype_creator"/>
-                </owl:oneOf>
-            </owl:Class>
-        </owl:someValuesFrom>
-    </owl:Restriction>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&glvoc_local;cruisetype_transit"/>
+        <rdfs:subClassOf rdf:resource="&glvoc_local;cruisetype_operational"/>
         <owl:onProperty rdf:resource="&glview;hasCruiseType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&glvoc_local;cruisetype_transit"/>
+                    <rdf:Description rdf:about="&glvoc_local;cruisetype_operational"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&glvoc_local;roletype_other"/>
+        <rdfs:subClassOf rdf:resource="&glvoc_local;roletype_principal_investigator"/>
         <owl:onProperty rdf:resource="&glview;hasRoleType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&glvoc_local;roletype_other"/>
+                    <rdf:Description rdf:about="&glvoc_local;roletype_principal_investigator"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
@@ -857,56 +873,111 @@
         </owl:someValuesFrom>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&glvoc_local;cruisetype_maintenance"/>
+        <rdfs:subClassOf rdf:resource="&glvoc_local;roletype_other"/>
+        <owl:onProperty rdf:resource="&glview;hasRoleType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&glvoc_local;roletype_other"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&glvoc_local;roletype_chief_engineer"/>
+        <owl:onProperty rdf:resource="&glview;hasRoleType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&glvoc_local;roletype_chief_engineer"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&glvoc_local;roletype_co-principal_investigator"/>
+        <owl:onProperty rdf:resource="&glview;hasRoleType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&glvoc_local;roletype_co-principal_investigator"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&glvoc_local;roletype_collector"/>
+        <owl:onProperty rdf:resource="&glview;hasRoleType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&glvoc_local;roletype_collector"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&glvoc_local;cruisetype_transit"/>
         <owl:onProperty rdf:resource="&glview;hasCruiseType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&glvoc_local;cruisetype_maintenance"/>
+                    <rdf:Description rdf:about="&glvoc_local;cruisetype_transit"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&glvoc_local;roletype_observer_foreign"/>
+        <rdfs:subClassOf rdf:resource="&glvoc_local;roletype_scientist_co-chief"/>
         <owl:onProperty rdf:resource="&glview;hasRoleType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&glvoc_local;roletype_observer_foreign"/>
+                    <rdf:Description rdf:about="&glvoc_local;roletype_scientist_co-chief"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&glvoc_local;roletype_captain"/>
+        <rdfs:subClassOf rdf:resource="&glvoc_local;roletype_scientist_chief"/>
         <owl:onProperty rdf:resource="&glview;hasRoleType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&glvoc_local;roletype_captain"/>
+                    <rdf:Description rdf:about="&glvoc_local;roletype_scientist_chief"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&glvoc_local;roletype_editor"/>
+        <rdfs:subClassOf rdf:resource="&glvoc_local;roletype_creator"/>
         <owl:onProperty rdf:resource="&glview;hasRoleType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&glvoc_local;roletype_editor"/>
+                    <rdf:Description rdf:about="&glvoc_local;roletype_creator"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&glvoc_local;roletype_scientist"/>
+        <rdfs:subClassOf rdf:resource="&glvoc_local;roletype_contact"/>
         <owl:onProperty rdf:resource="&glview;hasRoleType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&glvoc_local;roletype_scientist"/>
+                    <rdf:Description rdf:about="&glvoc_local;roletype_contact"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&glvoc_local;roletype_student"/>
+        <owl:onProperty rdf:resource="&glview;hasRoleType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&glvoc_local;roletype_student"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
@@ -923,34 +994,23 @@
         </owl:someValuesFrom>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&glvoc_local;roletype_student_graduate"/>
+        <rdfs:subClassOf rdf:resource="&glvoc_local;roletype_contributor"/>
         <owl:onProperty rdf:resource="&glview;hasRoleType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&glvoc_local;roletype_student_graduate"/>
+                    <rdf:Description rdf:about="&glvoc_local;roletype_contributor"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&glvoc_local;roletype_technician_resident"/>
+        <rdfs:subClassOf rdf:resource="&glvoc_local;roletype_captain"/>
         <owl:onProperty rdf:resource="&glview;hasRoleType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&glvoc_local;roletype_technician_resident"/>
-                </owl:oneOf>
-            </owl:Class>
-        </owl:someValuesFrom>
-    </owl:Restriction>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="&glvoc_local;cruisetype_operational"/>
-        <owl:onProperty rdf:resource="&glview;hasCruiseType"/>
-        <owl:someValuesFrom>
-            <owl:Class>
-                <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&glvoc_local;cruisetype_operational"/>
+                    <rdf:Description rdf:about="&glvoc_local;roletype_captain"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>

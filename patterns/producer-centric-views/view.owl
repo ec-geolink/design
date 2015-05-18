@@ -48,15 +48,6 @@
     
 
 
-    <!-- http://www.opengis.net/ont/geosparql#gmlLiteral -->
-
-    <rdfs:Datatype rdf:about="&geosparql;gmlLiteral">
-        <rdfs:label>geosparql:gmlLiteral</rdfs:label>
-        <rdfs:comment>Enables the use of Geography Markup Language strings</rdfs:comment>
-    </rdfs:Datatype>
-    
-
-
     <!-- http://www.opengis.net/ont/geosparql#wktLiteral -->
 
     <rdfs:Datatype rdf:about="&geosparql;wktLiteral">
@@ -133,6 +124,24 @@
     
 
 
+    <!-- http://schema.geolink.org/dev/view#hasAuthor -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;hasAuthor">
+        <rdfs:label>hasAuthor</rdfs:label>
+        <rdfs:domain rdf:resource="&ecglview;Publication"/>
+        <owl:inverseOf rdf:resource="&ecglview;isAuthorOf"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ecglview;Organization"/>
+                    <rdf:Description rdf:about="&ecglview;Person"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://schema.geolink.org/dev/view#hasAward -->
 
     <owl:ObjectProperty rdf:about="&ecglview;hasAward">
@@ -143,12 +152,122 @@
     
 
 
+    <!-- http://schema.geolink.org/dev/view#hasChiefScientist -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;hasChiefScientist">
+        <rdfs:label>hasChiefScientist</rdfs:label>
+        <rdfs:domain rdf:resource="&ecglview;Cruise"/>
+        <rdfs:range rdf:resource="&ecglview;Person"/>
+        <owl:inverseOf rdf:resource="&ecglview;isChiefScientistOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#hasCoChiefScientist -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;hasCoChiefScientist">
+        <rdfs:label>hasCoChiefScientist</rdfs:label>
+        <rdfs:domain rdf:resource="&ecglview;Cruise"/>
+        <rdfs:range rdf:resource="&ecglview;Person"/>
+        <owl:inverseOf rdf:resource="&ecglview;isCoChiefScientistOf"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://schema.geolink.org/dev/view#hasCoPrincipalInvestigator -->
 
     <owl:ObjectProperty rdf:about="&ecglview;hasCoPrincipalInvestigator">
         <rdfs:label>hasCoPrincipalInvestigator</rdfs:label>
-        <rdfs:domain rdf:resource="&ecglview;Award"/>
         <rdfs:range rdf:resource="&ecglview;Person"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ecglview;Award"/>
+                    <rdf:Description rdf:about="&ecglview;Program"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#hasCollector -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;hasCollector">
+        <rdfs:label>hasCollector</rdfs:label>
+        <rdfs:range rdf:resource="&ecglview;Person"/>
+        <rdfs:domain rdf:resource="&ecglview;PhysicalSample"/>
+        <owl:inverseOf rdf:resource="&ecglview;isCollectorOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#hasContact -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;hasContact">
+        <rdfs:label>hasContact</rdfs:label>
+        <owl:inverseOf rdf:resource="&ecglview;isContactOf"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ecglview;Dataset"/>
+                    <rdf:Description rdf:about="&ecglview;DigitalObject"/>
+                    <rdf:Description rdf:about="&ecglview;PhysicalSample"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ecglview;Organization"/>
+                    <rdf:Description rdf:about="&ecglview;Person"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#hasContributor -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;hasContributor">
+        <rdfs:label>hasContributor</rdfs:label>
+        <rdfs:range rdf:resource="&ecglview;Person"/>
+        <owl:inverseOf rdf:resource="&ecglview;isContributorOf"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ecglview;Dataset"/>
+                    <rdf:Description rdf:about="&ecglview;DigitalObject"/>
+                    <rdf:Description rdf:about="&ecglview;PhysicalSample"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#hasCreator -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;hasCreator">
+        <rdfs:label>hasCreator</rdfs:label>
+        <owl:inverseOf rdf:resource="&ecglview;isCreatorOf"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ecglview;Organization"/>
+                    <rdf:Description rdf:about="&ecglview;Person"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ecglview;Dataset"/>
+                    <rdf:Description rdf:about="&ecglview;DigitalObject"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
     </owl:ObjectProperty>
     
 
@@ -187,6 +306,37 @@
         <rdfs:label>hasDataset</rdfs:label>
         <rdfs:range rdf:resource="&ecglview;Dataset"/>
         <rdfs:domain rdf:resource="&ecglview;PhysicalSample"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#hasEditor -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;hasEditor">
+        <rdfs:label>hasEditor</rdfs:label>
+        <rdfs:range rdf:resource="&ecglview;Person"/>
+        <owl:inverseOf rdf:resource="&ecglview;isEditorOf"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ecglview;Dataset"/>
+                    <rdf:Description rdf:about="&ecglview;DigitalObject"/>
+                    <rdf:Description rdf:about="&ecglview;PhysicalSample"/>
+                    <rdf:Description rdf:about="&ecglview;Publication"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#hasEducator -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;hasEducator">
+        <rdfs:label>hasEducator</rdfs:label>
+        <rdfs:domain rdf:resource="&ecglview;Cruise"/>
+        <rdfs:range rdf:resource="&ecglview;Person"/>
+        <owl:inverseOf rdf:resource="&ecglview;isEducatorIn"/>
     </owl:ObjectProperty>
     
 
@@ -279,6 +429,17 @@
     
 
 
+    <!-- http://schema.geolink.org/dev/view#hasObserver -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;hasObserver">
+        <rdfs:label>hasObserver</rdfs:label>
+        <rdfs:domain rdf:resource="&ecglview;Cruise"/>
+        <rdfs:range rdf:resource="&ecglview;Person"/>
+        <owl:inverseOf rdf:resource="&ecglview;isObserverIn"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://schema.geolink.org/dev/view#hasOperator -->
 
     <owl:ObjectProperty rdf:about="&ecglview;hasOperator">
@@ -355,8 +516,15 @@
 
     <owl:ObjectProperty rdf:about="&ecglview;hasPrincipalInvestigator">
         <rdfs:label>hasPrincipalInvestigator</rdfs:label>
-        <rdfs:domain rdf:resource="&ecglview;Award"/>
         <rdfs:range rdf:resource="&ecglview;Person"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ecglview;Award"/>
+                    <rdf:Description rdf:about="&ecglview;Program"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
     </owl:ObjectProperty>
     
 
@@ -367,6 +535,24 @@
         <rdfs:label>hasProgram</rdfs:label>
         <rdfs:domain rdf:resource="&ecglview;Cruise"/>
         <rdfs:range rdf:resource="&ecglview;Program"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#hasProgramManager -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;hasProgramManager">
+        <rdfs:label>hasProgramManager</rdfs:label>
+        <rdfs:range rdf:resource="&ecglview;Person"/>
+        <owl:inverseOf rdf:resource="&ecglview;isProgramManagerOf"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ecglview;Award"/>
+                    <rdf:Description rdf:about="&ecglview;Program"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
     </owl:ObjectProperty>
     
 
@@ -409,6 +595,33 @@
     
 
 
+    <!-- http://schema.geolink.org/dev/view#hasRightsHolder -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;hasRightsHolder">
+        <rdfs:label>hasRightsHolder</rdfs:label>
+        <owl:inverseOf rdf:resource="&ecglview;isRightsHolderOf"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ecglview;Organization"/>
+                    <rdf:Description rdf:about="&ecglview;Person"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ecglview;Dataset"/>
+                    <rdf:Description rdf:about="&ecglview;DigitalObject"/>
+                    <rdf:Description rdf:about="&ecglview;PhysicalSample"/>
+                    <rdf:Description rdf:about="&ecglview;Publication"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://schema.geolink.org/dev/view#hasRoleType -->
 
     <owl:ObjectProperty rdf:about="&ecglview;hasRoleType">
@@ -427,6 +640,17 @@
         <rdfs:label>hasScheduler</rdfs:label>
         <rdfs:domain rdf:resource="&ecglview;Cruise"/>
         <rdfs:range rdf:resource="&ecglview;Organization"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#hasScientist -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;hasScientist">
+        <rdfs:label>hasScientist</rdfs:label>
+        <rdfs:domain rdf:resource="&ecglview;Cruise"/>
+        <rdfs:range rdf:resource="&ecglview;Person"/>
+        <owl:inverseOf rdf:resource="&ecglview;isScientistOf"/>
     </owl:ObjectProperty>
     
 
@@ -453,12 +677,34 @@
     
 
 
+    <!-- http://schema.geolink.org/dev/view#hasStudent -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;hasStudent">
+        <rdfs:label>hasStudent</rdfs:label>
+        <rdfs:domain rdf:resource="&ecglview;Cruise"/>
+        <rdfs:range rdf:resource="&ecglview;Person"/>
+        <owl:inverseOf rdf:resource="&ecglview;isStudentIn"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://schema.geolink.org/dev/view#hasSubOrganization -->
 
     <owl:ObjectProperty rdf:about="&ecglview;hasSubOrganization">
         <rdfs:label>hasSubOrganization</rdfs:label>
         <rdfs:range rdf:resource="&ecglview;Organization"/>
         <rdfs:domain rdf:resource="&ecglview;Organization"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#hasTechnician -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;hasTechnician">
+        <rdfs:label>hasTechnician</rdfs:label>
+        <rdfs:domain rdf:resource="&ecglview;Cruise"/>
+        <rdfs:range rdf:resource="&ecglview;Person"/>
+        <owl:inverseOf rdf:resource="&ecglview;isTechnicianOf"/>
     </owl:ObjectProperty>
     
 
@@ -492,11 +738,35 @@
     
 
 
+    <!-- http://schema.geolink.org/dev/view#isAuthorOf -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;isAuthorOf">
+        <rdfs:label>isAuthorOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://schema.geolink.org/dev/view#isAwardOf -->
 
     <owl:ObjectProperty rdf:about="&ecglview;isAwardOf">
         <rdfs:label>isAwardOf</rdfs:label>
         <owl:inverseOf rdf:resource="&ecglview;hasAward"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#isChiefScientistOf -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;isChiefScientistOf">
+        <rdfs:label>isChiefScientistOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#isCoChiefScientistOf -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;isCoChiefScientistOf">
+        <rdfs:label>isCoChiefScientistOf</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -510,10 +780,42 @@
     
 
 
+    <!-- http://schema.geolink.org/dev/view#isCollectorOf -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;isCollectorOf">
+        <rdfs:label>isCollectorOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#isContactOf -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;isContactOf">
+        <rdfs:label>isContactOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#isContributorOf -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;isContributorOf">
+        <rdfs:label>isContributorOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://schema.geolink.org/dev/view#isCountryOf -->
 
     <owl:ObjectProperty rdf:about="&ecglview;isCountryOf">
         <rdfs:label>isCountryOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#isCreatorOf -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;isCreatorOf">
+        <rdfs:label>isCreatorOf</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -541,6 +843,22 @@
     <owl:ObjectProperty rdf:about="&ecglview;isDatasetOf">
         <rdfs:label>isDatasetOf</rdfs:label>
         <owl:inverseOf rdf:resource="&ecglview;hasDataset"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#isEditorOf -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;isEditorOf">
+        <rdfs:label>isEditorOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#isEducatorIn -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;isEducatorIn">
+        <rdfs:label>isEducatorIn</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -604,6 +922,14 @@
     <owl:ObjectProperty rdf:about="&ecglview;isMidPortCallOf">
         <rdfs:label>isMidPortCallOf</rdfs:label>
         <owl:inverseOf rdf:resource="&ecglview;hasMidPortCall"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#isObserverIn -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;isObserverIn">
+        <rdfs:label>isObserverIn</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -691,6 +1017,14 @@
     
 
 
+    <!-- http://schema.geolink.org/dev/view#isProgramManagerOf -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;isProgramManagerOf">
+        <rdfs:label>isProgramManagerOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://schema.geolink.org/dev/view#isProgramOf -->
 
     <owl:ObjectProperty rdf:about="&ecglview;isProgramOf">
@@ -718,6 +1052,14 @@
     
 
 
+    <!-- http://schema.geolink.org/dev/view#isRightsHolderOf -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;isRightsHolderOf">
+        <rdfs:label>isRightsHolderOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://schema.geolink.org/dev/view#isRoleTypeOf -->
 
     <owl:ObjectProperty rdf:about="&ecglview;isRoleTypeOf">
@@ -732,6 +1074,14 @@
     <owl:ObjectProperty rdf:about="&ecglview;isSchedulerOf">
         <rdfs:label>isSchedulerOf</rdfs:label>
         <owl:inverseOf rdf:resource="&ecglview;hasScheduler"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#isScientistOf -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;isScientistOf">
+        <rdfs:label>isScientistOf</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -754,11 +1104,27 @@
     
 
 
+    <!-- http://schema.geolink.org/dev/view#isStudentIn -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;isStudentIn">
+        <rdfs:label>isStudentIn</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://schema.geolink.org/dev/view#isSubOrganizationOf -->
 
     <owl:ObjectProperty rdf:about="&ecglview;isSubOrganizationOf">
         <rdfs:label>isSubOrganizationOf</rdfs:label>
         <owl:inverseOf rdf:resource="&ecglview;hasSubOrganization"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/view#isTechnicianOf -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;isTechnicianOf">
+        <rdfs:label>isTechnicianOf</rdfs:label>
     </owl:ObjectProperty>
     
 
