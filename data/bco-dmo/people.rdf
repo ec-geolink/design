@@ -47,6 +47,7 @@
     <glview:nameFamily rdf:datatype="xsd:string">Groman</glview:nameFamily>
     <glview:nameMiddle rdf:datatype="xsd:string">C.</glview:nameMiddle>
     <glview:namePrefix rdf:datatype="xsd:string">Mr</glview:namePrefix>
+    <glview:identifier rdf:datatype="xsd:anyURI">http://orcid.org/0000-0002-4181-3935</glview:identifier>
   </rdf:Description>
   <rdf:Description rdf:about="http://data.geolink.org/id/bcodmo/person/50381">
     <owl:sameAs rdf:resource="http://lod.bco-dmo.org/id/person/50381"/>
@@ -200,6 +201,7 @@
     <rdfs:label rdf:datatype="xsd:string">Nancy Copley</rdfs:label>
     <glview:nameGiven rdf:datatype="xsd:string">Nancy</glview:nameGiven>
     <glview:nameFamily rdf:datatype="xsd:string">Copley</glview:nameFamily>
+    <glview:identifier rdf:datatype="xsd:anyURI">http://orcid.org/0000-0003-1473-8789</glview:identifier>
   </rdf:Description>
   <rdf:Description rdf:about="http://data.geolink.org/id/bcodmo/person/50397">
     <owl:sameAs rdf:resource="http://lod.bco-dmo.org/id/person/50397"/>
@@ -803,7 +805,8 @@
     <glview:nameGiven rdf:datatype="xsd:string">Peter</glview:nameGiven>
     <glview:nameFamily rdf:datatype="xsd:string">Wiebe</glview:nameFamily>
     <glview:namePrefix rdf:datatype="xsd:string">Dr</glview:namePrefix>
-    <skos:exactMatch rdf:resource="http://data.geolink.org/id/person/a5d7c98c-1969-491d-af66-e665abf1aa16"/>
+    <glview:identifier rdf:datatype="xsd:anyURI">http://orcid.org/0000-0002-6059-4651</glview:identifier>
+    <glview:matches rdf:resource="http://data.geolink.org/id/person/a5d7c98c-1969-491d-af66-e665abf1aa16"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://data.geolink.org/id/bcodmo/person/50455">
     <owl:sameAs rdf:resource="http://lod.bco-dmo.org/id/person/50455"/>
@@ -1507,7 +1510,7 @@
     <glview:nameFamily rdf:datatype="xsd:string">Buesseler</glview:nameFamily>
     <glview:nameMiddle rdf:datatype="xsd:string">O.</glview:nameMiddle>
     <glview:namePrefix rdf:datatype="xsd:string">Dr</glview:namePrefix>
-    <skos:exactMatch rdf:resource="http://data.geolink.org/id/person/1171fc84-9cc2-4aae-92e7-8f4a6824e903"/>
+    <glview:matches rdf:resource="http://data.geolink.org/id/person/1171fc84-9cc2-4aae-92e7-8f4a6824e903"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://data.geolink.org/id/bcodmo/person/50523">
     <owl:sameAs rdf:resource="http://lod.bco-dmo.org/id/person/50523"/>
@@ -1752,7 +1755,7 @@
     <glview:nameGiven rdf:datatype="xsd:string">Cindy</glview:nameGiven>
     <glview:nameFamily rdf:datatype="xsd:string">Lee</glview:nameFamily>
     <glview:namePrefix rdf:datatype="xsd:string">Dr</glview:namePrefix>
-    <skos:exactMatch rdf:resource="http://data.geolink.org/id/person/b8fde43b-0f37-46d3-bbbf-87d7be8a1c41"/>
+    <glview:matches rdf:resource="http://data.geolink.org/id/person/b8fde43b-0f37-46d3-bbbf-87d7be8a1c41"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://data.geolink.org/id/bcodmo/person/50547">
     <owl:sameAs rdf:resource="http://lod.bco-dmo.org/id/person/50547"/>
@@ -2038,7 +2041,7 @@
     <glview:nameGiven rdf:datatype="xsd:string">Craig</glview:nameGiven>
     <glview:nameFamily rdf:datatype="xsd:string">Carlson</glview:nameFamily>
     <glview:namePrefix rdf:datatype="xsd:string">Dr</glview:namePrefix>
-    <skos:exactMatch rdf:resource="http://data.geolink.org/id/person/0782bbc0-cd4f-4492-9a2b-7e03a652cd53"/>
+    <glview:matches rdf:resource="http://data.geolink.org/id/person/0782bbc0-cd4f-4492-9a2b-7e03a652cd53"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://data.geolink.org/id/bcodmo/person/50576">
     <owl:sameAs rdf:resource="http://lod.bco-dmo.org/id/person/50576"/>
@@ -3817,6 +3820,7 @@
     <glview:nameFamily rdf:datatype="xsd:string">Johnson</glview:nameFamily>
     <glview:nameMiddle rdf:datatype="xsd:string">I.</glview:nameMiddle>
     <glview:namePrefix rdf:datatype="xsd:string">Dr</glview:namePrefix>
+    <glview:identifier rdf:datatype="xsd:anyURI">http://orcid.org/0000-0003-0793-8512</glview:identifier>
   </rdf:Description>
   <rdf:Description rdf:about="http://data.geolink.org/id/bcodmo/person/50750">
     <owl:sameAs rdf:resource="http://lod.bco-dmo.org/id/person/50750"/>
@@ -5514,7 +5518,7 @@
     <glview:nameGiven rdf:datatype="xsd:string">Mary Jane</glview:nameGiven>
     <glview:nameFamily rdf:datatype="xsd:string">Perry</glview:nameFamily>
     <glview:namePrefix rdf:datatype="xsd:string">Dr</glview:namePrefix>
-    <skos:exactMatch rdf:resource="http://data.geolink.org/id/person/0435c654-25c1-4583-a22a-88c0e799d7e3"/>
+    <glview:matches rdf:resource="http://data.geolink.org/id/person/0435c654-25c1-4583-a22a-88c0e799d7e3"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://data.geolink.org/id/bcodmo/person/50919">
     <owl:sameAs rdf:resource="http://lod.bco-dmo.org/id/person/50919"/>
@@ -6193,7 +6197,7 @@
     <glview:nameGiven rdf:datatype="xsd:string">Mak</glview:nameGiven>
     <glview:nameFamily rdf:datatype="xsd:string">Saito</glview:nameFamily>
     <glview:namePrefix rdf:datatype="xsd:string">Dr</glview:namePrefix>
-    <skos:exactMatch rdf:resource="http://data.geolink.org/id/person/4b416d56-06eb-4ee6-b931-a411789448d4"/>
+    <glview:matches rdf:resource="http://data.geolink.org/id/person/4b416d56-06eb-4ee6-b931-a411789448d4"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://data.geolink.org/id/bcodmo/person/50986">
     <owl:sameAs rdf:resource="http://lod.bco-dmo.org/id/person/50986"/>
@@ -11352,6 +11356,7 @@
     <rdfs:label rdf:datatype="xsd:string">Shannon Rauch</rdfs:label>
     <glview:nameGiven rdf:datatype="xsd:string">Shannon</glview:nameGiven>
     <glview:nameFamily rdf:datatype="xsd:string">Rauch</glview:nameFamily>
+    <glview:identifier rdf:datatype="xsd:anyURI">http://orcid.org/0000-0002-9081-1004</glview:identifier>
   </rdf:Description>
   <rdf:Description rdf:about="http://data.geolink.org/id/bcodmo/person/51499">
     <owl:sameAs rdf:resource="http://lod.bco-dmo.org/id/person/51499"/>
@@ -11859,6 +11864,7 @@
     <glview:nameGiven rdf:datatype="xsd:string">Danie</glview:nameGiven>
     <glview:nameFamily rdf:datatype="xsd:string">Kinkade</glview:nameFamily>
     <glview:namePrefix rdf:datatype="xsd:string">Ms</glview:namePrefix>
+    <glview:identifier rdf:datatype="xsd:anyURI">http://orcid.org/0000-0002-1134-7347</glview:identifier>
   </rdf:Description>
   <rdf:Description rdf:about="http://data.geolink.org/id/bcodmo/person/51550">
     <owl:sameAs rdf:resource="http://lod.bco-dmo.org/id/person/51550"/>
@@ -13228,7 +13234,7 @@
     <glview:nameFamily rdf:datatype="xsd:string">Murray</glview:nameFamily>
     <glview:nameMiddle rdf:datatype="xsd:string">W</glview:nameMiddle>
     <glview:namePrefix rdf:datatype="xsd:string">Dr</glview:namePrefix>
-    <skos:exactMatch rdf:resource="http://data.geolink.org/id/person/bf402132-8c19-409e-8dc1-864700efb838"/>
+    <glview:matches rdf:resource="http://data.geolink.org/id/person/bf402132-8c19-409e-8dc1-864700efb838"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://data.geolink.org/id/bcodmo/person/51687">
     <owl:sameAs rdf:resource="http://lod.bco-dmo.org/id/person/51687"/>
@@ -13367,7 +13373,7 @@
     <glview:nameFamily rdf:datatype="xsd:string">German</glview:nameFamily>
     <glview:nameMiddle rdf:datatype="xsd:string">R.</glview:nameMiddle>
     <glview:namePrefix rdf:datatype="xsd:string">Dr</glview:namePrefix>
-    <skos:exactMatch rdf:resource="http://data.geolink.org/id/person/ceaf16ff-0bf8-474f-ae42-309452911fc7"/>
+    <glview:matches rdf:resource="http://data.geolink.org/id/person/ceaf16ff-0bf8-474f-ae42-309452911fc7"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://data.geolink.org/id/bcodmo/person/51701">
     <owl:sameAs rdf:resource="http://lod.bco-dmo.org/id/person/51701"/>
