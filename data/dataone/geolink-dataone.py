@@ -80,42 +80,44 @@ def addDataset(model, doc, ns, personhash):
     table = {ord(c): None for c in string.punctuation}
     originlist = doc.findall("./arr[@name='origin']/str")
     for creatornode in originlist:
-        creator = creatornode.text
+        c_text = creatornode.text
+        c_fields = unicode(c_text).split()
+        creator = c_fields[0].translate(table) + ' ' + c_fields[len(c_fields)-1].translate(table)
         if (creator not in personhash):
             # Add it
             newid = uuid.uuid4()
             p_uuid = newid.hex
-            p_orcid = "http://myfakeorcid.org/" + newid.hex
-            p_data = [p_uuid, p_orcid]
+            p_dataone_id = "http://data.geolink.org/id/dataone/" + newid.hex
+            person_node = RDF.Uri(p_dataone_id)
+            #person_node = RDF.Node(blank=p_uuid)
+            addStatement(model, person_node, "http://www.w3.org/1999/02/22-rdf-syntax-ns#type", RDF.Uri(ns["glview"]+"Person"))
+            addStatement(model, person_node, "http://www.w3.org/1999/02/22-rdf-syntax-ns#type", RDF.Uri(ns["foaf"]+"Person"))
+            #addStatement(model, person_node, ns["foaf"]+"name", creator)
+            addStatement(model, person_node, ns["glview"]+"nameFull", creator)
+            
+            # Match GeoLink Persons
+            print '.',
+            sys.stdout.flush()
+            normal_creator = c_fields[0].translate(table) + '.*' + c_fields[len(c_fields)-1].translate(table)
+            searchRegex = re.compile('('+normal_creator+')').search
+            k = None
+            k = findRegexInList(glpeople.keys(),searchRegex)
+            if (k):
+                addStatement(model, person_node, RDF.Uri(ns["glview"]+"matches"), RDF.Uri(glpeople[k[0]]))
+
+            p_data = [p_uuid, p_dataone_id, person_node]
             personhash[creator] = p_data
         else:
             # Look it up
             p_data = personhash[creator]
             p_uuid = p_data[0]
-            p_orcid = p_data[1]
+            p_dataone_id = p_data[1]
+            person_node = p_data[2]
             
-        # Person
-        person_blank_node = RDF.Node(blank=p_uuid)
-        addStatement(model, person_blank_node, "http://www.w3.org/1999/02/22-rdf-syntax-ns#type", RDF.Uri(ns["glview"]+"Person"))
-        addStatement(model, person_blank_node, "http://www.w3.org/1999/02/22-rdf-syntax-ns#type", RDF.Uri(ns["foaf"]+"Person"))
-        #addStatement(model, person_blank_node, ns["foaf"]+"name", creator)
-        addStatement(model, person_blank_node, ns["glview"]+"nameFull", creator)
-        addStatement(model, RDF.Uri(d1base+identifier), RDF.Uri(ns["glview"]+"hasParticipant"), person_blank_node)
-        addStatement(model, RDF.Uri(d1base+identifier), RDF.Uri(ns["dcterms"]+"creator"), person_blank_node)
+        # Add Person as creator participant in Dataset
+        addStatement(model, RDF.Uri(d1base+identifier), RDF.Uri(ns["glview"]+"hasParticipant"), person_node)
+        addStatement(model, RDF.Uri(d1base+identifier), RDF.Uri(ns["dcterms"]+"creator"), person_node)
         
-        # Match GeoLink Persons
-        #print "Processing: ", creator
-        print '.',
-        sys.stdout.flush()
-        c_fields = unicode(creator).split()
-        normal_creator = c_fields[0].translate(table) + '.*' + c_fields[len(c_fields)-1].translate(table)
-        #print "    Lookup: ", normal_creator
-        searchRegex = re.compile('('+normal_creator+')').search
-        k = None
-        k = findRegexInList(glpeople.keys(),searchRegex)
-        if (k):
-            addStatement(model, person_blank_node, RDF.Uri(ns["glview"]+"matches"), RDF.Uri(glpeople[k[0]]))
-
         #pi_node = RDF.Node(RDF.Uri(p_orcid))
         #addStatement(model, pi_node, RDF.Uri("http://www.w3.org/1999/02/22-rdf-syntax-ns#type"), RDF.Uri(ns["datacite"]+"PersonalIdentifier"))       
         #addStatement(model, pi_node, RDF.Uri(ns["datacite"]+"usesIdentifierScheme"), RDF.Uri(ns["datacite"]+"orcid"))       
@@ -259,10 +261,11 @@ def main():
             processPage(model, ns, personhash, page, pagesize=pagesize )
             print str(model.size())
             sys.stdout.flush()
+            serialize(model, ns, "dataone-example-lod.ttl", "turtle")
 
-    print("Model size before serialize: " + str(model.size()))
+    print("Final model size: " + str(model.size()))
     serialize(model, ns, "dataone-example-lod.ttl", "turtle")
-    serialize(model, ns, "dataone-example-lod.rdf", "rdfxml")
+    #serialize(model, ns, "dataone-example-lod.rdf", "rdfxml")
 
 if __name__ == "__main__":
     import RDF
