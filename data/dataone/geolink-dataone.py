@@ -6,8 +6,8 @@
 #
 # Matt Jones, NCEAS 2015
 
-def getDataList():
-    d1query = "https://cn.dataone.org/cn/v1/query/solr/?fl=identifier,title,abstract,author,authorLastName,origin,submitter,rightsHolder,documents,resourceMap,authoritativeMN&q=formatType:METADATA+AND+(datasource:*LTER+OR+datasource:*KNB+OR+datasource:*PISCO)+AND+-obsoletedBy:*&rows=2000&start=0"
+def getDataList(page, pagesize):
+    d1query = "https://cn.dataone.org/cn/v1/query/solr/?fl=identifier,title,abstract,author,authorLastName,origin,submitter,rightsHolder,documents,resourceMap,authoritativeMN&q=formatType:METADATA+AND+(datasource:*LTER+OR+datasource:*KNB+OR+datasource:*PISCO)+AND+-obsoletedBy:*&rows=10&start=0"
     #d1query = "https://cn.dataone.org/cn/v1/query/solr/?fl=identifier,title,author,authorLastName,origin,submitter,rightsHolder,relatedOrganizations,contactOrganization,documents,resourceMap&q=formatType:METADATA&rows=100&start=20000"
     res = urllib2.urlopen(d1query)
     content = res.read()
@@ -109,7 +109,7 @@ def addDataset(model, doc, ns, personhash):
         #normal_creator = creator.translate(table, string.punctuation).replace(' ', '.*')
         print "    Lookup: ", normal_creator
         searchRegex = re.compile('('+normal_creator+')').search
-        k = findRegexInList(ppl.keys(),searchRegex)
+        k = findRegexInList(glpeople.keys(),searchRegex)
         if (k):
             addStatement(model, person_blank_node, RDF.Uri(ns["glview"]+"matches"), RDF.Uri(glpeople[k[0]]))
 
@@ -214,6 +214,16 @@ def serialize(model, ns, filename, format):
         serializer.set_namespace(prefix, RDF.Uri(ns[prefix]))
     serializer.serialize_model_to_file(filename, model)
 
+def processPage(model, ns, personhash, page, pagesize=1000):
+    xmldoc = getDataList(page, pagesize)
+    resultnode = xmldoc.findall(".//result")
+    num_results = resultnode[0].get('numFound')
+    doclist = xmldoc.findall(".//doc")
+    print(len(doclist))
+    for d in doclist:
+        None
+        addDataset(model, d, ns, personhash)
+
 def main():
     model = createModel()
     mbj_uuid = uuid.uuid4()
@@ -232,12 +242,16 @@ def main():
         "glview": "http://schema.geolink.org/dev/view#"
     }
     nodes = addRepositories(model, ns)
-    xmldoc = getDataList()
-    doclist = xmldoc.findall(".//doc")
-    print(len(doclist))
-    for d in doclist:
-        None
-        addDataset(model, d, ns, personhash)
+
+    processPage(model, ns, personhash, 1, pagesize=1000 )
+    #xmldoc = getDataList()
+    #resultnode = xmldoc.findall(".//result")
+    #num_results = resultnode[0].get('numFound')
+    #doclist = xmldoc.findall(".//doc")
+    #print(len(doclist))
+    #for d in doclist:
+        #None
+        #addDataset(model, d, ns, personhash)
         
     print("Model size before serialize: " + str(model.size()))
     serialize(model, ns, "dataone-example-lod.ttl", "turtle")
