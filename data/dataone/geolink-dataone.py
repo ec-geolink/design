@@ -74,6 +74,9 @@ def addDataset(model, doc, ns, personhash):
         addStatement(model, d1base+identifier, ns["glview"]+"description", abstract_element.text)
 
     # Creators
+    glpeople = loadPeople()
+    #table = string.maketrans("","")
+    table = {ord(c): None for c in string.punctuation}
     originlist = doc.findall("./arr[@name='origin']/str")
     for creatornode in originlist:
         creator = creatornode.text
@@ -99,6 +102,22 @@ def addDataset(model, doc, ns, personhash):
         addStatement(model, RDF.Uri(d1base+identifier), RDF.Uri(ns["glview"]+"hasParticipant"), person_blank_node)
         addStatement(model, RDF.Uri(d1base+identifier), RDF.Uri(ns["dcterms"]+"creator"), person_blank_node)
         
+        # Match GeoLink Persons
+        print "Processing: ", creator
+        c_fields = unicode(creator).split()
+        normal_creator = c_fields[0].translate(table) + '.*' + c_fields[len(c_fields)-1].translate(table)
+        #normal_creator = creator.translate(table, string.punctuation).replace(' ', '.*')
+        print "    Lookup: ", normal_creator
+        searchRegex = re.compile('('+normal_creator+')').search
+        k = findRegexInList(ppl.keys(),searchRegex)
+        if (k):
+            addStatement(model, person_blank_node, RDF.Uri(ns["glview"]+"matches"), RDF.Uri(glpeople[k[0]]))
+
+        #pi_node = RDF.Node(RDF.Uri(p_orcid))
+        #addStatement(model, pi_node, RDF.Uri("http://www.w3.org/1999/02/22-rdf-syntax-ns#type"), RDF.Uri(ns["datacite"]+"PersonalIdentifier"))       
+        #addStatement(model, pi_node, RDF.Uri(ns["datacite"]+"usesIdentifierScheme"), RDF.Uri(ns["datacite"]+"orcid"))       
+        #addStatement(model, RDF.Uri(p_uuid), RDF.Uri(ns["datacite"]+"hasIdentifier"), pi_node)
+
         # ORCID
         #pi_node = RDF.Node(RDF.Uri(p_orcid))
         #addStatement(model, pi_node, RDF.Uri("http://www.w3.org/1999/02/22-rdf-syntax-ns#type"), RDF.Uri(ns["datacite"]+"PersonalIdentifier"))       
@@ -130,6 +149,23 @@ def addDataset(model, doc, ns, personhash):
         # TODO: Add Size
         # TODO: Add Format
     model.sync()
+
+def findRegexInList(list,filter):
+        return [ l for l in list for m in (filter(l),) if m]
+
+def loadPeople():
+    # Read in a CSV file of Geolink URIs for people
+    with open('../geolink/data.geolink.org-id-person.20150518.csv', 'rb') as csvfile:
+        table = string.maketrans("","")
+        
+        reader = csv.reader(csvfile)
+        #for rows in reader:
+            #print rows[2], ' |###| ', rows[1]
+            #mydict = {(rows[2].split())[0] +'.*'+rows[1]:rows[0]}
+        mydict = {(rows[2].split())[0].translate(table, string.punctuation)+' '+rows[1]:rows[0] for rows in reader}
+        #mydict = {rows[1]+'.*'+rows[0]:rows[2] for rows in reader}
+        csvfile.close()
+        return(mydict)
 
 def createModel():
     storage=RDF.Storage(storage_name="hashes", name="geolink", options_string="new='yes',hash-type='memory',dir='.'")
@@ -212,4 +248,7 @@ if __name__ == "__main__":
     import urllib2
     import xml.etree.ElementTree as ET
     import uuid
-    main()
+    import re
+    import csv
+    import string
+    #main()
