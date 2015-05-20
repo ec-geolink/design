@@ -9,7 +9,7 @@
 def getDataList(page, pagesize):
     start = page*pagesize
     d1query = "https://cn.dataone.org/cn/v1/query/solr/?fl=identifier,title,abstract,author,authorLastName,origin,submitter,rightsHolder,documents,resourceMap,authoritativeMN&q=formatType:METADATA+AND+(datasource:*LTER+OR+datasource:*KNB+OR+datasource:*PISCO)+AND+-obsoletedBy:*&rows="+str(pagesize)+"&start="+str(start)
-    #d1query = "https://cn.dataone.org/cn/v1/query/solr/?fl=identifier,title,author,authorLastName,origin,submitter,rightsHolder,relatedOrganizations,contactOrganization,documents,resourceMap&q=formatType:METADATA&rows=100&start=20000"
+    #d1query = "https://cn.dataone.org/cn/v1/query/solr/?fl=identifier,title,abstract,author,authorLastName,origin,submitter,rightsHolder,documents,resourceMap,authoritativeMN&q=formatType:METADATA+AND+-obsoletedBy:*&rows="+str(pagesize)+"&start="+str(start)
     res = urllib2.urlopen(d1query)
     content = res.read()
     xmldoc = ET.fromstring(content)
@@ -104,14 +104,15 @@ def addDataset(model, doc, ns, personhash):
         addStatement(model, RDF.Uri(d1base+identifier), RDF.Uri(ns["dcterms"]+"creator"), person_blank_node)
         
         # Match GeoLink Persons
-        print "Processing: ", creator
+        #print "Processing: ", creator
+        print '.',
+        sys.stdout.flush()
         c_fields = unicode(creator).split()
         normal_creator = c_fields[0].translate(table) + '.*' + c_fields[len(c_fields)-1].translate(table)
-        #normal_creator = creator.translate(table, string.punctuation).replace(' ', '.*')
-        print "    Lookup: ", normal_creator
+        #print "    Lookup: ", normal_creator
         searchRegex = re.compile('('+normal_creator+')').search
         k = None
-        #k = findRegexInList(glpeople.keys(),searchRegex)
+        k = findRegexInList(glpeople.keys(),searchRegex)
         if (k):
             addStatement(model, person_blank_node, RDF.Uri(ns["glview"]+"matches"), RDF.Uri(glpeople[k[0]]))
 
@@ -221,7 +222,7 @@ def processPage(model, ns, personhash, page, pagesize=1000):
     resultnode = xmldoc.findall(".//result")
     num_results = resultnode[0].get('numFound')
     doclist = xmldoc.findall(".//doc")
-    print(len(doclist))
+    #print(len(doclist))
     for d in doclist:
         None
         addDataset(model, d, ns, personhash)
@@ -246,22 +247,19 @@ def main():
     }
     nodes = addRepositories(model, ns)
 
-    pagesize=10
+    pagesize=100
+    print "Processing page: 1",
     records = processPage(model, ns, personhash, 1, pagesize=pagesize )
     if (records > pagesize):
+        print str(model.size())
+        sys.stdout.flush()
         numpages = records/pagesize+1
         for page in range(2,numpages+1):
-            print "Processing page: ", page, " of ", numpages
+            print "Processing page: ",page," of ",numpages,
+            processPage(model, ns, personhash, page, pagesize=pagesize )
+            print str(model.size())
+            sys.stdout.flush()
 
-    #xmldoc = getDataList()
-    #resultnode = xmldoc.findall(".//result")
-    #num_results = resultnode[0].get('numFound')
-    #doclist = xmldoc.findall(".//doc")
-    #print(len(doclist))
-    #for d in doclist:
-        #None
-        #addDataset(model, d, ns, personhash)
-        
     print("Model size before serialize: " + str(model.size()))
     serialize(model, ns, "dataone-example-lod.ttl", "turtle")
     serialize(model, ns, "dataone-example-lod.rdf", "rdfxml")
@@ -274,4 +272,5 @@ if __name__ == "__main__":
     import re
     import csv
     import string
+    import sys
     #main()
