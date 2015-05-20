@@ -7,7 +7,8 @@
 # Matt Jones, NCEAS 2015
 
 def getDataList(page, pagesize):
-    d1query = "https://cn.dataone.org/cn/v1/query/solr/?fl=identifier,title,abstract,author,authorLastName,origin,submitter,rightsHolder,documents,resourceMap,authoritativeMN&q=formatType:METADATA+AND+(datasource:*LTER+OR+datasource:*KNB+OR+datasource:*PISCO)+AND+-obsoletedBy:*&rows=10&start=0"
+    start = page*pagesize
+    d1query = "https://cn.dataone.org/cn/v1/query/solr/?fl=identifier,title,abstract,author,authorLastName,origin,submitter,rightsHolder,documents,resourceMap,authoritativeMN&q=formatType:METADATA+AND+(datasource:*LTER+OR+datasource:*KNB+OR+datasource:*PISCO)+AND+-obsoletedBy:*&rows="+str(pagesize)+"&start="+str(start)
     #d1query = "https://cn.dataone.org/cn/v1/query/solr/?fl=identifier,title,author,authorLastName,origin,submitter,rightsHolder,relatedOrganizations,contactOrganization,documents,resourceMap&q=formatType:METADATA&rows=100&start=20000"
     res = urllib2.urlopen(d1query)
     content = res.read()
@@ -109,7 +110,8 @@ def addDataset(model, doc, ns, personhash):
         #normal_creator = creator.translate(table, string.punctuation).replace(' ', '.*')
         print "    Lookup: ", normal_creator
         searchRegex = re.compile('('+normal_creator+')').search
-        k = findRegexInList(glpeople.keys(),searchRegex)
+        k = None
+        #k = findRegexInList(glpeople.keys(),searchRegex)
         if (k):
             addStatement(model, person_blank_node, RDF.Uri(ns["glview"]+"matches"), RDF.Uri(glpeople[k[0]]))
 
@@ -223,6 +225,7 @@ def processPage(model, ns, personhash, page, pagesize=1000):
     for d in doclist:
         None
         addDataset(model, d, ns, personhash)
+    return(int(num_results))
 
 def main():
     model = createModel()
@@ -243,7 +246,13 @@ def main():
     }
     nodes = addRepositories(model, ns)
 
-    processPage(model, ns, personhash, 1, pagesize=1000 )
+    pagesize=10
+    records = processPage(model, ns, personhash, 1, pagesize=pagesize )
+    if (records > pagesize):
+        numpages = records/pagesize+1
+        for page in range(2,numpages+1):
+            print "Processing page: ", page, " of ", numpages
+
     #xmldoc = getDataList()
     #resultnode = xmldoc.findall(".//result")
     #num_results = resultnode[0].get('numFound')
