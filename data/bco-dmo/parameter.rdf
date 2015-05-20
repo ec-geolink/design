@@ -2,6 +2,7 @@
 <rdf:RDF xmlns:owl="http://www.w3.org/2002/07/owl#"
   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
   xmlns:glview="http://schema.geolink.org/dev/view#">
 
   <rdf:Description rdf:about="http://data.geolink.org/id/bcodmo/measurement-type/730">
@@ -9861,6 +9862,24 @@ As in the volume of the tank or container used in a laboratory experiment.&lt;/p
     <glview:title rdf:datatype="xsd:string">lon_secs</glview:title>
     <rdfs:label rdf:datatype="xsd:string">lon_secs</rdfs:label>
     <glview:description rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML">&lt;p&gt;Longitude whole seconds.&amp;nbsp; Can include &quot;N&quot;/&quot;S&quot; or &quot;+&quot;/&quot;-&quot; as hemisphere designation&lt;/p&gt;
+</glview:description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.geolink.org/id/bcodmo/measurement-type/559084">
+    <owl:sameAs rdf:resource="http://lod.bco-dmo.org/id/parameter/559084"/>
+    <owl:sameAs rdf:resource="http://schema.geolink.org/dev/voc/nvs/P02#IRBO"/>
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
+    <glview:title rdf:datatype="xsd:string">d13C_bio</glview:title>
+    <rdfs:label rdf:datatype="xsd:string">d13C_bio</rdfs:label>
+    <glview:description rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML">&lt;p&gt;delta 13C (d13C) measurements on living (at the time of sampling) organisms or parts thereof. d13C is a measure of the ratio of stable isotopes 13C:12C, reported in parts per thousand (per mil, ‰).&lt;/p&gt;
+</glview:description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.geolink.org/id/bcodmo/measurement-type/559085">
+    <owl:sameAs rdf:resource="http://lod.bco-dmo.org/id/parameter/559085"/>
+    <owl:sameAs rdf:resource="http://schema.geolink.org/dev/voc/nvs/P02#IRBO"/>
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
+    <glview:title rdf:datatype="xsd:string">d15N_bio</glview:title>
+    <rdfs:label rdf:datatype="xsd:string">d15N_bio</rdfs:label>
+    <glview:description rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML">&lt;p&gt;delta 15N (d15N) measurements on living (at the time of sampling) organisms or parts thereof. d15N is a measure of the ratio of stable isotopes 15N:14N, reported in parts per thousand (per mil, ‰).&lt;/p&gt;
 </glview:description>
   </rdf:Description>
 

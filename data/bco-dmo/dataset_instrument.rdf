@@ -2,6 +2,7 @@
 <rdf:RDF xmlns:owl="http://www.w3.org/2002/07/owl#"
   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
   xmlns:glview="http://schema.geolink.org/dev/view#">
 
   <rdf:Description rdf:about="http://data.geolink.org/id/bcodmo/dataset-instrument/4082">
@@ -36894,8 +36895,8 @@ LB3: s/n 1986 was mounted on a bottom frame at nominal depth of 171m.&lt;/p&gt;
   <rdf:Description rdf:about="http://data.geolink.org/id/bcodmo/dataset-instrument/549106">
     <owl:sameAs rdf:resource="http://lod.bco-dmo.org/id/dataset_instrument/549106"/>
     <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Instrument"/>
-    <glview:title xml:lang="en-US">GPS</glview:title>
-    <rdfs:label xml:lang="en-US">GPS</rdfs:label>
+    <glview:title xml:lang="en-US">Trimble GPS - PCODE</glview:title>
+    <rdfs:label xml:lang="en-US">Trimble GPS - PCODE</rdfs:label>
     <glview:hasInstrumentType rdf:resource="http://data.geolink.org/id/bcodmo/instrument/560"/>
     <glview:description rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML">&lt;p&gt;This data set was acquired with a ship-based Navigation system&lt;/p&gt;
 </glview:description>
@@ -38936,6 +38937,69 @@ system is also equipped with a centrifugal ice strainer/de-bubbler.&lt;/p&gt;
     <glview:title xml:lang="en-US">Trimble GPS - PCODE</glview:title>
     <rdfs:label xml:lang="en-US">Trimble GPS - PCODE</rdfs:label>
     <glview:hasInstrumentType rdf:resource="http://data.geolink.org/id/bcodmo/instrument/560"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.geolink.org/id/bcodmo/dataset-instrument/559098">
+    <owl:sameAs rdf:resource="http://lod.bco-dmo.org/id/dataset_instrument/559098"/>
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Instrument"/>
+    <glview:title xml:lang="en-US">Longline Fishing Gear</glview:title>
+    <rdfs:label xml:lang="en-US">Longline Fishing Gear</rdfs:label>
+    <glview:hasInstrumentType rdf:resource="http://data.geolink.org/id/bcodmo/instrument/535"/>
+    <glview:description rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML">&lt;p&gt;Large pelagic fish tissue samples were collected at sea by trained longline fishery observers of the National Oceanic and Atmospheric Administration’s (NOAA) Pacific Islands Regional Observer Program during the years 2009-2011.&lt;/p&gt;
+</glview:description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.geolink.org/id/bcodmo/dataset-instrument/559099">
+    <owl:sameAs rdf:resource="http://lod.bco-dmo.org/id/dataset_instrument/559099"/>
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Instrument"/>
+    <glview:title xml:lang="en-US">isotope ratio mass spectrometer</glview:title>
+    <rdfs:label xml:lang="en-US">isotope ratio mass spectrometer</rdfs:label>
+    <glview:hasInstrumentType rdf:resource="http://data.geolink.org/id/bcodmo/instrument/469"/>
+    <glview:description rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML">&lt;p&gt;Bulk sample nitrogen (N) and carbon (C) isotope compositions of all fishes were determined using an isotope ratio mass spectrometer (IRMS; Delta PlusXP) coupled to an elemental analyzer (Conflo IV/Costech ECS 4010). Individual amino acids were measured using an IRMS (Delta PlusXP, Delta V Plus or MAT 253) interfaced with a gas chromatograph (Trace GC).&lt;/p&gt;
+</glview:description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.geolink.org/id/bcodmo/dataset-instrument/559100">
+    <owl:sameAs rdf:resource="http://lod.bco-dmo.org/id/dataset_instrument/559100"/>
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Instrument"/>
+    <glview:title xml:lang="en-US">elemental analyzer</glview:title>
+    <rdfs:label xml:lang="en-US">elemental analyzer</rdfs:label>
+    <glview:hasInstrumentType rdf:resource="http://data.geolink.org/id/bcodmo/instrument/546339"/>
+    <glview:description rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML">&lt;p&gt;Bulk sample nitrogen (N) and carbon (C) isotope compositions of all fishes were determined using an isotope ratio mass spectrometer (IRMS; Delta PlusXP) coupled to an elemental analyzer (Conflo IV/Costech ECS 4010).&lt;/p&gt;
+</glview:description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.geolink.org/id/bcodmo/dataset-instrument/559101">
+    <owl:sameAs rdf:resource="http://lod.bco-dmo.org/id/dataset_instrument/559101"/>
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Instrument"/>
+    <glview:title xml:lang="en-US">gas chromatograph</glview:title>
+    <rdfs:label xml:lang="en-US">gas chromatograph</rdfs:label>
+    <glview:hasInstrumentType rdf:resource="http://data.geolink.org/id/bcodmo/instrument/661"/>
+    <glview:description rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML">&lt;p&gt;Individual amino acids were measured using an IRMS (Delta PlusXP, Delta V Plus or MAT 253) interfaced with a gas chromatograph (Trace GC).&lt;/p&gt;
+</glview:description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.geolink.org/id/bcodmo/dataset-instrument/559199">
+    <owl:sameAs rdf:resource="http://lod.bco-dmo.org/id/dataset_instrument/559199"/>
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Instrument"/>
+    <glview:title xml:lang="en-US">gas chromatograph</glview:title>
+    <rdfs:label xml:lang="en-US">gas chromatograph</rdfs:label>
+    <glview:hasInstrumentType rdf:resource="http://data.geolink.org/id/bcodmo/instrument/720"/>
+    <glview:description rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML">&lt;p&gt;Individual amino acids were measured using an IRMS (Delta PlusXP, Delta V Plus or MAT 253) interfaced with a gas chromatograph (Trace GC).&lt;/p&gt;
+</glview:description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.geolink.org/id/bcodmo/dataset-instrument/559200">
+    <owl:sameAs rdf:resource="http://lod.bco-dmo.org/id/dataset_instrument/559200"/>
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Instrument"/>
+    <glview:title xml:lang="en-US">isotope ratio mass spectrometer</glview:title>
+    <rdfs:label xml:lang="en-US">isotope ratio mass spectrometer</rdfs:label>
+    <glview:hasInstrumentType rdf:resource="http://data.geolink.org/id/bcodmo/instrument/469"/>
+    <glview:description rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML">&lt;p&gt;Individual amino acids were measured using an IRMS (Delta PlusXP, Delta V Plus or MAT 253) interfaced with a gas chromatograph (Trace GC).&lt;/p&gt;
+</glview:description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.geolink.org/id/bcodmo/dataset-instrument/559201">
+    <owl:sameAs rdf:resource="http://lod.bco-dmo.org/id/dataset_instrument/559201"/>
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Instrument"/>
+    <glview:title xml:lang="en-US">Longline Fishing Gear</glview:title>
+    <rdfs:label xml:lang="en-US">Longline Fishing Gear</rdfs:label>
+    <glview:hasInstrumentType rdf:resource="http://data.geolink.org/id/bcodmo/instrument/535"/>
+    <glview:description rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML">&lt;p&gt;Large pelagic fish tissue samples were collected at sea by trained longline fishery observers of the National Oceanic and Atmospheric Administration’s (NOAA) Pacific Islands Regional Observer Program during the years 2009-2011.&lt;/p&gt;
+</glview:description>
   </rdf:Description>
 
 </rdf:RDF>

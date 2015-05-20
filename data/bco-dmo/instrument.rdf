@@ -2,6 +2,7 @@
 <rdf:RDF xmlns:owl="http://www.w3.org/2002/07/owl#"
   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
   xmlns:glview="http://schema.geolink.org/dev/view#">
 
   <rdf:Description rdf:about="http://data.geolink.org/id/bcodmo/instrument/404">
@@ -1136,9 +1137,10 @@ Trask, Richard P.; Way, Bryan S.; Ostrom, William M.; Allsup, Geoffrey P.; Welle
     <owl:sameAs rdf:resource="http://lod.bco-dmo.org/id/instrument/534"/>
     <owl:sameAs rdf:resource="http://schema.geolink.org/dev/voc/nvs/L05#31"/>
     <rdf:type rdf:resource="http://schema.geolink.org/dev/view#InstrumentType"/>
-    <glview:title xml:lang="en-US">Pump - surface underway ship intake</glview:title>
-    <rdfs:label xml:lang="en-US">Pump - surface underway ship intake</rdfs:label>
-    <glview:description rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML">The 'Pump-underway ship intake' system indicates that samples are from the ship's clean water intake pump.  This is essentially a surface water sample from a source of uncontaminated near-surface (commonly 3 to 7 m) seawater that can be pumped continuously to shipboard laboratories on research vessels. There is typically a temperature sensor near the intake (known as the hull temperature) to provide measurements that are as close as possible to the ambient water temperature. The flow from the supply is typically directed through continuously logged sensors such as a thermosalinograph and a fluorometer. Water samples are often collected from the underway supply that may also be referred to as the non-toxic supply. Ideally the data contributor has specified the depth in the ship's hull at which the pump is mounted. </glview:description>
+    <glview:title xml:lang="en-US">Pump - Surface Underway Ship Intake</glview:title>
+    <rdfs:label xml:lang="en-US">Pump - Surface Underway Ship Intake</rdfs:label>
+    <glview:description rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML">&lt;p&gt;The 'Pump-underway ship intake' system indicates that samples are from the ship's clean water intake pump. This is essentially a surface water sample from a source of uncontaminated near-surface (commonly 3 to 7 m) seawater that can be pumped continuously to shipboard laboratories on research vessels. There is typically a temperature sensor near the intake (known as the hull temperature) to provide measurements that are as close as possible to the ambient water temperature. The flow from the supply is typically directed through continuously logged sensors such as a thermosalinograph and a fluorometer. Water samples are often collected from the underway supply that may also be referred to as the non-toxic supply. Ideally the data contributor has specified the depth in the ship's hull at which the pump is mounted.&lt;/p&gt;
+</glview:description>
   </rdf:Description>
   <rdf:Description rdf:about="http://data.geolink.org/id/bcodmo/instrument/535">
     <owl:sameAs rdf:resource="http://lod.bco-dmo.org/id/instrument/535"/>

@@ -2,6 +2,7 @@
 <rdf:RDF xmlns:owl="http://www.w3.org/2002/07/owl#"
   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
   xmlns:glview="http://schema.geolink.org/dev/view#">
 
   <rdf:Description rdf:about="http://data.geolink.org/id/bcodmo/award/54605">
@@ -20072,6 +20073,14 @@
     <glview:isPerformedBy rdf:resource="http://data.geolink.org/id/bcodmo/person/50534"/>
     <glview:hasRoleType rdf:resource="http://schema.geolink.org/dev/voc/local#roletype_program_manager"/>
     <glview:hasAffiliation rdf:resource="http://data.geolink.org/id/bcodmo/organization/355"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.geolink.org/id/bcodmo/award/559210">
+    <owl:sameAs rdf:resource="http://lod.bco-dmo.org/id/award/559210"/>
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Award"/>
+    <glview:hasSponsor rdf:resource="http://data.geolink.org/id/bcodmo/organization/559209"/>
+    <glview:identifier rdf:datatype="xsd:string">NA09OAR4320075</glview:identifier>
+    <glview:title rdf:datatype="xsd:string">NA09OAR4320075</glview:title>
+    <rdfs:label rdf:datatype="xsd:string">NA09OAR4320075</rdfs:label>
   </rdf:Description>
 
 </rdf:RDF>

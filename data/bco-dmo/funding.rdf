@@ -2,6 +2,7 @@
 <rdf:RDF xmlns:owl="http://www.w3.org/2002/07/owl#"
   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
   xmlns:glview="http://schema.geolink.org/dev/view#">
 
   <rdf:Description rdf:about="http://data.geolink.org/id/bcodmo/organization/350">
@@ -457,6 +458,13 @@
     <glview:title xml:lang="en-US">European Commission Seventh Framework Program (FP7-ENV-2010)</glview:title>
     <rdfs:label xml:lang="en-US">European Commission Seventh Framework Program (FP7-ENV-2010)</rdfs:label>
     <glview:acronym rdf:datatype="xsd:string">FP7-ENV-2010</glview:acronym>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://data.geolink.org/id/bcodmo/organization/559209">
+    <owl:sameAs rdf:resource="http://lod.bco-dmo.org/id/funding/559209"/>
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Organization"/>
+    <glview:title xml:lang="en-US">Pelagic Fisheries Research Program (PFRP)</glview:title>
+    <rdfs:label xml:lang="en-US">Pelagic Fisheries Research Program (PFRP)</rdfs:label>
+    <glview:acronym rdf:datatype="xsd:string">PFRP</glview:acronym>
   </rdf:Description>
 
 </rdf:RDF>
