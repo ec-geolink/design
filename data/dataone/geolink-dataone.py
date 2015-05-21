@@ -47,6 +47,7 @@ def addDataset(model, doc, ns, personhash):
     addStatement(model, id_blank_node, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["datacite"]+"ResourceIdentifier"))
     addStatement(model, d1base+identifier, ns["glview"]+"identifier", id_blank_node)
     addStatement(model, id_blank_node, ns["glview"]+"hasIdentifierValue", identifier)
+    addStatement(model, id_blank_node, ns["rdfs"]+"label", identifier)
     if (identifier.startswith("doi:") | 
             identifier.startswith("http://doi.org/") | identifier.startswith("https://doi.org/") | 
             identifier.startswith("https://dx.doi.org/") | identifier.startswith("https://dx.doi.org/")):
