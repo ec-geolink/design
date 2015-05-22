@@ -1026,19 +1026,21 @@
   </rdf:Description>
   <rdf:Description rdf:about="http://data.geolink.org/id/bcodmo/measurement-type/869">
     <owl:sameAs rdf:resource="http://lod.bco-dmo.org/id/parameter/869"/>
-    <owl:sameAs rdf:resource="http://schema.geolink.org/dev/voc/nvs/P01#ALATZZ01"/>
+    <owl:sameAs rdf:resource="http://schema.geolink.org/dev/voc/nvs/P09#LATX"/>
     <rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
     <glview:title rdf:datatype="xsd:string">lat_end</glview:title>
     <rdfs:label rdf:datatype="xsd:string">lat_end</rdfs:label>
-    <glview:description rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML">latitude at end time of measurement;  in decimal degrees (negative denotes South)</glview:description>
+    <glview:description rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML">&lt;p&gt;latitude at end time of measurement; in decimal degrees (negative denotes South)&lt;/p&gt;
+</glview:description>
   </rdf:Description>
   <rdf:Description rdf:about="http://data.geolink.org/id/bcodmo/measurement-type/870">
     <owl:sameAs rdf:resource="http://lod.bco-dmo.org/id/parameter/870"/>
-    <owl:sameAs rdf:resource="http://schema.geolink.org/dev/voc/nvs/P01#ALATZZ01"/>
+    <owl:sameAs rdf:resource="http://schema.geolink.org/dev/voc/nvs/P09#LATX"/>
     <rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
     <glview:title rdf:datatype="xsd:string">lat_start</glview:title>
     <rdfs:label rdf:datatype="xsd:string">lat_start</rdfs:label>
-    <glview:description rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML">latitude at start time of measurement;  in decimal degrees (negative denotes South)</glview:description>
+    <glview:description rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML">&lt;p&gt;latitude at start time of measurement; in decimal degrees (negative denotes South)&lt;/p&gt;
+</glview:description>
   </rdf:Description>
   <rdf:Description rdf:about="http://data.geolink.org/id/bcodmo/measurement-type/871">
     <owl:sameAs rdf:resource="http://lod.bco-dmo.org/id/parameter/871"/>
@@ -1126,19 +1128,21 @@
   </rdf:Description>
   <rdf:Description rdf:about="http://data.geolink.org/id/bcodmo/measurement-type/883">
     <owl:sameAs rdf:resource="http://lod.bco-dmo.org/id/parameter/883"/>
-    <owl:sameAs rdf:resource="http://schema.geolink.org/dev/voc/nvs/P01#ALONZZ01"/>
+    <owl:sameAs rdf:resource="http://schema.geolink.org/dev/voc/nvs/P09#LONX"/>
     <rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
     <glview:title rdf:datatype="xsd:string">lon_start</glview:title>
     <rdfs:label rdf:datatype="xsd:string">lon_start</rdfs:label>
-    <glview:description rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML">longitude at starting time of measurement (west is negative), in decimal degrees</glview:description>
+    <glview:description rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML">&lt;p&gt;longitude at starting time of measurement (west is negative), in decimal degrees&lt;/p&gt;
+</glview:description>
   </rdf:Description>
   <rdf:Description rdf:about="http://data.geolink.org/id/bcodmo/measurement-type/884">
     <owl:sameAs rdf:resource="http://lod.bco-dmo.org/id/parameter/884"/>
-    <owl:sameAs rdf:resource="http://schema.geolink.org/dev/voc/nvs/P01#ALONZZ01"/>
+    <owl:sameAs rdf:resource="http://schema.geolink.org/dev/voc/nvs/P09#LONX"/>
     <rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
     <glview:title rdf:datatype="xsd:string">lon_end</glview:title>
     <rdfs:label rdf:datatype="xsd:string">lon_end</rdfs:label>
-    <glview:description rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML">longitude at end time of measurement; in decimal degrees (negative denotes West)</glview:description>
+    <glview:description rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML">&lt;p&gt;longitude at end time of measurement; in decimal degrees (negative denotes West)&lt;/p&gt;
+</glview:description>
   </rdf:Description>
   <rdf:Description rdf:about="http://data.geolink.org/id/bcodmo/measurement-type/885">
     <owl:sameAs rdf:resource="http://lod.bco-dmo.org/id/parameter/885"/>
