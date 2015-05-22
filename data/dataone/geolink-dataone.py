@@ -7,9 +7,9 @@
 # Matt Jones, NCEAS 2015
 
 def getDataList(page, pagesize):
-    start = page*pagesize
+    start = (page-1)*pagesize
     d1query = "https://cn.dataone.org/cn/v1/query/solr/?fl=identifier,title,abstract,author,authorLastName,origin,submitter,rightsHolder,documents,resourceMap,authoritativeMN&q=formatType:METADATA+AND+(datasource:*LTER+OR+datasource:*KNB+OR+datasource:*PISCO)+AND+-obsoletedBy:*&rows="+str(pagesize)+"&start="+str(start)
-    #d1query = "https://cn.dataone.org/cn/v1/query/solr/?fl=identifier,title,author,authorLastName,origin,submitter,rightsHolder,relatedOrganizations,contactOrganization,documents,resourceMap&q=formatType:METADATA&rows=100&start=20000"
+    #d1query = "https://cn.dataone.org/cn/v1/query/solr/?fl=identifier,title,abstract,author,authorLastName,origin,submitter,rightsHolder,documents,resourceMap,authoritativeMN&q=formatType:METADATA+AND+-obsoletedBy:*&rows="+str(pagesize)+"&start="+str(start)
     res = urllib2.urlopen(d1query)
     content = res.read()
     xmldoc = ET.fromstring(content)
@@ -39,15 +39,15 @@ def addStatement(model, s, p, o):
 
 def addDataset(model, doc, ns, personhash):
     d1base = "https://cn.dataone.org/cn/v1/resolve/"
-
     # Identifier and Dataset
     element = doc.find("./str[@name='identifier']")
     identifier = element.text
-    addStatement(model, d1base+identifier, "http://www.w3.org/1999/02/22-rdf-syntax-ns#type", RDF.Uri(ns["glview"]+"Dataset"))
+    addStatement(model, d1base+identifier, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["glview"]+"Dataset"))
     id_blank_node = RDF.Node(blank=identifier)
-    addStatement(model, id_blank_node, "http://www.w3.org/1999/02/22-rdf-syntax-ns#type", RDF.Uri(ns["datacite"]+"ResourceIdentifier"))
+    addStatement(model, id_blank_node, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["datacite"]+"ResourceIdentifier"))
     addStatement(model, d1base+identifier, ns["glview"]+"identifier", id_blank_node)
     addStatement(model, id_blank_node, ns["glview"]+"hasIdentifierValue", identifier)
+    addStatement(model, id_blank_node, ns["rdfs"]+"label", identifier)
     if (identifier.startswith("doi:") | 
             identifier.startswith("http://doi.org/") | identifier.startswith("https://doi.org/") | 
             identifier.startswith("https://dx.doi.org/") | identifier.startswith("https://dx.doi.org/")):
@@ -68,6 +68,7 @@ def addDataset(model, doc, ns, personhash):
     title_element = doc.find("./str[@name='title']")
     if (title_element is not None):
         addStatement(model, d1base+identifier, ns["glview"]+"title", title_element.text)
+        addStatement(model, d1base+identifier, ns["rdfs"]+"label", title_element.text)
 
     # Abstract
     abstract_element = doc.find("./str[@name='abstract']")
@@ -80,55 +81,67 @@ def addDataset(model, doc, ns, personhash):
     table = {ord(c): None for c in string.punctuation}
     originlist = doc.findall("./arr[@name='origin']/str")
     for creatornode in originlist:
-        creator = creatornode.text
+        c_text = creatornode.text
+        c_fields = unicode(c_text).split()
+        creator = c_fields[0].translate(table) + ' ' + c_fields[len(c_fields)-1].translate(table)
         if (creator not in personhash):
             # Add it
             newid = uuid.uuid4()
             p_uuid = newid.hex
-            p_orcid = "http://myfakeorcid.org/" + newid.hex
-            p_data = [p_uuid, p_orcid]
+            p_dataone_id = "http://data.geolink.org/id/dataone/" + newid.hex
+            person_node = RDF.Uri(p_dataone_id)
+            #person_node = RDF.Node(blank=p_uuid)
+            addStatement(model, person_node, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["glview"]+"Person"))
+            addStatement(model, person_node, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["foaf"]+"Person"))
+            addStatement(model, person_node, ns["rdfs"]+"label", c_text)
+            addStatement(model, person_node, ns["foaf"]+"name", c_text)
+            addStatement(model, person_node, ns["glview"]+"nameFull", c_text)
+            
+            # Match GeoLink Persons
+            print 'c',
+            sys.stdout.flush()
+            normal_creator = c_fields[0].translate(table) + '.*' + c_fields[len(c_fields)-1].translate(table)
+            #print c_text, " |###| ", normal_creator
+            searchRegex = re.compile('('+normal_creator+')').search
+            k = None
+            k = findRegexInList(glpeople.keys(),searchRegex)
+            if (k):
+                addStatement(model, person_node, RDF.Uri(ns["glview"]+"matches"), RDF.Uri(glpeople[k[0]]))
+
+            p_data = [p_uuid, p_dataone_id, person_node]
             personhash[creator] = p_data
         else:
             # Look it up
             p_data = personhash[creator]
             p_uuid = p_data[0]
-            p_orcid = p_data[1]
+            p_dataone_id = p_data[1]
+            person_node = p_data[2]
             
-        # Person
-        person_blank_node = RDF.Node(blank=p_uuid)
-        addStatement(model, person_blank_node, "http://www.w3.org/1999/02/22-rdf-syntax-ns#type", RDF.Uri(ns["glview"]+"Person"))
-        addStatement(model, person_blank_node, "http://www.w3.org/1999/02/22-rdf-syntax-ns#type", RDF.Uri(ns["foaf"]+"Person"))
-        #addStatement(model, person_blank_node, ns["foaf"]+"name", creator)
-        addStatement(model, person_blank_node, ns["glview"]+"nameFull", creator)
-        addStatement(model, RDF.Uri(d1base+identifier), RDF.Uri(ns["glview"]+"hasParticipant"), person_blank_node)
-        addStatement(model, RDF.Uri(d1base+identifier), RDF.Uri(ns["dcterms"]+"creator"), person_blank_node)
+        # Add Person as creator participant in Dataset
+        addStatement(model, RDF.Uri(d1base+identifier), RDF.Uri(ns["glview"]+"hasCreator"), person_node)
+        addStatement(model, RDF.Uri(d1base+identifier), RDF.Uri(ns["dcterms"]+"creator"), person_node)
         
-        # Match GeoLink Persons
-        print "Processing: ", creator
-        c_fields = unicode(creator).split()
-        normal_creator = c_fields[0].translate(table) + '.*' + c_fields[len(c_fields)-1].translate(table)
-        #normal_creator = creator.translate(table, string.punctuation).replace(' ', '.*')
-        print "    Lookup: ", normal_creator
-        searchRegex = re.compile('('+normal_creator+')').search
-        k = None
-        #k = findRegexInList(glpeople.keys(),searchRegex)
-        if (k):
-            addStatement(model, person_blank_node, RDF.Uri(ns["glview"]+"matches"), RDF.Uri(glpeople[k[0]]))
-
         #pi_node = RDF.Node(RDF.Uri(p_orcid))
-        #addStatement(model, pi_node, RDF.Uri("http://www.w3.org/1999/02/22-rdf-syntax-ns#type"), RDF.Uri(ns["datacite"]+"PersonalIdentifier"))       
+        #addStatement(model, pi_node, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["datacite"]+"PersonalIdentifier"))       
         #addStatement(model, pi_node, RDF.Uri(ns["datacite"]+"usesIdentifierScheme"), RDF.Uri(ns["datacite"]+"orcid"))       
         #addStatement(model, RDF.Uri(p_uuid), RDF.Uri(ns["datacite"]+"hasIdentifier"), pi_node)
 
         # ORCID
         #pi_node = RDF.Node(RDF.Uri(p_orcid))
-        #addStatement(model, pi_node, RDF.Uri("http://www.w3.org/1999/02/22-rdf-syntax-ns#type"), RDF.Uri(ns["datacite"]+"PersonalIdentifier"))       
+        #addStatement(model, pi_node, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["datacite"]+"PersonalIdentifier"))       
         #addStatement(model, pi_node, RDF.Uri(ns["datacite"]+"usesIdentifierScheme"), RDF.Uri(ns["datacite"]+"orcid"))       
         #addStatement(model, RDF.Uri(p_uuid), RDF.Uri(ns["datacite"]+"hasIdentifier"), pi_node)
-        model.sync()
+
+    model.sync()
+    print '.', 
 
 
-    # TODO: Add Submitters
+
+    # TODO: Add Spatial Coverage, no field for this in GL View
+
+    # TODO: Add Temporal Coverage, no field for this in GL View
+
+    # TODO: Add Submitters, no field for this in GL View
 
     # TODO: Add Rights holders
 
@@ -138,18 +151,31 @@ def addDataset(model, doc, ns, personhash):
     model.sync()
 
     # TODO: Add Landing page
+
     # TODO: Add Funding
+
     # TODO: Add MeasurementType
 
     # Data Objects
     data_list = doc.findall("./arr[@name='documents']/str")
     for data_id_node in data_list:
         data_id = data_id_node.text
-        addStatement(model, d1base+data_id, "http://www.w3.org/1999/02/22-rdf-syntax-ns#type", RDF.Uri(ns["glview"]+"DigitalObject"))
+        addStatement(model, d1base+data_id, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["glview"]+"DigitalObject"))
         addStatement(model, d1base+data_id, ns["glview"]+"isPartOf", RDF.Uri(d1base+identifier))
+        
         # TODO: Add Checksum
+        # first look up the checksum, which requires sysmeta for this object
+        #addStatement(model, d1base+data_id, ns["glview"]+"hasChecksum", RDF.Uri(csv_type))
+
         # TODO: Add Size
-        # TODO: Add Format
+        # first look up the size, which requires sysmeta for this object
+        #addStatement(model, d1base+data_id, ns["glview"]+"hasByteLength", RDF.Uri(csv_type))
+
+        # TODO: Add Format, which requires sysmeta for this object
+        # first look up the format type, e.g., for CSV: 
+        csv_type = "http://schema.geolink.org/dev/voc/dataone/format#022"
+        #addStatement(model, d1base+data_id, ns["glview"]+"hasFormatType", RDF.Uri(csv_type))
+
     model.sync()
 
 def findRegexInList(list,filter):
@@ -192,9 +218,10 @@ def addRepositories(model, ns):
         node_desc = n.find('description').text
         node_base_url = n.find('baseURL').text
         node_hash[node_id] = [node_name, node_desc, node_base_url]
-        addStatement(model, node_id, "http://www.w3.org/1999/02/22-rdf-syntax-ns#type", RDF.Uri(ns["glview"]+"Repository"))
-        addStatement(model, node_id, "http://www.w3.org/1999/02/22-rdf-syntax-ns#type", RDF.Uri(ns["glview"]+"Organization"))
+        addStatement(model, node_id, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["glview"]+"Repository"))
+        addStatement(model, node_id, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["glview"]+"Organization"))
         addStatement(model, node_id, RDF.Uri(ns["foaf"]+"name"), node_name)
+        addStatement(model, node_id, RDF.Uri(ns["rdfs"]+"label"), node_name)
         addStatement(model, node_id, RDF.Uri(ns["glview"]+"description"), node_desc)
     return(node_hash)
 
@@ -221,7 +248,7 @@ def processPage(model, ns, personhash, page, pagesize=1000):
     resultnode = xmldoc.findall(".//result")
     num_results = resultnode[0].get('numFound')
     doclist = xmldoc.findall(".//doc")
-    print(len(doclist))
+    #print(len(doclist))
     for d in doclist:
         None
         addDataset(model, d, ns, personhash)
@@ -246,25 +273,23 @@ def main():
     }
     nodes = addRepositories(model, ns)
 
-    pagesize=10
+    pagesize=100
+    print "Processing page: 1",
     records = processPage(model, ns, personhash, 1, pagesize=pagesize )
     if (records > pagesize):
+        print str(model.size())
+        sys.stdout.flush()
         numpages = records/pagesize+1
         for page in range(2,numpages+1):
-            print "Processing page: ", page, " of ", numpages
+            print "Processing page: ",page," of ",numpages,
+            processPage(model, ns, personhash, page, pagesize=pagesize )
+            print str(model.size())
+            sys.stdout.flush()
+            serialize(model, ns, "dataone-example-lod.ttl", "turtle")
 
-    #xmldoc = getDataList()
-    #resultnode = xmldoc.findall(".//result")
-    #num_results = resultnode[0].get('numFound')
-    #doclist = xmldoc.findall(".//doc")
-    #print(len(doclist))
-    #for d in doclist:
-        #None
-        #addDataset(model, d, ns, personhash)
-        
-    print("Model size before serialize: " + str(model.size()))
+    print("Final model size: " + str(model.size()))
     serialize(model, ns, "dataone-example-lod.ttl", "turtle")
-    serialize(model, ns, "dataone-example-lod.rdf", "rdfxml")
+    #serialize(model, ns, "dataone-example-lod.rdf", "rdfxml")
 
 if __name__ == "__main__":
     import RDF
@@ -274,4 +299,5 @@ if __name__ == "__main__":
     import re
     import csv
     import string
+    import sys
     #main()
