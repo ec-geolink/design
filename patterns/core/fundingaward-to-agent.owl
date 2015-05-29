@@ -4,22 +4,22 @@
 <!DOCTYPE rdf:RDF [
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY ecglag "http://schema.geolink.org/dev/agent#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-    <!ENTITY ecglfa "http://schema.geolink.org/dev/fundingaward#" >
+    <!ENTITY ecglag "http://schema.geolink.org/dev/pattern/agent#" >
+    <!ENTITY ecglfa "http://schema.geolink.org/dev/pattern/fundingaward#" >
 ]>
 
 
-<rdf:RDF xmlns="http://schema.geolink.org/dev/fundingaward-to-agent#"
-     xml:base="http://schema.geolink.org/dev/fundingaward-to-agent"
-     xmlns:ecglfa="http://schema.geolink.org/dev/fundingaward#"
-     xmlns:ecglag="http://schema.geolink.org/dev/agent#"
+<rdf:RDF xmlns="http://schema.geolink.org/dev/pattern/fundingaward-to-agent#"
+     xml:base="http://schema.geolink.org/dev/pattern/fundingaward-to-agent"
+     xmlns:ecglfa="http://schema.geolink.org/dev/pattern/fundingaward#"
+     xmlns:ecglag="http://schema.geolink.org/dev/pattern/agent#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="http://schema.geolink.org/dev/fundingaward-to-agent"/>
+    <owl:Ontology rdf:about="http://schema.geolink.org/dev/pattern/fundingaward-to-agent"/>
     
 
 
@@ -34,13 +34,13 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/agent#performsAgentRole -->
+    <!-- http://schema.geolink.org/dev/pattern/agent#performsAgentRole -->
 
     <owl:ObjectProperty rdf:about="&ecglag;performsAgentRole"/>
     
 
 
-    <!-- http://schema.geolink.org/dev/fundingaward#isPerformedBy -->
+    <!-- http://schema.geolink.org/dev/pattern/fundingaward#isPerformedBy -->
 
     <owl:ObjectProperty rdf:about="&ecglfa;isPerformedBy">
         <rdfs:subPropertyOf>
@@ -63,19 +63,19 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/agent#Agent -->
+    <!-- http://schema.geolink.org/dev/pattern/agent#Agent -->
 
     <owl:Class rdf:about="&ecglag;Agent"/>
     
 
 
-    <!-- http://schema.geolink.org/dev/agent#AgentRole -->
+    <!-- http://schema.geolink.org/dev/pattern/agent#AgentRole -->
 
     <owl:Class rdf:about="&ecglag;AgentRole"/>
     
 
 
-    <!-- http://schema.geolink.org/dev/fundingaward#Agent -->
+    <!-- http://schema.geolink.org/dev/pattern/fundingaward#Agent -->
 
     <owl:Class rdf:about="&ecglfa;Agent">
         <rdfs:subClassOf rdf:resource="&ecglag;Agent"/>
@@ -83,7 +83,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/fundingaward#AgentRole -->
+    <!-- http://schema.geolink.org/dev/pattern/fundingaward#AgentRole -->
 
     <owl:Class rdf:about="&ecglfa;AgentRole">
         <rdfs:subClassOf rdf:resource="&ecglag;AgentRole"/>
