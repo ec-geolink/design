@@ -4,22 +4,22 @@
 <!DOCTYPE rdf:RDF [
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY ecglcr "http://schema.geolink.org/dev/cruise#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
-    <!ENTITY ecglpg "http://schema.geolink.org/dev/program#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY ecglcr "http://schema.geolink.org/dev/pattern/cruise#" >
+    <!ENTITY ecglpg "http://schema.geolink.org/dev/pattern/program#" >
 ]>
 
 
-<rdf:RDF xmlns="http://schema.geolink.org/dev/cruise-to-program#"
-     xml:base="http://schema.geolink.org/dev/cruise-to-program"
+<rdf:RDF xmlns="http://schema.geolink.org/dev/pattern/cruise-to-program#"
+     xml:base="http://schema.geolink.org/dev/pattern/cruise-to-program"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:ecglpg="http://schema.geolink.org/dev/program#"
+     xmlns:ecglpg="http://schema.geolink.org/dev/pattern/program#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:ecglcr="http://schema.geolink.org/dev/cruise#">
-    <owl:Ontology rdf:about="http://schema.geolink.org/dev/cruise-to-program"/>
+     xmlns:ecglcr="http://schema.geolink.org/dev/pattern/cruise#">
+    <owl:Ontology rdf:about="http://schema.geolink.org/dev/pattern/cruise-to-program"/>
     
 
 
@@ -34,7 +34,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/cruise#isAssociatedWithProgram -->
+    <!-- http://schema.geolink.org/dev/pattern/cruise#isAssociatedWithProgram -->
 
     <owl:ObjectProperty rdf:about="&ecglcr;isAssociatedWithProgram">
         <rdfs:subPropertyOf rdf:resource="&ecglpg;isAssociatedWithProgram"/>
@@ -42,7 +42,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/program#isAssociatedWithProgram -->
+    <!-- http://schema.geolink.org/dev/pattern/program#isAssociatedWithProgram -->
 
     <owl:ObjectProperty rdf:about="&ecglpg;isAssociatedWithProgram"/>
     
@@ -59,7 +59,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/cruise#Program -->
+    <!-- http://schema.geolink.org/dev/pattern/cruise#Program -->
 
     <owl:Class rdf:about="&ecglcr;Program">
         <rdfs:subClassOf rdf:resource="&ecglpg;Program"/>
@@ -67,7 +67,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/program#Program -->
+    <!-- http://schema.geolink.org/dev/pattern/program#Program -->
 
     <owl:Class rdf:about="&ecglpg;Program"/>
 </rdf:RDF>
