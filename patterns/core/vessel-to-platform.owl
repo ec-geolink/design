@@ -4,22 +4,22 @@
 <!DOCTYPE rdf:RDF [
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY ecglvs "http://schema.geolink.org/dev/vessel#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
-    <!ENTITY ecglpf "http://schema.geolink.org/dev/platform#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY ecglvs "http://schema.geolink.org/dev/pattern/vessel#" >
+    <!ENTITY ecglpf "http://schema.geolink.org/dev/pattern/platform#" >
 ]>
 
 
-<rdf:RDF xmlns="http://schema.geolink.org/dev/vessel-to-platform#"
-     xml:base="http://schema.geolink.org/dev/vessel-to-platform"
-     xmlns:ecglpf="http://schema.geolink.org/dev/platform#"
+<rdf:RDF xmlns="http://schema.geolink.org/dev/pattern/vessel-to-platform#"
+     xml:base="http://schema.geolink.org/dev/pattern/vessel-to-platform"
+     xmlns:ecglpf="http://schema.geolink.org/dev/pattern/platform#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:ecglvs="http://schema.geolink.org/dev/vessel#">
-    <owl:Ontology rdf:about="http://schema.geolink.org/dev/vessel-to-platform"/>
+     xmlns:ecglvs="http://schema.geolink.org/dev/pattern/vessel#">
+    <owl:Ontology rdf:about="http://schema.geolink.org/dev/pattern/vessel-to-platform"/>
     
 
 
@@ -34,13 +34,13 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/platform#isDescribedBy -->
+    <!-- http://schema.geolink.org/dev/pattern/platform#isDescribedBy -->
 
     <owl:ObjectProperty rdf:about="&ecglpf;isDescribedBy"/>
     
 
 
-    <!-- http://schema.geolink.org/dev/vessel#isDescribedBy -->
+    <!-- http://schema.geolink.org/dev/pattern/vessel#isDescribedBy -->
 
     <owl:ObjectProperty rdf:about="&ecglvs;isDescribedBy">
         <rdfs:subPropertyOf rdf:resource="&ecglpf;isDescribedBy"/>
@@ -59,19 +59,19 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/platform#InformationObject -->
+    <!-- http://schema.geolink.org/dev/pattern/platform#InformationObject -->
 
     <owl:Class rdf:about="&ecglpf;InformationObject"/>
     
 
 
-    <!-- http://schema.geolink.org/dev/platform#Platform -->
+    <!-- http://schema.geolink.org/dev/pattern/platform#Platform -->
 
     <owl:Class rdf:about="&ecglpf;Platform"/>
     
 
 
-    <!-- http://schema.geolink.org/dev/vessel#InformationObject -->
+    <!-- http://schema.geolink.org/dev/pattern/vessel#InformationObject -->
 
     <owl:Class rdf:about="&ecglvs;InformationObject">
         <rdfs:subClassOf rdf:resource="&ecglpf;InformationObject"/>
@@ -79,7 +79,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/vessel#Vessel -->
+    <!-- http://schema.geolink.org/dev/pattern/vessel#Vessel -->
 
     <owl:Class rdf:about="&ecglvs;Vessel">
         <rdfs:subClassOf rdf:resource="&ecglpf;Platform"/>

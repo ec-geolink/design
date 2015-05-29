@@ -4,22 +4,22 @@
 <!DOCTYPE rdf:RDF [
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY ecglvs "http://schema.geolink.org/dev/vessel#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-    <!ENTITY ecglpv "http://schema.geolink.org/dev/propertyvalue#" >
+    <!ENTITY ecglvs "http://schema.geolink.org/dev/pattern/vessel#" >
+    <!ENTITY ecglpv "http://schema.geolink.org/dev/pattern/propertyvalue#" >
 ]>
 
 
-<rdf:RDF xmlns="http://schema.geolink.org/dev/vessel-to-propertyvalue#"
-     xml:base="http://schema.geolink.org/dev/vessel-to-propertyvalue"
-     xmlns:ecglpv="http://schema.geolink.org/dev/propertyvalue#"
+<rdf:RDF xmlns="http://schema.geolink.org/dev/pattern/vessel-to-propertyvalue#"
+     xml:base="http://schema.geolink.org/dev/pattern/vessel-to-propertyvalue"
+     xmlns:ecglpv="http://schema.geolink.org/dev/pattern/propertyvalue#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:ecglvs="http://schema.geolink.org/dev/vessel#">
-    <owl:Ontology rdf:about="http://schema.geolink.org/dev/vessel-to-propertyvalue"/>
+     xmlns:ecglvs="http://schema.geolink.org/dev/pattern/vessel#">
+    <owl:Ontology rdf:about="http://schema.geolink.org/dev/pattern/vessel-to-propertyvalue"/>
     
 
 
@@ -34,13 +34,13 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/propertyvalue#hasProperty -->
+    <!-- http://schema.geolink.org/dev/pattern/propertyvalue#hasProperty -->
 
     <owl:ObjectProperty rdf:about="&ecglpv;hasProperty"/>
     
 
 
-    <!-- http://schema.geolink.org/dev/vessel#hasProperty -->
+    <!-- http://schema.geolink.org/dev/pattern/vessel#hasProperty -->
 
     <owl:ObjectProperty rdf:about="&ecglvs;hasProperty">
         <rdfs:subPropertyOf rdf:resource="&ecglpv;hasProperty"/>
@@ -59,13 +59,13 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/propertyvalue#Property -->
+    <!-- http://schema.geolink.org/dev/pattern/propertyvalue#Property -->
 
     <owl:Class rdf:about="&ecglpv;Property"/>
     
 
 
-    <!-- http://schema.geolink.org/dev/vessel#Property -->
+    <!-- http://schema.geolink.org/dev/pattern/vessel#Property -->
 
     <owl:Class rdf:about="&ecglvs;Property">
         <rdfs:subClassOf rdf:resource="&ecglpv;Property"/>

@@ -4,22 +4,22 @@
 <!DOCTYPE rdf:RDF [
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY ecglvs "http://schema.geolink.org/dev/vessel#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
-    <!ENTITY ecglar "http://schema.geolink.org/dev/agentrole#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY ecglvs "http://schema.geolink.org/dev/pattern/vessel#" >
+    <!ENTITY ecglar "http://schema.geolink.org/dev/pattern/agentrole#" >
 ]>
 
 
-<rdf:RDF xmlns="http://schema.geolink.org/dev/vessel-to-agentrole#"
-     xml:base="http://schema.geolink.org/dev/vessel-to-agentrole"
+<rdf:RDF xmlns="http://schema.geolink.org/dev/pattern/vessel-to-agentrole#"
+     xml:base="http://schema.geolink.org/dev/pattern/vessel-to-agentrole"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:ecglar="http://schema.geolink.org/dev/agentrole#"
+     xmlns:ecglar="http://schema.geolink.org/dev/pattern/agentrole#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:ecglvs="http://schema.geolink.org/dev/vessel#">
-    <owl:Ontology rdf:about="http://schema.geolink.org/dev/vessel-to-agentrole"/>
+     xmlns:ecglvs="http://schema.geolink.org/dev/pattern/vessel#">
+    <owl:Ontology rdf:about="http://schema.geolink.org/dev/pattern/vessel-to-agentrole"/>
     
 
 
@@ -34,19 +34,19 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/agentrole#isPerformedBy -->
+    <!-- http://schema.geolink.org/dev/pattern/agentrole#isPerformedBy -->
 
     <owl:ObjectProperty rdf:about="&ecglar;isPerformedBy"/>
     
 
 
-    <!-- http://schema.geolink.org/dev/agentrole#providesAgentRole -->
+    <!-- http://schema.geolink.org/dev/pattern/agentrole#providesAgentRole -->
 
     <owl:ObjectProperty rdf:about="&ecglar;providesAgentRole"/>
     
 
 
-    <!-- http://schema.geolink.org/dev/vessel#isPerformedBy -->
+    <!-- http://schema.geolink.org/dev/pattern/vessel#isPerformedBy -->
 
     <owl:ObjectProperty rdf:about="&ecglvs;isPerformedBy">
         <rdfs:subPropertyOf rdf:resource="&ecglar;isPerformedBy"/>
@@ -54,7 +54,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/vessel#providesAgentRole -->
+    <!-- http://schema.geolink.org/dev/pattern/vessel#providesAgentRole -->
 
     <owl:ObjectProperty rdf:about="&ecglvs;providesAgentRole">
         <rdfs:subPropertyOf rdf:resource="&ecglar;providesAgentRole"/>
@@ -73,19 +73,19 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/agentrole#Agent -->
+    <!-- http://schema.geolink.org/dev/pattern/agentrole#Agent -->
 
     <owl:Class rdf:about="&ecglar;Agent"/>
     
 
 
-    <!-- http://schema.geolink.org/dev/agentrole#AgentRole -->
+    <!-- http://schema.geolink.org/dev/pattern/agentrole#AgentRole -->
 
     <owl:Class rdf:about="&ecglar;AgentRole"/>
     
 
 
-    <!-- http://schema.geolink.org/dev/vessel#Agent -->
+    <!-- http://schema.geolink.org/dev/pattern/vessel#Agent -->
 
     <owl:Class rdf:about="&ecglvs;Agent">
         <rdfs:subClassOf rdf:resource="&ecglar;Agent"/>
@@ -93,7 +93,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/vessel#AgentRole -->
+    <!-- http://schema.geolink.org/dev/pattern/vessel#AgentRole -->
 
     <owl:Class rdf:about="&ecglvs;AgentRole">
         <rdfs:subClassOf rdf:resource="&ecglar;AgentRole"/>
