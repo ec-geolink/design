@@ -9,13 +9,13 @@
 ]>
 
 
-<rdf:RDF xmlns="http://schema.geolink.org/dev/identifier#"
-     xml:base="http://schema.geolink.org/dev/identifier"
+<rdf:RDF xmlns="http://schema.geolink.org/dev/pattern/identifier#"
+     xml:base="http://schema.geolink.org/dev/pattern/identifier"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="http://schema.geolink.org/dev/identifier"/>
+    <owl:Ontology rdf:about="http://schema.geolink.org/dev/pattern/identifier"/>
     
 
 
@@ -30,15 +30,15 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/identifier#hasIdentifierScheme -->
+    <!-- http://schema.geolink.org/dev/pattern/identifier#hasIdentifierScheme -->
 
-    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/identifier#hasIdentifierScheme"/>
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/pattern/identifier#hasIdentifierScheme"/>
     
 
 
-    <!-- http://schema.geolink.org/dev/identifier#hasIdentifierValue -->
+    <!-- http://schema.geolink.org/dev/pattern/identifier#hasIdentifierValue -->
 
-    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/identifier#hasIdentifierValue"/>
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/pattern/identifier#hasIdentifierValue"/>
     
 
 
@@ -53,19 +53,12 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/identifier#Identifier -->
+    <!-- http://schema.geolink.org/dev/pattern/identifier#Identifier -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/identifier#Identifier">
+    <owl:Class rdf:about="http://schema.geolink.org/dev/pattern/identifier#Identifier">
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/identifier#hasIdentifierValue"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/identifier#hasIdentifierScheme"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/pattern/identifier#hasIdentifierScheme"/>
                 <owl:allValuesFrom>
                     <rdfs:Datatype>
                         <owl:unionOf rdf:parseType="Collection">
@@ -78,13 +71,20 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/identifier#hasIdentifierValue"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/pattern/identifier#hasIdentifierValue"/>
                 <owl:allValuesFrom rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/identifier#hasIdentifierScheme"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/pattern/identifier#hasIdentifierValue"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/pattern/identifier#hasIdentifierScheme"/>
                 <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
                 <owl:onDataRange>
                     <rdfs:Datatype>
@@ -109,8 +109,8 @@
      -->
 
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/identifier#Identifier"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/identifier#hasIdentifierScheme"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/pattern/identifier#Identifier"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/pattern/identifier#hasIdentifierScheme"/>
         <owl:someValuesFrom>
             <rdfs:Datatype>
                 <owl:unionOf rdf:parseType="Collection">
@@ -121,8 +121,8 @@
         </owl:someValuesFrom>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/identifier#Identifier"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/identifier#hasIdentifierValue"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/pattern/identifier#Identifier"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/pattern/identifier#hasIdentifierValue"/>
         <owl:someValuesFrom rdf:resource="&xsd;string"/>
     </owl:Restriction>
 </rdf:RDF>
