@@ -4,22 +4,22 @@
 <!DOCTYPE rdf:RDF [
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY ecglev "http://schema.geolink.org/dev/event#" >
-    <!ENTITY ecglcr "http://schema.geolink.org/dev/cruise#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY ecglev "http://schema.geolink.org/dev/pattern/event#" >
+    <!ENTITY ecglcr "http://schema.geolink.org/dev/pattern/cruise#" >
 ]>
 
 
-<rdf:RDF xmlns="http://schema.geolink.org/dev/cruise-to-event#"
-     xml:base="http://schema.geolink.org/dev/cruise-to-event"
+<rdf:RDF xmlns="http://schema.geolink.org/dev/pattern/cruise-to-event#"
+     xml:base="http://schema.geolink.org/dev/pattern/cruise-to-event"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:ecglev="http://schema.geolink.org/dev/event#"
+     xmlns:ecglev="http://schema.geolink.org/dev/pattern/event#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:ecglcr="http://schema.geolink.org/dev/cruise#">
-    <owl:Ontology rdf:about="http://schema.geolink.org/dev/cruise-to-event"/>
+     xmlns:ecglcr="http://schema.geolink.org/dev/pattern/cruise#">
+    <owl:Ontology rdf:about="http://schema.geolink.org/dev/pattern/cruise-to-event"/>
     
 
 
@@ -34,37 +34,37 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/cruise#atTime -->
+    <!-- http://schema.geolink.org/dev/pattern/cruise#atTime -->
 
     <owl:ObjectProperty rdf:about="&ecglcr;atTime"/>
     
 
 
-    <!-- http://schema.geolink.org/dev/cruise#hasFix -->
+    <!-- http://schema.geolink.org/dev/pattern/cruise#hasFix -->
 
     <owl:ObjectProperty rdf:about="&ecglcr;hasFix"/>
     
 
 
-    <!-- http://schema.geolink.org/dev/cruise#hasLocation -->
+    <!-- http://schema.geolink.org/dev/pattern/cruise#hasLocation -->
 
     <owl:ObjectProperty rdf:about="&ecglcr;hasLocation"/>
     
 
 
-    <!-- http://schema.geolink.org/dev/cruise#hasSpatialFootprint -->
+    <!-- http://schema.geolink.org/dev/pattern/cruise#hasSpatialFootprint -->
 
     <owl:ObjectProperty rdf:about="&ecglcr;hasSpatialFootprint"/>
     
 
 
-    <!-- http://schema.geolink.org/dev/cruise#hasTrajectory -->
+    <!-- http://schema.geolink.org/dev/pattern/cruise#hasTrajectory -->
 
     <owl:ObjectProperty rdf:about="&ecglcr;hasTrajectory"/>
     
 
 
-    <!-- http://schema.geolink.org/dev/cruise#isPerformedBy -->
+    <!-- http://schema.geolink.org/dev/pattern/cruise#isPerformedBy -->
 
     <owl:ObjectProperty rdf:about="&ecglcr;isPerformedBy">
         <rdfs:subPropertyOf rdf:resource="&ecglev;isPerformedBy"/>
@@ -72,7 +72,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/cruise#providesAgentRole -->
+    <!-- http://schema.geolink.org/dev/pattern/cruise#providesAgentRole -->
 
     <owl:ObjectProperty rdf:about="&ecglcr;providesAgentRole">
         <rdfs:subPropertyOf rdf:resource="&ecglev;providesAgentRole"/>
@@ -80,13 +80,13 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/event#isPerformedBy -->
+    <!-- http://schema.geolink.org/dev/pattern/event#isPerformedBy -->
 
     <owl:ObjectProperty rdf:about="&ecglev;isPerformedBy"/>
     
 
 
-    <!-- http://schema.geolink.org/dev/event#occursAtPlace -->
+    <!-- http://schema.geolink.org/dev/pattern/event#occursAtPlace -->
 
     <owl:ObjectProperty rdf:about="&ecglev;occursAtPlace">
         <owl:propertyChainAxiom rdf:parseType="Collection">
@@ -101,7 +101,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/event#occursAtTime -->
+    <!-- http://schema.geolink.org/dev/pattern/event#occursAtTime -->
 
     <owl:ObjectProperty rdf:about="&ecglev;occursAtTime">
         <owl:propertyChainAxiom rdf:parseType="Collection">
@@ -113,7 +113,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/event#providesAgentRole -->
+    <!-- http://schema.geolink.org/dev/pattern/event#providesAgentRole -->
 
     <owl:ObjectProperty rdf:about="&ecglev;providesAgentRole"/>
     
@@ -130,7 +130,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/cruise#Agent -->
+    <!-- http://schema.geolink.org/dev/pattern/cruise#Agent -->
 
     <owl:Class rdf:about="&ecglcr;Agent">
         <rdfs:subClassOf rdf:resource="&ecglev;Agent"/>
@@ -138,7 +138,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/cruise#AgentRole -->
+    <!-- http://schema.geolink.org/dev/pattern/cruise#AgentRole -->
 
     <owl:Class rdf:about="&ecglcr;AgentRole">
         <rdfs:subClassOf rdf:resource="&ecglev;AgentRole"/>
@@ -146,7 +146,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/cruise#Cruise -->
+    <!-- http://schema.geolink.org/dev/pattern/cruise#Cruise -->
 
     <owl:Class rdf:about="&ecglcr;Cruise">
         <rdfs:subClassOf rdf:resource="&ecglev;Event"/>
@@ -154,7 +154,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/cruise#Place -->
+    <!-- http://schema.geolink.org/dev/pattern/cruise#Place -->
 
     <owl:Class rdf:about="&ecglcr;Place">
         <rdfs:subClassOf rdf:resource="&ecglev;Place"/>
@@ -162,7 +162,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/cruise#TimeEntity -->
+    <!-- http://schema.geolink.org/dev/pattern/cruise#TimeEntity -->
 
     <owl:Class rdf:about="&ecglcr;TimeEntity">
         <rdfs:subClassOf rdf:resource="&ecglev;TimeEntity"/>
@@ -170,31 +170,31 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/event#Agent -->
+    <!-- http://schema.geolink.org/dev/pattern/event#Agent -->
 
     <owl:Class rdf:about="&ecglev;Agent"/>
     
 
 
-    <!-- http://schema.geolink.org/dev/event#AgentRole -->
+    <!-- http://schema.geolink.org/dev/pattern/event#AgentRole -->
 
     <owl:Class rdf:about="&ecglev;AgentRole"/>
     
 
 
-    <!-- http://schema.geolink.org/dev/event#Event -->
+    <!-- http://schema.geolink.org/dev/pattern/event#Event -->
 
     <owl:Class rdf:about="&ecglev;Event"/>
     
 
 
-    <!-- http://schema.geolink.org/dev/event#Place -->
+    <!-- http://schema.geolink.org/dev/pattern/event#Place -->
 
     <owl:Class rdf:about="&ecglev;Place"/>
     
 
 
-    <!-- http://schema.geolink.org/dev/event#TimeEntity -->
+    <!-- http://schema.geolink.org/dev/pattern/event#TimeEntity -->
 
     <owl:Class rdf:about="&ecglev;TimeEntity"/>
 </rdf:RDF>

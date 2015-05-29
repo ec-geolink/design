@@ -4,22 +4,22 @@
 <!DOCTYPE rdf:RDF [
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY ecglpl "http://schema.geolink.org/dev/place#" >
-    <!ENTITY ecglcr "http://schema.geolink.org/dev/cruise#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY ecglpl "http://schema.geolink.org/dev/pattern/place#" >
+    <!ENTITY ecglcr "http://schema.geolink.org/dev/pattern/cruise#" >
 ]>
 
 
-<rdf:RDF xmlns="http://schema.geolink.org/dev/cruise-to-place#"
-     xml:base="http://schema.geolink.org/dev/cruise-to-place"
-     xmlns:ecglpl="http://schema.geolink.org/dev/place#"
+<rdf:RDF xmlns="http://schema.geolink.org/dev/pattern/cruise-to-place#"
+     xml:base="http://schema.geolink.org/dev/pattern/cruise-to-place"
+     xmlns:ecglpl="http://schema.geolink.org/dev/pattern/place#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:ecglcr="http://schema.geolink.org/dev/cruise#">
-    <owl:Ontology rdf:about="http://schema.geolink.org/dev/cruise-to-place"/>
+     xmlns:ecglcr="http://schema.geolink.org/dev/pattern/cruise#">
+    <owl:Ontology rdf:about="http://schema.geolink.org/dev/pattern/cruise-to-place"/>
     
 
 
@@ -34,7 +34,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/cruise#hasSpatialFootprint -->
+    <!-- http://schema.geolink.org/dev/pattern/cruise#hasSpatialFootprint -->
 
     <owl:ObjectProperty rdf:about="&ecglcr;hasSpatialFootprint">
         <rdfs:subPropertyOf rdf:resource="&ecglpl;hasSpatialFootprint"/>
@@ -42,7 +42,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/place#hasSpatialFootprint -->
+    <!-- http://schema.geolink.org/dev/pattern/place#hasSpatialFootprint -->
 
     <owl:ObjectProperty rdf:about="&ecglpl;hasSpatialFootprint"/>
     
@@ -59,7 +59,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/cruise#Place -->
+    <!-- http://schema.geolink.org/dev/pattern/cruise#Place -->
 
     <owl:Class rdf:about="&ecglcr;Place">
         <rdfs:subClassOf rdf:resource="&ecglpl;Place"/>
@@ -67,7 +67,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/cruise#Position -->
+    <!-- http://schema.geolink.org/dev/pattern/cruise#Position -->
 
     <owl:Class rdf:about="&ecglcr;Position">
         <rdfs:subClassOf rdf:resource="&ecglpl;Geometry"/>
@@ -75,13 +75,13 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/place#Geometry -->
+    <!-- http://schema.geolink.org/dev/pattern/place#Geometry -->
 
     <owl:Class rdf:about="&ecglpl;Geometry"/>
     
 
 
-    <!-- http://schema.geolink.org/dev/place#Place -->
+    <!-- http://schema.geolink.org/dev/pattern/place#Place -->
 
     <owl:Class rdf:about="&ecglpl;Place"/>
 </rdf:RDF>
