@@ -19,7 +19,9 @@
      xmlns:ecglar="http://schema.geolink.org/dev/pattern/agentrole#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:ecglcr="http://schema.geolink.org/dev/pattern/cruise#">
-    <owl:Ontology rdf:about="http://schema.geolink.org/dev/pattern/cruise-to-agentrole"/>
+    <owl:Ontology rdf:about="http://schema.geolink.org/dev/pattern/cruise-to-agentrole">
+        <rdfs:label>Uni-direction Alignment pattern from Cruise pattern to Agent Role pattern</rdfs:label>
+    </owl:Ontology>
     
 
 
