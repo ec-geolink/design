@@ -5,21 +5,21 @@
     <!ENTITY time "http://www.w3.org/2006/time#" >
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY ecglpr "http://schema.geolink.org/dev/person#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY ecglpr "http://schema.geolink.org/dev/pattern/person#" >
 ]>
 
 
-<rdf:RDF xmlns="http://schema.geolink.org/dev/person-to-owltime#"
-     xml:base="http://schema.geolink.org/dev/person-to-owltime"
+<rdf:RDF xmlns="http://schema.geolink.org/dev/pattern/person-to-owltime#"
+     xml:base="http://schema.geolink.org/dev/pattern/person-to-owltime"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:ecglpr="http://schema.geolink.org/dev/person#"
+     xmlns:ecglpr="http://schema.geolink.org/dev/pattern/person#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:time="http://www.w3.org/2006/time#">
-    <owl:Ontology rdf:about="http://schema.geolink.org/dev/person-to-owltime"/>
+    <owl:Ontology rdf:about="http://schema.geolink.org/dev/pattern/person-to-owltime"/>
     
 
 
@@ -34,7 +34,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/person#BirthTimeInstant -->
+    <!-- http://schema.geolink.org/dev/pattern/person#BirthTimeInstant -->
 
     <owl:Class rdf:about="&ecglpr;BirthTimeInstant">
         <rdfs:subClassOf rdf:resource="&time;Instant"/>

@@ -4,22 +4,22 @@
 <!DOCTYPE rdf:RDF [
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY ecglpl "http://schema.geolink.org/dev/place#" >
-    <!ENTITY ecglpr "http://schema.geolink.org/dev/person#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY ecglpl "http://schema.geolink.org/dev/pattern/place#" >
+    <!ENTITY ecglpr "http://schema.geolink.org/dev/pattern/person#" >
 ]>
 
 
-<rdf:RDF xmlns="http://schema.geolink.org/dev/person-to-place#"
-     xml:base="http://schema.geolink.org/dev/person-to-place"
-     xmlns:ecglpl="http://schema.geolink.org/dev/place#"
+<rdf:RDF xmlns="http://schema.geolink.org/dev/pattern/person-to-place#"
+     xml:base="http://schema.geolink.org/dev/pattern/person-to-place"
+     xmlns:ecglpl="http://schema.geolink.org/dev/pattern/place#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:ecglpr="http://schema.geolink.org/dev/person#"
+     xmlns:ecglpr="http://schema.geolink.org/dev/pattern/person#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="http://schema.geolink.org/dev/person-to-place"/>
+    <owl:Ontology rdf:about="http://schema.geolink.org/dev/pattern/person-to-place"/>
     
 
 
@@ -34,7 +34,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/person#BirthPlace -->
+    <!-- http://schema.geolink.org/dev/pattern/person#BirthPlace -->
 
     <owl:Class rdf:about="&ecglpr;BirthPlace">
         <rdfs:subClassOf rdf:resource="&ecglpl;Place"/>
@@ -42,7 +42,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/place#Place -->
+    <!-- http://schema.geolink.org/dev/pattern/place#Place -->
 
     <owl:Class rdf:about="&ecglpl;Place"/>
 </rdf:RDF>
