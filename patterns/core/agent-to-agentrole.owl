@@ -19,7 +19,10 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:ecglar="http://schema.geolink.org/dev/pattern/agentrole#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="http://schema.geolink.org/dev/pattern/agent-to-agentrole"/>
+    <owl:Ontology rdf:about="http://schema.geolink.org/dev/pattern/agent-to-agentrole">
+        <rdfs:label>Alignment pattern from Agent to Agent Role patterns</rdfs:label>
+        <rdfs:comment>This pattern specifies the alignment from the Agent pattern to the Agent Role pattern.</rdfs:comment>
+    </owl:Ontology>
     
 
 
@@ -37,6 +40,7 @@
     <!-- http://schema.geolink.org/dev/pattern/agent#performsAgentRole -->
 
     <owl:ObjectProperty rdf:about="&ecglag;performsAgentRole">
+        <rdfs:label>agent:performsAgentRole</rdfs:label>
         <rdfs:subPropertyOf>
             <rdf:Description>
                 <owl:inverseOf rdf:resource="&ecglar;isPerformedBy"/>
@@ -48,7 +52,9 @@
 
     <!-- http://schema.geolink.org/dev/pattern/agentrole#isPerformedBy -->
 
-    <owl:ObjectProperty rdf:about="&ecglar;isPerformedBy"/>
+    <owl:ObjectProperty rdf:about="&ecglar;isPerformedBy">
+        <rdfs:label>agentrole:isPerformedBy</rdfs:label>
+    </owl:ObjectProperty>
     
 
 
@@ -66,6 +72,7 @@
     <!-- http://schema.geolink.org/dev/pattern/agent#Agent -->
 
     <owl:Class rdf:about="&ecglag;Agent">
+        <rdfs:label>agent:Agent</rdfs:label>
         <owl:equivalentClass rdf:resource="&ecglar;Agent"/>
     </owl:Class>
     
@@ -74,6 +81,7 @@
     <!-- http://schema.geolink.org/dev/pattern/agent#AgentRole -->
 
     <owl:Class rdf:about="&ecglag;AgentRole">
+        <rdfs:label>agent:AgentRole</rdfs:label>
         <owl:equivalentClass rdf:resource="&ecglar;AgentRole"/>
     </owl:Class>
     
@@ -81,13 +89,17 @@
 
     <!-- http://schema.geolink.org/dev/pattern/agentrole#Agent -->
 
-    <owl:Class rdf:about="&ecglar;Agent"/>
+    <owl:Class rdf:about="&ecglar;Agent">
+        <rdfs:label>agentrole:Agent</rdfs:label>
+    </owl:Class>
     
 
 
     <!-- http://schema.geolink.org/dev/pattern/agentrole#AgentRole -->
 
-    <owl:Class rdf:about="&ecglar;AgentRole"/>
+    <owl:Class rdf:about="&ecglar;AgentRole">
+        <rdfs:label>agentrole:AgentRole</rdfs:label>
+    </owl:Class>
 </rdf:RDF>
 
 

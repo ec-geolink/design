@@ -16,6 +16,8 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="http://schema.geolink.org/dev/pattern/agent">
+        <rdfs:label>GeoLink Agent Pattern</rdfs:label>
+        <rdfs:comment>The Agent pattern is a very simplistic pattern stub intended to model agents such as people or organization.  Alignments are specified with the Agent Role pattern</rdfs:comment>
         <owl:imports rdf:resource="http://schema.geolink.org/dev/pattern/agent-to-agentrole"/>
     </owl:Ontology>
     
@@ -34,7 +36,9 @@
 
     <!-- http://schema.geolink.org/dev/pattern/agent#performsAgentRole -->
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/pattern/agent#performsAgentRole"/>
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/pattern/agent#performsAgentRole">
+        <rdfs:label>performsAgentRole</rdfs:label>
+    </owl:ObjectProperty>
     
 
 
@@ -52,6 +56,7 @@
     <!-- http://schema.geolink.org/dev/pattern/agent#Agent -->
 
     <owl:Class rdf:about="http://schema.geolink.org/dev/pattern/agent#Agent">
+        <rdfs:label>Agent</rdfs:label>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://schema.geolink.org/dev/pattern/agent#performsAgentRole"/>
@@ -59,13 +64,17 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="http://schema.geolink.org/dev/pattern/agent#AgentRole"/>
+        <rdfs:comment>Agents may perform a role (an instance of AgentRole class), e.g., in the context of events, organizations, etc.</rdfs:comment>
     </owl:Class>
     
 
 
     <!-- http://schema.geolink.org/dev/pattern/agent#AgentRole -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/pattern/agent#AgentRole"/>
+    <owl:Class rdf:about="http://schema.geolink.org/dev/pattern/agent#AgentRole">
+        <rdfs:label>AgentRole</rdfs:label>
+        <rdfs:comment>AgentRole represents roles that can be performed by an agent, e.g., in the context of events, organizations, etc.</rdfs:comment>
+    </owl:Class>
     
 
 
