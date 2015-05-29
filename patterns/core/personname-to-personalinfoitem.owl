@@ -5,21 +5,21 @@
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
-    <!ENTITY ecglpn "http://schema.geolink.org/dev/personname#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-    <!ENTITY ecglpi "http://schema.geolink.org/dev/personalinfoitem#" >
+    <!ENTITY ecglpn "http://schema.geolink.org/dev/pattern/personname#" >
+    <!ENTITY ecglpi "http://schema.geolink.org/dev/pattern/personalinfoitem#" >
 ]>
 
 
-<rdf:RDF xmlns="http://schema.geolink.org/dev/personname-to-personalinfoitem#"
-     xml:base="http://schema.geolink.org/dev/personname-to-personalinfoitem"
-     xmlns:ecglpi="http://schema.geolink.org/dev/personalinfoitem#"
+<rdf:RDF xmlns="http://schema.geolink.org/dev/pattern/personname-to-personalinfoitem#"
+     xml:base="http://schema.geolink.org/dev/pattern/personname-to-personalinfoitem"
+     xmlns:ecglpi="http://schema.geolink.org/dev/pattern/personalinfoitem#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:ecglpn="http://schema.geolink.org/dev/personname#">
-    <owl:Ontology rdf:about="http://schema.geolink.org/dev/personname-to-personalinfoitem"/>
+     xmlns:ecglpn="http://schema.geolink.org/dev/pattern/personname#">
+    <owl:Ontology rdf:about="http://schema.geolink.org/dev/pattern/personname-to-personalinfoitem"/>
     
 
 
@@ -34,13 +34,13 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/personalinfoitem#hasPersonalInfoItem -->
+    <!-- http://schema.geolink.org/dev/pattern/personalinfoitem#hasPersonalInfoItem -->
 
     <owl:ObjectProperty rdf:about="&ecglpi;hasPersonalInfoItem"/>
     
 
 
-    <!-- http://schema.geolink.org/dev/personname#hasPersonName -->
+    <!-- http://schema.geolink.org/dev/pattern/personname#hasPersonName -->
 
     <owl:ObjectProperty rdf:about="&ecglpn;hasPersonName">
         <rdfs:subPropertyOf rdf:resource="&ecglpi;hasPersonalInfoItem"/>
@@ -59,13 +59,13 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/personalinfoitem#hasLiteralValue -->
+    <!-- http://schema.geolink.org/dev/pattern/personalinfoitem#hasLiteralValue -->
 
     <owl:DatatypeProperty rdf:about="&ecglpi;hasLiteralValue"/>
     
 
 
-    <!-- http://schema.geolink.org/dev/personname#fullNameAsString -->
+    <!-- http://schema.geolink.org/dev/pattern/personname#fullNameAsString -->
 
     <owl:DatatypeProperty rdf:about="&ecglpn;fullNameAsString">
         <rdfs:subPropertyOf rdf:resource="&ecglpi;hasLiteralValue"/>
@@ -84,19 +84,19 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/personalinfoitem#Person -->
+    <!-- http://schema.geolink.org/dev/pattern/personalinfoitem#Person -->
 
     <owl:Class rdf:about="&ecglpi;Person"/>
     
 
 
-    <!-- http://schema.geolink.org/dev/personalinfoitem#PersonalInfoItem -->
+    <!-- http://schema.geolink.org/dev/pattern/personalinfoitem#PersonalInfoItem -->
 
     <owl:Class rdf:about="&ecglpi;PersonalInfoItem"/>
     
 
 
-    <!-- http://schema.geolink.org/dev/personname#Person -->
+    <!-- http://schema.geolink.org/dev/pattern/personname#Person -->
 
     <owl:Class rdf:about="&ecglpn;Person">
         <rdfs:subClassOf rdf:resource="&ecglpi;Person"/>
@@ -104,7 +104,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/personname#PersonName -->
+    <!-- http://schema.geolink.org/dev/pattern/personname#PersonName -->
 
     <owl:Class rdf:about="&ecglpn;PersonName">
         <rdfs:subClassOf rdf:resource="&ecglpi;PersonalInfoItem"/>
