@@ -15,7 +15,11 @@
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="http://schema.geolink.org/dev/pattern/physicalsample"/>
+    <owl:Ontology rdf:about="http://schema.geolink.org/dev/pattern/physicalsample">
+        <owl:imports rdf:resource="http://schema.geolink.org/dev/pattern/physicalsample-to-event"/>
+        <owl:imports rdf:resource="http://schema.geolink.org/dev/pattern/physicalsample-to-informationobject"/>
+        <owl:imports rdf:resource="http://schema.geolink.org/dev/pattern/physicalsample-to-propertyvalue"/>
+    </owl:Ontology>
     
 
 
