@@ -9,14 +9,14 @@
 ]>
 
 
-<rdf:RDF xmlns="http://schema.geolink.org/dev/platform#"
-     xml:base="http://schema.geolink.org/dev/platform"
+<rdf:RDF xmlns="http://schema.geolink.org/dev/pattern/platform#"
+     xml:base="http://schema.geolink.org/dev/pattern/platform"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="http://schema.geolink.org/dev/platform">
-        <owl:imports rdf:resource="http://schema.geolink.org/dev/platform-to-informationobject"/>
+    <owl:Ontology rdf:about="http://schema.geolink.org/dev/pattern/platform">
+        <owl:imports rdf:resource="http://schema.geolink.org/dev/pattern/platform-to-informationobject"/>
     </owl:Ontology>
     
 
@@ -32,9 +32,9 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/platform#isDescribedBy -->
+    <!-- http://schema.geolink.org/dev/pattern/platform#isDescribedBy -->
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/platform#isDescribedBy"/>
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/pattern/platform#isDescribedBy"/>
     
 
 
@@ -49,26 +49,26 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/platform#InformationObject -->
+    <!-- http://schema.geolink.org/dev/pattern/platform#InformationObject -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/platform#InformationObject"/>
+    <owl:Class rdf:about="http://schema.geolink.org/dev/pattern/platform#InformationObject"/>
     
 
 
-    <!-- http://schema.geolink.org/dev/platform#Platform -->
+    <!-- http://schema.geolink.org/dev/pattern/platform#Platform -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/platform#Platform">
+    <owl:Class rdf:about="http://schema.geolink.org/dev/pattern/platform#Platform">
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/platform#isDescribedBy"/>
-                <owl:onClass rdf:resource="http://schema.geolink.org/dev/platform#InformationObject"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/pattern/platform#isDescribedBy"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/dev/pattern/platform#InformationObject"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/platform#isDescribedBy"/>
-                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/dev/platform#InformationObject"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/pattern/platform#isDescribedBy"/>
+                <owl:onClass rdf:resource="http://schema.geolink.org/dev/pattern/platform#InformationObject"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -84,9 +84,9 @@
      -->
 
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/platform#Platform"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/platform#isDescribedBy"/>
-        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/dev/platform#InformationObject"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/pattern/platform#Platform"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/pattern/platform#isDescribedBy"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/dev/pattern/platform#InformationObject"/>
     </owl:Restriction>
 </rdf:RDF>
 
