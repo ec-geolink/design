@@ -7,7 +7,7 @@
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-    <!ENTITY ecglar "http://schema.geolink.org/dev/pattern/agentrole#" >
+    <!ENTITY glar "http://schema.geolink.org/dev/pattern/agentrole#" >
 ]>
 
 
@@ -15,8 +15,8 @@
      xml:base="http://schema.geolink.org/dev/pattern/agentrole-to-owltime"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:glar="http://schema.geolink.org/dev/pattern/agentrole#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:ecglar="http://schema.geolink.org/dev/pattern/agentrole#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:time="http://www.w3.org/2006/time#">
     <owl:Ontology rdf:about="http://schema.geolink.org/dev/pattern/agentrole-to-owltime">
@@ -39,8 +39,8 @@
 
     <!-- http://schema.geolink.org/dev/pattern/agentrole#TimeInstant -->
 
-    <owl:Class rdf:about="&ecglar;TimeInstant">
-        <rdfs:label>agentrole:TimeInstant</rdfs:label>
+    <owl:Class rdf:about="&glar;TimeInstant">
+        <rdfs:label>glar:TimeInstant</rdfs:label>
         <rdfs:subClassOf rdf:resource="&time;Instant"/>
     </owl:Class>
     
