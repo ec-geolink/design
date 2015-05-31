@@ -40,7 +40,7 @@
     <!-- http://schema.geolink.org/dev/pattern/agent#performsAgentRole -->
 
     <owl:ObjectProperty rdf:about="&glag;performsAgentRole">
-        <rdfs:label>agent:performsAgentRole</rdfs:label>
+        <rdfs:label>glag:performsAgentRole</rdfs:label>
         <rdfs:subPropertyOf>
             <rdf:Description>
                 <owl:inverseOf rdf:resource="&glar;isPerformedBy"/>
@@ -53,7 +53,7 @@
     <!-- http://schema.geolink.org/dev/pattern/agentrole#isPerformedBy -->
 
     <owl:ObjectProperty rdf:about="&glar;isPerformedBy">
-        <rdfs:label>agentrole:isPerformedBy</rdfs:label>
+        <rdfs:label>glar:isPerformedBy</rdfs:label>
     </owl:ObjectProperty>
     
 
