@@ -16,7 +16,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="http://schema.geolink.org/dev/pattern/agentrole">
-        <rdfs:label>GeoLink Agent Role pattern</rdfs:label>
+        <rdfs:label>GeoLink Agent Role Pattern</rdfs:label>
         <rdfs:comment>The Agent Role pattern describes a role that may be performed by an agent within a particular context, i.e., in an organization, a cruise, a project, etc.</rdfs:comment>
         <owl:imports rdf:resource="http://schema.geolink.org/dev/pattern/agentrole-to-agent"/>
         <owl:imports rdf:resource="http://schema.geolink.org/dev/pattern/agentrole-to-owltime"/>
@@ -109,8 +109,22 @@
         <rdfs:label>AgentRole</rdfs:label>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/pattern/agentrole#isAgentRoleIn"/>
-                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/pattern/agentrole#endsAtTime"/>
+                <owl:onClass rdf:resource="http://schema.geolink.org/dev/pattern/agentrole#TimeInstant"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/pattern/agentrole#startsAtTime"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/dev/pattern/agentrole#TimeInstant"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/pattern/agentrole#startsAtTime"/>
+                <owl:onClass rdf:resource="http://schema.geolink.org/dev/pattern/agentrole#TimeInstant"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -121,34 +135,20 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/pattern/agentrole#endsAtTime"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/dev/pattern/agentrole#TimeInstant"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/pattern/agentrole#isAgentRoleIn"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://schema.geolink.org/dev/pattern/agentrole#isPerformedBy"/>
                 <owl:onClass rdf:resource="http://schema.geolink.org/dev/pattern/agentrole#Agent"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/pattern/agentrole#startsAtTime"/>
-                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/dev/pattern/agentrole#TimeInstant"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/pattern/agentrole#startsAtTime"/>
-                <owl:onClass rdf:resource="http://schema.geolink.org/dev/pattern/agentrole#TimeInstant"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/pattern/agentrole#endsAtTime"/>
-                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/dev/pattern/agentrole#TimeInstant"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/pattern/agentrole#endsAtTime"/>
-                <owl:onClass rdf:resource="http://schema.geolink.org/dev/pattern/agentrole#TimeInstant"/>
                 <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -189,13 +189,13 @@
     </owl:Restriction>
     <owl:Restriction>
         <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/pattern/agentrole#AgentRole"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/pattern/agentrole#isPerformedBy"/>
-        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/dev/pattern/agentrole#Agent"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/pattern/agentrole#isAgentRoleIn"/>
+        <owl:someValuesFrom rdf:resource="&owl;Thing"/>
     </owl:Restriction>
     <owl:Restriction>
         <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/pattern/agentrole#AgentRole"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/pattern/agentrole#isAgentRoleIn"/>
-        <owl:someValuesFrom rdf:resource="&owl;Thing"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/pattern/agentrole#isPerformedBy"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/dev/pattern/agentrole#Agent"/>
     </owl:Restriction>
     <owl:Restriction>
         <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/pattern/agentrole#AgentRole"/>

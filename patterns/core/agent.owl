@@ -16,7 +16,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="http://schema.geolink.org/dev/pattern/agent">
-        <rdfs:label>GeoLink Agent pattern</rdfs:label>
+        <rdfs:label>GeoLink Agent Pattern</rdfs:label>
         <rdfs:comment>The Agent pattern is a very simplistic pattern stub intended to model agents such as people or organization.  Alignments are specified with the Agent Role pattern</rdfs:comment>
         <owl:imports rdf:resource="http://schema.geolink.org/dev/pattern/agent-to-agentrole"/>
     </owl:Ontology>

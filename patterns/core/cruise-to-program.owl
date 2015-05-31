@@ -19,7 +19,9 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:glpg="http://schema.geolink.org/dev/pattern/program#">
-    <owl:Ontology rdf:about="http://schema.geolink.org/dev/pattern/cruise-to-program"/>
+    <owl:Ontology rdf:about="http://schema.geolink.org/dev/pattern/cruise-to-program">
+        <rdfs:label>Alignment from Cruise Pattern to Program Pattern</rdfs:label>
+    </owl:Ontology>
     
 
 
