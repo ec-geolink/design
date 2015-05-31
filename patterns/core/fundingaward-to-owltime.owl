@@ -19,7 +19,9 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:time="http://www.w3.org/2006/time#">
-    <owl:Ontology rdf:about="http://schema.geolink.org/dev/pattern/fundingaward-to-owltime"/>
+    <owl:Ontology rdf:about="http://schema.geolink.org/dev/pattern/fundingaward-to-owltime">
+        <rdfs:label>Alignment from Funding Award Pattern to OWL-Time Ontology</rdfs:label>
+    </owl:Ontology>
     
 
 

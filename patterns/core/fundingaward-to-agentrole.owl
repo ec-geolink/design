@@ -19,7 +19,9 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:ecglar="http://schema.geolink.org/dev/pattern/agentrole#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="http://schema.geolink.org/dev/pattern/fundingaward-to-agentrole"/>
+    <owl:Ontology rdf:about="http://schema.geolink.org/dev/pattern/fundingaward-to-agentrole">
+        <rdfs:label>Alignment from Funding Award Pattern to Agent Role Pattern</rdfs:label>
+    </owl:Ontology>
     
 
 
