@@ -38,19 +38,24 @@
 
     <!-- http://schema.geolink.org/dev/pattern/agentrole#isPerformedBy -->
 
-    <owl:ObjectProperty rdf:about="&ecglar;isPerformedBy"/>
+    <owl:ObjectProperty rdf:about="&ecglar;isPerformedBy">
+        <rdfs:label>glar:isPerfomedBy</rdfs:label>
+    </owl:ObjectProperty>
     
 
 
     <!-- http://schema.geolink.org/dev/pattern/agentrole#providesAgentRole -->
 
-    <owl:ObjectProperty rdf:about="&ecglar;providesAgentRole"/>
+    <owl:ObjectProperty rdf:about="&ecglar;providesAgentRole">
+        <rdfs:label>glar:providesAgentRole</rdfs:label>
+    </owl:ObjectProperty>
     
 
 
     <!-- http://schema.geolink.org/dev/pattern/cruise#isPerformedBy -->
 
     <owl:ObjectProperty rdf:about="&ecglcr;isPerformedBy">
+        <rdfs:label>glcr:isPerformedBy</rdfs:label>
         <rdfs:subPropertyOf rdf:resource="&ecglar;isPerformedBy"/>
     </owl:ObjectProperty>
     
@@ -59,6 +64,7 @@
     <!-- http://schema.geolink.org/dev/pattern/cruise#providesAgentRole -->
 
     <owl:ObjectProperty rdf:about="&ecglcr;providesAgentRole">
+        <rdfs:label>glcr:providesAgentRole</rdfs:label>
         <rdfs:subPropertyOf rdf:resource="&ecglar;providesAgentRole"/>
     </owl:ObjectProperty>
     
@@ -77,19 +83,24 @@
 
     <!-- http://schema.geolink.org/dev/pattern/agentrole#Agent -->
 
-    <owl:Class rdf:about="&ecglar;Agent"/>
+    <owl:Class rdf:about="&ecglar;Agent">
+        <rdfs:label>glar:Agent</rdfs:label>
+    </owl:Class>
     
 
 
     <!-- http://schema.geolink.org/dev/pattern/agentrole#AgentRole -->
 
-    <owl:Class rdf:about="&ecglar;AgentRole"/>
+    <owl:Class rdf:about="&ecglar;AgentRole">
+        <rdfs:label>glar:AgentRole</rdfs:label>
+    </owl:Class>
     
 
 
     <!-- http://schema.geolink.org/dev/pattern/cruise#Agent -->
 
     <owl:Class rdf:about="&ecglcr;Agent">
+        <rdfs:label>glcr:Agent</rdfs:label>
         <rdfs:subClassOf rdf:resource="&ecglar;Agent"/>
     </owl:Class>
     
@@ -98,6 +109,7 @@
     <!-- http://schema.geolink.org/dev/pattern/cruise#AgentRole -->
 
     <owl:Class rdf:about="&ecglcr;AgentRole">
+        <rdfs:label>glcr:AgentRole</rdfs:label>
         <rdfs:subClassOf rdf:resource="&ecglar;AgentRole"/>
     </owl:Class>
 </rdf:RDF>

@@ -6,19 +6,19 @@
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-    <!ENTITY ecglcr "http://schema.geolink.org/dev/pattern/cruise#" >
-    <!ENTITY ecglvs "http://schema.geolink.org/dev/pattern/vessel#" >
+    <!ENTITY glcr "http://schema.geolink.org/dev/pattern/cruise#" >
+    <!ENTITY glvs "http://schema.geolink.org/dev/pattern/vessel#" >
 ]>
 
 
 <rdf:RDF xmlns="http://schema.geolink.org/dev/pattern/cruise-to-vessel#"
      xml:base="http://schema.geolink.org/dev/pattern/cruise-to-vessel"
+     xmlns:glvs="http://schema.geolink.org/dev/pattern/vessel#"
+     xmlns:glcr="http://schema.geolink.org/dev/pattern/cruise#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:ecglvs="http://schema.geolink.org/dev/pattern/vessel#"
-     xmlns:ecglcr="http://schema.geolink.org/dev/pattern/cruise#">
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="http://schema.geolink.org/dev/pattern/cruise-to-vessel"/>
     
 
@@ -36,15 +36,18 @@
 
     <!-- http://schema.geolink.org/dev/pattern/cruise#Vessel -->
 
-    <owl:Class rdf:about="&ecglcr;Vessel">
-        <rdfs:subClassOf rdf:resource="&ecglvs;Vessel"/>
+    <owl:Class rdf:about="&glcr;Vessel">
+        <rdfs:label>glcr:Vessel</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&glvs;Vessel"/>
     </owl:Class>
     
 
 
     <!-- http://schema.geolink.org/dev/pattern/vessel#Vessel -->
 
-    <owl:Class rdf:about="&ecglvs;Vessel"/>
+    <owl:Class rdf:about="&glvs;Vessel">
+        <rdfs:label>glvs:Vessel</rdfs:label>
+    </owl:Class>
 </rdf:RDF>
 
 

@@ -6,19 +6,19 @@
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-    <!ENTITY ecglpl "http://schema.geolink.org/dev/pattern/place#" >
-    <!ENTITY ecglcr "http://schema.geolink.org/dev/pattern/cruise#" >
+    <!ENTITY glpl "http://schema.geolink.org/dev/pattern/place#" >
+    <!ENTITY glcr "http://schema.geolink.org/dev/pattern/cruise#" >
 ]>
 
 
 <rdf:RDF xmlns="http://schema.geolink.org/dev/pattern/cruise-to-place#"
      xml:base="http://schema.geolink.org/dev/pattern/cruise-to-place"
-     xmlns:ecglpl="http://schema.geolink.org/dev/pattern/place#"
+     xmlns:glpl="http://schema.geolink.org/dev/pattern/place#"
+     xmlns:glcr="http://schema.geolink.org/dev/pattern/cruise#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:ecglcr="http://schema.geolink.org/dev/pattern/cruise#">
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="http://schema.geolink.org/dev/pattern/cruise-to-place">
         <rdfs:label>Uni-direction Alignment pattern from Cruise pattern to Place pattern</rdfs:label>
     </owl:Ontology>
@@ -38,15 +38,18 @@
 
     <!-- http://schema.geolink.org/dev/pattern/cruise#hasSpatialFootprint -->
 
-    <owl:ObjectProperty rdf:about="&ecglcr;hasSpatialFootprint">
-        <rdfs:subPropertyOf rdf:resource="&ecglpl;hasSpatialFootprint"/>
+    <owl:ObjectProperty rdf:about="&glcr;hasSpatialFootprint">
+        <rdfs:comment>glcr:hasSpatialFootprint</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&glpl;hasSpatialFootprint"/>
     </owl:ObjectProperty>
     
 
 
     <!-- http://schema.geolink.org/dev/pattern/place#hasSpatialFootprint -->
 
-    <owl:ObjectProperty rdf:about="&ecglpl;hasSpatialFootprint"/>
+    <owl:ObjectProperty rdf:about="&glpl;hasSpatialFootprint">
+        <rdfs:comment>glpl:hasSpatialFootprint</rdfs:comment>
+    </owl:ObjectProperty>
     
 
 
@@ -63,29 +66,35 @@
 
     <!-- http://schema.geolink.org/dev/pattern/cruise#Place -->
 
-    <owl:Class rdf:about="&ecglcr;Place">
-        <rdfs:subClassOf rdf:resource="&ecglpl;Place"/>
+    <owl:Class rdf:about="&glcr;Place">
+        <rdfs:label>glcr:Place</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&glpl;Place"/>
     </owl:Class>
     
 
 
     <!-- http://schema.geolink.org/dev/pattern/cruise#Position -->
 
-    <owl:Class rdf:about="&ecglcr;Position">
-        <rdfs:subClassOf rdf:resource="&ecglpl;Geometry"/>
+    <owl:Class rdf:about="&glcr;Position">
+        <rdfs:label>glcr:Position</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&glpl;Geometry"/>
     </owl:Class>
     
 
 
     <!-- http://schema.geolink.org/dev/pattern/place#Geometry -->
 
-    <owl:Class rdf:about="&ecglpl;Geometry"/>
+    <owl:Class rdf:about="&glpl;Geometry">
+        <rdfs:label>glpl:Geometry</rdfs:label>
+    </owl:Class>
     
 
 
     <!-- http://schema.geolink.org/dev/pattern/place#Place -->
 
-    <owl:Class rdf:about="&ecglpl;Place"/>
+    <owl:Class rdf:about="&glpl;Place">
+        <rdfs:label>glpl:Place</rdfs:label>
+    </owl:Class>
 </rdf:RDF>
 
 
