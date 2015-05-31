@@ -6,20 +6,22 @@
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-    <!ENTITY ecglev "http://schema.geolink.org/dev/pattern/event#" >
-    <!ENTITY ecglpl "http://schema.geolink.org/dev/pattern/place#" >
+    <!ENTITY glev "http://schema.geolink.org/dev/pattern/event#" >
+    <!ENTITY glpl "http://schema.geolink.org/dev/pattern/place#" >
 ]>
 
 
 <rdf:RDF xmlns="http://schema.geolink.org/dev/pattern/event-to-place#"
      xml:base="http://schema.geolink.org/dev/pattern/event-to-place"
-     xmlns:ecglpl="http://schema.geolink.org/dev/pattern/place#"
+     xmlns:glpl="http://schema.geolink.org/dev/pattern/place#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:glev="http://schema.geolink.org/dev/pattern/event#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:ecglev="http://schema.geolink.org/dev/pattern/event#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="http://schema.geolink.org/dev/pattern/event-to-place"/>
+    <owl:Ontology rdf:about="http://schema.geolink.org/dev/pattern/event-to-place">
+        <rdfs:label>Alignment from Event Pattern to Place Pattern</rdfs:label>
+    </owl:Ontology>
     
 
 
@@ -36,15 +38,18 @@
 
     <!-- http://schema.geolink.org/dev/pattern/event#Place -->
 
-    <owl:Class rdf:about="&ecglev;Place">
-        <rdfs:subClassOf rdf:resource="&ecglpl;Place"/>
+    <owl:Class rdf:about="&glev;Place">
+        <rdfs:label>glev:Place</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&glpl;Place"/>
     </owl:Class>
     
 
 
     <!-- http://schema.geolink.org/dev/pattern/place#Place -->
 
-    <owl:Class rdf:about="&ecglpl;Place"/>
+    <owl:Class rdf:about="&glpl;Place">
+        <rdfs:label>glpl:Place</rdfs:label>
+    </owl:Class>
 </rdf:RDF>
 
 

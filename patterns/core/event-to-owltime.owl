@@ -7,7 +7,7 @@
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-    <!ENTITY ecglev "http://schema.geolink.org/dev/pattern/event#" >
+    <!ENTITY glev "http://schema.geolink.org/dev/pattern/event#" >
 ]>
 
 
@@ -15,11 +15,13 @@
      xml:base="http://schema.geolink.org/dev/pattern/event-to-owltime"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:glev="http://schema.geolink.org/dev/pattern/event#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:ecglev="http://schema.geolink.org/dev/pattern/event#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:time="http://www.w3.org/2006/time#">
-    <owl:Ontology rdf:about="http://schema.geolink.org/dev/pattern/event-to-owltime"/>
+    <owl:Ontology rdf:about="http://schema.geolink.org/dev/pattern/event-to-owltime">
+        <rdfs:label>Alignment from Event Pattern to OWL-Time Ontology</rdfs:label>
+    </owl:Ontology>
     
 
 
@@ -36,7 +38,8 @@
 
     <!-- http://schema.geolink.org/dev/pattern/event#TimeEntity -->
 
-    <owl:Class rdf:about="&ecglev;TimeEntity">
+    <owl:Class rdf:about="&glev;TimeEntity">
+        <rdfs:label>glev:TimeEntity</rdfs:label>
         <rdfs:subClassOf rdf:resource="&time;TemporalEntity"/>
     </owl:Class>
     
@@ -44,7 +47,8 @@
 
     <!-- http://schema.geolink.org/dev/pattern/event#TimeInstant -->
 
-    <owl:Class rdf:about="&ecglev;TimeInstant">
+    <owl:Class rdf:about="&glev;TimeInstant">
+        <rdfs:label>glev:TimeInstant</rdfs:label>
         <rdfs:subClassOf rdf:resource="&time;Instant"/>
     </owl:Class>
     
@@ -52,13 +56,17 @@
 
     <!-- http://www.w3.org/2006/time#Instant -->
 
-    <owl:Class rdf:about="&time;Instant"/>
+    <owl:Class rdf:about="&time;Instant">
+        <rdfs:label>time:Instant</rdfs:label>
+    </owl:Class>
     
 
 
     <!-- http://www.w3.org/2006/time#TemporalEntity -->
 
-    <owl:Class rdf:about="&time;TemporalEntity"/>
+    <owl:Class rdf:about="&time;TemporalEntity">
+        <rdfs:label>time:TemporalEntity</rdfs:label>
+    </owl:Class>
 </rdf:RDF>
 
 

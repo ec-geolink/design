@@ -6,8 +6,8 @@
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-    <!ENTITY ecglev "http://schema.geolink.org/dev/pattern/event#" >
-    <!ENTITY ecglar "http://schema.geolink.org/dev/pattern/agentrole#" >
+    <!ENTITY glev "http://schema.geolink.org/dev/pattern/event#" >
+    <!ENTITY glar "http://schema.geolink.org/dev/pattern/agentrole#" >
 ]>
 
 
@@ -15,11 +15,13 @@
      xml:base="http://schema.geolink.org/dev/pattern/event-to-agentrole"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:glar="http://schema.geolink.org/dev/pattern/agentrole#"
+     xmlns:glev="http://schema.geolink.org/dev/pattern/event#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:ecglar="http://schema.geolink.org/dev/pattern/agentrole#"
-     xmlns:ecglev="http://schema.geolink.org/dev/pattern/event#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="http://schema.geolink.org/dev/pattern/event-to-agentrole"/>
+    <owl:Ontology rdf:about="http://schema.geolink.org/dev/pattern/event-to-agentrole">
+        <rdfs:label>Alignment from Event Pattern to Agent Role Pattern</rdfs:label>
+    </owl:Ontology>
     
 
 
@@ -36,28 +38,28 @@
 
     <!-- http://schema.geolink.org/dev/pattern/agentrole#isPerformedBy -->
 
-    <owl:ObjectProperty rdf:about="&ecglar;isPerformedBy"/>
+    <owl:ObjectProperty rdf:about="&glar;isPerformedBy"/>
     
 
 
     <!-- http://schema.geolink.org/dev/pattern/agentrole#providesAgentRole -->
 
-    <owl:ObjectProperty rdf:about="&ecglar;providesAgentRole"/>
+    <owl:ObjectProperty rdf:about="&glar;providesAgentRole"/>
     
 
 
     <!-- http://schema.geolink.org/dev/pattern/event#isPerformedBy -->
 
-    <owl:ObjectProperty rdf:about="&ecglev;isPerformedBy">
-        <rdfs:subPropertyOf rdf:resource="&ecglar;isPerformedBy"/>
+    <owl:ObjectProperty rdf:about="&glev;isPerformedBy">
+        <rdfs:subPropertyOf rdf:resource="&glar;isPerformedBy"/>
     </owl:ObjectProperty>
     
 
 
     <!-- http://schema.geolink.org/dev/pattern/event#providesAgentRole -->
 
-    <owl:ObjectProperty rdf:about="&ecglev;providesAgentRole">
-        <rdfs:subPropertyOf rdf:resource="&ecglar;providesAgentRole"/>
+    <owl:ObjectProperty rdf:about="&glev;providesAgentRole">
+        <rdfs:subPropertyOf rdf:resource="&glar;providesAgentRole"/>
     </owl:ObjectProperty>
     
 
@@ -75,28 +77,34 @@
 
     <!-- http://schema.geolink.org/dev/pattern/agentrole#Agent -->
 
-    <owl:Class rdf:about="&ecglar;Agent"/>
+    <owl:Class rdf:about="&glar;Agent">
+        <rdfs:label>glar:Agent</rdfs:label>
+    </owl:Class>
     
 
 
     <!-- http://schema.geolink.org/dev/pattern/agentrole#AgentRole -->
 
-    <owl:Class rdf:about="&ecglar;AgentRole"/>
+    <owl:Class rdf:about="&glar;AgentRole">
+        <rdfs:label>glar:AgentRole</rdfs:label>
+    </owl:Class>
     
 
 
     <!-- http://schema.geolink.org/dev/pattern/event#Agent -->
 
-    <owl:Class rdf:about="&ecglev;Agent">
-        <rdfs:subClassOf rdf:resource="&ecglar;Agent"/>
+    <owl:Class rdf:about="&glev;Agent">
+        <rdfs:label>glev:Agent</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&glar;Agent"/>
     </owl:Class>
     
 
 
     <!-- http://schema.geolink.org/dev/pattern/event#AgentRole -->
 
-    <owl:Class rdf:about="&ecglev;AgentRole">
-        <rdfs:subClassOf rdf:resource="&ecglar;AgentRole"/>
+    <owl:Class rdf:about="&glev;AgentRole">
+        <rdfs:label>glev:AgentRole</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&glar;AgentRole"/>
     </owl:Class>
 </rdf:RDF>
 
