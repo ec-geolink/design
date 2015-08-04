@@ -8,7 +8,7 @@
 
 def getDataList(page, pagesize):
     start = (page-1)*pagesize
-    d1query = "https://cn.dataone.org/cn/v1/query/solr/?fl=identifier,title,abstract,author,authorLastName,origin,submitter,rightsHolder,documents,resourceMap,authoritativeMN&q=formatType:METADATA+AND+(datasource:*LTER+OR+datasource:*KNB+OR+datasource:*PISCO)+AND+-obsoletedBy:*&rows="+str(pagesize)+"&start="+str(start)
+    d1query = "https://cn.dataone.org/cn/v1/query/solr/?fl=identifier,title,abstract,author,authorLastName,origin,submitter,rightsHolder,documents,resourceMap,authoritativeMN&q=formatType:METADATA+AND+(datasource:*LTER+OR+datasource:*KNB+OR+datasource:*PISCO+OR+datasource:*GOA)+AND+-obsoletedBy:*&rows="+str(pagesize)+"&start="+str(start)
     #d1query = "https://cn.dataone.org/cn/v1/query/solr/?fl=identifier,title,abstract,author,authorLastName,origin,submitter,rightsHolder,documents,resourceMap,authoritativeMN&q=formatType:METADATA+AND+-obsoletedBy:*&rows="+str(pagesize)+"&start="+str(start)
     res = urllib2.urlopen(d1query)
     content = res.read()
