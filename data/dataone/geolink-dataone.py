@@ -15,6 +15,12 @@ def getDataList(page, pagesize):
     xmldoc = ET.fromstring(content)
     return(xmldoc)
 
+def getXML(url):
+    res = urllib2.urlopen(url)
+    content = res.read()
+    xmldoc = ET.fromstring(content)
+
+    return(xmldoc)
 def addStatement(model, s, p, o):
     # Assume subject is a URI string if it is not an RDF.Node
     if (type(s) is not RDF.Node):
@@ -37,7 +43,7 @@ def addStatement(model, s, p, o):
     #print(statement)
     model.add_statement(statement)
 
-def addDataset(model, doc, ns, personhash):
+def addDataset(model, doc, ns, fm, personhash):
     d1base = "https://cn.dataone.org/cn/v1/resolve/"
     # Identifier and Dataset
     element = doc.find("./str[@name='identifier']")
@@ -162,24 +168,76 @@ def addDataset(model, doc, ns, personhash):
         data_id = data_id_node.text
         addStatement(model, d1base+data_id, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["glview"]+"DigitalObject"))
         addStatement(model, d1base+data_id, ns["glview"]+"isPartOf", RDF.Uri(d1base+identifier))
-        
+
+        # Get System Metadata in order to fill in the following fields
+        print "for data_id_node in data_list"
+        print "get XML ", d1base, data_id
+        d1meta = "https://cn.dataone.org/cn/v1/meta/"
+        sysmeta = getXML(d1meta + identifier)
+
+
         # TODO: Add Checksum
         # first look up the checksum, which requires sysmeta for this object
-        #addStatement(model, d1base+data_id, ns["glview"]+"hasChecksum", RDF.Uri(csv_type))
+
+        checksum_node = sysmeta.find("./checksum")
+        checksum = checksum_node.text
+        addStatement(model, d1base+data_id, ns["glview"]+"hasChecksum", checksum)
+
+        # TODO: Add Checksum Algorithm
+        # WARNING: Cannot implement this yet
 
         # TODO: Add Size
         # first look up the size, which requires sysmeta for this object
         #addStatement(model, d1base+data_id, ns["glview"]+"hasByteLength", RDF.Uri(csv_type))
 
+        size_node = sysmeta.find("./size")
+        size = size_node.text
+        addStatement(model, d1base+data_id, ns["glview"]+"hasByteLength", size)
+
         # TODO: Add Format, which requires sysmeta for this object
-        # first look up the format type, e.g., for CSV: 
-        csv_type = "http://schema.geolink.org/dev/voc/dataone/format#022"
-        #addStatement(model, d1base+data_id, ns["glview"]+"hasFormatType", RDF.Uri(csv_type))
+
+        format_id_node = sysmeta.find("./formatId")
+        format_id = format_id_node.text
+
+        addStatement(model, d1base+data_id, ns["glview"]+"hasFormatType", RDF.Uri(fm[format_id]))
+
 
     model.sync()
 
 def findRegexInList(list,filter):
         return [ l for l in list for m in (filter(l),) if m]
+
+def loadFormats(ns):
+    fm = {}
+
+    d1_formats = {}
+    geolink_formats = {}
+
+    formats_xml_d1 = getXML("https://cn.dataone.org/cn/v1/formats")
+    formats_d1 = formats_xml_d1.findall(".//objectFormat")
+
+    for fmt in formats_d1:
+        format_id_d1 = fmt.find("./formatId").text
+        format_name_d1 = fmt.find("./formatName").text
+
+        d1_formats[format_id_d1] = format_name_d1
+
+    formats_xml_gl = getXML("http://schema.geolink.org/dev/voc/dataone/format.owl")
+    formats_gl = formats_xml_gl.findall(".//owl:Class", ns)
+
+    for fmt in formats_gl:
+        label_gl = fmt.find("./rdfs:label", ns).text
+        uri_gl = fmt.get("{" + ns['rdf'] + "}about")
+
+        geolink_formats[label_gl] = uri_gl
+
+    for d1fmt in d1_formats:
+        for glfmt in geolink_formats:
+            if d1_formats[d1fmt] in glfmt:
+                fm[d1fmt] = geolink_formats[glfmt]
+
+    return fm
+
 
 def loadPeople():
     # Read in a CSV file of Geolink URIs for people
@@ -243,15 +301,15 @@ def serialize(model, ns, filename, format):
         serializer.set_namespace(prefix, RDF.Uri(ns[prefix]))
     serializer.serialize_model_to_file(filename, model)
 
-def processPage(model, ns, personhash, page, pagesize=1000):
     xmldoc = getDataList(page, pagesize)
+def processPage(model, ns, fm, personhash, page, pagesize=1000):
     resultnode = xmldoc.findall(".//result")
     num_results = resultnode[0].get('numFound')
     doclist = xmldoc.findall(".//doc")
     #print(len(doclist))
     for d in doclist:
         None
-        addDataset(model, d, ns, personhash)
+        addDataset(model, d, ns, fm, personhash)
     return(int(num_results))
 
 def main():
@@ -273,9 +331,12 @@ def main():
     }
     nodes = addRepositories(model, ns)
 
+    # Create format maps to map between D1 and GeoLink formats
+    print "Creating format map"
+    fm = loadFormats(ns)
+
     pagesize=100
     print "Processing page: 1",
-    records = processPage(model, ns, personhash, 1, pagesize=pagesize )
     if (records > pagesize):
         print str(model.size())
         sys.stdout.flush()
@@ -286,6 +347,7 @@ def main():
             print str(model.size())
             sys.stdout.flush()
             serialize(model, ns, "dataone-example-lod.ttl", "turtle")
+    records = processPage(model, ns, fm, personhash, 1, pagesize=pagesize )
 
     print("Final model size: " + str(model.size()))
     serialize(model, ns, "dataone-example-lod.ttl", "turtle")
