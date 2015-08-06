@@ -49,6 +49,14 @@
      </owl:DatatypeProperty>
 
 
+     <!-- http://schema.geolink.org/dev/doview#dateUploaded -->
+
+     <owl:DatatypeProperty rdf:about="&dataone;dateUploaded">
+         <rdfs:domain rdf:resource="&ecglview;DigitalObject"/>
+         <rdfs:range rdf:resource="&xsd;dateTime"/>
+     </owl:DatatypeProperty>
+
+
     <!--
     ///////////////////////////////////////////////////////////////////////////////////////
     //

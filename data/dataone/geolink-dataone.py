@@ -203,6 +203,12 @@ def addDataset(model, doc, ns, fm, personhash):
         format_id = format_id_node.text
 
         addStatement(model, d1base+data_id, ns["glview"]+"hasFormatType", RDF.Uri(fm[format_id]))
+        # Date uploaded
+        date_uploaded_node = data_meta.find("./dateUploaded")
+
+        if date_uploaded_node is not None:
+            addStatement(model, d1base+data_id, ns["doview"]+"dateUploaded", date_uploaded_node.text)
+
 
 
     model.sync()
