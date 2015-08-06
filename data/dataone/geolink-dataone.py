@@ -370,7 +370,9 @@ def main():
         "geosparql": "http://www.opengis.net/ont/geosparql#",
         "rdfs":  "http://www.w3.org/2000/01/rdf-schema#",
         "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-        "glview": "http://schema.geolink.org/dev/view#"
+        "glview": "http://schema.geolink.org/dev/view#",
+        "doview": "http://schema.geolink.org/dev/doview#",
+        "prov"  : "http://www.w3.org/ns/prov#"
     }
     
     print "Creating format map..."
