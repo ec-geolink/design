@@ -215,6 +215,16 @@ def addDataset(model, doc, ns, fm, personhash):
         if date_uploaded_node is not None:
             addStatement(model, d1base+data_id, ns["doview"]+"dateUploaded", date_uploaded_node.text)
 
+        # Submitter and rights holders
+        # TODO: No fields for these in GL View
+        submitter_node = data_meta.find("./submitter")
+        rights_holder_node = data_meta.find("./rightsHolder")
+
+        if submitter_node is not None:
+            addStatement(model, d1base+data_id, ns["doview"]+"hasSubmitter", submitter_node.text)
+
+        if rights_holder_node is not None:
+            addStatement(model, d1base+data_id, ns["doview"]+"hasRightsHolder", rights_holder_node.text)
 
 
     model.sync()
