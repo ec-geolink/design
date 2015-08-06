@@ -181,15 +181,13 @@ def addDataset(model, doc, ns, fm, personhash):
         sysmeta = getXML(d1meta + identifier)
 
 
-        # TODO: Add Checksum
-        # first look up the checksum, which requires sysmeta for this object
 
-        checksum_node = sysmeta.find("./checksum")
-        checksum = checksum_node.text
-        addStatement(model, d1base+data_id, ns["glview"]+"hasChecksum", checksum)
+        # Checksum and checksum algorithm
+        checksum_node = data_meta.find(".//checksum")
 
-        # TODO: Add Checksum Algorithm
-        # WARNING: Cannot implement this yet
+        if checksum_node is not None:
+            addStatement(model, d1base+data_id, ns["glview"]+"hasChecksum", checksum_node.text )
+            addStatement(model, d1base+data_id, ns["doview"]+"hasChecksumAlgorithm", checksum_node.get("algorithm"))
 
         # TODO: Add Size
         # first look up the size, which requires sysmeta for this object

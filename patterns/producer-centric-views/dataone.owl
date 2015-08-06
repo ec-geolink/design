@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#">
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+    <!ENTITY geosparql "http://www.opengis.net/ont/geosparql#">
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <!ENTITY ecglview "http://schema.geolink.org/dev/view#">
+    <!ENTITY dataone "http://schema.geolink.org/dev/doview#">
+]>
+
+<rdf:RDF xmlns="http://schema.geolink.org/dev/doview#"
+     xml:base="http://schema.geolink.org/dev/doview"
+     xmlns:geosparql="http://www.opengis.net/ont/geosparql#"
+     xmlns:dataone="http://schema.geolink.org/dev/doview#"
+     xmlns:ecglview="http://schema.geolink.org/dev/view#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+
+    <owl:Ontology rdf:about="http://schema.geolink.org/dev/doview"/>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+     <!-- http://schema.geolink.org/dev/doview#hasChecksumAlgorithm -->
+
+     <owl:DatatypeProperty rdf:about="&dataone;hasChecksumAlgorithm">
+         <rdfs:domain rdf:resource="&ecglview;DigitalObject"/>
+         <rdfs:range rdf:resource="&xsd;string"/>
+     </owl:DatatypeProperty>
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+</rdf:RDF>
