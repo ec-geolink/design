@@ -179,12 +179,12 @@ def addDataset(model, doc, ns, fm, personhash):
         addStatement(model, d1base+data_id, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["glview"]+"DigitalObject"))
         addStatement(model, d1base+data_id, ns["glview"]+"isPartOf", RDF.Uri(d1base+identifier))
 
-        # Get System Metadata in order to fill in the following fields
-        print "for data_id_node in data_list"
-        print "get XML ", d1base, data_id
-        d1meta = "https://cn.dataone.org/cn/v1/meta/"
-        sysmeta = getXML(d1meta + identifier)
+        # Get data object meta
+        data_meta = getXML("https://cn.dataone.org/cn/v1/meta/" + data_id)
 
+        if data_meta is None:
+            print "Metadata for data object %s was not found. Continuing to next data object." % data_id
+            continue
 
 
         # Checksum and checksum algorithm
