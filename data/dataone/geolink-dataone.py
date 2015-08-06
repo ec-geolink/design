@@ -16,7 +16,12 @@ def getDataList(page, pagesize):
     return(xmldoc)
 
 def getXML(url):
-    res = urllib2.urlopen(url)
+    try:
+        res = urllib2.urlopen(url)
+    except:
+        print "getXML failed for %s" % url
+        return None
+
     content = res.read()
     xmldoc = ET.fromstring(content)
 
