@@ -26,6 +26,7 @@ def getXML(url):
     xmldoc = ET.fromstring(content)
 
     return(xmldoc)
+
 def addStatement(model, s, p, o):
     # Assume subject is a URI string if it is not an RDF.Node
     if (type(s) is not RDF.Node):
@@ -59,8 +60,8 @@ def addDataset(model, doc, ns, fm, personhash):
     addStatement(model, d1base+identifier, ns["glview"]+"identifier", id_blank_node)
     addStatement(model, id_blank_node, ns["glview"]+"hasIdentifierValue", identifier)
     addStatement(model, id_blank_node, ns["rdfs"]+"label", identifier)
-    if (identifier.startswith("doi:") | 
-            identifier.startswith("http://doi.org/") | identifier.startswith("https://doi.org/") | 
+    if (identifier.startswith("doi:") |
+            identifier.startswith("http://doi.org/") | identifier.startswith("https://doi.org/") |
             identifier.startswith("https://dx.doi.org/") | identifier.startswith("https://dx.doi.org/")):
         scheme = 'doi'
     elif (identifier.startswith("ark:")):
@@ -107,7 +108,7 @@ def addDataset(model, doc, ns, fm, personhash):
             addStatement(model, person_node, ns["rdfs"]+"label", c_text)
             addStatement(model, person_node, ns["foaf"]+"name", c_text)
             addStatement(model, person_node, ns["glview"]+"nameFull", c_text)
-            
+
             # Match GeoLink Persons
             print 'c',
             sys.stdout.flush()
@@ -127,24 +128,24 @@ def addDataset(model, doc, ns, fm, personhash):
             p_uuid = p_data[0]
             p_dataone_id = p_data[1]
             person_node = p_data[2]
-            
+
         # Add Person as creator participant in Dataset
         addStatement(model, RDF.Uri(d1base+identifier), RDF.Uri(ns["glview"]+"hasCreator"), person_node)
         addStatement(model, RDF.Uri(d1base+identifier), RDF.Uri(ns["dcterms"]+"creator"), person_node)
-        
+
         #pi_node = RDF.Node(RDF.Uri(p_orcid))
-        #addStatement(model, pi_node, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["datacite"]+"PersonalIdentifier"))       
-        #addStatement(model, pi_node, RDF.Uri(ns["datacite"]+"usesIdentifierScheme"), RDF.Uri(ns["datacite"]+"orcid"))       
+        #addStatement(model, pi_node, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["datacite"]+"PersonalIdentifier"))
+        #addStatement(model, pi_node, RDF.Uri(ns["datacite"]+"usesIdentifierScheme"), RDF.Uri(ns["datacite"]+"orcid"))
         #addStatement(model, RDF.Uri(p_uuid), RDF.Uri(ns["datacite"]+"hasIdentifier"), pi_node)
 
         # ORCID
         #pi_node = RDF.Node(RDF.Uri(p_orcid))
-        #addStatement(model, pi_node, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["datacite"]+"PersonalIdentifier"))       
-        #addStatement(model, pi_node, RDF.Uri(ns["datacite"]+"usesIdentifierScheme"), RDF.Uri(ns["datacite"]+"orcid"))       
+        #addStatement(model, pi_node, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["datacite"]+"PersonalIdentifier"))
+        #addStatement(model, pi_node, RDF.Uri(ns["datacite"]+"usesIdentifierScheme"), RDF.Uri(ns["datacite"]+"orcid"))
         #addStatement(model, RDF.Uri(p_uuid), RDF.Uri(ns["datacite"]+"hasIdentifier"), pi_node)
 
     model.sync()
-    print '.', 
+    print '.',
 
 
 
@@ -172,10 +173,13 @@ def addDataset(model, doc, ns, fm, personhash):
 
     if obsoletes_node is not None:
         addStatement(model, d1base+identifier, ns['prov']+"wasRevisionOf", RDF.Uri(obsoletes_node.text))
+
     # Data Objects
     data_list = doc.findall("./arr[@name='documents']/str")
+
     for data_id_node in data_list:
         data_id = data_id_node.text
+
         addStatement(model, d1base+data_id, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["glview"]+"DigitalObject"))
         addStatement(model, d1base+data_id, ns["glview"]+"isPartOf", RDF.Uri(d1base+identifier))
 
@@ -268,7 +272,7 @@ def loadPeople():
     # Read in a CSV file of Geolink URIs for people
     with open('../geolink/data.geolink.org-id-person.20150518.csv', 'rb') as csvfile:
         table = string.maketrans("","")
-        
+
         reader = csv.reader(csvfile)
         #for rows in reader:
             #print rows[2], ' |###| ', rows[1]
@@ -280,6 +284,8 @@ def loadPeople():
 
 def createModel():
     storage=RDF.Storage(storage_name="hashes", name="geolink", options_string="new='yes',hash-type='memory',dir='.'")
+    # storage=RDF.Storage(storage_name="file", name="geolink", options_string="new='yes',hash-type='memory',dir='.'")
+
     #storage=RDF.MemoryStorage()
     if storage is None:
         raise Exception("new RDF.Storage failed")
@@ -290,17 +296,21 @@ def createModel():
 
 def addRepositories(model, ns):
     node_hash = {}
+
     d1query = "https://cn.dataone.org/cn/v1/node"
     res = urllib2.urlopen(d1query)
     content = res.read()
     xmldoc = ET.fromstring(content)
     nodelist = xmldoc.findall(".//node")
+
     for n in nodelist:
         node_id = n.find('identifier').text
         node_name = n.find('name').text
         node_desc = n.find('description').text
         node_base_url = n.find('baseURL').text
+
         node_hash[node_id] = [node_name, node_desc, node_base_url]
+
         addStatement(model, node_id, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["glview"]+"Repository"))
         addStatement(model, node_id, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["glview"]+"Organization"))
         addStatement(model, node_id, RDF.Uri(ns["foaf"]+"name"), node_name)
@@ -372,13 +382,13 @@ def main():
     mbj_data = [mbj_uuid.urn, mbj_orcid]
     personhash = {'Jones, Matthew': mbj_data}
     ns = {
-        "foaf": "http://xmlns.com/foaf/0.1/",
+        "foaf" : "http://xmlns.com/foaf/0.1/",
         "dcterms": "http://purl.org/dc/terms/",
         "datacite": "http://purl.org/spar/datacite/",
         "owl": "http://www.w3.org/2002/07/owl#",
         "xsd": "http://www.w3.org/2001/XMLSchema#",
         "geosparql": "http://www.opengis.net/ont/geosparql#",
-        "rdfs":  "http://www.w3.org/2000/01/rdf-schema#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
         "glview": "http://schema.geolink.org/dev/view#",
         "doview": "http://schema.geolink.org/dev/doview#",
