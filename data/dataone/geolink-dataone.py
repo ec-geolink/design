@@ -298,9 +298,11 @@ def addRepositories(model, ns):
     node_hash = {}
 
     d1query = "https://cn.dataone.org/cn/v1/node"
-    res = urllib2.urlopen(d1query)
-    content = res.read()
-    xmldoc = ET.fromstring(content)
+    xmldoc = getXML(d1query)
+
+    if xmldoc is None:
+        return
+
     nodelist = xmldoc.findall(".//node")
 
     for n in nodelist:
