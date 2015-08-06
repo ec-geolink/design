@@ -202,12 +202,13 @@ def addDataset(model, doc, ns, fm, personhash):
             addStatement(model, d1base+data_id, ns["glview"]+"hasByteLength", size_node.text)
 
 
-        # TODO: Add Format, which requires sysmeta for this object
+        # Format
+        format_id_node = data_meta.find("./formatId")
 
-        format_id_node = sysmeta.find("./formatId")
-        format_id = format_id_node.text
+        if format_id_node is not None:
+            addStatement(model, d1base+data_id, ns["glview"]+"hasFormatType", RDF.Uri(format_id_node.text))
 
-        addStatement(model, d1base+data_id, ns["glview"]+"hasFormatType", RDF.Uri(fm[format_id]))
+
         # Date uploaded
         date_uploaded_node = data_meta.find("./dateUploaded")
 
@@ -297,6 +298,34 @@ def addRepositories(model, ns):
         addStatement(model, node_id, RDF.Uri(ns["glview"]+"description"), node_desc)
     return(node_hash)
 
+
+def addFormats(model, ns, fm):
+    format_hash = {}
+
+    d1query = "https://cn.dataone.org/cn/v1/formats"
+    xmldoc = getXML(d1query)
+
+    if xmldoc is None:
+        return
+
+    nodelist = xmldoc.findall(".//objectFormat")
+
+    for n in nodelist:
+        format_id = n.find("./formatId").text
+        format_name = n.find("./formatName").text
+        format_type = n.find("./formatType").text
+
+        format_hash[format_id] = [format_type, format_name]
+
+        if format_id in fm:
+            addStatement(model, format_id, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(fm[format_id]))
+        else:
+            addStatement(model, format_id, RDF.Uri(ns["rdf"]+"type"), format_id)
+
+
+    return format_hash
+
+
 def serialize(model, ns, filename, format):
     # Format can be one of:
     # rdfxml          RDF/XML (default)
@@ -343,12 +372,14 @@ def main():
         "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
         "glview": "http://schema.geolink.org/dev/view#"
     }
-    nodes = addRepositories(model, ns)
-
-    # Create format maps to map between D1 and GeoLink formats
-    print "Creating format map"
+    
+    print "Creating format map..."
     fm = loadFormats(ns)
 
+    nodes = addRepositories(model, ns)
+    formats = addFormats(model, ns, fm)
+
+    # Create format maps to map between D1 and GeoLink formats
     pagesize=100
     print "Processing page: 1",
     if (records > pagesize):
