@@ -194,13 +194,13 @@ def addDataset(model, doc, ns, fm, personhash):
             addStatement(model, d1base+data_id, ns["glview"]+"hasChecksum", checksum_node.text )
             addStatement(model, d1base+data_id, ns["doview"]+"hasChecksumAlgorithm", checksum_node.get("algorithm"))
 
-        # TODO: Add Size
-        # first look up the size, which requires sysmeta for this object
-        #addStatement(model, d1base+data_id, ns["glview"]+"hasByteLength", RDF.Uri(csv_type))
 
-        size_node = sysmeta.find("./size")
-        size = size_node.text
-        addStatement(model, d1base+data_id, ns["glview"]+"hasByteLength", size)
+        # Size
+        size_node = data_meta.find("./size")
+
+        if size_node is not None:
+            addStatement(model, d1base+data_id, ns["glview"]+"hasByteLength", size_node.text)
+
 
         # TODO: Add Format, which requires sysmeta for this object
 
