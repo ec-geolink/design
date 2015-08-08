@@ -88,6 +88,22 @@ def addDataset(model, doc, ns, fm, personhash):
         addStatement(model, d1base+identifier, ns["glview"]+"description", abstract_element.text)
 
     # Creators
+
+    # mecum: This is a little more complex than initially coded up.
+            # The <origin> tag can hold complex information of multiple forms. First, origin can
+            # be a person /or/ an organization, though neither are labeled explictly as one or the other.
+            # Additionally, a person /and/ and organization can be found in the <origin> tag, e.g.:
+            #
+            #   - Daniel Childers||Global Institute of Sustainability| School of Sustainability
+            #   - John Connors, HERO-CM
+            #   - ARC
+            #   - Peter Groffman , Email: groffmanp@ecostudies.org
+            #   - SANParks
+            #   - National Climatic Data Center (NCDC) NOAA
+            #   - Tene Fossog, Billy
+            #   - Intergovernmental Panel on Climate Change (IPCC)
+            #   - Sawaya, Michael A.
+
     glpeople = loadPeople()
     #table = string.maketrans("","")
     table = {ord(c): None for c in string.punctuation}
@@ -113,7 +129,8 @@ def addDataset(model, doc, ns, fm, personhash):
             print 'c',
             sys.stdout.flush()
             normal_creator = c_fields[0].translate(table) + '.*' + c_fields[len(c_fields)-1].translate(table)
-            #print c_text, " |###| ", normal_creator
+
+            # print c_text, " |###| ", normal_creator
             searchRegex = re.compile('('+normal_creator+')').search
             k = None
             k = findRegexInList(glpeople.keys(),searchRegex)
