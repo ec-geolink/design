@@ -218,8 +218,7 @@ def addDataset(model, doc, ns, fm, personhash):
 
     # Repository
     authMN = doc.find("./str[@name='authoritativeMN']")
-    addStatement(model, d1base+identifier, ns["glview"]+"hasRepository", authMN.text)
-    model.sync()
+    addStatement(model, d1base+identifier, ns["glview"]+"hasRepository", RDF.Uri(authMN.text))
 
     # TODO: Add Landing page
 
