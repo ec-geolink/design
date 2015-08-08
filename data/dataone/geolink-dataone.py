@@ -435,8 +435,13 @@ def serialize(model, ns, filename, format):
         serializer.set_namespace(prefix, RDF.Uri(ns[prefix]))
     serializer.serialize_model_to_file(filename, model)
 
-    xmldoc = getDataList(page, pagesize)
 def processPage(model, ns, fm, personhash, page, pagesize=1000):
+    xmldoc = getDataList(page, pagesize)
+
+    if xmldoc is None:
+        print "Failed to retrieve page from the Solr index. Exiting."
+        sys.exit()
+
     resultnode = xmldoc.findall(".//result")
     num_results = resultnode[0].get('numFound')
     doclist = xmldoc.findall(".//doc")
