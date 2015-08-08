@@ -231,7 +231,7 @@ def addDataset(model, doc, ns, fm, personhash):
     obsoletes_node = doc.find("./str[@name='obsoletes']")
 
     if obsoletes_node is not None:
-        addStatement(model, d1base+identifier, ns['prov']+"wasRevisionOf", RDF.Uri(obsoletes_node.text))
+        addStatement(model, d1base+identifier, ns['prov']+"wasRevisionOf", RDF.Uri(d1base + obsoletes_node.text))
 
     # Data Objects
     data_list = doc.findall("./arr[@name='documents']/str")
