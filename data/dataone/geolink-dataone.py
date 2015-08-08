@@ -8,9 +8,9 @@
 
 def getDataList(page, pagesize):
     start = (page-1)*pagesize
-    fields = ",".join(["identifier","title","abstract","author","authorLastName","origin","submitter","rightsHolder","documents","resourceMap","authoritativeMN","obsoletes"])
+    fields = ",".join(["identifier","title","abstract","author","authorLastName","origin","submitter","rightsHolder","documents","resourceMap","authoritativeMN","obsoletes","northBoundCoord","eastBoundCoord","southBoundCoord","westBoundCoord","startDate","endDate"])
     
-    d1query = "https://cn.dataone.org/cn/v1/query/solr/?fl=" + fields + "&q=identifier:*dpennington*+AND+formatType:METADATA+AND+(datasource:*LTER+OR+datasource:*KNB+OR+datasource:*PISCO+OR+datasource:*GOA)+AND+-obsoletedBy:*&rows="+str(pagesize)+"&start="+str(start)
+    d1query = "https://cn.dataone.org/cn/v1/query/solr/?fl=" + fields + "&q=formatType:METADATA+AND+(datasource:*LTER+OR+datasource:*KNB+OR+datasource:*PISCO+OR+datasource:*GOA)+AND+-obsoletedBy:*&rows="+str(pagesize)+"&start="+str(start)
     xmldoc = getXML(d1query)
 
     return(xmldoc)
@@ -149,13 +149,35 @@ def addDataset(model, doc, ns, fm, personhash):
 
 
 
-    # TODO: Add Spatial Coverage, no field for this in GL View
+    # Spatial Coverage
+    # Implementing this as hasGeometryAsWktLiteral
 
-    # TODO: Add Temporal Coverage, no field for this in GL View
+    bound_north = doc.find("./float[@name='northBoundCoord']")
+    bound_east = doc.find("./float[@name='eastBoundCoord']")
+    bound_south = doc.find("./float[@name='southBoundCoord']")
+    bound_west = doc.find("./float[@name='westBoundCoord']")
 
-    # TODO: Add Submitters, no field for this in GL View
+    if all(ele is not None for ele in [bound_north, bound_east, bound_south, bound_west]):
+        wktliteral = "POLYGON ((%s %s, %s %s, %s %s, %s, %s))" % (bound_west.text, bound_north.text, bound_east.text, bound_north.text, bound_east.text, bound_south.text, bound_west.text, bound_south.text)
+
+        addStatement(model, d1base+identifier, ns['glview'] + "hasGeometryAsWktLiteral", wktliteral)
+
+
+
+    # Temporal Coverage
+    # TODO: No field for these in glview, currently exist in doview
+
+    start_date = doc.find("./date[@name='startDate']")
+
+    if start_date is not None:
+        addStatement(model, d1base+identifier, ns["doview"]+"hasStartDate", start_date.text)
 
     # TODO: Add Rights holders
+
+    end_date = doc.find("./date[@name='endDate']")
+
+    if end_date is not None:
+        addStatement(model, d1base+identifier, ns["doview"]+"hasEndDate", end_date.text)
 
     # Repository
     authMN = doc.find("./str[@name='authoritativeMN']")
