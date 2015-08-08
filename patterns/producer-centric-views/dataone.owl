@@ -32,6 +32,35 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    <!-- http://schema.geolink.org/dev/doview#hasSubmitter -->
+
+    <owl:DatatypeProperty rdf:about="&dataone;hasSubmitter">
+        <rdfs:domain rdf:resource="&ecglview;DigitalObject"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ecglview;Person"/>
+                    <rdf:Description rdf:about="&ecglview;Organization"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+
+
+    <!-- http://schema.geolink.org/dev/doview#hasRightsHolder -->
+
+    <owl:DatatypeProperty rdf:about="&dataone;hasRightsHolder">
+        <rdfs:domain rdf:resource="&ecglview;DigitalObject"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ecglview;Person"/>
+                    <rdf:Description rdf:about="&ecglview;Organization"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+
 
     <!--
     ///////////////////////////////////////////////////////////////////////////////////////

@@ -189,12 +189,32 @@ def addDataset(model, doc, ns, fm, personhash):
     if start_date is not None:
         addStatement(model, d1base+identifier, ns["doview"]+"hasStartDate", start_date.text)
 
-    # TODO: Add Rights holders
 
     end_date = doc.find("./date[@name='endDate']")
 
     if end_date is not None:
         addStatement(model, d1base+identifier, ns["doview"]+"hasEndDate", end_date.text)
+
+
+    # Submitter
+    submitter = doc.find("./str[@name='submitter']")
+    submitter_org = " ".join(re.findall(r"o=(\w+)", submitter.text, re.IGNORECASE))
+    print "Submitter <%s> was turned into <%s>" % (submitter.text, submitter_org.upper())
+
+
+    # TODO: Make this point to a Person
+    if len(submitter_org) > 0:
+        addStatement(model, d1base+identifier, ns["glview"]+"hasContributor", RDF.Uri("urn:node:" + submitter_org.upper()))
+
+
+    # Add Rights holder
+    rights_holder = doc.find("./str[@name='rightsHolder']")
+    rights_holder_org = " ".join(re.findall(r"o=(\w+)", rights_holder.text, re.IGNORECASE))
+    print "RightsHolder <%s> was turned into <%s>" % (rights_holder.text, rights_holder_org.upper())
+    # TODO: Make this point to an Organization or Person
+    if len(rights_holder_org) > 0:
+        addStatement(model, d1base+identifier, ns["glview"]+"hasRightsHolder", RDF.Uri("urn:node:" + rights_holder_org.upper()))
+    
 
     # Repository
     authMN = doc.find("./str[@name='authoritativeMN']")
@@ -258,19 +278,27 @@ def addDataset(model, doc, ns, fm, personhash):
         if date_uploaded_node is not None:
             addStatement(model, d1base+data_id, ns["doview"]+"dateUploaded", date_uploaded_node.text)
 
-        # Submitter and rights holders
-        # TODO: No fields for these in GL View
-        submitter_node = data_meta.find("./submitter")
-        rights_holder_node = data_meta.find("./rightsHolder")
 
-        if submitter_node is not None:
-            addStatement(model, d1base+data_id, ns["doview"]+"hasSubmitter", submitter_node.text)
+    if date_uploaded_node is not None:
+        addStatement(model, d1base+data_id, ns["doview"]+"dateUploaded", date_uploaded_node.text)
 
-        if rights_holder_node is not None:
-            addStatement(model, d1base+data_id, ns["doview"]+"hasRightsHolder", rights_holder_node.text)
+    # Submitter and rights holders
+    # TODO: No fields for these in GL View
+    submitter_node = data_meta.find("./submitter")
+    rights_holder_node = data_meta.find("./rightsHolder")
 
+    if submitter_node is not None:
+        submitter_node_text = " ".join(re.findall(r"o=(\w+)", submitter_node.text, re.IGNORECASE))
 
     model.sync()
+        if len(submitter_node_text) > 0:
+            addStatement(model, d1base+data_id, ns["doview"]+"hasSubmitter", RDF.Uri("urn:node:" + submitter_node_text.upper()))
+
+    if rights_holder_node is not None:
+        rights_holder_node_text = " ".join(re.findall(r"o=(\w+)", rights_holder_node.text, re.IGNORECASE))
+
+        if len(rights_holder_node_text) > 0:
+            addStatement(model, d1base+data_id, ns["doview"]+"hasRightsHolder", RDF.Uri("urn:node:" + rights_holder_node_text.upper()))
 
 def findRegexInList(list,filter):
         return [ l for l in list for m in (filter(l),) if m]
