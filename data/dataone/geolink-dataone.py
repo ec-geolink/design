@@ -237,47 +237,49 @@ def addDataset(model, doc, ns, fm, personhash):
     data_list = doc.findall("./arr[@name='documents']/str")
 
     for data_id_node in data_list:
-        data_id = data_id_node.text
-
-        addStatement(model, d1base+data_id, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["glview"]+"DigitalObject"))
-        addStatement(model, d1base+data_id, ns["glview"]+"isPartOf", RDF.Uri(d1base+identifier))
-
-        # Get data object meta
-        data_meta = getXML("https://cn.dataone.org/cn/v1/meta/" + data_id)
-
-        if data_meta is None:
-            print "Metadata for data object %s was not found. Continuing to next data object." % data_id
-            continue
+        addDigitalObject(model, d1base, identifier, data_id_node, ns, fm, personhash)
 
 
-        # Checksum and checksum algorithm
-        checksum_node = data_meta.find(".//checksum")
+    model.sync()
 
-        if checksum_node is not None:
-            addStatement(model, d1base+data_id, ns["glview"]+"hasChecksum", checksum_node.text )
-            addStatement(model, d1base+data_id, ns["doview"]+"hasChecksumAlgorithm", checksum_node.get("algorithm"))
+def addDigitalObject(model, d1base, identifier, data_id_node, ns, fm, personhash):
+    data_id = data_id_node.text
 
+    addStatement(model, d1base+data_id, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["glview"]+"DigitalObject"))
+    addStatement(model, d1base+data_id, ns["glview"]+"isPartOf", RDF.Uri(d1base+identifier))
 
-        # Size
-        size_node = data_meta.find("./size")
+    # Get data object meta
+    data_meta = getXML("https://cn.dataone.org/cn/v1/meta/" + data_id)
 
-        if size_node is not None:
-            addStatement(model, d1base+data_id, ns["glview"]+"hasByteLength", size_node.text)
-
-
-        # Format
-        format_id_node = data_meta.find("./formatId")
-
-        if format_id_node is not None:
-            addStatement(model, d1base+data_id, ns["glview"]+"hasFormatType", RDF.Uri(format_id_node.text))
+    if data_meta is None:
+        print "Metadata for data object %s was not found. Continuing to next data object." % data_id
+        return
 
 
-        # Date uploaded
-        date_uploaded_node = data_meta.find("./dateUploaded")
+    # Checksum and checksum algorithm
+    checksum_node = data_meta.find(".//checksum")
 
-        if date_uploaded_node is not None:
-            addStatement(model, d1base+data_id, ns["doview"]+"dateUploaded", date_uploaded_node.text)
+    if checksum_node is not None:
+        addStatement(model, d1base+data_id, ns["glview"]+"hasChecksum", checksum_node.text )
+        addStatement(model, d1base+data_id, ns["doview"]+"hasChecksumAlgorithm", checksum_node.get("algorithm"))
 
+
+    # Size
+    size_node = data_meta.find("./size")
+
+    if size_node is not None:
+        addStatement(model, d1base+data_id, ns["glview"]+"hasByteLength", size_node.text)
+
+
+    # Format
+    format_id_node = data_meta.find("./formatId")
+
+    if format_id_node is not None:
+        addStatement(model, d1base+data_id, ns["glview"]+"hasFormatType", RDF.Uri(format_id_node.text))
+
+
+    # Date uploaded
+    date_uploaded_node = data_meta.find("./dateUploaded")
 
     if date_uploaded_node is not None:
         addStatement(model, d1base+data_id, ns["doview"]+"dateUploaded", date_uploaded_node.text)
@@ -290,7 +292,6 @@ def addDataset(model, doc, ns, fm, personhash):
     if submitter_node is not None:
         submitter_node_text = " ".join(re.findall(r"o=(\w+)", submitter_node.text, re.IGNORECASE))
 
-    model.sync()
         if len(submitter_node_text) > 0:
             addStatement(model, d1base+data_id, ns["doview"]+"hasSubmitter", RDF.Uri("urn:node:" + submitter_node_text.upper()))
 
@@ -409,7 +410,9 @@ def addFormats(model, ns, fm):
         if format_id in fm:
             addStatement(model, format_id, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(fm[format_id]))
         else:
-            addStatement(model, format_id, RDF.Uri(ns["rdf"]+"type"), format_id)
+            addStatement(model, format_id, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["glview"]+"FormatType"))
+
+        addStatement(model, format_id, RDF.Uri(ns["glview"] + "description"), format_name)
 
 
     return format_hash
