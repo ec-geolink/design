@@ -54,6 +54,7 @@ def addDataset(model, doc, ns, fm, personhash):
     # Identifier and Dataset
     element = doc.find("./str[@name='identifier']")
     identifier = element.text
+
     addStatement(model, d1base+identifier, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["glview"]+"Dataset"))
     id_blank_node = RDF.Node(blank=identifier)
     addStatement(model, id_blank_node, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["datacite"]+"ResourceIdentifier"))
@@ -199,7 +200,7 @@ def addDataset(model, doc, ns, fm, personhash):
     # Submitter
     submitter = doc.find("./str[@name='submitter']")
     submitter_org = " ".join(re.findall(r"o=(\w+)", submitter.text, re.IGNORECASE))
-    print "Submitter <%s> was turned into <%s>" % (submitter.text, submitter_org.upper())
+    # print "Submitter <%s> was turned into <%s>" % (submitter.text, submitter_org.upper())
 
 
     # TODO: Make this point to a Person
@@ -210,7 +211,7 @@ def addDataset(model, doc, ns, fm, personhash):
     # Add Rights holder
     rights_holder = doc.find("./str[@name='rightsHolder']")
     rights_holder_org = " ".join(re.findall(r"o=(\w+)", rights_holder.text, re.IGNORECASE))
-    print "RightsHolder <%s> was turned into <%s>" % (rights_holder.text, rights_holder_org.upper())
+    # print "RightsHolder <%s> was turned into <%s>" % (rights_holder.text, rights_holder_org.upper())
     # TODO: Make this point to an Organization or Person
     if len(rights_holder_org) > 0:
         addStatement(model, d1base+identifier, ns["glview"]+"hasRightsHolder", RDF.Uri("urn:node:" + rights_holder_org.upper()))
@@ -286,13 +287,15 @@ def addDigitalObject(model, d1base, identifier, data_id_node, ns, fm, personhash
     # Submitter and rights holders
     # TODO: No fields for these in GL View
     submitter_node = data_meta.find("./submitter")
-    rights_holder_node = data_meta.find("./rightsHolder")
 
     if submitter_node is not None:
         submitter_node_text = " ".join(re.findall(r"o=(\w+)", submitter_node.text, re.IGNORECASE))
 
         if len(submitter_node_text) > 0:
             addStatement(model, d1base+data_id, ns["doview"]+"hasSubmitter", RDF.Uri("urn:node:" + submitter_node_text.upper()))
+
+
+    rights_holder_node = data_meta.find("./rightsHolder")
 
     if rights_holder_node is not None:
         rights_holder_node_text = " ".join(re.findall(r"o=(\w+)", rights_holder_node.text, re.IGNORECASE))
@@ -445,7 +448,7 @@ def processPage(model, ns, fm, personhash, page, pagesize=1000):
     resultnode = xmldoc.findall(".//result")
     num_results = resultnode[0].get('numFound')
     doclist = xmldoc.findall(".//doc")
-    #print(len(doclist))
+
     for d in doclist:
         None
         addDataset(model, d, ns, fm, personhash)
@@ -478,23 +481,24 @@ def main():
     formats = addFormats(model, ns, fm)
 
     # Create format maps to map between D1 and GeoLink formats
-    pagesize=100
+    
+    pagesize = 200
     print "Processing page: 1",
-    if (records > pagesize):
-        print str(model.size())
-        sys.stdout.flush()
-        numpages = records/pagesize+1
-        for page in range(2,numpages+1):
-            print "Processing page: ",page," of ",numpages,
-            processPage(model, ns, personhash, page, pagesize=pagesize )
-            print str(model.size())
-            sys.stdout.flush()
-            serialize(model, ns, "dataone-example-lod.ttl", "turtle")
     records = processPage(model, ns, fm, personhash, 1, pagesize=pagesize )
+    # if (records > pagesize):
+    #     print str(model.size())
+    #     sys.stdout.flush()
+    #     numpages = records/pagesize+1
+    #     for page in range(2,numpages+1):
+    #         print "Processing page: ",page," of ",numpages,
+    #         processPage(model, ns, personhash, page, pagesize=pagesize )
+    #         print str(model.size())
+    #         sys.stdout.flush()
+    #         serialize(model, ns, "dataone-example-lod.ttl", "turtle")
 
     print("Final model size: " + str(model.size()))
     serialize(model, ns, "dataone-example-lod.ttl", "turtle")
-    #serialize(model, ns, "dataone-example-lod.rdf", "rdfxml")
+    # serialize(model, ns, "dataone-example-lod.rdf", "rdfxml")
 
 if __name__ == "__main__":
     import RDF
@@ -505,4 +509,6 @@ if __name__ == "__main__":
     import csv
     import string
     import sys
-    #main()
+    import os
+
+    main()
