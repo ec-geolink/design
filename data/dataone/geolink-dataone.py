@@ -8,8 +8,12 @@
 
 def getDataList(page, pagesize):
     start = (page-1)*pagesize
-    fields = ",".join(["identifier","title","abstract","author","authorLastName","origin","submitter","rightsHolder","documents","resourceMap","authoritativeMN","obsoletes","northBoundCoord","eastBoundCoord","southBoundCoord","westBoundCoord","startDate","endDate"])
-    
+    fields = ",".join(["identifier","title","abstract","author",\
+    "authorLastName", "origin","submitter","rightsHolder","documents", \
+    "resourceMap","authoritativeMN","obsoletes","northBoundCoord", \
+    "eastBoundCoord","southBoundCoord","westBoundCoord","startDate","endDate",\
+    "datasource","replicaMN"])
+
     d1query = "https://cn.dataone.org/cn/v1/query/solr/?fl=" + fields + "&q=formatType:METADATA+AND+(datasource:*LTER+OR+datasource:*KNB+OR+datasource:*PISCO+OR+datasource:*GOA)+AND+-obsoletedBy:*&rows="+str(pagesize)+"&start="+str(start)
     xmldoc = getXML(d1query)
 
@@ -215,11 +219,27 @@ def addDataset(model, doc, ns, fm, personhash):
     # TODO: Make this point to an Organization or Person
     if len(rights_holder_org) > 0:
         addStatement(model, d1base+identifier, ns["glview"]+"hasRightsHolder", RDF.Uri("urn:node:" + rights_holder_org.upper()))
-    
 
-    # Repository
-    authMN = doc.find("./str[@name='authoritativeMN']")
-    addStatement(model, d1base+identifier, ns["glview"]+"hasRepository", RDF.Uri(authMN.text))
+
+    # Repositories
+
+    # Authoritative MN
+    repository_authMN = doc.find("./str[@name='authoritativeMN']")
+    addStatement(model, d1base+identifier, ns["doview"]+"authoritativeRepository", RDF.Uri(repository_authMN.text))
+
+    # Replica MN's
+    repository_mns = doc.findall("./arr[@name='replicaMN']/str")
+
+    print len(repository_mns)
+    for repo_node in repository_mns:
+        print repo_node
+        print repo_node.text
+        addStatement(model, d1base+identifier, ns["doview"]+"replicaRepository", RDF.Uri(repo_node.text))
+
+    # Origin MN
+    repository_datasource = doc.find("./str[@name='datasource']")
+    addStatement(model, d1base+identifier, ns["doview"]+"originRepository", RDF.Uri(repository_datasource.text))
+
 
     # TODO: Add Landing page
 
