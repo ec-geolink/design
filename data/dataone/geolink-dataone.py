@@ -221,7 +221,7 @@ def addDataset(model, doc, ns, fm, personhash):
         addStatement(model, d1base+identifier, ns["glview"]+"hasRightsHolder", RDF.Uri("urn:node:" + rights_holder_org.upper()))
 
 
-    # Repositories
+    # Repositories: authoritative, replica, origin
 
     # Authoritative MN
     repository_authMN = doc.find("./str[@name='authoritativeMN']")
@@ -230,10 +230,7 @@ def addDataset(model, doc, ns, fm, personhash):
     # Replica MN's
     repository_mns = doc.findall("./arr[@name='replicaMN']/str")
 
-    print len(repository_mns)
     for repo_node in repository_mns:
-        print repo_node
-        print repo_node.text
         addStatement(model, d1base+identifier, ns["doview"]+"replicaRepository", RDF.Uri(repo_node.text))
 
     # Origin MN
@@ -493,7 +490,6 @@ def main():
         "doview": "http://schema.geolink.org/dev/doview#",
         "prov"  : "http://www.w3.org/ns/prov#"
     }
-    
     print "Creating format map..."
     fm = loadFormats(ns)
 
