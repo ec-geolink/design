@@ -36,24 +36,27 @@
      <!-- http://schema.geolink.org/dev/doview#originRepository -->
 
      <owl:ObjectProperty rdf:about="&dataone;originRepository">
-         <rdfs:domain rdf:resource="&ecglview;DigitalObject"/>
-         <rdfs:range rdf:resource="&ecglview;Repository"/>
+        <rdfs:label>originRepository</rdfs:label>
+        <rdfs:domain rdf:resource="&ecglview;DigitalObject"/>
+        <rdfs:range rdf:resource="&ecglview;Repository"/>
      </owl:ObjectProperty>
 
 
      <!-- http://schema.geolink.org/dev/doview#authoritativeRepository -->
 
      <owl:ObjectProperty rdf:about="&dataone;authoritativeRepository">
-         <rdfs:domain rdf:resource="&ecglview;DigitalObject"/>
-         <rdfs:range rdf:resource="&ecglview;Repository"/>
+        <rdfs:label>authoritativeRepository</rdfs:label>
+        <rdfs:domain rdf:resource="&ecglview;DigitalObject"/>
+        <rdfs:range rdf:resource="&ecglview;Repository"/>
      </owl:ObjectProperty>
 
 
      <!-- http://schema.geolink.org/dev/doview#replicaRepository -->
 
      <owl:ObjectProperty rdf:about="&dataone;replicaRepository">
-         <rdfs:domain rdf:resource="&ecglview;DigitalObject"/>
-         <rdfs:range rdf:resource="&ecglview;Repository"/>
+        <rdfs:label>replicaRepository</rdfs:label>
+        <rdfs:domain rdf:resource="&ecglview;DigitalObject"/>
+        <rdfs:range rdf:resource="&ecglview;Repository"/>
      </owl:ObjectProperty>
 
 
@@ -69,25 +72,27 @@
      <!-- http://schema.geolink.org/dev/doview#hasChecksumAlgorithm -->
 
      <owl:DatatypeProperty rdf:about="&dataone;hasChecksumAlgorithm">
-         <rdfs:domain rdf:resource="&ecglview;DigitalObject"/>
-         <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:label>dataone:hasChecksumAlgorithm</rdfs:label>
+        <rdfs:domain rdf:resource="&ecglview;DigitalObject"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
      </owl:DatatypeProperty>
 
 
      <!-- http://schema.geolink.org/dev/doview#dateUploaded -->
 
      <owl:DatatypeProperty rdf:about="&dataone;dateUploaded">
-         <rdfs:domain rdf:resource="&ecglview;DigitalObject"/>
-         <rdfs:range rdf:resource="&xsd;dateTime"/>
+        <rdfs:label>dataone:dateUploaded</rdfs:label>
+        <rdfs:domain rdf:resource="&ecglview;DigitalObject"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
      </owl:DatatypeProperty>
 
-    
+
 
     <!-- http://schema.geolink.org/dev/doview#hasStartDate -->
     <!-- This declaration just serves as a reminder that the range needs to be expanded to include this class -->
 
     <owl:DatatypeProperty rdf:about="&doview;hasStartDate">
-        <rdfs:label>hasStartDate</rdfs:label>
+        <rdfs:label>dataone:hasStartDate</rdfs:label>
         <rdfs:range rdf:resource="&xsd;dateTime"/>
         <rdfs:domain>
             <owl:Class>
@@ -104,7 +109,7 @@
     <!-- This declaration just serves as a reminder that the range needs to be expanded to include this class -->
 
     <owl:DatatypeProperty rdf:about="&doview;hasEndDate">
-        <rdfs:label>hasEndDate</rdfs:label>
+        <rdfs:label>dataone:hasEndDate</rdfs:label>
         <rdfs:range rdf:resource="&xsd;dateTime"/>
         <rdfs:domain>
             <owl:Class>
