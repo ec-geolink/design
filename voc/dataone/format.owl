@@ -1,677 +1,101 @@
 <?xml version="1.0"?>
 
-<!DOCTYPE rdf:RDF [
+
+<!DOCTYPE rdf:RDF [ 
     <!ENTITY ecglvoc_format "http://schema.geolink.org/dev/voc/dataone/format#" >
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY geosparql "http://www.opengis.net/ont/geosparql#" >
 ]>
 
-<rdf:RDF xmlns="http://schema.geolink.org/dev/voc/dataone/format#"
-     xml:base="http://schema.geolink.org/dev/voc/dataone/format"
-     xmlns:ecglvoc_format="http://schema.geolink.org/dev/voc/dataone/format#"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:geosparql="http://www.opengis.net/ont/geosparql#">
+<rdf:RDF xml:base="http://schema.geolink.org/dev/voc/dataone/format" 
+    xmlns:ecglvoc_format="http://schema.geolink.org/dev/voc/dataone/format#" 
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" 
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#" 
+    xmlns="http://schema.geolink.org/dev/voc/dataone/format#">
 
     <owl:Ontology rdf:about="http://schema.geolink.org/dev/voc/dataone/format"/>
 
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#001 -->
-    <owl:Class rdf:about="&ecglvoc_format;001">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>METADATA: Ecological Metadata Language, version 2.0.0</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#002 -->
-    <owl:Class rdf:about="&ecglvoc_format;002">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>METADATA: Ecological Metadata Language, version 2.0.1</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#003 -->
-    <owl:Class rdf:about="&ecglvoc_format;003">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>METADATA: Ecological Metadata Language, version 2.1.0</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#004 -->
-    <owl:Class rdf:about="&ecglvoc_format;004">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>METADATA: Ecological Metadata Language, version 2.1.1</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#005 -->
-    <owl:Class rdf:about="&ecglvoc_format;005">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>METADATA: ESRI Profile of the Content Standard for Digital Geospatial Metadata, March 2003</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#006 -->
-    <owl:Class rdf:about="&ecglvoc_format;006">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>METADATA: Content Standard for Digital Geospatial Metadata, Biological Data Profile, version 001.1-1999</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#007 -->
-    <owl:Class rdf:about="&ecglvoc_format;007">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>METADATA: Content Standard for Digital Geospatial Metadata, Metadata Profile for Shoreline Data, version 001.2-1999</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#008 -->
-    <owl:Class rdf:about="&ecglvoc_format;008">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>METADATA: Content Standard for Digital Geospatial Metadata, version 001-1998</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#009 -->
-    <owl:Class rdf:about="&ecglvoc_format;009">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>METADATA: North American Profile of ISO 19115: 2003 Geographic Information - Metadata</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#010 -->
-    <owl:Class rdf:about="&ecglvoc_format;010">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>METADATA: NetCDF Markup Language, version 2.2</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#011 -->
-    <owl:Class rdf:about="&ecglvoc_format;011">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>DATA: NetCDF Climate and Forecast Metadata Convention, version 1.0</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#012 -->
-    <owl:Class rdf:about="&ecglvoc_format;012">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>DATA: NetCDF Climate and Forecast Metadata Convention, version 1.1</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#013 -->
-    <owl:Class rdf:about="&ecglvoc_format;013">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>DATA: NetCDF Climate and Forecast Metadata Convention, version 1.2</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#014 -->
-    <owl:Class rdf:about="&ecglvoc_format;014">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>DATA: NetCDF Climate and Forecast Metadata Convention, version 1.3</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#015 -->
-    <owl:Class rdf:about="&ecglvoc_format;015">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>DATA: NetCDF Climate and Forecast Metadata Convention, version 1.4</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#016 -->
-    <owl:Class rdf:about="&ecglvoc_format;016">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>METADATA: Water Markup Language, version 1.0</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#017 -->
-    <owl:Class rdf:about="&ecglvoc_format;017">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>METADATA: Water Markup Language, version 1.0</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#018 -->
-    <owl:Class rdf:about="&ecglvoc_format;018">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>METADATA: Metadata Encoding and Transmission Standard, version 1</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#019 -->
-    <owl:Class rdf:about="&ecglvoc_format;019">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>METADATA: Network Common Data Format, version 3</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#020 -->
-    <owl:Class rdf:about="&ecglvoc_format;020">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>METADATA: Network Common Data Format, version 4</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#021 -->
-    <owl:Class rdf:about="&ecglvoc_format;021">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>DATA: Plain Text</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#022 -->
-    <owl:Class rdf:about="&ecglvoc_format;022">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>DATA: Comma Separated Values Text</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#023 -->
-    <owl:Class rdf:about="&ecglvoc_format;023">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>DATA: Bitmap Image File</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#024 -->
-    <owl:Class rdf:about="&ecglvoc_format;024">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>DATA: Graphics Interchange Format</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#025 -->
-    <owl:Class rdf:about="&ecglvoc_format;025">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>DATA: JPEG 2000</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#026 -->
-    <owl:Class rdf:about="&ecglvoc_format;026">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>DATA: JPEG</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#027 -->
-    <owl:Class rdf:about="&ecglvoc_format;027">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>DATA: Portable Network Graphics</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#028 -->
-    <owl:Class rdf:about="&ecglvoc_format;028">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>DATA: Scalable Vector Graphics</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#029 -->
-    <owl:Class rdf:about="&ecglvoc_format;029">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>DATA: Tagged Image File Format</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#030 -->
-    <owl:Class rdf:about="&ecglvoc_format;030">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>METADATA: Simple Darwin Core</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#031 -->
-    <owl:Class rdf:about="&ecglvoc_format;031">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>METADATA: Darwin Core, version 2.0</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#032 -->
-    <owl:Class rdf:about="&ecglvoc_format;032">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>DATA: Octet Stream</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#033 -->
-    <owl:Class rdf:about="&ecglvoc_format;033">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>DATA: ATOM-1.0</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#034 -->
-    <owl:Class rdf:about="&ecglvoc_format;034">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>DATA: N3</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#035 -->
-    <owl:Class rdf:about="&ecglvoc_format;035">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>DATA: TURTLE</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#036 -->
-    <owl:Class rdf:about="&ecglvoc_format;036">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>DATA: Resource Description Framework</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#037 -->
-    <owl:Class rdf:about="&ecglvoc_format;037">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>DATA: N-TRIPLE</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#038 -->
-    <owl:Class rdf:about="&ecglvoc_format;038">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>DATA: RDF/XML</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#039 -->
-    <owl:Class rdf:about="&ecglvoc_format;039">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>DATA: RDFa</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#040 -->
-    <owl:Class rdf:about="&ecglvoc_format;040">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>RESOURCE: Object Reuse and Exchange Vocabulary</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#041 -->
-    <owl:Class rdf:about="&ecglvoc_format;041">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>DATA: Portable Document Format</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#042 -->
-    <owl:Class rdf:about="&ecglvoc_format;042">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>METADATA: Dryad Metadata Application Profile Version 3.1</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#043 -->
-    <owl:Class rdf:about="&ecglvoc_format;043">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>METADATA: Dryad Metadata Application Profile Version 3.0</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#044 -->
-    <owl:Class rdf:about="&ecglvoc_format;044">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>DATA: Microsoft Excel file format</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#045 -->
-    <owl:Class rdf:about="&ecglvoc_format;045">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>DATA: Microsoft Word file format</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#046 -->
-    <owl:Class rdf:about="&ecglvoc_format;046">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>DATA: Kernel Metadata and Electronic Resource Citations (ERCs), 2010.05.13</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#047 -->
-    <owl:Class rdf:about="&ecglvoc_format;047">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>DATA: NEXUS File Format for Systematic Information</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#048 -->
-    <owl:Class rdf:about="&ecglvoc_format;048">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>DATA: Zip file format</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#049 -->
-    <owl:Class rdf:about="&ecglvoc_format;049">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>DATA: Microsoft Excel OpenXML</rdfs:label>
-    </owl:Class>
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
 
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#050 -->
-    <owl:Class rdf:about="&ecglvoc_format;050">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>DATA: Microsoft Word OpenXML</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#051 -->
-    <owl:Class rdf:about="&ecglvoc_format;051">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>DATA: FASTA sequence file</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#052 -->
-    <owl:Class rdf:about="&ecglvoc_format;052">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>DATA: Extensible Markup Language</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#053 -->
-    <owl:Class rdf:about="&ecglvoc_format;053">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>DATA: Extensible Markup Language Application</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#054 -->
-    <owl:Class rdf:about="&ecglvoc_format;054">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>DATA: Rich Text Format</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#055 -->
-    <owl:Class rdf:about="&ecglvoc_format;055">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>DATA: Hypertext Markup Language</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#056 -->
-    <owl:Class rdf:about="&ecglvoc_format;056">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>DATA: Postscript</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#057 -->
-    <owl:Class rdf:about="&ecglvoc_format;057">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>DATA: Wave Audio Format</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#058 -->
-    <owl:Class rdf:about="&ecglvoc_format;058">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>DATA: Mathematica Notebook</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#059 -->
-    <owl:Class rdf:about="&ecglvoc_format;059">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>DATA: Quicktime Video</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#060 -->
-    <owl:Class rdf:about="&ecglvoc_format;060">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>DATA: GZIP Format</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#061 -->
-    <owl:Class rdf:about="&ecglvoc_format;061">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>DATA: Python Script</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#062 -->
-    <owl:Class rdf:about="&ecglvoc_format;062">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>DATA: Windows Media Video File</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#063 -->
-    <owl:Class rdf:about="&ecglvoc_format;063">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>DATA: Windows Media Audio File</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#064 -->
-    <owl:Class rdf:about="&ecglvoc_format;064">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>DATA: Microsoft Audio Video Interleave (AVI) File</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#065 -->
-    <owl:Class rdf:about="&ecglvoc_format;065">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>DATA: MPEG-1 Video</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#066 -->
-    <owl:Class rdf:about="&ecglvoc_format;066">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>DATA: MPEG-1 or MPEG-2 Audio Layer III</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#067 -->
-    <owl:Class rdf:about="&ecglvoc_format;067">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>DATA: MPEG-4 Video</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#068 -->
-    <owl:Class rdf:about="&ecglvoc_format;068">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>DATA: Tape Archive File</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#069 -->
-    <owl:Class rdf:about="&ecglvoc_format;069">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>DATA: Bzip2 Compressed File</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#070 -->
-    <owl:Class rdf:about="&ecglvoc_format;070">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>DATA: Google Earth Keyhole Markup Language (KML)</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#071 -->
-    <owl:Class rdf:about="&ecglvoc_format;071">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>DATA: Roshal Archive File</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#072 -->
-    <owl:Class rdf:about="&ecglvoc_format;072">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>DATA: Microsoft Office Excel 2007 binary workbooks</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#073 -->
-    <owl:Class rdf:about="&ecglvoc_format;073">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>DATA: Microsoft Office Powerpoint</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#074 -->
-    <owl:Class rdf:about="&ecglvoc_format;074">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>DATA: Microsoft Office OpenXML Presentation</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#075 -->
-    <owl:Class rdf:about="&ecglvoc_format;075">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>METADATA: Ecological Metadata Language, Access module, version 2.0.0beta4</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#076 -->
-    <owl:Class rdf:about="&ecglvoc_format;076">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>METADATA: Ecological Metadata Language, Attribute module, version 2.0.0beta4</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#077 -->
-    <owl:Class rdf:about="&ecglvoc_format;077">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>METADATA: Ecological Metadata Language, Constraint module, version 2.0.0beta4</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#078 -->
-    <owl:Class rdf:about="&ecglvoc_format;078">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>METADATA: Ecological Metadata Language, Coverage module, version 2.0.0beta4</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#079 -->
-    <owl:Class rdf:about="&ecglvoc_format;079">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>METADATA: Ecological Metadata Language, Dataset module, version 2.0.0beta4</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#080 -->
-    <owl:Class rdf:about="&ecglvoc_format;080">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>METADATA: Ecological Metadata Language, Distribution module, version 2.0.0beta4</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#081 -->
-    <owl:Class rdf:about="&ecglvoc_format;081">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>METADATA: Ecological Metadata Language, Entity module, version 2.0.0beta4</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#082 -->
-    <owl:Class rdf:about="&ecglvoc_format;082">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>METADATA: Ecological Metadata Language, Literature module, version 2.0.0beta4</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#083 -->
-    <owl:Class rdf:about="&ecglvoc_format;083">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>METADATA: Ecological Metadata Language, Party module, version 2.0.0beta4</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#084 -->
-    <owl:Class rdf:about="&ecglvoc_format;084">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>METADATA: Ecological Metadata Language, Physical module, version 2.0.0beta4</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#085 -->
-    <owl:Class rdf:about="&ecglvoc_format;085">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>METADATA: Ecological Metadata Language, Project module, version 2.0.0beta4</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#086 -->
-    <owl:Class rdf:about="&ecglvoc_format;086">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>METADATA: Ecological Metadata Language, Protocol module, version 2.0.0beta4</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#087 -->
-    <owl:Class rdf:about="&ecglvoc_format;087">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>METADATA: Ecological Metadata Language, Resource module, version 2.0.0beta4</rdfs:label>
-    </owl:Class>
+    <!-- http://schema.geolink.org/dev/voc/dataone/#hasFormat -->
 
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#088 -->
-    <owl:Class rdf:about="&ecglvoc_format;088">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>METADATA: Ecological Metadata Language, Software module, version 2.0.0beta4</rdfs:label>
-    </owl:Class>
-
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#089 -->
-    <owl:Class rdf:about="&ecglvoc_format;089">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>METADATA: Ecological Metadata Language, Access module, version 2.0.0beta6</rdfs:label>
-    </owl:Class>
+    <owl:ObjectProperty rdf:about="&ecglvoc_format;hasFormat">
+        <rdfs:label>hasFormat</rdfs:label>
+        <rdfs:domain rdf:resource="&ecglview;DigitalObject"/>
+        <rdfs:range rdf:resource="&ecglvoc_format;Format"/>
+    </owl:ObjectProperty>
 
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#090 -->
-    <owl:Class rdf:about="&ecglvoc_format;090">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>METADATA: Ecological Metadata Language, Attribute module, version 2.0.0beta6</rdfs:label>
-    </owl:Class>
 
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#091 -->
-    <owl:Class rdf:about="&ecglvoc_format;091">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>METADATA: Ecological Metadata Language, Constraint module, version 2.0.0beta6</rdfs:label>
-    </owl:Class>
 
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#092 -->
-    <owl:Class rdf:about="&ecglvoc_format;092">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>METADATA: Ecological Metadata Language, Coverage module, version 2.0.0beta6</rdfs:label>
-    </owl:Class>
 
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#093 -->
-    <owl:Class rdf:about="&ecglvoc_format;093">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>METADATA: Ecological Metadata Language, Dataset module, version 2.0.0beta6</rdfs:label>
-    </owl:Class>
+    <!--
+     ///////////////////////////////////////////////////////////////////////////////////////
+     //
+     // Data properties
+     //
+     ///////////////////////////////////////////////////////////////////////////////////////
+     -->
 
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#094 -->
-    <owl:Class rdf:about="&ecglvoc_format;094">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>METADATA: Ecological Metadata Language, Distribution module, version 2.0.0beta6</rdfs:label>
-    </owl:Class>
+    <!-- http://schema.geolink.org/dev/voc/dataone/#formatType -->
 
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#095 -->
-    <owl:Class rdf:about="&ecglvoc_format;095">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>METADATA: Ecological Metadata Language, Entity module, version 2.0.0beta6</rdfs:label>
-    </owl:Class>
+    <owl:DatatypeProperty rdf:about="&ecglvoc_format;formatType">
+        <rdfs:label>formatType</rdfs:label>
+        <rdfs:domain rdf:resource="&ecglvoc_format;Format"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
 
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#096 -->
-    <owl:Class rdf:about="&ecglvoc_format;096">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>METADATA: Ecological Metadata Language, Literature module, version 2.0.0beta6</rdfs:label>
-    </owl:Class>
 
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#097 -->
-    <owl:Class rdf:about="&ecglvoc_format;097">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>METADATA: Ecological Metadata Language, Party module, version 2.0.0beta6</rdfs:label>
-    </owl:Class>
 
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#098 -->
-    <owl:Class rdf:about="&ecglvoc_format;098">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>METADATA: Ecological Metadata Language, Physical module, version 2.0.0beta6</rdfs:label>
-    </owl:Class>
 
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#099 -->
-    <owl:Class rdf:about="&ecglvoc_format;099">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>METADATA: Ecological Metadata Language, Project module, version 2.0.0beta6</rdfs:label>
-    </owl:Class>
+    <!-- http://schema.geolink.org/dev/view#identifier -->
+    <!-- This is a partial definition of the #identifier DP just included to show that we'd need to add the Format class to the domain of #identifier so formats can have #identifiers -->
 
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#100 -->
-    <owl:Class rdf:about="&ecglvoc_format;100">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>METADATA: Ecological Metadata Language, Protocol module, version 2.0.0beta6</rdfs:label>
-    </owl:Class>
+    <owl:DatatypeProperty rdf:about="&ecglview;identifier">
+        <rdfs:label>identifier</rdfs:label>
+        <rdfs:comment>The domain of this property also includes (possibly blank) nodes that act as the range of the &apos;matches&apos; property. Graph patterns for data using this property can either be of the form:
+-   ?X :identifier ?ID
+-   ?X :matches [ :identifier ?ID ; :hasScheme ?S ]</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <!-- ... -->
+                    <rdf:Description rdf:about="&ecglvoc_format;Format"/>
+                    <!-- ... -->
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
 
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#101 -->
-    <owl:Class rdf:about="&ecglvoc_format;101">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>METADATA: Ecological Metadata Language, Resource module, version 2.0.0beta6</rdfs:label>
-    </owl:Class>
 
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#102 -->
-    <owl:Class rdf:about="&ecglvoc_format;102">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>METADATA: Ecological Metadata Language, Software module, version 2.0.0beta6</rdfs:label>
-    </owl:Class>
 
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#103 -->
-    <owl:Class rdf:about="&ecglvoc_format;103">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>METADATA: Data Documentation Initiative, Codebook version 2.5</rdfs:label>
-    </owl:Class>
 
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#104 -->
-    <owl:Class rdf:about="&ecglvoc_format;104">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>METADATA: Data Documentation Initiative, Codebook version 2.1</rdfs:label>
-    </owl:Class>
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
 
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#105 -->
-    <owl:Class rdf:about="&ecglvoc_format;105">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>METADATA: Oak Ridge National Lab Mercury Metadata version 1.0</rdfs:label>
-    </owl:Class>
+     <!-- http://schema.geolink.org/dev/voc/dataone/format#Format -->
 
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#106 -->
-    <owl:Class rdf:about="&ecglvoc_format;106">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>METADATA: DataCite Metadata Schema version 3.0</rdfs:label>
+    <owl:Class rdf:about="&ecglvoc_format;Format">
+        <rdfs:label>Format</rdfs:label>
+        <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
     </owl:Class>
 
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#107 -->
-    <owl:Class rdf:about="&ecglvoc_format;107">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>METADATA: DataCite Metadata Schema version 3.1</rdfs:label>
-    </owl:Class>
 
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#108 -->
-    <owl:Class rdf:about="&ecglvoc_format;108">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>DATA: NeXML 2009</rdfs:label>
-    </owl:Class>
 
-    <!-- http://schema.geolink.org/dev/voc/dataone/format#109 -->
-    <owl:Class rdf:about="&ecglvoc_format;109">
-       <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
-       <rdfs:label>METADATA: DataONE Dublin Core Extended v1.0</rdfs:label>
-    </owl:Class>
 
 </rdf:RDF>
