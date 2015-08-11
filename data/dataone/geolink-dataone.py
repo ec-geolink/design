@@ -180,7 +180,9 @@ def addDataset(model, doc, ns, fm, personhash):
     bound_west = doc.find("./float[@name='westBoundCoord']")
 
     if all(ele is not None for ele in [bound_north, bound_east, bound_south, bound_west]):
-        wktliteral = "POLYGON ((%s %s, %s %s, %s %s, %s, %s))" % (bound_west.text, bound_north.text, bound_east.text, bound_north.text, bound_east.text, bound_south.text, bound_west.text, bound_south.text)
+
+        if bound_north.text == bound_south.text and bound_west.text == bound_east.text:
+            wktliteral = "POINT (%s %s)" % (bound_north.text, bound_east.text)
 
         addStatement(model, d1base+identifier, ns['glview'] + "hasGeometryAsWktLiteral", wktliteral)
 
