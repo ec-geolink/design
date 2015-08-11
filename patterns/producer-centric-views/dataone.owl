@@ -33,34 +33,6 @@
      -->
 
 
-     <!-- http://schema.geolink.org/dev/doview#originRepository -->
-
-     <owl:ObjectProperty rdf:about="&dataone;originRepository">
-        <rdfs:label>originRepository</rdfs:label>
-        <rdfs:domain rdf:resource="&ecglview;DigitalObject"/>
-        <rdfs:range rdf:resource="&ecglview;Repository"/>
-     </owl:ObjectProperty>
-
-
-     <!-- http://schema.geolink.org/dev/doview#authoritativeRepository -->
-
-     <owl:ObjectProperty rdf:about="&dataone;authoritativeRepository">
-        <rdfs:label>authoritativeRepository</rdfs:label>
-        <rdfs:domain rdf:resource="&ecglview;DigitalObject"/>
-        <rdfs:range rdf:resource="&ecglview;Repository"/>
-     </owl:ObjectProperty>
-
-
-     <!-- http://schema.geolink.org/dev/doview#replicaRepository -->
-
-     <owl:ObjectProperty rdf:about="&dataone;replicaRepository">
-        <rdfs:label>replicaRepository</rdfs:label>
-        <rdfs:domain rdf:resource="&ecglview;DigitalObject"/>
-        <rdfs:range rdf:resource="&ecglview;Repository"/>
-     </owl:ObjectProperty>
-
-
-
     <!--
     ///////////////////////////////////////////////////////////////////////////////////////
     //
