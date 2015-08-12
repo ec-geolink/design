@@ -12,6 +12,37 @@
     can be attributed to them and used in later graph generation activities.
 """
 
+def processDirectory(directory):
+    people = [] # array of dicts with keys first, middle, last, email (all to lowercase)
+    organizations = [] # array of dicts containing org name, website, and email
+
+    filenames = os.listdir("./documents")
+    scimeta_docs = [f for f in filenames if re.search("scimeta\.xml$", f)]
+
+    for xmldoc in scimeta_docs:
+        document = uuid.uuid4()
+
+        try:
+            xmldoc = ET.parse("./documents/" + xmldoc)
+        except ParseError:
+            print "Couldn't parse document at ./documents/%s. Moving on to the next file." % xmldoc
+            continue
+
+        # Check if EML
+        root = xmldoc.getroot()
+
+        if not re.search("eml$", root.tag):
+            print "Not EML. Moving on to next document."
+            continue
+
+        # Process each <creator>
+        creators = xmldoc.findall(".//creator")
+
+        for creator in creators:
+            people, organizations = processCreator(people, organizations, creator, document)
+
+    return people, organizations
+
 def processCreator(people, organizations, creator, document):
     """Process the <creator> tag in an EML document"""
 
@@ -23,7 +54,6 @@ def processCreator(people, organizations, creator, document):
         print "Couldn't find an individual or organization."
 
     return people,organizations
-
 
 def processIndividual(people, creator, document):
     """ Proccess a <creator> tag for an individual.
@@ -102,7 +132,6 @@ def processIndividual(people, creator, document):
 
     return people
 
-
 def processOrganization(organizations, creator, document):
     """ Proccess a <creator> tag for an organization.
 
@@ -150,7 +179,6 @@ def processOrganization(organizations, creator, document):
 
     return organizations
 
-
 def findPerson(people, person):
     """ Find and score a `person` within `people`"""
 
@@ -188,7 +216,6 @@ def findPerson(people, person):
 
     return scores
 
-
 def findOrganization(organizations, organization):
     """ Find and score an `organization` within `organizations`"""
 
@@ -216,7 +243,6 @@ def findOrganization(organizations, organization):
             scores[i] = score
 
     return scores
-
 
 def personString(person):
     """ Print a nice person string
@@ -248,7 +274,6 @@ def personString(person):
 
     return "#".join(person_strings)
 
-
 def organizationString(organization):
     """ Print a nice organization string
 
@@ -275,43 +300,7 @@ def organizationString(organization):
 
 
 def main():
-    people = [] # array of dicts with keys first, middle, last, email (all to lowercase)
-    organizations = [] # array of dicts containing org name, website, and email
-
-    filenames = os.listdir("./documents")
-    scimeta_docs = [f for f in filenames if re.search("scimeta\.xml$", f)]
-
-    print "Finding documents to parse..."
-
-    for filename in scimeta_docs:
-        print "\t%s" % (filename)
-
-
-    print "\nParsing Documents..."
-
-    for xmldoc in scimeta_docs:
-        document = uuid.uuid4()
-
-        try:
-            xmldoc = ET.parse("./documents/" + xmldoc)
-        except ParseError:
-            print "Couldn't parse document at ./documents/%s. Moving on to the next file." % xmldoc
-            continue
-
-        # Check if EML
-        root = xmldoc.getroot()
-
-        if not re.search("eml$", root.tag):
-            print "Not EML. Moving on to next document."
-            continue
-
-        # Process each <creator>
-        creators = xmldoc.findall(".//creator")
-
-        for creator in creators:
-            people, organizations = processCreator(people, organizations, creator, document)
-
-
+    people, organizations = processDirectory("results")
 
     print "All People:"
     print "----------"
