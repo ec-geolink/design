@@ -12,18 +12,28 @@
     can be attributed to them and used in later graph generation activities.
 """
 
-def processDirectory(directory):
-    people = [] # array of dicts with keys first, middle, last, email (all to lowercase)
-    organizations = [] # array of dicts containing org name, website, and email
+import sys
+import os
+import re
+import uuid
+import xml.etree.ElementTree as ET
+from xml.etree.ElementTree import ParseError
 
-    filenames = os.listdir("./documents")
-    scimeta_docs = [f for f in filenames if re.search("scimeta\.xml$", f)]
+
+def processDirectory(directory):
+    # array of dicts with keys first, middle, last, email (all to lowercase)
+    people = []
+    organizations = []  # array of dicts containing org name, website, and email
+
+    filenames = os.listdir("./%s" % directory)
+    # scimeta_docs = [f for f in filenames if re.search("scimeta\.xml$", f)]
+    scimeta_docs = filenames
 
     for xmldoc in scimeta_docs:
         document = uuid.uuid4()
 
         try:
-            xmldoc = ET.parse("./documents/" + xmldoc)
+            xmldoc = ET.parse("%s/%s" % (directory, xmldoc))
         except ParseError:
             print "Couldn't parse document at ./documents/%s. Moving on to the next file." % xmldoc
             continue
@@ -39,9 +49,11 @@ def processDirectory(directory):
         creators = xmldoc.findall(".//creator")
 
         for creator in creators:
-            people, organizations = processCreator(people, organizations, creator, document)
+            people, organizations = processCreator(
+                people, organizations, creator, document)
 
     return people, organizations
+
 
 def processCreator(people, organizations, creator, document):
     """Process the <creator> tag in an EML document"""
@@ -53,7 +65,8 @@ def processCreator(people, organizations, creator, document):
     else:
         print "Couldn't find an individual or organization."
 
-    return people,organizations
+    return people, organizations
+
 
 def processIndividual(people, creator, document):
     """ Proccess a <creator> tag for an individual.
@@ -90,12 +103,13 @@ def processIndividual(people, creator, document):
                 first_name = first_name.split(" ")
 
                 person["first"] = first_name[0]
-                person["middle"] = [ first_name[1].translate(None, ".") ]
+                person["middle"] = [first_name[1].translate(None, ".")]
             elif pattern_two.match(first_name):
                 first_name = first_name.split(" ")
 
                 person["first"] = first_name[0]
-                person["middle"] = [ first_name[1].translate(None, "."), first_name[2].translate(None, ".") ]
+                person["middle"] = [first_name[1].translate(None, "."), first_name[
+                    2].translate(None, ".")]
             else:
                 person["first"] = first_name
 
@@ -107,7 +121,6 @@ def processIndividual(people, creator, document):
     if email is not None:
         person["email"] = email.text.lower()
 
-
     if person:
         scores = findPerson(people, person)
 
@@ -117,7 +130,7 @@ def processIndividual(people, creator, document):
 
             people.append(person)
         else:
-            if len(scores) == 1: # Single best match
+            if len(scores) == 1:  # Single best match
                 existing = people[scores.keys()[0]]
                 print "MATCH: Single best match"
                 print "\t%s" % personString(person)
@@ -131,6 +144,7 @@ def processIndividual(people, creator, document):
                 print "ERROR"
 
     return people
+
 
 def processOrganization(organizations, creator, document):
     """ Proccess a <creator> tag for an organization.
@@ -164,7 +178,7 @@ def processOrganization(organizations, creator, document):
 
             organizations.append(organization)
         else:
-            if len(scores) == 1: # Single best match
+            if len(scores) == 1:  # Single best match
                 existing = organizations[scores.keys()[0]]
                 print "MATCH: Single best match"
                 print "\t%s" % organizationString(organization)
@@ -178,6 +192,7 @@ def processOrganization(organizations, creator, document):
                 print "ERROR"
 
     return organizations
+
 
 def findPerson(people, person):
     """ Find and score a `person` within `people`"""
@@ -216,6 +231,7 @@ def findPerson(people, person):
 
     return scores
 
+
 def findOrganization(organizations, organization):
     """ Find and score an `organization` within `organizations`"""
 
@@ -243,6 +259,7 @@ def findOrganization(organizations, organization):
             scores[i] = score
 
     return scores
+
 
 def personString(person):
     """ Print a nice person string
@@ -273,6 +290,7 @@ def personString(person):
         person_strings.append("[%d]" % num_docs)
 
     return "#".join(person_strings)
+
 
 def organizationString(organization):
     """ Print a nice organization string
@@ -308,22 +326,9 @@ def main():
     for person in people:
         print personString(person)
 
-
-
     print ""
     print "All Organizations:"
     print "----------"
 
     for organization in organizations:
         print organizationString(organization)
-
-
-if __name__ == "__main__":
-    import sys
-    import os
-    import re
-    import uuid
-    import xml.etree.ElementTree as ET
-    from xml.etree.ElementTree import ParseError
-
-    main()
