@@ -4,20 +4,13 @@
 
 """
 
-from people import processing
+from people import job
+
 
 def main():
-    people,organizations = processing.processDirectory("./documents")
-
-    print "All %d People..." % len(people)
-
-    for person in people:
-        print processing.personString(person)
-
-    print "All %d Organizations..." % len(organizations)
-
-    for organization in organizations:
-        print processing.organizationString(organization)
+    j = job.Job("./documents")
+    j.run()
+    j.summary()
 
 if __name__ == "__main__":
     main()

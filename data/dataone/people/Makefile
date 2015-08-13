@@ -1,14 +1,14 @@
-.PHONY: clean-pyc demo
+.PHONY: clean demo
 
 all: clean-pyc test
 
 demo:
-	python ./demo/demo.py
+	python -m demo.demo
 
 test:
 	py.test tests
 
-clean-pyc:
+clean:
 	find . -name '*.pyc' -exec rm -f {} +
 	find . -name '*.pyo' -exec rm -f {} +
 	find . -name '*~' -exec rm -f {} +

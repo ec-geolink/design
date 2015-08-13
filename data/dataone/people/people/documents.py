@@ -2,8 +2,10 @@
     file: documents.py
     author: Bryce Meucm
 
-    Gets n scimeta documents off the D1 Solr index and saves them in a subdirectory
+    Gets n scimeta documents off the D1 Solr index and saves them in a
+    subdirectory.
 """
+
 
 def getDocuments(n=100, start=0):
     """Get `n`, staring at `start` documents off the CN's Solr index."""
@@ -11,11 +13,16 @@ def getDocuments(n=100, start=0):
     base_url = "https://cn.dataone.org/cn/v1/query/solr/"
     fields = ",".join(["identifier"])
     query_params = "formatType:METADATA+AND+(datasource:*LTER+OR+datasource:*"\
-    "KNB+OR+datasource:*PISCO+OR+datasource:*GOA)+AND+-obsoletedBy:*"
+                   "KNB+OR+datasource:*PISCO+OR+datasource:*GOA)+AND+-"\
+                   "obsoletedBy:*"
     rows = n
     start = start
 
-    query_string = "%s?fl=%s&q=%s&rows=%s&start=%s" % (base_url, fields, query_params, rows, start)
+    query_string = "%s?fl=%s&q=%s&rows=%s&start=%s" % (base_url,
+                                                       fields,
+                                                       query_params,
+                                                       rows,
+                                                       start)
     print(query_string)
 
     xmldoc = getXML(query_string)
@@ -40,7 +47,9 @@ def getDocumentAtEndpoint(endpoint, identifier):
 
     base_url = "https://cn.dataone.org/cn/v1"
 
-    query_string = "%s/%s/%s" % (base_url, endpoint, urllib.quote_plus(identifier))
+    query_string = "%s/%s/%s" % (base_url,
+                                 endpoint,
+                                 urllib.quote_plus(identifier))
     print("\t" + query_string)
 
     xmldoc = getXML(query_string)
@@ -69,7 +78,7 @@ def saveXML(filename, xmldoc):
     xmlstr = minidom.parseString(ET.tostring(xmldoc)).toprettyxml(indent="\t")
 
     filename_with_path = "./documents/%s" % filename
-    with codecs.open(filename_with_path, "w", encoding = "utf-8") as f:
+    with codecs.open(filename_with_path, "w", encoding="utf-8") as f:
         f.write(xmlstr)
 
 
