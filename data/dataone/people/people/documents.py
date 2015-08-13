@@ -1,5 +1,5 @@
 """
-    file: get_n_scimeta.py
+    file: documents.py
     author: Bryce Meucm
 
     Gets n scimeta documents off the D1 Solr index and saves them in a subdirectory

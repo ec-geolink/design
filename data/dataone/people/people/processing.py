@@ -1,5 +1,5 @@
 """
-    file: process_documents.py
+    file: processing.py
     author: Bryce Mecum (mecum@nceas.ucsb.edu)
 
     Processes the scientific metadata documents in ./documents for person
@@ -12,7 +12,6 @@
     can be attributed to them and used in later graph generation activities.
 """
 
-import sys
 import os
 import re
 import uuid
@@ -23,7 +22,9 @@ from xml.etree.ElementTree import ParseError
 def processDirectory(directory):
     # array of dicts with keys first, middle, last, email (all to lowercase)
     people = []
-    organizations = []  # array of dicts containing org name, website, and email
+
+    # array of dicts: {org name, website,# and email}
+    organizations = []
 
     filenames = os.listdir("./%s" % directory)
     # scimeta_docs = [f for f in filenames if re.search("scimeta\.xml$", f)]
@@ -35,7 +36,8 @@ def processDirectory(directory):
         try:
             xmldoc = ET.parse("%s/%s" % (directory, xmldoc))
         except ParseError:
-            print "Couldn't parse document at ./documents/%s. Moving on to the next file." % xmldoc
+            print "Couldn't parse document at ./documents/%s.\
+             Moving on to the next file." % xmldoc
             continue
 
         # Check if EML
@@ -108,8 +110,8 @@ def processIndividual(people, creator, document):
                 first_name = first_name.split(" ")
 
                 person["first"] = first_name[0]
-                person["middle"] = [first_name[1].translate(None, "."), first_name[
-                    2].translate(None, ".")]
+                person["middle"] = [first_name[1].translate(None, "."),
+                                    first_name[2].translate(None, ".")]
             else:
                 person["first"] = first_name
 
@@ -139,7 +141,6 @@ def processIndividual(people, creator, document):
                 existing["documents"].append(str(document))
             else:
                 existing["documents"] = [str(document)]
-
 
     return people
 
@@ -194,15 +195,20 @@ def findPerson(people, person):
 
     print "FIND[PERSON](%s)" % personString(person)
 
-    scores = {}
-
     match = -1
 
     for i in range(0, len(people)):
         p = people[i]
 
-        if fieldSame(person, p, "email"):
+        if fieldsSame(person, p, ["email"]):
+            print "Same email"
             match = i
+
+        elif fieldsNotDifferent(person, p, ["first", "middle", "last"]):
+            print "Same full name"
+            match = i
+
+    print "match is %d" % match
 
     return match
 
@@ -212,25 +218,61 @@ def findOrganization(organizations, organization):
 
     print "FIND[ORG](%s)" % organizationString(organization)
 
-    scores = {}
     match = -1
 
     for i in range(0, len(organizations)):
         o = organizations[i]
 
-        if fieldSame(organization, o, "name"):
+        if fieldsSame(organization, o, ["name"]):
             match = i
 
     return match
 
-def fieldSame(first, second, field):
-    """ Checks if `field` of `first` is the same as in `second`"""
 
-    if field in first and field in second:
-        if first[field] == second[field]:
-            return True
+def fieldsSame(first, second, fields):
+    """ Checks if all `fields` of `first` are the same as in `second`"""
 
-    return False
+    print "Checking sameness of fields %s" % ':'.join(fields)
+
+    for field in fields:
+        if field not in first or field not in second:
+            return False
+
+        if first[field] != second[field]:
+            return False
+
+    return True
+
+
+def fieldsDifferent(first, second, fields):
+    """ Checks if all `fields` of `first` are different than `second`"""
+
+    print "Checking differentness of fields %s" % ':'.join(fields)
+
+    for field in fields:
+        if field in first and field in second:
+            if first[field] == second[field]:
+                return False
+
+    return True
+
+
+def fieldsNotDifferent(first, second, fields):
+    """ Checks if `fields` are not different between `first` and `second`
+
+        This allows for the possibility of the field not existing. For example,
+        if a user doesn't have a middle name in one record but does in another
+        andd their first and last name are the same in both records, we'd like
+        to let a rule matching first+middle+last not fail.
+    """
+
+    for field in fields:
+        if field in first and field in second:
+            if first[field] != second[field]:
+                return False
+
+    return True
+
 
 def personString(person):
     """ Print a nice person string
