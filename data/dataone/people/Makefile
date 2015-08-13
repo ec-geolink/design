@@ -2,6 +2,9 @@
 
 all: clean-pyc test
 
+demo:
+	python ./demo/demo.py
+
 test:
 	py.test tests
 
