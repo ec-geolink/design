@@ -122,26 +122,24 @@ def processIndividual(people, creator, document):
         person["email"] = email.text.lower()
 
     if person:
-        scores = findPerson(people, person)
+        match = findPerson(people, person)
 
-        if not scores:
+        if match == -1:
             print "NOT FOUND. Creating new."
             person["documents"] = [str(document)]
 
             people.append(person)
         else:
-            if len(scores) == 1:  # Single best match
-                existing = people[scores.keys()[0]]
-                print "MATCH: Single best match"
-                print "\t%s" % personString(person)
-                print "\t%s" % personString(existing)
+            existing = people[match]
+            print "MATCH: Single best match"
+            print "\t%s" % personString(person)
+            print "\t%s" % personString(existing)
 
-                if "documents" in existing:
-                    existing["documents"].append(str(document))
-                else:
-                    existing["documents"] = [str(document)]
+            if "documents" in existing:
+                existing["documents"].append(str(document))
             else:
-                print "ERROR"
+                existing["documents"] = [str(document)]
+
 
     return people
 
@@ -170,26 +168,23 @@ def processOrganization(organizations, creator, document):
         organization["url"] = url.text.lower()
 
     if organization:
-        scores = findOrganization(organizations, organization)
+        match = findOrganization(organizations, organization)
 
-        if not scores:
+        if match == -1:
             print "NOT FOUND: Creating new."
             organization["documents"] = [str(document)]
 
             organizations.append(organization)
         else:
-            if len(scores) == 1:  # Single best match
-                existing = organizations[scores.keys()[0]]
-                print "MATCH: Single best match"
-                print "\t%s" % organizationString(organization)
-                print "\t%s" % organizationString(existing)
+            existing = organizations[match]
+            print "MATCH: Single best match"
+            print "\t%s" % organizationString(organization)
+            print "\t%s" % organizationString(existing)
 
-                if "documents" in existing:
-                    existing["documents"].append(str(document))
-                else:
-                    existing["documents"] = [str(document)]
+            if "documents" in existing:
+                existing["documents"].append(str(document))
             else:
-                print "ERROR"
+                existing["documents"] = [str(document)]
 
     return organizations
 
@@ -201,35 +196,15 @@ def findPerson(people, person):
 
     scores = {}
 
+    match = -1
+
     for i in range(0, len(people)):
         p = people[i]
-        score = 0
 
-        if "title" in person and "title" in p:
-            if p["title"] == person["title"]:
-                score += 1
+        if fieldSame(person, p, "email"):
+            match = i
 
-        if "first" in person and "first" in p:
-            if person["first"] == p["first"]:
-                score += 1
-
-        if "last" in person and "last" in p:
-            if person["last"] == p["last"]:
-                score += 1
-
-        if "middle" in person and "middle" in p:
-            for middle_initial in person["middle"]:
-                if middle_initial in p["middle"]:
-                    score += 1
-
-        if "email" in person and "email" in p:
-            if person["email"] == p["email"]:
-                score += 1
-
-        if score > 0:
-            scores[i] = score
-
-    return scores
+    return match
 
 
 def findOrganization(organizations, organization):
@@ -238,28 +213,24 @@ def findOrganization(organizations, organization):
     print "FIND[ORG](%s)" % organizationString(organization)
 
     scores = {}
+    match = -1
 
     for i in range(0, len(organizations)):
         o = organizations[i]
-        score = 0
 
-        if "name" in organization and "name" in o:
-            if organization["name"] == o["name"]:
-                score += 1
+        if fieldSame(organization, o, "name"):
+            match = i
 
-        if "email" in organization and "email" in o:
-            if organization["email"] == o["email"]:
-                score += 1
+    return match
 
-        if "url" in organization and "url" in o:
-            if organization["url"] == o["url"]:
-                score += 1
+def fieldSame(first, second, field):
+    """ Checks if `field` of `first` is the same as in `second`"""
 
-        if score > 0:
-            scores[i] = score
+    if field in first and field in second:
+        if first[field] == second[field]:
+            return True
 
-    return scores
-
+    return False
 
 def personString(person):
     """ Print a nice person string
