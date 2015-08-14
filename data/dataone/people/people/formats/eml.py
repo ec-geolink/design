@@ -5,7 +5,6 @@
 
 import re
 from people import find
-from people import helpers
 
 
 def process(job, xmldoc, document):
@@ -30,12 +29,14 @@ def processCreator(job, creator, document):
         person = processCreatorIndividual(job,
                                           creator,
                                           document)
+
         processPerson(job, person, document)
 
     elif creator.find("./organizationName") is not None:
         organization = processCreatorOrganization(job,
                                                   creator,
                                                   document)
+
         processOrganization(job, organization, document)
 
 
@@ -48,15 +49,11 @@ def processPerson(job, person, document):
     match = find.findPerson(job, person)
 
     if match == -1:
-        print "NOT FOUND. Creating new."
         person["documents"] = [str(document)]
 
         job.people.append(person)
     else:
         existing = job.people[match]
-        print "MATCH: Single best match"
-        print "\t%s" % helpers.personString(person)
-        print "\t%s" % helpers.personString(existing)
 
         if "documents" in existing:
             existing["documents"].append(str(document))
@@ -73,15 +70,11 @@ def processOrganization(job, organization, document):
     match = find.findOrganization(job, organization)
 
     if match == -1:
-        print "NOT FOUND: Creating new."
         organization["documents"] = [str(document)]
 
         job.organizations.append(organization)
     else:
         existing = job.organizations[match]
-        print "MATCH: Single best match"
-        print "\t%s" % helpers.organizationString(organization)
-        print "\t%s" % helpers.organizationString(existing)
 
         if "documents" in existing:
             existing["documents"].append(str(document))
