@@ -130,6 +130,22 @@ def processCreatorIndividual(job, creator, document):
         if sur_name is not None:
             person["last"] = sur_name.text.lower()
 
+    user_id = creator.find("./userId")
+
+    if user_id is not None:
+        user_id_fields = re.compile("(\w+=\w+)+").findall(user_id.text)
+
+        if len(user_id_fields) > 0:
+            fields = []
+
+            for field in user_id_fields:
+                k, v = field.split("=")
+
+                if k and v:
+                    fields.append({k.lower(): v.lower()})
+
+            person["user_id"] = fields
+
     email = creator.find("./electronicMailAddress")
 
     if email is not None:
