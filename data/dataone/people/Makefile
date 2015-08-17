@@ -1,6 +1,6 @@
 .PHONY: clean demo
 
-all: clean-pyc test
+all: clean test
 
 demo:
 	python -m demo.demo
