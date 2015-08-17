@@ -100,56 +100,15 @@ def processCreatorIndividual(job, creator, document):
         given_name = individual.find("./givenName")
         sur_name = individual.find("./surName")
 
-        if salutation is not None:
-            title = salutation.text.lower()
-            person["title"] = title.translate(None, ".")
-
-        if given_name is not None:
-            first_name = given_name.text.lower()
-
-            # First I.
-            pattern_one = re.compile("\w+\s+\w{1}\.?")
-
-            # First I. J.
-            pattern_two = re.compile("\w+\s+\w{1}\.?\w{1}\.?")
-
-            if pattern_one.match(first_name):
-                first_name = first_name.split(" ")
-
-                person["first"] = first_name[0]
-                person["middle"] = [first_name[1].translate(None, ".")]
-            elif pattern_two.match(first_name):
-                first_name = first_name.split(" ")
-
-                person["first"] = first_name[0]
-                person["middle"] = [first_name[1].translate(None, "."),
-                                    first_name[2].translate(None, ".")]
-            else:
-                person["first"] = first_name
-
-        if sur_name is not None:
-            person["last"] = sur_name.text.lower()
+        person = processSalutation(person, salutation)
+        person = processGivenName(person, given_name)
+        person = processSurName(person, sur_name)
 
     user_id = creator.find("./userId")
-
-    if user_id is not None:
-        user_id_fields = re.compile("(\w+=\w+)+").findall(user_id.text)
-
-        if len(user_id_fields) > 0:
-            fields = []
-
-            for field in user_id_fields:
-                k, v = field.split("=")
-
-                if k and v:
-                    fields.append({k.lower(): v.lower()})
-
-            person["user_id"] = fields
+    person = processUserId(person, user_id)
 
     email = creator.find("./electronicMailAddress")
-
-    if email is not None:
-        person["email"] = email.text.lower()
+    person = processEmail(person, email)
 
     return person
 
@@ -178,3 +137,87 @@ def processCreatorOrganization(job, creator, document):
         organization["url"] = url.text.lower()
 
     return organization
+
+
+def processSalutation(person, salutation):
+    """
+    Adds information from the salutation to the current person.
+    """
+
+    if salutation is not None:
+        title = salutation.text.lower()
+        person["title"] = title.translate(None, ".")
+
+    return person
+
+
+def processGivenName(person, given_name):
+    """
+    Adds information from the given name to the current person.
+    """
+
+    if given_name is not None:
+        first_name = given_name.text.lower()
+
+        # First I.
+        pattern_one = re.compile("\w+\s+\w{1}\.?")
+
+        # First I. J.
+        pattern_two = re.compile("\w+\s+\w{1}\.?\w{1}\.?")
+
+        if pattern_one.match(first_name):
+            first_name = first_name.split(" ")
+
+            person["first"] = first_name[0]
+        elif pattern_two.match(first_name):
+            first_name = first_name.split(" ")
+
+            person["first"] = first_name[0]
+        else:
+            person["first"] = first_name
+
+    return person
+
+
+def processSurName(person, sur_name):
+    """
+    Adds information from the sur name to the current person.
+    """
+
+    if sur_name is not None:
+        person["last"] = sur_name.text.lower()
+
+    return person
+
+
+def processUserId(person, user_id):
+    """
+    Adds information from the user id to the current person.
+    """
+
+    if user_id is not None:
+        user_id_fields = re.compile("(\w+=\w+)+").findall(user_id.text)
+
+        if len(user_id_fields) > 0:
+            fields = []
+
+            for field in user_id_fields:
+                k, v = field.split("=")
+
+                if k and v:
+                    fields.append({k.lower(): v.lower()})
+
+            person["user_id"] = fields
+
+    return person
+
+
+def processEmail(person, email):
+    """
+    Adds information from the email to the current person.
+    """
+
+    if email is not None:
+        person["email"] = email.text.lower()
+
+    return person
