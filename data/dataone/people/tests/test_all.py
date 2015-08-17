@@ -20,6 +20,6 @@ def test_can_process_eml_user_id():
     j = job.Job("tests/003_can_process_eml_user_id")
     j.run()
 
-    user = j.people[0]["user_id"]
+    user = j.people[0]
 
     assert len(user["user_id"]) == 4
