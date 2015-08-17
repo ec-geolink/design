@@ -6,18 +6,21 @@
 #
 # Matt Jones, NCEAS 2015
 
+
 def getDataList(page, pagesize):
     start = (page-1)*pagesize
-    fields = ",".join(["identifier","title","abstract","author",\
-    "authorLastName", "origin","submitter","rightsHolder","documents", \
-    "resourceMap","authoritativeMN","obsoletes","northBoundCoord", \
-    "eastBoundCoord","southBoundCoord","westBoundCoord","startDate","endDate",\
+    fields = ",".join(["identifier","title","abstract","author",
+    "authorLastName", "origin","submitter","rightsHolder","documents",
+    "resourceMap","authoritativeMN","obsoletes","northBoundCoord",
+    "eastBoundCoord","southBoundCoord","westBoundCoord","startDate","endDate",
     "datasource","replicaMN"])
 
     d1query = "https://cn.dataone.org/cn/v1/query/solr/?fl=" + fields + "&q=formatType:METADATA+AND+(datasource:*LTER+OR+datasource:*KNB+OR+datasource:*PISCO+OR+datasource:*GOA)+AND+-obsoletedBy:*&rows="+str(pagesize)+"&start="+str(start)
+    print(d1query)
     xmldoc = getXML(d1query)
 
     return(xmldoc)
+
 
 def getXML(url):
     try:
@@ -30,6 +33,7 @@ def getXML(url):
     xmldoc = ET.fromstring(content)
 
     return(xmldoc)
+
 
 def addStatement(model, s, p, o):
     # Assume subject is a URI string if it is not an RDF.Node
@@ -52,6 +56,7 @@ def addStatement(model, s, p, o):
         raise Exception("new RDF.Statement failed")
     #print(statement)
     model.add_statement(statement)
+
 
 def addDataset(model, doc, ns, fm, personhash):
     d1base = "https://cn.dataone.org/cn/v1/resolve/"
@@ -95,19 +100,19 @@ def addDataset(model, doc, ns, fm, personhash):
     # Creators
 
     # mecum: This is a little more complex than initially coded up.
-            # The <origin> tag can hold complex information of multiple forms. First, origin can
-            # be a person /or/ an organization, though neither are labeled explictly as one or the other.
-            # Additionally, a person /and/ and organization can be found in the <origin> tag, e.g.:
-            #
-            #   - Daniel Childers||Global Institute of Sustainability| School of Sustainability
-            #   - John Connors, HERO-CM
-            #   - ARC
-            #   - Peter Groffman , Email: groffmanp@ecostudies.org
-            #   - SANParks
-            #   - National Climatic Data Center (NCDC) NOAA
-            #   - Tene Fossog, Billy
-            #   - Intergovernmental Panel on Climate Change (IPCC)
-            #   - Sawaya, Michael A.
+    # The <origin> tag can hold complex information of multiple forms. First, origin can
+    # be a person /or/ an organization, though neither are labeled explictly as one or the other.
+    # Additionally, a person /and/ and organization can be found in the <origin> tag, e.g.:
+    #
+    #   - Daniel Childers||Global Institute of Sustainability| School of Sustainability
+    #   - John Connors, HERO-CM
+    #   - ARC
+    #   - Peter Groffman , Email: groffmanp@ecostudies.org
+    #   - SANParks
+    #   - National Climatic Data Center (NCDC) NOAA
+    #   - Tene Fossog, Billy
+    #   - Intergovernmental Panel on Climate Change (IPCC)
+    #   - Sawaya, Michael A.
 
     glpeople = loadPeople()
     #table = string.maketrans("","")
@@ -263,6 +268,7 @@ def addDataset(model, doc, ns, fm, personhash):
 
     model.sync()
 
+
 def addDigitalObject(model, d1base, identifier, data_id_node, ns, fm, personhash):
     data_id = data_id_node.text
 
@@ -324,8 +330,10 @@ def addDigitalObject(model, d1base, identifier, data_id_node, ns, fm, personhash
         if len(rights_holder_node_text) > 0:
             addStatement(model, d1base+data_id, ns["glview"]+"hasRightsHolder", RDF.Uri("urn:node:" + rights_holder_node_text.upper()))
 
+
 def findRegexInList(list,filter):
         return [ l for l in list for m in (filter(l),) if m]
+
 
 def loadFormats(ns):
     fm = {}
@@ -373,6 +381,7 @@ def loadPeople():
         csvfile.close()
         return(mydict)
 
+
 def createModel():
     storage=RDF.Storage(storage_name="hashes", name="geolink", options_string="new='yes',hash-type='memory',dir='.'")
     # storage=RDF.Storage(storage_name="file", name="geolink", options_string="new='yes',hash-type='memory',dir='.'")
@@ -384,6 +393,7 @@ def createModel():
     if model is None:
         raise Exception("new RDF.model failed")
     return model
+
 
 def addRepositories(model, ns):
     node_hash = {}
@@ -459,6 +469,7 @@ def serialize(model, ns, filename, format):
         serializer.set_namespace(prefix, RDF.Uri(ns[prefix]))
     serializer.serialize_model_to_file(filename, model)
 
+
 def processPage(model, ns, fm, personhash, page, pagesize=1000):
     xmldoc = getDataList(page, pagesize)
 
@@ -475,6 +486,7 @@ def processPage(model, ns, fm, personhash, page, pagesize=1000):
         addDataset(model, d, ns, fm, personhash)
     return(int(num_results))
 
+
 def main():
     model = createModel()
     mbj_uuid = uuid.uuid4()
@@ -482,7 +494,7 @@ def main():
     mbj_data = [mbj_uuid.urn, mbj_orcid]
     personhash = {'Jones, Matthew': mbj_data}
     ns = {
-        "foaf" : "http://xmlns.com/foaf/0.1/",
+        "foaf": "http://xmlns.com/foaf/0.1/",
         "dcterms": "http://purl.org/dc/terms/",
         "datacite": "http://purl.org/spar/datacite/",
         "owl": "http://www.w3.org/2002/07/owl#",
@@ -492,17 +504,16 @@ def main():
         "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
         "glview": "http://schema.geolink.org/dev/view#",
         "doview": "http://schema.geolink.org/dev/doview#",
-        "prov"  : "http://www.w3.org/ns/prov#"
+        "prov": "http://www.w3.org/ns/prov#"
     }
+
     print "Creating format map..."
     fm = loadFormats(ns)
 
     nodes = addRepositories(model, ns)
     formats = addFormats(model, ns, fm)
 
-    # Create format maps to map between D1 and GeoLink formats
-    
-    pagesize = 200
+    pagesize = 50
     print "Processing page: 1",
     records = processPage(model, ns, fm, personhash, 1, pagesize=pagesize )
     # if (records > pagesize):
@@ -529,6 +540,5 @@ if __name__ == "__main__":
     import csv
     import string
     import sys
-    import os
 
     main()
