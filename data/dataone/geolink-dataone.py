@@ -302,7 +302,10 @@ def addDigitalObject(model, d1base, identifier, data_id_node, ns, fm, personhash
     format_id_node = data_meta.find("./formatId")
 
     if format_id_node is not None:
-        addStatement(model, d1base+data_id, ns["glview"]+"hasFormatType", RDF.Uri(format_id_node.text))
+        if format_id_node.text in fm:
+            addStatement(model, d1base+data_id, ns["glview"]+"hasFormat", RDF.Uri(fm[format_id_node.text]))
+        else:
+            print "Format not found."
 
 
     # Date uploaded
@@ -338,31 +341,11 @@ def findRegexInList(list,filter):
 def loadFormats(ns):
     fm = {}
 
-    d1_formats = {}
-    geolink_formats = {}
+    with open("./formats/formats.csv", "rb") as f:
+        reader = csv.reader(f)
 
-    formats_xml_d1 = getXML("https://cn.dataone.org/cn/v1/formats")
-    formats_d1 = formats_xml_d1.findall(".//objectFormat")
-
-    for fmt in formats_d1:
-        format_id_d1 = fmt.find("./formatId").text
-        format_name_d1 = fmt.find("./formatName").text
-
-        d1_formats[format_id_d1] = format_name_d1
-
-    formats_xml_gl = getXML("http://schema.geolink.org/dev/voc/dataone/format.owl")
-    formats_gl = formats_xml_gl.findall(".//owl:Class", ns)
-
-    for fmt in formats_gl:
-        label_gl = fmt.find("./rdfs:label", ns).text
-        uri_gl = fmt.get("{" + ns['rdf'] + "}about")
-
-        geolink_formats[label_gl] = uri_gl
-
-    for d1fmt in d1_formats:
-        for glfmt in geolink_formats:
-            if d1_formats[d1fmt] in glfmt:
-                fm[d1fmt] = geolink_formats[glfmt]
+        for row in reader:
+            fm[row[0]] = row[1]
 
     return fm
 
@@ -440,12 +423,9 @@ def addFormats(model, ns, fm):
 
         format_hash[format_id] = [format_type, format_name]
 
-        if format_id in fm:
-            addStatement(model, format_id, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(fm[format_id]))
-        else:
-            addStatement(model, format_id, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["glview"]+"FormatType"))
-
-        addStatement(model, format_id, RDF.Uri(ns["glview"] + "description"), format_name)
+        addStatement(model, fm[format_id], RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["glview"]+"Format"))
+        addStatement(model, fm[format_id], RDF.Uri(ns["glview"]+"identifier"), format_id)
+        addStatement(model, fm[format_id], RDF.Uri(ns["glview"] + "description"), format_name)
 
 
     return format_hash
