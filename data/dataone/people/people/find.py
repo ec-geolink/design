@@ -22,7 +22,8 @@ def findPerson(job, person):
             print "Same email"
             match = i
 
-        elif checks.fieldsSame(person, p, ["first", "last"]):
+        elif checks.fieldsSame(person, p, ["first", "last"]) and \
+             checks.fieldsNotDifferent(person, p, ["email"]):
             print "Full name is not different but email is."
             match = i
 
