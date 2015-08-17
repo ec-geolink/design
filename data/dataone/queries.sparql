@@ -1,0 +1,63 @@
+prefix gl: <http://schema.geolink.org/dev/view#>
+
+# List all named graphs in the triplestore
+SELECT DISTINCT ?g
+WHERE {
+  GRAPH ?g {
+    ?s ?p ?o
+  }
+}
+
+# http://data.geolink.org/id/rvdata
+# http://schema.geolink.org/dev/view
+# http://data.geolink.org/id/feature
+# http://data.geolink.org/id/kb
+# http://data.geolink.org/id/geolikall
+# http://data.geolink.org/id/nsf
+# http://data.geolink.org/id/iodp
+# http://data.geolink.org/id/bcodmo
+# http://data.geolink.org/id/dataone
+# http://data.geolink.org/id/agu
+# http://data.geolink.org/id/platform
+# http://data.geolink.org/id/view
+# http://data.geolink.org/id/geolinkall
+# http://data.geolink.org/id/sesar
+
+# List the title and identifier for data sets
+select distinct ?ds, ?title, ?idval where 
+  {
+    ?ds a ?Dataset .
+    ?ds  gl:title $title .
+    OPTIONAL { ?ds gl:identifier $id .
+    ?id gl:hasIdentifierValue $idval } .
+  } LIMIT 100
+
+# List title, id, and creator for all data sets
+select distinct ?ds, ?title, ?idval, ?name where
+  {
+    ?ds a ?Dataset .
+    ?ds  gl:title ?title .
+    OPTIONAL { ?ds gl:identifier ?id .
+    ?id gl:hasIdentifierValue ?idval } .
+    OPTIONAL { ?ds gl:hasParticipant ?p .
+    ?p gl:nameFull ?name } .
+  } LIMIT 100
+
+# Get all of the geolink person names
+select ?name where 
+  {
+    ?person gl:nameFull ?name .
+    ?person a gl:Person
+  }
+
+# Find the datasets for a given person
+select ?name, ?glperson, ?ds where
+  {
+    ?person gl:nameFull ?name .
+    ?person a gl:Person .
+    ?person gl:matches ?glperson .
+    ?person gl:nameFull "Craig Carlson" .
+    ?ds gl:hasParticipant ?person .
+    ?ds a gl:Dataset
+  }
+
