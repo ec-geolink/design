@@ -183,6 +183,8 @@ def addDataset(model, doc, ns, fm, personhash):
 
         if bound_north.text == bound_south.text and bound_west.text == bound_east.text:
             wktliteral = "POINT (%s %s)" % (bound_north.text, bound_east.text)
+        else:
+            wktliteral = "POLYGON ((%s %s, %s %s, %s %s, %s, %s))" % (bound_west.text, bound_north.text, bound_east.text, bound_north.text, bound_east.text, bound_south.text, bound_west.text, bound_south.text)
 
         addStatement(model, d1base+identifier, ns['glview'] + "hasGeometryAsWktLiteral", wktliteral)
 
