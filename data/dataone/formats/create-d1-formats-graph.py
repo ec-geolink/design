@@ -64,13 +64,15 @@ def addStatement(model, s, p, o):
 
 
 def main():
-    """The program essentially runs three operations
+    """
+    The program essentially runs three operations
 
-        First, the RDF Model and namespaces are created. Then the script fetches
-        the formats list off of DataOne. Then, for each format found,
-        a corresponding set of statements are made in the RDF graph about that
-        format. Finally, the RDF graph is serialized to disk on both RDF/XML
-        and Turtle formats.
+    First, the RDF Model and namespaces are created. Then the script fetches
+    the formats list off of DataOne. Then, for each format found,
+    a corresponding set of statements are made in the RDF graph about that
+    format. At the same time, a CSV file is made to make it easier for other
+    work to map format IDs to the GeoLink format URIs. Finally, the RDF
+    graph is serialized to disk on both RDF/XML and Turtle formats.
     """
 
     # Setup
@@ -100,7 +102,7 @@ def main():
     format_nodes = xmldoc.findall(".//objectFormat")
 
     format_index = 1 # Used to give formats URIs
-
+    formats = []
     for fmt in format_nodes:
         format_id = fmt.find("./formatId").text
         format_name = fmt.find("./formatName").text
@@ -125,12 +127,22 @@ def main():
 
         addStatement(model, format_uri, RDF.Uri(ns["glview"] + "identifier"), id_blank_node)
 
-
         format_index += 1
+
+        # Add to formats dictionary for the CSV
+        formats.append({'format_id': format_id, 'uri': format_uri})
 
     # Serialize graph to disk
     serializeModel(model, ns, "formats.ttl", "turtle")
     serializeModel(model, ns, "formats.xml", "rdfxml")
+
+    # Write the CSV to file
+    if formats:
+        with open("formats.csv", "w") as f:
+            writer = csv.writer(f)
+
+            for f in formats:
+                writer.writerow([f['format_id'], f['uri']])
 
 
 
@@ -138,8 +150,6 @@ if __name__ == "__main__":
     import RDF
     import urllib2
     import xml.etree.ElementTree as ET
-    import string
-    import sys
-    import os
+    import csv
 
     main()
