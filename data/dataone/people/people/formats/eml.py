@@ -160,10 +160,10 @@ def processGivenName(person, given_name):
         first_name = given_name.text.lower()
 
         # First I.
-        pattern_one = re.compile("\w+\s+\w{1}\.?")
+        pattern_one = re.compile("^\w+\s+\w{1}\.?$")
 
         # First I. J.
-        pattern_two = re.compile("\w+\s+\w{1}\.?\w{1}\.?")
+        pattern_two = re.compile("^\w+\s+\w{1}\.?\s?\w{1}\.?$")
 
         if pattern_one.match(first_name):
             first_name = first_name.split(" ")
