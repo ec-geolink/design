@@ -13,25 +13,8 @@ def personString(person):
 
     person_strings = []
 
-    if "title" in person:
-        person_strings.append(person["title"])
-
-    if "first" in person:
-        person_strings.append(person["first"])
-
-    if "middle" in person:
-        person_strings.append(';'.join(person["middle"]))
-
-    if "last" in person:
-        person_strings.append(person["last"])
-
-    if "email" in person:
-        person_strings.append(person["email"])
-
-    if "documents" in person:
-        num_docs = len(person["documents"])
-
-        person_strings.append("[%d]" % num_docs)
+    for field in person:
+        person_strings.append("%s:%s" % (field, person[field]))
 
     return "#".join(person_strings)
 
@@ -44,18 +27,7 @@ def organizationString(organization):
 
     organization_strings = []
 
-    if "name" in organization:
-        organization_strings.append(organization["name"])
-
-    if "email" in organization:
-        organization_strings.append(organization["email"])
-
-    if "url" in organization:
-        organization_strings.append(organization["url"])
-
-    if "documents" in organization:
-        num_docs = len(organization["documents"])
-
-        organization_strings.append("[%d]" % num_docs)
+    for field in organization:
+        organization_strings.append("%s:%s" % (field, organization[field]))
 
     return "#".join(organization_strings)
