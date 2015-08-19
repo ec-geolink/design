@@ -37,7 +37,7 @@ def processDirectory(job):
 
 def processDocument(job, xmldoc):
     """ Process an individual document."""
-    document = uuid.uuid4()
+    document = str(uuid.uuid4())
 
     root = xmldoc.getroot()
 
