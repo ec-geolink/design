@@ -20,6 +20,7 @@ from xml.etree.ElementTree import ParseError
 
 from people.formats import eml
 from people.formats import dryad
+from people.formats import fgdc
 
 
 def processDirectory(job):
