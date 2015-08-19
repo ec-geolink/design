@@ -19,6 +19,7 @@ import xml.etree.ElementTree as ET
 from xml.etree.ElementTree import ParseError
 
 from people.formats import eml
+from people.formats import dryad
 
 
 def processDirectory(job):
@@ -42,3 +43,11 @@ def processDocument(job, xmldoc):
 
     if re.search("eml$", root.tag):
         eml.process(job, xmldoc, document)
+    elif re.search("Dryad", root.tag):
+        print "Dryad"
+        dryad.process(job, xmldoc, document)
+    elif re.search("metadata", root.tag):
+        print "FGDC"
+        fgdc.process(job, xmldoc, document)
+    else:
+        print "Unknown format."
