@@ -74,8 +74,6 @@
 
     metadata/ptcontac       <cntinfo/cntorgp> + cntper + cntaddr + cntvoice + cntemail
         For when the organization is more important than the person
-
-
 """
 
 import xml.etree.ElementTree as ET
@@ -107,41 +105,36 @@ def processContactInfo(job, info, document):
     cntorgp = info.find("./cntorgp")
 
     if cntperp is not None:
-        print "----"
-        print "CNTPERP"
-        print "----"
         name = cntperp.find("./cntper")
         org = cntperp.find("./cntorg")
 
         if name is not None:
-            record['fgdc_name'] = name.text
+            record['name'] = name.text
 
         if org is not None:
-            record['fgdc_org'] = org.text
+            record['org'] = org.text
 
     if cntorgp is not None:
         org = cntorgp.find("./cntorg")
 
         if org is not None:
-            record['fgdc_org'] = org.text
+            record['org'] = org.text
 
     address = info.find("./cntaddr")
     email = info.find("./cntemail")
     voice = info.find("./cntvoice")
 
     if address is not None:
-        fields = processAddress(address)
-        for field in fields:
-            record["fgdc_address_%s" % (field)] = fields[field]
+        processAddress(record, address)
 
     if email is not None and email.text is not None:
-        record['fgdc_email'] = email.text
+        record['email'] = email.text
 
     if voice is not None and voice.text is not None:
-        record['fgdc_voice'] = voice.text
+        record['phone'] = voice.text
 
     record['document'] = document
-
+    record['format'] = "FGDC"
     print record
 
     if cntperp is not None:
@@ -151,29 +144,31 @@ def processContactInfo(job, info, document):
         job.organizations.append(record)
 
 
-def processAddress(address):
-    address_node = address.find("./address")
-    address_city = address.find("./city")
-    address_state = address.find("./state")
-    address_postal = address.find("./postal")
-    address_country = address.find("./country")
+def processAddress(record, address):
+    node = address.find("./address")
+    city = address.find("./city")
+    state = address.find("./state")
+    postal = address.find("./postal")
+    country = address.find("./country")
 
-    if any([address_node,
-            address_city,
-            address_state,
-            address_postal,
-            address_country]) is None:
-            print "Invalid address, one was None"
-            return
+    fields = []
 
-    address_fields = {
-        'address': address_node.text,
-        'city': address_city.text,
-        'state': address_state.text,
-        'postal': address_postal.text,
-        'country': address_country.text
-    }
+    if node is not None:
+        fields.append(node.text)
 
-    print address_fields
+    if city is not None:
+        fields.append(city.text)
 
-    return address_fields
+    if state is not None:
+        fields.append(state.text)
+
+    if postal is not None:
+        fields.append(postal.text)
+
+    if country is not None:
+        fields.append(country.text)
+
+    if len(fields) > 0:
+        record['address'] = " ".join([f for f in fields if f is not None])
+
+    return record
