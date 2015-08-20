@@ -67,7 +67,7 @@ def addDataset(model, doc, ns, fm, personhash):
     addStatement(model, d1base+identifier, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["glview"]+"Dataset"))
     id_blank_node = RDF.Node(blank=identifier)
     addStatement(model, id_blank_node, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["datacite"]+"ResourceIdentifier"))
-    addStatement(model, d1base+identifier, ns["glview"]+"identifier", id_blank_node)
+    addStatement(model, d1base+identifier, ns["glview"]+"hasIdentifier", id_blank_node)
     addStatement(model, id_blank_node, ns["glview"]+"hasIdentifierValue", identifier)
     addStatement(model, id_blank_node, ns["rdfs"]+"label", identifier)
     if (identifier.startswith("doi:") |
@@ -234,17 +234,17 @@ def addDataset(model, doc, ns, fm, personhash):
 
     # Authoritative MN
     repository_authMN = doc.find("./str[@name='authoritativeMN']")
-    addStatement(model, d1base+identifier, ns["doview"]+"authoritativeRepository", RDF.Uri(repository_authMN.text))
+    addStatement(model, d1base+identifier, ns["doview"]+"hasAuthoritativeDigitalRepository", RDF.Uri(repository_authMN.text))
 
     # Replica MN's
     repository_mns = doc.findall("./arr[@name='replicaMN']/str")
 
     for repo_node in repository_mns:
-        addStatement(model, d1base+identifier, ns["doview"]+"replicaRepository", RDF.Uri(repo_node.text))
+        addStatement(model, d1base+identifier, ns["doview"]+"hasReplicaDigitalRepository", RDF.Uri(repo_node.text))
 
     # Origin MN
     repository_datasource = doc.find("./str[@name='datasource']")
-    addStatement(model, d1base+identifier, ns["doview"]+"originRepository", RDF.Uri(repository_datasource.text))
+    addStatement(model, d1base+identifier, ns["doview"]+"hasOriginDigitalRepository", RDF.Uri(repository_datasource.text))
 
 
     # TODO: Add Landing page
@@ -424,7 +424,7 @@ def addFormats(model, ns, fm):
         format_hash[format_id] = [format_type, format_name]
 
         addStatement(model, fm[format_id], RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["glview"]+"Format"))
-        addStatement(model, fm[format_id], RDF.Uri(ns["glview"]+"identifier"), format_id)
+        addStatement(model, fm[format_id], RDF.Uri(ns["glview"]+"hasIdentifier"), format_id)
         addStatement(model, fm[format_id], RDF.Uri(ns["glview"] + "description"), format_name)
 
 
