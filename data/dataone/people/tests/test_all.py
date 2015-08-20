@@ -23,3 +23,10 @@ def test_can_process_eml_user_id():
     user = j.people[0]
 
     assert len(user["user_id"]) == 4
+
+
+def test_can_deal_with_middle_names():
+    j = job.Job("tests/004_can_deal_with_middle_names")
+    j.run()
+
+    assert len(j.people) == 2
