@@ -398,7 +398,6 @@ def addRepositories(model, ns):
         node_hash[node_id] = [node_name, node_desc, node_base_url]
 
         addStatement(model, node_id, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["glview"]+"Repository"))
-        addStatement(model, node_id, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["glview"]+"Organization"))
         addStatement(model, node_id, RDF.Uri(ns["foaf"]+"name"), node_name)
         addStatement(model, node_id, RDF.Uri(ns["rdfs"]+"label"), node_name)
         addStatement(model, node_id, RDF.Uri(ns["glview"]+"description"), node_desc)
