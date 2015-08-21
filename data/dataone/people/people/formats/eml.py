@@ -9,9 +9,6 @@
 # TODO: Add <associatedParty>
 # TODO: Add <positionName>
 
-import re
-from people import find
-
 
 def process(job, xmldoc, document):
     """
