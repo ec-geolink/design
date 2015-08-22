@@ -3,6 +3,7 @@
     Processing functions for processing FGDC
 
     Spec: http://www.fgdc.gov/metadata/csdgm/00.html
+    Relevant Section: http://www.fgdc.gov/metadata/csdgm/10.html
 
     People and organization information comes in two locations in the document.
 
@@ -18,7 +19,7 @@
             <metc>
               <cntinfo>
                 <cntorgp>
-                  <cntorg>Information Center for the Environment http://ice.ucdavis.edu</cntorg>
+                  <cntorg>Information Center for the Environment...</cntorg>
                   <cntper>Rob Coman</cntper>
                 </cntorgp>
                 <cntpos/>
@@ -35,7 +36,9 @@
                 <cntemail/>
               </cntinfo>
             </metc>
-            <metstdn>FGDC Content Standard for Digital Geospatial Metadata</metstdn>
+            <metstdn>
+                FGDC Content Standard for Digital Geospatial Metadata
+            </metstdn>
             <metstdv>FGDC-STD-001-1998</metstdv>
             </metainfo>
         </metadata>
@@ -48,8 +51,8 @@
         <ptcontac>
             <cntinfo>
                 <cntorgp>
-                    <cntorg>California Department of Public Health, CDPH</cntorg>
-                    <cntper>Leah Godsey Walker, P.E. - Chief, Division of Drinking Water and Environmental Management</cntper>
+                    <cntorg>California Department of P...</cntorg>
+                    <cntper>Leah Godsey Walker, P.E. - Chief, D...</cntper>
                 </cntorgp>
                 <cntaddr>
                     <addrtype>mailing</addrtype>
@@ -67,16 +70,18 @@
 
     Fields to extract:
 
-    metadata/metainfo/metc  <cntinfo> cntorg + cntper + cntaddr + cntemail + cntvoice
+    metadata/metainfo/metc  <cntinfo> cntorg + cntper + cntaddr +
+                                                cntemail + cntvoice
 
-    metadata/ptcontac       <cntinfo/cntperp> + cntper + cntaddr + cntvoice + cntemail
+    metadata/ptcontac       <cntinfo/cntperp> + cntper + cntaddr +
+                                                cntvoice + cntemail
         For when the person is more important than the organization
 
-    metadata/ptcontac       <cntinfo/cntorgp> + cntper + cntaddr + cntvoice + cntemail
+    metadata/ptcontac       <cntinfo/cntorgp> + cntper + cntaddr +
+                                                cntvoice + cntemail
         For when the organization is more important than the person
 """
 
-import xml.etree.ElementTree as ET
 
 def process(job, xmldoc, document):
     """
@@ -145,7 +150,7 @@ def processContactInfo(job, info, document):
 
 
 def processAddress(record, address):
-    node = address.find("./address")
+    address_nodes = address.findall("./address")
     city = address.find("./city")
     state = address.find("./state")
     postal = address.find("./postal")
@@ -153,8 +158,9 @@ def processAddress(record, address):
 
     fields = []
 
-    if node is not None:
-        fields.append(node.text)
+    if address_nodes is not None:
+        for node in address_nodes:
+            fields.append(node.text)
 
     if city is not None:
         fields.append(city.text)

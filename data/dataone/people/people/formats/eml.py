@@ -1,13 +1,32 @@
 """ eml.py
 
-    Processing functions for processing eml
+    Processing functions for processing EML
+
+    The contents of the <creator> tags are extracted.
+    <creator>s are formatted according to the eml-party module.
+
+    EML eml-party Module:
+
+    - creator
+        - individualName [0:1] {required OR organizationName/positionName}
+            - surName [1] {required}
+            - givenName [0:n]
+            - salutation [0:n]
+        - organizationName [0:1] {required OR individualName/positionName}
+        - positionName [0:1] {required OR individualName/organizationName}
+        - address [0:n]
+        - phone [0:n]
+        - electronicMailAddress [0:n]
+        - address [0:n]
+            - deliveryPoint [0:n]
+            - city [0:1]
+            - administrativeArea [0:1]
+            - postalCode [0:1]
+            - country [0:1]
 """
 
-# TODO: Get more fields from EML spec, like address
 # TODO: Check out whether this stuff changes over spec versions
 # TODO: Check if the eml- subfiles need to be processed
-# TODO: Add <associatedParty>
-# TODO: Add <positionName>
 
 
 def process(job, xmldoc, document):
@@ -45,11 +64,6 @@ def processCreator(job, creator, document):
     if address is not None:
         record = processAddress(record, address)
 
-    user_id = creator.find("./userId")
-
-    if user_id is not None:
-        record['eml_user_id'] = user_id.text
-
     email = creator.find("./electronicMailAddress")
 
     if email is not None:
@@ -70,17 +84,19 @@ def processCreator(job, creator, document):
 
 
 def processIndividual(record, individual):
-    salutation = individual.find("./salutation")
+    salutations = individual.findall("./salutation")
+    given_names = individual.findall('./givenName')
     sur_name = individual.find('./surName')
-    given_name = individual.find('./givenName')
 
     fields = []
 
-    if salutation is not None:
-        fields.append(salutation.text)
+    if salutations is not None:
+        for salutation in salutations:
+            fields.append(salutation.text)
 
-    if given_name is not None:
-        fields.append(given_name.text)
+    if given_names is not None:
+        for given_name in given_names:
+            fields.append(given_name.text)
 
     if sur_name is not None:
         fields.append(sur_name.text)
@@ -92,7 +108,7 @@ def processIndividual(record, individual):
 
 
 def processAddress(record, address):
-    delivery_point = address.findall("./deliveryPoint")
+    delivery_points = address.findall("./deliveryPoint")
     city = address.find("./city")
     admin_area = address.find("./administrativeArea")
     postal = address.find("./postalCode")
@@ -100,10 +116,8 @@ def processAddress(record, address):
 
     fields = []
 
-    # There can be multiple <deliveryPoint)
-    if delivery_point is not None:
-        for point in delivery_point:
-            print "deliveryPoint is %s" % point.text
+    if delivery_points is not None:
+        for point in delivery_points:
             fields.append(point.text)
 
     if city is not None:
