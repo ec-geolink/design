@@ -113,11 +113,22 @@ And with this information, the service needs to do three things:
 3. Update the latest DataOne RDF graph
   - Create new people and organization nodes for new people and organizations
   - Update information about existing people and organizations
+4. Integrate knowledge of people and organizations with existing systems (Service Integration)
+  - LDAP
+  - C1 Logon
+  - DataOne Auth.
 
 Updating existing people and organizations will involve updating both `glview:People` and `glview:Organization` resources as well as `glview:Dataset` resources.
 
 Existing services on DataOne are Java programs but the language of the current implementation is Pyton. This can be changed.
 
+### Service Integration
+
+Regarding #4 (above), when new HTTP URIs are created for a person or organization, that person or organization may exist in another system we operate.
+Ideally, at the time of creating a new HTTP URI also, we would find out of the person or organization we're creating a new HTTP URI for exists in other systems and make the appropriate associations.
+The key benefit of doing this would not be directly linking, for example, someone in LDAP with their GeoLink HTTP URI but, instead, linking a someone in LDAP with datasets they created.
+In creating these linkages, it's important that no linkages that would result in changes to access privileges are made unless those changes are done through a secure system. For example, you wouldn't want to parse an EML document, find a person in LDAP with similar name, and allow that person to delete that dataset.
+It would be good to present linkages we have confidence in to the authenticated user (e.g. on LDAP) and allow them to confirm or deny sameness.
 
 
 ## Notes
