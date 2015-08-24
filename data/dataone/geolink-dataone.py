@@ -60,6 +60,8 @@ def addStatement(model, s, p, o):
 
 def addDataset(model, doc, ns, fm, personhash):
     d1base = "https://cn.dataone.org/cn/v1/resolve/"
+    repo_base = "https://cn.dataone.org/cn/v1/node/"  # For MN URIs
+
     # Identifier and Dataset
     element = doc.find("./str[@name='identifier']")
     identifier = element.text
@@ -234,17 +236,17 @@ def addDataset(model, doc, ns, fm, personhash):
 
     # Authoritative MN
     repository_authMN = doc.find("./str[@name='authoritativeMN']")
-    addStatement(model, d1base+identifier, ns["doview"]+"hasAuthoritativeDigitalRepository", RDF.Uri(repository_authMN.text))
+    addStatement(model, d1base+identifier, ns["doview"]+"hasAuthoritativeDigitalRepository", RDF.Uri(repo_base + repository_authMN.text))
 
     # Replica MN's
-    repository_mns = doc.findall("./arr[@name='replicaMN']/str")
+    repository_replicas = doc.findall("./arr[@name='replicaMN']/str")
 
-    for repo_node in repository_mns:
-        addStatement(model, d1base+identifier, ns["doview"]+"hasReplicaDigitalRepository", RDF.Uri(repo_node.text))
+    for repo in repository_replicas:
+        addStatement(model, d1base+identifier, ns["doview"]+"hasReplicaDigitalRepository", RDF.Uri(repo_base + repo.text))
 
     # Origin MN
     repository_datasource = doc.find("./str[@name='datasource']")
-    addStatement(model, d1base+identifier, ns["doview"]+"hasOriginDigitalRepository", RDF.Uri(repository_datasource.text))
+    addStatement(model, d1base+identifier, ns["doview"]+"hasOriginDigitalRepository", RDF.Uri(repo_base + repository_datasource.text))
 
 
     # TODO: Add Landing page
@@ -387,6 +389,7 @@ def addRepositories(model, ns):
     if xmldoc is None:
         return
 
+    repo_base = "https://cn.dataone.org/cn/v1/node/"
     nodelist = xmldoc.findall(".//node")
 
     for n in nodelist:
@@ -397,10 +400,11 @@ def addRepositories(model, ns):
 
         node_hash[node_id] = [node_name, node_desc, node_base_url]
 
-        addStatement(model, node_id, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["glview"]+"Repository"))
-        addStatement(model, node_id, RDF.Uri(ns["foaf"]+"name"), node_name)
-        addStatement(model, node_id, RDF.Uri(ns["rdfs"]+"label"), node_name)
-        addStatement(model, node_id, RDF.Uri(ns["glview"]+"description"), node_desc)
+        addStatement(model, repo_base + node_id, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["glview"]+"Repository"))
+        addStatement(model, repo_base + node_id, RDF.Uri(ns["foaf"]+"name"), node_name)
+        addStatement(model, repo_base + node_id, RDF.Uri(ns["rdfs"]+"label"), node_name)
+        addStatement(model, repo_base + node_id, RDF.Uri(ns["glview"]+"description"), node_desc)
+
     return(node_hash)
 
 
