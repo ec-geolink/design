@@ -53,11 +53,16 @@ def processCreator(job, creator, document):
     individual = creator.find("./individualName")
     organization = creator.find("./organizationName")
 
-    if individual is not None:
+    # Process individual or organization
+    if individual is not None:  # Individual
         record = processIndividual(record, individual)
 
-    if organization is not None:
-        record['org'] = organization.text
+        # Add on org name is it exists
+        if organization is not None:
+            record['org'] = organization.text
+
+    else:  # Organizaiton
+        record['name'] = organization.text
 
     address = creator.find("./address")
 
@@ -77,10 +82,10 @@ def processCreator(job, creator, document):
     record['document'] = document
     record['format'] = "EML"
 
-    if individual is None:
-        job.organizations.append(record)
-    else:
+    if individual is not None:
         job.people.append(record)
+    else:
+        job.organizations.append(record)
 
 
 def processIndividual(record, individual):
