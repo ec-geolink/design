@@ -140,7 +140,6 @@ def processContactInfo(job, info, document):
 
     record['document'] = document
     record['format'] = "FGDC"
-    print record
 
     if cntperp is not None:
         job.people.append(record)
