@@ -317,7 +317,6 @@ def addDigitalObject(model, d1base, identifier, data_id_node, ns, fm, personhash
         addStatement(model, d1base+data_id, ns["doview"]+"dateUploaded", date_uploaded_node.text)
 
     # Submitter and rights holders
-    # TODO: No fields for these in GL View
     submitter_node = data_meta.find("./submitter")
 
     if submitter_node is not None:
