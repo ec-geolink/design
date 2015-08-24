@@ -387,7 +387,7 @@ def addRepositories(model, ns):
     xmldoc = getXML(d1query)
 
     if xmldoc is None:
-        return
+        return node_hash
 
     repo_base = "https://cn.dataone.org/cn/v1/node/"
     nodelist = xmldoc.findall(".//node")
