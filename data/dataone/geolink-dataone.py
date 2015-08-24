@@ -218,7 +218,7 @@ def addDataset(model, doc, ns, fm, personhash):
 
     # TODO: Make this point to a Person
     if len(submitter_org) > 0:
-        addStatement(model, d1base+identifier, ns["glview"]+"hasSubmitter", RDF.Uri("urn:node:" + submitter_org.upper()))
+        addStatement(model, d1base+identifier, ns["glview"]+"hasCreator", RDF.Uri("urn:node:" + submitter_org.upper()))
 
 
     # Add Rights holder
@@ -322,7 +322,7 @@ def addDigitalObject(model, d1base, identifier, data_id_node, ns, fm, personhash
         submitter_node_text = " ".join(re.findall(r"o=(\w+)", submitter_node.text, re.IGNORECASE))
 
         if len(submitter_node_text) > 0:
-            addStatement(model, d1base+data_id, ns["glview"]+"hasSubmitter", RDF.Uri("urn:node:" + submitter_node_text.upper()))
+            addStatement(model, d1base+data_id, ns["glview"]+"hasCreator", RDF.Uri("urn:node:" + submitter_node_text.upper()))
 
 
     rights_holder_node = data_meta.find("./rightsHolder")
