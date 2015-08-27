@@ -12,7 +12,7 @@
             - surName [1] {required}
             - givenName [0:n]
             - salutation [0:n]
-        - organizationName [0:1] {required OR individualName/positionName}
+        - organizationName [0:n] {required OR individualName/positionName}
         - positionName [0:1] {required OR individualName/organizationName}
         - address [0:n]
         - phone [0:n]
@@ -38,10 +38,15 @@ def process(job, xmldoc, document):
     # Process each <creator>
     creators = xmldoc.findall(".//creator")
 
+    records = []
+
     for creator in creators:
-        processCreator(job,
-                       creator,
-                       document)
+        record = processCreator(job,
+                                creator,
+                                document)
+        records.append(record)
+
+    return records
 
 
 def processCreator(job, creator, document):
@@ -51,18 +56,36 @@ def processCreator(job, creator, document):
     record = {}
 
     individual = creator.find("./individualName")
-    organization = creator.find("./organizationName")
+    organizations = creator.findall("./organizationName")
 
     # Process individual or organization
     if individual is not None:  # Individual
         record = processIndividual(record, individual)
 
         # Add on org name is it exists
-        if organization is not None:
-            record['org'] = organization.text
+        if organizations is not None:
+            org_strings = []
 
-    else:  # Organizaiton
-        record['name'] = organization.text
+            for organization in organizations:
+                org_text = organization.text
+
+                if org_text is not None:
+                    org_strings.append(org_text.strip())
+
+            if len(org_strings) > 0:
+                record['organization'] = " ".join([o.strip() for o in org_strings if o is not None])
+
+    elif organizations is not None:  # Organizaiton
+        org_strings = []
+
+        for organization in organizations:
+            org_text = organization.text
+
+            if org_text is not None:
+                org_strings.append(org_text.strip())
+
+        if len(org_strings) > 0:
+            record['name'] = " ".join([o.strip() for o in org_strings if o is not None])
 
     address = creator.find("./address")
 
@@ -71,21 +94,23 @@ def processCreator(job, creator, document):
 
     email = creator.find("./electronicMailAddress")
 
-    if email is not None:
-        record['email'] = email.text
+    if email is not None and email.text is not None:
+        record['email'] = email.text.strip()
 
     phone = creator.find("./phone[@phonetype='voice']")
 
-    if phone is not None:
-        record['phone'] = phone.text
+    if phone is not None and phone.text is not None:
+        record['phone'] = phone.text.strip()
 
     record['document'] = document
     record['format'] = "EML"
 
     if individual is not None:
-        job.people.append(record)
+        record['type'] = 'person'
     else:
-        job.organizations.append(record)
+        record['type'] = 'organization'
+
+    return record
 
 
 def processIndividual(record, individual):
@@ -97,14 +122,24 @@ def processIndividual(record, individual):
 
     if salutations is not None:
         for salutation in salutations:
-            fields.append(salutation.text)
+            if salutation.text is not None:
+                fields.append(salutation.text.strip())
 
     if given_names is not None:
-        for given_name in given_names:
-            fields.append(given_name.text)
+        all_given_names = []
 
-    if sur_name is not None:
-        fields.append(sur_name.text)
+        for given_name in given_names:
+            if given_name.text is not None:
+                fields.append(given_name.text.strip())
+                all_given_names.append(given_name.text.strip())
+
+        if len(all_given_names) > 0:
+            record['given_name'] = " ".join(all_given_names)
+
+
+    if sur_name is not None and sur_name.text is not None:
+        fields.append(sur_name.text.strip())
+        record['last_name'] = sur_name.text.strip()
 
     if len(fields) > 0:
         record['name'] = " ".join([f for f in fields if f is not None])
@@ -123,19 +158,20 @@ def processAddress(record, address):
 
     if delivery_points is not None:
         for point in delivery_points:
-            fields.append(point.text)
+            if point.text is not None:
+                fields.append(point.text.strip())
 
-    if city is not None:
-        fields.append(city.text)
+    if city is not None and city.text is not None:
+        fields.append(city.text.strip())
 
-    if admin_area is not None:
-        fields.append(admin_area.text)
+    if admin_area is not None and admin_area.text is not None:
+        fields.append(admin_area.text.strip())
 
-    if postal is not None:
-        fields.append(postal.text)
+    if postal is not None and postal.text is not None:
+        fields.append(postal.text.strip())
 
-    if country is not None:
-        fields.append(country.text)
+    if country is not None and country.text is not None:
+        fields.append(country.text.strip())
 
     if len(fields) > 0:
         record['address'] = " ".join([f for f in fields if f is not None])

@@ -94,8 +94,13 @@ def process(job, xmldoc, document):
 
     info = xmldoc.find("./metainfo/metc/cntinfo")
 
+    records = []
+
     if info is not None:
-        processContactInfo(job, info, document)
+        record = processContactInfo(job, info, document)
+        records.append(record)
+
+    return records
 
 
 def processContactInfo(job, info, document):
@@ -113,17 +118,17 @@ def processContactInfo(job, info, document):
         name = cntperp.find("./cntper")
         org = cntperp.find("./cntorg")
 
-        if name is not None:
-            record['name'] = name.text
+        if name is not None and name.text is not None:
+            record['name'] = name.text.strip()
 
-        if org is not None:
-            record['org'] = org.text
+        if org is not None and org.text is not None:
+            record['organization'] = org.text.strip()
 
     if cntorgp is not None:
         org = cntorgp.find("./cntorg")
 
-        if org is not None:
-            record['org'] = org.text
+        if org is not None and org.text is not None:
+            record['organization'] = org.text.strip()
 
     address = info.find("./cntaddr")
     email = info.find("./cntemail")
@@ -133,19 +138,21 @@ def processContactInfo(job, info, document):
         processAddress(record, address)
 
     if email is not None and email.text is not None:
-        record['email'] = email.text
+        record['email'] = email.text.strip()
 
     if voice is not None and voice.text is not None:
-        record['phone'] = voice.text
+        record['phone'] = voice.text.strip()
 
     record['document'] = document
     record['format'] = "FGDC"
 
     if cntperp is not None:
-        job.people.append(record)
+        record['type'] = 'person'
 
     if cntorgp is not None:
-        job.organizations.append(record)
+        record['type'] = 'organization'
+
+    return record
 
 
 def processAddress(record, address):
@@ -159,19 +166,20 @@ def processAddress(record, address):
 
     if address_nodes is not None:
         for node in address_nodes:
-            fields.append(node.text)
+            if node.text is not None:
+                fields.append(node.text.strip())
 
-    if city is not None:
-        fields.append(city.text)
+    if city is not None and city.text is not None:
+        fields.append(city.text.strip())
 
-    if state is not None:
-        fields.append(state.text)
+    if state is not None and state.text is not None:
+        fields.append(state.text.strip())
 
-    if postal is not None:
-        fields.append(postal.text)
+    if postal is not None and postal.text is not None:
+        fields.append(postal.text.strip())
 
-    if country is not None:
-        fields.append(country.text)
+    if country is not None and country.text is not None:
+        fields.append(country.text.strip())
 
     if len(fields) > 0:
         record['address'] = " ".join([f for f in fields if f is not None])
