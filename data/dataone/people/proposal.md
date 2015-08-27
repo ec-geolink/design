@@ -5,6 +5,16 @@ email: mecum@nceas.ucsb.edu
 
 # Proposal for Handling DataOne People & Organizations
 
+## Contents
+
+- [Overview](#overview)
+- [Finding unique people and organizations](#finding-unique-people-and-organizations)
+- [Minting new HTTP URIs](#minting-new-http-uris)
+- [The Service](#the-service)
+- [Timeline](#timeline)
+- [Notes](#notes)
+
+
 ## Overview
 
 The linked open data (LOD) graph for the datasets that exist in DataOne's network is nearly complete.
@@ -15,7 +25,7 @@ Therefore, new HTTP URIs will need to be created for instances of people and org
 Complicating this task, many instances of a person or organization present in the metadata may actually refer to the same person or organization.
 When this is the case, we don't want to mint separate HTTP URIs for each instance of the same person or organization and instead we want to re-use existing HTTP URIs when appropriate.
 
-The task of giving people and organizations HTTP URIs can be broken up into two parts:
+The task of giving existing people and organizations HTTP URIs can be broken up into two parts:
 
 1. Generate lists of unique people and organizations from DataOne
 2. Mint new HTTP URIs for these resources
@@ -43,23 +53,18 @@ I have experimented with both approaches and found value in both but I have also
 Static matching is simple to understand and implement but it can be hard to add enough flexibility to handle common problems such as typographical errors or abbreviations in names.
 The machine learning approach is easy to implement but is a black box solution.
 However, this approach offers a great deal of flexibility.
-After experimenting, I think using both approaches will work better than using just one.
+For the initial implementation of the tool that performs this task, only static matching will be used.
+The machine learning approach may be re-visited later on for use within this workflow or as a separate workflow which tries to establish linkages between existing HTTP URIs.
 
-### Proposal
+
+### Proposed Approach
 
 1. Get a set of datasets (either from a dump or from the CN's Solr index)
 2. Pre-process those datasets
   - Generate derived fields (i.e. full name = salutation + givenName + surName)
 3. Run a static matcher over the datasets with a set of rules (i.e. if full name and email is the same, it's the same person)
-4. Train the machine learning algorithm on a custom set of training documents
-  - I will hand-pick these from early runs of a poorly-trained classifier
-5. Run the machine learning algorithm on the datasets
-6. Analyze final output for quality
+4. Analyze final output for quality
   - Detect false positives
-  - Test how well the machine learning algorithm worked
-
-A Python package [`dedupe`](https://github.com/datamade/dedupe) implements an advanced set of machine learning techniques designed specifically for record linkage and will be the used here.
-
 
 ## Minting new HTTP URIs
 
@@ -69,24 +74,32 @@ A Python package [`dedupe`](https://github.com/datamade/dedupe) implements an ad
 - Never assert two instances of a person or organization are the same person or organization (no false positives)
 - URIs exist forever (URIs are never recycled or deleted)
 - What those HTTP URIs resolve to may change
-- This is especially import because the DataOne API may change but we don't want these URIs to ever change and we will want them to resolve to the active/latest API.
--
+  - This is especially import because the DataOne API may change but we don't want these URIs to ever change and we will want them to resolve to the active/latest API.
 
-### Proposal
+
+### Proposed Approach
 
 While it may seem reasonable to have nice HTTP URIs like `https://www.dataone.org/people/brycemecum`, it does not seem feasible given how many possible name collisions are possible, the vast number of non-ASCII characters present in names (i.e. 象形字), and the presence of datasets where only a last named was filled in.
-Universally Unique Identifiers (UUIDs) will be used instead.
+Universally Unique Identifiers (UUIDs) are a potential option.
+
+- People URIs at `https://dataone.org/person/`
+  - i.e. `https://dataone.org/person/123e4567-e89b-12d3-a456-426655440000`
+- Organization URIs at `https://dataone.org/organization/`
+  - i.e. `https://dataone.org/organization/123e4567-e89b-12d3-a456-426655440000`
 
 
-- People URIs at `https://www.dataone.org/person/`
-  - i.e. `https://www.dataone.org/person/123e4567-e89b-12d3-a456-426655440000`
-- Organization URIs at `https://www.dataone.org/organization/`
-  - i.e. `https://www.dataone.org/organization/123e4567-e89b-12d3-a456-426655440000`
-
-
-UUIDs will be generated as UUID 4 (random) and checked for collision with existing UUIDs prior to establishing new HTTP URIs.
+If a UUID-based scheme were chosen, UUIDs would be generated as UUID 4 (random) and checked for collision with existing UUIDs prior to establishing new HTTP URIs.
 
 Aside: DataOne already has some people HTTP URIs, e.g. https://www.dataone.org/dataone_leadership_team/matthew-jones but I don't think this format (org/person) needs to be used here.
+
+DataOne manages a number of authentication services (See below: Service Integration).
+It is possible that, in the future, users from these services will have their own, human-readable HTTP URIs (like http://dataone.org/people/brycemecum).
+These URIs would be vastly preferable to a UUID4-based URI and should be used instead.
+This decision would be made prior to minting a new HTTP URI for an instance of a person in a dataset and would require some form of resolution between the authentication service and the graph generation service.
+
+For some instances of people in datasets, it may be possible to make a highly probably match between the instance of that person and a person in an authentication system.
+For example, if the first name, last name, and email are the same in both systems, it is highly probably that both things refer to the same person.
+For instances of people in datasets without such identifying information, a match with a lower degree of certainty could be made which might still be useful to the person.
 
 
 ## The Service
@@ -98,18 +111,16 @@ This can be done with a Solr query like:
 https://cn.dataone.org/cn/v1/query/solr/?q=dateUploaded:[2015-05-30T23:21:15.567Z%20TO%202015-08-21T00:00:00.0Z]
 ```
 
-- [ ] @mbjones: I can't seem to find out if dateUploaded is a safe way to assess which documents are updated/created since a certain datetime.
-
 In the above query, the first datetime is the last datetime the graph was updated, which the service needs to store, and the second datetime is the current time.
 
 The second thing the service needs to know about is the existing set of people and organization HTTP URIs.
 
-And with this information, the service needs to do three things:
+And with this information, the service needs to do the following things:
 
-1. Mint new HTTP URIs as necessary
+1. Attempt to find identical matches to people with human-readable HTTP URIs
+2. Mint new HTTP URIs as necessary
   - Create the URI itself
-  - Register that URI with some other service responsible for resolving it
-2. Update the set of people and organizations HTTP URIs
+  - Register that URI with some other service responsible for storing and resolving it
 3. Update the latest DataOne RDF graph
   - Create new people and organization nodes for new people and organizations
   - Update information about existing people and organizations
@@ -120,29 +131,46 @@ And with this information, the service needs to do three things:
 
 Updating existing people and organizations will involve updating both `glview:People` and `glview:Organization` resources as well as `glview:Dataset` resources.
 
-Existing services on DataOne are Java programs but the language of the current implementation is Pyton. This can be changed.
+Existing services on DataOne are Java programs but the language of the current implementation is Python. This can be changed.
 
 ### Service Integration
 
 Regarding #4 (above), when new HTTP URIs are created for a person or organization, that person or organization may exist in another system we operate.
 Ideally, at the time of creating a new HTTP URI also, we would find out of the person or organization we're creating a new HTTP URI for exists in other systems and make the appropriate associations.
-The key benefit of doing this would not be directly linking, for example, someone in LDAP with their GeoLink HTTP URI but, instead, linking a someone in LDAP with datasets they created.
+The key benefit of doing this would not just be directly linking, for example, someone in LDAP with their GeoLink HTTP URI but, instead, linking a someone in LDAP with datasets they created.
 In creating these linkages, it's important that no linkages that would result in changes to access privileges are made unless those changes are done through a secure system. For example, you wouldn't want to parse an EML document, find a person in LDAP with similar name, and allow that person to delete that dataset.
 It would be good to present linkages we have confidence in to the authenticated user (e.g. on LDAP) and allow them to confirm or deny sameness.
 
+Once the linkages are made, visiting a person's user account page (e.g. http://dataone.org/people/brycemecum) would show both datasets that certainly reference the user as well as datasets that may reference the user.
+These linkages could be confirmed or denied by the logging-in user.
+Linkages made in this way would still be imperfect because a user could mistakenly claim someone else's data when the data weren't uploaded with sufficiently unique identifying information.
+But if, for example, the dataset contained a DataOne URI or an ORCID and the user account had one of these identifiers, then the match between the user and the reference to a person in the dataset would be essentially certain (absent typos).
+
+In the above scenario, a user account might contain hierarchical person information such as:
+
+- http://dataone.org/people/brycemecum [an authenticated account]
+  - matches: http://dataone.org/people/123e4567-e89b-12d3-a456-426655440000 [a possible match]
+  - hasAccount: CN=Bryce Mecum A81283,O=Google,C=US,DC=cilogon,DC=org [an authenticated match]
+  - hasConfirmedMatch: https://dataone.org/person/123e4567-e89b-12d3-a456-426655440549 [user indicated this is them]
+
+And from this hierarchical set of user information, we could link in datasets attributed to these people.
+
+## Timeline
+
+Creating the pieces outlined above will take a great deal of work as a whole but can be broken down into sequential deliverables with an attached timeline.
+
+- Create initial LOD graph of existing DataOne datasets: September 4
+- Create service which pulls new metadata and integrates it into the graph: September 18
+- Integrate with DataOne V2 API: TBD
+
 
 ## Notes
-Use of solr dateModified??? 2013-06-11T06:11:23.217Z
-
-
-
+Use of solr dateModified
 
 dateSysMetadataModified (Solr: dateModified)
 Type: Types.xs.dateTime
 
 Date and time (UTC) that this system metadata record was last modified in the DataONE system. This is the same timestamp as dateUploaded until the system metadata is further modified. The Member Node must set this optional field when it receives the system metadata document from a client.
-
-
 
 
 dateUploaded (Solr: dateUploaded)
