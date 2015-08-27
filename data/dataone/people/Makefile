@@ -1,9 +1,9 @@
-.PHONY: clean demo
+.PHONY: clean link
 
 all: clean test
 
-demo:
-	python -m demo.demo
+link:
+	python -m link.link
 
 test:
 	py.test tests
