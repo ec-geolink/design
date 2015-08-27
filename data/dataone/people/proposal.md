@@ -100,7 +100,7 @@ https://cn.dataone.org/cn/v1/query/solr/?q=dateUploaded:[2015-05-30T23:21:15.567
 
 - [ ] @mbjones: I can't seem to find out if dateUploaded is a safe way to assess which documents are updated/created since a certain datetime.
 
-In the above query, the first datetime is the last datetime the graph was updated, which the service remembers, and the second datetime is the current time.
+In the above query, the first datetime is the last datetime the graph was updated, which the service needs to store, and the second datetime is the current time.
 
 The second thing the service needs to know about is the existing set of people and organization HTTP URIs.
 
