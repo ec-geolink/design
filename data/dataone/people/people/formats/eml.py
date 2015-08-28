@@ -41,10 +41,12 @@ def process(job, xmldoc, document):
     records = []
 
     for creator in creators:
-        record = processCreator(job,
-                                creator,
-                                document)
-        records.append(record)
+        processed_creators = processCreator(job,
+                                            creator,
+                                            document)
+
+        for processed_creator in processed_creators:
+            records.append(processed_creator)
 
     return records
 
@@ -53,6 +55,9 @@ def processCreator(job, creator, document):
     """ Proccess a <creator> tag for an individual.
     """
 
+    """ When a creator has multiple organizations, we duplicate their record
+    once for each organization."""
+    records = []
     record = {}
 
     individual = creator.find("./individualName")
@@ -61,20 +66,7 @@ def processCreator(job, creator, document):
     # Process individual or organization
     if individual is not None:  # Individual
         record = processIndividual(record, individual)
-
-        # Add on org name is it exists
-        if organizations is not None:
-            org_strings = []
-
-            for organization in organizations:
-                org_text = organization.text
-
-                if org_text is not None:
-                    org_strings.append(org_text.strip())
-
-            if len(org_strings) > 0:
-                record['organization'] = " ".join([o.strip() for o in org_strings if o is not None])
-
+        # NOTE: We'll add this peron's organizations later
     elif organizations is not None:  # Organizaiton
         org_strings = []
 
@@ -85,7 +77,7 @@ def processCreator(job, creator, document):
                 org_strings.append(org_text.strip())
 
         if len(org_strings) > 0:
-            record['name'] = " ".join([o.strip() for o in org_strings if o is not None])
+            record['name'] = " ".join([o for o in org_strings if o is not None and len(o) > 0])
 
     address = creator.find("./address")
 
@@ -108,10 +100,18 @@ def processCreator(job, creator, document):
 
     if individual is not None:
         record['type'] = 'person'
+
+        for organization in organizations:
+            if organization.text is not None:
+                org_text = organization.text.strip()
+
+                new_record = record.copy()
+                new_record['organization'] = org_text
+                records.append(new_record)
     else:
         record['type'] = 'organization'
 
-    return record
+    return records
 
 
 def processIndividual(record, individual):
