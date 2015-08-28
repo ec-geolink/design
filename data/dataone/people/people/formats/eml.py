@@ -104,6 +104,7 @@ def processCreator(job, creator, document):
 
     record['document'] = document
     record['format'] = "EML"
+    record['source'] = 'creator'
 
     if individual is not None:
         record['type'] = 'person'

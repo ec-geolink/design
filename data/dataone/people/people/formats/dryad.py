@@ -35,6 +35,7 @@ def process(job, xmldoc, document):
             record['name'] = ' '.join(name_parts[1], name_parts[2])
 
         record['format'] = "Dryad"
+        record['source'] = "creator"
         record['type'] = 'person'
         record['document'] = document
 

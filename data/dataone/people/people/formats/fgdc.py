@@ -144,7 +144,8 @@ def processContactInfo(job, info, document):
         record['phone'] = voice.text.strip()
 
     record['document'] = document
-    record['format'] = "FGDC"
+    record['format'] = 'FGDC'
+    record['source'] = 'contact'
 
     if cntperp is not None:
         record['type'] = 'person'
