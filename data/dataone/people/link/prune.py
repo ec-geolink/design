@@ -53,11 +53,6 @@ def prunePeople(input_file, retained_file, rejected_file, field_names):
     """
         Prunes the people in `input_file` and saves the cleaned up version
         in `output_file`
-
-        Rules:
-            - Empty name
-            - Junk name ('test', 'read', etc)
-            - Names with just numbers
     """
 
     input_reader = unicodecsv.DictReader(input_file,
@@ -83,7 +78,8 @@ def prunePeople(input_file, retained_file, rejected_file, field_names):
     junk_names = ['test', 'read', 'test1', 'test 2', 'asdf', 'adfs',
                   'test test', 'tret trert', 'GAA', 'BBB', 'tetqe', 'GGGG']
 
-    junk_regexes = {'justnumbers': re.compile("^\d*$"),
+    patterns = {'wg': re.compile("NCEAS:?\s*\d+"),
+                    'justnumbers': re.compile("^\d*$"),
                     'junknames': re.compile("^[a-z]{3,4}\s*\d*$"),
                     'noletters': re.compile("^[^a-zA-Z\u0000-\u007F]+$")}
 
@@ -92,25 +88,38 @@ def prunePeople(input_file, retained_file, rejected_file, field_names):
         should_prune = False
 
         # Rule: Empty name
-        if len(row['name']) <= 0:
+        if len(row['full_name']) <= 0:
             should_prune = True
 
         # Rule: Junk name
-        if row['name'] in junk_names:
+        if row['full_name'] in junk_names:
             should_prune = True
 
-        # Rule: Numbers
-        if junk_regexes['justnumbers'].search(row['name']):
-            should_prune = True
+        for pattern in patterns:
+            if patterns[pattern].search(row['organization']):
+                # Prune organization unless it's Unicode            
+                prune_organization = True
 
-        if junk_regexes['junknames'].search(row['name']):
-            should_prune = True
+                try:
+                    bytes(row['organization'])
+                except UnicodeEncodeError:
+                    prune_organization = False
 
-        if junk_regexes['noletters'].search(row['name']):
-            should_prune = True
+                if prune_organization is True:     
+                    row['organization'] = ''
+
+        # Don't prune unicode names
+        try:
+            bytes(row['full_name'])
+        except UnicodeEncodeError:
+            """
+            Throwing this unicode error checks whether the string is unicode or
+            not. I'm not sure how robust this method is but it works AFAIK
+            """
+
+            should_prune = False
 
         if should_prune is True:
-            print "Pruning: %s" % row
             rejected_writer.writerow(row)
         else:
             retained_writer.writerow(row)
@@ -120,12 +129,6 @@ def pruneOrganizations(input_file, retained_file, rejected_file, field_names):
     """
         Prunes the organizations in `input_file` and saves the cleaned up
         version in `output_file`
-
-        Rules:
-            - wg: Organization names like 'NCEAS: 12312 XYZ'. These are working
-                groups and not organizations we want to store in GeoLink.
-            - junk: Names like 'adf' and 'test 2'
-            - justnumbers
     """
 
     input_reader = unicodecsv.DictReader(input_file,
@@ -147,10 +150,10 @@ def pruneOrganizations(input_file, retained_file, rejected_file, field_names):
     input_reader.next()
 
     # Set up rules
-    # patterns = {'wg': re.compile("NCEAS:? \d+\s*:.*")}
+    junk_orgs = ["Select state or territory here.", "null", "test"]
     patterns = {'wg': re.compile("NCEAS:?\s*\d+"),
                 'junk': re.compile("^[a-z]{3,4}\s*\d*$"),
-                'justnumbers': re.compile("^\d*$"),
+                'justnumbers': re.compile("^\d+$"),
                 'noletters': re.compile("^[^a-zA-Z]+$")}
 
     # Prune
@@ -160,6 +163,10 @@ def pruneOrganizations(input_file, retained_file, rejected_file, field_names):
         # Rule: Empty name
         if len(row['name']) <= 0:
             should_prune = True
+
+        for junk_org_name in junk_orgs:
+            if junk_org_name == row['name']:
+                should_prune = True
 
         # Rule: NCEAS working groups
         if patterns['wg'].search(row['name']):
@@ -175,6 +182,17 @@ def pruneOrganizations(input_file, retained_file, rejected_file, field_names):
 
         if patterns['noletters'].search(row['name']):
             should_prune = True
+
+        # Don't prune unicode names
+        try:
+            bytes(row['name'])
+        except UnicodeEncodeError:
+            """
+            Throwing this unicode error checks whether the string is unicode or
+            not. I'm not sure how robust this method is but it works AFAIK
+            """
+
+            should_prune = False
 
         if should_prune is True:
             rejected_writer.writerow(row)
