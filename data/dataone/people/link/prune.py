@@ -24,11 +24,12 @@ def prune(filename, type):
     retained_file = open("%s_pruned.csv" % type, 'wb')
     rejected_file = open("%s_pruned_rejected.csv" % type, 'wb')
 
-    people_field_names = ['Id', 'name', 'organization', 'address', 'email',
-                          'phone', 'document', 'type', 'format']
+    people_field_names = ["Id", "full_name", "salutation", "first_name",
+                          "last_name", "organization", "address", "email",
+                          "phone", "document", "type", "source", "format"]
 
-    organization_field_names = ['Id', 'name', 'address',
-                                'email', 'phone', 'document', 'type', 'format']
+    organization_field_names = ["Id", "name", "address", "email", "phone",
+                                "document", "type", "source", "format"]
 
     # Do the processing
     if type == "people":
