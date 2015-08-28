@@ -32,7 +32,9 @@ def process(job, xmldoc, document):
         if len(name_parts) == 2:
             record['first_name'] = name_parts[1]
             record['last_name'] = name_parts[0]
-            record['name'] = ' '.join(name_parts[1], name_parts[2])
+            record['full_name'] = ' '.join(name_parts[1], name_parts[2])
+        else:
+            record['full_name'] = name
 
         record['format'] = "Dryad"
         record['source'] = "creator"

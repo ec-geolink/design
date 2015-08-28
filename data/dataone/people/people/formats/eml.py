@@ -122,9 +122,15 @@ def processIndividual(record, individual):
     fields = []
 
     if salutations is not None:
+        all_salutations = []
+
         for salutation in salutations:
             if salutation.text is not None:
                 fields.append(salutation.text.strip())
+                all_salutations.append(salutation.text.strip())
+
+        if len(all_salutations) > 0:
+            record['salutation'] = " ".join(all_salutations)
 
     if given_names is not None:
         all_given_names = []
@@ -135,7 +141,7 @@ def processIndividual(record, individual):
                 all_given_names.append(given_name.text.strip())
 
         if len(all_given_names) > 0:
-            record['given_name'] = " ".join(all_given_names)
+            record['first_name'] = " ".join(all_given_names)
 
 
     if sur_name is not None and sur_name.text is not None:
@@ -143,7 +149,7 @@ def processIndividual(record, individual):
         record['last_name'] = sur_name.text.strip()
 
     if len(fields) > 0:
-        record['name'] = " ".join([f for f in fields if f is not None])
+        record['full_name'] = " ".join([f for f in fields if f is not None])
 
     return record
 
