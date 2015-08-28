@@ -74,5 +74,16 @@ def saveRecords(job, records):
     for record in records:
         if record['type'] == 'person':
             job.writePerson(record)
+
+            # Add their organization too (if applicable)
+            if 'organization' in record and len(record['organization']) > 0:
+                org_record = {
+                    'name': record['organization'],
+                    'format': record['format'],
+                    'source': record['source']
+                }
+
+                job.writeOrganization(org_record)
+
         elif record['type'] == 'organization':
             job.writeOrganization(record)
