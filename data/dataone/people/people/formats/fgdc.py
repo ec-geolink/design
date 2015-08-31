@@ -166,21 +166,31 @@ def processAddress(record, address):
     fields = []
 
     if address_nodes is not None:
+        address_node_texts = []
+
         for node in address_nodes:
             if node.text is not None:
                 fields.append(node.text.strip())
+                address_node_texts.append(node.text.strip())
+
+        if len(address_node_texts) > 0:
+            record['address_delivery_point'] = " ".join(address_node_texts)
 
     if city is not None and city.text is not None:
         fields.append(city.text.strip())
+        record['address_city'] = city.text.strip()
 
     if state is not None and state.text is not None:
         fields.append(state.text.strip())
+        record['address_admin_area'] = state.text.strip()
 
     if postal is not None and postal.text is not None:
         fields.append(postal.text.strip())
+        record['address_postal'] = postal.text.strip()
 
     if country is not None and country.text is not None:
         fields.append(country.text.strip())
+        record['address_country'] = country.text.strip()
 
     if len(fields) > 0:
         record['address'] = " ".join([f for f in fields if f is not None])

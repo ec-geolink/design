@@ -25,10 +25,16 @@ def prune(filename, type):
     rejected_file = open("%s_pruned_rejected.csv" % type, 'wb')
 
     people_field_names = ["Id", "full_name", "salutation", "first_name",
-                          "last_name", "organization", "address", "email",
-                          "phone", "document", "type", "source", "format"]
+                          "last_name", "organization", "address",
+                          "address_delivery_point", "address_city",
+                          "address_postal", "address_admin_area",
+                          "address_country", "email", "phone", "document",
+                          "type", "source", "format"]
 
-    organization_field_names = ["Id", "name", "address", "email", "phone",
+    organization_field_names = ["Id", "name", "address",
+                                "address_delivery_point", "address_city",
+                                "address_postal", "address_admin_area",
+                                "address_country", "email", "phone",
                                 "document", "type", "source", "format"]
 
     # Do the processing

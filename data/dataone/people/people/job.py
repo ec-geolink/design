@@ -20,10 +20,16 @@ class Job:
         self.organizations_file = "organizations_dump.csv"
 
         self.people_columns = ["Id", "full_name", "salutation", "first_name",
-                               "last_name", "organization", "address", "email",
-                               "phone", "document", "type", "source", "format"]
+                               "last_name", "organization", "address",
+                               "address_delivery_point", "address_city",
+                               "address_postal", "address_admin_area",
+                               "address_country", "email", "phone", "document",
+                               "type", "source", "format"]
 
-        self.organization_columns = ["Id", "name", "address", "email", "phone",
+        self.organization_columns = ["Id", "name", "address",
+                                     "address_delivery_point", "address_city",
+                                     "address_postal", "address_admin_area",
+                                     "address_country", "email", "phone",
                                      "document", "type", "source", "format"]
 
         self.people_row_id = 0
