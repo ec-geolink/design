@@ -1,3 +1,7 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+
 """ create_graph.py
 
     Creates an RDF graph from a JSON dump.
@@ -116,11 +120,11 @@ def createPeopleGraph(filename, ns={}, organizations={}):
 
             # Organization TODO Align this comment
             if len(record['organization']) > 0:
-                if record['organization'].encode('utf-8') in organizations:
+                if record['organization'] in organizations:
                     organization_uris.append(organizations[record['organization']])
                 else:
                     print "Bad things happened for %s" % record['organization']
-                    # print record
+                    print record
 
             # Email address => foaf:mbox
             if len(record['email']) > 0:
