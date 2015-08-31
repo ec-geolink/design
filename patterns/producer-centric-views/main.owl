@@ -1,0 +1,1911 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY dcterms "http://purl.org/dc/terms/" >
+    <!ENTITY foaf "http://xmlns.com/foaf/0.1/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY ecglview "http://schema.geolink.org/dev/view#" >
+    <!ENTITY geosparql "http://www.opengis.net/ont/geosparql#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://schema.geolink.org/dev/view#"
+     xml:base="http://schema.geolink.org/dev/view"
+     xmlns:geosparql="http://www.opengis.net/ont/geosparql#"
+     xmlns:ecglview="http://schema.geolink.org/dev/view#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/">
+    <owl:Ontology rdf:about="http://schema.geolink.org/dev/base/main">
+        <rdfs:label>GeoLink Patterns : Producer-centric default View</rdfs:label>
+        <rdfs:comment>A producer-centric ontology providing a conceptual View into the GeoLink patterns.</rdfs:comment>
+        <owl:imports rdf:resource="http://schema.geolink.org/dev/voc/local"/>
+        <owl:imports rdf:resource="http://schema.geolink.org/dev/voc/gebco/featuretype"/>
+        <owl:imports rdf:resource="http://schema.geolink.org/dev/voc/nvs/L05"/>
+        <owl:imports rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06"/>
+        <owl:imports rdf:resource="http://schema.geolink.org/dev/voc/nvs/L22"/>
+        <owl:imports rdf:resource="http://schema.geolink.org/dev/voc/nvs/P02"/>
+        <owl:imports rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.opengis.net/ont/geosparql#wktLiteral -->
+
+    <rdfs:Datatype rdf:about="&geosparql;wktLiteral">
+        <rdfs:label>geosparql:wktLiteral</rdfs:label>
+        <rdfs:comment>Enables the use of Well Known Text strings</rdfs:comment>
+    </rdfs:Datatype>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML -->
+
+    <rdfs:Datatype rdf:about="&rdf;HTML">
+        <rdfs:label>rdf:HTML</rdfs:label>
+        <rdfs:comment>Enables the use of HTML strings</rdfs:comment>
+    </rdfs:Datatype>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#atPort -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#atPort">
+        <rdfs:label>atPort</rdfs:label>
+        <rdfs:comment>The domain of this property is PortCall, which acts as the range of &apos;hasStartPortCall&apos;, &apos;hasMidPortCall&apos;, or &apos;hasEndPortCall&apos; properties.</rdfs:comment>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Place"/>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#PortCall"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#authoritativeRepository -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#authoritativeRepository">
+        <rdfs:label>authoritativeRepository</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#DigitalObject"/>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Repository"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#fromCountry -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#fromCountry">
+        <rdfs:label>fromCountry</rdfs:label>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Country"/>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isCountryOf"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Organization"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Place"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasAffiliation -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasAffiliation">
+        <rdfs:label>hasAffiliation</rdfs:label>
+        <rdfs:comment>The domain of this property includes, besides persons, also instances of Participant class that act as the range of &apos;hasParticipant&apos; property.</rdfs:comment>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Organization"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Participant"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Person"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasAuthor -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasAuthor">
+        <rdfs:label>hasAuthor</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Publication"/>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isAuthorOf"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Organization"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Person"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasAward -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasAward">
+        <rdfs:label>hasAward</rdfs:label>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Award"/>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Cruise"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasChiefScientist -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasChiefScientist">
+        <rdfs:label>hasChiefScientist</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Cruise"/>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Person"/>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isChiefScientistOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasCoChiefScientist -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasCoChiefScientist">
+        <rdfs:label>hasCoChiefScientist</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Cruise"/>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Person"/>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isCoChiefScientistOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasCoPrincipalInvestigator -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasCoPrincipalInvestigator">
+        <rdfs:label>hasCoPrincipalInvestigator</rdfs:label>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Person"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Award"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Program"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasCollector -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasCollector">
+        <rdfs:label>hasCollector</rdfs:label>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Person"/>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isCollectorOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasContact -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasContact">
+        <rdfs:label>hasContact</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isContactOf"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Organization"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Person"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Dataset"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#DigitalObject"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasContributor -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasContributor">
+        <rdfs:label>hasContributor</rdfs:label>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Person"/>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isContributorOf"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Dataset"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#DigitalObject"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasCreator -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasCreator">
+        <rdfs:label>hasCreator</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isCreatorOf"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Organization"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Person"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Dataset"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#DigitalObject"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasCruise -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasCruise">
+        <rdfs:label>hasCruise</rdfs:label>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Cruise"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Dataset"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#DigitalObject"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasCruiseType -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasCruiseType">
+        <rdfs:label>hasCruiseType</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Cruise"/>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#CruiseType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasDataset -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasDataset">
+        <rdfs:label>hasDataset</rdfs:label>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Dataset"/>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasEditor -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasEditor">
+        <rdfs:label>hasEditor</rdfs:label>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Person"/>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isEditorOf"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Dataset"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#DigitalObject"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Publication"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasEducator -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasEducator">
+        <rdfs:label>hasEducator</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Cruise"/>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Person"/>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isEducatorIn"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasEndPortCall -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasEndPortCall">
+        <rdfs:label>hasEndPortCall</rdfs:label>
+        <rdfs:comment>The range of this property is PortCall that acts as the domain of the &apos;atPort&apos; and &apos;hasTimeStamp&apos; property. Graph patterns for data using this property can be of the form:
+-   ?X :hasEndPortCall ?Y . ?Y a PortCall;  :atPort ?PL ; :hasTimeStamp ?T.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Cruise"/>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#PortCall"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasFeatureType -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasFeatureType">
+        <rdfs:label>hasFeatureType</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdfs:subPropertyOf rdf:resource="http://schema.geolink.org/dev/base/main#hasPlaceType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasFormatType -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasFormatType">
+        <rdfs:label>hasFormatType</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#DigitalObject"/>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#FormatType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasInstrument -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasInstrument">
+        <rdfs:label>hasInstrument</rdfs:label>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Instrument"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Dataset"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#DigitalObject"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasInstrumentType -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasInstrumentType">
+        <rdfs:label>hasInstrumentType</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Instrument"/>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#InstrumentType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasMeasurementType -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasMeasurementType">
+        <rdfs:label>hasMeasurementType</rdfs:label>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Dataset"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#DigitalObject"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasMidPortCall -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasMidPortCall">
+        <rdfs:label>hasMidPortCall</rdfs:label>
+        <rdfs:comment>The range of this property is PortCall that acts as the domain of the &apos;atPort&apos; and &apos;hasTimeStamp&apos; property. Graph patterns for data using this property can be of the form:
+-   ?X :hasEndPortCall ?Y . ?Y a PortCall;  :atPort ?PL ; :hasTimeStamp ?T.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Cruise"/>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#PortCall"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasObserver -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasObserver">
+        <rdfs:label>hasObserver</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Cruise"/>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Person"/>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isObserverIn"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasOperator -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasOperator">
+        <rdfs:label>hasOperator</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Cruise"/>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Organization"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasOriginFeature -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasOriginFeature">
+        <rdfs:label>hasOriginFeature</rdfs:label>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasPart -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasPart">
+        <rdfs:label>hasPart</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isPartOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasParticipant -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasParticipant">
+        <rdfs:label>hasParticipant</rdfs:label>
+        <rdfs:comment>The range of this property includes instances of Participant that act as the domain of the &apos;hasRoleType&apos;, &apos;isPerformedBy&apos;, and &apos;hasAffiliation&apos; property. Graph patterns for data using this property can be of the form:
+?X :hasParticipant ?Y.  ?Y a :Participant; :hasRoleType ?RT ; :isPerformedBy ?P; :hasAffiliation ?O.</rdfs:comment>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Participant"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Award"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Cruise"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Dataset"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Program"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Publication"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasPlaceType -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasPlaceType">
+        <rdfs:label>hasPlaceType</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Place"/>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#PlaceType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasPlatformType -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasPlatformType">
+        <rdfs:label>hasPlatformType</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Platform"/>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasPrincipalInvestigator -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasPrincipalInvestigator">
+        <rdfs:label>hasPrincipalInvestigator</rdfs:label>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Person"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Award"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Program"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasProgram -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasProgram">
+        <rdfs:label>hasProgram</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Cruise"/>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Program"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasProgramManager -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasProgramManager">
+        <rdfs:label>hasProgramManager</rdfs:label>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Person"/>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isProgramManagerOf"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Award"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Program"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasReferenceTo -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasReferenceTo">
+        <rdfs:label>hasReferenceTo</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasRelatedCruise -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasRelatedCruise">
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+        <rdfs:label>hasRelatedCruise</rdfs:label>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Cruise"/>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Cruise"/>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasRelatedCruise"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasRepository -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasRepository">
+        <rdfs:label>hasRepository</rdfs:label>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Repository"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Dataset"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#DigitalObject"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasRightsHolder -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasRightsHolder">
+        <rdfs:label>hasRightsHolder</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isRightsHolderOf"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Organization"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Person"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Dataset"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#DigitalObject"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Publication"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasRoleType -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasRoleType">
+        <rdfs:label>hasRoleType</rdfs:label>
+        <rdfs:comment>The domain of this property is Participant that acts as the range of &apos;hasParticipant&apos; property. Graph patterns for data using this property can be of the form:
+-   ?X :hasParticipation ?Y . ?Y a :Participant;  :hasRoleType ?RT ; :isPerformedBy ?P; :hasAffiliation ?O .</rdfs:comment>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Participant"/>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#RoleType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasScheduler -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasScheduler">
+        <rdfs:label>hasScheduler</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Cruise"/>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Organization"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasScientist -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasScientist">
+        <rdfs:label>hasScientist</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Cruise"/>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Person"/>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isScientistOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasSponsor -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasSponsor">
+        <rdfs:label>hasSponsor</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Award"/>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Organization"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasStartPortCall -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasStartPortCall">
+        <rdfs:label>hasStartPortCall</rdfs:label>
+        <rdfs:comment>The range of this property is PortCall that acts as the domain of the &apos;atPort&apos; and &apos;hasTimeStamp&apos; property. Graph patterns for data using this property can be of the form:
+-   ?X :hasEndPortCall ?Y . ?Y a PortCall;  :atPort ?PL ; :hasTimeStamp ?T.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Cruise"/>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#PortCall"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasStudent -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasStudent">
+        <rdfs:label>hasStudent</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Cruise"/>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Person"/>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isStudentIn"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasSubOrganization -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasSubOrganization">
+        <rdfs:label>hasSubOrganization</rdfs:label>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Organization"/>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Organization"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasTechnician -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasTechnician">
+        <rdfs:label>hasTechnician</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Cruise"/>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Person"/>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isTechnicianOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasVendor -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasVendor">
+        <rdfs:label>hasVendor</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Instrument"/>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Organization"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasVessel -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasVessel">
+        <rdfs:label>hasVessel</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Cruise"/>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Vessel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#isAffiliationOf -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isAffiliationOf">
+        <rdfs:label>isAffiliationOf</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasAffiliation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#isAuthorOf -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isAuthorOf">
+        <rdfs:label>isAuthorOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#isAwardOf -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isAwardOf">
+        <rdfs:label>isAwardOf</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasAward"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#isChiefScientistOf -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isChiefScientistOf">
+        <rdfs:label>isChiefScientistOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#isCoChiefScientistOf -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isCoChiefScientistOf">
+        <rdfs:label>isCoChiefScientistOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#isCoPrincipalInvestigatorOf -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isCoPrincipalInvestigatorOf">
+        <rdfs:label>isCoPrincipalInvestigatorOf</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasCoPrincipalInvestigator"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#isCollectorOf -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isCollectorOf">
+        <rdfs:label>isCollectorOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#isContactOf -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isContactOf">
+        <rdfs:label>isContactOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#isContributorOf -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isContributorOf">
+        <rdfs:label>isContributorOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#isCountryOf -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isCountryOf">
+        <rdfs:label>isCountryOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#isCreatorOf -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isCreatorOf">
+        <rdfs:label>isCreatorOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#isCruiseOf -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isCruiseOf">
+        <rdfs:label>isCruiseOf</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasCruise"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#isCruiseTypeOf -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isCruiseTypeOf">
+        <rdfs:label>isCruiseTypeOf</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasCruiseType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#isDatasetOf -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isDatasetOf">
+        <rdfs:label>isDatasetOf</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasDataset"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#isEditorOf -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isEditorOf">
+        <rdfs:label>isEditorOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#isEducatorIn -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isEducatorIn">
+        <rdfs:label>isEducatorIn</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#isEndPortCallOf -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isEndPortCallOf">
+        <rdfs:label>isEndPortCallOf</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasEndPortCall"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#isFeatureTypeOf -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isFeatureTypeOf">
+        <rdfs:label>isFeatureTypeOf</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#isFormatTypeOf -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isFormatTypeOf">
+        <rdfs:label>isFormatTypeOf</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasFormatType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#isInstrumentOf -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isInstrumentOf">
+        <rdfs:label>isInstrumentOf</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasInstrument"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#isInstrumentTypeOf -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isInstrumentTypeOf">
+        <rdfs:label>isInstrumentTypeOf</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasInstrumentType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#isMeasurementTypeOf -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isMeasurementTypeOf">
+        <rdfs:label>isMeasurementTypeOf</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#isMidPortCallOf -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isMidPortCallOf">
+        <rdfs:label>isMidPortCallOf</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasMidPortCall"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#isObserverIn -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isObserverIn">
+        <rdfs:label>isObserverIn</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#isOperatorOf -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isOperatorOf">
+        <rdfs:label>isOperatorOf</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasOperator"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#isOriginFeatureOf -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isOriginFeatureOf">
+        <rdfs:label>isOriginFeatureOf</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasOriginFeature"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#isPartOf -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isPartOf">
+        <rdfs:label>isPartOf</rdfs:label>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Dataset"/>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#DigitalObject"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#isParticipantOf -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isParticipantOf">
+        <rdfs:label>isParticipantOf</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasParticipant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#isPerformedBy -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isPerformedBy">
+        <rdfs:label>isPerformedBy</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Participant"/>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#isPlaceTypeOf -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isPlaceTypeOf">
+        <rdfs:label>isPlaceTypeOf</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasPlaceType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#isPlatformTypeOf -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isPlatformTypeOf">
+        <rdfs:label>isPlatformTypeOf</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#isPortOf -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isPortOf">
+        <rdfs:label>isPortOf</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#atPort"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#isPrincipalInvestigatorOf -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isPrincipalInvestigatorOf">
+        <rdfs:label>isPrincipalInvestigatorOf</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasPrincipalInvestigator"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#isProgramManagerOf -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isProgramManagerOf">
+        <rdfs:label>isProgramManagerOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#isProgramOf -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isProgramOf">
+        <rdfs:label>isProgramOf</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasProgram"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#isReferencedBy -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isReferencedBy">
+        <rdfs:label>isReferencedBy</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasReferenceTo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#isRepositoryOf -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isRepositoryOf">
+        <rdfs:label>isRepositoryOf</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasRepository"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#isRightsHolderOf -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isRightsHolderOf">
+        <rdfs:label>isRightsHolderOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#isRoleTypeOf -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isRoleTypeOf">
+        <rdfs:label>isRoleTypeOf</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasRoleType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#isSchedulerOf -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isSchedulerOf">
+        <rdfs:label>isSchedulerOf</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasScheduler"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#isScientistOf -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isScientistOf">
+        <rdfs:label>isScientistOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#isSponsorOf -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isSponsorOf">
+        <rdfs:label>isSponsorOf</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasSponsor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#isStartPortCallOf -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isStartPortCallOf">
+        <rdfs:label>isStartPortCallOf</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasStartPortCall"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#isStudentIn -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isStudentIn">
+        <rdfs:label>isStudentIn</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#isSubOrganizationOf -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isSubOrganizationOf">
+        <rdfs:label>isSubOrganizationOf</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasSubOrganization"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#isTechnicianOf -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isTechnicianOf">
+        <rdfs:label>isTechnicianOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#isVendorOf -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isVendorOf">
+        <rdfs:label>isVendorOf</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasVendor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#isVesselOf -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isVesselOf">
+        <rdfs:label>isVesselOf</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasVessel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#originRepository -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#originRepository">
+        <rdfs:label>originRepository</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#DigitalObject"/>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Repository"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#performs -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#performs">
+        <rdfs:label>performs</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isPerformedBy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#replicaRepository -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#replicaRepository">
+        <rdfs:label>replicaRepository</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#DigitalObject"/>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Repository"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#abstract -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#abstract">
+        <rdfs:label>abstract</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Award"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Cruise"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Dataset"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Program"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Publication"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#acronym -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#acronym">
+        <rdfs:label>acronym</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Program"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#description -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#description">
+        <rdfs:label>description</rdfs:label>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&rdf;HTML"/>
+                    <rdf:Description rdf:about="&xsd;string"/>
+                </owl:unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    <owl:Axiom>
+        <rdfs:comment>Note that rdfs:Literal includes both xsd:string and rdf:HTML</rdfs:comment>
+        <owl:annotatedSource rdf:resource="http://schema.geolink.org/dev/base/main#description"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;range"/>
+        <owl:annotatedTarget>
+            <rdfs:Datatype>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&rdf;HTML"/>
+                    <rdf:Description rdf:about="&xsd;string"/>
+                </owl:unionOf>
+            </rdfs:Datatype>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasByteLength -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasByteLength">
+        <rdfs:label>hasByteLength</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#DigitalObject"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasChecksum -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasChecksum">
+        <rdfs:label>hasChecksum</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#DigitalObject"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasElevation -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasElevation">
+        <rdfs:label>hasElevation</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasEndDate -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasEndDate">
+        <rdfs:label>hasEndDate</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Award"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Program"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasGeologicAge -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasGeologicAge">
+        <rdfs:label>hasGeologicAge</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&xsd;anyURI"/>
+                    <rdf:Description rdf:about="&xsd;string"/>
+                </owl:unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasGeometryAsWktLiteral -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasGeometryAsWktLiteral">
+        <rdfs:label>hasGeometryAsWktLiteral</rdfs:label>
+        <rdfs:range rdf:resource="&geosparql;wktLiteral"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Dataset"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#DigitalObject"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Feature"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Place"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasMaterialType -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasMaterialType">
+        <rdfs:label>hasMaterialType</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&xsd;anyURI"/>
+                    <rdf:Description rdf:about="&xsd;string"/>
+                </owl:unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasModel -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasModel">
+        <rdfs:label>hasModel</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Instrument"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasPosition -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasPosition">
+        <rdfs:label>hasPosition</rdfs:label>
+        <rdfs:range rdf:resource="&geosparql;wktLiteral"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Feature"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasProject -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasProject">
+        <rdfs:label>hasProject</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Cruise"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Dataset"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasSamplingType -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasSamplingType">
+        <rdfs:label>hasSamplingType</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&xsd;anyURI"/>
+                    <rdf:Description rdf:about="&xsd;string"/>
+                </owl:unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasStartDate -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasStartDate">
+        <rdfs:label>hasStartDate</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Award"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Program"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasTectonicSetting -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasTectonicSetting">
+        <rdfs:label>hasTectonicSetting</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&xsd;anyURI"/>
+                    <rdf:Description rdf:about="&xsd;string"/>
+                </owl:unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasTimeStamp -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasTimeStamp">
+        <rdfs:label>hasTimeStamp</rdfs:label>
+        <rdfs:comment>The domain of this property is PortCall that acts as the range of &apos;hasStartPortCall&apos;, &apos;hasMidPortCall&apos;, or &apos;hasEndPortCall&apos; properties.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#PortCall"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasTrack -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasTrack">
+        <rdfs:label>hasTrack</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Cruise"/>
+        <rdfs:range rdf:resource="&geosparql;wktLiteral"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#identifier -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#identifier">
+        <rdfs:label>identifier</rdfs:label>
+        <rdfs:comment>The domain of this property also includes (possibly blank) nodes that act as the range of the &apos;matches&apos; property. Graph patterns for data using this property can either be of the form:
+-   ?X :identifier ?ID
+-   ?X :matches [ :identifier ?ID ; :hasScheme ?S ]</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Award"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Cruise"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Dataset"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#DigitalObject"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Instrument"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Organization"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Person"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Place"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Program"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#matches -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#matches">
+        <rdfs:label>matches</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Award"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Cruise"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Dataset"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#DigitalObject"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Feature"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Instrument"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Organization"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Person"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Place"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Program"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Publication"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#nameFamily -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#nameFamily">
+        <rdfs:label>nameFamily</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Person"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#nameFull -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#nameFull">
+        <rdfs:label>nameFull</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Person"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#nameGiven -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#nameGiven">
+        <rdfs:label>nameGiven</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Person"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#nameMiddle -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#nameMiddle">
+        <rdfs:label>nameMiddle</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Person"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#namePrefix -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#namePrefix">
+        <rdfs:label>namePrefix</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Person"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#nameSuffix -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#nameSuffix">
+        <rdfs:label>nameSuffix</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Person"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#seeAlso -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#seeAlso">
+        <rdfs:label>seeAlso</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Award"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Cruise"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Dataset"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#DigitalObject"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Feature"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Instrument"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Organization"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Person"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Place"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Program"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#source -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#source">
+        <rdfs:label>source</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#DigitalObject"/>
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#title -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#title">
+        <rdfs:label>title</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Award"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Cruise"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Dataset"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#DigitalObject"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Feature"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Instrument"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Organization"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Person"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Place"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Program"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Publication"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#Award -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#Award">
+        <rdfs:label>Award</rdfs:label>
+        <rdfs:comment>Funding provided by an Organization enabling Participation.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#Country -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#Country">
+        <rdfs:label>Country</rdfs:label>
+        <rdfs:comment>A formally recognized, governed nation of Persons with a defined territory</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#Cruise -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#Cruise">
+        <rdfs:label>Cruise</rdfs:label>
+        <rdfs:comment>An event occuring on a Vessel traversing a Trajectory.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#CruiseType -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#CruiseType">
+        <rdfs:label>CruiseType</rdfs:label>
+        <rdfs:comment>The type of Cruise - operational, transit, etc.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#Dataset -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#Dataset">
+        <rdfs:label>Dataset</rdfs:label>
+        <rdfs:comment>A collection of Measurements.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#DigitalObject -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#DigitalObject">
+        <rdfs:label>DigitalObject</rdfs:label>
+        <rdfs:comment>A digital representation of a Thing</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#Feature -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#Feature">
+        <rdfs:label>Feature</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Place"/>
+        <rdfs:comment>A significant locality where observations are made.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#FeatureType -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#FeatureType">
+        <rdfs:label>FeatureType</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#PlaceType"/>
+        <rdfs:comment>The type of spatial feature - from gazetteer</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#FormatType -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#FormatType">
+        <rdfs:label>FormatType</rdfs:label>
+        <rdfs:comment>The type of data format for a DigitalObject</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#Instrument -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#Instrument">
+        <rdfs:label>Instrument</rdfs:label>
+        <rdfs:comment>A specific instance of an Instrument being used to make observations resulting in a Dataset.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#InstrumentType -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#InstrumentType">
+        <rdfs:label>InstrumentType</rdfs:label>
+        <rdfs:comment>The type of Instrument being used to make observations - CTD, ADCP, microscope.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#MeasurementType -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#MeasurementType">
+        <rdfs:label>MeasurementType</rdfs:label>
+        <rdfs:comment>The type of Measreument being recorded - latitude, longitude, depth, salinity.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#Organization -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#Organization">
+        <rdfs:label>Organization</rdfs:label>
+        <rdfs:comment>A physical or virtual collection of Agents in some formally recognized capacity of significance.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#Participant -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#Participant">
+        <rdfs:label>Participant</rdfs:label>
+        <rdfs:comment>A reification of the 4-ary relation representing a participation of a Person, who is affiliated to an Organization, in a Cruise with a certain RoleType.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#Person -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#Person">
+        <rdfs:label>Person</rdfs:label>
+        <rdfs:comment>A homo sapien Agent of some significance</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#PhysicalSample -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#PhysicalSample">
+        <rdfs:label>PhysicalSample</rdfs:label>
+        <rdfs:comment>An object of observation that may be preserved, catalogued, and/or preserved.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#Place -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#Place">
+        <rdfs:label>Place</rdfs:label>
+        <rdfs:comment>A location with at least some type of spatial extent.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#PlaceType -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#PlaceType">
+        <rdfs:label>PlaceType</rdfs:label>
+        <rdfs:comment>A common descriptor for a type of Place - ocean, shoreline, island, etc.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#Platform -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#Platform">
+        <rdfs:label>Platform</rdfs:label>
+        <rdfs:comment>A physical object of significance enabling observations resulting in a Dataset</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#PlatformType -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#PlatformType">
+        <rdfs:label>PlatformType</rdfs:label>
+        <rdfs:comment>A type of Platform - vessel, glider, float, laboratory, etc.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#PortCall -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#PortCall">
+        <rdfs:label>PortCall</rdfs:label>
+        <rdfs:comment>A designated, specific port visited by a Vessel for some significant reason - the start or end of a mission; transfer of passengers, goods, or equipment.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#Program -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#Program">
+        <rdfs:label>Program</rdfs:label>
+        <rdfs:comment>A formally recognized scientific effort receiving significant funding, requiring large scale coordination</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#Publication -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#Publication">
+        <rdfs:label>Publication</rdfs:label>
+        <rdfs:comment>A citable, creative work.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#Repository -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#Repository">
+        <rdfs:label>Repository</rdfs:label>
+        <rdfs:comment>A recognized, formal entity responsible for curating a certain set of Datasets or DigitalObjects</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#RoleType -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#RoleType">
+        <rdfs:label>RoleType</rdfs:label>
+        <rdfs:comment>A specific type of role performed by an Agent - Principal Investigator, Chief Scientist, Publisher, etc.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#Vessel -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#Vessel">
+        <rdfs:label>Vessel</rdfs:label>
+        <owl:equivalentClass rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#3Z"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Platform"/>
+        <rdfs:comment>The platform enabling a Cruise</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/L06#3Z -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#3Z">
+        <rdfs:label>NERC Vocabulary Server : Vocabulary L06 : Term 3Z</rdfs:label>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+
