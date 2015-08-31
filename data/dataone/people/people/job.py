@@ -88,20 +88,3 @@ class Job:
 
         self.organization_writer.writerow(row)
         self.organization_row_id += 1
-
-    def summary(self):
-        print "Job Summary\n----------"
-        print "People: %d" % len(self.people)
-        print "Organizations: %s" % len(self.organizations)
-
-        if len(self.people) > 0:
-            print "\nIndividuals\n----------"
-
-        for person in self.people:
-            print helpers.personString(person)
-
-        if len(self.organizations) > 0:
-            print "\nOrganizations\n----------"
-
-        for organization in self.organizations:
-            print helpers.organizationString(organization)
