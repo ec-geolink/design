@@ -30,9 +30,9 @@ def process(job, xmldoc, document):
 
         # Check if "Last, First" is plausible
         if len(name_parts) == 2:
-            record['first_name'] = name_parts[1]
-            record['last_name'] = name_parts[0]
-            record['full_name'] = ' '.join(name_parts[1], name_parts[2])
+            record['first_name'] = name_parts[1].strip()
+            record['last_name'] = name_parts[0].strip()
+            record['full_name'] = ' '.join([name_parts[1].strip(), name_parts[0].strip()])
         else:
             record['full_name'] = name
 
