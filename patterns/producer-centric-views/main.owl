@@ -740,6 +740,19 @@
     
 
 
+    <!-- http://schema.geolink.org/dev/base/main#identifier -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#identifier">
+        <rdfs:label>identifier</rdfs:label>
+        <rdfs:comment>May be used by itself or in conjunction with hasIdentifierScheme and hasIdentifierValue data properties.</rdfs:comment>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Identifier"/>
+        <rdfs:seeAlso rdf:resource="http://schema.geolink.org/dev/base/main#hasIdentifierScheme"/>
+        <rdfs:seeAlso rdf:resource="http://schema.geolink.org/dev/base/main#hasIdentifierValue"/>
+        <rdfs:domain rdf:resource="&owl;Thing"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://schema.geolink.org/dev/base/main#isAffiliationOf -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isAffiliationOf">
@@ -1341,6 +1354,28 @@
     
 
 
+    <!-- http://schema.geolink.org/dev/base/main#hasIdentifierScheme -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasIdentifierScheme">
+        <rdfs:label>hasIdentifierScheme</rdfs:label>
+        <rdfs:comment>Points to any URI representing an identifier scheme, e.g., the URI of the DOI scheme.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Identifier"/>
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasIdentifierValue -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasIdentifierValue">
+        <rdfs:label>hasIdentifierValue</rdfs:label>
+        <rdfs:comment>Points to the actual string value of identifier., e.g.: &quot;doi:10.5063/AA/ArchivalTag.4.1&quot;</rdfs:comment>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Identifier"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://schema.geolink.org/dev/base/main#hasMaterialType -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasMaterialType">
@@ -1470,33 +1505,6 @@
         <rdfs:label>hasTrack</rdfs:label>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Cruise"/>
         <rdfs:range rdf:resource="&geosparql;wktLiteral"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://schema.geolink.org/dev/base/main#identifier -->
-
-    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#identifier">
-        <rdfs:label>identifier</rdfs:label>
-        <rdfs:comment>The domain of this property also includes (possibly blank) nodes that act as the range of the &apos;matches&apos; property. Graph patterns for data using this property can either be of the form:
--   ?X :identifier ?ID
--   ?X :matches [ :identifier ?ID ; :hasScheme ?S ]</rdfs:comment>
-        <rdfs:range rdf:resource="&xsd;string"/>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Award"/>
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Cruise"/>
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Dataset"/>
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#DigitalObject"/>
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Instrument"/>
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Organization"/>
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Person"/>
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Place"/>
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Program"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
     </owl:DatatypeProperty>
     
 
@@ -1739,6 +1747,18 @@
     <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#FormatType">
         <rdfs:label>FormatType</rdfs:label>
         <rdfs:comment>The type of data format for a DigitalObject</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#Identifier -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#Identifier">
+        <rdfs:label>Identifier</rdfs:label>
+        <rdfs:comment>Capturing various forms of identifiers, e.g., DOIs, ARKs, local strings, UUID strings, etc. Can be any URI that is understood as identifier of an entity, or a blank node, in which case, hasIdentifierScheme and hasIdentifierValue properties should be used to provide details.</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="http://schema.geolink.org/dev/base/main#hasIdentifierScheme"/>
+        <rdfs:seeAlso rdf:resource="http://schema.geolink.org/dev/base/main#hasIdentifierValue"/>
+        <rdfs:seeAlso rdf:resource="http://schema.geolink.org/dev/base/main#identifier"/>
     </owl:Class>
     
 
