@@ -81,10 +81,16 @@ def prunePeople(input_file, retained_file, rejected_file, field_names):
     patterns = {'wg': re.compile("NCEAS:?\s*\d+"),
                     'justnumbers': re.compile("^\d*$"),
                     'junknames': re.compile("^[a-z]{3,4}\s*\d*$"),
-                    'noletters': re.compile("^[^a-zA-Z\u0000-\u007F]+$")}
+                    'noletters': re.compile("^[^a-zA-Z\u0000-\u007F]+$"),
+                    'journal article': re.compile("\d+:\d+-\d+")}
+
+    # TODO add pruning for
+    # Journal of the Fisheries Research Board of Canada 33:2489-2499
+    # Journal of Fish Biology 13:203-213
 
     # Prune
     for row in input_reader:
+        # Should we prune the entire record?
         should_prune = False
 
         # Rule: Empty name
@@ -94,19 +100,6 @@ def prunePeople(input_file, retained_file, rejected_file, field_names):
         # Rule: Junk name
         if row['full_name'] in junk_names:
             should_prune = True
-
-        for pattern in patterns:
-            if patterns[pattern].search(row['organization']):
-                # Prune organization unless it's Unicode            
-                prune_organization = True
-
-                try:
-                    bytes(row['organization'])
-                except UnicodeEncodeError:
-                    prune_organization = False
-
-                if prune_organization is True:     
-                    row['organization'] = ''
 
         # Don't prune unicode names
         try:
@@ -118,6 +111,28 @@ def prunePeople(input_file, retained_file, rejected_file, field_names):
             """
 
             should_prune = False
+
+        # Should we prune the address field only?
+        # "Select state or territory here."
+
+        if re.compile("Select state or territory here").search(row['address']):
+            row['address'] = ''
+
+        # Should we prune the organization field only?
+        prune_organization = False
+
+        for pattern in patterns:
+            if patterns[pattern].search(row['organization']):
+                # Prune organization unless it's Unicode
+                prune_organization = True
+
+                try:
+                    bytes(row['organization'])
+                except UnicodeEncodeError:
+                    prune_organization = False
+
+                if prune_organization is True:
+                    row['organization'] = ''
 
         if should_prune is True:
             rejected_writer.writerow(row)
@@ -154,7 +169,8 @@ def pruneOrganizations(input_file, retained_file, rejected_file, field_names):
     patterns = {'wg': re.compile("NCEAS:?\s*\d+"),
                 'junk': re.compile("^[a-z]{3,4}\s*\d*$"),
                 'justnumbers': re.compile("^\d+$"),
-                'noletters': re.compile("^[^a-zA-Z]+$")}
+                'noletters': re.compile("^[^a-zA-Z]+$"),
+                'journal article': re.compile("\d+:\d+-\d+")}
 
     # Prune
     for row in input_reader:
@@ -168,20 +184,9 @@ def pruneOrganizations(input_file, retained_file, rejected_file, field_names):
             if junk_org_name == row['name']:
                 should_prune = True
 
-        # Rule: NCEAS working groups
-        if patterns['wg'].search(row['name']):
-            should_prune = True
-
-        # Rule: Junk names
-        if patterns['junk'].search(row['name']):
-            should_prune = True
-
-        # Rule Just numbers
-        if patterns['justnumbers'].search(row['name']):
-            should_prune = True
-
-        if patterns['noletters'].search(row['name']):
-            should_prune = True
+        for pattern in patterns:
+            if patterns[pattern].search(row['name']):
+                should_prune = True
 
         # Don't prune unicode names
         try:
