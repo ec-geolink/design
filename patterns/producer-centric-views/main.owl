@@ -749,6 +749,11 @@
         <rdfs:seeAlso rdf:resource="http://schema.geolink.org/dev/base/main#hasIdentifierScheme"/>
         <rdfs:seeAlso rdf:resource="http://schema.geolink.org/dev/base/main#hasIdentifierValue"/>
         <rdfs:domain rdf:resource="&owl;Thing"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:complementOf rdf:resource="http://schema.geolink.org/dev/base/main#Identifier"/>
+            </owl:Class>
+        </rdfs:domain>
     </owl:ObjectProperty>
     
 
