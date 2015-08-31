@@ -71,7 +71,7 @@ def serialize(model, ns, filename, format):
 
 def createPeopleGraph(filename, ns={}, organizations={}):
     # Store people UUIDs
-    people = {}
+    people = []
 
     model = createModel()
 
@@ -82,7 +82,45 @@ def createPeopleGraph(filename, ns={}, organizations={}):
         print "People file was read but didn't contain any content."
         sys.exit()
 
-    for key in jsonfile:
+    """ Unroll `jsonfile`
+
+        `jsonfile` contains a key 'unmatched' which is an array of the
+        jsonfile not found to match any other record. We want to unroll this
+        so all of the items in the array can be processed in the same sweep
+        as the items that do have matches.
+
+        We want to turn this:
+
+        jsonfile = {
+            'person1' : [person1a, person1b, ...],
+            'person2' : [person2a, person2b, ...],
+            'unmathced' : [person3, person 4, person 5, ...s]
+        }
+
+        Into this:
+
+        jsonfile = [
+            [person1a, person1b],
+            [person2a, person2b],
+            [person3],
+            [person4],
+            [person5]
+        ]
+    """
+
+    unique_people = []
+
+    if "unmatched" in jsonfile:
+        for record in jsonfile['unmatched']:
+            unique_people.append([record])
+
+    for json_key in jsonfile:
+        if json_key == "unmatched":
+            continue
+
+        unique_people.append(jsonfile[json_key])
+
+    for unique_person in unique_people:
         # Make ID (temporary)
         identifier = str(uuid.uuid4())
         identifier_uri = RDF.Uri(ns['glview']+identifier)
@@ -98,10 +136,7 @@ def createPeopleGraph(filename, ns={}, organizations={}):
         mailing_addresses = []
         documents = []
 
-        # Iterate through each record of each unique person
-        records = jsonfile[key]
-
-        for record in records:
+        for record in unique_person:
             # Full name => glview:namePrefix
             if len(record['salutation']) > 0:
                 salutations.append(record['salutation'])
