@@ -15,5 +15,6 @@ graph: people_dump.csv people_pruned.csv people_unique.csv people_unique.json or
 	python graph.py
 
 clean:
-	find . -name 'people*.csv' -exec rm -f {} +
-	find . -name 'people*.json' -exec rm -f {} +
+	find ../ -name '*.pyc' -exec rm -f {} +
+	find ../ -name '*.pyo' -exec rm -f {} +
+	find ../ -name '*~' -exec rm -f {} +
