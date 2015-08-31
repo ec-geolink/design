@@ -4,6 +4,7 @@
 
     Spec: http://www.fgdc.gov/metadata/csdgm/00.html
     Relevant Section: http://www.fgdc.gov/metadata/csdgm/10.html
+    Also: http://www.fgdc.gov/csdgmgraphical/ideninfo/ptof/cntact.htm
 
     People and organization information comes in two locations in the document.
 
@@ -149,9 +150,9 @@ def processContactInfo(job, info, document):
 
     if cntperp is not None:
         record['type'] = 'person'
-
-    if cntorgp is not None:
+    else:
         record['type'] = 'organization'
+        record['name'] = record['organization']  # Swap in org name
 
     return record
 
