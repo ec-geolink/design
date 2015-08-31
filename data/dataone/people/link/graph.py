@@ -123,8 +123,8 @@ def createPeopleGraph(filename, ns={}, organizations={}):
     for unique_person in unique_people:
         # Make ID (temporary)
         identifier = str(uuid.uuid4())
-        identifier_uri = RDF.Uri(ns['glview']+identifier)
-        people[key] = identifier_uri
+        identifier_uri = RDF.Uri(ns['d1people']+identifier)
+        people.append(identifier_uri)
 
         # Collect unique values of multiple values for each record
         salutations = []
@@ -211,7 +211,7 @@ def createPeopleGraph(filename, ns={}, organizations={}):
             addStatement(model,
                          identifier_uri,
                          ns['glview'] + "hasAffilitation",
-                         organization_uri)
+                         RDF.Uri(organization_uri))
         # Email
         for email in email_addresses:
             addStatement(model,
@@ -231,7 +231,7 @@ def createPeopleGraph(filename, ns={}, organizations={}):
             addStatement(model,
                          identifier_uri,
                          ns['glview'] + "hasDataset",
-                         document)
+                         RDF.Uri(ns['d1resolve'] + document))
 
     serialize(model, ns, "people.ttl", "turtle")
 
@@ -254,7 +254,7 @@ def createOrganizationGraph(filename, ns={}):
     for key in jsonfile:
         # Make ID (temporary)
         identifier = str(uuid.uuid4())
-        identifier_uri = RDF.Uri(ns['glview']+identifier)
+        identifier_uri = RDF.Uri(ns['d1org']+identifier)
         organizations[key] = identifier_uri
 
         # Collect unique values of multiple values for each record
@@ -293,11 +293,18 @@ def main():
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
         "glview": "http://schema.geolink.org/dev/view/",
+        "d1people": "https://dataone.org/person/",
+        "d1org": "https://dataone.org/organization/",
+        "d1resolve": "https://cn.dataone.org/cn/v1/resolve/"
     }
+
+    """ Create organization graph first, then do people
+        We do this because people re-use the URIs minted/re-used for
+        organizations
+    """
 
     organizations = createOrganizationGraph("organizations_unique.json", ns)
     createPeopleGraph("people_unique.json", ns, organizations)
-
 
 if __name__ == "__main__":
     main()
