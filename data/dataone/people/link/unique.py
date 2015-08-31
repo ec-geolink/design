@@ -73,18 +73,23 @@ def uniquifyPeople(input_file, output_file, field_names):
 
     # Remove identicals
     for row in input_reader:
+        key = 'unmatched'
+
         if len(row['last_name']) > 0 and len(row['email']) > 0:
             key = row['last_name'] + "#" + row['email']
             key = key.encode('utf-8')
 
-            if key in seen:
-                row['same'] = key
-                seen[key].append(row)
-            else:
-                seen[key] = []
-                seen[key].append(row)
+        if key in seen:
+            row['same'] = key
+            seen[key].append(row)
+        else:
+            seen[key] = []
+            seen[key].append(row)
 
         output_writer.writerow(row)
+
+    num_unique = len(seen) + len(seen['unmatched'])
+    print "Unique people: %d" % num_unique
 
     with open("people_unique.json", "wb") as f:
         f.write(json.dumps(seen,
@@ -128,6 +133,9 @@ def uniquifyOrganizations(input_file, output_file, field_names):
                 seen[key].append(row)
 
         output_writer.writerow(row)
+
+    num_unique = len(seen)
+    print "Unique organizations: %d" % num_unique
 
     with open("organizations_unique.json", "wb") as f:
         f.write(json.dumps(seen,

@@ -27,7 +27,9 @@ def processDirectory(job):
 
     i = 0
     for filename in filenames:
-        print i
+        if i % 1000 == 0:
+            print "%d..." % i
+
         try:
             xmldoc = ET.parse("%s/%s" % (job.directory, filename))
         except ParseError:
@@ -35,6 +37,8 @@ def processDirectory(job):
 
         processDocument(job, xmldoc, filename)
         i += 1
+        
+    print "Processed a total of %d documents" % i
 
 
 def processDocument(job, xmldoc, filename):
@@ -80,7 +84,8 @@ def saveRecords(job, records):
                 org_record = {
                     'name': record['organization'],
                     'format': record['format'],
-                    'source': record['source']
+                    'source': record['source'],
+                    'document': record['document']
                 }
 
                 job.writeOrganization(org_record)
