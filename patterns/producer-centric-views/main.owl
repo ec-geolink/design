@@ -88,16 +88,6 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/base/main#authoritativeRepository -->
-
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#authoritativeRepository">
-        <rdfs:label>authoritativeRepository</rdfs:label>
-        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#DigitalObject"/>
-        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Repository"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://schema.geolink.org/dev/base/main#fromCountry -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#fromCountry">
@@ -148,6 +138,25 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasAuthoritativeRepository -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasAuthoritativeRepository">
+        <rdfs:label>hasAuthoritativeDigitalRepository</rdfs:label>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Repository"/>
+        <rdfs:subPropertyOf rdf:resource="http://schema.geolink.org/dev/base/main#hasRepository"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Dataset"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#DigitalObject"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
     </owl:ObjectProperty>
     
 
@@ -479,6 +488,25 @@
     
 
 
+    <!-- http://schema.geolink.org/dev/base/main#hasOriginDigitalRepository -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasOriginDigitalRepository">
+        <rdfs:label>hasOriginDigitalRepository</rdfs:label>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Repository"/>
+        <rdfs:subPropertyOf rdf:resource="http://schema.geolink.org/dev/base/main#hasRepository"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Dataset"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#DigitalObject"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://schema.geolink.org/dev/base/main#hasOriginFeature -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasOriginFeature">
@@ -517,6 +545,17 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasPhysicalRepository -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasPhysicalRepository">
+        <rdfs:label>hasPhysicalRepository</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Repository"/>
+        <rdfs:subPropertyOf rdf:resource="http://schema.geolink.org/dev/base/main#hasRepository"/>
     </owl:ObjectProperty>
     
 
@@ -602,6 +641,25 @@
         <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Cruise"/>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Cruise"/>
         <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasRelatedCruise"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasReplicaRepository -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasReplicaRepository">
+        <rdfs:label>hasReplicaDigitalRepository</rdfs:label>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Repository"/>
+        <rdfs:subPropertyOf rdf:resource="http://schema.geolink.org/dev/base/main#hasRepository"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Dataset"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#DigitalObject"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
     </owl:ObjectProperty>
     
 
@@ -1176,31 +1234,11 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/base/main#originRepository -->
-
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#originRepository">
-        <rdfs:label>originRepository</rdfs:label>
-        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#DigitalObject"/>
-        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Repository"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://schema.geolink.org/dev/base/main#performs -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#performs">
         <rdfs:label>performs</rdfs:label>
         <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isPerformedBy"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://schema.geolink.org/dev/base/main#replicaRepository -->
-
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#replicaRepository">
-        <rdfs:label>replicaRepository</rdfs:label>
-        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#DigitalObject"/>
-        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Repository"/>
     </owl:ObjectProperty>
     
 
