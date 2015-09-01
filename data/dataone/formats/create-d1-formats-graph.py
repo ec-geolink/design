@@ -83,9 +83,8 @@ def main():
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
         "datacite": "http://purl.org/spar/datacite/",
-        "glview": "http://schema.geolink.org/dev/view#",
-        "doview": "http://schema.geolink.org/dev/doview#",
-        "ecglvoc_format" : "http://schema.geolink.org/dev/voc/dataone/format#"
+        "glbase": "http://schema.geolink.org/dev/base/main#",
+        "ecglvoc_format": "http://schema.geolink.org/dev/voc/dataone/format#"
     }
 
 
@@ -113,19 +112,19 @@ def main():
         format_uri_node = RDF.Uri(format_uri)
 
         # Name and Type
-        addStatement(model, format_uri, RDF.Uri(ns["rdf"] + "type"), RDF.Uri(ns["glview"] + "Format"))
-        addStatement(model, format_uri, RDF.Uri(ns["glview"] + "description"), format_name)
-        addStatement(model, format_uri, RDF.Uri(ns["glview"] + "formatType"), format_type)
+        addStatement(model, format_uri, RDF.Uri(ns["rdf"] + "type"), RDF.Uri(ns["glbase"] + "Format"))
+        addStatement(model, format_uri, RDF.Uri(ns["glbase"] + "description"), format_name)
+        addStatement(model, format_uri, RDF.Uri(ns["glbase"] + "formatType"), format_type)
 
         # Identifier
         id_blank_node = RDF.Node(blank=format_uri)
 
-        addStatement(model, id_blank_node, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["datacite"]+"ResourceIdentifier"))
-        addStatement(model, id_blank_node, ns["glview"]+"hasIdentifierValue", format_id)
+        addStatement(model, id_blank_node, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["glbase"]+"Identifier"))
+        addStatement(model, id_blank_node, ns["glbase"]+"hasIdentifierValue", format_id)
         addStatement(model, id_blank_node, ns["rdfs"]+"label", format_id)
-        addStatement(model, id_blank_node, ns["glview"]+"hasIdentifierScheme", RDF.Uri(ns["datacite"] + "local-resource-identifier-scheme"))
+        addStatement(model, id_blank_node, ns["glbase"]+"hasIdentifierScheme", RDF.Uri(ns["datacite"] + "local-resource-identifier-scheme"))
 
-        addStatement(model, format_uri, RDF.Uri(ns["glview"] + "identifier"), id_blank_node)
+        addStatement(model, format_uri, RDF.Uri(ns["glbase"] + "hasIdentifier"), id_blank_node)
 
         format_index += 1
 

@@ -1,23 +1,28 @@
 <?xml version="1.0"?>
 
 
-<!DOCTYPE rdf:RDF [ 
-    <!ENTITY ecglvoc_format "http://schema.geolink.org/dev/voc/dataone/format#" >
+<!DOCTYPE rdf:RDF [
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
-    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY ecglview "http://schema.geolink.org/dev/base/main#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY ecglvoc_format "http://schema.geolink.org/dev/voc/dataone/format#" >
 ]>
 
-<rdf:RDF xml:base="http://schema.geolink.org/dev/voc/dataone/format" 
-    xmlns:ecglvoc_format="http://schema.geolink.org/dev/voc/dataone/format#" 
-    xmlns:owl="http://www.w3.org/2002/07/owl#"
-    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
-    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" 
-    xmlns:xsd="http://www.w3.org/2001/XMLSchema#" 
-    xmlns="http://schema.geolink.org/dev/voc/dataone/format#">
 
+<rdf:RDF xmlns="http://schema.geolink.org/dev/voc/dataone/format#"
+     xml:base="http://schema.geolink.org/dev/voc/dataone/format"
+     xmlns:ecglview="http://schema.geolink.org/dev/base/main#"
+     xmlns:ecglvoc_format="http://schema.geolink.org/dev/voc/dataone/format#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="http://schema.geolink.org/dev/voc/dataone/format"/>
+    
+
+
 
     <!--
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -27,7 +32,10 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    <!-- http://schema.geolink.org/dev/voc/dataone/#hasFormat -->
+
+
+
+    <!-- http://schema.geolink.org/dev/voc/dataone/format#hasFormat -->
 
     <owl:ObjectProperty rdf:about="&ecglvoc_format;hasFormat">
         <rdfs:label>hasFormat</rdfs:label>
@@ -37,46 +45,24 @@
 
 
 
-
     <!--
-     ///////////////////////////////////////////////////////////////////////////////////////
-     //
-     // Data properties
-     //
-     ///////////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    <!-- http://schema.geolink.org/dev/voc/dataone/#formatType -->
+
+
+
+    <!-- http://schema.geolink.org/dev/voc/dataone/format#formatType -->
 
     <owl:DatatypeProperty rdf:about="&ecglvoc_format;formatType">
         <rdfs:label>formatType</rdfs:label>
         <rdfs:domain rdf:resource="&ecglvoc_format;Format"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
-
-
-
-
-    <!-- http://schema.geolink.org/dev/view#identifier -->
-    <!-- This is a partial definition of the #identifier DP just included to show that we'd need to add the Format class to the domain of #identifier so formats can have #identifiers -->
-
-    <owl:DatatypeProperty rdf:about="&ecglview;identifier">
-        <rdfs:label>identifier</rdfs:label>
-        <rdfs:comment>The domain of this property also includes (possibly blank) nodes that act as the range of the &apos;matches&apos; property. Graph patterns for data using this property can either be of the form:
--   ?X :identifier ?ID
--   ?X :matches [ :identifier ?ID ; :hasScheme ?S ]</rdfs:comment>
-        <rdfs:range rdf:resource="&xsd;string"/>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <!-- ... -->
-                    <rdf:Description rdf:about="&ecglvoc_format;Format"/>
-                    <!-- ... -->
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
-    </owl:DatatypeProperty>
-
 
 
 
@@ -88,14 +74,42 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-     <!-- http://schema.geolink.org/dev/voc/dataone/format#Format -->
+
+
+
+    <!-- http://schema.geolink.org/dev/base/main#DigitalObject -->
+
+    <owl:Class rdf:about="&ecglview;DigitalObject"/>
+
+
+
+    <!-- http://schema.geolink.org/dev/voc/dataone/format#Format -->
 
     <owl:Class rdf:about="&ecglvoc_format;Format">
         <rdfs:label>Format</rdfs:label>
-        <rdf:Description rdf:about="https://cn.dataone.org/cn/v1/formats"/>
+        <rdf:Description></rdf:Description>
     </owl:Class>
 
 
 
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
 
+
+
+
+    <!-- http://schema.geolink.org/dev/voc/dataone/format#001 -->
+
+    <owl:NamedIndividual rdf:about="&ecglvoc_format;001">
+        <rdf:type rdf:resource="&ecglvoc_format;Format"/>
+    </owl:NamedIndividual>
 </rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
