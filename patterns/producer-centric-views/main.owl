@@ -1380,6 +1380,8 @@
     <!-- http://schema.geolink.org/dev/base/main#hasGeologicalUnit -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasGeologicalUnit">
+        <rdfs:label>hasGeologicalUnit</rdfs:label>
+        <rdfs:comment>Values mostly are Lithostratigraphic units in SESAR, like Formation, Group, Member, Bed, Flow, etc.   from International Stratigraphic. Union controlled vocabulary</rdfs:comment>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
         <rdfs:range rdf:resource="&xsd;anyURI"/>
     </owl:DatatypeProperty>
@@ -1424,6 +1426,17 @@
         <rdfs:comment>Points to the actual string value of identifier., e.g.: &quot;doi:10.5063/AA/ArchivalTag.4.1&quot;</rdfs:comment>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Identifier"/>
         <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasMaterial -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasMaterial">
+        <rdfs:label>hasMaterial</rdfs:label>
+        <rdfs:comment>values drawn from multiple vocabularies eg. mineral types, rock types</rdfs:comment>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
     </owl:DatatypeProperty>
     
 
