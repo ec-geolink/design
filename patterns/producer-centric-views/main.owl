@@ -1377,6 +1377,15 @@
     
 
 
+    <!-- http://schema.geolink.org/dev/base/main#hasGeologicalUnit -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasGeologicalUnit">
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://schema.geolink.org/dev/base/main#hasGeometryAsWktLiteral -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasGeometryAsWktLiteral">
