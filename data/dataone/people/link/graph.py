@@ -230,7 +230,7 @@ def createPeopleGraph(filename, ns={}, organizations={}):
         for document in documents:
             addStatement(model,
                          identifier_uri,
-                         ns['glview'] + "hasDataset",
+                         ns['glview'] + "isCreatorOf",
                          RDF.Uri(ns['d1resolve'] + document))
 
     serialize(model, ns, "people.ttl", "turtle")
