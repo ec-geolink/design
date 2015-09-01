@@ -64,12 +64,14 @@ def addDataset(model, doc, ns, fm, personhash):
     element = doc.find("./str[@name='identifier']")
     identifier = element.text
 
-    addStatement(model, d1base+identifier, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["glview"]+"Dataset"))
+    addStatement(model, d1base+identifier, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["glbase"]+"Dataset"))
+
     id_blank_node = RDF.Node(blank=identifier)
-    addStatement(model, id_blank_node, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["datacite"]+"ResourceIdentifier"))
-    addStatement(model, d1base+identifier, ns["glview"]+"identifier", id_blank_node)
-    addStatement(model, id_blank_node, ns["glview"]+"hasIdentifierValue", identifier)
+
+    addStatement(model, d1base+identifier, ns["glbase"]+"hasIdentifier", id_blank_node)
     addStatement(model, id_blank_node, ns["rdfs"]+"label", identifier)
+
+    # Determine identifier scheme
     if (identifier.startswith("doi:") |
             identifier.startswith("http://doi.org/") | identifier.startswith("https://doi.org/") |
             identifier.startswith("https://dx.doi.org/") | identifier.startswith("https://dx.doi.org/")):
@@ -84,18 +86,20 @@ def addDataset(model, doc, ns, fm, personhash):
         scheme = 'urn'
     else:
         scheme = 'local-resource-identifier-scheme'
-    addStatement(model, id_blank_node, ns["glview"]+"hasIdentifierScheme", RDF.Uri(ns["datacite"]+scheme))
+
+    addStatement(model, id_blank_node, ns["glbase"]+"hasIdentifierValue", identifier)
+    addStatement(model, id_blank_node, ns["glbase"]+"usesIdentifierScheme", RDF.Uri(ns["datacite"]+scheme))
 
     # Title
     title_element = doc.find("./str[@name='title']")
     if (title_element is not None):
-        addStatement(model, d1base+identifier, ns["glview"]+"title", title_element.text)
+        addStatement(model, d1base+identifier, ns["glbase"]+"title", title_element.text)
         addStatement(model, d1base+identifier, ns["rdfs"]+"label", title_element.text)
 
     # Abstract
     abstract_element = doc.find("./str[@name='abstract']")
     if (abstract_element is not None):
-        addStatement(model, d1base+identifier, ns["glview"]+"description", abstract_element.text)
+        addStatement(model, d1base+identifier, ns["glbase"]+"description", abstract_element.text)
 
     # Creators
 
@@ -129,11 +133,11 @@ def addDataset(model, doc, ns, fm, personhash):
             p_dataone_id = "http://data.geolink.org/id/dataone/" + newid.hex
             person_node = RDF.Uri(p_dataone_id)
             #person_node = RDF.Node(blank=p_uuid)
-            addStatement(model, person_node, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["glview"]+"Person"))
+            addStatement(model, person_node, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["glbase"]+"Person"))
             addStatement(model, person_node, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["foaf"]+"Person"))
             addStatement(model, person_node, ns["rdfs"]+"label", c_text)
             addStatement(model, person_node, ns["foaf"]+"name", c_text)
-            addStatement(model, person_node, ns["glview"]+"nameFull", c_text)
+            addStatement(model, person_node, ns["glbase"]+"nameFull", c_text)
 
             # Match GeoLink Persons
             print 'c',
@@ -145,7 +149,7 @@ def addDataset(model, doc, ns, fm, personhash):
             k = None
             k = findRegexInList(glpeople.keys(),searchRegex)
             if (k):
-                addStatement(model, person_node, RDF.Uri(ns["glview"]+"matches"), RDF.Uri(glpeople[k[0]]))
+                addStatement(model, person_node, RDF.Uri(ns["glbase"]+"matches"), RDF.Uri(glpeople[k[0]]))
 
             p_data = [p_uuid, p_dataone_id, person_node]
             personhash[creator] = p_data
@@ -157,7 +161,7 @@ def addDataset(model, doc, ns, fm, personhash):
             person_node = p_data[2]
 
         # Add Person as creator participant in Dataset
-        addStatement(model, RDF.Uri(d1base+identifier), RDF.Uri(ns["glview"]+"hasCreator"), person_node)
+        addStatement(model, RDF.Uri(d1base+identifier), RDF.Uri(ns["glbase"]+"hasCreator"), person_node)
         addStatement(model, RDF.Uri(d1base+identifier), RDF.Uri(ns["dcterms"]+"creator"), person_node)
 
         #pi_node = RDF.Node(RDF.Uri(p_orcid))
@@ -191,12 +195,12 @@ def addDataset(model, doc, ns, fm, personhash):
         else:
             wktliteral = "POLYGON ((%s %s, %s %s, %s %s, %s, %s))" % (bound_west.text, bound_north.text, bound_east.text, bound_north.text, bound_east.text, bound_south.text, bound_west.text, bound_south.text)
 
-        addStatement(model, d1base+identifier, ns['glview'] + "hasGeometryAsWktLiteral", wktliteral)
+        addStatement(model, d1base+identifier, ns['glbase'] + "hasGeometryAsWktLiteral", wktliteral)
 
 
 
     # Temporal Coverage
-    # TODO: No field for these in glview, currently exist in doview
+    # TODO: No field for these in glbase, currently exist in doview
 
     start_date = doc.find("./date[@name='startDate']")
 
@@ -212,39 +216,33 @@ def addDataset(model, doc, ns, fm, personhash):
 
     # Submitter
     submitter = doc.find("./str[@name='submitter']")
-    submitter_org = " ".join(re.findall(r"o=(\w+)", submitter.text, re.IGNORECASE))
-    # print "Submitter <%s> was turned into <%s>" % (submitter.text, submitter_org.upper())
-
 
     # TODO: Make this point to a Person
-    if len(submitter_org) > 0:
-        addStatement(model, d1base+identifier, ns["glview"]+"hasCreator", RDF.Uri("urn:node:" + submitter_org.upper()))
+    addStatement(model, d1base+identifier, ns["glbase"]+"hasCreator", RDF.Uri("TODO"))
 
 
     # Add Rights holder
     rights_holder = doc.find("./str[@name='rightsHolder']")
-    rights_holder_org = " ".join(re.findall(r"o=(\w+)", rights_holder.text, re.IGNORECASE))
-    # print "RightsHolder <%s> was turned into <%s>" % (rights_holder.text, rights_holder_org.upper())
+
     # TODO: Make this point to an Organization or Person
-    if len(rights_holder_org) > 0:
-        addStatement(model, d1base+identifier, ns["glview"]+"hasRightsHolder", RDF.Uri("urn:node:" + rights_holder_org.upper()))
+    addStatement(model, d1base+identifier, ns["glbase"]+"hasRightsHolder", RDF.Uri("TODO"))
 
 
     # Repositories: authoritative, replica, origin
 
     # Authoritative MN
     repository_authMN = doc.find("./str[@name='authoritativeMN']")
-    addStatement(model, d1base+identifier, ns["doview"]+"authoritativeRepository", RDF.Uri(repository_authMN.text))
+    addStatement(model, d1base+identifier, ns["doview"]+"authoritativeRepository", RDF.Uri(ns['d1node'] + repository_authMN.text))
 
     # Replica MN's
     repository_mns = doc.findall("./arr[@name='replicaMN']/str")
 
     for repo_node in repository_mns:
-        addStatement(model, d1base+identifier, ns["doview"]+"replicaRepository", RDF.Uri(repo_node.text))
+        addStatement(model, d1base+identifier, ns["doview"]+"replicaRepository", RDF.Uri(ns['d1node'] + repo_node.text))
 
     # Origin MN
     repository_datasource = doc.find("./str[@name='datasource']")
-    addStatement(model, d1base+identifier, ns["doview"]+"originRepository", RDF.Uri(repository_datasource.text))
+    addStatement(model, d1base+identifier, ns["doview"]+"originRepository", RDF.Uri(ns['d1node'] + repository_datasource.text))
 
 
     # TODO: Add Landing page
@@ -272,8 +270,8 @@ def addDataset(model, doc, ns, fm, personhash):
 def addDigitalObject(model, d1base, identifier, data_id_node, ns, fm, personhash):
     data_id = data_id_node.text
 
-    addStatement(model, d1base+data_id, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["glview"]+"DigitalObject"))
-    addStatement(model, d1base+data_id, ns["glview"]+"isPartOf", RDF.Uri(d1base+identifier))
+    addStatement(model, d1base+data_id, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["glbase"]+"DigitalObject"))
+    addStatement(model, d1base+data_id, ns["glbase"]+"isPartOf", RDF.Uri(d1base+identifier))
 
     # Get data object meta
     data_meta = getXML("https://cn.dataone.org/cn/v1/meta/" + data_id)
@@ -287,7 +285,7 @@ def addDigitalObject(model, d1base, identifier, data_id_node, ns, fm, personhash
     checksum_node = data_meta.find(".//checksum")
 
     if checksum_node is not None:
-        addStatement(model, d1base+data_id, ns["glview"]+"hasChecksum", checksum_node.text )
+        addStatement(model, d1base+data_id, ns["glbase"]+"hasChecksum", checksum_node.text )
         addStatement(model, d1base+data_id, ns["doview"]+"hasChecksumAlgorithm", checksum_node.get("algorithm"))
 
 
@@ -295,7 +293,7 @@ def addDigitalObject(model, d1base, identifier, data_id_node, ns, fm, personhash
     size_node = data_meta.find("./size")
 
     if size_node is not None:
-        addStatement(model, d1base+data_id, ns["glview"]+"hasByteLength", size_node.text)
+        addStatement(model, d1base+data_id, ns["glbase"]+"hasByteLength", size_node.text)
 
 
     # Format
@@ -303,7 +301,7 @@ def addDigitalObject(model, d1base, identifier, data_id_node, ns, fm, personhash
 
     if format_id_node is not None:
         if format_id_node.text in fm:
-            addStatement(model, d1base+data_id, ns["glview"]+"hasFormat", RDF.Uri(fm[format_id_node.text]))
+            addStatement(model, d1base+data_id, ns["glbase"]+"hasFormat", RDF.Uri(fm[format_id_node.text]))
         else:
             print "Format not found."
 
@@ -322,7 +320,7 @@ def addDigitalObject(model, d1base, identifier, data_id_node, ns, fm, personhash
         submitter_node_text = " ".join(re.findall(r"o=(\w+)", submitter_node.text, re.IGNORECASE))
 
         if len(submitter_node_text) > 0:
-            addStatement(model, d1base+data_id, ns["glview"]+"hasCreator", RDF.Uri("urn:node:" + submitter_node_text.upper()))
+            addStatement(model, d1base+data_id, ns["glbase"]+"hasCreator", RDF.Uri(ns['d1node'] + submitter_node_text.upper()))
 
 
     rights_holder_node = data_meta.find("./rightsHolder")
@@ -331,7 +329,7 @@ def addDigitalObject(model, d1base, identifier, data_id_node, ns, fm, personhash
         rights_holder_node_text = " ".join(re.findall(r"o=(\w+)", rights_holder_node.text, re.IGNORECASE))
 
         if len(rights_holder_node_text) > 0:
-            addStatement(model, d1base+data_id, ns["glview"]+"hasRightsHolder", RDF.Uri("urn:node:" + rights_holder_node_text.upper()))
+            addStatement(model, d1base+data_id, ns["glbase"]+"hasRightsHolder", RDF.Uri("urn:node:" + rights_holder_node_text.upper()))
 
 
 def findRegexInList(list,filter):
@@ -390,18 +388,17 @@ def addRepositories(model, ns):
     nodelist = xmldoc.findall(".//node")
 
     for n in nodelist:
-        node_id = n.find('identifier').text
+        node_id = ns['d1node'] + n.find('identifier').text
         node_name = n.find('name').text
         node_desc = n.find('description').text
         node_base_url = n.find('baseURL').text
 
         node_hash[node_id] = [node_name, node_desc, node_base_url]
 
-        addStatement(model, node_id, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["glview"]+"Repository"))
-        addStatement(model, node_id, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["glview"]+"Organization"))
+        addStatement(model, node_id, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["glbase"]+"Repository"))
         addStatement(model, node_id, RDF.Uri(ns["foaf"]+"name"), node_name)
         addStatement(model, node_id, RDF.Uri(ns["rdfs"]+"label"), node_name)
-        addStatement(model, node_id, RDF.Uri(ns["glview"]+"description"), node_desc)
+        addStatement(model, node_id, RDF.Uri(ns["glbase"]+"description"), node_desc)
     return(node_hash)
 
 
@@ -423,9 +420,9 @@ def addFormats(model, ns, fm):
 
         format_hash[format_id] = [format_type, format_name]
 
-        addStatement(model, fm[format_id], RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["glview"]+"Format"))
-        addStatement(model, fm[format_id], RDF.Uri(ns["glview"]+"identifier"), format_id)
-        addStatement(model, fm[format_id], RDF.Uri(ns["glview"] + "description"), format_name)
+        addStatement(model, fm[format_id], RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["glbase"]+"Format"))
+        addStatement(model, fm[format_id], RDF.Uri(ns["glbase"]+"identifier"), format_id)
+        addStatement(model, fm[format_id], RDF.Uri(ns["glbase"] + "description"), format_name)
 
 
     return format_hash
@@ -482,9 +479,10 @@ def main():
         "geosparql": "http://www.opengis.net/ont/geosparql#",
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-        "glview": "http://schema.geolink.org/dev/view#",
+        "glbase": "http://schema.geolink.org/dev/base/main#",
         "doview": "http://schema.geolink.org/dev/doview#",
-        "prov": "http://www.w3.org/ns/prov#"
+        "prov": "http://www.w3.org/ns/prov#",
+        "d1node": "https://cn.dataone.org/cn/v1/node/"
     }
 
     print "Creating format map..."
