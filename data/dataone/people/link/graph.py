@@ -259,6 +259,9 @@ def createOrganizationGraph(filename, ns={}):
 
         # Collect unique values of multiple values for each record
         names = []
+        email_addresses = []
+        mailing_addresses = []
+        documents = []
 
         # Iterate through each record of each unique person
         records = jsonfile[key]
@@ -267,6 +270,18 @@ def createOrganizationGraph(filename, ns={}):
             # Full name => glview:namePrefix
             if len(record['name']) > 0:
                 names.append(record['name'])
+
+        # Email address => foaf:mbox
+        if len(record['email']) > 0:
+            email_addresses.append(record['email'])
+
+        # Mailing address => TODO
+        if len(record['address']) > 0:
+            mailing_addresses.append(record['address'])
+
+        # Documents => glview:Dataset
+        if len(record['document']) > 0:
+            documents.append(record['document'])
 
         # Add statements to RDF Graph
 
@@ -277,6 +292,27 @@ def createOrganizationGraph(filename, ns={}):
                          ns['rdf'] + "label",
                          name
                          )
+
+        # Email
+        for email in email_addresses:
+            addStatement(model,
+                         identifier_uri,
+                         ns['foaf'] + "mbox",
+                         RDF.Uri("mailto:" + email))
+
+        # Address
+        for address in mailing_addresses:
+            addStatement(model,
+                         identifier_uri,
+                         ns['glview'] + "address",
+                         address)
+
+        # Documents
+        for document in documents:
+            addStatement(model,
+                         identifier_uri,
+                         ns['glview'] + "isCreatorOf",
+                         RDF.Uri(ns['d1resolve'] + document))
 
     serialize(model, ns, "organizations.ttl", "turtle")
 
