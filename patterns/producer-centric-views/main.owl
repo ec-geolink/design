@@ -77,6 +77,16 @@
     
 
 
+    <!-- http://schema.geolink.org/dev/base/main#atPlace -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#atPlace">
+        <rdfs:label>atPlace</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Meeting"/>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Place"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://schema.geolink.org/dev/base/main#atPort -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#atPort">
@@ -494,6 +504,16 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasMeetingParticipant -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasMeetingParticipant">
+        <rdfs:label>hasMeetingParticipant</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Meeting"/>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Person"/>
     </owl:ObjectProperty>
     
 
@@ -1423,6 +1443,7 @@
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Award"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Meeting"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Program"/>
                 </owl:unionOf>
             </owl:Class>
@@ -1618,6 +1639,7 @@
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Award"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Meeting"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Program"/>
                 </owl:unionOf>
             </owl:Class>
