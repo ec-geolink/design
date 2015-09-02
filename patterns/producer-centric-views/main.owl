@@ -319,6 +319,17 @@
     
 
 
+    <!-- http://schema.geolink.org/dev/base/main#hasCurator -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasCurator">
+        <rdfs:label>hasCurator</rdfs:label>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Person"/>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isCuratorOf"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://schema.geolink.org/dev/base/main#hasDataset -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasDataset">
@@ -383,12 +394,33 @@
     
 
 
+    <!-- http://schema.geolink.org/dev/base/main#hasFirstAppearance -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasFirstAppearance">
+        <rdfs:label>hasFirstAppearance</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#GeologicAge"/>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#GeologicAgeAppearance"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://schema.geolink.org/dev/base/main#hasFormatType -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasFormatType">
         <rdfs:label>hasFormatType</rdfs:label>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#DigitalObject"/>
         <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#FormatType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasGeologicAge -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasGeologicAge">
+        <rdfs:label>hasGeologicAge</rdfs:label>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#GeologicAge"/>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isGeologicAgeOf"/>
     </owl:ObjectProperty>
     
 
@@ -401,6 +433,7 @@
         <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Identifier"/>
         <rdfs:seeAlso rdf:resource="http://schema.geolink.org/dev/base/main#hasIdentifierScheme"/>
         <rdfs:seeAlso rdf:resource="http://schema.geolink.org/dev/base/main#hasIdentifierValue"/>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isIdentifierOf"/>
         <rdfs:domain rdf:resource="&owl;Thing"/>
         <rdfs:domain>
             <owl:Class>
@@ -434,6 +467,16 @@
         <rdfs:label>hasInstrumentType</rdfs:label>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Instrument"/>
         <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#InstrumentType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasLastAppearance -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasLastAppearance">
+        <rdfs:label>hasLastAppearance</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#GeologicAge"/>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#GeologicAgeAppearance"/>
     </owl:ObjectProperty>
     
 
@@ -925,6 +968,12 @@
     
 
 
+    <!-- http://schema.geolink.org/dev/base/main#isCuratorOf -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isCuratorOf"/>
+    
+
+
     <!-- http://schema.geolink.org/dev/base/main#isDatasetOf -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isDatasetOf">
@@ -974,6 +1023,18 @@
         <rdfs:label>isFormatTypeOf</rdfs:label>
         <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasFormatType"/>
     </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#isGeologicAgeOf -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isGeologicAgeOf"/>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#isIdentifierOf -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isIdentifierOf"/>
     
 
 
@@ -1360,11 +1421,11 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/base/main#hasGeologicAge -->
+    <!-- http://schema.geolink.org/dev/base/main#hasGeologicAgeUnit -->
 
-    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasGeologicAge">
-        <rdfs:label>hasGeologicAge</rdfs:label>
-        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasGeologicAgeUnit">
+        <rdfs:label>hasGeologicAgeUnit</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#GeologicAgeAppearance"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:unionOf rdf:parseType="Collection">
@@ -1373,6 +1434,16 @@
                 </owl:unionOf>
             </rdfs:Datatype>
         </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasGeologicAgeValue -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasGeologicAgeValue">
+        <rdfs:label>hasGeologicAgeValue</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#GeologicAgeAppearance"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
     </owl:DatatypeProperty>
     
 
@@ -1515,6 +1586,15 @@
                 </owl:unionOf>
             </rdfs:Datatype>
         </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasStageName -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasStageName">
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#GeologicAge"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
 
@@ -1812,6 +1892,30 @@
     <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#FormatType">
         <rdfs:label>FormatType</rdfs:label>
         <rdfs:comment>The type of data format for a DigitalObject</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#GeologicAge -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#GeologicAge">
+        <rdfs:label>GeologicAge</rdfs:label>
+        <rdfs:comment>Captures geologic age, e.g., jurassic, pleistocene, etc.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#GeologicAgeAppearance -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#GeologicAgeAppearance">
+        <rdfs:label>GeologicAgeAppearance</rdfs:label>
+        <rdfs:comment>This class essentially is intended to capture the relation exemplified by the sentence &quot;Pleistocene has first appearance of 1.6 million years before present&quot;. Here, Pleistocene is a geologic age, and &apos;hast first appearance&apos; points to an entity that has a value component and a unit component.
+Data providers can opt not to populate this class directly with explicit URI instances, but rather use blank nodes as instances of this class. An example set of triples would be as follows where the blank node that acts as the filler of the hasFirstAppearance property is an instance of this class:
+
+d:age1 a :GeologicAge .
+d:age1 :hasFirstAppearance 
+   [ :hasGeologicAgeValue &quot;1.6&quot;^^xsd:double ;
+     :hasGeologicAgeUnit iso31:Ma ] .</rdfs:comment>
     </owl:Class>
     
 
