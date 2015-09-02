@@ -1,1465 +1,2166 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<rdf:RDF
-	xmlns:wordn-sc="http://www.w3.org/2006/03/wn/wn20/schema/"
-	xmlns:nytimes="http://data.nytimes.com/"
-	xmlns:dbp-prop="http://dbpedia.org/property/"
-	xmlns:geo-pos="http://www.w3.org/2003/01/geo/wgs84_pos#"
-	xmlns:umbel-ac="http://umbel.org/umbel/ac/"
-	xmlns:geonames="http://sws.geonames.org/"
-	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-	xmlns:sw-vocab="http://www.w3.org/2003/06/sw-vocab-status/ns#"
-	xmlns:ff="http://factforge.net/"
-	xmlns:music-ont="http://purl.org/ontology/mo/"
-	xmlns:opencyc-en="http://sw.opencyc.org/2008/06/10/concept/en/"
-	xmlns:om="http://www.ontotext.com/owlim/"
-	xmlns:dbpedia="http://dbpedia.org/resource/"
-	xmlns:dc-term="http://purl.org/dc/terms/"
-	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-	xmlns:factbook="http://www.daml.org/2001/12/factbook/factbook-ont#"
-	xmlns:pext="http://proton.semanticweb.org/protonext#"
-	xmlns:oasis="http://psi.oasis-open.org/iso/639/#"
-	xmlns:dc="http://purl.org/dc/elements/1.1/"
-	xmlns:ot="http://www.ontotext.com/"
-	xmlns:geo-ont="http://www.geonames.org/ontology#"
-	xmlns:umbel-en="http://umbel.org/umbel/ne/wikipedia/"
-	xmlns:foaf="http://xmlns.com/foaf/0.1/"
-	xmlns:ptop="http://proton.semanticweb.org/protontop#"
-	xmlns:bbc-pont="http://purl.org/ontology/po/"
-	xmlns:lingvoj="http://www.lingvoj.org/ontology#"
-	xmlns:yago="http://mpii.de/yago/resource/"
-	xmlns:grg="http://www.isotc211.org/schemas/grg/"
-	xmlns:void="http://rdfs.org/ns/void#"
-	xmlns:fb="http://rdf.freebase.com/ns/"
-	xmlns:dbtune="http://dbtune.org/bbc/peel/work/"
-	xmlns:psys="http://proton.semanticweb.org/protonsys#"
-	xmlns:umbel="http://umbel.org/umbel#"
-	xmlns:pkm="http://proton.semanticweb.org/protonkm#"
-	xmlns:umbel-sc="http://umbel.org/umbel/sc/"
-	xmlns:wordnet16="http://xmlns.com/wordnet/1.6/"
-	xmlns:dbp-ont="http://dbpedia.org/ontology/"
-	xmlns:ub="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#"
-	xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-	xmlns:owl="http://www.w3.org/2002/07/owl#"
-	xmlns:wordnet="http://www.w3.org/2006/03/wn/wn20/instances/"
-	xmlns:gr="http://purl.org/goodrelations/v1#"
-	xmlns:skos="http://www.w3.org/2004/02/skos/core#"
-	xmlns:opencyc="http://sw.opencyc.org/concept/">
-<owl:Ontology rdf:about="http://schema.geolink.org/dev/voc/nvs/P03">
-	<rdfs:label>SeaDataNet Agreed Parameter Groups</rdfs:label>
-	<dc-term:date>2015-02-04 02:00:02.0</dc-term:date>
-	<rdfs:comment xml:lang="en">This ontology captures SeaDataNet Agreed Parameter Groups from NERC vocabulary server</rdfs:comment>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/"/>
-</owl:Ontology>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-<owl:Class rdf:about="http://schema.geolink.org/dev/view#MeasurementType"/>
-<owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#D005">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Acoustics</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/D005/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node214">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node215"/>
-<rdf:Description rdf:nodeID="node216">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#D005"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node215">
-	<owl:oneOf rdf:nodeID="node216"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node214">
-	<owl:someValuesFrom rdf:nodeID="node215"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#D005"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#Z005">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Administration and dimensions</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/Z005/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node217">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node218"/>
-<rdf:Description rdf:nodeID="node219">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#Z005"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node218">
-	<owl:oneOf rdf:nodeID="node219"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node217">
-	<owl:someValuesFrom rdf:nodeID="node218"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#Z005"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C003">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Amino acids</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/C003/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node220">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node221"/>
-<rdf:Description rdf:nodeID="node222">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#C003"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node221">
-	<owl:oneOf rdf:nodeID="node222"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node220">
-	<owl:someValuesFrom rdf:nodeID="node221"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#C003"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#H001">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Anthropogenic contamination</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/H001/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node223">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node224"/>
-<rdf:Description rdf:nodeID="node225">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#H001"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node224">
-	<owl:oneOf rdf:nodeID="node225"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node223">
-	<owl:someValuesFrom rdf:nodeID="node224"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#H001"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#M005">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Atmospheric chemistry</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/M005/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node226">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node227"/>
-<rdf:Description rdf:nodeID="node228">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#M005"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node227">
-	<owl:oneOf rdf:nodeID="node228"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node226">
-	<owl:someValuesFrom rdf:nodeID="node227"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#M005"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B005">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Bacteria and viruses</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/B005/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node229">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node230"/>
-<rdf:Description rdf:nodeID="node231">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#B005"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node230">
-	<owl:oneOf rdf:nodeID="node231"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node229">
-	<owl:someValuesFrom rdf:nodeID="node230"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#B005"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B070">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Biota abundance, biomass and diversity</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/B070/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node232">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node233"/>
-<rdf:Description rdf:nodeID="node234">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#B070"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node233">
-	<owl:oneOf rdf:nodeID="node234"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node232">
-	<owl:someValuesFrom rdf:nodeID="node233"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#B070"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B007">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Biota composition</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/B007/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node235">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node236"/>
-<rdf:Description rdf:nodeID="node237">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#B007"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node236">
-	<owl:oneOf rdf:nodeID="node237"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node235">
-	<owl:someValuesFrom rdf:nodeID="node236"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#B007"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B015">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Birds, mammals and reptiles</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/B015/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node238">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node239"/>
-<rdf:Description rdf:nodeID="node240">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#B015"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node239">
-	<owl:oneOf rdf:nodeID="node240"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node238">
-	<owl:someValuesFrom rdf:nodeID="node239"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#B015"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C005">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Carbon, nitrogen and phosphorus</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/C005/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node241">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node242"/>
-<rdf:Description rdf:nodeID="node243">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#C005"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node242">
-	<owl:oneOf rdf:nodeID="node243"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node241">
-	<owl:someValuesFrom rdf:nodeID="node242"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#C005"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C010">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Carbonate system</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/C010/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node244">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node245"/>
-<rdf:Description rdf:nodeID="node246">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#C010"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node245">
-	<owl:oneOf rdf:nodeID="node246"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node244">
-	<owl:someValuesFrom rdf:nodeID="node245"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#C010"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#H002">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Construction and structures</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/H002/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node247">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node248"/>
-<rdf:Description rdf:nodeID="node249">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#H002"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node248">
-	<owl:oneOf rdf:nodeID="node249"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node247">
-	<owl:someValuesFrom rdf:nodeID="node248"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#H002"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#M015">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Cryosphere</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/M015/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node250">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node251"/>
-<rdf:Description rdf:nodeID="node252">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#M015"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node251">
-	<owl:oneOf rdf:nodeID="node252"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node250">
-	<owl:someValuesFrom rdf:nodeID="node251"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#M015"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#D030">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Currents</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/D030/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#D010"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node253">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node254"/>
-<rdf:Description rdf:nodeID="node255">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#D030"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node254">
-	<owl:oneOf rdf:nodeID="node255"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node253">
-	<owl:someValuesFrom rdf:nodeID="node254"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#D030"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#D010">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Currents, sea level and waves</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/D010/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node256">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node257"/>
-<rdf:Description rdf:nodeID="node258">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#D010"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node257">
-	<owl:oneOf rdf:nodeID="node258"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node256">
-	<owl:someValuesFrom rdf:nodeID="node257"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#D010"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#D032">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Sea level</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/D032/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#D010"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node259">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node260"/>
-<rdf:Description rdf:nodeID="node261">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#D032"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node260">
-	<owl:oneOf rdf:nodeID="node261"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node259">
-	<owl:someValuesFrom rdf:nodeID="node260"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#D032"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#D034">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Waves</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/D034/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#D010"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node262">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node263"/>
-<rdf:Description rdf:nodeID="node264">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#D034"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node263">
-	<owl:oneOf rdf:nodeID="node264"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node262">
-	<owl:someValuesFrom rdf:nodeID="node263"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#D034"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B060">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Disease, damage and mortality</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/B060/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node265">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node266"/>
-<rdf:Description rdf:nodeID="node267">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#B060"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node266">
-	<owl:oneOf rdf:nodeID="node267"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node265">
-	<owl:someValuesFrom rdf:nodeID="node266"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#B060"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C015">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Dissolved gases</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/C015/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node268">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node269"/>
-<rdf:Description rdf:nodeID="node270">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#C015"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node269">
-	<owl:oneOf rdf:nodeID="node270"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node268">
-	<owl:someValuesFrom rdf:nodeID="node269"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#C015"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C017">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Fatty acids</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/C017/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node271">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node272"/>
-<rdf:Description rdf:nodeID="node273">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#C017"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node272">
-	<owl:oneOf rdf:nodeID="node273"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node271">
-	<owl:someValuesFrom rdf:nodeID="node272"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#C017"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#GPYS">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Field geophysics</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/GPYS/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node274">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node275"/>
-<rdf:Description rdf:nodeID="node276">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#GPYS"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node275">
-	<owl:oneOf rdf:nodeID="node276"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node274">
-	<owl:someValuesFrom rdf:nodeID="node275"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#GPYS"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B020">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Fish</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/B020/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node277">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node278"/>
-<rdf:Description rdf:nodeID="node279">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#B020"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node278">
-	<owl:oneOf rdf:nodeID="node279"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node277">
-	<owl:someValuesFrom rdf:nodeID="node278"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#B020"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#H004">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Fisheries</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/H004/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node280">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node281"/>
-<rdf:Description rdf:nodeID="node282">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#H004"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node281">
-	<owl:oneOf rdf:nodeID="node282"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node280">
-	<owl:someValuesFrom rdf:nodeID="node281"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#H004"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#O005">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Fluxes</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/O005/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node283">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node284"/>
-<rdf:Description rdf:nodeID="node285">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#O005"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node284">
-	<owl:oneOf rdf:nodeID="node285"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node283">
-	<owl:someValuesFrom rdf:nodeID="node284"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#O005"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G030">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Geochronology and stratigraphy</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/G030/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node286">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node287"/>
-<rdf:Description rdf:nodeID="node288">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#G030"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node287">
-	<owl:oneOf rdf:nodeID="node288"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node286">
-	<owl:someValuesFrom rdf:nodeID="node287"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#G030"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G020">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Sedimentary rock geochemistry and geochronology</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/G020/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node289">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node290"/>
-<rdf:Description rdf:nodeID="node291">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#G020"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node290">
-	<owl:oneOf rdf:nodeID="node291"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node289">
-	<owl:someValuesFrom rdf:nodeID="node290"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#G020"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G025">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Igneous and metamorphic rock geochemistry and geochronology</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/G025/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node292">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node293"/>
-<rdf:Description rdf:nodeID="node294">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#G025"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node293">
-	<owl:oneOf rdf:nodeID="node294"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node292">
-	<owl:someValuesFrom rdf:nodeID="node293"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#G025"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#GTHM">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Geothermal measurements</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/GTHM/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node295">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node296"/>
-<rdf:Description rdf:nodeID="node297">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#GTHM"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node296">
-	<owl:oneOf rdf:nodeID="node297"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node295">
-	<owl:someValuesFrom rdf:nodeID="node296"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#GTHM"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G005">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Gravity, magnetics and bathymetry</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/G005/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node298">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node299"/>
-<rdf:Description rdf:nodeID="node300">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#G005"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node299">
-	<owl:oneOf rdf:nodeID="node300"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node298">
-	<owl:someValuesFrom rdf:nodeID="node299"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#G005"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B050">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Habitat</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/B050/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node301">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node302"/>
-<rdf:Description rdf:nodeID="node303">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#B050"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node302">
-	<owl:oneOf rdf:nodeID="node303"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node301">
-	<owl:someValuesFrom rdf:nodeID="node302"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#B050"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C020">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Halocarbons (including freons)</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/C020/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node304">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node305"/>
-<rdf:Description rdf:nodeID="node306">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#C020"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node305">
-	<owl:oneOf rdf:nodeID="node306"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node304">
-	<owl:someValuesFrom rdf:nodeID="node305"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#C020"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#H005">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Human activity</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/H005/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node307">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node308"/>
-<rdf:Description rdf:nodeID="node309">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#H005"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node308">
-	<owl:oneOf rdf:nodeID="node309"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node307">
-	<owl:someValuesFrom rdf:nodeID="node308"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#H005"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C025">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Hydrocarbons</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/C025/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node310">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node311"/>
-<rdf:Description rdf:nodeID="node312">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#C025"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node311">
-	<owl:oneOf rdf:nodeID="node312"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node310">
-	<owl:someValuesFrom rdf:nodeID="node311"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#C025"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G035">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Rock and sediment chemistry</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/G035/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node313">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node314"/>
-<rdf:Description rdf:nodeID="node315">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#G035"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node314">
-	<owl:oneOf rdf:nodeID="node315"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node313">
-	<owl:someValuesFrom rdf:nodeID="node314"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#G035"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C030">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Isotopes</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/C030/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node316">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node317"/>
-<rdf:Description rdf:nodeID="node318">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#C030"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node317">
-	<owl:oneOf rdf:nodeID="node318"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node316">
-	<owl:someValuesFrom rdf:nodeID="node317"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#C030"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B055">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Macroalgae and seagrass</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/B055/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node319">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node320"/>
-<rdf:Description rdf:nodeID="node321">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#B055"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node320">
-	<owl:oneOf rdf:nodeID="node321"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node319">
-	<owl:someValuesFrom rdf:nodeID="node320"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#B055"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C035">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Metal and metalloid concentrations</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/C035/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node322">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node323"/>
-<rdf:Description rdf:nodeID="node324">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#C035"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node323">
-	<owl:oneOf rdf:nodeID="node324"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node322">
-	<owl:someValuesFrom rdf:nodeID="node323"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#C035"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#M010">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Meteorology</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/M010/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node325">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node326"/>
-<rdf:Description rdf:nodeID="node327">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#M010"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node326">
-	<owl:oneOf rdf:nodeID="node327"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node325">
-	<owl:someValuesFrom rdf:nodeID="node326"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#M010"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B025">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Microzooplankton</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/B025/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node328">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node329"/>
-<rdf:Description rdf:nodeID="node330">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#B025"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node329">
-	<owl:oneOf rdf:nodeID="node330"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node328">
-	<owl:someValuesFrom rdf:nodeID="node329"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#B025"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C040">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Nutrients</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/C040/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node331">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node332"/>
-<rdf:Description rdf:nodeID="node333">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#C040"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node332">
-	<owl:oneOf rdf:nodeID="node333"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node331">
-	<owl:someValuesFrom rdf:nodeID="node332"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#C040"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#D015">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Optical properties</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/D015/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node334">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node335"/>
-<rdf:Description rdf:nodeID="node336">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#D015"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node335">
-	<owl:oneOf rdf:nodeID="node336"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node334">
-	<owl:someValuesFrom rdf:nodeID="node335"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#D015"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B027">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Other biological measurements</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/B027/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node337">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node338"/>
-<rdf:Description rdf:nodeID="node339">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#B027"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node338">
-	<owl:oneOf rdf:nodeID="node339"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node337">
-	<owl:someValuesFrom rdf:nodeID="node338"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#B027"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C045">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Other inorganic chemical measurements</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/C045/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node340">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node341"/>
-<rdf:Description rdf:nodeID="node342">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#C045"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node341">
-	<owl:oneOf rdf:nodeID="node342"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node340">
-	<owl:someValuesFrom rdf:nodeID="node341"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#C045"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C050">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Other organic chemical measurements</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/C050/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node343">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node344"/>
-<rdf:Description rdf:nodeID="node345">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#C050"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node344">
-	<owl:oneOf rdf:nodeID="node345"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node343">
-	<owl:someValuesFrom rdf:nodeID="node344"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#C050"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#D020">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Other physical oceanographic measurements</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/D020/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node346">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node347"/>
-<rdf:Description rdf:nodeID="node348">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#D020"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node347">
-	<owl:oneOf rdf:nodeID="node348"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node346">
-	<owl:someValuesFrom rdf:nodeID="node347"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#D020"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C055">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">PCBs and organic micropollutants</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/C055/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node349">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node350"/>
-<rdf:Description rdf:nodeID="node351">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#C055"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node350">
-	<owl:oneOf rdf:nodeID="node351"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node349">
-	<owl:someValuesFrom rdf:nodeID="node350"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#C055"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#H003">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Palaeoclimate</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/H003/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node352">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node353"/>
-<rdf:Description rdf:nodeID="node354">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#H003"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node353">
-	<owl:oneOf rdf:nodeID="node354"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node352">
-	<owl:someValuesFrom rdf:nodeID="node353"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#H003"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B030">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Phytoplankton and microphytobenthos</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/B030/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node355">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node356"/>
-<rdf:Description rdf:nodeID="node357">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#B030"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node356">
-	<owl:oneOf rdf:nodeID="node357"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node355">
-	<owl:someValuesFrom rdf:nodeID="node356"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#B030"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B035">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Pigments</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/B035/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node358">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node359"/>
-<rdf:Description rdf:nodeID="node360">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#B035"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node359">
-	<owl:oneOf rdf:nodeID="node360"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node358">
-	<owl:someValuesFrom rdf:nodeID="node359"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#B035"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#O010">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Rate measurements (including production, excretion and grazing)</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/O010/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node361">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node362"/>
-<rdf:Description rdf:nodeID="node363">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#O010"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node362">
-	<owl:oneOf rdf:nodeID="node363"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node361">
-	<owl:someValuesFrom rdf:nodeID="node362"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#O010"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G055">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Rock and sediment biota</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/G055/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node364">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node365"/>
-<rdf:Description rdf:nodeID="node366">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#G055"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node365">
-	<owl:oneOf rdf:nodeID="node366"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node364">
-	<owl:someValuesFrom rdf:nodeID="node365"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#G055"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B040">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Zoobenthos</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/B040/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node367">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node368"/>
-<rdf:Description rdf:nodeID="node369">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#B040"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node368">
-	<owl:oneOf rdf:nodeID="node369"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node367">
-	<owl:someValuesFrom rdf:nodeID="node368"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#B040"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G045">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Rock and sediment lithology and mineralogy</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/G045/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node370">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node371"/>
-<rdf:Description rdf:nodeID="node372">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#G045"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node371">
-	<owl:oneOf rdf:nodeID="node372"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node370">
-	<owl:someValuesFrom rdf:nodeID="node371"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#G045"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G040">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Rock and sediment physical properties</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/G040/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node373">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node374"/>
-<rdf:Description rdf:nodeID="node375">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#G040"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node374">
-	<owl:oneOf rdf:nodeID="node375"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node373">
-	<owl:someValuesFrom rdf:nodeID="node374"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#G040"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G010">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Sediment properties</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/G010/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node376">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node377"/>
-<rdf:Description rdf:nodeID="node378">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#G010"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node377">
-	<owl:oneOf rdf:nodeID="node378"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node376">
-	<owl:someValuesFrom rdf:nodeID="node377"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#G010"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#GSED">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Rock and sediment sedimentology</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/GSED/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node379">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node380"/>
-<rdf:Description rdf:nodeID="node381">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#GSED"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node380">
-	<owl:oneOf rdf:nodeID="node381"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node379">
-	<owl:someValuesFrom rdf:nodeID="node380"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#GSED"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G050">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Sediment pore water chemistry</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/G050/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node382">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node383"/>
-<rdf:Description rdf:nodeID="node384">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#G050"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node383">
-	<owl:oneOf rdf:nodeID="node384"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node382">
-	<owl:someValuesFrom rdf:nodeID="node383"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#G050"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G060">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Sedimentation and erosion processes</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/G060/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node385">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node386"/>
-<rdf:Description rdf:nodeID="node387">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#G060"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node386">
-	<owl:oneOf rdf:nodeID="node387"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node385">
-	<owl:someValuesFrom rdf:nodeID="node386"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#G060"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G012">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Sonar and seismics</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/G012/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node388">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node389"/>
-<rdf:Description rdf:nodeID="node390">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#G012"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node389">
-	<owl:oneOf rdf:nodeID="node390"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node388">
-	<owl:someValuesFrom rdf:nodeID="node389"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#G012"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G015">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Suspended particulate material</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/G015/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node391">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node392"/>
-<rdf:Description rdf:nodeID="node393">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#G015"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node392">
-	<owl:oneOf rdf:nodeID="node393"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node391">
-	<owl:someValuesFrom rdf:nodeID="node392"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#G015"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#T001">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Terrestrial</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/T001/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node394">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node395"/>
-<rdf:Description rdf:nodeID="node396">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#T001"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node395">
-	<owl:oneOf rdf:nodeID="node396"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node394">
-	<owl:someValuesFrom rdf:nodeID="node395"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#T001"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#UWPH">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Underwater photography</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/UWPH/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node397">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node398"/>
-<rdf:Description rdf:nodeID="node399">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#UWPH"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node398">
-	<owl:oneOf rdf:nodeID="node399"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node397">
-	<owl:someValuesFrom rdf:nodeID="node398"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#UWPH"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#D025">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Water column temperature and salinity</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/D025/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node400">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node401"/>
-<rdf:Description rdf:nodeID="node402">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#D025"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node401">
-	<owl:oneOf rdf:nodeID="node402"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node400">
-	<owl:someValuesFrom rdf:nodeID="node401"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#D025"/>
-</rdf:Description>
-<owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B045">
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-	<rdf:type rdf:resource="http://schema.geolink.org/dev/view#MeasurementType"/>
-	<rdfs:label xml:lang="en">Zooplankton</rdfs:label>
-	<rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/B045/"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
-</owl:Class>
-<owl:Restriction rdf:nodeID="node403">
-	<owl:onProperty rdf:resource="http://schema.geolink.org/dev/view#hasMeasurementType"/>
-</owl:Restriction>
-<owl:Class rdf:nodeID="node404"/>
-<rdf:Description rdf:nodeID="node405">
-	<rdf:first rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#B045"/>
-	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node404">
-	<owl:oneOf rdf:nodeID="node405"/>
-</rdf:Description>
-<rdf:Description rdf:nodeID="node403">
-	<owl:someValuesFrom rdf:nodeID="node404"/>
-	<rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#B045"/>
-</rdf:Description>
+<?xml version="1.0"?>
 
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY ff "http://factforge.net/" >
+    <!ENTITY umbel "http://umbel.org/umbel#" >
+    <!ENTITY geonames "http://sws.geonames.org/" >
+    <!ENTITY nytimes "http://data.nytimes.com/" >
+    <!ENTITY ot "http://www.ontotext.com/" >
+    <!ENTITY void "http://rdfs.org/ns/void#" >
+    <!ENTITY dc-term "http://purl.org/dc/terms/" >
+    <!ENTITY umbel-ac "http://umbel.org/umbel/ac/" >
+    <!ENTITY umbel-sc "http://umbel.org/umbel/sc/" >
+    <!ENTITY foaf "http://xmlns.com/foaf/0.1/" >
+    <!ENTITY fb "http://rdf.freebase.com/ns/" >
+    <!ENTITY dbp-ont "http://dbpedia.org/ontology/" >
+    <!ENTITY dbpedia "http://dbpedia.org/resource/" >
+    <!ENTITY dbp-prop "http://dbpedia.org/property/" >
+    <!ENTITY bbc-pont "http://purl.org/ontology/po/" >
+    <!ENTITY music-ont "http://purl.org/ontology/mo/" >
+    <!ENTITY yago "http://mpii.de/yago/resource/" >
+    <!ENTITY wordnet16 "http://xmlns.com/wordnet/1.6/" >
+    <!ENTITY om "http://www.ontotext.com/owlim/" >
+    <!ENTITY opencyc "http://sw.opencyc.org/concept/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY lingvoj "http://www.lingvoj.org/ontology#" >
+    <!ENTITY dbtune "http://dbtune.org/bbc/peel/work/" >
+    <!ENTITY gr "http://purl.org/goodrelations/v1#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY geo-ont "http://www.geonames.org/ontology#" >
+    <!ENTITY oasis "http://psi.oasis-open.org/iso/639/#" >
+    <!ENTITY skos "http://www.w3.org/2004/02/skos/core#" >
+    <!ENTITY grg "http://www.isotc211.org/schemas/grg/" >
+    <!ENTITY umbel-en "http://umbel.org/umbel/ne/wikipedia/" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY pkm "http://proton.semanticweb.org/protonkm#" >
+    <!ENTITY geo-pos "http://www.w3.org/2003/01/geo/wgs84_pos#" >
+    <!ENTITY psys "http://proton.semanticweb.org/protonsys#" >
+    <!ENTITY ptop "http://proton.semanticweb.org/protontop#" >
+    <!ENTITY pext "http://proton.semanticweb.org/protonext#" >
+    <!ENTITY wordn-sc "http://www.w3.org/2006/03/wn/wn20/schema/" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY opencyc-en "http://sw.opencyc.org/2008/06/10/concept/en/" >
+    <!ENTITY wordnet "http://www.w3.org/2006/03/wn/wn20/instances/" >
+    <!ENTITY sw-vocab "http://www.w3.org/2003/06/sw-vocab-status/ns#" >
+    <!ENTITY factbook "http://www.daml.org/2001/12/factbook/factbook-ont#" >
+    <!ENTITY ub "http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://schema.geolink.org/dev/voc/nvs/P03#"
+     xml:base="http://schema.geolink.org/dev/voc/nvs/P03"
+     xmlns:ff="http://factforge.net/"
+     xmlns:opencyc-en="http://sw.opencyc.org/2008/06/10/concept/en/"
+     xmlns:umbel-sc="http://umbel.org/umbel/sc/"
+     xmlns:oasis="http://psi.oasis-open.org/iso/639/#"
+     xmlns:geonames="http://sws.geonames.org/"
+     xmlns:pext="http://proton.semanticweb.org/protonext#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:yago="http://mpii.de/yago/resource/"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:ub="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#"
+     xmlns:ptop="http://proton.semanticweb.org/protontop#"
+     xmlns:umbel-ac="http://umbel.org/umbel/ac/"
+     xmlns:umbel="http://umbel.org/umbel#"
+     xmlns:pkm="http://proton.semanticweb.org/protonkm#"
+     xmlns:geo-ont="http://www.geonames.org/ontology#"
+     xmlns:opencyc="http://sw.opencyc.org/concept/"
+     xmlns:lingvoj="http://www.lingvoj.org/ontology#"
+     xmlns:bbc-pont="http://purl.org/ontology/po/"
+     xmlns:grg="http://www.isotc211.org/schemas/grg/"
+     xmlns:om="&ot;owlim/"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:nytimes="http://data.nytimes.com/"
+     xmlns:factbook="http://www.daml.org/2001/12/factbook/factbook-ont#"
+     xmlns:wordnet16="http://xmlns.com/wordnet/1.6/"
+     xmlns:wordn-sc="http://www.w3.org/2006/03/wn/wn20/schema/"
+     xmlns:music-ont="http://purl.org/ontology/mo/"
+     xmlns:void="http://rdfs.org/ns/void#"
+     xmlns:ot="http://www.ontotext.com/"
+     xmlns:psys="http://proton.semanticweb.org/protonsys#"
+     xmlns:umbel-en="http://umbel.org/umbel/ne/wikipedia/"
+     xmlns:dbpedia="http://dbpedia.org/resource/"
+     xmlns:sw-vocab="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+     xmlns:gr="http://purl.org/goodrelations/v1#"
+     xmlns:dbp-ont="http://dbpedia.org/ontology/"
+     xmlns:geo-pos="http://www.w3.org/2003/01/geo/wgs84_pos#"
+     xmlns:dc-term="http://purl.org/dc/terms/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:wordnet="http://www.w3.org/2006/03/wn/wn20/instances/"
+     xmlns:dbtune="http://dbtune.org/bbc/peel/work/"
+     xmlns:dbp-prop="http://dbpedia.org/property/"
+     xmlns:fb="http://rdf.freebase.com/ns/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <owl:Ontology rdf:about="http://schema.geolink.org/dev/voc/nvs/P03">
+        <rdfs:label>SeaDataNet Agreed Parameter Groups</rdfs:label>
+        <dc-term:date>2015-02-04 02:00:02.0</dc-term:date>
+        <rdfs:comment xml:lang="en">This ontology captures SeaDataNet Agreed Parameter Groups from NERC vocabulary server</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasMeasurementType -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#MeasurementType -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#B005 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B005">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#B007 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B007">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#B015 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B015">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#B020 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B020">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#B025 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B025">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#B027 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B027">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#B030 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B030">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#B035 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B035">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#B040 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B040">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#B045 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B045">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#B050 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B050">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#B055 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B055">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#B060 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B060">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#B070 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B070">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#C003 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C003">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#C005 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C005">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#C010 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C010">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#C015 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C015">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#C017 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C017">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#C020 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C020">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#C025 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C025">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#C030 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C030">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#C035 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C035">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#C040 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C040">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#C045 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C045">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#C050 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C050">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#C055 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C055">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#D005 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#D005">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#D010 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#D010">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#D015 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#D015">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#D020 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#D020">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#D025 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#D025">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#D030 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#D030">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#D010"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#D032 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#D032">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#D010"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#D034 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#D034">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#D010"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#G005 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G005">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#G010 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G010">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#G012 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G012">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#G015 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G015">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#G020 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G020">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#G025 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G025">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#G030 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G030">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#G035 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G035">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#G040 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G040">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#G045 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G045">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#G050 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G050">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#G055 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G055">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#G060 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G060">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#GPYS -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#GPYS">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#GSED -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#GSED">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#GTHM -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#GTHM">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#H001 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#H001">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#H002 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#H002">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#H003 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#H003">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#H004 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#H004">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#H005 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#H005">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#M005 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#M005">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#M010 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#M010">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#M015 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#M015">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#O005 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#O005">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#O010 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#O010">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#T001 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#T001">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#UWPH -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#UWPH">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#Z005 -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#Z005">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#SeaDataNetParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#B005 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B005">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#B007 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B007">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#B015 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B015">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#B020 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B020">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#B025 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B025">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#B027 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B027">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#B030 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B030">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#B035 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B035">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#B040 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B040">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#B045 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B045">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#B050 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B050">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#B055 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B055">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#B060 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B060">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#B070 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B070">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#C003 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C003">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#C005 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C005">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#C010 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C010">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#C015 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C015">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#C017 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C017">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#C020 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C020">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#C025 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C025">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#C030 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C030">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#C035 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C035">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#C040 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C040">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#C045 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C045">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#C050 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C050">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#C055 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C055">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#D005 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#D005">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#D010 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#D010">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#D015 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#D015">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#D020 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#D020">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#D025 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#D025">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#D030 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#D030">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#D032 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#D032">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#D034 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#D034">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#G005 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G005">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#G010 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G010">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#G012 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G012">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#G015 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G015">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#G020 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G020">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#G025 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G025">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#G030 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G030">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#G035 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G035">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#G040 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G040">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#G045 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G045">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#G050 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G050">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#G055 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G055">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#G060 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G060">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#GPYS -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#GPYS">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#GSED -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#GSED">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#GTHM -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#GTHM">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#H001 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#H001">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#H002 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#H002">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#H003 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#H003">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#H004 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#H004">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#H005 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#H005">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#M005 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#M005">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#M010 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#M010">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#M015 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#M015">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#O005 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#O005">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#O010 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#O010">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#T001 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#T001">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#UWPH -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#UWPH">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/nvs/P03#Z005 -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#Z005">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B025">
+        <rdfs:label xml:lang="en">Microzooplankton</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/B025/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B027">
+        <rdfs:label xml:lang="en">Other biological measurements</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/B027/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#D005">
+        <rdfs:label xml:lang="en">Acoustics</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/D005/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B020">
+        <rdfs:label xml:lang="en">Fish</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/B020/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C035">
+        <rdfs:label xml:lang="en">Metal and metalloid concentrations</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/C035/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G035">
+        <rdfs:label xml:lang="en">Rock and sediment chemistry</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/G035/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B060">
+        <rdfs:label xml:lang="en">Disease, damage and mortality</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/B060/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C030">
+        <rdfs:label xml:lang="en">Isotopes</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/C030/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G030">
+        <rdfs:label xml:lang="en">Geochronology and stratigraphy</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/G030/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#M015">
+        <rdfs:label xml:lang="en">Cryosphere</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/M015/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#H001">
+        <rdfs:label xml:lang="en">Anthropogenic contamination</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/H001/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#H002">
+        <rdfs:label xml:lang="en">Construction and structures</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/H002/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#H003">
+        <rdfs:label xml:lang="en">Palaeoclimate</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/H003/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#H004">
+        <rdfs:label xml:lang="en">Fisheries</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/H004/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#H005">
+        <rdfs:label xml:lang="en">Human activity</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/H005/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#UWPH">
+        <rdfs:label xml:lang="en">Underwater photography</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/UWPH/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B035">
+        <rdfs:label xml:lang="en">Pigments</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/B035/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C003">
+        <rdfs:label xml:lang="en">Amino acids</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/C003/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#D015">
+        <rdfs:label xml:lang="en">Optical properties</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/D015/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C005">
+        <rdfs:label xml:lang="en">Carbon, nitrogen and phosphorus</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/C005/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G005">
+        <rdfs:label xml:lang="en">Gravity, magnetics and bathymetry</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/G005/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C045">
+        <rdfs:label xml:lang="en">Other inorganic chemical measurements</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/C045/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C040">
+        <rdfs:label xml:lang="en">Nutrients</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/C040/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G045">
+        <rdfs:label xml:lang="en">Rock and sediment lithology and mineralogy</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/G045/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#D010">
+        <rdfs:label xml:lang="en">Currents, sea level and waves</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/D010/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B030">
+        <rdfs:label xml:lang="en">Phytoplankton and microphytobenthos</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/B030/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B070">
+        <rdfs:label xml:lang="en">Biota abundance, biomass and diversity</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/B070/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G040">
+        <rdfs:label xml:lang="en">Rock and sediment physical properties</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/G040/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#O010">
+        <rdfs:label xml:lang="en">Rate measurements (including production, excretion and grazing)</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/O010/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#Z005">
+        <rdfs:label xml:lang="en">Administration and dimensions</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/Z005/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#O005">
+        <rdfs:label xml:lang="en">Fluxes</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/O005/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#GSED">
+        <rdfs:label xml:lang="en">Rock and sediment sedimentology</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/GSED/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C015">
+        <rdfs:label xml:lang="en">Dissolved gases</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/C015/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B005">
+        <rdfs:label xml:lang="en">Bacteria and viruses</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/B005/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C017">
+        <rdfs:label xml:lang="en">Fatty acids</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/C017/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C055">
+        <rdfs:label xml:lang="en">PCBs and organic micropollutants</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/C055/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#D025">
+        <rdfs:label xml:lang="en">Water column temperature and salinity</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/D025/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C010">
+        <rdfs:label xml:lang="en">Carbonate system</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/C010/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G015">
+        <rdfs:label xml:lang="en">Suspended particulate material</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/G015/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B045">
+        <rdfs:label xml:lang="en">Zooplankton</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/B045/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#D020">
+        <rdfs:label xml:lang="en">Other physical oceanographic measurements</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/D020/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G012">
+        <rdfs:label xml:lang="en">Sonar and seismics</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/G012/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C050">
+        <rdfs:label xml:lang="en">Other organic chemical measurements</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/C050/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G055">
+        <rdfs:label xml:lang="en">Rock and sediment biota</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/G055/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G010">
+        <rdfs:label xml:lang="en">Sediment properties</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/G010/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B040">
+        <rdfs:label xml:lang="en">Zoobenthos</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/B040/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G050">
+        <rdfs:label xml:lang="en">Sediment pore water chemistry</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/G050/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#GPYS">
+        <rdfs:label xml:lang="en">Field geophysics</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/GPYS/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G060">
+        <rdfs:label xml:lang="en">Sedimentation and erosion processes</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/G060/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B007">
+        <rdfs:label xml:lang="en">Biota composition</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/B007/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#GTHM">
+        <rdfs:label xml:lang="en">Geothermal measurements</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/GTHM/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C025">
+        <rdfs:label xml:lang="en">Hydrocarbons</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/C025/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B015">
+        <rdfs:label xml:lang="en">Birds, mammals and reptiles</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/B015/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G025">
+        <rdfs:label xml:lang="en">Igneous and metamorphic rock geochemistry and geochronology</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/G025/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#D034">
+        <rdfs:label xml:lang="en">Waves</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/D034/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B055">
+        <rdfs:label xml:lang="en">Macroalgae and seagrass</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/B055/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B050">
+        <rdfs:label xml:lang="en">Habitat</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/B050/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#D032">
+        <rdfs:label xml:lang="en">Sea level</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/D032/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C020">
+        <rdfs:label xml:lang="en">Halocarbons (including freons)</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/C020/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#D030">
+        <rdfs:label xml:lang="en">Currents</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/D030/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#M010">
+        <rdfs:label xml:lang="en">Meteorology</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/M010/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#T001">
+        <rdfs:label xml:lang="en">Terrestrial</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/T001/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G020">
+        <rdfs:label xml:lang="en">Sedimentary rock geochemistry and geochronology</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/G020/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#M005">
+        <rdfs:label xml:lang="en">Atmospheric chemistry</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/P03/current/M005/"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#M005"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#M005"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#C020"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C020"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#D034"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#D034"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#C030"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C030"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#GSED"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#GSED"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#B070"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B070"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#C010"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C010"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#G040"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G040"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#G020"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G020"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#H002"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#H002"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#B055"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B055"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#G012"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G012"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#C055"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C055"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#G055"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G055"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#C050"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C050"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#B040"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B040"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#B035"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B035"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#G060"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G060"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#G010"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G010"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#C045"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C045"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#G030"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G030"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#UWPH"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#UWPH"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#C025"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C025"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#C005"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C005"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#M015"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#M015"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#B030"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B030"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#B007"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B007"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#G050"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G050"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#C003"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C003"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#B020"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B020"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#H005"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#H005"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#B060"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B060"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#D030"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#D030"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#GTHM"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#GTHM"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#C015"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C015"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#D032"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#D032"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#H001"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#H001"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#D025"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#D025"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#G045"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G045"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#D010"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#D010"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#B027"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B027"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#C035"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C035"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#Z005"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#Z005"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#M010"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#M010"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#G005"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G005"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#C040"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C040"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#G025"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G025"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#G035"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G035"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#B045"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B045"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#B050"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B050"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#B025"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B025"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#O005"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#O005"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#D005"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#D005"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#B015"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B015"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#D020"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#D020"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#H004"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#H004"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#C017"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#C017"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#O010"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#O010"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#GPYS"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#GPYS"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#G015"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#G015"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#T001"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#T001"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#D015"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#D015"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#B005"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#B005"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03#H003"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/P03#H003"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+    </owl:Restriction>
 </rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+
