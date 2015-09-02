@@ -128,7 +128,7 @@
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasAuthor">
         <rdfs:label>hasAuthor</rdfs:label>
-        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Publication"/>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Document"/>
         <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isAuthorOf"/>
         <rdfs:range>
             <owl:Class>
@@ -352,8 +352,8 @@
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Dataset"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#DigitalObject"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Document"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Publication"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -612,9 +612,9 @@
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Award"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Cruise"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Dataset"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Document"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Program"/>
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Publication"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -787,8 +787,8 @@
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Dataset"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#DigitalObject"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Document"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Publication"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -1444,8 +1444,8 @@
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Award"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Cruise"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Dataset"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Document"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Program"/>
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Publication"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -1813,6 +1813,7 @@
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Cruise"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Dataset"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#DigitalObject"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Document"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Feature"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Instrument"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Organization"/>
@@ -1820,7 +1821,6 @@
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Place"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Program"/>
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Publication"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -1935,13 +1935,13 @@
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Cruise"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Dataset"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#DigitalObject"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Document"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Feature"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Instrument"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Organization"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Person"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Place"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Program"/>
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Publication"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -2010,6 +2010,15 @@
     <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#DigitalObject">
         <rdfs:label>DigitalObject</rdfs:label>
         <rdfs:comment>A digital representation of a Thing</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#Document -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#Document">
+        <rdfs:label>Document</rdfs:label>
+        <rdfs:comment>A citable, creative work.</rdfs:comment>
     </owl:Class>
     
 
@@ -2201,15 +2210,6 @@ d:age1 :hasFirstAppearance
     <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#Program">
         <rdfs:label>Program</rdfs:label>
         <rdfs:comment>A formally recognized scientific effort receiving significant funding, requiring large scale coordination</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/dev/base/main#Publication -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#Publication">
-        <rdfs:label>Publication</rdfs:label>
-        <rdfs:comment>A citable, creative work.</rdfs:comment>
     </owl:Class>
     
 
