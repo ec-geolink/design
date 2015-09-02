@@ -1335,6 +1335,16 @@
     
 
 
+    <!-- http://schema.geolink.org/dev/base/main#accordingTo -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#accordingTo">
+        <rdfs:label>accordingTo</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#GeologicAge"/>
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://schema.geolink.org/dev/base/main#acronym -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#acronym">
