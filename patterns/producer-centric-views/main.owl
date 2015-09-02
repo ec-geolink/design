@@ -1969,6 +1969,15 @@ d:age1 :hasFirstAppearance
     
 
 
+    <!-- http://schema.geolink.org/dev/base/main#Meeting -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#Meeting">
+        <rdfs:label>Meeting</rdfs:label>
+        <rdfs:comment>To represent, e.g., &quot;Person W attends Conference X at Place Y which occurred on Start/End Dates Z1-Z2&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
     <!-- http://schema.geolink.org/dev/base/main#Organization -->
 
     <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#Organization">
