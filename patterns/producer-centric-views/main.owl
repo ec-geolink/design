@@ -1413,26 +1413,6 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/base/main#abstract -->
-
-    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#abstract">
-        <rdfs:label>abstract</rdfs:label>
-        <rdfs:range rdf:resource="&xsd;string"/>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Award"/>
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Cruise"/>
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Dataset"/>
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Program"/>
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Publication"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- http://schema.geolink.org/dev/base/main#accordingTo -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#accordingTo">
@@ -1449,6 +1429,26 @@
         <rdfs:label>acronym</rdfs:label>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Program"/>
         <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasAbstract -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasAbstract">
+        <rdfs:label>hasAbstract</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Award"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Cruise"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Dataset"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Program"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Publication"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
     </owl:DatatypeProperty>
     
 
