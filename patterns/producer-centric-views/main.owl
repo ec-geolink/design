@@ -2117,6 +2117,15 @@ d:age1 :hasFirstAppearance
     
 
 
+    <!-- http://schema.geolink.org/dev/base/main#Station -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#Station">
+        <rdfs:label>Station</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Place"/>
+    </owl:Class>
+    
+
+
     <!-- http://schema.geolink.org/dev/base/main#Vessel -->
 
     <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#Vessel">
