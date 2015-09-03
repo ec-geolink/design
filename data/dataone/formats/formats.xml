@@ -234,8 +234,14 @@
   <rdf:Description rdf:nodeID="http://schema.geolink.org/dev/voc/dataone/format#063">
     <rdfs:label>audio/x-ms-wma</rdfs:label>
   </rdf:Description>
+  <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/dataone/format#112">
+    <glview:description>BagIt File Packaging Format Version 0.97</glview:description>
+  </rdf:Description>
   <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/dataone/format#079">
     <glview:description>Ecological Metadata Language, Dataset module, version 2.0.0beta4</glview:description>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="http://schema.geolink.org/dev/voc/dataone/format#112">
+    <glview:hasIdentifierScheme rdf:resource="http://purl.org/spar/datacite/local-resource-identifier-scheme"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="http://schema.geolink.org/dev/voc/dataone/format#069">
     <rdfs:label>application/x-bzip2</rdfs:label>
@@ -373,7 +379,7 @@
     <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Format"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="http://schema.geolink.org/dev/voc/dataone/format#110">
-    <rdfs:label>http://www.isotc211.org/2005/gmd</rdfs:label>
+    <rdfs:label>http://docs.annotatorjs.org/en/v1.2.x/annotation-format.html</rdfs:label>
   </rdf:Description>
   <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/dataone/format#046">
     <glview:formatType>DATA</glview:formatType>
@@ -837,6 +843,9 @@
   <rdf:Description rdf:nodeID="http://schema.geolink.org/dev/voc/dataone/format#039">
     <rdfs:label>http://www.w3.org/TR/rdfa-syntax</rdfs:label>
   </rdf:Description>
+  <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/dataone/format#111">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Format"/>
+  </rdf:Description>
   <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/dataone/format#077">
     <glview:identifier rdf:nodeID="http://schema.geolink.org/dev/voc/dataone/format#077"/>
   </rdf:Description>
@@ -957,6 +966,9 @@
   <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/dataone/format#020">
     <glview:formatType>DATA</glview:formatType>
   </rdf:Description>
+  <rdf:Description rdf:nodeID="http://schema.geolink.org/dev/voc/dataone/format#111">
+    <glview:hasIdentifierValue>http://www.isotc211.org/2005/gmd</glview:hasIdentifierValue>
+  </rdf:Description>
   <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/dataone/format#069">
     <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Format"/>
   </rdf:Description>
@@ -995,6 +1007,9 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="http://schema.geolink.org/dev/voc/dataone/format#070">
     <glview:hasIdentifierScheme rdf:resource="http://purl.org/spar/datacite/local-resource-identifier-scheme"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="http://schema.geolink.org/dev/voc/dataone/format#112">
+    <glview:hasIdentifierValue>application/bagit-097</glview:hasIdentifierValue>
   </rdf:Description>
   <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/dataone/format#010">
     <glview:formatType>METADATA</glview:formatType>
@@ -1116,11 +1131,17 @@
   <rdf:Description rdf:nodeID="http://schema.geolink.org/dev/voc/dataone/format#017">
     <rdfs:label>http://www.cuahsi.org/waterML/1.1/</rdfs:label>
   </rdf:Description>
+  <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/dataone/format#111">
+    <glview:identifier rdf:nodeID="http://schema.geolink.org/dev/voc/dataone/format#111"/>
+  </rdf:Description>
   <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/dataone/format#041">
     <glview:formatType>DATA</glview:formatType>
   </rdf:Description>
   <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/dataone/format#066">
     <glview:identifier rdf:nodeID="http://schema.geolink.org/dev/voc/dataone/format#066"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/dataone/format#112">
+    <glview:identifier rdf:nodeID="http://schema.geolink.org/dev/voc/dataone/format#112"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/dataone/format#058">
     <glview:identifier rdf:nodeID="http://schema.geolink.org/dev/voc/dataone/format#058"/>
@@ -1431,6 +1452,9 @@
   <rdf:Description rdf:nodeID="http://schema.geolink.org/dev/voc/dataone/format#027">
     <glview:hasIdentifierValue>image/png</glview:hasIdentifierValue>
   </rdf:Description>
+  <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/dataone/format#111">
+    <glview:formatType>METADATA</glview:formatType>
+  </rdf:Description>
   <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/dataone/format#009">
     <glview:formatType>METADATA</glview:formatType>
   </rdf:Description>
@@ -1443,8 +1467,14 @@
   <rdf:Description rdf:nodeID="http://schema.geolink.org/dev/voc/dataone/format#075">
     <glview:hasIdentifierScheme rdf:resource="http://purl.org/spar/datacite/local-resource-identifier-scheme"/>
   </rdf:Description>
+  <rdf:Description rdf:nodeID="http://schema.geolink.org/dev/voc/dataone/format#111">
+    <rdfs:label>http://www.isotc211.org/2005/gmd</rdfs:label>
+  </rdf:Description>
   <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/dataone/format#110">
-    <glview:formatType>METADATA</glview:formatType>
+    <glview:formatType>RESOURCE</glview:formatType>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="http://schema.geolink.org/dev/voc/dataone/format#111">
+    <glview:hasIdentifierScheme rdf:resource="http://purl.org/spar/datacite/local-resource-identifier-scheme"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="http://schema.geolink.org/dev/voc/dataone/format#109">
     <rdf:type rdf:resource="http://purl.org/spar/datacite/ResourceIdentifier"/>
@@ -1583,6 +1613,9 @@
   </rdf:Description>
   <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/dataone/format#022">
     <glview:description>Comma Separated Values Text</glview:description>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="http://schema.geolink.org/dev/voc/dataone/format#112">
+    <rdf:type rdf:resource="http://purl.org/spar/datacite/ResourceIdentifier"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="http://schema.geolink.org/dev/voc/dataone/format#043">
     <rdfs:label>http://purl.org/dryad/terms/</rdfs:label>
@@ -1767,6 +1800,9 @@
   <rdf:Description rdf:nodeID="http://schema.geolink.org/dev/voc/dataone/format#081">
     <glview:hasIdentifierScheme rdf:resource="http://purl.org/spar/datacite/local-resource-identifier-scheme"/>
   </rdf:Description>
+  <rdf:Description rdf:nodeID="http://schema.geolink.org/dev/voc/dataone/format#112">
+    <rdfs:label>application/bagit-097</rdfs:label>
+  </rdf:Description>
   <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/dataone/format#042">
     <glview:description>Dryad Metadata Application Profile Version 3.1</glview:description>
   </rdf:Description>
@@ -1942,7 +1978,7 @@
     <glview:hasIdentifierScheme rdf:resource="http://purl.org/spar/datacite/local-resource-identifier-scheme"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="http://schema.geolink.org/dev/voc/dataone/format#110">
-    <glview:hasIdentifierValue>http://www.isotc211.org/2005/gmd</glview:hasIdentifierValue>
+    <glview:hasIdentifierValue>http://docs.annotatorjs.org/en/v1.2.x/annotation-format.html</glview:hasIdentifierValue>
   </rdf:Description>
   <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/dataone/format#002">
     <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Format"/>
@@ -2191,7 +2227,7 @@
     <glview:description>Microsoft Excel file format</glview:description>
   </rdf:Description>
   <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/dataone/format#110">
-    <glview:description>Geographic MetaData (GMD) Extensible Markup Language</glview:description>
+    <glview:description>AnnotatorJS 1.2.x Annotation model</glview:description>
   </rdf:Description>
   <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/dataone/format#012">
     <glview:description>NetCDF Climate and Forecast Metadata Convention, version 1.1</glview:description>
@@ -2237,6 +2273,9 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="http://schema.geolink.org/dev/voc/dataone/format#009">
     <rdfs:label>INCITS-453-2009</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/dataone/format#111">
+    <glview:description>Geographic MetaData (GMD) Extensible Markup Language</glview:description>
   </rdf:Description>
   <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/dataone/format#055">
     <glview:formatType>DATA</glview:formatType>
@@ -2430,6 +2469,9 @@
   <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/dataone/format#038">
     <glview:identifier rdf:nodeID="http://schema.geolink.org/dev/voc/dataone/format#038"/>
   </rdf:Description>
+  <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/dataone/format#112">
+    <glview:formatType>DATA</glview:formatType>
+  </rdf:Description>
   <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/dataone/format#098">
     <glview:description>Ecological Metadata Language, Physical module, version 2.0.0beta6</glview:description>
   </rdf:Description>
@@ -2568,6 +2610,9 @@
   <rdf:Description rdf:nodeID="http://schema.geolink.org/dev/voc/dataone/format#104">
     <rdf:type rdf:resource="http://purl.org/spar/datacite/ResourceIdentifier"/>
   </rdf:Description>
+  <rdf:Description rdf:nodeID="http://schema.geolink.org/dev/voc/dataone/format#111">
+    <rdf:type rdf:resource="http://purl.org/spar/datacite/ResourceIdentifier"/>
+  </rdf:Description>
   <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/dataone/format#061">
     <glview:formatType>DATA</glview:formatType>
   </rdf:Description>
@@ -2632,6 +2677,9 @@
     <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Format"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/dataone/format#082">
+    <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Format"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/dataone/format#112">
     <rdf:type rdf:resource="http://schema.geolink.org/dev/view#Format"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="http://schema.geolink.org/dev/voc/dataone/format#087">

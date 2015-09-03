@@ -1,10 +1,32 @@
 """ eml.py
 
-    Processing functions for processing eml
+    Processing functions for processing EML
+
+    The contents of the <creator> tags are extracted.
+    <creator>s are formatted according to the eml-party module.
+
+    EML eml-party Module:
+
+    - creator
+        - individualName [0:1] {required OR organizationName/positionName}
+            - surName [1] {required}
+            - givenName [0:n]
+            - salutation [0:n]
+        - organizationName [0:n] {required OR individualName/positionName}
+        - positionName [0:1] {required OR individualName/organizationName}
+        - address [0:n]
+        - phone [0:n]
+        - electronicMailAddress [0:n]
+        - address [0:n]
+            - deliveryPoint [0:n]
+            - city [0:1]
+            - administrativeArea [0:1]
+            - postalCode [0:1]
+            - country [0:1]
 """
 
-import re
-from people import find
+# TODO: Check out whether this stuff changes over spec versions
+# TODO: Check if the eml- subfiles need to be processed
 
 
 def process(job, xmldoc, document):
@@ -16,208 +38,159 @@ def process(job, xmldoc, document):
     # Process each <creator>
     creators = xmldoc.findall(".//creator")
 
+    records = []
+
     for creator in creators:
-        processCreator(job,
-                       creator,
-                       document)
+        processed_creators = processCreator(job,
+                                            creator,
+                                            document)
+
+        for processed_creator in processed_creators:
+            records.append(processed_creator)
+
+    return records
 
 
 def processCreator(job, creator, document):
-    """Process the <creator> tag in an EML document"""
-
-    if creator.find("./individualName") is not None:
-        person = processCreatorIndividual(job,
-                                          creator,
-                                          document)
-
-        processPerson(job, person, document)
-
-    elif creator.find("./organizationName") is not None:
-        organization = processCreatorOrganization(job,
-                                                  creator,
-                                                  document)
-
-        processOrganization(job, organization, document)
-
-
-def processPerson(job, person, document):
-    """ Processes a parsed EML creator that is an individual"""
-
-    if not person:
-        return
-
-    match = find.findPerson(job, person)
-
-    if match == -1:
-        person["documents"] = [str(document)]
-
-        job.people.append(person)
-    else:
-        existing = job.people[match]
-
-        if "documents" in existing:
-            existing["documents"].append(str(document))
-        else:
-            existing["documents"] = [str(document)]
-
-
-def processOrganization(job, organization, document):
-    """ Processes a parsed EML creator that is an organization"""
-
-    if not organization:
-        return
-
-    match = find.findOrganization(job, organization)
-
-    if match == -1:
-        organization["documents"] = [str(document)]
-
-        job.organizations.append(organization)
-    else:
-        existing = job.organizations[match]
-
-        if "documents" in existing:
-            existing["documents"].append(str(document))
-        else:
-            existing["documents"] = [str(document)]
-
-
-def processCreatorIndividual(job, creator, document):
     """ Proccess a <creator> tag for an individual.
-
-        Processing involves two steps:
-
-            1. Parsing relevant information (e.g. name)
-            2. Scoring that information against existing records.
     """
 
-    person = {}
+    """ When a creator has multiple organizations, we duplicate their record
+    once for each organization."""
+    records = []
+    record = {}
 
     individual = creator.find("./individualName")
+    organizations = creator.findall("./organizationName")
+
+    # Process individual or organization
+    if individual is not None:  # Individual
+        record = processIndividual(record, individual)
+        # NOTE: We'll add this peron's organizations later
+    elif organizations is not None:  # Organizaiton
+        org_strings = []
+
+        for organization in organizations:
+            org_text = organization.text
+
+            if org_text is not None:
+                org_strings.append(org_text.strip())
+
+        if len(org_strings) > 0:
+            record['name'] = " ".join([o for o in org_strings if o is not None and len(o) > 0])
+
+    address = creator.find("./address")
+
+    if address is not None:
+        record = processAddress(record, address)
+
+    email = creator.find("./electronicMailAddress")
+
+    if email is not None and email.text is not None:
+        record['email'] = email.text.strip()
+
+    phone = creator.find("./phone[@phonetype='voice']")
+
+    if phone is not None and phone.text is not None:
+        record['phone'] = phone.text.strip()
+
+    record['document'] = document
+    record['format'] = "EML"
+    record['source'] = 'creator'
 
     if individual is not None:
-        salutation = individual.find("./salutation")
-        given_name = individual.find("./givenName")
-        sur_name = individual.find("./surName")
+        record['type'] = 'person'
 
-        person = processSalutation(person, salutation)
-        person = processGivenName(person, given_name)
-        person = processSurName(person, sur_name)
+        for organization in organizations:
+            if organization.text is not None:
+                org_text = organization.text.strip()
 
-    user_id = creator.find("./userId")
-    person = processUserId(person, user_id)
+                new_record = record.copy()
+                new_record['organization'] = org_text
+                records.append(new_record)
+    else:
+        record['type'] = 'organization'
 
-    email = creator.find("./electronicMailAddress")
-    person = processEmail(person, email)
-
-    return person
+    return records
 
 
-def processCreatorOrganization(job, creator, document):
-    """ Proccess a <creator> tag for an organization.
+def processIndividual(record, individual):
+    salutations = individual.findall("./salutation")
+    given_names = individual.findall('./givenName')
+    sur_name = individual.find('./surName')
 
-        Processing involves two steps:
+    fields = []
 
-            1. Parsing relevant information (e.g. name)
-            2. Scoring that information against existing records.
-    """
-    organization = {}
+    if salutations is not None:
+        all_salutations = []
 
-    name = creator.find("./organizationName")
-    email = creator.find("./electronicMailAddress")
-    url = creator.find("./onlineUrl")
+        for salutation in salutations:
+            if salutation.text is not None:
+                fields.append(salutation.text.strip())
+                all_salutations.append(salutation.text.strip())
 
-    if name is not None:
-        organization["name"] = name.text.lower()
+        if len(all_salutations) > 0:
+            record['salutation'] = " ".join(all_salutations)
 
-    if email is not None:
-        organization["email"] = email.text.lower()
+    if given_names is not None:
+        all_given_names = []
 
-    if url is not None:
-        organization["url"] = url.text.lower()
+        for given_name in given_names:
+            if given_name.text is not None:
+                fields.append(given_name.text.strip())
+                all_given_names.append(given_name.text.strip())
 
-    return organization
-
-
-def processSalutation(person, salutation):
-    """
-    Adds information from the salutation to the current person.
-    """
-
-    if salutation is not None:
-        title = salutation.text.lower()
-        person["title"] = title.translate(None, ".")
-
-    return person
+        if len(all_given_names) > 0:
+            record['first_name'] = " ".join(all_given_names)
 
 
-def processGivenName(person, given_name):
-    """
-    Adds information from the given name to the current person.
-    """
+    if sur_name is not None and sur_name.text is not None:
+        fields.append(sur_name.text.strip())
+        record['last_name'] = sur_name.text.strip()
 
-    if given_name is not None:
-        first_name = given_name.text.lower()
+    if len(fields) > 0:
+        record['full_name'] = " ".join([f for f in fields if f is not None])
 
-        # First I.
-        pattern_one = re.compile("^\w+\s+\w{1}\.?$")
-
-        # First I. J.
-        pattern_two = re.compile("^\w+\s+\w{1}\.?\s?\w{1}\.?$")
-
-        if pattern_one.match(first_name):
-            first_name = first_name.split(" ")
-
-            person["first"] = first_name[0]
-        elif pattern_two.match(first_name):
-            first_name = first_name.split(" ")
-
-            person["first"] = first_name[0]
-        else:
-            person["first"] = first_name
-
-    return person
+    return record
 
 
-def processSurName(person, sur_name):
-    """
-    Adds information from the sur name to the current person.
-    """
+def processAddress(record, address):
+    delivery_points = address.findall("./deliveryPoint")
+    city = address.find("./city")
+    admin_area = address.find("./administrativeArea")
+    postal = address.find("./postalCode")
+    country = address.find("./country")
 
-    if sur_name is not None:
-        person["last"] = sur_name.text.lower()
+    fields = []
 
-    return person
+    if delivery_points is not None:
+        delivery_point_nodes = []
 
+        for point in delivery_points:
+            if point.text is not None:
+                fields.append(point.text.strip())
+                delivery_point_nodes.append(point.text.strip())
 
-def processUserId(person, user_id):
-    """
-    Adds information from the user id to the current person.
-    """
+        if len(delivery_point_nodes) > 0:
+            record['address_delivery_point'] = " ".join(delivery_point_nodes)
 
-    if user_id is not None:
-        user_id_fields = re.compile("(\w+=\w+)+").findall(user_id.text)
+    if city is not None and city.text is not None:
+        fields.append(city.text.strip())
+        record['address_city'] = city.text.strip()
 
-        if len(user_id_fields) > 0:
-            fields = []
+    if admin_area is not None and admin_area.text is not None:
+        fields.append(admin_area.text.strip())
+        record['address_admin_area'] = admin_area.text.strip()
 
-            for field in user_id_fields:
-                k, v = field.split("=")
+    if postal is not None and postal.text is not None:
+        fields.append(postal.text.strip())
+        record['address_postal'] = postal.text.strip()
 
-                if k and v:
-                    fields.append({k.lower(): v.lower()})
+    if country is not None and country.text is not None:
+        fields.append(country.text.strip())
+        record['address_country'] = country.text.strip()
 
-            person["user_id"] = fields
+    if len(fields) > 0:
+        record['address'] = " ".join([f for f in fields if f is not None])
 
-    return person
-
-
-def processEmail(person, email):
-    """
-    Adds information from the email to the current person.
-    """
-
-    if email is not None:
-        person["email"] = email.text.lower()
-
-    return person
+    return record

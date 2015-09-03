@@ -1207,6 +1207,17 @@
     a glview:Format .
 
 <http://schema.geolink.org/dev/voc/dataone/format#110>
+    glview:description "AnnotatorJS 1.2.x Annotation model" ;
+    glview:formatType "RESOURCE" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "http://docs.annotatorjs.org/en/v1.2.x/annotation-format.html" ;
+        a datacite:ResourceIdentifier ;
+        rdfs:label "http://docs.annotatorjs.org/en/v1.2.x/annotation-format.html"
+    ] ;
+    a glview:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#111>
     glview:description "Geographic MetaData (GMD) Extensible Markup Language" ;
     glview:formatType "METADATA" ;
     glview:identifier [
@@ -1214,6 +1225,17 @@
         glview:hasIdentifierValue "http://www.isotc211.org/2005/gmd" ;
         a datacite:ResourceIdentifier ;
         rdfs:label "http://www.isotc211.org/2005/gmd"
+    ] ;
+    a glview:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#112>
+    glview:description "BagIt File Packaging Format Version 0.97" ;
+    glview:formatType "DATA" ;
+    glview:identifier [
+        glview:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glview:hasIdentifierValue "application/bagit-097" ;
+        a datacite:ResourceIdentifier ;
+        rdfs:label "application/bagit-097"
     ] ;
     a glview:Format .
 
