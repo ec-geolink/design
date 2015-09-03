@@ -152,7 +152,9 @@ def processContactInfo(job, info, document):
         record['type'] = 'person'
     else:
         record['type'] = 'organization'
-        record['name'] = record['organization']  # Swap in org name
+
+        if 'organization' in record:
+            record['name'] = record['organization']  # Swap in org name
 
     return record
 
