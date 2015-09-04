@@ -68,12 +68,7 @@ def addDataset(model, doc, ns, fm, personhash):
 
     addStatement(model, d1base+identifier, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["glbase"]+"Dataset"))
 
-    id_blank_node = RDF.Node(blank=identifier)
-
-    addStatement(model, id_blank_node, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["datacite"]+"ResourceIdentifier"))
-    addStatement(model, d1base+identifier, ns["glview"]+"hasIdentifier", id_blank_node)
-    addStatement(model, id_blank_node, ns["glview"]+"hasIdentifierValue", identifier)
-    addStatement(model, id_blank_node, ns["rdfs"]+"label", identifier)
+    # Identifier
 
     # Determine identifier scheme
     if (identifier.startswith("doi:") |
@@ -91,8 +86,31 @@ def addDataset(model, doc, ns, fm, personhash):
     else:
         scheme = 'local-resource-identifier-scheme'
 
-    addStatement(model, id_blank_node, ns["glbase"]+"hasIdentifierValue", identifier)
-    addStatement(model, id_blank_node, ns["glbase"]+"usesIdentifierScheme", RDF.Uri(ns["datacite"]+scheme))
+    # Add glview Identifier
+    id_blank_node_glbase = RDF.Node(blank=identifier)
+
+    addStatement(model, id_blank_node_glbase, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["glbase"]+"Identifier"))
+    addStatement(model, id_blank_node_glbase, ns["glbase"]+"hasIdentifierValue", identifier)
+    addStatement(model, id_blank_node_glbase, ns["rdfs"]+"label", identifier)
+    addStatement(model, id_blank_node_glbase, ns["glbase"]+"hasIdentifierScheme", RDF.Uri(ns["datacite"]+scheme))
+
+    addStatement(model, d1base+identifier, ns["glbase"]+"hasIdentifier", id_blank_node_glbase)
+
+    # Add datacite ResourceIdentifier (optional)
+    # id_blank_node_datacite = RDF.Node(blank=identifier)
+    #
+    # # DataCite prefers DOIs to be a PrimaryResourceIdentifier
+    # if scheme is 'doi':
+    #     addStatement(model, id_blank_node_datacite, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["datacite"]+"PrimaryResourceIdentifier"))
+    # else:
+    #     addStatement(model, id_blank_node_datacite, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["datacite"]+"AlternativeResourceIdentifier"))
+    #
+    # addStatement(model, id_blank_node_datacite, ns["rdfs"]+"label", identifier)
+    # addStatement(model, id_blank_node_datacite, ns["literal"]+"hasLiteralValue", identifier)
+    # addStatement(model, id_blank_node_datacite, ns["glbase"]+"usesIdentifierScheme", RDF.Uri(ns["datacite"]+scheme))
+    #
+    # addStatement(model, d1base+identifier, ns["glbase"]+"hasIdentifier", id_blank_node_datacite)
+
 
     # Title
     title_element = doc.find("./str[@name='title']")
@@ -254,7 +272,7 @@ def addDataset(model, doc, ns, fm, personhash):
     """
 
     addStatement(model, d1base+identifier, ns['doview']+'hasLandingPage', 'https://search.dataone.org/#view/'+identifier)
-    
+
 
     # TODO: Add Funding
 
@@ -404,10 +422,10 @@ def addRepositories(model, ns):
 
         node_hash[node_id] = [node_name, node_desc, node_base_url]
 
-        addStatement(model, repo_base + node_id, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["glview"]+"Repository"))
+        addStatement(model, repo_base + node_id, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["glbase"]+"Repository"))
         addStatement(model, repo_base + node_id, RDF.Uri(ns["foaf"]+"name"), node_name)
         addStatement(model, repo_base + node_id, RDF.Uri(ns["rdfs"]+"label"), node_name)
-        addStatement(model, repo_base + node_id, RDF.Uri(ns["glview"]+"description"), node_desc)
+        addStatement(model, repo_base + node_id, RDF.Uri(ns["glbase"]+"description"), node_desc)
 
     return(node_hash)
 
@@ -430,9 +448,9 @@ def addFormats(model, ns, fm):
 
         format_hash[format_id] = [format_type, format_name]
 
-        addStatement(model, fm[format_id], RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["glview"]+"Format"))
-        addStatement(model, fm[format_id], RDF.Uri(ns["glview"]+"hasIdentifier"), format_id)
-        addStatement(model, fm[format_id], RDF.Uri(ns["glview"] + "description"), format_name)
+        addStatement(model, fm[format_id], RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["glbase"]+"Format"))
+        addStatement(model, fm[format_id], RDF.Uri(ns["glbase"]+"hasIdentifier"), format_id)
+        addStatement(model, fm[format_id], RDF.Uri(ns["glbase"] + "description"), format_name)
 
 
     return format_hash
@@ -492,7 +510,8 @@ def main():
         "glbase": "http://schema.geolink.org/dev/base/main#",
         "doview": "http://schema.geolink.org/dev/doview#",
         "prov": "http://www.w3.org/ns/prov#",
-        "d1node": "https://cn.dataone.org/cn/v1/node/"
+        "d1node": "https://cn.dataone.org/cn/v1/node/",
+        "literal": "http://www.essepuntato.it/2010/06/literalreification/"
     }
 
     print "Creating format map..."
@@ -516,7 +535,7 @@ def main():
     #         serialize(model, ns, "dataone-example-lod.ttl", "turtle")
 
     print("Final model size: " + str(model.size()))
-    serialize(model, ns, "dataone-example-lod.ttl", "turtle")
+    serialize(model, ns, "datasets.ttl", "turtle")
     # serialize(model, ns, "dataone-example-lod.rdf", "rdfxml")
 
 if __name__ == "__main__":
