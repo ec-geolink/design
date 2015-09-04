@@ -8,7 +8,7 @@ from people import job
 
 
 def main():
-    j = job.Job("/Users/mecum/src/d1dump/documents")
+    j = job.Job("/Users/mecum/src/d1dump/documents-random")
     j.run()
     j.finish()
 
