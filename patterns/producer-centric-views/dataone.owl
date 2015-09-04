@@ -77,6 +77,22 @@
 
 
 
+    <!-- http://schema.geolink.org/dev/doview#hasLandingPage -->
+
+    <owl:DatatypeProperty rdf:about="&dataone;hasLandingPage">
+        <rdfs:label>dataone:hasLandingPage</rdfs:label>
+        <rdfs:description>A URI pointing to a human-readable landing page for a Dataset or DigitalObject.</rdfs:description>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                <rdf:Description rdf:about="&ecglview;Dataset"/>
+                <rdf:Description rdf:about="&ecglview;DigitalObject"/>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
+    </owl:DatatypeProperty>
+
+
     <!-- http://schema.geolink.org/dev/doview#hasEndDate -->
     <!-- This declaration just serves as a reminder that the range needs to be expanded to include this class -->
 

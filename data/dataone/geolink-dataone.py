@@ -249,6 +249,12 @@ def addDataset(model, doc, ns, fm, personhash):
     addStatement(model, d1base+identifier, ns["doview"]+"hasOriginDigitalRepository", RDF.Uri(repo_base + repository_datasource.text))
 
     # TODO: Add Landing page
+    """ Landing page:
+        Use search.dataone.org/#view/{PID}
+    """
+
+    addStatement(model, d1base+identifier, ns['doview']+'hasLandingPage', 'https://search.dataone.org/#view/'+identifier)
+    
 
     # TODO: Add Funding
 
