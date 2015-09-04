@@ -54,6 +54,7 @@
 
      <owl:DatatypeProperty rdf:about="&dataone;dateUploaded">
         <rdfs:label>dataone:dateUploaded</rdfs:label>
+        <rdfs:comment>The range of this property is a dateTime indicating when the Dataset or DigitalObject was uploaded to its originDigitalRepository.</rdfs:comment>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
