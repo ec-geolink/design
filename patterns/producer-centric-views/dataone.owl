@@ -54,7 +54,14 @@
 
      <owl:DatatypeProperty rdf:about="&dataone;dateUploaded">
         <rdfs:label>dataone:dateUploaded</rdfs:label>
-        <rdfs:domain rdf:resource="&ecglview;DigitalObject"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ecglview;Dataset"/>
+                    <rdf:Description rdf:about="&ecglview;DigitalObject"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="&xsd;dateTime"/>
      </owl:DatatypeProperty>
 
@@ -69,7 +76,24 @@
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&ecglview;DigitalObject"/>
+                    <rdf:Description rdf:about="&ecglview;Dataset"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- http://schema.geolink.org/dev/doview#hasEndDate -->
+    <!-- This declaration just serves as a reminder that the range needs to be expanded to include this class -->
+
+    <owl:DatatypeProperty rdf:about="&doview;hasEndDate">
+        <rdfs:label>dataone:hasEndDate</rdfs:label>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ecglview;Dataset"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -91,23 +115,6 @@
         </rdfs:domain>
         <rdfs:range rdf:resource="&xsd;anyURI"/>
     </owl:DatatypeProperty>
-
-
-    <!-- http://schema.geolink.org/dev/doview#hasEndDate -->
-    <!-- This declaration just serves as a reminder that the range needs to be expanded to include this class -->
-
-    <owl:DatatypeProperty rdf:about="&doview;hasEndDate">
-        <rdfs:label>dataone:hasEndDate</rdfs:label>
-        <rdfs:range rdf:resource="&xsd;dateTime"/>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&ecglview;DigitalObject"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
-    </owl:DatatypeProperty>
-
 
 
     <!--
