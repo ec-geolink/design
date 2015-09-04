@@ -1,6 +1,6 @@
-.PHONY: clean link
+.PHONY: clean
 
-all: clean test
+all: clean
 
 clean:
 	find . -name '*.pyc' -exec rm -f {} +
