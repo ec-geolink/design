@@ -82,13 +82,14 @@ def prunePeople(input_file, retained_file, rejected_file, field_names):
     # Set up rules
     # TODO: Set up a regex for this?
     junk_names = ['test', 'read', 'test1', 'test 2', 'asdf', 'adfs',
-                  'test test', 'tret trert', 'GAA', 'BBB', 'tetqe', 'GGGG']
+                  'test test', 'tret trert', 'GAA', 'BBB', 'tetqe', 'GGGG',
+                  'You and your mentor']
 
     patterns = {'wg': re.compile("NCEAS:?\s*\d+"),
-                    'justnumbers': re.compile("^\d*$"),
-                    'junknames': re.compile("^[a-z]{3,4}\s*\d*$"),
-                    'noletters': re.compile("^[^a-zA-Z\u0000-\u007F]+$"),
-                    'journal article': re.compile("\d+:\d+-\d+")}
+                'justnumbers': re.compile("^\d*$"),
+                'junknames': re.compile("^[a-z]{3,4}\s*\d*$"),
+                'noletters': re.compile("^[^a-zA-Z\u0000-\u007F]+$"),
+                'journal article': re.compile("\d+:\d+-\d+")}
 
     # TODO add pruning for
     # Journal of the Fisheries Research Board of Canada 33:2489-2499
