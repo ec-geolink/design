@@ -1661,17 +1661,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     
 
 
-    <!-- http://schema.geolink.org/dev/base/main#hasGeologicalUnit -->
-
-    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasGeologicalUnit">
-        <rdfs:label>hasGeologicalUnit</rdfs:label>
-        <rdfs:comment>Values mostly are Lithostratigraphic units in SESAR, like Formation, Group, Member, Bed, Flow, etc.   from International Stratigraphic. Union controlled vocabulary</rdfs:comment>
-        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
-        <rdfs:range rdf:resource="&xsd;anyURI"/>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- http://schema.geolink.org/dev/base/main#hasGeometryAsWktLiteral -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasGeometryAsWktLiteral">
@@ -1857,6 +1846,17 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasStartTime">
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Dive"/>
         <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasStratigraphicUnit -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasStratigraphicUnit">
+        <rdfs:label>hasStratigraphicUnit</rdfs:label>
+        <rdfs:comment>Values mostly are Lithostratigraphic units in SESAR, like Formation, Group, Member, Bed, Flow, etc.   from International Stratigraphic. Union controlled vocabulary</rdfs:comment>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
     </owl:DatatypeProperty>
     
 
