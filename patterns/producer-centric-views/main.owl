@@ -1561,6 +1561,18 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     
 
 
+    <!-- http://schema.geolink.org/dev/base/main#hasChecksumAlgorithm -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasChecksumAlgorithm">
+        <rdfs:label>hasChecksumAlgorithm</rdfs:label>
+        <rdfs:comment>For specifying the checksum algorithm&apos;s used to compute the checksum value of the digital objects. The value is provided in hasChecksum property.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#DigitalObject"/>
+        <rdfs:seeAlso rdf:resource="http://schema.geolink.org/dev/base/main#hasChecksum"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://schema.geolink.org/dev/base/main#hasCitationText -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasCitationText">
@@ -1628,6 +1640,7 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Award"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Dataset"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Meeting"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Program"/>
                 </owl:unionOf>
@@ -1713,6 +1726,24 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
         <rdfs:comment>Points to the actual string value of identifier., e.g.: &quot;doi:10.5063/AA/ArchivalTag.4.1&quot;</rdfs:comment>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Identifier"/>
         <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasLandingPage -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasLandingPage">
+        <rdfs:label>hasLandingPage</rdfs:label>
+        <rdfs:comment>A URI pointing to a human-readable landing page for a Dataset or DigitalObject.</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Dataset"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#DigitalObject"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
     </owl:DatatypeProperty>
     
 
@@ -1852,6 +1883,7 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Award"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Dataset"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Meeting"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Program"/>
                 </owl:unionOf>
