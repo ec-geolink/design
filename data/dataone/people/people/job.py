@@ -6,9 +6,11 @@
     documents.
 """
 
+import os
 import processing
 import helpers
 import unicodecsv
+import pandas
 
 
 class Job:
@@ -46,6 +48,29 @@ class Job:
         # Write header columns
         self.people_writer.writerow(self.people_columns)
         self.organization_writer.writerow(self.organization_columns)
+
+        # Load identifier map
+        self.identifier_map = None
+
+        if os.path.isfile("/Users/mecum/src/d1dump/identifiers.csv"):
+            print "Loading identifiers map..."
+
+            identifiers = pandas.read_table("/Users/mecum/src/d1dump/identifiers.csv")
+            self.identifier_map = dict(zip(identifiers.docid, identifiers.guid))
+
+            print "Read in %d identifier mappings." % len(self.identifier_map)
+
+        # Load list of public PIDs
+        self.public_pids = None
+
+        if os.path.isfile("/Users/mecum/src/d1dump/access.csv"):
+            print "Loading access list..."
+
+            access = pandas.read_table("/Users/mecum/src/d1dump/access.csv")
+            access = access[['guid', 'permission']]
+            access = access[access.permission >= 4]
+
+            self.public_pids = access.guid.tolist()
 
     def run(self):
         processing.processDirectory(self)

@@ -37,13 +37,29 @@ def processDirectory(job):
 
         processDocument(job, xmldoc, filename)
         i += 1
-        
+
     print "Processed a total of %d documents" % i
 
 
 def processDocument(job, xmldoc, filename):
     """ Process an individual document."""
     document = filename
+
+    # Strip trailing revision number from filename
+    just_pid = re.match("(autogen.\d+)\.\d", document)
+
+    if just_pid is not None:
+        document = just_pid.groups(0)[0]
+
+    # Map the filename to its PID if we have a map to go off of
+    if job.identifier_map is not None:
+        if document in job.identifier_map:
+            document = job.identifier_map[document]
+
+    # Null out the document PID if it's not public
+    if job.public_pids is not None:
+        if document not in job.public_pids:
+            document = ''
 
     root = xmldoc.getroot()
 
