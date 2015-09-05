@@ -1534,7 +1534,7 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasByteLength">
         <rdfs:label>hasByteLength</rdfs:label>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#DigitalObject"/>
-        <rdfs:range rdf:resource="&xsd;int"/>
+        <rdfs:range rdf:resource="&owl;real"/>
     </owl:DatatypeProperty>
     
 
