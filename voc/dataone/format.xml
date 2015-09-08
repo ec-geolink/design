@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="/cn/xslt/dataone.types.v1.xsl"?>
-<d1:objectFormatList xmlns:d1="http://ns.dataone.org/service/types/v1" count="109" start="0" total="109">
+<d1:objectFormatList count="112" start="0" total="112" xmlns:d1="http://ns.dataone.org/service/types/v1">
   <objectFormat>
     <formatId>eml://ecoinformatics.org/eml-2.0.0</formatId>
     <formatName>Ecological Metadata Language, version 2.0.0</formatName>
@@ -94,12 +94,12 @@
   <objectFormat>
     <formatId>netCDF-3</formatId>
     <formatName>Network Common Data Format, version 3</formatName>
-    <formatType>METADATA</formatType>
+    <formatType>DATA</formatType>
   </objectFormat>
   <objectFormat>
     <formatId>netCDF-4</formatId>
     <formatName>Network Common Data Format, version 4</formatName>
-    <formatType>METADATA</formatType>
+    <formatType>DATA</formatType>
   </objectFormat>
   <objectFormat>
     <formatId>text/plain</formatId>
@@ -545,5 +545,20 @@
     <formatId>http://ns.dataone.org/metadata/schema/onedcx/v1.0</formatId>
     <formatName>DataONE Dublin Core Extended v1.0</formatName>
     <formatType>METADATA</formatType>
+  </objectFormat>
+  <objectFormat>
+    <formatId>http://docs.annotatorjs.org/en/v1.2.x/annotation-format.html</formatId>
+    <formatName>AnnotatorJS 1.2.x Annotation model</formatName>
+    <formatType>RESOURCE</formatType>
+  </objectFormat>
+  <objectFormat>
+    <formatId>http://www.isotc211.org/2005/gmd</formatId>
+    <formatName>Geographic MetaData (GMD) Extensible Markup Language</formatName>
+    <formatType>METADATA</formatType>
+  </objectFormat>
+  <objectFormat>
+    <formatId>application/bagit-097</formatId>
+    <formatName>BagIt File Packaging Format Version 0.97</formatName>
+    <formatType>DATA</formatType>
   </objectFormat>
 </d1:objectFormatList>
