@@ -115,19 +115,19 @@ def createGraph(model, formats, ns):
         format_uri_node = RDF.Uri(formats[fmt]['uri'])
 
         # Name and Type
-        addStatement(model, formats[fmt]['uri'], RDF.Uri(ns["rdf"] + "type"), RDF.Uri(ns["glview"] + "Format"))
-        addStatement(model, formats[fmt]['uri'], RDF.Uri(ns["glview"] + "description"), formats[fmt]['name'])
-        addStatement(model, formats[fmt]['uri'], RDF.Uri(ns["glview"] + "formatType"), formats[fmt]['type'])
+        addStatement(model, formats[fmt]['uri'], RDF.Uri(ns["rdf"] + "type"), RDF.Uri(ns["ecglvoc_format"] + "Format"))
+        addStatement(model, formats[fmt]['uri'], RDF.Uri(ns["glbase"] + "description"), formats[fmt]['name'])
+        addStatement(model, formats[fmt]['uri'], RDF.Uri(ns["glbase"] + "formatType"), formats[fmt]['type'])
 
         # Identifier node
         id_blank_node = RDF.Node(blank=formats[fmt]['uri'])
 
-        addStatement(model, id_blank_node, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["glview"]+"Identifier"))
-        addStatement(model, id_blank_node, ns["glview"]+"hasIdentifierValue", fmt)
-        addStatement(model, id_blank_node, ns["glview"]+"hasIdentifierScheme", RDF.Uri(ns["datacite"] + "local-resource-identifier-scheme"))
+        addStatement(model, id_blank_node, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["glbase"]+"Identifier"))
+        addStatement(model, id_blank_node, ns["glbase"]+"hasIdentifierValue", fmt)
+        addStatement(model, id_blank_node, ns["glbase"]+"hasIdentifierScheme", RDF.Uri(ns["datacite"] + "local-resource-identifier-scheme"))
         addStatement(model, id_blank_node, ns["rdfs"]+"label", fmt)
 
-        addStatement(model, formats[fmt]['uri'], RDF.Uri(ns["glview"] + "hasIdentifier"), id_blank_node)
+        addStatement(model, formats[fmt]['uri'], RDF.Uri(ns["glbase"] + "hasIdentifier"), id_blank_node)
 
 
 def main():
@@ -150,8 +150,7 @@ def main():
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
         "datacite": "http://purl.org/spar/datacite/",
-        "glview": "http://schema.geolink.org/dev/view#",
-        "doview": "http://schema.geolink.org/dev/doview#",
+        "glbase": "http://schema.geolink.org/dev/base/main#",
         "ecglvoc_format" : "http://schema.geolink.org/dev/voc/dataone/format#"
     }
 
