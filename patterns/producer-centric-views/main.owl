@@ -66,6 +66,18 @@
     
 
 
+    <!-- http://www.w3.org/2001/XMLSchema#gYear -->
+
+    <rdfs:Datatype rdf:about="&xsd;gYear"/>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#gYearMonth -->
+
+    <rdfs:Datatype rdf:about="&xsd;gYearMonth"/>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -226,14 +238,6 @@
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasContact">
         <rdfs:label>hasContact</rdfs:label>
         <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isContactOf"/>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Organization"/>
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Person"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -243,6 +247,14 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Organization"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Person"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -301,9 +313,9 @@
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Dataset"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#DigitalObject"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Dive"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Document"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#SubmersibleDive"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -394,6 +406,16 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
 -   ?X :hasEndPortCall ?Y . ?Y a PortCall;  :atPort ?PL ; :hasTimeStamp ?T.</rdfs:comment>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Cruise"/>
         <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#PortCall"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasFeatureOfInterest -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasFeatureOfInterest">
+        <rdfs:label>hasFeatureOfInterest</rdfs:label>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
     </owl:ObjectProperty>
     
 
@@ -546,7 +568,7 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Cruise"/>
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#SubmersibleDive"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Dive"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -558,8 +580,8 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasOperationArea">
         <rdfs:label>hasOperationArea</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Dive"/>
         <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Place"/>
-        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#SubmersibleDive"/>
         <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isOperationAreaOf"/>
     </owl:ObjectProperty>
     
@@ -590,16 +612,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://schema.geolink.org/dev/base/main#hasOriginFeature -->
-
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasOriginFeature">
-        <rdfs:label>hasOriginFeature</rdfs:label>
-        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
-        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
     </owl:ObjectProperty>
     
 
@@ -659,8 +671,8 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasPilot">
         <rdfs:label>hasPilot</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Dive"/>
         <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Person"/>
-        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#SubmersibleDive"/>
         <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isPilotOf"/>
     </owl:ObjectProperty>
     
@@ -837,14 +849,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasRightsHolder">
         <rdfs:label>hasRightsHolder</rdfs:label>
         <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isRightsHolderOf"/>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Organization"/>
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Person"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -855,6 +859,14 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Organization"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Person"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -938,8 +950,8 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasSubmersible -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasSubmersible">
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Dive"/>
         <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Submersible"/>
-        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#SubmersibleDive"/>
         <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isSubmersibleOf"/>
     </owl:ObjectProperty>
     
@@ -1140,6 +1152,15 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     
 
 
+    <!-- http://schema.geolink.org/dev/base/main#isFeatureOf -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isFeatureOf">
+        <rdfs:label>isFeatureOf</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureOfInterest"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://schema.geolink.org/dev/base/main#isFeatureTypeOf -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isFeatureTypeOf">
@@ -1237,15 +1258,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isOperatorOf">
         <rdfs:label>isOperatorOf</rdfs:label>
         <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasOperator"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://schema.geolink.org/dev/base/main#isOriginFeatureOf -->
-
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isOriginFeatureOf">
-        <rdfs:label>isOriginFeatureOf</rdfs:label>
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasOriginFeature"/>
     </owl:ObjectProperty>
     
 
@@ -1534,7 +1546,7 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasByteLength">
         <rdfs:label>hasByteLength</rdfs:label>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#DigitalObject"/>
-        <rdfs:range rdf:resource="&xsd;int"/>
+        <rdfs:range rdf:resource="&owl;real"/>
     </owl:DatatypeProperty>
     
 
@@ -1544,6 +1556,18 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasChecksum">
         <rdfs:label>hasChecksum</rdfs:label>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#DigitalObject"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasChecksumAlgorithm -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasChecksumAlgorithm">
+        <rdfs:label>hasChecksumAlgorithm</rdfs:label>
+        <rdfs:comment>For specifying the checksum algorithm&apos;s used to compute the checksum value of the digital objects. The value is provided in hasChecksum property.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#DigitalObject"/>
+        <rdfs:seeAlso rdf:resource="http://schema.geolink.org/dev/base/main#hasChecksum"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -1592,7 +1616,7 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasDuration">
         <rdfs:label>hasDuration</rdfs:label>
-        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#SubmersibleDive"/>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Dive"/>
     </owl:DatatypeProperty>
     
 
@@ -1616,6 +1640,7 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Award"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Dataset"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Meeting"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Program"/>
                 </owl:unionOf>
@@ -1628,7 +1653,7 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasEndTime -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasEndTime">
-        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#SubmersibleDive"/>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Dive"/>
         <rdfs:range rdf:resource="&xsd;dateTime"/>
     </owl:DatatypeProperty>
     
@@ -1661,17 +1686,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     
 
 
-    <!-- http://schema.geolink.org/dev/base/main#hasGeologicalUnit -->
-
-    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasGeologicalUnit">
-        <rdfs:label>hasGeologicalUnit</rdfs:label>
-        <rdfs:comment>Values mostly are Lithostratigraphic units in SESAR, like Formation, Group, Member, Bed, Flow, etc.   from International Stratigraphic. Union controlled vocabulary</rdfs:comment>
-        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
-        <rdfs:range rdf:resource="&xsd;anyURI"/>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- http://schema.geolink.org/dev/base/main#hasGeometryAsWktLiteral -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasGeometryAsWktLiteral">
@@ -1682,11 +1696,11 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Dataset"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#DigitalObject"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Dive"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Document"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Feature"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Place"/>
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#SubmersibleDive"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -1712,6 +1726,24 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
         <rdfs:comment>Points to the actual string value of identifier., e.g.: &quot;doi:10.5063/AA/ArchivalTag.4.1&quot;</rdfs:comment>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Identifier"/>
         <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasLandingPage -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasLandingPage">
+        <rdfs:label>hasLandingPage</rdfs:label>
+        <rdfs:comment>A URI pointing to a human-readable landing page for a Dataset or DigitalObject.</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Dataset"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#DigitalObject"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
     </owl:DatatypeProperty>
     
 
@@ -1748,7 +1780,7 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasMaxDepth">
         <rdfs:label>hasMaxDepth</rdfs:label>
-        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#SubmersibleDive"/>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Dive"/>
     </owl:DatatypeProperty>
     
 
@@ -1803,7 +1835,15 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasPublicationDate">
         <rdfs:label>hasPublicationDate</rdfs:label>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Document"/>
-        <rdfs:range rdf:resource="&xsd;dateTime"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&xsd;dateTime"/>
+                    <rdf:Description rdf:about="&xsd;gYear"/>
+                    <rdf:Description rdf:about="&xsd;gYearMonth"/>
+                </owl:unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
     </owl:DatatypeProperty>
     
 
@@ -1843,6 +1883,7 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Award"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Dataset"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Meeting"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Program"/>
                 </owl:unionOf>
@@ -1855,8 +1896,19 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasStartTime -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasStartTime">
-        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#SubmersibleDive"/>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Dive"/>
         <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasStratigraphicUnit -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasStratigraphicUnit">
+        <rdfs:label>hasStratigraphicUnit</rdfs:label>
+        <rdfs:comment>Values mostly are Lithostratigraphic units in SESAR, like Formation, Group, Member, Bed, Flow, etc.   from International Stratigraphic. Union controlled vocabulary</rdfs:comment>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
     </owl:DatatypeProperty>
     
 
@@ -1895,6 +1947,24 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
         <rdfs:label>hasTrack</rdfs:label>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Cruise"/>
         <rdfs:range rdf:resource="&geosparql;wktLiteral"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasUploadDate -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasUploadDate">
+        <rdfs:label>hasUploadDate</rdfs:label>
+        <rdfs:comment>The range of this property is a dateTime indicating when the Dataset or DigitalObject was uploaded to its originDigitalRepository.</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Dataset"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#DigitalObject"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
     </owl:DatatypeProperty>
     
 
@@ -2113,11 +2183,20 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     
 
 
+    <!-- http://schema.geolink.org/dev/base/main#Dive -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#Dive">
+        <rdfs:label>Dive</rdfs:label>
+        <rdfs:comment>Analogous to cruise being an expedition/event/deployment conducted aboard vessel, dive is an expedition/event/deployment conducted on/in a submersible platform.</rdfs:comment>
+    </owl:Class>
+    
+
+
     <!-- http://schema.geolink.org/dev/base/main#Document -->
 
     <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#Document">
         <rdfs:label>Document</rdfs:label>
-        <rdfs:comment>A citable, creative work.</rdfs:comment>
+        <rdfs:comment>A textual, word-based, non-structured expression of information, such as a report, presentation, published article, or lecture.</rdfs:comment>
     </owl:Class>
     
 
@@ -2355,12 +2434,6 @@ d:age1 :hasFirstAppearance
         <owl:equivalentClass rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#20"/>
         <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Platform"/>
     </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/dev/base/main#SubmersibleDive -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#SubmersibleDive"/>
     
 
 
