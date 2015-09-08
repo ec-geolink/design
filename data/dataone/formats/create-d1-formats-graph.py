@@ -119,15 +119,15 @@ def createGraph(model, formats, ns):
         addStatement(model, formats[fmt]['uri'], RDF.Uri(ns["glview"] + "description"), formats[fmt]['name'])
         addStatement(model, formats[fmt]['uri'], RDF.Uri(ns["glview"] + "formatType"), formats[fmt]['type'])
 
-        # Identifier
+        # Identifier node
         id_blank_node = RDF.Node(blank=formats[fmt]['uri'])
 
-        addStatement(model, id_blank_node, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["datacite"]+"ResourceIdentifier"))
+        addStatement(model, id_blank_node, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["glview"]+"Identifier"))
         addStatement(model, id_blank_node, ns["glview"]+"hasIdentifierValue", fmt)
-        addStatement(model, id_blank_node, ns["rdfs"]+"label", fmt)
         addStatement(model, id_blank_node, ns["glview"]+"hasIdentifierScheme", RDF.Uri(ns["datacite"] + "local-resource-identifier-scheme"))
+        addStatement(model, id_blank_node, ns["rdfs"]+"label", fmt)
 
-        addStatement(model, formats[fmt]['uri'], RDF.Uri(ns["glview"] + "identifier"), id_blank_node)
+        addStatement(model, formats[fmt]['uri'], RDF.Uri(ns["glview"] + "hasIdentifier"), id_blank_node)
 
 
 def main():
