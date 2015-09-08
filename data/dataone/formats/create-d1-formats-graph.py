@@ -3,6 +3,19 @@
     author:     Bryce Mecum (mecum@nceas.ucsb.edu)
 
     Creates an RDF graph of D1 formats for use in other graphs.
+
+    Because this process results in minting LOD URIs for formats and we never
+    want to change or delete the mapping between a LOD URI and what it points
+    to, this script keeps track of what URIs<->Format mappings its made and
+    correctly mints new URIs for new formats.
+
+    New formats enter the graph when DataOne adds a format at:
+
+        https://cn.dataone.org/cn/v1/formats
+
+    All URIs are on the base:
+
+        http://schema.geolink.org/dev/voc/dataone/format#
 """
 
 
@@ -63,20 +76,74 @@ def addStatement(model, s, p, o):
     model.add_statement(statement)
 
 
-def main():
-    """
-    The program essentially runs three operations
+def getFormats():
+    """Gets the formats list from the DataOne CN.
 
-    First, the RDF Model and namespaces are created. Then the script fetches
-    the formats list off of DataOne. Then, for each format found,
-    a corresponding set of statements are made in the RDF graph about that
-    format. At the same time, a CSV file is made to make it easier for other
-    work to map format IDs to the GeoLink format URIs. Finally, the RDF
-    graph is serialized to disk on both RDF/XML and Turtle formats.
+    Returns a Dict index by format id
+        Each element containing the ID, type, and name of the format.
     """
+
+    try:
+        req = urllib2.urlopen("https://cn.dataone.org/cn/v1/formats")
+    except:
+        print "Failed to open formats URL. Exiting."
+        return
+
+    content = req.read()
+    xmldoc = ET.fromstring(content)
+    format_nodes = xmldoc.findall(".//objectFormat")
+
+    formats = {}
+
+    for format_node in format_nodes:
+        format_id = format_node.find("./formatId").text
+        format_name = format_node.find("./formatName").text
+        format_type = format_node.find("./formatType").text
+
+        formats[format_id] = { 'id': format_id,
+                                'name': format_name,
+                                'type': format_type }
+
+    return formats
+
+
+def createGraph(model, formats, ns):
+    """Adds formats to the RDF model"""
+
+    for fmt in formats:
+        # Create this format's URI node
+        format_uri_node = RDF.Uri(formats[fmt]['uri'])
+
+        # Name and Type
+        addStatement(model, formats[fmt]['uri'], RDF.Uri(ns["rdf"] + "type"), RDF.Uri(ns["glview"] + "Format"))
+        addStatement(model, formats[fmt]['uri'], RDF.Uri(ns["glview"] + "description"), formats[fmt]['name'])
+        addStatement(model, formats[fmt]['uri'], RDF.Uri(ns["glview"] + "formatType"), formats[fmt]['type'])
+
+        # Identifier
+        id_blank_node = RDF.Node(blank=formats[fmt]['uri'])
+
+        addStatement(model, id_blank_node, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["datacite"]+"ResourceIdentifier"))
+        addStatement(model, id_blank_node, ns["glview"]+"hasIdentifierValue", fmt)
+        addStatement(model, id_blank_node, ns["rdfs"]+"label", fmt)
+        addStatement(model, id_blank_node, ns["glview"]+"hasIdentifierScheme", RDF.Uri(ns["datacite"] + "local-resource-identifier-scheme"))
+
+        addStatement(model, formats[fmt]['uri'], RDF.Uri(ns["glview"] + "identifier"), id_blank_node)
+
+
+def main():
+    """This method updates the DataOne formats in a few steps:
+
+        1. Load existing formats from disk
+        2. Check the official formats list on DataOne
+        3. Mint new URIs for formats on DataOne that are not already on disk
+        4. Serialize a TTL and RDF/XML graph to disk
+        5. Save the updated list of formats
+    """
+
 
     # Setup
     model = createModel()
+
     ns = {
         "owl": "http://www.w3.org/2002/07/owl#",
         "xsd": "http://www.w3.org/2001/XMLSchema#",
@@ -89,64 +156,84 @@ def main():
     }
 
 
-    # Get formats list
-    try:
-        req = urllib2.urlopen("https://cn.dataone.org/cn/v1/formats")
-    except:
-        print "Failed to open formats URL. Exiting."
+    # Load in existing formats
+    formats = {}
 
-        return
+    if os.path.isfile("formats.csv"):
+        print "Loading existing formats from disk..."
 
-    content = req.read()
-    xmldoc = ET.fromstring(content)
-    format_nodes = xmldoc.findall(".//objectFormat")
+        with open("formats.csv", "rU") as f:
+            reader = csv.DictReader(f)
 
-    format_index = 1 # Used to give formats URIs
-    formats = []
-    for fmt in format_nodes:
-        format_id = fmt.find("./formatId").text
-        format_name = fmt.find("./formatName").text
-        format_type = fmt.find("./formatType").text
+            for row in reader:
+                formats[row['id']] = { 'idx': row['idx'],
+                                              'id': row['id'],
+                                              'type':row['type'],
+                                              'name': row['name'],
+                                              'uri': row['uri'] }
 
-        # Create this format's URI and URI node
-        format_uri = ns["ecglvoc_format"] + str(format_index).rjust(3, "0")
-        format_uri_node = RDF.Uri(format_uri)
+        print "  Loaded %d formats from disk." % len(formats)
 
-        # Name and Type
-        addStatement(model, format_uri, RDF.Uri(ns["rdf"] + "type"), RDF.Uri(ns["glview"] + "Format"))
-        addStatement(model, format_uri, RDF.Uri(ns["glview"] + "description"), format_name)
-        addStatement(model, format_uri, RDF.Uri(ns["glview"] + "formatType"), format_type)
 
-        # Identifier
-        id_blank_node = RDF.Node(blank=format_uri)
+    # Get DataOne formats
+    print "Querying DataOne for the formats list..."
 
-        addStatement(model, id_blank_node, RDF.Uri(ns["rdf"]+"type"), RDF.Uri(ns["datacite"]+"ResourceIdentifier"))
-        addStatement(model, id_blank_node, ns["glview"]+"hasIdentifierValue", format_id)
-        addStatement(model, id_blank_node, ns["rdfs"]+"label", format_id)
-        addStatement(model, id_blank_node, ns["glview"]+"hasIdentifierScheme", RDF.Uri(ns["datacite"] + "local-resource-identifier-scheme"))
+    format_list = getFormats()
 
-        addStatement(model, format_uri, RDF.Uri(ns["glview"] + "identifier"), id_blank_node)
+    print "  Found %d formats on DataOne." % len(format_list)
 
-        format_index += 1
 
-        # Add to formats dictionary for the CSV
-        formats.append({'format_id': format_id, 'uri': format_uri})
+    # Find the formats not on disk
+    new_formats = {}
+
+    for fmt in format_list:
+        if fmt not in formats:
+            new_formats[fmt] = format_list[fmt]
+
+    print "Found %d new format(s)." % len(new_formats)
+
+
+    # Find the highest idx
+    highest_idx = 0
+
+    for fmt in formats:
+        if int(formats[fmt]['idx']) > highest_idx:
+            highest_idx = int(formats[fmt]['idx'])
+
+    for fmt in new_formats:
+        highest_idx += 1
+        # Mint the new URI
+        formats[fmt] = { 'idx': highest_idx,
+                                'id': fmt,
+                                'type': new_formats[fmt]['type'],
+                                'name': new_formats[fmt]['name'],
+                                'uri': ns['ecglvoc_format'] + str(highest_idx).rjust(3, "0") }
+        print "Added format %s." % formats[fmt]['uri']
+
+    createGraph(model, formats, ns)
+
 
     # Serialize graph to disk
     serializeModel(model, ns, "formats.ttl", "turtle")
     serializeModel(model, ns, "formats.xml", "rdfxml")
 
+
     # Write the CSV to file
     if formats:
         with open("formats.csv", "w") as f:
-            writer = csv.writer(f)
+            field_names = ['idx', 'id', 'type', 'name', 'uri']
+            writer = csv.DictWriter(f, fieldnames=field_names)
+            writer.writeheader()
 
-            for f in formats:
-                writer.writerow([f['format_id'], f['uri']])
+            sorted_formats = sorted(formats, key=lambda k: int(formats[k]['idx']))
+
+            for fmt in sorted_formats:
+                writer.writerow(formats[fmt])
 
 
 
 if __name__ == "__main__":
+    import os
     import RDF
     import urllib2
     import xml.etree.ElementTree as ET
