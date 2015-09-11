@@ -160,6 +160,7 @@
         <rdfs:label>hasAuthoritativeDigitalRepository</rdfs:label>
         <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Repository"/>
         <rdfs:subPropertyOf rdf:resource="http://schema.geolink.org/dev/base/main#hasRepository"/>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isAuthoritativeDigitalRepositoryOf"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -603,6 +604,7 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
         <rdfs:label>hasOriginDigitalRepository</rdfs:label>
         <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Repository"/>
         <rdfs:subPropertyOf rdf:resource="http://schema.geolink.org/dev/base/main#hasRepository"/>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isOriginDigitalRepositoryOf"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -662,6 +664,7 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
         <rdfs:label>hasPhysicalRepository</rdfs:label>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
         <rdfs:subPropertyOf rdf:resource="http://schema.geolink.org/dev/base/main#hasRepository"/>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isPhysicalRepositoryOf"/>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -819,6 +822,7 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
         <rdfs:label>hasReplicaDigitalRepository</rdfs:label>
         <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Repository"/>
         <rdfs:subPropertyOf rdf:resource="http://schema.geolink.org/dev/base/main#hasRepository"/>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isReplicaDigitalRepositoryOf"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -1032,6 +1036,14 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isAuthorOf">
         <rdfs:label>isAuthorOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#isAuthoritativeDigitalRepositoryOf -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isAuthoritativeDigitalRepositoryOf">
+        <rdfs:label>isAuthoritativeDigitalRepositoryOf</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1286,6 +1298,14 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     
 
 
+    <!-- http://schema.geolink.org/dev/base/main#isOriginDigitalRepositoryOf -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isOriginDigitalRepositoryOf">
+        <rdfs:label>isOriginDigitalRepositoryOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://schema.geolink.org/dev/base/main#isPartOf -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isPartOf">
@@ -1309,6 +1329,14 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
         <rdfs:label>isPerformedBy</rdfs:label>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Participant"/>
         <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#isPhysicalRepositoryOf -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isPhysicalRepositoryOf">
+        <rdfs:label>isPhysicalRepositoryOf</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1391,6 +1419,14 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isReferencedBy">
         <rdfs:label>isReferencedBy</rdfs:label>
         <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasReferenceTo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#isReplicaDigitalRepositoryOf -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isReplicaDigitalRepositoryOf">
+        <rdfs:label>isReplicaDigitalRepositoryOf</rdfs:label>
     </owl:ObjectProperty>
     
 
