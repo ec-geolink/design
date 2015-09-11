@@ -238,14 +238,6 @@
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasContact">
         <rdfs:label>hasContact</rdfs:label>
         <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isContactOf"/>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Organization"/>
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Person"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -255,6 +247,14 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Organization"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Person"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -283,14 +283,6 @@
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasCreator">
         <rdfs:label>hasCreator</rdfs:label>
         <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isCreatorOf"/>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Dataset"/>
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#DigitalObject"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -299,6 +291,14 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Dataset"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#DigitalObject"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
     </owl:ObjectProperty>
     
 
@@ -849,14 +849,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasRightsHolder">
         <rdfs:label>hasRightsHolder</rdfs:label>
         <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isRightsHolderOf"/>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Organization"/>
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Person"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -867,6 +859,14 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Organization"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Person"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -922,6 +922,16 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
 -   ?X :hasEndPortCall ?Y . ?Y a PortCall;  :atPort ?PL ; :hasTimeStamp ?T.</rdfs:comment>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Cruise"/>
         <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#PortCall"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasStratigraphicUnit -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasStratigraphicUnit">
+        <rdfs:label>hasStratigraphicUnit</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#StratigraphicUnit"/>
     </owl:ObjectProperty>
     
 
@@ -1912,17 +1922,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     
 
 
-    <!-- http://schema.geolink.org/dev/base/main#hasStratigraphicUnit -->
-
-    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasStratigraphicUnit">
-        <rdfs:label>hasStratigraphicUnit</rdfs:label>
-        <rdfs:comment>Values mostly are Lithostratigraphic units in SESAR, like Formation, Group, Member, Bed, Flow, etc.   from International Stratigraphic. Union controlled vocabulary</rdfs:comment>
-        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
-        <rdfs:range rdf:resource="&xsd;anyURI"/>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- http://schema.geolink.org/dev/base/main#hasTectonicSetting -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasTectonicSetting">
@@ -2433,6 +2432,15 @@ d:age1 :hasFirstAppearance
     <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#Station">
         <rdfs:label>Station</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Place"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#StratigraphicUnit -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#StratigraphicUnit">
+        <rdfs:label>StratigraphicUnit</rdfs:label>
+        <rdfs:comment>Captures named instances (URIs have to be minted for them) from stratigraphic gazetteers such as the USGS National Geologic Map Database or controlled vocabulary from the International Stratigraphic Union. Examples of stratigraphic units include Bonneville Formation, Portland Formation, Gray Gulch Formation, etc.</rdfs:comment>
     </owl:Class>
     
 
