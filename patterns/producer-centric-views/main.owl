@@ -238,6 +238,14 @@
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasContact">
         <rdfs:label>hasContact</rdfs:label>
         <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isContactOf"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Organization"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Person"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -247,14 +255,6 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Organization"/>
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Person"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -661,8 +661,15 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasPhysicalRepository">
         <rdfs:label>hasPhysicalRepository</rdfs:label>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
-        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Repository"/>
         <rdfs:subPropertyOf rdf:resource="http://schema.geolink.org/dev/base/main#hasRepository"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Organization"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Repository"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -829,7 +836,14 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasRepository">
         <rdfs:label>hasRepository</rdfs:label>
-        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Repository"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Organization"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Repository"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -849,6 +863,14 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasRightsHolder">
         <rdfs:label>hasRightsHolder</rdfs:label>
         <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isRightsHolderOf"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Organization"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Person"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -859,14 +881,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Organization"/>
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Person"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
     </owl:ObjectProperty>
     
 
