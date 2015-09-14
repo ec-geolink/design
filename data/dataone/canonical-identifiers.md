@@ -14,36 +14,36 @@ Here's what I did:
 
 Identifiers:
 
-- [ARK](#ARK)
-- [arXiv](#arXiv)
-- [DAI](#DAI)
-- [DOI](#DOI)
-- [EAN13](#EAN13)
-- [EISSN](#EISSN)
-- [FundRef](#FundRef)
-- [Handle](#Handle)
-- [InfoURI](#InfoURI)
-- [ISNI](#ISNI)
-- [ISSN](#ISSN)
-- [ISSN-L](#ISSN-L)
-- [ISTC](#ISTC)
-- [JST](#JST)
-- [LSID](#LSID)
-- [Natural Insurance Number](#Natural Insurance Number)
-- [OpenID](#OpenID)
-- [ORCID](#ORCID)
-- [PII](#PII)
-- [PMCID](#PMCID)
-- [PMID](#PMID)
-- [PURL](#PURL)
-- [ResearcherID](#ResearcherID)
-- [SICI](#SICI)
-- [SSN](#SSN)
-- [UPC](#UPC)
-- [URI](#URI)
-- [URL](#URL)
-- [URN](#URN)
-- [VIAF](#VIAF)
+- [ARK](#ark)
+- [arXiv](#arxiv)
+- [DAI](#dai)
+- [DOI](#doi)
+- [EAN13](#ean13)
+- [EISSN](#eissn)
+- [FundRef](#fundref)
+- [Handle](#handle)
+- [InfoURI](infouri)
+- [ISNI](#isni)
+- [ISSN](#issn)
+- [ISSN-L](#issn-l)
+- [ISTC](#istc)
+- [JST](#jst)
+- [LSID](#lsid)
+- [National Insurance Number](#national-insurance-number)
+- [OpenID](#openid)
+- [ORCID](#orcid)
+- [PII](#pii)
+- [PMCID](#pmcid)
+- [PMID](#pmid)
+- [PURL](#purl)
+- [ResearcherID](#researcherid)
+- [SICI](#sici)
+- [SSN](#ssn)
+- [UPC](#upc)
+- [URI](#uri)
+- [URL](#url)
+- [URN](#urn)
+- [VIAF](#viaf)
 
 
 ### A Note on Web-Resolvable Identifiers
@@ -243,7 +243,7 @@ Notes:
 Recommend: '0000000395916013'
 
 
-## ISSN (International Standard Serial Number)
+## ISSN
 
 Source: http://www.issn.org/understanding-the-issn/assignment-rules/issn-manual/
 
@@ -254,14 +254,14 @@ Notes:
 Recommend: '15626865'
 
 
-## ISSN-L (Linking International Standard Serial Number)
+## ISSN-L
 
 See above (ISSN)
 
 Recommend: '17487188'
 
 
-## ISTC (International Standard Text Code)
+## ISTC
 
 Source: http://www.istc-international.org/html/about_structure_syntax.aspx
 
