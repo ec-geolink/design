@@ -3,8 +3,13 @@
     Processing functions for processing FGDC
 
     Spec: http://www.fgdc.gov/metadata/csdgm/00.html
-    Relevant Section: http://www.fgdc.gov/metadata/csdgm/10.html
-    Also: http://www.fgdc.gov/csdgmgraphical/ideninfo/ptof/cntact.htm
+    Relevant Section: http://www.fgdc.gov/metadata/csdgm/08.html
+
+    Dataset creators are stored in the <origin> field.
+
+    <idinfo>
+        <citeinfo>
+            <origin> <- Originator free text here
 
     People and organization information comes in two locations in the document.
 
@@ -93,15 +98,62 @@ def process(job, xmldoc, document):
     # TODO: Process ptcontac
     # TODO: Process others? org?
 
-    info = xmldoc.find("./metainfo/metc/cntinfo")
+    # info = xmldoc.find("./metainfo/metc/cntinfo")
+    print "FGDC document being processed."
+    origin_nodes = xmldoc.findall("./idinfo/citation/citeinfo/origin")
+    print "Found %d origin nodes." % len(origin_nodes)
 
     records = []
 
-    if info is not None:
-        record = processContactInfo(job, info, document)
-        records.append(record)
+    # if info is not None:
+    #     record = processContactInfo(job, info, document)
+    #     records.append(record)
+
+    if origin_nodes is not None:
+        for origin_node in origin_nodes:
+            record = processCreator(job, origin_node, document)
+            records.append(record)
 
     return records
+
+
+def processCreator(job, origin, document):
+    """ Process the Originator (<origin>) element.
+    """
+    record = {}
+
+    """ Decide of this is a person or an organization
+        It looks like people are almost always in forms like:
+
+            EHLERINGER, J.R.
+            COOK, C.
+            Brown, Sandra
+            O'Neill, Elizabeth G.
+    """
+    print origin.text
+    
+    if re.search("[\w']+,\s+(\w+\.?\s?)+", origin.text):
+        name_split = origin.text.split(",")
+
+        record['first_name'] = name_split[1].strip()
+
+        # Remove middle names inside given name
+        name_parts = re.findall('(\w+)\s+([\w\.?\s?]+)', record['first_name'])
+    
+
+
+        record['last_name'] = name_split[0].strip().capitalize() # LAST to Last
+        record['full_name'] = " ".join([record['first_name'], record['last_name']])
+
+        record['type'] = 'person'
+    else:
+        record['name'] = origin.text
+        record['type'] = 'organization'
+
+    record['source'] = 'creator'
+    record['format'] = 'FGDC'
+
+    return record
 
 
 def processContactInfo(job, info, document):
