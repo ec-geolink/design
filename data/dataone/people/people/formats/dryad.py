@@ -5,6 +5,7 @@
     TODO: Handle the XML entities Jonnson and stuff. See Dryad.
 """
 
+import re
 from people import find
 
 
@@ -33,6 +34,15 @@ def process(job, xmldoc, document):
             record['first_name'] = name_parts[1].strip()
             record['last_name'] = name_parts[0].strip()
             record['full_name'] = ' '.join([name_parts[1].strip(), name_parts[0].strip()])
+
+            # Remove middle names inside given name
+            first_name_parts = re.findall('(\w+)\s+([\w\.?\s?]+)', record['first_name'])
+
+            if len(first_name_parts) == 1:
+                print first_name_parts
+                record['first_name'] = first_name_parts[0][0]
+                record['middle_name'] = first_name_parts[0][1].replace(".", "")
+
         else:
             record['full_name'] = name
 

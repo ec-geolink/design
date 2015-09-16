@@ -88,6 +88,8 @@
         For when the organization is more important than the person
 """
 
+import re
+
 
 def process(job, xmldoc, document):
     """
@@ -140,6 +142,17 @@ def processCreator(job, origin, document):
         # Remove middle names inside given name
         name_parts = re.findall('(\w+)\s+([\w\.?\s?]+)', record['first_name'])
     
+        if len(name_parts) == 1:
+            # Prevent non-people names from being split up
+            # i.e.[('Inventory', 'and Monitoring Program')]
+            # Only do the following if the second string is short (<5 chars)
+
+            print name_parts
+
+            if len(name_parts[0][1]) < 5:
+                print "fgdc name parts %s" % name_parts
+                record['first_name'] = name_parts[0][0]
+                record['middle_name'] = name_parts[0][1].replace(".", "")
 
 
         record['last_name'] = name_split[0].strip().capitalize() # LAST to Last

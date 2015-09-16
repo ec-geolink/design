@@ -28,6 +28,8 @@
 # TODO: Check out whether this stuff changes over spec versions
 # TODO: Check if the eml- subfiles need to be processed
 
+import re
+
 
 def process(job, xmldoc, document):
     """
@@ -130,7 +132,7 @@ def processIndividual(record, individual):
                 all_salutations.append(salutation.text.strip())
 
         if len(all_salutations) > 0:
-            record['salutation'] = " ".join(all_salutations)
+            record['salutation'] = " ".join(all_salutations).replace(".", "")
 
     if given_names is not None:
         all_given_names = []
@@ -142,6 +144,15 @@ def processIndividual(record, individual):
 
         if len(all_given_names) > 0:
             record['first_name'] = " ".join(all_given_names)
+
+            # Remove middle names inside given name
+            name_parts = re.findall('(\w+)\s+([\w\.?\s?]+)', record['first_name'])
+
+            if len(name_parts) == 1:
+                print name_parts
+                record['first_name'] = name_parts[0][0]
+                record['middle_name'] = name_parts[0][1].replace(".", "")
+
 
 
     if sur_name is not None and sur_name.text is not None:
