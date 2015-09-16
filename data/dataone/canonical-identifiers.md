@@ -21,8 +21,12 @@ Identifiers:
 - [EAN13](#ean13)
 - [EISSN](#eissn)
 - [FundRef](#fundref)
+- [GVP](#gvp)
 - [Handle](#handle)
+- [IGSN](#igsn)
+- [IMA](#ima)
 - [InfoURI](infouri)
+- [InterRidge](#interridge)
 - [ISNI](#isni)
 - [ISSN](#issn)
 - [ISSN-L](#issn-l)
@@ -37,6 +41,7 @@ Identifiers:
 - [PMID](#pmid)
 - [PURL](#purl)
 - [ResearcherID](#researcherid)
+- [SCAR](#scar)
 - [SICI](#sici)
 - [SSN](#ssn)
 - [UPC](#upc)
@@ -178,9 +183,93 @@ http://search.crossref.org/fundref?q=501100004802
 Recommend: Store as FundRef stores them: 'http://dx.doi.org/10.13039/100000001'
 
 
+## GVP
+
+Sources:
+
+- No good source describing identifier structure/representation.
+- http://volcano.si.edu/gvp_vnums.cfm
+- http://volcano.si.edu/list_volcano_holocene.cfm
+
+About:
+
+Smithsonian's Global Volcanism Program (GVP) announces new and permanent
+unique identifiers (Volcano Numbers, or VNums) for volcanoes documented in
+the Volcanoes of the World (VOTW) database maintained by GVP and accessible
+at www.volcano.si.edu.
+
+Examples:
+
+- GVP:210010
+- http://volcano.si.edu/volcano.cfm?vn=210010
+
+
+Recommend: GVP:210010
+
+
 ## Handle
 
 TBD
+
+## IGSN
+
+Sources:
+
+- http://www.geosamples.org/igsnabout
+- http://www.geosamples.org/aboutigsn
+
+About:
+
+IGSN stands for *International Geo Sample Number*. The IGSN is 9-digit
+alphanumeric code that uniquely identifies samples from our natural
+environment and related sampling features. You can get an IGSN for your
+sample by registering it in the System for Earth Sample Registration SESAR.
+
+Notes:
+
+- The IGSN is 9-digit alphanumeric code that uniquely identifies samples from our natural environment and related sampling features.
+- IGSN's can have URIs, though not consistently: http://www.geosamples.org/profile?igsn=IECUR001E
+- The IGSN follows the syntax of the URN (Uniform Resource Name) which is composed of a ‘Namespace Identifier' (NID), a unique, short string, and the ‘Namespace Specific String’ (NSS).
+- "...the first five digits of the IGSN represent a name space (a unique user code) that uniquely identifies the person or institution that registers the sample."
+- "The last 4 digits of the IGSN are a random string of alphanumeric characters (0-9, A-Z)."
+- "IGSN namespaces that were obtained before July 2014 may have three digit namespaces followed by a random string of 6 alphanumeric characters (e.g. examples #1 and # 2 above). For more information see http://www.geosamples.org/news/namespacechanges."
+
+Examples:
+
+- IGSN:HRV003M16
+- IGSN: IECUR001E (has extra space)
+-
+Recommend:
+
+- IGSN:HRV003M16 (9 digits)
+
+
+## IMA
+
+Sources:
+
+- http://www.ima-mineralogy.org/Minlist.htm
+
+About:
+
+International Mineralogical Association (IMA) publish the list contains
+names and data for minerals which have been approved, discredited,
+redefined and renamed and is the new revised master list of all
+IMA-approved and grandfathered (i.e. inherited from before 1960) minerals.
+
+
+Examples:
+
+- IMA:2014-028
+- IMA1975-013 (on http://rruff.info/ima/)
+- 'No. 2014-103' in print.
+
+Notes:
+
+- "The continuing integrity of the (web-based) IMA mineral list will be maintained by the IMA outreach committee, and additional features are being developed by the RRUFF™ Project."
+- It does not publish the URIs that speak RDF
+
+Recommend: IMA:2014-028
 
 
 ## InfoURI
@@ -214,6 +303,39 @@ Notes on Normalization:
 
 
 Recommend: Use 'info:pii/S0888-7543(02)96852-7'
+
+
+## InterRidge
+
+Sources:
+
+- http://vents-data.interridge.org/sites/vents-data.interridge.org/files/InterRidge_Vents_Database_Version3.1_documentation.pdf
+- http://vents-data.interridge.org/about_the_database
+
+About:
+
+The InterRidge Global Database of Active Submarine Hydrothermal Vent
+Fields, hereafter referred to as the “InterRidge Vents Database,” is to
+provide a comprehensive list of active and inferred active (unconfirmed)
+submarine hydrothermal vent fields for use in academic research and
+education.
+
+Examples:
+
+- InterRidge:13-n-ridge-site
+- http://vents-data.interridge.org/ventfield/13-n-ridge-site
+
+Notes:
+
+- It speaks RDF from version 3, and provide SPARQL endpoint http://vents-data.interridge.org/sparql
+- "In the vents database, the URIs are comprised of the site
+namespace, which should be persistent ... and the node ID (nid) for each vent field (i.e., the
+node ID for each vent field is effectively the unique identifier for that vent field) or unique name of
+the vent field using path alias, e.g., Mariner is http://irvents-new3.whoi.edu/node/1001 and
+http://irvents-new3.whoi.edu/ventfield/mariner."
+
+
+Recommend: InterRidge:13-n-ridge-site
 
 
 ## ISBN
@@ -364,6 +486,30 @@ Recommend: Follow URL pattern.
 ResearcherID are commonly serialized and shared as X-XXXX-XXXX
 
 Recommend: 'X-XXXX-XXXX'
+
+## SCAR
+
+Sources:
+
+- No good source describing identifier structure/representation.
+- https://www1.data.antarctica.gov.au/aadc/gaz/scar/information.cfm
+
+About:
+
+The Scientific Committee on Antarctic Research (SCAR),  through its
+recommendations, expresses the hope that the present effort will contribute
+to the adoption in Antarctica of the general principle of 'one name per
+feature' by all Antarctic place naming authorities.
+
+Examples:
+
+- SCAR:883
+
+Notes:
+
+- It does not publish URIs that speak RDF
+
+Recommend: SCAR:883
 
 
 ## SICI
