@@ -3,7 +3,9 @@
     Functions related to querying the DataOne v1 API.
 """
 
+
 from service import util
+
 
 def getNumResults(query):
     """ Performs a query and extracts just the number of results in the query.
@@ -100,3 +102,12 @@ def getIdentifiers(from_string, to_string, page, page_size=1000):
             identifier_strings.append(identifier.text)
 
     return identifier_strings
+
+
+def getDocument(identifier):
+    """ Get XML document (sysmeta) at `identifier`"""
+
+    query_string = "http://cn.dataone.org/cn/v1/resolve/%s" % identifier
+    query_xml = util.getXML(query_string)
+
+    return query_xml
