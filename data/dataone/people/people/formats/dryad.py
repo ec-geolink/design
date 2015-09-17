@@ -39,7 +39,6 @@ def process(job, xmldoc, document):
             first_name_parts = re.findall('(\w+)\s+([\w\.?\s?]+)', record['first_name'])
 
             if len(first_name_parts) == 1:
-                print first_name_parts
                 record['first_name'] = first_name_parts[0][0]
                 record['middle_name'] = first_name_parts[0][1].replace(".", "")
 

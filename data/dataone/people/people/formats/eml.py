@@ -149,7 +149,6 @@ def processIndividual(record, individual):
             name_parts = re.findall('(\w+)\s+([\w\.?\s?]+)', record['first_name'])
 
             if len(name_parts) == 1:
-                print name_parts
                 record['first_name'] = name_parts[0][0]
                 record['middle_name'] = name_parts[0][1].replace(".", "")
 
