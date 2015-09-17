@@ -11,81 +11,14 @@
         <citeinfo>
             <origin> <- Originator free text here
 
-    People and organization information comes in two locations in the document.
+    "8.1 Originator -- the name of an organization or individual that
+     developed the data set." So it's not possible to tell whether we are
+     processing a person or an organization.
 
-    Location 1: /metadata/metainfo/metc
-    This is the "metadata contact"
+     Because there are no person/org metadata in this field, we lean on other
+     sections of the file for information on the originator's metadata.
 
-    <metadata>
-        ...
-        <metainfo>
-            <metd>20120328</metd>
-            <metrd/>
-            <metfrd/>
-            <metc>
-              <cntinfo>
-                <cntorgp>
-                  <cntorg>Information Center for the Environment...</cntorg>
-                  <cntper>Rob Coman</cntper>
-                </cntorgp>
-                <cntpos/>
-                <cntaddr>
-                  <addrtype>mailing</addrtype>
-                  <address>University of California, Davis</address>
-                  <address>One Shields Avenue</address>
-                  <city>Davis</city>
-                  <state>CA</state>
-                  <postal>95616</postal>
-                  <country>USA</country>
-                </cntaddr>
-                <cntvoice/>
-                <cntemail/>
-              </cntinfo>
-            </metc>
-            <metstdn>
-                FGDC Content Standard for Digital Geospatial Metadata
-            </metstdn>
-            <metstdv>FGDC-STD-001-1998</metstdv>
-            </metainfo>
-        </metadata>
 
-    Location 2: /metadata/ptcontac
-    This seems to be the contact for the data itself.
-
-    <metadata>
-        ...
-        <ptcontac>
-            <cntinfo>
-                <cntorgp>
-                    <cntorg>California Department of P...</cntorg>
-                    <cntper>Leah Godsey Walker, P.E. - Chief, D...</cntper>
-                </cntorgp>
-                <cntaddr>
-                    <addrtype>mailing</addrtype>
-                    <address>1615 Capitol Avenue</address>
-                    <city>Sacramento</city>
-                    <state>CA</state>
-                    <postal>95815-5015</postal>
-                    <country>USA</country>
-                </cntaddr>
-                <cntvoice/>
-                <cntemail/>
-            </cntinfo>
-        </ptcontac>
-    </metadata>
-
-    Fields to extract:
-
-    metadata/metainfo/metc  <cntinfo> cntorg + cntper + cntaddr +
-                                                cntemail + cntvoice
-
-    metadata/ptcontac       <cntinfo/cntperp> + cntper + cntaddr +
-                                                cntvoice + cntemail
-        For when the person is more important than the organization
-
-    metadata/ptcontac       <cntinfo/cntorgp> + cntper + cntaddr +
-                                                cntvoice + cntemail
-        For when the organization is more important than the person
 """
 
 import re
@@ -97,31 +30,35 @@ def process(job, xmldoc, document):
         is an EML document.
     """
 
-    # TODO: Process ptcontac
-    # TODO: Process others? org?
-
-    # info = xmldoc.find("./metainfo/metc/cntinfo")
-    print "FGDC document being processed."
-    origin_nodes = xmldoc.findall("./idinfo/citation/citeinfo/origin")
-    print "Found %d origin nodes." % len(origin_nodes)
-
     records = []
 
+    # Process non-originator info for metadata
+    # DISABLED for now. I can't find any documents where this would be helpful.
+
+    # info = xmldoc.find("./metainfo/metc/cntinfo")
+    #
     # if info is not None:
     #     record = processContactInfo(job, info, document)
     #     records.append(record)
 
+
+    # Process originator
+    origin_nodes = xmldoc.findall("./idinfo/citation/citeinfo/origin")
+
     if origin_nodes is not None:
         for origin_node in origin_nodes:
-            record = processCreator(job, origin_node, document)
+            record = processOriginator(job, origin_node, document)
             records.append(record)
+
+    # Copy in info the originator if there is a match
+    #records = fillInOriginator(records) # DISABLED, see above.
 
     return records
 
 
-def processCreator(job, origin, document):
-    """ Process the Originator (<origin>) element.
-    """
+def processOriginator(job, origin, document):
+    """ Process the Originator (<origin>) element."""
+
     record = {}
 
     """ Decide of this is a person or an organization
@@ -132,38 +69,37 @@ def processCreator(job, origin, document):
             Brown, Sandra
             O'Neill, Elizabeth G.
     """
-    print origin.text
-    
+
+    # Make sure origin is a string of some sort
+    if origin.text is None or len(origin.text) < 1:
+        return record
+
     if re.search("[\w']+,\s+(\w+\.?\s?)+", origin.text):
         name_split = origin.text.split(",")
 
         record['first_name'] = name_split[1].strip()
+        record['last_name'] = name_split[0].strip().capitalize() # LAST to Last
+        record['full_name'] = " ".join([record['first_name'], record['last_name']])
 
         # Remove middle names inside given name
         name_parts = re.findall('(\w+)\s+([\w\.?\s?]+)', record['first_name'])
-    
+
         if len(name_parts) == 1:
             # Prevent non-people names from being split up
             # i.e.[('Inventory', 'and Monitoring Program')]
             # Only do the following if the second string is short (<5 chars)
 
-            print name_parts
-
             if len(name_parts[0][1]) < 5:
-                print "fgdc name parts %s" % name_parts
                 record['first_name'] = name_parts[0][0]
                 record['middle_name'] = name_parts[0][1].replace(".", "")
-
-
-        record['last_name'] = name_split[0].strip().capitalize() # LAST to Last
-        record['full_name'] = " ".join([record['first_name'], record['last_name']])
 
         record['type'] = 'person'
     else:
         record['name'] = origin.text
         record['type'] = 'organization'
 
-    record['source'] = 'creator'
+    record['document'] = document
+    record['source'] = 'originator'
     record['format'] = 'FGDC'
 
     return record
@@ -264,3 +200,31 @@ def processAddress(record, address):
         record['address'] = " ".join([f for f in fields if f is not None])
 
     return record
+
+
+def fillInOriginator(records):
+    """ Use information from other records in this document to fill in
+    information about the originator.
+
+    Not run for now. See note above.
+    """
+
+    originator = None
+
+    for record in records:
+        if 'source' in record and record['source'] == 'originator':
+
+            originator = record
+
+    # Return early if we didn't find one
+    if originator is None:
+        return records
+
+    for record in records:
+        if 'source' not in record or record['source'] != 'originator':
+            print "Fill in from other record"
+            print record
+
+            # if 'last_name' in record
+
+    return records
