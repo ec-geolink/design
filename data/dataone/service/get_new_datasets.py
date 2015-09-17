@@ -74,6 +74,9 @@ def getDocumentsSince(from_string, to_string, page_size=1000):
     if num_results % page_size > 0:
         num_pages += 1
 
+    print "Found %d documents over %d pages." % (num_results, num_pages)
+    continue_or_quit()
+
     # Collect the identifiers
     identifiers = []
 
@@ -151,6 +154,26 @@ def saveSettings(settings, filename):
                             sort_keys=True,
                             indent=2,
                             separators=(',', ': ')))
+
+
+def continue_or_quit():
+    """ Allows the program to pause in order to ask the user to
+    continue or quit."""
+
+    response = None
+
+    while response is None:
+        response = raw_input("c(ontinue) or q(uit)")
+
+        if response != "c" and response != "q":
+            response = None
+
+    if response == "c":
+        print "Continuing..."
+
+    if response == "q":
+        print "Exiting..."
+        sys.exit()
 
 
 def main():
