@@ -92,6 +92,10 @@ def saveRecords(job, records):
         return
 
     for record in records:
+        # Skip empty records
+        if 'type' not in record:
+            continue
+
         if record['type'] == 'person':
             job.writePerson(record)
 
