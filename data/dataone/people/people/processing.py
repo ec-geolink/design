@@ -40,6 +40,22 @@ def processDirectory(job):
 
     print "Processed a total of %d documents" % i
 
+def detectMetadataFormat(xmldoc):
+    """ Detect the format of the metadata in `xmldoc`.
+
+    """
+
+    root = xmldoc
+
+    if re.search("eml$", root.tag):
+        return "eml"
+    elif re.search("Dryad", root.tag):
+        return "dryad"
+    elif re.search("metadata", root.tag):
+        return "fgdc"
+    else:
+        return "unknown"
+
 
 def processDocument(job, xmldoc, filename):
     """ Process an individual document."""
@@ -61,21 +77,21 @@ def processDocument(job, xmldoc, filename):
         if document not in job.public_pids:
             document = ''
 
-    root = xmldoc.getroot()
+    metadata_format = detectMetadataFormat(xmldoc.getroot())
 
-    if re.search("eml$", root.tag):
+    if metadata_format == "eml":
         records = eml.process(job, xmldoc, document)
 
         if records is not None:
             saveRecords(job, records)
 
-    elif re.search("Dryad", root.tag):
+    elif metadata_format == "dryad":
         records = dryad.process(job, xmldoc, document)
 
         if records is not None:
             saveRecords(job, records)
 
-    elif re.search("metadata", root.tag):
+    elif metadata_format == "fgdc":
         records = fgdc.process(job, xmldoc, document)
 
         if records is not None:
