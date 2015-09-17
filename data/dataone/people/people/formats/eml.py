@@ -31,7 +31,7 @@
 import re
 
 
-def process(job, xmldoc, document):
+def process(xmldoc, document):
     """
         Process XML document `xmldoc` with identifier `document` as if it
         is an EML document.
@@ -43,8 +43,7 @@ def process(job, xmldoc, document):
     records = []
 
     for creator in creators:
-        processed_creators = processCreator(job,
-                                            creator,
+        processed_creators = processCreator(creator,
                                             document)
 
         for processed_creator in processed_creators:
@@ -53,7 +52,7 @@ def process(job, xmldoc, document):
     return records
 
 
-def processCreator(job, creator, document):
+def processCreator(creator, document):
     """ Proccess a <creator> tag for an individual.
     """
 

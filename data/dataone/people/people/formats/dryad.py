@@ -9,7 +9,7 @@ import re
 from people import find
 
 
-def process(job, xmldoc, document):
+def process(xmldoc, document):
     """
         Process XML document `xmldoc` with identifier `document` as if it
         is an EML document.

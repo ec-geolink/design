@@ -24,7 +24,7 @@
 import re
 
 
-def process(job, xmldoc, document):
+def process(xmldoc, document):
     """
         Process XML document `xmldoc` with identifier `document` as if it
         is an EML document.
@@ -38,7 +38,7 @@ def process(job, xmldoc, document):
     # info = xmldoc.find("./metainfo/metc/cntinfo")
     #
     # if info is not None:
-    #     record = processContactInfo(job, info, document)
+    #     record = processContactInfo(info, document)
     #     records.append(record)
 
 
@@ -47,7 +47,7 @@ def process(job, xmldoc, document):
 
     if origin_nodes is not None:
         for origin_node in origin_nodes:
-            record = processOriginator(job, origin_node, document)
+            record = processOriginator(origin_node, document)
             records.append(record)
 
     # Copy in info the originator if there is a match
@@ -56,7 +56,7 @@ def process(job, xmldoc, document):
     return records
 
 
-def processOriginator(job, origin, document):
+def processOriginator(origin, document):
     """ Process the Originator (<origin>) element."""
 
     record = {}
@@ -105,7 +105,7 @@ def processOriginator(job, origin, document):
     return record
 
 
-def processContactInfo(job, info, document):
+def processContactInfo(info, document):
     # Blank record
     record = {}
 
