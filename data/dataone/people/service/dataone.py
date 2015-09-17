@@ -1,18 +1,9 @@
-"""
-    file: get_new_datasets.py
-    author: Bryce Meucm
+""" dataone.py
 
-    Gets identifiers, system metadata, and science metadata from the DataOne CN
-    which have been uploaded since the provided datetime.
+    Functions related to querying the DataOne v1 API.
 """
 
-import os
-import sys
-import datetime
-import json
-import xml.etree.ElementTree as ET
-import urllib2
-
+from service import util
 
 def getNumResults(query):
     """ Performs a query and extracts just the number of results in the query.
@@ -20,7 +11,7 @@ def getNumResults(query):
 
     num_results = -1
 
-    xmldoc = getXML(query)
+    xmldoc = util.getXML(query)
     result_node = xmldoc.findall(".//result")
 
     if result_node is not None:
@@ -59,8 +50,8 @@ def createSinceQuery(from_string, to_string, start=0, page_size=1000):
     return query_string
 
 
-def getDocumentsSince(from_string, to_string, page_size=1000):
-    """ Get documents uploaded since `since`
+def getDocumentIdentifiersSince(from_string, to_string, page_size=1000):
+    """ Get document identifiers for documents uploaded since `since`
 
         since: String of form '2015-05-30T23:21:15.567Z'
     """
@@ -75,7 +66,7 @@ def getDocumentsSince(from_string, to_string, page_size=1000):
         num_pages += 1
 
     print "Found %d documents over %d pages." % (num_results, num_pages)
-    continue_or_quit()
+    util.continue_or_quit()
 
     # Collect the identifiers
     identifiers = []
@@ -94,7 +85,7 @@ def getIdentifiers(from_string, to_string, page, page_size=1000):
     start = (page-1) * page_size
     query_string = createSinceQuery(from_string, to_string, start)
 
-    query_xml = getXML(query_string)
+    query_xml = util.getXML(query_string)
 
     identifiers = query_xml.findall(".//str[@name='identifier']")
 
@@ -109,94 +100,3 @@ def getIdentifiers(from_string, to_string, page, page_size=1000):
             identifier_strings.append(identifier.text)
 
     return identifier_strings
-
-
-def getXML(url):
-    """Get XML document at the given url `url`"""
-
-    try:
-        res = urllib2.urlopen(url)
-    except:
-        print "\tgetXML failed for %s" % url
-        return None
-
-    content = res.read()
-    xmldoc = ET.fromstring(content)
-
-    return(xmldoc)
-
-
-def initializeSettings(filename):
-    """ Read in settings from json file located at `filename` and return
-        a Dict of settings.
-    """
-
-    settings = {}
-
-    if not os.path.exists(filename):
-        return settings
-
-    with open(filename, "rb") as settings_file:
-        try:
-            settings = json.load(settings_file)
-        except ValueError:
-            settings = {}
-
-    return settings
-
-
-def saveSettings(settings, filename):
-    """ Save settings in Dict `settings` to json file located at `filename`
-    """
-
-    with open(filename, "wb") as settings_file:
-        settings_file.write(json.dumps(settings,
-                            sort_keys=True,
-                            indent=2,
-                            separators=(',', ': ')))
-
-
-def continue_or_quit():
-    """ Allows the program to pause in order to ask the user to
-    continue or quit."""
-
-    response = None
-
-    while response is None:
-        response = raw_input("c(ontinue) or q(uit)")
-
-        if response != "c" and response != "q":
-            response = None
-
-    if response == "c":
-        print "Continuing..."
-
-    if response == "q":
-        print "Exiting..."
-        sys.exit()
-
-
-def main():
-    # Settings
-    settings = initializeSettings('settings.json')
-
-    if 'last_run' not in settings:
-        print "Last run datetime not found in settings.json. Exiting."
-        sys.exit()
-
-    # Create from and to strings
-    from_string = settings['last_run']
-    to_string = datetime.datetime.today().strftime("%Y-%m-%dT%H:%M:%S.0Z")
-
-    # Get documents
-    documents = getDocumentsSince(from_string, to_string)
-    settings['last_run'] = to_string
-
-    # Save settings
-    saveSettings(settings, 'settings.json')
-
-    return
-
-
-if __name__ == "__main__":
-    main()
