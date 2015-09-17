@@ -9,6 +9,12 @@
 import os
 import sys
 import datetime
+import json
+
+from people import processing
+from people.formats import eml
+from people.formats import dryad
+from people.formats import fgdc
 
 from service import settings
 from service import dataone
@@ -27,16 +33,37 @@ def main():
     from_string = config['last_run']
     to_string = datetime.datetime.today().strftime("%Y-%m-%dT%H:%M:%S.0Z")
 
-    # Get documents
-    documents = dataone.getDocumentIdentifiersSince(from_string, to_string)
+    # Get document identifiers
+    identifiers = dataone.getDocumentIdentifiersSince(from_string, to_string)
 
-    print "Retreived %d identifiers." % len(documents)
+    print "Retrieved %d identifiers." % len(identifiers)
     util.continue_or_quit()
 
-    config['last_run'] = to_string
+
+    # Get documents themselves
+    for identifier in identifiers[0:4]:
+        print "Getting document with identifier `%s`" % identifier
+
+        doc = dataone.getDocument(identifier)
+        fmt = processing.detectMetadataFormat(doc)
+
+        if fmt == "eml":
+            records = eml.process(doc, identifier)
+        elif fmt == "dryad":
+            records = dryad.process(doc, identifier)
+        elif fmt == "fgdc":
+            records = fgdc.process(doc, identifier)
+
+
+        print "Found %d record(s)." % len(records)
+
+        for record in records:
+            print json.dumps(record, sort_keys=True, indent=2)
+
 
     # Save settings
-    settings.saveSettings(config, 'settings.json')
+    # config['last_run'] = to_string
+    # settings.saveSettings(config, 'settings.json')
 
     return
 
