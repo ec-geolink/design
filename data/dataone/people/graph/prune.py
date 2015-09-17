@@ -24,18 +24,41 @@ def prune(filename, type):
     retained_file = open("%s_pruned.csv" % type, 'wb')
     rejected_file = open("%s_pruned_rejected.csv" % type, 'wb')
 
-    people_field_names = ["Id", "full_name", "salutation", "first_name",
-                          "last_name", "organization", "address",
-                          "address_delivery_point", "address_city",
-                          "address_postal", "address_admin_area",
-                          "address_country", "email", "phone", "document",
-                          "type", "source", "format"]
+    # Read in field names
+    people_field_names = ["Id",
+                           "full_name",
+                           "salutation",
+                           "first_name",
+                           "middle_name",
+                           "last_name",
+                           "organization",
+                           "address",
+                           "address_delivery_point",
+                           "address_city",
+                           "address_postal",
+                           "address_admin_area",
+                           "address_country",
+                           "email",
+                           "phone",
+                           "document",
+                           "type",
+                           "source",
+                           "format"]
 
-    organization_field_names = ["Id", "name", "address",
-                                "address_delivery_point", "address_city",
-                                "address_postal", "address_admin_area",
-                                "address_country", "email", "phone",
-                                "document", "type", "source", "format"]
+    organization_field_names = ["Id",
+                                 "name",
+                                 "address",
+                                 "address_delivery_point",
+                                 "address_city",
+                                 "address_postal",
+                                 "address_admin_area",
+                                 "address_country",
+                                 "email",
+                                 "phone",
+                                 "document",
+                                 "type",
+                                 "source",
+                                 "format"]
 
     # Do the processing
     if type == "people":
