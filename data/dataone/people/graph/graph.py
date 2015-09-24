@@ -7,10 +7,12 @@
     Creates an RDF graph from a JSON dump.
 """
 
+import os
 import sys
 import json
 import RDF
 import uuid
+import pandas
 
 
 def addStatement(model, s, p, o):
@@ -70,61 +72,60 @@ def serialize(model, ns, filename, format):
 
 
 def createPeopleGraph(filename, ns={}, organizations={}):
-    # Store people UUIDs
-    people = []
+    # Store/retrieve people UUIDs
+    if os.path.isfile("people_uris.csv"):
+        print "Loading existing people URI mapping file."
 
+        people = pandas.read_csv("people_uris.csv")
+        print people.shape
+    else:
+        print "Creating data frame from scratch"
+        people = pandas.DataFrame()
+        print people.shape
+
+    # Create RDF Model
     model = createModel()
 
+    # Load people file
     with open(filename, "rb") as infile:
         jsonfile = json.loads(infile.read())
 
+    # Check the file for content
     if len(jsonfile) <= 1:
         print "People file was read but didn't contain any content."
         sys.exit()
 
-    """ Unroll `jsonfile`
+    # Unroll the unmatched records before processing
+    if 'unmatched' in jsonfile:
+        print "Unrolling unmatchable records before processing..."
 
-        `jsonfile` contains a key 'unmatched' which is an array of the
-        jsonfile not found to match any other record. We want to unroll this
-        so all of the items in the array can be processed in the same sweep
-        as the items that do have matches.
+        unmatched_count = len(jsonfile['unmatched'])
 
-        We want to turn this:
+        for i in range(0, unmatched_count):
+            jsonfile['unmatched' + str(i)] =  [jsonfile['unmatched'][i]]
 
-        jsonfile = {
-            'person1' : [person1a, person1b, ...],
-            'person2' : [person2a, person2b, ...],
-            'unmathced' : [person3, person 4, person 5, ...s]
-        }
+        del jsonfile['unmatched']
 
-        Into this:
+    # Process each key
+    for key in jsonfile:
+        print key
+        records = jsonfile[key] # Array of people instances
 
-        jsonfile = [
-            [person1a, person1b],
-            [person2a, person2b],
-            [person3],
-            [person4],
-            [person5]
-        ]
-    """
+        existing_uri = findPeopleUri(people, key)
 
-    unique_people = []
+        print "Existing URI is %s" % existing_uri
 
-    if "unmatched" in jsonfile:
-        for record in jsonfile['unmatched']:
-            unique_people.append([record])
+        if existing_uri is None:
+            # Make UUID and URI
+            identifier = str(uuid.uuid4())
+            identifier_uri = RDF.Uri(ns['d1people']+identifier)
 
-    for json_key in jsonfile:
-        if json_key == "unmatched":
-            continue
+            # Store minted URI
+            people = people.append(pandas.DataFrame([{'key': key, 'uri': ns['d1people']+identifier}]))
+        else:
+            print "Using existing URI %s." % existing_uri
+            identifier_uri = RDF.Uri(existing_uri)
 
-        unique_people.append(jsonfile[json_key])
-
-    for unique_person in unique_people:
-        # Make ID (temporary)
-        identifier = str(uuid.uuid4())
-        identifier_uri = RDF.Uri(ns['d1people']+identifier)
-        people.append(identifier_uri)
 
         # Collect unique values of multiple values for each record
         salutations = []
@@ -136,7 +137,7 @@ def createPeopleGraph(filename, ns={}, organizations={}):
         mailing_addresses = []
         documents = []
 
-        for record in unique_person:
+        for record in records:
             # Full name => glview:namePrefix
             if len(record['salutation']) > 0:
                 salutations.append(record['salutation'])
@@ -240,7 +241,7 @@ def createPeopleGraph(filename, ns={}, organizations={}):
 
 def createOrganizationGraph(filename, ns={}):
     # Store UUID mappings
-    organizations = {}
+    organizations = []
 
     model = createModel()
 
@@ -255,7 +256,9 @@ def createOrganizationGraph(filename, ns={}):
         # Make ID (temporary)
         identifier = str(uuid.uuid4())
         identifier_uri = RDF.Uri(ns['d1org']+identifier)
-        organizations[key] = identifier_uri
+
+        # Save minted URI
+        organizations.append({'uri': ns['d1org']+identifier, 'key': key})
 
         # Collect unique values of multiple values for each record
         names = []
@@ -318,6 +321,23 @@ def createOrganizationGraph(filename, ns={}):
 
     return organizations
 
+def findPeopleUri(people, key):
+    """ Given a pandas.DataFrame of people, look for key and return either
+    the existing URI for that key, or None if the URI was not found.
+    """
+
+    found = None # Store result, or None
+
+    if 'key' not in people and 'uri' not in people:
+        return found
+
+    search_result = people[people.key == key]
+
+    if search_result.shape[0] == 1:
+        found = people.uri[people.key == key].values[0]
+
+    return found
+
 
 def main():
     ns = {
@@ -339,8 +359,16 @@ def main():
         organizations
     """
 
+    print "Creating organization graph..."
     organizations = createOrganizationGraph("organizations_unique.json", ns)
-    createPeopleGraph("people_unique.json", ns, organizations)
+
+    print "Creating people graph..."
+    people = createPeopleGraph("people_unique.json", ns, organizations)
+
+    pandas.DataFrame(organizations).to_csv("organization_uris.csv", index=False, encoding='utf-8')
+    people.to_csv("people_uris.csv", index=False, encoding='utf-8')
+
+
 
 if __name__ == "__main__":
     main()
