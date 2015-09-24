@@ -54,12 +54,12 @@ I have experimented with both approaches and found value in both but I have also
 ### Proposed Approach
 While it may seem reasonable to take a person in metadata record with the full name 'Bryce Mecum' and mint a nice HTTP URI like `https://www.dataone.org/people/brycemecum`, it is not feasible to do this for every person or organization given how many possible name collisions are possible, the vast number of non-ASCII characters present in names (i.e. 象形字), and the presence of datasets where only a last named was filled in. Universally Unique Identifiers (UUIDs) are a potential option.
 - People URIs at `https://dataone.org/person/`
-  - i.e. `https://dataone.org/person/123e4567-e89b-12d3-a456-426655440000`
+  - i.e. `https://dataone.org/person/urn:uuid:123e4567-e89b-12d3-a456-426655440000`
 
 - Organization URIs at `https://dataone.org/organization/`
-  - i.e. `https://dataone.org/organization/123e4567-e89b-12d3-a456-426655440000`
+  - i.e. `https://dataone.org/organization/urn:uuid:123e4567-e89b-12d3-a456-426655440000`
 
-UUIDs would be generated as UUID 4 (random) and checked for collision with existing UUIDs prior to establishing new HTTP URIs.
+UUIDs would be generated as UUID 4 (random) and checked for collision with existing UUIDs prior to establishing new HTTP URIs. Note that the above URIs use the `urn:uunid` prefix before the UUID itself. This is a workaround for the case when a UUID begins with a number.
 
 DataOne manages a number of authentication services (See below: [Matching DataOne Accounts](#matching-dataone-accounts)). It is possible that, in the future, users from these services will have their own, human-readable HTTP URIs (like [http://dataone.org/people/brycemecum](http://dataone.org/people/brycemecum)). These URIs would be vastly preferable to a UUID4-based URI and should be used instead. This decision would be made prior to minting a new HTTP URI for an instance of a person in a dataset and would require some form of resolution between the authentication service and the graph generation service.
 
@@ -140,3 +140,28 @@ Date and time (UTC) that this system metadata record was last modified in the Da
 dateUploaded (Solr: dateUploaded) Type: Types.xs.dateTime
 
 Date and time (UTC) that the object was uploaded into the DataONE system, which is typically the time that the object is first created on a Member Node using the MNStorage.create() operation. Note this is independent of the publication or release date of the object. The Member Node must set this optional field when it receives the system metadata document from a client.
+
+### RDF Graph Generation Notes
+
+Public vs Private Datasets
+
+The dump being processed to create the initial RDF graph contains some datasets
+that are private. We're still harvesting the information for people and
+organizations but we aren't linking in their document identifiers.
+
+How the deduplication is working
+
+The following organizations will not be deduped with the current approach so they
+will each get their own URI.
+
+- Taiwan  Forestry Research Institute
+- Taiwan Forest Research Institute
+- Taiwan Forestry Institute
+- Taiwan Forestry Research Institute
+- Taiwan forestry research institute
+- TaiwanForestry Research Institute
+
+A possible solution might be to (1) remove double-spaces from strings and/or (2)
+remove all whitespace and downcasing strings when comparing. I'm not sure how
+the last part would work in terms of choosing a canonical form of the
+organization when there are duplicates like the above.
