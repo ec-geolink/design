@@ -98,7 +98,7 @@ def processDocument(job, xmldoc, filename):
             saveRecords(job, records)
 
     else:
-        print "Unknown format: %s" % root.tag
+        print "Unknown format: %s" % metadata_format
 
 
 def saveRecords(job, records):
