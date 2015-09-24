@@ -80,19 +80,19 @@ def processDocument(job, xmldoc, filename):
     metadata_format = detectMetadataFormat(xmldoc.getroot())
 
     if metadata_format == "eml":
-        records = eml.process(job, xmldoc, document)
+        records = eml.process(xmldoc, document)
 
         if records is not None:
             saveRecords(job, records)
 
     elif metadata_format == "dryad":
-        records = dryad.process(job, xmldoc, document)
+        records = dryad.process(xmldoc, document)
 
         if records is not None:
             saveRecords(job, records)
 
     elif metadata_format == "fgdc":
-        records = fgdc.process(job, xmldoc, document)
+        records = fgdc.process(xmldoc, document)
 
         if records is not None:
             saveRecords(job, records)
