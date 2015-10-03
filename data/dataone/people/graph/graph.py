@@ -13,6 +13,7 @@ import json
 import RDF
 import uuid
 import pandas
+import unicodecsv as csv
 
 
 def addStatement(model, s, p, o):
@@ -72,16 +73,16 @@ def serialize(model, ns, filename, format):
 
 
 def createPeopleGraph(filename, ns={}, organizations={}):
-    # Store/retrieve people UUIDs
+    # Store/retrieve people URIs
     if os.path.isfile("people_uris.csv"):
         print "Loading existing people URI mapping file."
 
-        people = pandas.read_csv("people_uris.csv")
-        print people.shape
+        people = pandas.Series.from_csv("people_uris.csv", encoding='utf-8').to_dict()
+
+        print len(people)
     else:
-        print "Creating data frame from scratch"
-        people = pandas.DataFrame()
-        print people.shape
+        print "Creating people mappings from scratch."
+        people = {}
 
     # Create RDF Model
     model = createModel()
@@ -91,7 +92,7 @@ def createPeopleGraph(filename, ns={}, organizations={}):
         jsonfile = json.loads(infile.read())
 
     # Check the file for content
-    if len(jsonfile) <= 1:
+    if len(jsonfile) < 1:
         print "People file was read but didn't contain any content."
         sys.exit()
 
@@ -108,24 +109,15 @@ def createPeopleGraph(filename, ns={}, organizations={}):
 
     # Process each key
     for key in jsonfile:
-        print key
         records = jsonfile[key] # Array of people instances
 
         existing_uri = findPeopleUri(people, key)
 
-        print "Existing URI is %s" % existing_uri
-
         if existing_uri is None:
-            # Make UUID and URI
-            identifier = str(uuid.uuid4())
-            identifier_uri = RDF.Uri(ns['d1people']+identifier)
+            existing_uri = mintPeopleUri(people, key, ns)
+            people[key] = existing_uri
 
-            # Store minted URI
-            people = people.append(pandas.DataFrame([{'key': key, 'uri': ns['d1people']+identifier}]))
-        else:
-            print "Using existing URI %s." % existing_uri
-            identifier_uri = RDF.Uri(existing_uri)
-
+        identifier_uri = existing_uri
 
         # Collect unique values of multiple values for each record
         salutations = []
@@ -154,13 +146,15 @@ def createPeopleGraph(filename, ns={}, organizations={}):
             if len(record['last_name']) > 0:
                 last_names.append(record['last_name'])
 
-            # Organization TODO Align this comment
+            # Organization
             if len(record['organization']) > 0:
-                if record['organization'] in organizations:
-                    organization_uris.append(organizations[record['organization']])
-                else:
-                    print "Bad things happened for %s" % record['organization']
-                    print record
+                existing_uri = findOrganizationUri(organizations, record['organization'])
+
+                if existing_uri is None:
+                    existing_uri = mintOrganizationUri(organizations, record['organization'], ns)
+                    organizations[record['organization']] = existing_uri
+
+                organization_uris.append(existing_uri)
 
             # Email address => foaf:mbox
             if len(record['email']) > 0:
@@ -240,25 +234,30 @@ def createPeopleGraph(filename, ns={}, organizations={}):
 
 
 def createOrganizationGraph(filename, ns={}):
-    # Store UUID mappings
-    organizations = []
+    # Store/retrieve organization URIs
+    if os.path.isfile("organization_uris.csv"):
+        print "Loading existing organization URI mapping file."
+        organizations = pandas.Series.from_csv("organization_uris.csv", encoding='utf-8').to_dict()
+        print len(organizations)
+    else:
+        print "Creating organization mappings from scratch."
+        organizations = {}
 
     model = createModel()
 
     with open(filename, "rb") as infile:
         jsonfile = json.loads(infile.read())
 
-    if len(jsonfile) <= 1:
-        print "People file was read but didn't contain any content."
+    if len(jsonfile) < 1:
+        print "Organization file was read but didn't contain any content."
         sys.exit()
 
     for key in jsonfile:
-        # Make ID (temporary)
-        identifier = str(uuid.uuid4())
-        identifier_uri = RDF.Uri(ns['d1org']+identifier)
+        identifier_uri = findOrganizationUri(organizations, key)
 
-        # Save minted URI
-        organizations.append({'uri': ns['d1org']+identifier, 'key': key})
+        if identifier_uri is None:
+            identifier_uri = mintOrganizationUri(organizations, key, ns)
+            organizations[key] = identifier_uri
 
         # Collect unique values of multiple values for each record
         names = []
@@ -323,20 +322,52 @@ def createOrganizationGraph(filename, ns={}):
 
 def findPeopleUri(people, key):
     """ Given a pandas.DataFrame of people, look for key and return either
-    the existing URI for that key, or None if the URI was not found.
+    the existing URI for that key, or mint a new URI and return that.
     """
 
-    found = None # Store result, or None
+    identifier_uri_string = None
 
-    if 'key' not in people and 'uri' not in people:
-        return found
+    if key in people:
+        identifier_uri_string = people[key]
 
-    search_result = people[people.key == key]
+    return identifier_uri_string
 
-    if search_result.shape[0] == 1:
-        found = people.uri[people.key == key].values[0]
 
-    return found
+def findOrganizationUri(organizations, key):
+    """ Given a pandas.DataFrame of organizations, look for key and return
+        either the existing URI for that key, or mint a new URI and return that.
+    """
+
+    identifier_uri_string = None
+
+    if key in organizations:
+        identifier_uri_string = organizations[key]
+
+    return identifier_uri_string
+
+
+def mintPeopleUri(people, key, ns):
+    """ Mints and returns the people URI string for key `key`"""
+
+    # Make UUID and URI string
+    identifier = str(uuid.uuid4())
+    identifier_uri_string = ''.join([ns['d1people'], 'urn:uuid:', identifier])
+
+    print "Minting new person URI for %s <=> %s." % (key.encode('utf-8'), identifier_uri_string.encode('utf-8'))
+
+    return identifier_uri_string
+
+
+def mintOrganizationUri(organizations, key, ns):
+    """ Mints and returns the organization URI string for key `key`"""
+
+    # Make UUID and URI string
+    identifier = str(uuid.uuid4())
+    identifier_uri_string = ''.join([ns['d1org'], 'urn:uuid:', identifier])
+
+    print "Minting new organization URI for %s <=> %s." % (key.encode('utf-8'), identifier_uri_string.encode('utf-8'))
+
+    return identifier_uri_string
 
 
 def main():
@@ -365,8 +396,20 @@ def main():
     print "Creating people graph..."
     people = createPeopleGraph("people_unique.json", ns, organizations)
 
-    pandas.DataFrame(organizations).to_csv("organization_uris.csv", index=False, encoding='utf-8')
-    people.to_csv("people_uris.csv", index=False, encoding='utf-8')
+    with open("organization_uris.csv", "wb") as outfile:
+        w = csv.writer(outfile, encoding='utf-8')
+        w.writerow(('key', 'uri'))
+
+        for key in organizations:
+            w.writerow((key, organizations[key]))
+
+
+    with open("people_uris.csv", "wb") as outfile:
+        w = csv.writer(outfile, encoding='utf-8')
+        w.writerow(('key', 'uri'))
+
+        for key in people:
+            w.writerow((key, people[key]))
 
 
 
