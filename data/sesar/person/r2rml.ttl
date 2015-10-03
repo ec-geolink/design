@@ -1,0 +1,101 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix glbase: <http://schema.geolink.org/dev/main#>.
+
+<PersonTriplesMap>
+    a rr:TriplesMap;
+    
+    rr:logicalTable [ rr:tableName "person" ];
+
+    rr:subjectMap [ rr:template "http://geolink.geosamples.org/id/person/{person_id}";
+                    rr:class foaf:Person;
+		  ];
+   
+    rr:predicateObjectMap
+    [
+      rr:predicate           rdfs:label;
+      rr:objectMap           [rr:template "{family_name}, {given_name}"; rr:termType rr:Literal; ]
+    ];
+
+    rr:predicateObjectMap
+    [
+      rr:predicate           glbase:nameGiven;
+      rr:objectMap           [rr:column "given_name"]
+    ];
+    
+    rr:predicateObjectMap
+    [
+      rr:predicate           glbase:nameMiddle;
+      rr:objectMap           [rr:column "middle_name"]
+    ];
+
+    rr:predicateObjectMap
+    [
+      rr:predicate           glbase:nameFamily;
+      rr:objectMap           [rr:column "family_name"]
+    ];
+ 
+    rr:predicateObjectMap
+    [
+      rr:predicate            foaf:mbox;
+      rr:objectMap            [rr:column "email"]
+    ];
+
+    rr:predicateObjectMap
+    [
+      rr:predicate             foaf:homepage;
+      rr:objectMap             [rr:column "home_page"]
+    ];    
+ 
+    rr:predicateObjectMap
+    [
+      rr:predicate		glbase:hasAffiliation;
+      rr:objectMap              [rr:template "http://geolink.geosamples.org/id/organization/{org_id}"]
+    ];
+
+    rr:predicateObjectMap
+    [
+      rr:predicate              glbase:hasIdentifier;
+      rr:objectMap
+      [
+        rr:parentTriplesMap <PersonExternalIdTriplesMap>;
+        rr:joinCondition [
+          rr:child "person_id";
+          rr:parent "person_id";
+        ];
+        rr:termType rr:BlankNode;         
+      ];
+    ].
+
+<PersonExternalIdTriplesMap> 
+    a rr:TriplesMap;
+    
+    rr:logicalTable [rr:tableName "person_external_id"];
+
+    rr:subjectMap [rr:template "b_sesar_person_ex_id_{sid}"; 
+                   rr:termType rr:BlankNode;
+                   rr:class glbase:Identifier;
+                  ];
+    rr:predicateObjectMap
+    [
+      rr:predicate                 glbase:hasIdentiferScheme;
+      rr:objectMap	           [rr:column "ex_id_scheme"]
+    ];
+
+    rr:predicateObjectMap
+    [
+      rr:predicate                 glbase:hasIdentifierValue;
+      rr:objectMap                 [rr:column "ex_id"]
+    ];
+
+    rr:predicateObjectMap
+    [
+      rr:predicate                 rdfs:seeAlso;
+      rr:objectMap                 [rr:column "see_also"]     
+    ].
+    
+    
+
