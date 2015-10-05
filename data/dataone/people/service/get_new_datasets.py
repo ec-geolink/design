@@ -40,9 +40,10 @@ def main():
     print "Retrieved %d identifiers." % len(identifiers)
     util.continue_or_quit()
 
+    all_records = []
 
     # Get documents themselves
-    for identifier in identifiers[0:4]:
+    for identifier in identifiers[0:1]:
         print "Getting document with identifier `%s`" % identifier
 
         doc = dataone.getDocument(identifier)
@@ -54,12 +55,16 @@ def main():
             records = dryad.process(doc, identifier)
         elif fmt == "fgdc":
             records = fgdc.process(doc, identifier)
+        else:
+            print "Unknown format."
 
 
         print "Found %d record(s)." % len(records)
 
         for record in records:
             print json.dumps(record, sort_keys=True, indent=2)
+
+        all_records.append(records)
 
     deduper = dedupe.Dedupe()
     deduper.register_store("../graph/people_unique.json", 'person', 'json')
