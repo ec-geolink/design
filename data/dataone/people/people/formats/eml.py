@@ -121,6 +121,9 @@ def processCreator(creator, document):
     else:
         record['type'] = 'organization'
 
+    # Append primary record to records list
+    records.append(record)
+
     return records
 
 
