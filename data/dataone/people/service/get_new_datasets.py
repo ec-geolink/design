@@ -23,7 +23,7 @@ from service import util
 
 def main():
     # Settings
-    config = settings.initializeSettings('settings.json')
+    config = util.loadJSONFile('settings.json')
 
     if 'last_run' not in config:
         print "Last run datetime not found in settings.json. Exiting."
@@ -96,7 +96,7 @@ def main():
 
     # Save settings
     # config['last_run'] = to_string
-    # settings.saveSettings(config, 'settings.json')
+    # util.saveJSONFile(config, 'settings.json')
 
     return
 
