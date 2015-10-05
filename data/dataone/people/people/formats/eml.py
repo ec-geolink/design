@@ -1,6 +1,6 @@
 """ eml.py
 
-    Processing functions for processing EML
+    Processing functions for processing EML.
 
     The contents of the <creator> tags are extracted.
     <creator>s are formatted according to the eml-party module.
@@ -43,8 +43,7 @@ def process(xmldoc, document):
     records = []
 
     for creator in creators:
-        processed_creators = processCreator(creator,
-                                            document)
+        processed_creators = processCreator(creator, document)
 
         for processed_creator in processed_creators:
             records.append(processed_creator)
@@ -58,8 +57,8 @@ def processCreator(creator, document):
 
     """ When a creator has multiple organizations, we duplicate their record
     once for each organization."""
-    records = []
-    record = {}
+    records = [] # Store all records parsed
+    record = {} # Stores the primary record being parsed
 
     individual = creator.find("./individualName")
     organizations = creator.findall("./organizationName")
@@ -67,7 +66,6 @@ def processCreator(creator, document):
     # Process individual or organization
     if individual is not None:  # Individual
         record = processIndividual(record, individual)
-        # NOTE: We'll add this peron's organizations later
     elif organizations is not None:  # Organizaiton
         org_strings = []
 
@@ -97,7 +95,8 @@ def processCreator(creator, document):
 
     record['document'] = document
     record['format'] = "EML"
-    record['source'] = 'creator'
+
+    """
     Only attribute 'creator' to this record if it doesn't have an id attrib.
 
         e.g. <creator> versus <creator id="site">
