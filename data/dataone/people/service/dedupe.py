@@ -106,7 +106,11 @@ class Dedupe:
 
         # Create a place to store this record if none already exists
         if key not in self.stores[kind]:
-            self.stores[kind][key] = []
+            self.stores[kind][key] = {}
+
+        # Add list to store records
+        if 'records' not in self.stores['kind']:
+            self.stores['kind'][key]['records'] = []
 
         # Add (and save) record to store (and storefile)
         self.stores[kind][key].append(record)
@@ -124,8 +128,11 @@ class Dedupe:
         if kind not in self.stores:
             raise Exception("Store '%s' not found." % kind)
 
+        if 'records' not in self.stores[kind]:
+            return False
+
         # Get a reference to the store
-        store = self.stores[kind]
+        store_records = self.stores[kind]['records']
 
         # Run the query
         if key in store:

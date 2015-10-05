@@ -103,10 +103,14 @@ def uniquifyPeople(input_file, output_file, field_names):
 
         if key in seen:
             row['same'] = key
-            seen[key].append(row)
+            seen[key]['records'].append(row)
         else:
-            seen[key] = []
-            seen[key].append(row)
+            seen[key] = {}
+
+            if 'records' not in seen[key]:
+                seen[key]['records'] = []
+
+            seen[key]['records'].append(row)
 
         output_writer.writerow(row)
 
