@@ -19,6 +19,7 @@ from people.formats import fgdc
 from service import settings
 from service import dataone
 from service import util
+from service import dedupe
 
 
 def main():
