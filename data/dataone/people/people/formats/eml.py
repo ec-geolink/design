@@ -116,6 +116,7 @@ def processCreator(creator, document):
                 org_text = organization.text.strip()
 
                 new_record = record.copy()
+                new_record['type'] = 'organization'
                 new_record['organization'] = org_text
                 records.append(new_record)
     else:
