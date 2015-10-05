@@ -60,6 +60,39 @@ def main():
         for record in records:
             print json.dumps(record, sort_keys=True, indent=2)
 
+    deduper = dedupe.Dedupe()
+    deduper.register_store("../graph/people_unique.json", 'person', 'json')
+    deduper.register_store("../graph/organizations_unique.json", 'organization', 'json')
+
+    for record in records:
+        if 'type' not in record:
+            continue
+
+        if record['type'] == "person":
+            if 'name' not in record and 'email' not in record:
+                continue
+
+                if len(record['name']) <= 0 and len(record['email']) <= 0:
+                    continue
+
+            key  = "%s#%s" % (record['name'], record['email'])
+        elif record['type'] == "organization":
+            if 'name' not in record and len(record['name']) <= 0:
+                continue
+
+            key  = "%s" % (record['name'])
+
+        print "Looking up %s: %s." % (record['type'], key)
+
+        # De-dupe and integrate records
+        found = deduper.find(record['type'], key)
+
+        if found:
+            print "Found"
+        else:
+            print "Not found"
+            deduper.add(record['type'], key, record)
+
 
     # Save settings
     # config['last_run'] = to_string
