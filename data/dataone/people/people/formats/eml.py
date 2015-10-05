@@ -37,8 +37,8 @@ def process(xmldoc, document):
         is an EML document.
     """
 
-    # Process each <creator>
-    creators = xmldoc.findall(".//creator")
+    # Process each <dataset/creator>
+    creators = xmldoc.findall(".//dataset/creator")
 
     records = []
 
@@ -98,6 +98,15 @@ def processCreator(creator, document):
     record['document'] = document
     record['format'] = "EML"
     record['source'] = 'creator'
+    Only attribute 'creator' to this record if it doesn't have an id attrib.
+
+        e.g. <creator> versus <creator id="site">
+    """
+
+    if 'id' not in creator.attrib:
+        record['source'] = 'creator'
+    else:
+        record['source'] = 'other'
 
     if individual is not None:
         record['type'] = 'person'
