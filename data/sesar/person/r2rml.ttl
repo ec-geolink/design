@@ -11,7 +11,7 @@
     rr:logicalTable [ rr:tableName "person" ];
 
     rr:subjectMap [ rr:template "http://geolink.geosamples.org/id/person/{person_id}";
-                    rr:class foaf:Person;
+                    rr:class glbase:Person;
 		  ];
    
     rr:predicateObjectMap
