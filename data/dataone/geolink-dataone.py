@@ -478,6 +478,7 @@ def serialize(model, ns, filename, format):
 def processPage(model, ns, fm, personhash, page, pagesize=1000):
     xmldoc = getDataList(page, pagesize)
 
+    sys.exit()
     if xmldoc is None:
         print "Failed to retrieve page from the Solr index. Exiting."
         sys.exit()
@@ -548,4 +549,5 @@ if __name__ == "__main__":
     import string
     import sys
 
-    main()
+    # main()
+    getDataList(1, 100)
