@@ -92,30 +92,38 @@ def uniquifyPeople(input_file, output_file, field_names):
     input_reader.next()
 
     seen = {}
+    unmatched = []
 
     # Remove identicals
     for row in input_reader:
-        key = 'unmatched'
+        key = None # Default
 
+        # Override default key if we have a usable one
         if len(row['last_name']) > 0 and len(row['email']) > 0:
             key = row['last_name'] + "#" + row['email']
             key = key.encode('utf-8')
 
-        if key in seen:
-            row['same'] = key
-            seen[key]['records'].append(row)
+        if key is None:
+            unmatched.append({'records': row})
         else:
-            seen[key] = {}
+            if key in seen:
+                row['same'] = key
+                seen[key]['records'].append(row)
+            else:
+                seen[key] = {}
 
-            if 'records' not in seen[key]:
-                seen[key]['records'] = []
+                if 'records' not in seen[key]:
+                    seen[key]['records'] = []
 
-            seen[key]['records'].append(row)
+                seen[key]['records'].append(row)
 
         output_writer.writerow(row)
 
-    num_unique = len(seen) + len(seen['unmatched'])
+    num_unique = len(seen) + len(unmatched)
     print "Unique people: %d" % num_unique
+
+    # Add in unmatched records to seen dict
+    seen['unmatched'] = unmatched
 
     with open("people_unique.json", "wb") as f:
         f.write(json.dumps(seen,
@@ -153,10 +161,9 @@ def uniquifyOrganizations(input_file, output_file, field_names):
 
             if key in seen:
                 row['same'] = key
-                seen[key].append(row)
+                seen[key]['records'].append(row)
             else:
-                seen[key] = []
-                seen[key].append(row)
+                seen[key] = { 'records': [ row ] }
 
         output_writer.writerow(row)
 

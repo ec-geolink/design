@@ -100,20 +100,20 @@ class Dedupe:
             print "Invalid store type: %s." % kind
             return
 
-        # Handle keyless records (people with on email)
         if key is None:
-            key = "unmatched"
+            self.stores[kind]['unmatched'].append({'records': record})
+        else:
+            if key not in self.stores[kind]:
+                print "Initializing key %s in %s." % (key, kind)
+                self.stores[kind][key] = {}
 
-        # Create a place to store this record if none already exists
-        if key not in self.stores[kind]:
-            self.stores[kind][key] = {}
+            if 'records' not in self.stores[kind][key]:
+                print "For some odd reason this key has no 'records' key."
+                self.stores[kind][key]['records'] = []
 
-        # Add list to store records
-        if 'records' not in self.stores['kind']:
-            self.stores['kind'][key]['records'] = []
+            # Add (and save) record to store (and storefile)
+            self.stores[kind][key]['records'].append(record)
 
-        # Add (and save) record to store (and storefile)
-        self.stores[kind][key].append(record)
         self.save_json_store(kind)
 
 
@@ -128,14 +128,14 @@ class Dedupe:
         if kind not in self.stores:
             raise Exception("Store '%s' not found." % kind)
 
-        if 'records' not in self.stores[kind]:
+        if key not in self.stores[kind]:
             return False
 
         # Get a reference to the store
-        store_records = self.stores[kind]['records']
+        store_records = self.stores[kind][key]['records']
 
         # Run the query
-        if key in store:
+        if key in store_records:
             return True
         else:
             return False
