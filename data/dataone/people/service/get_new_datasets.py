@@ -46,7 +46,7 @@ def main():
 
 
     # Get documents themselves
-    for identifier in identifiers[0:1]:
+    for identifier in identifiers:
         print "Getting document with identifier `%s`" % identifier
 
         doc = dataone.getDocument(identifier)
@@ -72,30 +72,22 @@ def main():
 
             if found:
                 print "Found"
+
                 uri = deduper.get_uri(record)
 
                 if uri is not None:
                     print "URI exists and is %s." % uri
-
                 else:
                     print "URI does not exist."
-
-                    deduper.mint_uri(record)
-                    deduper.save_json_store(record['type'])
             else:
                 print "Record not found."
 
-                deduper.mint_uri(record)
                 deduper.add(record)
 
 
-
-
-
-
     # Save settings
-    # config['last_run'] = to_string
-    # util.saveJSONFile(config, 'settings.json')
+    config['last_run'] = to_string
+    util.saveJSONFile(config, 'settings.json')
 
     return
 

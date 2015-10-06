@@ -6,6 +6,7 @@
 
 import json
 import os
+import uuid
 
 
 class Dedupe:
@@ -93,7 +94,9 @@ class Dedupe:
 
     def add(self, record):
         """
-        Add the record to the `kind` store at key `key`
+        Add the record to its appropriate store, if one exists.
+        This method also mints URIs at the time of adding.
+        Saves the store to disk after adding.
         """
 
         if 'type' not in record:
@@ -105,21 +108,26 @@ class Dedupe:
             print "Invalid store type: %s." % kind
             return
 
-        key = get_key(record)
+        key = self.get_key(record)
 
         if key is None:
-            self.stores[kind]['unmatched'].append({'records': record})
+            if kind == "organization":
+                self.stores[kind]['asdf']
+            elif kind == "people":
+                self.stores[kind]['unmatched'].append({'records': record, 'uri': self.mint_uri()})
         else:
             if key not in self.stores[kind]:
-                print "Initializing key %s in %s." % (key, kind)
                 self.stores[kind][key] = {}
 
             if 'records' not in self.stores[kind][key]:
-                print "For some odd reason this key has no 'records' key."
                 self.stores[kind][key]['records'] = []
 
             # Add (and save) record to store (and storefile)
             self.stores[kind][key]['records'].append(record)
+
+            # Mint a URI if necessary
+            if 'uri' not in self.stores[kind][key]:
+                self.stores[kind][key]['uri'] = self.mint_uri()
 
         self.save_json_store(kind)
 
@@ -139,19 +147,17 @@ class Dedupe:
         if kind not in self.stores:
             raise Exception("Store '%s' not found." % kind)
 
-        key = get_key(record)
+        key = self.get_key(record)
 
         if key is None or key not in self.stores[kind]:
             return False
 
-        # Get a reference to the store
-        store_records = self.stores[kind][key]['records']
-
         # Run the query
-        if key in store_records:
+        if key in self.stores[kind]:
             return True
         else:
             return False
+
 
     def get_key(self, record):
         """
@@ -165,14 +171,42 @@ class Dedupe:
             return key
 
         if record['type'] == "person":
-            if 'name' in record and 'email' in record and len(record['name']) > 0 and len(record['email']) > 0:
-                key  = "%s#%s" % (record['name'], record['email'])
+            if 'full_name' in record and 'email' in record and len(record['full_name']) > 0 and len(record['email']) > 0:
+                key  = "%s#%s" % (record['full_name'], record['email'])
         elif record['type'] == "organization":
             if 'name' in record and len(record['name']) > 0:
-            key  = "%s" % (record['name'])
+                key  = "%s" % (record['name'])
 
         return key
 
-    def mint_uri(self, record):
+
+    def mint_uri(self):
+        return str(uuid.uuid4())
+
+
+    def get_uri(self, record):
+        """
+        Gets the URI for a given record or returns None if either the record
+        has no key or if it doesn't have a URI
+        """
+
         if 'type' not in record:
-            return
+            return None
+
+        kind = record['type']
+
+        if kind not in self.stores:
+            raise Exception("Store of kind %s not found." % kind)
+
+        key = self.get_key(record)
+
+        if key is None:
+            return None
+
+        if key not in self.stores[kind]:
+            return None
+
+        if 'uri' not in self.stores[kind][key]:
+            return None
+
+        return self.stores[kind][key]['uri']
