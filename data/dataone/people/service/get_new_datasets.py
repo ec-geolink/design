@@ -10,6 +10,7 @@ import os
 import sys
 import datetime
 import json
+import uuid
 
 from people import processing
 from people.formats import eml
