@@ -85,7 +85,17 @@
         <rdfs:range rdf:resource="&ecglview;Place"/>
         <rdfs:domain rdf:resource="&ecglview;PortCall"/>
     </owl:ObjectProperty>
-    
+
+
+
+    <!-- http://schema.geolink.org/dev/view#authoritativeRepository -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;authoritativeRepository">
+       <rdfs:label>authoritativeRepository</rdfs:label>
+       <rdfs:domain rdf:resource="&ecglview;DigitalObject"/>
+       <rdfs:range rdf:resource="&ecglview;Repository"/>
+    </owl:ObjectProperty>
+
 
 
     <!-- http://schema.geolink.org/dev/view#fromCountry -->
@@ -1145,7 +1155,17 @@
         <rdfs:label>isVesselOf</rdfs:label>
         <owl:inverseOf rdf:resource="&ecglview;hasVessel"/>
     </owl:ObjectProperty>
-    
+
+
+
+    <!-- http://schema.geolink.org/dev/view#originRepository -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;originRepository">
+      <rdfs:label>originRepository</rdfs:label>
+      <rdfs:domain rdf:resource="&ecglview;DigitalObject"/>
+      <rdfs:range rdf:resource="&ecglview;Repository"/>
+    </owl:ObjectProperty>
+
 
 
     <!-- http://schema.geolink.org/dev/view#performs -->
@@ -1154,10 +1174,20 @@
         <rdfs:label>performs</rdfs:label>
         <owl:inverseOf rdf:resource="&ecglview;isPerformedBy"/>
     </owl:ObjectProperty>
-    
 
 
-    <!-- 
+
+    <!-- http://schema.geolink.org/dev/view#replicaRepository -->
+
+    <owl:ObjectProperty rdf:about="&ecglview;replicaRepository">
+       <rdfs:label>replicaRepository</rdfs:label>
+       <rdfs:domain rdf:resource="&ecglview;DigitalObject"/>
+       <rdfs:range rdf:resource="&ecglview;Repository"/>
+    </owl:ObjectProperty>
+
+
+
+    <!--
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Data properties

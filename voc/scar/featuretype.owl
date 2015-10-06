@@ -1,0 +1,3228 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY glvoc_scar "http://schema.geolink.org/dev/voc/scar/featuretype#" >
+]>
+
+
+<rdf:RDF xmlns="http://schema.geolink.org/dev/voc/scar/featuretype#"
+     xml:base="http://schema.geolink.org/dev/voc/scar/featuretype"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:glvoc_scar="http://schema.geolink.org/dev/voc/scar/featuretype#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://schema.geolink.org/dev/voc/scar/featuretype"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasFeatureType -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#Feature -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#Feature"/>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#FeatureType -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#107 -->
+
+    <owl:Class rdf:about="&glvoc_scar;107">
+        <rdfs:label xml:lang="en">Anchorage</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;107"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#112 -->
+
+    <owl:Class rdf:about="&glvoc_scar;112">
+        <rdfs:label xml:lang="en">AWS</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;112"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#119 -->
+
+    <owl:Class rdf:about="&glvoc_scar;119">
+        <rdfs:label xml:lang="en">Beach</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;119"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#122 -->
+
+    <owl:Class rdf:about="&glvoc_scar;122">
+        <rdfs:label xml:lang="en">Bedrock break point</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;122"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#135 -->
+
+    <owl:Class rdf:about="&glvoc_scar;135">
+        <rdfs:label xml:lang="en">Building</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;135"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#140 -->
+
+    <owl:Class rdf:about="&glvoc_scar;140">
+        <rdfs:label xml:lang="en">Camp</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;140"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#142 -->
+
+    <owl:Class rdf:about="&glvoc_scar;142">
+        <rdfs:label xml:lang="en">Cave</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;142"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#146 -->
+
+    <owl:Class rdf:about="&glvoc_scar;146">
+        <rdfs:label xml:lang="en">Cliff</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;146"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#150 -->
+
+    <owl:Class rdf:about="&glvoc_scar;150">
+        <rdfs:label xml:lang="en">Continent</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;150"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#158 -->
+
+    <owl:Class rdf:about="&glvoc_scar;158">
+        <rdfs:label xml:lang="en">Crevasse</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;158"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#159 -->
+
+    <owl:Class rdf:about="&glvoc_scar;159">
+        <rdfs:label xml:lang="en">Crevasse field</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;159"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#164 -->
+
+    <owl:Class rdf:about="&glvoc_scar;164">
+        <rdfs:label xml:lang="en">Depression</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;164"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#167 -->
+
+    <owl:Class rdf:about="&glvoc_scar;167">
+        <rdfs:label xml:lang="en">Dome</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;167"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#168 -->
+
+    <owl:Class rdf:about="&glvoc_scar;168">
+        <rdfs:label xml:lang="en">Drift tail</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;168"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#174 -->
+
+    <owl:Class rdf:about="&glvoc_scar;174">
+        <rdfs:label xml:lang="en">Fall</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;174"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#181 -->
+
+    <owl:Class rdf:about="&glvoc_scar;181">
+        <rdfs:label xml:lang="en">Flattened Pavement</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;181"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#189 -->
+
+    <owl:Class rdf:about="&glvoc_scar;189">
+        <rdfs:label xml:lang="en">Ice front</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;189"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#192 -->
+
+    <owl:Class rdf:about="&glvoc_scar;192">
+        <rdfs:label xml:lang="en">Gate</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;192"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#196 -->
+
+    <owl:Class rdf:about="&glvoc_scar;196">
+        <rdfs:label xml:lang="en">Glacier</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;196"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#203 -->
+
+    <owl:Class rdf:about="&glvoc_scar;203">
+        <rdfs:label xml:lang="en">Hillock</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;203"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#210 -->
+
+    <owl:Class rdf:about="&glvoc_scar;210">
+        <rdfs:label xml:lang="en">Ice field</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;210"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#212 -->
+
+    <owl:Class rdf:about="&glvoc_scar;212">
+        <rdfs:label xml:lang="en">Ice fringe</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;212"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#213 -->
+
+    <owl:Class rdf:about="&glvoc_scar;213">
+        <rdfs:label xml:lang="en">Ice rise</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;213"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#215 -->
+
+    <owl:Class rdf:about="&glvoc_scar;215">
+        <rdfs:label xml:lang="en">Ice stream</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;215"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#218 -->
+
+    <owl:Class rdf:about="&glvoc_scar;218">
+        <rdfs:label xml:lang="en">Icefall</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;218"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#223 -->
+
+    <owl:Class rdf:about="&glvoc_scar;223">
+        <rdfs:label xml:lang="en">Island</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;223"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#229 -->
+
+    <owl:Class rdf:about="&glvoc_scar;229">
+        <rdfs:label xml:lang="en">Landing area</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;229"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#243 -->
+
+    <owl:Class rdf:about="&glvoc_scar;243">
+        <rdfs:label xml:lang="en">Monument</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;243"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#245 -->
+
+    <owl:Class rdf:about="&glvoc_scar;245">
+        <rdfs:label xml:lang="en">Moraine</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;245"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#249 -->
+
+    <owl:Class rdf:about="&glvoc_scar;249">
+        <rdfs:label xml:lang="en">Outcrop</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;249"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#252 -->
+
+    <owl:Class rdf:about="&glvoc_scar;252">
+        <rdfs:label xml:lang="en">Path</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;252"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#260 -->
+
+    <owl:Class rdf:about="&glvoc_scar;260">
+        <rdfs:label xml:lang="en">Pole</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;260"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#273 -->
+
+    <owl:Class rdf:about="&glvoc_scar;273">
+        <rdfs:label xml:lang="en">Reef</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;273"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#278 -->
+
+    <owl:Class rdf:about="&glvoc_scar;278">
+        <rdfs:label xml:lang="en">Road</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;278"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#279 -->
+
+    <owl:Class rdf:about="&glvoc_scar;279">
+        <rdfs:label xml:lang="en">Rock</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;279"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#282 -->
+
+    <owl:Class rdf:about="&glvoc_scar;282">
+        <rdfs:label xml:lang="en">Ice rumple</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;282"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#291 -->
+
+    <owl:Class rdf:about="&glvoc_scar;291">
+        <rdfs:label xml:lang="en">Scree</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;291"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#293 -->
+
+    <owl:Class rdf:about="&glvoc_scar;293">
+        <rdfs:label xml:lang="en">Sea</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;293"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#297 -->
+
+    <owl:Class rdf:about="&glvoc_scar;297">
+        <rdfs:label xml:lang="en">Ice sheet</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;297"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#298 -->
+
+    <owl:Class rdf:about="&glvoc_scar;298">
+        <rdfs:label xml:lang="en">Ice shelf</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;298"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#300 -->
+
+    <owl:Class rdf:about="&glvoc_scar;300">
+        <rdfs:label xml:lang="en">Shoal</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;300"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#312 -->
+
+    <owl:Class rdf:about="&glvoc_scar;312">
+        <rdfs:label xml:lang="en">Station</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;312"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#321 -->
+
+    <owl:Class rdf:about="&glvoc_scar;321">
+        <rdfs:label xml:lang="en">Terrace</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;321"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#325 -->
+
+    <owl:Class rdf:about="&glvoc_scar;325">
+        <rdfs:label xml:lang="en">Tongue</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;325"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#328 -->
+
+    <owl:Class rdf:about="&glvoc_scar;328">
+        <rdfs:label xml:lang="en">Tower</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;328"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#343 -->
+
+    <owl:Class rdf:about="&glvoc_scar;343">
+        <rdfs:label xml:lang="en">Wall</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;343"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#345 -->
+
+    <owl:Class rdf:about="&glvoc_scar;345">
+        <rdfs:label xml:lang="en">Water body</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;345"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#346 -->
+
+    <owl:Class rdf:about="&glvoc_scar;346">
+        <rdfs:label xml:lang="en">Watercourse</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;346"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#348 -->
+
+    <owl:Class rdf:about="&glvoc_scar;348">
+        <rdfs:label xml:lang="en">Wharf</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;348"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#350 -->
+
+    <owl:Class rdf:about="&glvoc_scar;350">
+        <rdfs:label xml:lang="en">Aiguilles</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;350"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#351 -->
+
+    <owl:Class rdf:about="&glvoc_scar;351">
+        <rdfs:label xml:lang="en">Archipelago</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;351"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#352 -->
+
+    <owl:Class rdf:about="&glvoc_scar;352">
+        <rdfs:label xml:lang="en">Arm</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;352"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#353 -->
+
+    <owl:Class rdf:about="&glvoc_scar;353">
+        <rdfs:label xml:lang="en">Bank</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;353"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#354 -->
+
+    <owl:Class rdf:about="&glvoc_scar;354">
+        <rdfs:label xml:lang="en">Basin</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;354"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#355 -->
+
+    <owl:Class rdf:about="&glvoc_scar;355">
+        <rdfs:label xml:lang="en">Bay</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;355"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#356 -->
+
+    <owl:Class rdf:about="&glvoc_scar;356">
+        <rdfs:label xml:lang="en">Bench</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;356"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#357 -->
+
+    <owl:Class rdf:about="&glvoc_scar;357">
+        <rdfs:label xml:lang="en">Bight</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;357"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#358 -->
+
+    <owl:Class rdf:about="&glvoc_scar;358">
+        <rdfs:label xml:lang="en">Bluff</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;358"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#359 -->
+
+    <owl:Class rdf:about="&glvoc_scar;359">
+        <rdfs:label xml:lang="en">Butte</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;359"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#360 -->
+
+    <owl:Class rdf:about="&glvoc_scar;360">
+        <rdfs:label xml:lang="en">Buttress</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;360"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#361 -->
+
+    <owl:Class rdf:about="&glvoc_scar;361">
+        <rdfs:label xml:lang="en">Canyon</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;361"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#362 -->
+
+    <owl:Class rdf:about="&glvoc_scar;362">
+        <rdfs:label xml:lang="en">Cape</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;362"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#363 -->
+
+    <owl:Class rdf:about="&glvoc_scar;363">
+        <rdfs:label xml:lang="en">Castle</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;363"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#364 -->
+
+    <owl:Class rdf:about="&glvoc_scar;364">
+        <rdfs:label xml:lang="en">Channel</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;364"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#365 -->
+
+    <owl:Class rdf:about="&glvoc_scar;365">
+        <rdfs:label xml:lang="en">Cirque</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;365"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#366 -->
+
+    <owl:Class rdf:about="&glvoc_scar;366">
+        <rdfs:label xml:lang="en">Coast</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;366"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#367 -->
+
+    <owl:Class rdf:about="&glvoc_scar;367">
+        <rdfs:label xml:lang="en">Cone</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;367"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#368 -->
+
+    <owl:Class rdf:about="&glvoc_scar;368">
+        <rdfs:label xml:lang="en">Corner</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;368"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#369 -->
+
+    <owl:Class rdf:about="&glvoc_scar;369">
+        <rdfs:label xml:lang="en">Cove</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;369"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#370 -->
+
+    <owl:Class rdf:about="&glvoc_scar;370">
+        <rdfs:label xml:lang="en">Crag</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;370"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#371 -->
+
+    <owl:Class rdf:about="&glvoc_scar;371">
+        <rdfs:label xml:lang="en">Crater</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;371"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#372 -->
+
+    <owl:Class rdf:about="&glvoc_scar;372">
+        <rdfs:label xml:lang="en">Crossing</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;372"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#373 -->
+
+    <owl:Class rdf:about="&glvoc_scar;373">
+        <rdfs:label xml:lang="en">Deep</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;373"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#374 -->
+
+    <owl:Class rdf:about="&glvoc_scar;374">
+        <rdfs:label xml:lang="en">Escarpment</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;374"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#375 -->
+
+    <owl:Class rdf:about="&glvoc_scar;375">
+        <rdfs:label xml:lang="en">Fjord</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;375"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#376 -->
+
+    <owl:Class rdf:about="&glvoc_scar;376">
+        <rdfs:label xml:lang="en">Gap</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;376"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#377 -->
+
+    <owl:Class rdf:about="&glvoc_scar;377">
+        <rdfs:label xml:lang="en">Gorge</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;377"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#378 -->
+
+    <owl:Class rdf:about="&glvoc_scar;378">
+        <rdfs:label xml:lang="en">Gulf</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;378"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#379 -->
+
+    <owl:Class rdf:about="&glvoc_scar;379">
+        <rdfs:label xml:lang="en">Gully</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;379"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#380 -->
+
+    <owl:Class rdf:about="&glvoc_scar;380">
+        <rdfs:label xml:lang="en">Harbour</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;380"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#381 -->
+
+    <owl:Class rdf:about="&glvoc_scar;381">
+        <rdfs:label xml:lang="en">Head</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;381"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#382 -->
+
+    <owl:Class rdf:about="&glvoc_scar;382">
+        <rdfs:label xml:lang="en">Headland</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;382"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#383 -->
+
+    <owl:Class rdf:about="&glvoc_scar;383">
+        <rdfs:label xml:lang="en">Heights</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;383"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#384 -->
+
+    <owl:Class rdf:about="&glvoc_scar;384">
+        <rdfs:label xml:lang="en">Hill</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;384"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#385 -->
+
+    <owl:Class rdf:about="&glvoc_scar;385">
+        <rdfs:label xml:lang="en">Inlet</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;385"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#386 -->
+
+    <owl:Class rdf:about="&glvoc_scar;386">
+        <rdfs:label xml:lang="en">Knob</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;386"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#387 -->
+
+    <owl:Class rdf:about="&glvoc_scar;387">
+        <rdfs:label xml:lang="en">Knoll</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;387"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#388 -->
+
+    <owl:Class rdf:about="&glvoc_scar;388">
+        <rdfs:label xml:lang="en">Lagoon</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;388"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#389 -->
+
+    <owl:Class rdf:about="&glvoc_scar;389">
+        <rdfs:label xml:lang="en">Land</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;389"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#390 -->
+
+    <owl:Class rdf:about="&glvoc_scar;390">
+        <rdfs:label xml:lang="en">Landing</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;390"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#391 -->
+
+    <owl:Class rdf:about="&glvoc_scar;391">
+        <rdfs:label xml:lang="en">Lookout</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;391"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#392 -->
+
+    <owl:Class rdf:about="&glvoc_scar;392">
+        <rdfs:label xml:lang="en">Massif</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;392"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#393 -->
+
+    <owl:Class rdf:about="&glvoc_scar;393">
+        <rdfs:label xml:lang="en">Mesa</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;393"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#394 -->
+
+    <owl:Class rdf:about="&glvoc_scar;394">
+        <rdfs:label xml:lang="en">Monolith</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;394"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#395 -->
+
+    <owl:Class rdf:about="&glvoc_scar;395">
+        <rdfs:label xml:lang="en">Mountain</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;395"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#396 -->
+
+    <owl:Class rdf:about="&glvoc_scar;396">
+        <rdfs:label xml:lang="en">Neve</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;396"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#397 -->
+
+    <owl:Class rdf:about="&glvoc_scar;397">
+        <rdfs:label xml:lang="en">Nunatak</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;397"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#398 -->
+
+    <owl:Class rdf:about="&glvoc_scar;398">
+        <rdfs:label xml:lang="en">Pass</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;398"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#399 -->
+
+    <owl:Class rdf:about="&glvoc_scar;399">
+        <rdfs:label xml:lang="en">Passage</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;399"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#400 -->
+
+    <owl:Class rdf:about="&glvoc_scar;400">
+        <rdfs:label xml:lang="en">Peak</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;400"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#401 -->
+
+    <owl:Class rdf:about="&glvoc_scar;401">
+        <rdfs:label xml:lang="en">Peninsula</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;401"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#402 -->
+
+    <owl:Class rdf:about="&glvoc_scar;402">
+        <rdfs:label xml:lang="en">Piedmont</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;402"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#403 -->
+
+    <owl:Class rdf:about="&glvoc_scar;403">
+        <rdfs:label xml:lang="en">Pillar</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;403"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#404 -->
+
+    <owl:Class rdf:about="&glvoc_scar;404">
+        <rdfs:label xml:lang="en">Plain</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;404"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#405 -->
+
+    <owl:Class rdf:about="&glvoc_scar;405">
+        <rdfs:label xml:lang="en">Plateau</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;405"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#406 -->
+
+    <owl:Class rdf:about="&glvoc_scar;406">
+        <rdfs:label xml:lang="en">Platform</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;406"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#407 -->
+
+    <owl:Class rdf:about="&glvoc_scar;407">
+        <rdfs:label xml:lang="en">Point</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;407"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#408 -->
+
+    <owl:Class rdf:about="&glvoc_scar;408">
+        <rdfs:label xml:lang="en">Portal</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;408"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#409 -->
+
+    <owl:Class rdf:about="&glvoc_scar;409">
+        <rdfs:label xml:lang="en">Promontory</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;409"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#410 -->
+
+    <owl:Class rdf:about="&glvoc_scar;410">
+        <rdfs:label xml:lang="en">Pyramid</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;410"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#411 -->
+
+    <owl:Class rdf:about="&glvoc_scar;411">
+        <rdfs:label xml:lang="en">Range</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;411"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#412 -->
+
+    <owl:Class rdf:about="&glvoc_scar;412">
+        <rdfs:label xml:lang="en">Ravine</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;412"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#413 -->
+
+    <owl:Class rdf:about="&glvoc_scar;413">
+        <rdfs:label xml:lang="en">Ridge</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;413"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#414 -->
+
+    <owl:Class rdf:about="&glvoc_scar;414">
+        <rdfs:label xml:lang="en">Rim</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;414"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#415 -->
+
+    <owl:Class rdf:about="&glvoc_scar;415">
+        <rdfs:label xml:lang="en">Rise</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;415"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#416 -->
+
+    <owl:Class rdf:about="&glvoc_scar;416">
+        <rdfs:label xml:lang="en">Rookery</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;416"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#417 -->
+
+    <owl:Class rdf:about="&glvoc_scar;417">
+        <rdfs:label xml:lang="en">Saddle</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;417"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#418 -->
+
+    <owl:Class rdf:about="&glvoc_scar;418">
+        <rdfs:label xml:lang="en">Skerry</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;418"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#419 -->
+
+    <owl:Class rdf:about="&glvoc_scar;419">
+        <rdfs:label xml:lang="en">Slope</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;419"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#420 -->
+
+    <owl:Class rdf:about="&glvoc_scar;420">
+        <rdfs:label xml:lang="en">Snowfield</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;420"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#421 -->
+
+    <owl:Class rdf:about="&glvoc_scar;421">
+        <rdfs:label xml:lang="en">Sound</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;421"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#422 -->
+
+    <owl:Class rdf:about="&glvoc_scar;422">
+        <rdfs:label xml:lang="en">Spit</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;422"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#423 -->
+
+    <owl:Class rdf:about="&glvoc_scar;423">
+        <rdfs:label xml:lang="en">Spur</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;423"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#424 -->
+
+    <owl:Class rdf:about="&glvoc_scar;424">
+        <rdfs:label xml:lang="en">Stack</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;424"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#425 -->
+
+    <owl:Class rdf:about="&glvoc_scar;425">
+        <rdfs:label xml:lang="en">Strait</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;425"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#426 -->
+
+    <owl:Class rdf:about="&glvoc_scar;426">
+        <rdfs:label xml:lang="en">Subglacial basin</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;426"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#427 -->
+
+    <owl:Class rdf:about="&glvoc_scar;427">
+        <rdfs:label xml:lang="en">Subglacial mountains</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;427"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#428 -->
+
+    <owl:Class rdf:about="&glvoc_scar;428">
+        <rdfs:label xml:lang="en">Subglacial trench</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;428"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#429 -->
+
+    <owl:Class rdf:about="&glvoc_scar;429">
+        <rdfs:label xml:lang="en">Territory</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;429"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#430 -->
+
+    <owl:Class rdf:about="&glvoc_scar;430">
+        <rdfs:label xml:lang="en">Tooth</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;430"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#431 -->
+
+    <owl:Class rdf:about="&glvoc_scar;431">
+        <rdfs:label xml:lang="en">Tor</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;431"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#432 -->
+
+    <owl:Class rdf:about="&glvoc_scar;432">
+        <rdfs:label xml:lang="en">Undersea ridge</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;432"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#433 -->
+
+    <owl:Class rdf:about="&glvoc_scar;433">
+        <rdfs:label xml:lang="en">Valley</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;433"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#434 -->
+
+    <owl:Class rdf:about="&glvoc_scar;434">
+        <rdfs:label xml:lang="en">Wallow</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;434"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#435 -->
+
+    <owl:Class rdf:about="&glvoc_scar;435">
+        <rdfs:label xml:lang="en">Isthmus</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;435"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#437 -->
+
+    <owl:Class rdf:about="&glvoc_scar;437">
+        <rdfs:label xml:lang="en">Study Site</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;437"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#582 -->
+
+    <owl:Class rdf:about="&glvoc_scar;582">
+        <rdfs:label xml:lang="en">Colony</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:hasValue rdf:resource="&glvoc_scar;582"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#107 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;107">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#112 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;112">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#119 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;119">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#122 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;122">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#135 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;135">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#140 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;140">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#142 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;142">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#146 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;146">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#150 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;150">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#158 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;158">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#159 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;159">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#164 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;164">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#167 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;167">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#168 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;168">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#174 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;174">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#181 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;181">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#189 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;189">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#192 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;192">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#196 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;196">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#203 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;203">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#210 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;210">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#212 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;212">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#213 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;213">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#215 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;215">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#218 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;218">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#223 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;223">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#229 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;229">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#243 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;243">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#245 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;245">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#249 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;249">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#252 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;252">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#260 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;260">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#273 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;273">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#278 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;278">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#279 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;279">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#282 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;282">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#291 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;291">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#293 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;293">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#297 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;297">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#298 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;298">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#300 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;300">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#312 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;312">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#321 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;321">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#325 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;325">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#328 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;328">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#343 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;343">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#345 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;345">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#346 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;346">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#348 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;348">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#350 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;350">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#351 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;351">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#352 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;352">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#353 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;353">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#354 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;354">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#355 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;355">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#356 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;356">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#357 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;357">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#358 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;358">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#359 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;359">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#360 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;360">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#361 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;361">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#362 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;362">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#363 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;363">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#364 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;364">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#365 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;365">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#366 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;366">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#367 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;367">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#368 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;368">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#369 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;369">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#370 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;370">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#371 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;371">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#372 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;372">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#373 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;373">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#374 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;374">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#375 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;375">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#376 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;376">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#377 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;377">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#378 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;378">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#379 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;379">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#380 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;380">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#381 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;381">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#382 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;382">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#383 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;383">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#384 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;384">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#385 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;385">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#386 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;386">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#387 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;387">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#388 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;388">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#389 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;389">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#390 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;390">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#391 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;391">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#392 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;392">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#393 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;393">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#394 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;394">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#395 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;395">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#396 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;396">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#397 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;397">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#398 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;398">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#399 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;399">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#400 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;400">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#401 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;401">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#402 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;402">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#403 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;403">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#404 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;404">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#405 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;405">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#406 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;406">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#407 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;407">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#408 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;408">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#409 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;409">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#410 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;410">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#411 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;411">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#412 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;412">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#413 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;413">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#414 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;414">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#415 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;415">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#416 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;416">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#417 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;417">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#418 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;418">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#419 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;419">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#420 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;420">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#421 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;421">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#422 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;422">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#423 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;423">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#424 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;424">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#425 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;425">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#426 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;426">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#427 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;427">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#428 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;428">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#429 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;429">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#430 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;430">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#431 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;431">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#432 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;432">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#433 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;433">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#434 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;434">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#435 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;435">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#437 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;437">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/dev/voc/scar/featuretype#582 -->
+
+    <owl:NamedIndividual rdf:about="&glvoc_scar;582">
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net -->
+

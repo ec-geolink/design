@@ -1,0 +1,2208 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix glbase: <http://schema.geolink.org/dev/base/main#> .
+@prefix d1node: <https://cn.dataone.org/cn/v1/node/> .
+@prefix geosparql: <http://www.opengis.net/ont/geosparql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix literal: <http://www.essepuntato.it/2010/06/literalreification/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix doview: <http://schema.geolink.org/dev/doview#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+<http://data.geolink.org/id/dataone/005bced4674a4362b7cf9cb70f351476>
+    glbase:nameFull "Test" ;
+    a glbase:Person, foaf:Person ;
+    rdfs:label "Test" ;
+    foaf:name "Test" .
+
+<http://data.geolink.org/id/dataone/00a9e95b7b354ca0bc4d5791af53cd0a>
+    glbase:nameFull "Jamie Hollingsworth" ;
+    a glbase:Person, foaf:Person ;
+    rdfs:label "Jamie Hollingsworth" ;
+    foaf:name "Jamie Hollingsworth" .
+
+<http://data.geolink.org/id/dataone/016fa4a1c01e4c1eb3408cc8abb5f76f>
+    glbase:matches <http://data.geolink.org/id/person/0c6b4c47-4400-411c-98f9-f05ef432b731> ;
+    glbase:nameFull "Joseph Boyer" ;
+    a glbase:Person, foaf:Person ;
+    rdfs:label "Joseph Boyer" ;
+    foaf:name "Joseph Boyer" .
+
+<http://data.geolink.org/id/dataone/08bebe22a81742ad9b022a06ee3dba38>
+    glbase:matches <http://data.geolink.org/id/person/a58ff444-4837-4ba4-ab5a-372f91f8b2fa> ;
+    glbase:nameFull "Wilfred Wollheim" ;
+    a glbase:Person, foaf:Person ;
+    rdfs:label "Wilfred Wollheim" ;
+    foaf:name "Wilfred Wollheim" .
+
+<http://data.geolink.org/id/dataone/13ba4d8abffe497f94870c286c3a0ce1>
+    glbase:matches <http://data.geolink.org/id/person/c502a6df-1c28-4dc5-a555-f301f18b1d32> ;
+    glbase:nameFull "Robert Parmenter" ;
+    a glbase:Person, foaf:Person ;
+    rdfs:label "Robert Parmenter" ;
+    foaf:name "Robert Parmenter" .
+
+<http://data.geolink.org/id/dataone/17cc8ee505954ad5b7dc8023edd67bcd>
+    glbase:nameFull "Martin Sommerkorn" ;
+    a glbase:Person, foaf:Person ;
+    rdfs:label "Martin Sommerkorn" ;
+    foaf:name "Martin Sommerkorn" .
+
+<http://data.geolink.org/id/dataone/18f4e905a6374d4d81dad8965fb7da5d>
+    glbase:matches <http://data.geolink.org/id/person/19c8c5c0-347a-4288-a6c0-c253972e0642> ;
+    glbase:nameFull "Paige S. Warren" ;
+    a glbase:Person, foaf:Person ;
+    rdfs:label "Paige S. Warren" ;
+    foaf:name "Paige S. Warren" .
+
+<http://data.geolink.org/id/dataone/191747de4a844e6baf145793a886ad23>
+    glbase:matches <http://data.geolink.org/id/person/7151b2a1-4f84-4972-98ef-3c9874bf72dc> ;
+    glbase:nameFull "Emily Bernhardt" ;
+    a glbase:Person, foaf:Person ;
+    rdfs:label "Emily Bernhardt" ;
+    foaf:name "Emily Bernhardt" .
+
+<http://data.geolink.org/id/dataone/20438a27dcff458b98b65130fd732cc0>
+    glbase:nameFull "John Connors, HERO-CM" ;
+    a glbase:Person, foaf:Person ;
+    rdfs:label "John Connors, HERO-CM" ;
+    foaf:name "John Connors, HERO-CM" .
+
+<http://data.geolink.org/id/dataone/259121ead03145ea8431c9ef11519d06>
+    glbase:matches <http://data.geolink.org/id/person/e658f702-58c0-418c-aac5-08f522f89bdf> ;
+    glbase:nameFull "Anne Hershey" ;
+    a glbase:Person, foaf:Person ;
+    rdfs:label "Anne Hershey" ;
+    foaf:name "Anne Hershey" .
+
+<http://data.geolink.org/id/dataone/2fb15cbc240446a2a4715d91097f38ab>
+    glbase:matches <http://data.geolink.org/id/person/dba94293-1bbd-4b03-8e9a-a51a28806c17> ;
+    glbase:nameFull "Chris A Martin" ;
+    a glbase:Person, foaf:Person ;
+    rdfs:label "Chris A Martin" ;
+    foaf:name "Chris A Martin" .
+
+<http://data.geolink.org/id/dataone/50e5f777f3cd4a7396d8ddab55e4f08c>
+    glbase:nameFull "Douglas I. Moore" ;
+    a glbase:Person, foaf:Person ;
+    rdfs:label "Douglas I. Moore" ;
+    foaf:name "Douglas I. Moore" .
+
+<http://data.geolink.org/id/dataone/594a0de1e9774b75ba38b8997a701d2c>
+    glbase:matches <http://data.geolink.org/id/person/445cc30d-9903-481c-a354-1e06f5543d6c> ;
+    glbase:nameFull "Kathleen A. Peterson" ;
+    a glbase:Person, foaf:Person ;
+    rdfs:label "Kathleen A. Peterson" ;
+    foaf:name "Kathleen A. Peterson" .
+
+<http://data.geolink.org/id/dataone/710b3d28e21c4df8817beda946c2d542>
+    glbase:matches <http://data.geolink.org/id/person/7cce9827-1a68-4c8c-8f07-d89761f2547d> ;
+    glbase:nameFull "John Yarie" ;
+    a glbase:Person, foaf:Person ;
+    rdfs:label "John Yarie" ;
+    foaf:name "John Yarie" .
+
+<http://data.geolink.org/id/dataone/7a0e31a2c48a4546932fbabad079ff3d>
+    glbase:matches <http://data.geolink.org/id/person/3880dd82-8e01-4db3-a828-c19ce2804f8b> ;
+    glbase:nameFull "Jo Blank" ;
+    a glbase:Person, foaf:Person ;
+    rdfs:label "Jo Blank" ;
+    foaf:name "Jo Blank" .
+
+<http://data.geolink.org/id/dataone/7c46ded401924211a1e76d802c59b7f9>
+    glbase:nameFull "Peter Groffman ,     Email: groffmanp@ecostudies.org" ;
+    a glbase:Person, foaf:Person ;
+    rdfs:label "Peter Groffman ,     Email: groffmanp@ecostudies.org" ;
+    foaf:name "Peter Groffman ,     Email: groffmanp@ecostudies.org" .
+
+<http://data.geolink.org/id/dataone/89cf248f174d4ad1b3d26854b866d928>
+    glbase:nameFull "Alexander Buyantuyev" ;
+    a glbase:Person, foaf:Person ;
+    rdfs:label "Alexander Buyantuyev" ;
+    foaf:name "Alexander Buyantuyev" .
+
+<http://data.geolink.org/id/dataone/8ca6bad5f1a249b982c270609ea08761>
+    glbase:matches <http://data.geolink.org/id/person/454c17df-426e-4f7b-8037-12235ecec40a> ;
+    glbase:nameFull "Richard A. Werner" ;
+    a glbase:Person, foaf:Person ;
+    rdfs:label "Richard A. Werner" ;
+    foaf:name "Richard A. Werner" .
+
+<http://data.geolink.org/id/dataone/90575aa3153f4f9b8ce2604c6d5b525c>
+    glbase:nameFull "Bill Parton" ;
+    a glbase:Person, foaf:Person ;
+    rdfs:label "Bill Parton" ;
+    foaf:name "Bill Parton" .
+
+<http://data.geolink.org/id/dataone/92dca973c93e46a2b3e0367feea340d8>
+    glbase:matches <http://data.geolink.org/id/person/5e1ae70d-d8ff-49e5-9f48-6ceb553959fa> ;
+    glbase:nameFull "John Connors" ;
+    a glbase:Person, foaf:Person ;
+    rdfs:label "John Connors" ;
+    foaf:name "John Connors" .
+
+<http://data.geolink.org/id/dataone/93f541ca002e4a958098bc84e6187d40>
+    glbase:matches <http://data.geolink.org/id/person/e7e5b1ec-6a00-4056-a623-b157a820541c> ;
+    glbase:nameFull "Jill Johnstone" ;
+    a glbase:Person, foaf:Person ;
+    rdfs:label "Jill Johnstone" ;
+    foaf:name "Jill Johnstone" .
+
+<http://data.geolink.org/id/dataone/95522af02aa54c648c67d814c7297c0c>
+    glbase:matches <http://data.geolink.org/id/person/999a1313-39e9-4903-b9e0-722809b160cf> ;
+    glbase:nameFull "George Kling" ;
+    a glbase:Person, foaf:Person ;
+    rdfs:label "George Kling" ;
+    foaf:name "George Kling" .
+
+<http://data.geolink.org/id/dataone/a15a9c946ee64555905d5125706bd5c7>
+    glbase:nameFull "Eyal Shochat" ;
+    a glbase:Person, foaf:Person ;
+    rdfs:label "Eyal Shochat" ;
+    foaf:name "Eyal Shochat" .
+
+<http://data.geolink.org/id/dataone/a3fc7fa6968540bf8efe7c570116564a>
+    glbase:matches <http://data.geolink.org/id/person/d02c2ce3-d754-4a5d-9bc7-d9136c464744> ;
+    glbase:nameFull "Diana Huffaker" ;
+    a glbase:Person, foaf:Person ;
+    rdfs:label "Diana Huffaker" ;
+    foaf:name "Diana Huffaker" .
+
+<http://data.geolink.org/id/dataone/a8075746c5d64021b4b4f778d5912b5f>
+    glbase:nameFull "Daniel Childers||Global Institute of Sustainability| School of Sustainability" ;
+    a glbase:Person, foaf:Person ;
+    rdfs:label "Daniel Childers||Global Institute of Sustainability| School of Sustainability" ;
+    foaf:name "Daniel Childers||Global Institute of Sustainability| School of Sustainability" .
+
+<http://data.geolink.org/id/dataone/b2ad13e6390a4a0bbbc2ccbdebba7299>
+    glbase:matches <http://data.geolink.org/id/person/e83e87e7-16df-4071-b500-3d30f3b3e3a1> ;
+    glbase:nameFull "Stephen Aldrich" ;
+    a glbase:Person, foaf:Person ;
+    rdfs:label "Stephen Aldrich" ;
+    foaf:name "Stephen Aldrich" .
+
+<http://data.geolink.org/id/dataone/b71cf33050f3435dae7028fab349b6a9>
+    glbase:matches <http://data.geolink.org/id/person/e1858fea-de22-4244-ac0f-e7395b87f2ec> ;
+    glbase:nameFull "Peter H. McCartney" ;
+    a glbase:Person, foaf:Person ;
+    rdfs:label "Peter H. McCartney" ;
+    foaf:name "Peter H. McCartney" .
+
+<http://data.geolink.org/id/dataone/c7bfaaa9620a4ae8902caef001ba12b1>
+    glbase:nameFull "John O'Brien" ;
+    a glbase:Person, foaf:Person ;
+    rdfs:label "John O'Brien" ;
+    foaf:name "John O'Brien" .
+
+<http://data.geolink.org/id/dataone/ccfb3c93d6fa4845bed83bc990c5ac84>
+    glbase:matches <http://data.geolink.org/id/person/240970c2-f82f-4f2e-a225-0230b5c5ecf6> ;
+    glbase:nameFull "Steven C. Pennings" ;
+    a glbase:Person, foaf:Person ;
+    rdfs:label "Steven C. Pennings" ;
+    foaf:name "Steven C. Pennings" .
+
+<http://data.geolink.org/id/dataone/cfc435d49b984c76b2f57af15526feb4>
+    glbase:nameFull "Takashi Tada" ;
+    a glbase:Person, foaf:Person ;
+    rdfs:label "Takashi Tada" ;
+    foaf:name "Takashi Tada" .
+
+<http://data.geolink.org/id/dataone/d02283d24e174bd4a702b5c17a65da61>
+    glbase:matches <http://data.geolink.org/id/person/0c00be2c-b660-4674-b51f-2b25f148f940> ;
+    glbase:nameFull "Knute Nadelhoffer" ;
+    a glbase:Person, foaf:Person ;
+    rdfs:label "Knute Nadelhoffer" ;
+    foaf:name "Knute Nadelhoffer" .
+
+<http://data.geolink.org/id/dataone/d6d5af3ec1b44cfda1ca6ac2dec0bccd>
+    glbase:nameFull "Ryan Arp" ;
+    a glbase:Person, foaf:Person ;
+    rdfs:label "Ryan Arp" ;
+    foaf:name "Ryan Arp" .
+
+<http://data.geolink.org/id/dataone/dbc098788df14daeb7e171a6c04edba0>
+    glbase:matches <http://data.geolink.org/id/person/5ddaed46-6bec-4d40-a4fd-261285eca4ed> ;
+    glbase:nameFull "David Lightfoot" ;
+    a glbase:Person, foaf:Person ;
+    rdfs:label "David Lightfoot" ;
+    foaf:name "David Lightfoot" .
+
+<http://data.geolink.org/id/dataone/dd381061727144ea8628a1b4dc2ae845>
+    glbase:matches <http://data.geolink.org/id/person/83f47879-c03d-44e2-8d11-794a18fc9599> ;
+    glbase:nameFull "Loretta Johnson" ;
+    a glbase:Person, foaf:Person ;
+    rdfs:label "Loretta Johnson" ;
+    foaf:name "Loretta Johnson" .
+
+<http://data.geolink.org/id/dataone/df718d0435604e53b225a2a3e5d8ceb9>
+    glbase:nameFull "Jim Gosz" ;
+    a glbase:Person, foaf:Person ;
+    rdfs:label "Jim Gosz" ;
+    foaf:name "Jim Gosz" .
+
+<http://data.geolink.org/id/dataone/e049da198814457a9c0ddb2be14434ff>
+    glbase:nameFull "Dana Rachel Nossov" ;
+    a glbase:Person, foaf:Person ;
+    rdfs:label "Dana Rachel Nossov" ;
+    foaf:name "Dana Rachel Nossov" .
+
+<http://data.geolink.org/id/dataone/e8e5796f5f27491092c105a0f003d80c>
+    glbase:nameFull "Linda Brooke Stabler" ;
+    a glbase:Person, foaf:Person ;
+    rdfs:label "Linda Brooke Stabler" ;
+    foaf:name "Linda Brooke Stabler" .
+
+<http://data.geolink.org/id/dataone/ed99899170d2433c92a142ec3ad2da0a>
+    glbase:nameFull "Georgia Coastal Ecosystems LTER Project" ;
+    a glbase:Person, foaf:Person ;
+    rdfs:label "Georgia Coastal Ecosystems LTER Project" ;
+    foaf:name "Georgia Coastal Ecosystems LTER Project" .
+
+<http://data.geolink.org/id/dataone/edefc6f0e6f44c90b0e18201f81eb3fb>
+    glbase:nameFull "Christopher Leucke" ;
+    a glbase:Person, foaf:Person ;
+    rdfs:label "Christopher Leucke" ;
+    foaf:name "Christopher Leucke" .
+
+<http://data.geolink.org/id/dataone/ee6eb7086bce4af3ae85090e2fc34f46>
+    glbase:matches <http://data.geolink.org/id/person/3631eb84-47ae-4ae7-b78b-5a6bc8c31544> ;
+    glbase:nameFull "Madhusudan V. Katti" ;
+    a glbase:Person, foaf:Person ;
+    rdfs:label "Madhusudan V. Katti" ;
+    foaf:name "Madhusudan V. Katti" .
+
+<http://data.geolink.org/id/dataone/fdfd4d407a1043449e17720e10844fe0>
+    glbase:matches <http://data.geolink.org/id/person/0e2078d5-1cd5-44e8-b681-e92f65967944> ;
+    glbase:nameFull "Tiffany Troxler" ;
+    a glbase:Person, foaf:Person ;
+    rdfs:label "Tiffany Troxler" ;
+    foaf:name "Tiffany Troxler" .
+
+<http://schema.geolink.org/dev/voc/dataone/format#001>
+    glbase:description "Ecological Metadata Language, version 2.0.0" ;
+    glbase:hasIdentifier "eml://ecoinformatics.org/eml-2.0.0" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#002>
+    glbase:description "Ecological Metadata Language, version 2.0.1" ;
+    glbase:hasIdentifier "eml://ecoinformatics.org/eml-2.0.1" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#003>
+    glbase:description "Ecological Metadata Language, version 2.1.0" ;
+    glbase:hasIdentifier "eml://ecoinformatics.org/eml-2.1.0" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#004>
+    glbase:description "Ecological Metadata Language, version 2.1.1" ;
+    glbase:hasIdentifier "eml://ecoinformatics.org/eml-2.1.1" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#005>
+    glbase:description "ESRI Profile of the Content Standard for Digital Geospatial Metadata, March 2003" ;
+    glbase:hasIdentifier "http://www.esri.com/metadata/esriprof80.dtd" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#006>
+    glbase:description "Content Standard for Digital Geospatial Metadata, Biological Data Profile, version 001.1-1999" ;
+    glbase:hasIdentifier "FGDC-STD-001.1-1999" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#007>
+    glbase:description "Content Standard for Digital Geospatial Metadata, Metadata Profile for Shoreline Data, version 001.2-1999" ;
+    glbase:hasIdentifier "FGDC-STD-001.2-1999" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#008>
+    glbase:description "Content Standard for Digital Geospatial Metadata, version 001-1998" ;
+    glbase:hasIdentifier "FGDC-STD-001-1998" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#009>
+    glbase:description "North American Profile of ISO 19115: 2003 Geographic Information - Metadata" ;
+    glbase:hasIdentifier "INCITS-453-2009" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#010>
+    glbase:description "NetCDF Markup Language, version 2.2" ;
+    glbase:hasIdentifier "http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#011>
+    glbase:description "NetCDF Climate and Forecast Metadata Convention, version 1.0" ;
+    glbase:hasIdentifier "CF-1.0" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#012>
+    glbase:description "NetCDF Climate and Forecast Metadata Convention, version 1.1" ;
+    glbase:hasIdentifier "CF-1.1" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#013>
+    glbase:description "NetCDF Climate and Forecast Metadata Convention, version 1.2" ;
+    glbase:hasIdentifier "CF-1.2" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#014>
+    glbase:description "NetCDF Climate and Forecast Metadata Convention, version 1.3" ;
+    glbase:hasIdentifier "CF-1.3" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#015>
+    glbase:description "NetCDF Climate and Forecast Metadata Convention, version 1.4" ;
+    glbase:hasIdentifier "CF-1.4" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#016>
+    glbase:description "Water Markup Language, version 1.0" ;
+    glbase:hasIdentifier "http://www.cuahsi.org/waterML/1.0/" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#017>
+    glbase:description "Water Markup Language, version 1.0" ;
+    glbase:hasIdentifier "http://www.cuahsi.org/waterML/1.1/" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#018>
+    glbase:description "Metadata Encoding and Transmission Standard, version 1" ;
+    glbase:hasIdentifier "http://www.loc.gov/METS/" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#019>
+    glbase:description "Network Common Data Format, version 3" ;
+    glbase:hasIdentifier "netCDF-3" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#020>
+    glbase:description "Network Common Data Format, version 4" ;
+    glbase:hasIdentifier "netCDF-4" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#021>
+    glbase:description "Plain Text" ;
+    glbase:hasIdentifier "text/plain" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#022>
+    glbase:description "Comma Separated Values Text" ;
+    glbase:hasIdentifier "text/csv" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#023>
+    glbase:description "Bitmap Image File" ;
+    glbase:hasIdentifier "image/bmp" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#024>
+    glbase:description "Graphics Interchange Format" ;
+    glbase:hasIdentifier "image/gif" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#025>
+    glbase:description "JPEG 2000" ;
+    glbase:hasIdentifier "image/jp2" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#026>
+    glbase:description "JPEG" ;
+    glbase:hasIdentifier "image/jpeg" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#027>
+    glbase:description "Portable Network Graphics" ;
+    glbase:hasIdentifier "image/png" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#028>
+    glbase:description "Scalable Vector Graphics" ;
+    glbase:hasIdentifier "image/svg xml" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#029>
+    glbase:description "Tagged Image File Format" ;
+    glbase:hasIdentifier "image/tiff" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#030>
+    glbase:description "Simple Darwin Core" ;
+    glbase:hasIdentifier "http://rs.tdwg.org/dwc/xsd/simpledarwincore/" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#031>
+    glbase:description "Darwin Core, version 2.0" ;
+    glbase:hasIdentifier "http://digir.net/schema/conceptual/darwin/2003/1.0/darwin2.xsd" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#032>
+    glbase:description "Octet Stream" ;
+    glbase:hasIdentifier "application/octet-stream" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#033>
+    glbase:description "ATOM-1.0" ;
+    glbase:hasIdentifier "http://www.w3.org/2005/Atom" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#034>
+    glbase:description "N3" ;
+    glbase:hasIdentifier "text/n3" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#035>
+    glbase:description "TURTLE" ;
+    glbase:hasIdentifier "text/turtle" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#036>
+    glbase:description "Resource Description Framework" ;
+    glbase:hasIdentifier "application/rdf xml" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#037>
+    glbase:description "N-TRIPLE" ;
+    glbase:hasIdentifier "http://www.w3.org/TR/rdf-testcases/#ntriples" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#038>
+    glbase:description "RDF/XML" ;
+    glbase:hasIdentifier "http://www.w3.org/TR/rdf-syntax-grammar" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#039>
+    glbase:description "RDFa" ;
+    glbase:hasIdentifier "http://www.w3.org/TR/rdfa-syntax" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#040>
+    glbase:description "Object Reuse and Exchange Vocabulary" ;
+    glbase:hasIdentifier "http://www.openarchives.org/ore/terms" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#041>
+    glbase:description "Portable Document Format" ;
+    glbase:hasIdentifier "application/pdf" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#042>
+    glbase:description "Dryad Metadata Application Profile Version 3.1" ;
+    glbase:hasIdentifier "http://datadryad.org/profile/v3.1" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#043>
+    glbase:description "Dryad Metadata Application Profile Version 3.0" ;
+    glbase:hasIdentifier "http://purl.org/dryad/terms/" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#044>
+    glbase:description "Microsoft Excel file format" ;
+    glbase:hasIdentifier "application/vnd.ms-excel" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#045>
+    glbase:description "Microsoft Word file format" ;
+    glbase:hasIdentifier "application/msword" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#046>
+    glbase:description "Kernel Metadata and Electronic Resource Citations (ERCs), 2010.05.13" ;
+    glbase:hasIdentifier "anvl/erc-v02" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#047>
+    glbase:description "NEXUS File Format for Systematic Information" ;
+    glbase:hasIdentifier "nexus/1997" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#048>
+    glbase:description "Zip file format" ;
+    glbase:hasIdentifier "application/zip" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#049>
+    glbase:description "Microsoft Excel OpenXML" ;
+    glbase:hasIdentifier "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#050>
+    glbase:description "Microsoft Word OpenXML" ;
+    glbase:hasIdentifier "application/vnd.openxmlformats-officedocument.wordprocessingml.document" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#051>
+    glbase:description "FASTA sequence file" ;
+    glbase:hasIdentifier "application/x-fasta" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#052>
+    glbase:description "Extensible Markup Language" ;
+    glbase:hasIdentifier "text/xml" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#053>
+    glbase:description "Extensible Markup Language Application" ;
+    glbase:hasIdentifier "application/xml" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#054>
+    glbase:description "Rich Text Format" ;
+    glbase:hasIdentifier "application/rtf" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#055>
+    glbase:description "Hypertext Markup Language" ;
+    glbase:hasIdentifier "text/html" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#056>
+    glbase:description "Postscript" ;
+    glbase:hasIdentifier "application/postscript" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#057>
+    glbase:description "Wave Audio Format" ;
+    glbase:hasIdentifier "audio/x-wav" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#058>
+    glbase:description "Mathematica Notebook" ;
+    glbase:hasIdentifier "application/mathematica" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#059>
+    glbase:description "Quicktime Video" ;
+    glbase:hasIdentifier "video/quicktime" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#060>
+    glbase:description "GZIP Format" ;
+    glbase:hasIdentifier "application/x-gzip" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#061>
+    glbase:description "Python Script" ;
+    glbase:hasIdentifier "application/x-python" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#062>
+    glbase:description "Windows Media Video File" ;
+    glbase:hasIdentifier "video/x-ms-wmv" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#063>
+    glbase:description "Windows Media Audio File" ;
+    glbase:hasIdentifier "audio/x-ms-wma" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#064>
+    glbase:description "Microsoft Audio Video Interleave (AVI) File" ;
+    glbase:hasIdentifier "video/avi" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#065>
+    glbase:description "MPEG-1 Video" ;
+    glbase:hasIdentifier "video/mpeg" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#066>
+    glbase:description "MPEG-1 or MPEG-2 Audio Layer III" ;
+    glbase:hasIdentifier "audio/mpeg" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#067>
+    glbase:description "MPEG-4 Video" ;
+    glbase:hasIdentifier "video/mp4" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#068>
+    glbase:description "Tape Archive File" ;
+    glbase:hasIdentifier "application/x-tar" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#069>
+    glbase:description "Bzip2 Compressed File" ;
+    glbase:hasIdentifier "application/x-bzip2" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#070>
+    glbase:description "Google Earth Keyhole Markup Language (KML)" ;
+    glbase:hasIdentifier "application/vnd.google-earth.kml xml" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#071>
+    glbase:description "Roshal Archive File" ;
+    glbase:hasIdentifier "application/x-rar-compressed" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#072>
+    glbase:description "Microsoft Office Excel 2007 binary workbooks" ;
+    glbase:hasIdentifier "application/vnd.ms-excel.sheet.binary.macroEnabled.12" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#073>
+    glbase:description "Microsoft Office Powerpoint" ;
+    glbase:hasIdentifier "application/vnd.ms-powerpoint" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#074>
+    glbase:description "Microsoft Office OpenXML Presentation" ;
+    glbase:hasIdentifier "application/vnd.openxmlformats-officedocument.presentationml.presentation" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#075>
+    glbase:description "Ecological Metadata Language, Access module, version 2.0.0beta4" ;
+    glbase:hasIdentifier "-//ecoinformatics.org//eml-access-2.0.0beta4//EN" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#076>
+    glbase:description "Ecological Metadata Language, Attribute module, version 2.0.0beta4" ;
+    glbase:hasIdentifier "-//ecoinformatics.org//eml-attribute-2.0.0beta4//EN" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#077>
+    glbase:description "Ecological Metadata Language, Constraint module, version 2.0.0beta4" ;
+    glbase:hasIdentifier "-//ecoinformatics.org//eml-constraint-2.0.0beta4//EN" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#078>
+    glbase:description "Ecological Metadata Language, Coverage module, version 2.0.0beta4" ;
+    glbase:hasIdentifier "-//ecoinformatics.org//eml-coverage-2.0.0beta4//EN" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#079>
+    glbase:description "Ecological Metadata Language, Dataset module, version 2.0.0beta4" ;
+    glbase:hasIdentifier "-//ecoinformatics.org//eml-dataset-2.0.0beta4//EN" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#080>
+    glbase:description "Ecological Metadata Language, Distribution module, version 2.0.0beta4" ;
+    glbase:hasIdentifier "-//ecoinformatics.org//eml-distribution-2.0.0beta4//EN" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#081>
+    glbase:description "Ecological Metadata Language, Entity module, version 2.0.0beta4" ;
+    glbase:hasIdentifier "-//ecoinformatics.org//eml-entity-2.0.0beta4//EN" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#082>
+    glbase:description "Ecological Metadata Language, Literature module, version 2.0.0beta4" ;
+    glbase:hasIdentifier "-//ecoinformatics.org//eml-literature-2.0.0beta4//EN" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#083>
+    glbase:description "Ecological Metadata Language, Party module, version 2.0.0beta4" ;
+    glbase:hasIdentifier "-//ecoinformatics.org//eml-party-2.0.0beta4//EN" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#084>
+    glbase:description "Ecological Metadata Language, Physical module, version 2.0.0beta4" ;
+    glbase:hasIdentifier "-//ecoinformatics.org//eml-physical-2.0.0beta4//EN" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#085>
+    glbase:description "Ecological Metadata Language, Project module, version 2.0.0beta4" ;
+    glbase:hasIdentifier "-//ecoinformatics.org//eml-project-2.0.0beta4//EN" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#086>
+    glbase:description "Ecological Metadata Language, Protocol module, version 2.0.0beta4" ;
+    glbase:hasIdentifier "-//ecoinformatics.org//eml-protocol-2.0.0beta4//EN" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#087>
+    glbase:description "Ecological Metadata Language, Resource module, version 2.0.0beta4" ;
+    glbase:hasIdentifier "-//ecoinformatics.org//eml-resource-2.0.0beta4//EN" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#088>
+    glbase:description "Ecological Metadata Language, Software module, version 2.0.0beta4" ;
+    glbase:hasIdentifier "-//ecoinformatics.org//eml-software-2.0.0beta4//EN" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#089>
+    glbase:description "Ecological Metadata Language, Access module, version 2.0.0beta6" ;
+    glbase:hasIdentifier "-//ecoinformatics.org//eml-access-2.0.0beta6//EN" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#090>
+    glbase:description "Ecological Metadata Language, Attribute module, version 2.0.0beta6" ;
+    glbase:hasIdentifier "-//ecoinformatics.org//eml-attribute-2.0.0beta6//EN" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#091>
+    glbase:description "Ecological Metadata Language, Constraint module, version 2.0.0beta6" ;
+    glbase:hasIdentifier "-//ecoinformatics.org//eml-constraint-2.0.0beta6//EN" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#092>
+    glbase:description "Ecological Metadata Language, Coverage module, version 2.0.0beta6" ;
+    glbase:hasIdentifier "-//ecoinformatics.org//eml-coverage-2.0.0beta6//EN" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#093>
+    glbase:description "Ecological Metadata Language, Dataset module, version 2.0.0beta6" ;
+    glbase:hasIdentifier "-//ecoinformatics.org//eml-dataset-2.0.0beta6//EN" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#094>
+    glbase:description "Ecological Metadata Language, Distribution module, version 2.0.0beta6" ;
+    glbase:hasIdentifier "-//ecoinformatics.org//eml-distribution-2.0.0beta6//EN" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#095>
+    glbase:description "Ecological Metadata Language, Entity module, version 2.0.0beta6" ;
+    glbase:hasIdentifier "-//ecoinformatics.org//eml-entity-2.0.0beta6//EN" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#096>
+    glbase:description "Ecological Metadata Language, Literature module, version 2.0.0beta6" ;
+    glbase:hasIdentifier "-//ecoinformatics.org//eml-literature-2.0.0beta6//EN" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#097>
+    glbase:description "Ecological Metadata Language, Party module, version 2.0.0beta6" ;
+    glbase:hasIdentifier "-//ecoinformatics.org//eml-party-2.0.0beta6//EN" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#098>
+    glbase:description "Ecological Metadata Language, Physical module, version 2.0.0beta6" ;
+    glbase:hasIdentifier "-//ecoinformatics.org//eml-physical-2.0.0beta6//EN" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#099>
+    glbase:description "Ecological Metadata Language, Project module, version 2.0.0beta6" ;
+    glbase:hasIdentifier "-//ecoinformatics.org//eml-project-2.0.0beta6//EN" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#100>
+    glbase:description "Ecological Metadata Language, Protocol module, version 2.0.0beta6" ;
+    glbase:hasIdentifier "-//ecoinformatics.org//eml-protocol-2.0.0beta6//EN" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#101>
+    glbase:description "Ecological Metadata Language, Resource module, version 2.0.0beta6" ;
+    glbase:hasIdentifier "-//ecoinformatics.org//eml-resource-2.0.0beta6//EN" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#102>
+    glbase:description "Ecological Metadata Language, Software module, version 2.0.0beta6" ;
+    glbase:hasIdentifier "-//ecoinformatics.org//eml-software-2.0.0beta6//EN" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#103>
+    glbase:description "Data Documentation Initiative, Codebook version 2.5" ;
+    glbase:hasIdentifier "ddi:codebook:2_5" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#104>
+    glbase:description "Data Documentation Initiative, Codebook version 2.1" ;
+    glbase:hasIdentifier "http://www.icpsr.umich.edu/DDI" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#105>
+    glbase:description "Oak Ridge National Lab Mercury Metadata version 1.0" ;
+    glbase:hasIdentifier "http://purl.org/ornl/schema/mercury/terms/v1.0" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#106>
+    glbase:description "DataCite Metadata Schema version 3.0" ;
+    glbase:hasIdentifier "http://datacite.org/schema/kernel-3.0" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#107>
+    glbase:description "DataCite Metadata Schema version 3.1" ;
+    glbase:hasIdentifier "http://datacite.org/schema/kernel-3.1" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#108>
+    glbase:description "NeXML 2009" ;
+    glbase:hasIdentifier "http://www.nexml.org/2009" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#109>
+    glbase:description "DataONE Dublin Core Extended v1.0" ;
+    glbase:hasIdentifier "http://ns.dataone.org/metadata/schema/onedcx/v1.0" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#110>
+    glbase:description "AnnotatorJS 1.2.x Annotation model" ;
+    glbase:hasIdentifier "http://docs.annotatorjs.org/en/v1.2.x/annotation-format.html" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#111>
+    glbase:description "Geographic MetaData (GMD) Extensible Markup Language" ;
+    glbase:hasIdentifier "http://www.isotc211.org/2005/gmd" ;
+    a glbase:Format .
+
+<http://schema.geolink.org/dev/voc/dataone/format#112>
+    glbase:description "BagIt File Packaging Format Version 0.97" ;
+    glbase:hasIdentifier "application/bagit-097" ;
+    a glbase:Format .
+
+<https://cn.dataone.org/cn/v1/node/https://cn.dataone.org/cn/v1/node/urn:node:CDL>
+    glbase:description "A cross-domain repository for data and metadata provided by the University of California Curation Center, California Digital Library at the University of California" ;
+    a glbase:Repository ;
+    rdfs:label "UC3 Merritt" ;
+    foaf:name "UC3 Merritt" .
+
+<https://cn.dataone.org/cn/v1/node/https://cn.dataone.org/cn/v1/node/urn:node:CLOEBIRD>
+    glbase:description "eBird collects observational data on birds from around the world with a date range from 1800 to current. eBird is a valuable data resource for science and conservation, collecting millions of bird observations per month." ;
+    a glbase:Repository ;
+    rdfs:label "Cornell Lab of Ornithology - eBird" ;
+    foaf:name "Cornell Lab of Ornithology - eBird" .
+
+<https://cn.dataone.org/cn/v1/node/https://cn.dataone.org/cn/v1/node/urn:node:CN>
+    glbase:description "Round Robin Router for Production Coordinating Nodes" ;
+    a glbase:Repository ;
+    rdfs:label "cn" ;
+    foaf:name "cn" .
+
+<https://cn.dataone.org/cn/v1/node/https://cn.dataone.org/cn/v1/node/urn:node:CNORC1>
+    glbase:description "Oak Ridge National Laboratory Coordinating Node" ;
+    a glbase:Repository ;
+    rdfs:label "cn-orc-1" ;
+    foaf:name "cn-orc-1" .
+
+<https://cn.dataone.org/cn/v1/node/https://cn.dataone.org/cn/v1/node/urn:node:CNUCSB1>
+    glbase:description "University of California Santa Barbara Coordinating Node" ;
+    a glbase:Repository ;
+    rdfs:label "cn-ucsb-1" ;
+    foaf:name "cn-ucsb-1" .
+
+<https://cn.dataone.org/cn/v1/node/https://cn.dataone.org/cn/v1/node/urn:node:CNUNM1>
+    glbase:description "University of New Mexico Coordinating Node" ;
+    a glbase:Repository ;
+    rdfs:label "cn-unm-1" ;
+    foaf:name "cn-unm-1" .
+
+<https://cn.dataone.org/cn/v1/node/https://cn.dataone.org/cn/v1/node/urn:node:DRYAD>
+    glbase:description "Dryad is an international repository of data underlying peer-reviewed scientific and medical literature." ;
+    a glbase:Repository ;
+    rdfs:label "Dryad Digital Repository" ;
+    foaf:name "Dryad Digital Repository" .
+
+<https://cn.dataone.org/cn/v1/node/https://cn.dataone.org/cn/v1/node/urn:node:EDACGSTORE>
+    glbase:description "Earth Data Analysis Center's (EDAC) Geographical Storage, Transformation and Retrieval Engine (GSTORE) platform archives data produced by various NM organizations, including NM EPSCoR and RGIS. GSTORE primarily houses GIS and other digital documents relevant to state agencies, local government, and scientific researchers. See RGIS and NM EPSCoR for more information on the scope of data. It currently uses the FGDC metadata standard to describe all of its holdings." ;
+    a glbase:Repository ;
+    rdfs:label "EDAC Gstore Repository" ;
+    foaf:name "EDAC Gstore Repository" .
+
+<https://cn.dataone.org/cn/v1/node/https://cn.dataone.org/cn/v1/node/urn:node:EDORA>
+    glbase:description "Environmental Data for the Oak Ridge Area (EDORA), including the Walker Branch Watershed.  These projects have all contributed to a more complete understanding of how forest watersheds function and have provided insights into the solution of energy-related problems associated with air pollution, contaminant transport, and forest nutrient dynamics. This is one of a few sites in the world characterized by long-term, intensive environmental studies." ;
+    a glbase:Repository ;
+    rdfs:label "Environmental Data for the Oak Ridge Area (EDORA)" ;
+    foaf:name "Environmental Data for the Oak Ridge Area (EDORA)" .
+
+<https://cn.dataone.org/cn/v1/node/https://cn.dataone.org/cn/v1/node/urn:node:ESA>
+    glbase:description "The data sets registered here are associated with articles published in the journals of the Ecological Society of America." ;
+    a glbase:Repository ;
+    rdfs:label "ESA Data Registry" ;
+    foaf:name "ESA Data Registry" .
+
+<https://cn.dataone.org/cn/v1/node/https://cn.dataone.org/cn/v1/node/urn:node:GLEON>
+    glbase:description "Data archive for the Global Lakes Ecological Observatory Network (GLEON), an international community of Lake researchers." ;
+    a glbase:Repository ;
+    rdfs:label "GLEON Data Repository" ;
+    foaf:name "GLEON Data Repository" .
+
+<https://cn.dataone.org/cn/v1/node/https://cn.dataone.org/cn/v1/node/urn:node:GOA>
+    glbase:description "The Gulf of Alaska Data Portal archives environmental observations arising from monitoring and experimentation in the Gulf of Alaska and related regions, and particularly in oil-impacted regions of Prince William Sound and locations on the southern coast of Alaska. Many data sets are time series data spanning multiple decades and continuing through the present.  The Gulf of Alaska Data Portal provides long-term, consistent, scientific data that is critical to allow us to detect and understand ecosystem changes and shifts that directly or indirectly (e.g. through food web relationships) influence the species and ecosystem services of the Gulf of Alaska." ;
+    a glbase:Repository ;
+    rdfs:label "Gulf of Alaska Data Portal" ;
+    foaf:name "Gulf of Alaska Data Portal" .
+
+<https://cn.dataone.org/cn/v1/node/https://cn.dataone.org/cn/v1/node/urn:node:IARC>
+    glbase:description "The International Arctic Research Center (IARC) Data Archive, a long term repository for Arctic data." ;
+    a glbase:Repository ;
+    rdfs:label "IARC Data Archive" ;
+    foaf:name "IARC Data Archive" .
+
+<https://cn.dataone.org/cn/v1/node/https://cn.dataone.org/cn/v1/node/urn:node:IOE>
+    glbase:description "The Montana Institute on Ecosystems (IoE) Data Repository archives and manages ecological research collections produced investigators within the Montana University System. The Montana IoE Data Repository is also the primary archive for data products generated by Montana EPSCoR projects." ;
+    a glbase:Repository ;
+    rdfs:label "Montana IoE Data Repository" ;
+    foaf:name "Montana IoE Data Repository" .
+
+<https://cn.dataone.org/cn/v1/node/https://cn.dataone.org/cn/v1/node/urn:node:KNB>
+    glbase:description "The Knowledge Network for Biocomplexity (KNB) is a national network intended to facilitate ecological and environmental research on biocomplexity." ;
+    a glbase:Repository ;
+    rdfs:label "KNB Data Repository" ;
+    foaf:name "KNB Data Repository" .
+
+<https://cn.dataone.org/cn/v1/node/https://cn.dataone.org/cn/v1/node/urn:node:KUBI>
+    glbase:description "This DataONE Member Node is operated by The University of Kansas Biodiversity Institute.  The contents of this node are predicted climate layers used for species distribution models." ;
+    a glbase:Repository ;
+    rdfs:label "University of Kansas - Biodiversity Institute" ;
+    foaf:name "University of Kansas - Biodiversity Institute" .
+
+<https://cn.dataone.org/cn/v1/node/https://cn.dataone.org/cn/v1/node/urn:node:LTER>
+    glbase:description "The U.S. Long Term Ecological Research Network (LTER) data include ecological observations from the study of pattern and control of primary production, movement of both organic and inorganic matter, disturbance patterns, and the spatial and temporal distribution of populations selected to represent trophic structure. The data originates from 27 sites across the conterminous United States of America, Alaska, Antarctica, Puerto Rico, and French Polynesia and spans a period from over 100 years ago to the present." ;
+    a glbase:Repository ;
+    rdfs:label "U.S. LTER Network" ;
+    foaf:name "U.S. LTER Network" .
+
+<https://cn.dataone.org/cn/v1/node/https://cn.dataone.org/cn/v1/node/urn:node:LTER_EUROPE>
+    glbase:description "DataOne LTER_Europe Member Node Implemented in Matacat" ;
+    a glbase:Repository ;
+    rdfs:label "LTER Europe Member Node" ;
+    foaf:name "LTER Europe Member Node" .
+
+<https://cn.dataone.org/cn/v1/node/https://cn.dataone.org/cn/v1/node/urn:node:NKN>
+    glbase:description "NKN manages diverse collections of research data across many disciplines, with a strong emphasis on earth science, ecology, environmental, climate, and hydrology.  We focus on archiving data specific to Idaho and the Pacific Northwest region.  Much of our data is collected under recent or current federally funded grants such as NSF EPSCoR, USDA REACCH, or USGS Climate Science Center.  Our largest data collections include raw and processed regional LiDAR products,  downscaled climate scenario data (netCDF), and legacy stream ecology datasets." ;
+    a glbase:Repository ;
+    rdfs:label "Northwest Knowledge Network" ;
+    foaf:name "Northwest Knowledge Network" .
+
+<https://cn.dataone.org/cn/v1/node/https://cn.dataone.org/cn/v1/node/urn:node:NMEPSCOR>
+    glbase:description "New Mexico Experimental Program to Stimulate Competitive Research Data Collection" ;
+    a glbase:Repository ;
+    rdfs:label "NM EPSCoR Tier 4 Node" ;
+    foaf:name "NM EPSCoR Tier 4 Node" .
+
+<https://cn.dataone.org/cn/v1/node/https://cn.dataone.org/cn/v1/node/urn:node:ONEShare>
+    glbase:description "A repository for tabular data and metadata created using the DASH tool, sponsored by the California Digital Library and the University of New Mexico" ;
+    a glbase:Repository ;
+    rdfs:label "ONEShare DataONE Member Node" ;
+    foaf:name "ONEShare DataONE Member Node" .
+
+<https://cn.dataone.org/cn/v1/node/https://cn.dataone.org/cn/v1/node/urn:node:ORNLDAAC>
+    glbase:description "The ORNL DAAC archives data produced by NASA's Terrestrial Ecology Program. The DAAC provides data and information relevant to biogeochemical dynamics, ecological data, and environmental processes, critical for understanding the dynamics relating to the biological, geological, and chemical components of Earth's environment. " ;
+    a glbase:Repository ;
+    rdfs:label "ORNL DAAC" ;
+    foaf:name "ORNL DAAC" .
+
+<https://cn.dataone.org/cn/v1/node/https://cn.dataone.org/cn/v1/node/urn:node:PISCO>
+    glbase:description "The Partnership for Interdisciplinary Studies of Coastal Oceans is a long-term ecosystem research and monitoring program established with the goals of understanding dynamics of the coastal ocean ecosystem along the U.S. west coast,  sharing that knowledge so ocean managers and policy makers can take science&#8208;based decisions regarding coastal and marine stewardship, and producing a new generation of scientists trained in interdisciplinary collaborative approaches." ;
+    a glbase:Repository ;
+    rdfs:label "PISCO MN" ;
+    foaf:name "PISCO MN" .
+
+<https://cn.dataone.org/cn/v1/node/https://cn.dataone.org/cn/v1/node/urn:node:RGD>
+    glbase:description "Regional and global biogeochemical dynamics data can be used to improve our understanding of the structure and function of various ecosystems; to enable prediction across spatial and temporal scales; and to parameterize and validate terrestrial ecosystem models." ;
+    a glbase:Repository ;
+    rdfs:label "Regional and Global biogeochemical dynamics Data (RGD)" ;
+    foaf:name "Regional and Global biogeochemical dynamics Data (RGD)" .
+
+<https://cn.dataone.org/cn/v1/node/https://cn.dataone.org/cn/v1/node/urn:node:SANPARKS>
+    glbase:description "The South African National Park Data Repository is the primary source for comprehensive information about scientific and research data sets collected throughout the South African National Park System." ;
+    a glbase:Repository ;
+    rdfs:label "SANParks Data Repository" ;
+    foaf:name "SANParks Data Repository" .
+
+<https://cn.dataone.org/cn/v1/node/https://cn.dataone.org/cn/v1/node/urn:node:SEAD>
+    glbase:description """SEAD Virtual Archive is part of the SEAD DataNet project [http://sead-data.net/]. 
+ SEAD Virtual Archive is a thin virtualization layer on top of multiple university Institutional Repositories focusing on preservation of long-tail scientific data.""" ;
+    a glbase:Repository ;
+    rdfs:label "SEAD Virtual Archive" ;
+    foaf:name "SEAD Virtual Archive" .
+
+<https://cn.dataone.org/cn/v1/node/https://cn.dataone.org/cn/v1/node/urn:node:TERN>
+    glbase:description "This member node is operated by TERN Eco-Informatics (Australia). It contains data produced by all of the TERN facilities." ;
+    a glbase:Repository ;
+    rdfs:label "TERN Australia" ;
+    foaf:name "TERN Australia" .
+
+<https://cn.dataone.org/cn/v1/node/https://cn.dataone.org/cn/v1/node/urn:node:TFRI>
+    glbase:description "TFRI emphasizes the sustainable management and multi-purpose utilization of forests" ;
+    a glbase:Repository ;
+    rdfs:label "TFRI Data Catalog" ;
+    foaf:name "TFRI Data Catalog" .
+
+<https://cn.dataone.org/cn/v1/node/https://cn.dataone.org/cn/v1/node/urn:node:USANPN>
+    glbase:description "DataONE member node hosting annual phenology datasets for the USA-NPN." ;
+    a glbase:Repository ;
+    rdfs:label "USA National Phenology Network" ;
+    foaf:name "USA National Phenology Network" .
+
+<https://cn.dataone.org/cn/v1/node/https://cn.dataone.org/cn/v1/node/urn:node:USGSCSAS>
+    glbase:description "US Geological Survey Core Science Metadata Clearinghouse archives metadata records describing datasets largely focused on wildlife biology, ecology, environmental science, temperature, geospatial data layers documenting land cover and stewardship (ownership and management), and more." ;
+    a glbase:Repository ;
+    rdfs:label "USGS Core Sciences Clearinghouse" ;
+    foaf:name "USGS Core Sciences Clearinghouse" .
+
+<https://cn.dataone.org/cn/v1/node/https://cn.dataone.org/cn/v1/node/urn:node:US_MPC>
+    glbase:description "The Minnesota Population Center disseminates integrated census and survey data from the U.S. and around the world; spatial boundary data for U.S. and international administrative units; and global environmental data on topics including land use, land cover, and climate. MPC data holdings include microdata (describing individuals and households), area-level data (describing places), and raster data. The data are designed to be interoperable for spatiotemporal comparisons and MPC data access systems include tools for integrating across data sets and formats." ;
+    a glbase:Repository ;
+    rdfs:label "Minnesota Population Center" ;
+    foaf:name "Minnesota Population Center" .
+
+<https://cn.dataone.org/cn/v1/node/https://cn.dataone.org/cn/v1/node/urn:node:mnORC1>
+    glbase:description "A server that provides replica storage across the DataONE Network for all participating institutions" ;
+    a glbase:Repository ;
+    rdfs:label "DataONE ORC Dedicated Replica Server" ;
+    foaf:name "DataONE ORC Dedicated Replica Server" .
+
+<https://cn.dataone.org/cn/v1/node/https://cn.dataone.org/cn/v1/node/urn:node:mnUCSB1>
+    glbase:description "A server that provides replica storage across the DataONE Network for all participating institutions" ;
+    a glbase:Repository ;
+    rdfs:label "DataONE UCSB Dedicated Replica Server" ;
+    foaf:name "DataONE UCSB Dedicated Replica Server" .
+
+<https://cn.dataone.org/cn/v1/node/https://cn.dataone.org/cn/v1/node/urn:node:mnUNM1>
+    glbase:description "A server that provides replica storage across the DataONE Network for all participating institutions" ;
+    a glbase:Repository ;
+    rdfs:label "DataONE UNM Dedicated Replica Server" ;
+    foaf:name "DataONE UNM Dedicated Replica Server" .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-and.5229.2>
+    dcterms:creator <http://data.geolink.org/id/dataone/005bced4674a4362b7cf9cb70f351476> ;
+    glbase:description """<para>We designed and conducted a survey of volunteers who work in city parks in Portland, Oregon and Vancouver, Washington to understand natural area volunteer commitment and motivation, as well as the effect that volunteering has on participants’ behavior and attitudes toward the environment. We contrasted volunteer motivation, attitudes, and behaviors between the two cities to better understand the role of governance in organizing volunteer efforts. Participants were sampled over the course of late winter and spring of 2012 during 25 different events. Volunteers’ motivations ranged from environmental reasons to those of personal health. Portland volunteers indicated that helping the environment was their primary motivation, more often than Vancouver volunteers. Portland area volunteers had significantly higher tendency to indicate that their primary gain from volunteering was helping the environment, while Vancouver area volunteers tended to indicate that they were helping their community. Frequency of participation was significantly different between Portland and Vancouver, with 35% in Portland volunteering more than 10 times per year; 21% of Vancouver participants engaged more than 10 times per year. Those engaging in the highest participation level were more likely to engage in public environmental behaviors, such as contacting local officials about environmental issues. Portland volunteers were more likely to feel connected to their volunteer site, and consider themselves environmentalists. 
+A total of 131 Portland volunteers and 44 Vancouver volunteers were sampled during the 9-month study. They were asked 48 attitude and behavior questions, including other questions to solicit demographic information including gender, income, and age, and asked about travel time to the site.</para>""" ;
+    glbase:hasCreator <TODO>, <http://data.geolink.org/id/dataone/005bced4674a4362b7cf9cb70f351476> ;
+    glbase:hasIdentifier [
+        glbase:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glbase:hasIdentifierValue "knb-lter-and.5229.2" ;
+        a glbase:Identifier ;
+        rdfs:label "knb-lter-and.5229.2"
+    ] ;
+    glbase:hasRightsHolder <TODO> ;
+    glbase:title "Adult Stewardship in 25 Natural Areas in the Portland-Vancouver Metropolitan Area from September 2011 through June 2012" ;
+    doview:hasAuthoritativeDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasEndDate "2012-06-01T00:00:00Z" ;
+    doview:hasLandingPage "https://search.dataone.org/#view/knb-lter-and.5229.2" ;
+    doview:hasOriginDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasReplicaDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:CN>, <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    a glbase:Dataset ;
+    rdfs:label "Adult Stewardship in 25 Natural Areas in the Portland-Vancouver Metropolitan Area from September 2011 through June 2012" .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-arc.10350.2>
+    dcterms:creator <http://data.geolink.org/id/dataone/17cc8ee505954ad5b7dc8023edd67bcd>, <http://data.geolink.org/id/dataone/95522af02aa54c648c67d814c7297c0c>, <http://data.geolink.org/id/dataone/d02283d24e174bd4a702b5c17a65da61> ;
+    glbase:description "This file contains the Specific Activity of 14C from dissolved and gaseous species of carbon sampled from tussock tundra and wet sedge plots near Toolik Lake, AK during the summer of 2003." ;
+    glbase:hasCreator <TODO>, <http://data.geolink.org/id/dataone/17cc8ee505954ad5b7dc8023edd67bcd>, <http://data.geolink.org/id/dataone/95522af02aa54c648c67d814c7297c0c>, <http://data.geolink.org/id/dataone/d02283d24e174bd4a702b5c17a65da61> ;
+    glbase:hasGeometryAsWktLiteral "POINT (68.64762 -149.5773)" ;
+    glbase:hasIdentifier [
+        glbase:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glbase:hasIdentifierValue "knb-lter-arc.10350.2" ;
+        a glbase:Identifier ;
+        rdfs:label "knb-lter-arc.10350.2"
+    ] ;
+    glbase:hasRightsHolder <TODO> ;
+    glbase:title "Dissolved and gaseous 14C from experimental plots near Toolik Lake, AK from 2003" ;
+    doview:hasAuthoritativeDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasEndDate "1914-11-22T00:00:00Z" ;
+    doview:hasLandingPage "https://search.dataone.org/#view/knb-lter-arc.10350.2" ;
+    doview:hasOriginDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasReplicaDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:CN>, <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    a glbase:Dataset ;
+    rdfs:label "Dissolved and gaseous 14C from experimental plots near Toolik Lake, AK from 2003" .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-arc.10370.1>
+    dcterms:creator <http://data.geolink.org/id/dataone/17cc8ee505954ad5b7dc8023edd67bcd>, <http://data.geolink.org/id/dataone/95522af02aa54c648c67d814c7297c0c>, <http://data.geolink.org/id/dataone/d02283d24e174bd4a702b5c17a65da61> ;
+    glbase:description "The methane fluxes from tussock tundra and wet sedge plots near Toolik Lake, AK during the summer of 2003." ;
+    glbase:hasCreator <TODO>, <http://data.geolink.org/id/dataone/17cc8ee505954ad5b7dc8023edd67bcd>, <http://data.geolink.org/id/dataone/95522af02aa54c648c67d814c7297c0c>, <http://data.geolink.org/id/dataone/d02283d24e174bd4a702b5c17a65da61> ;
+    glbase:hasGeometryAsWktLiteral "POINT (68.62441 -149.60959)" ;
+    glbase:hasIdentifier [
+        glbase:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glbase:hasIdentifierValue "knb-lter-arc.10370.1" ;
+        a glbase:Identifier ;
+        rdfs:label "knb-lter-arc.10370.1"
+    ] ;
+    glbase:hasRightsHolder <TODO> ;
+    glbase:title "Methane flux from experiemental plots near Toolik Lake, AK from 2003" ;
+    doview:hasAuthoritativeDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasEndDate "2003-08-04T00:00:00Z" ;
+    doview:hasLandingPage "https://search.dataone.org/#view/knb-lter-arc.10370.1" ;
+    doview:hasOriginDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasReplicaDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:CN>, <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    a glbase:Dataset ;
+    rdfs:label "Methane flux from experiemental plots near Toolik Lake, AK from 2003" .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-arc.10372.1>
+    dcterms:creator <http://data.geolink.org/id/dataone/17cc8ee505954ad5b7dc8023edd67bcd>, <http://data.geolink.org/id/dataone/95522af02aa54c648c67d814c7297c0c>, <http://data.geolink.org/id/dataone/d02283d24e174bd4a702b5c17a65da61> ;
+    glbase:description "The methane fluxes from tussock tundra and wet sedge plots near Toolik Lake, AK during the summer of 2003." ;
+    glbase:hasCreator <TODO>, <http://data.geolink.org/id/dataone/17cc8ee505954ad5b7dc8023edd67bcd>, <http://data.geolink.org/id/dataone/95522af02aa54c648c67d814c7297c0c>, <http://data.geolink.org/id/dataone/d02283d24e174bd4a702b5c17a65da61> ;
+    glbase:hasGeometryAsWktLiteral "POINT (68.62441 -149.60959)" ;
+    glbase:hasIdentifier [
+        glbase:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glbase:hasIdentifierValue "knb-lter-arc.10372.1" ;
+        a glbase:Identifier ;
+        rdfs:label "knb-lter-arc.10372.1"
+    ] ;
+    glbase:hasRightsHolder <TODO> ;
+    glbase:title "Methane flux from experiemental plots near Toolik Lake, AK from 2003" ;
+    doview:hasAuthoritativeDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasEndDate "2003-08-04T00:00:00Z" ;
+    doview:hasLandingPage "https://search.dataone.org/#view/knb-lter-arc.10372.1" ;
+    doview:hasOriginDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasReplicaDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:CN>, <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    a glbase:Dataset ;
+    rdfs:label "Methane flux from experiemental plots near Toolik Lake, AK from 2003" .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-arc.10373.1>
+    dcterms:creator <http://data.geolink.org/id/dataone/17cc8ee505954ad5b7dc8023edd67bcd>, <http://data.geolink.org/id/dataone/95522af02aa54c648c67d814c7297c0c>, <http://data.geolink.org/id/dataone/d02283d24e174bd4a702b5c17a65da61> ;
+    glbase:description "The methane fluxes from tussock tundra and wet sedge plots near Toolik Lake, AK during the summer of 2003." ;
+    glbase:hasCreator <TODO>, <http://data.geolink.org/id/dataone/17cc8ee505954ad5b7dc8023edd67bcd>, <http://data.geolink.org/id/dataone/95522af02aa54c648c67d814c7297c0c>, <http://data.geolink.org/id/dataone/d02283d24e174bd4a702b5c17a65da61> ;
+    glbase:hasGeometryAsWktLiteral "POINT (68.62441 -149.60959)" ;
+    glbase:hasIdentifier [
+        glbase:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glbase:hasIdentifierValue "knb-lter-arc.10373.1" ;
+        a glbase:Identifier ;
+        rdfs:label "knb-lter-arc.10373.1"
+    ] ;
+    glbase:hasRightsHolder <TODO> ;
+    glbase:title "Methane flux from experiemental plots near Toolik Lake, AK from 2003" ;
+    doview:hasAuthoritativeDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasEndDate "2003-08-04T00:00:00Z" ;
+    doview:hasLandingPage "https://search.dataone.org/#view/knb-lter-arc.10373.1" ;
+    doview:hasOriginDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasReplicaDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:CN>, <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    a glbase:Dataset ;
+    rdfs:label "Methane flux from experiemental plots near Toolik Lake, AK from 2003" .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-arc.10376.1>
+    dcterms:creator <http://data.geolink.org/id/dataone/95522af02aa54c648c67d814c7297c0c>, <http://data.geolink.org/id/dataone/d02283d24e174bd4a702b5c17a65da61>, <http://data.geolink.org/id/dataone/dd381061727144ea8628a1b4dc2ae845> ;
+    glbase:description "Microbial respiration of carbon dioxide, and methane in waters from wet sedge plots near Toolik Lake, AK during the summer of 2003." ;
+    glbase:hasCreator <TODO>, <http://data.geolink.org/id/dataone/95522af02aa54c648c67d814c7297c0c>, <http://data.geolink.org/id/dataone/d02283d24e174bd4a702b5c17a65da61>, <http://data.geolink.org/id/dataone/dd381061727144ea8628a1b4dc2ae845> ;
+    glbase:hasGeometryAsWktLiteral "POINT (68.62441 -149.60959)" ;
+    glbase:hasIdentifier [
+        glbase:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glbase:hasIdentifierValue "knb-lter-arc.10376.1" ;
+        a glbase:Identifier ;
+        rdfs:label "knb-lter-arc.10376.1"
+    ] ;
+    glbase:hasRightsHolder <TODO> ;
+    glbase:title "Microbial Respirations from experiemental plots near Toolik Lake, AK for 2003" ;
+    doview:hasAuthoritativeDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasEndDate "2003-08-09T00:00:00Z" ;
+    doview:hasLandingPage "https://search.dataone.org/#view/knb-lter-arc.10376.1" ;
+    doview:hasOriginDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasReplicaDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:CN>, <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    a glbase:Dataset ;
+    rdfs:label "Microbial Respirations from experiemental plots near Toolik Lake, AK for 2003" .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-arc.10380.1>
+    dcterms:creator <http://data.geolink.org/id/dataone/17cc8ee505954ad5b7dc8023edd67bcd>, <http://data.geolink.org/id/dataone/95522af02aa54c648c67d814c7297c0c>, <http://data.geolink.org/id/dataone/d02283d24e174bd4a702b5c17a65da61> ;
+    glbase:description "Dissolved inorganic carbon, carbon dioxide, and methane in waters from pre-labeled wet sedge plots near Toolik Lake, AK during the summer of 2004." ;
+    glbase:hasCreator <TODO>, <http://data.geolink.org/id/dataone/17cc8ee505954ad5b7dc8023edd67bcd>, <http://data.geolink.org/id/dataone/95522af02aa54c648c67d814c7297c0c>, <http://data.geolink.org/id/dataone/d02283d24e174bd4a702b5c17a65da61> ;
+    glbase:hasGeometryAsWktLiteral "POINT (68.62441 -149.60959)" ;
+    glbase:hasIdentifier [
+        glbase:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glbase:hasIdentifierValue "knb-lter-arc.10380.1" ;
+        a glbase:Identifier ;
+        rdfs:label "knb-lter-arc.10380.1"
+    ] ;
+    glbase:hasRightsHolder <TODO> ;
+    glbase:title "Pre-labeled dissolved inorganic carbon, carbon dioxide, and methane from experiemental plots near Toolik Lake, AK from 2004" ;
+    doview:hasAuthoritativeDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasEndDate "2004-08-02T00:00:00Z" ;
+    doview:hasLandingPage "https://search.dataone.org/#view/knb-lter-arc.10380.1" ;
+    doview:hasOriginDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasReplicaDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:CN>, <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    a glbase:Dataset ;
+    rdfs:label "Pre-labeled dissolved inorganic carbon, carbon dioxide, and methane from experiemental plots near Toolik Lake, AK from 2004" .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-arc.10382.1>
+    dcterms:creator <http://data.geolink.org/id/dataone/95522af02aa54c648c67d814c7297c0c>, <http://data.geolink.org/id/dataone/d02283d24e174bd4a702b5c17a65da61>, <http://data.geolink.org/id/dataone/dd381061727144ea8628a1b4dc2ae845> ;
+    glbase:description "Microbial respiration of carbon dioxide, and methane in waters from wet sedge plots near Toolik Lake, AK during the summer of 2004." ;
+    glbase:hasCreator <TODO>, <http://data.geolink.org/id/dataone/95522af02aa54c648c67d814c7297c0c>, <http://data.geolink.org/id/dataone/d02283d24e174bd4a702b5c17a65da61>, <http://data.geolink.org/id/dataone/dd381061727144ea8628a1b4dc2ae845> ;
+    glbase:hasGeometryAsWktLiteral "POINT (68.62441 -149.60959)" ;
+    glbase:hasIdentifier [
+        glbase:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glbase:hasIdentifierValue "knb-lter-arc.10382.1" ;
+        a glbase:Identifier ;
+        rdfs:label "knb-lter-arc.10382.1"
+    ] ;
+    glbase:hasRightsHolder <TODO> ;
+    glbase:title "Microbial Respirations from experiemental plots near Toolik Lake, AK for 2004" ;
+    doview:hasAuthoritativeDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasEndDate "2004-08-09T00:00:00Z" ;
+    doview:hasLandingPage "https://search.dataone.org/#view/knb-lter-arc.10382.1" ;
+    doview:hasOriginDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasReplicaDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:CN>, <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    a glbase:Dataset ;
+    rdfs:label "Microbial Respirations from experiemental plots near Toolik Lake, AK for 2004" .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-arc.1141.2>
+    dcterms:creator <http://data.geolink.org/id/dataone/259121ead03145ea8431c9ef11519d06> ;
+    glbase:description """This is an Oksrukuyuk Creek bottom
+sample.  The file simply lists the length of each insect measured, as well
+as when and where along the creek it was captured.  Only the actual
+measurements of the insects are listed, for example, if there wasn't a
+particular insect found from a replicate at a station, then that
+station isn't listed either.  This is captured cinygmula.""" ;
+    glbase:hasCreator <TODO>, <http://data.geolink.org/id/dataone/259121ead03145ea8431c9ef11519d06> ;
+    glbase:hasGeometryAsWktLiteral "POLYGON ((-149.75 68.8, -149.0433 68.8, -149.0433 68.5, -149.75, 68.5))" ;
+    glbase:hasIdentifier [
+        glbase:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glbase:hasIdentifierValue "knb-lter-arc.1141.2" ;
+        a glbase:Identifier ;
+        rdfs:label "knb-lter-arc.1141.2"
+    ] ;
+    glbase:hasRightsHolder <TODO> ;
+    glbase:title "This is an Oksrukuyuk Creek bottom sample, Arctic LTER 1989." ;
+    doview:hasAuthoritativeDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasEndDate "1989-01-01T00:00:00Z" ;
+    doview:hasLandingPage "https://search.dataone.org/#view/knb-lter-arc.1141.2" ;
+    doview:hasOriginDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasReplicaDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:CN>, <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    a glbase:Dataset ;
+    rdfs:label "This is an Oksrukuyuk Creek bottom sample, Arctic LTER 1989." ;
+    prov:wasRevisionOf <https://cn.dataone.org/cn/v1/resolve/doi:10.6073/AA/knb-lter-arc.1141.1> .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-arc.943.4>
+    dcterms:creator <http://data.geolink.org/id/dataone/c7bfaaa9620a4ae8902caef001ba12b1>, <http://data.geolink.org/id/dataone/edefc6f0e6f44c90b0e18201f81eb3fb> ;
+    glbase:description "Zooplankton density in number per liter for all samples collected from arctic lakes near Toolik Lake Field Station (Arctic LTER) in the summer of 2002." ;
+    glbase:hasCreator <TODO>, <http://data.geolink.org/id/dataone/c7bfaaa9620a4ae8902caef001ba12b1>, <http://data.geolink.org/id/dataone/edefc6f0e6f44c90b0e18201f81eb3fb> ;
+    glbase:hasGeometryAsWktLiteral "POINT (68.6303 -149.6123)" ;
+    glbase:hasIdentifier [
+        glbase:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glbase:hasIdentifierValue "knb-lter-arc.943.4" ;
+        a glbase:Identifier ;
+        rdfs:label "knb-lter-arc.943.4"
+    ] ;
+    glbase:hasRightsHolder <TODO> ;
+    glbase:title "Zooplankton density for lake samples collected near Toolik Lake Arctic LTER in the summer of 2002." ;
+    doview:hasAuthoritativeDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasEndDate "2002-07-31T00:00:00Z" ;
+    doview:hasLandingPage "https://search.dataone.org/#view/knb-lter-arc.943.4" ;
+    doview:hasOriginDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasReplicaDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:CN>, <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    a glbase:Dataset ;
+    rdfs:label "Zooplankton density for lake samples collected near Toolik Lake Arctic LTER in the summer of 2002." ;
+    prov:wasRevisionOf <https://cn.dataone.org/cn/v1/resolve/doi:10.6073/AA/knb-lter-arc.943.3> .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-bes.564.56>
+    dcterms:creator <http://data.geolink.org/id/dataone/7c46ded401924211a1e76d802c59b7f9> ;
+    glbase:description """In the Baltimore urban long-term ecological research (LTER) project, (Baltimore Ecosystem Study, BES) we use the watershed approach to evaluate integrated ecosystem function. The LTER research is centered on the Gwynns Falls watershed, a 17,150 ha catchment that traverses a gradient from the urban core of Baltimore, through older urban residential (1900 - 1950) and suburban (1950- 1980) zones, rapidly suburbanizing areas and a rural/suburban fringe. Our long-term sampling network includes four longitudinal sampling sites along the Gwynns Falls as well as several small (40 - 100 ha) watersheds located within or near to the Gwynns Falls. The longitudinal sites provide data on water and nutrient fluxes in the different land use zones of the watershed (rural/suburban, rapidly suburbanizing, old suburban, urban core) and the small watersheds provide more focused data on specific land use areas (forest, agriculture, rural/suburban, urban). Each of the gaging sites is continuously monitored for discharge and is sampled weekly for chemistry. Additional chemical sampling is carried out in a supplemental set of sites to provide a greater range of land use. Weekly analyses includes nitrate, phosphate, total nitrogen, total phosphorus, chloride and sulfate, total suspended solids, turbidity, fecal coliforms, temperature, dissolved oxygen and pH. Cations, dissolved organic carbon and nitrogen and  metals are measured on selected samples. 
+
+This dataset is for Rognel Heights.  This is a 7.8 ha urban watershed with no natural drainage network.  Samples (weekly grab and flow-weighted composite) are taken in a stormwater drainage pipe.
+
+A detailed description of this site is posted at: http://md.water.usgs.gov/BES/01589340/.
+
+Streamflow data for this site are posted at: http://waterdata.usgs.gov/md/nwis/nwisman?site_no=01589340""" ;
+    glbase:hasCreator <TODO>, <http://data.geolink.org/id/dataone/7c46ded401924211a1e76d802c59b7f9> ;
+    glbase:hasGeometryAsWktLiteral "POLYGON ((-77.314186 39.724846, -76.01201 39.724846, -76.01201 38.708366, -77.314186, 38.708366))" ;
+    glbase:hasIdentifier [
+        glbase:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glbase:hasIdentifierValue "knb-lter-bes.564.56" ;
+        a glbase:Identifier ;
+        rdfs:label "knb-lter-bes.564.56"
+    ] ;
+    glbase:hasRightsHolder <TODO> ;
+    glbase:title "Stream chemistry data for Rognel Heights (urban) watershed - Spreadsheet format BES ID 564-" ;
+    doview:hasAuthoritativeDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasLandingPage "https://search.dataone.org/#view/knb-lter-bes.564.56" ;
+    doview:hasOriginDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasReplicaDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:CN>, <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    a glbase:Dataset ;
+    rdfs:label "Stream chemistry data for Rognel Heights (urban) watershed - Spreadsheet format BES ID 564-" ;
+    prov:wasRevisionOf <https://cn.dataone.org/cn/v1/resolve/doi:10.6073/AA/knb-lter-bes.564.53> .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-bes.572.56>
+    dcterms:creator <http://data.geolink.org/id/dataone/7c46ded401924211a1e76d802c59b7f9> ;
+    glbase:description """In the Baltimore urban long-term ecological research (LTER) project, (Baltimore Ecosystem Study, BES) we use the watershed approach to evaluate integrated ecosystem function. The LTER research is centered on the Gwynns Falls watershed, a 17,150 ha catchment that traverses a gradient from the urban core of Baltimore, through older urban residential (1900 - 1950) and suburban (1950- 1980) zones, rapidly suburbanizing areas and a rural/suburban fringe. Our long-term sampling network includes four longitudinal sampling sites along the Gwynns Falls as well as several small (40 - 100 ha) watersheds located within or near to the Gwynns Falls. The longitudinal sites provide data on water and nutrient fluxes in the different land use zones of the watershed (rural/suburban, rapidly suburbanizing, old suburban, urban core) and the small watersheds provide more focused data on specific land use areas (forest, agriculture, rural/suburban, urban). Each of the gaging sites is continuously monitored for discharge and is sampled weekly for chemistry. Additional chemical sampling is carried out in a supplemental set of sites to provide a greater range of land use. Weekly analyses includes nitrate, phosphate, total nitrogen, total phosphorus, chloride and sulfate, total suspended solids, turbidity, fecal coliforms, temperature, dissolved oxygen and pH. Cations, dissolved organic carbon and nitrogen and  metals are measured on selected samples. 
+
+This dataset is for Gwynns Falls at Glyndon. This site samples drainage from approximately 81 ha of old and new suburban and suburbanizing land use. 
+
+A detailed description of this site is posted at: http://md.water.usgs.gov/BES/ 01589180/.
+
+Streamflow data for this site are posted at: http://waterdata.usgs.gov/md/nwis/nwisman?site_no=01589180""" ;
+    glbase:hasCreator <TODO>, <http://data.geolink.org/id/dataone/7c46ded401924211a1e76d802c59b7f9> ;
+    glbase:hasGeometryAsWktLiteral "POLYGON ((-77.314186 39.724846, -76.01201 39.724846, -76.01201 38.708366, -77.314186, 38.708366))" ;
+    glbase:hasIdentifier [
+        glbase:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glbase:hasIdentifierValue "knb-lter-bes.572.56" ;
+        a glbase:Identifier ;
+        rdfs:label "knb-lter-bes.572.56"
+    ] ;
+    glbase:hasRightsHolder <TODO> ;
+    glbase:title "Stream chemistry for Gwynns Falls at Glyndon (suburban) watershed - Spreadsheet format BES ID 572-" ;
+    doview:hasAuthoritativeDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasLandingPage "https://search.dataone.org/#view/knb-lter-bes.572.56" ;
+    doview:hasOriginDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasReplicaDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:CN>, <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    a glbase:Dataset ;
+    rdfs:label "Stream chemistry for Gwynns Falls at Glyndon (suburban) watershed - Spreadsheet format BES ID 572-" ;
+    prov:wasRevisionOf <https://cn.dataone.org/cn/v1/resolve/doi:10.6073/AA/knb-lter-bes.572.53> .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-bnz.110.17>
+    dcterms:creator <http://data.geolink.org/id/dataone/93f541ca002e4a958098bc84e6187d40> ;
+    glbase:description """This research was intended to address the general question of whether asexual stem regeneration of trembling aspen (Populus tremuloides Michx.) reduces rates of establishment and growth of potential invading conifer species during the initial years following fire. Interactions between aspen and conifers were studied under natural conditions in a burned aspen stand with a high potential for aspen re-sprouting. The study contributes to our understanding of whether competitive interactions between tree seedlings are likely to help maintain deciduous stands across disturbance cycles by reducing the potential for successful conifer establishment.
+
+Data from soil samples collected with a hand corer (one sample/plot) on 20 July 2001. Wet and dry measurements were made for moisture calculations and pH was measured using an electronic probe submersed in a distilled water/soil slurry.""" ;
+    glbase:hasCreator <TODO>, <http://data.geolink.org/id/dataone/93f541ca002e4a958098bc84e6187d40> ;
+    glbase:hasIdentifier [
+        glbase:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glbase:hasIdentifierValue "knb-lter-bnz.110.17" ;
+        a glbase:Identifier ;
+        rdfs:label "knb-lter-bnz.110.17"
+    ] ;
+    glbase:hasRightsHolder <TODO> ;
+    glbase:title "Tree regeneration after fire: Aspen removal experiment, soil moisture and pH 2001" ;
+    doview:hasAuthoritativeDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasEndDate "2001-10-05T00:00:00Z" ;
+    doview:hasLandingPage "https://search.dataone.org/#view/knb-lter-bnz.110.17" ;
+    doview:hasOriginDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasReplicaDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:CN>, <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    a glbase:Dataset ;
+    rdfs:label "Tree regeneration after fire: Aspen removal experiment, soil moisture and pH 2001" ;
+    prov:wasRevisionOf <https://cn.dataone.org/cn/v1/resolve/knb-lter-bnz.110.16> .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-bnz.343.16>
+    dcterms:creator <http://data.geolink.org/id/dataone/191747de4a844e6baf145793a886ad23> ;
+    glbase:description "this dataset contains pre- and post-fire species abundance data for 14 sites.  All sites were originally established as part of teresa hollingsworth's phd project during 2001-2002 and were burned in 2004.  Species abundance data (using the braun-blaunquet releve method) was collected in 2005 and 2006." ;
+    glbase:hasCreator <TODO>, <http://data.geolink.org/id/dataone/191747de4a844e6baf145793a886ad23> ;
+    glbase:hasGeometryAsWktLiteral "POLYGON ((-150.40274 66.31383, -142.08446 66.31383, -142.08446 63.386543, -150.40274, 63.386543))" ;
+    glbase:hasIdentifier [
+        glbase:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glbase:hasIdentifierValue "knb-lter-bnz.343.16" ;
+        a glbase:Identifier ;
+        rdfs:label "knb-lter-bnz.343.16"
+    ] ;
+    glbase:hasRightsHolder <TODO> ;
+    glbase:title "Pre-fire and Post-re species abundance (Braun-blaunquet abundance methods) for 14 sites from 2001-2006." ;
+    doview:hasAuthoritativeDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasEndDate "2006-10-01T00:00:00Z" ;
+    doview:hasLandingPage "https://search.dataone.org/#view/knb-lter-bnz.343.16" ;
+    doview:hasOriginDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasReplicaDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:CN>, <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    a glbase:Dataset ;
+    rdfs:label "Pre-fire and Post-re species abundance (Braun-blaunquet abundance methods) for 14 sites from 2001-2006." ;
+    prov:wasRevisionOf <https://cn.dataone.org/cn/v1/resolve/knb-lter-bnz.343.15> .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-bnz.368.15>
+    dcterms:creator <http://data.geolink.org/id/dataone/e049da198814457a9c0ddb2be14434ff> ;
+    glbase:description "This dataset includes the stem diameter of each woody plant >2m tall, by species (or genus), found in each of the thinleaf alder sites we established in the Tanana River floodplains in 2006, as well as an assessment of the severity of canker infection in each thinleaf alder stem. Species (or genus), diameter at breast height (dbh), and severity of canker infection are the variables included here. This dataset can be used in conjunction with a dataset of alder size/age relationships (DN_alder_stand_structure2.xls)  to estimate the age structure of alder stands." ;
+    glbase:hasCreator <TODO>, <http://data.geolink.org/id/dataone/e049da198814457a9c0ddb2be14434ff> ;
+    glbase:hasGeometryAsWktLiteral "POLYGON ((-149.15233 64.79634, -147.94847 64.79634, -147.94847 64.56977, -149.15233, 64.56977))" ;
+    glbase:hasIdentifier [
+        glbase:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glbase:hasIdentifierValue "knb-lter-bnz.368.15" ;
+        a glbase:Identifier ;
+        rdfs:label "knb-lter-bnz.368.15"
+    ] ;
+    glbase:hasRightsHolder <TODO> ;
+    glbase:title "Stem diameter of trees and shrubs in thinleaf alder sites along the Tanana River floodplains and severity of stem canker infection of alder in 2006." ;
+    doview:hasAuthoritativeDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasEndDate "2006-09-15T00:00:00Z" ;
+    doview:hasLandingPage "https://search.dataone.org/#view/knb-lter-bnz.368.15" ;
+    doview:hasOriginDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasReplicaDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:CN>, <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    a glbase:Dataset ;
+    rdfs:label "Stem diameter of trees and shrubs in thinleaf alder sites along the Tanana River floodplains and severity of stem canker infection of alder in 2006." ;
+    prov:wasRevisionOf <https://cn.dataone.org/cn/v1/resolve/knb-lter-bnz.368.14> .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-bnz.38.17>
+    dcterms:creator <http://data.geolink.org/id/dataone/8ca6bad5f1a249b982c270609ea08761> ;
+    glbase:hasCreator <TODO>, <http://data.geolink.org/id/dataone/8ca6bad5f1a249b982c270609ea08761> ;
+    glbase:hasGeometryAsWktLiteral "POLYGON ((-180.0 75.0, -120.0 75.0, -120.0 50.0, -180.0, 50.0))" ;
+    glbase:hasIdentifier [
+        glbase:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glbase:hasIdentifierValue "knb-lter-bnz.38.17" ;
+        a glbase:Identifier ;
+        rdfs:label "knb-lter-bnz.38.17"
+    ] ;
+    glbase:hasRightsHolder <TODO> ;
+    glbase:title "Hectares of Alaskan Forested Ecosystems Infested by Phytophagous and Phloeophagus Insects, 1955-2008" ;
+    doview:hasAuthoritativeDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasEndDate "2008-12-31T00:00:00Z" ;
+    doview:hasLandingPage "https://search.dataone.org/#view/knb-lter-bnz.38.17" ;
+    doview:hasOriginDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasReplicaDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:CN>, <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    a glbase:Dataset ;
+    rdfs:label "Hectares of Alaskan Forested Ecosystems Infested by Phytophagous and Phloeophagus Insects, 1955-2008" ;
+    prov:wasRevisionOf <https://cn.dataone.org/cn/v1/resolve/knb-lter-bnz.38.16> .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-bnz.386.15>
+    dcterms:creator <http://data.geolink.org/id/dataone/00a9e95b7b354ca0bc4d5791af53cd0a> ;
+    glbase:hasCreator <TODO>, <http://data.geolink.org/id/dataone/00a9e95b7b354ca0bc4d5791af53cd0a> ;
+    glbase:hasGeometryAsWktLiteral "POINT (65.15066 -147.56067)" ;
+    glbase:hasIdentifier [
+        glbase:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glbase:hasIdentifierValue "knb-lter-bnz.386.15" ;
+        a glbase:Identifier ;
+        rdfs:label "knb-lter-bnz.386.15"
+    ] ;
+    glbase:hasRightsHolder <TODO> ;
+    glbase:title "Caribou-Poker Creeks Research Watershed: Hourly Snow Pillow Measurements" ;
+    doview:hasAuthoritativeDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasEndDate "2012-12-31T00:00:00Z" ;
+    doview:hasLandingPage "https://search.dataone.org/#view/knb-lter-bnz.386.15" ;
+    doview:hasOriginDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasReplicaDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:CN>, <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    a glbase:Dataset ;
+    rdfs:label "Caribou-Poker Creeks Research Watershed: Hourly Snow Pillow Measurements" ;
+    prov:wasRevisionOf <https://cn.dataone.org/cn/v1/resolve/knb-lter-bnz.386.14> .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-bnz.41.17>
+    dcterms:creator <http://data.geolink.org/id/dataone/93f541ca002e4a958098bc84e6187d40> ;
+    glbase:description """This study examines the effects of burn severity on patterns of post-fire tree establishment in the boreal forest. We collected data from 5 separate field experiments examining seedling establishment across different severity levels in 4 burns in central Yukon Territory, Canada, and interior Alaska, USA. The experimental studies focus on the germination, survival, and growth responses of four common tree species, trembling aspen (Populus tremuloides), lodgepole pine (Pinus contorta), white spruce (Picea glauca) and black spruce (Picea mariana). Data on the soil organic layer (depth, moisture, bulk density, pH) were also collected at each site.
+
+This file contains visual cover estimates, by species, for 2000-2002 at the CPCRW site. Sample dates are:
+4 August 2000
+25 July 2001
+16 July 2002
+
+Values are percent cover in a 1x1m quadrat, where T=trace (<0.5%), out=outside quadrat but inside experimental plot. An additional line is included which give the full species names associated with the 6-letter codes used as column headers.""" ;
+    glbase:hasCreator <TODO>, <http://data.geolink.org/id/dataone/93f541ca002e4a958098bc84e6187d40> ;
+    glbase:hasGeometryAsWktLiteral "POINT (65.166664 -147.51666)" ;
+    glbase:hasIdentifier [
+        glbase:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glbase:hasIdentifierValue "knb-lter-bnz.41.17" ;
+        a glbase:Identifier ;
+        rdfs:label "knb-lter-bnz.41.17"
+    ] ;
+    glbase:hasRightsHolder <TODO> ;
+    glbase:title "Tree regeneration after fire: Effects of burn severity,  CPCRW vegetative cover analysis" ;
+    doview:hasAuthoritativeDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasEndDate "2001-10-31T00:00:00Z" ;
+    doview:hasLandingPage "https://search.dataone.org/#view/knb-lter-bnz.41.17" ;
+    doview:hasOriginDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasReplicaDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:CN>, <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    a glbase:Dataset ;
+    rdfs:label "Tree regeneration after fire: Effects of burn severity,  CPCRW vegetative cover analysis" ;
+    prov:wasRevisionOf <https://cn.dataone.org/cn/v1/resolve/knb-lter-bnz.41.16> .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-bnz.410.13>
+    dcterms:creator <http://data.geolink.org/id/dataone/710b3d28e21c4df8817beda946c2d542> ;
+    glbase:description "The entire dataset (all 7 files) contains detailed information on a time series study of log decomposition in interior Alaska. The species studied include white and black spruce, aspen, birch, balsam poplar and aspen starting as green trees. In addition white and black spruce in recently burned sites are included. The study was designed to produce a time series of log decomposition measurements over the next 100 years.  The information to be measured on the logs includes weight and density changes over specified time periods, changes in nutrient concentrations, and hemicellulose, cellouse, and lignin concentrations, and changes in the quantity of nutrients and hemicellulose, cellouse and lignin. (This file contains the sample disk physical measurement data for the log decomposition study.)" ;
+    glbase:hasCreator <TODO>, <http://data.geolink.org/id/dataone/710b3d28e21c4df8817beda946c2d542> ;
+    glbase:hasGeometryAsWktLiteral "POLYGON ((-148.37949 65.29076, -146.71725 65.29076, -146.71725 64.64017, -148.37949, 64.64017))" ;
+    glbase:hasIdentifier [
+        glbase:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glbase:hasIdentifierValue "knb-lter-bnz.410.13" ;
+        a glbase:Identifier ;
+        rdfs:label "knb-lter-bnz.410.13"
+    ] ;
+    glbase:hasRightsHolder <TODO> ;
+    glbase:title "Log Decomposition Dynamics in Interior Alaska 3 - Disk Data" ;
+    doview:hasAuthoritativeDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasEndDate "2012-12-01T00:00:00Z" ;
+    doview:hasLandingPage "https://search.dataone.org/#view/knb-lter-bnz.410.13" ;
+    doview:hasOriginDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasReplicaDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:CN>, <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    a glbase:Dataset ;
+    rdfs:label "Log Decomposition Dynamics in Interior Alaska 3 - Disk Data" ;
+    prov:wasRevisionOf <https://cn.dataone.org/cn/v1/resolve/knb-lter-bnz.410.12> .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-cap.148.9>
+    dcterms:creator <http://data.geolink.org/id/dataone/b71cf33050f3435dae7028fab349b6a9>, <http://data.geolink.org/id/dataone/d6d5af3ec1b44cfda1ca6ac2dec0bccd> ;
+    glbase:description """This is the digitized version of a map of the Hohokam canal system in
+                    what is now the Phoenix metropolitan area. It is based on the thesis research by
+                    J. B. Howard \"Paleohydraulics: Techniques for modeling the operation and growth
+                    of prehistoric canal systems\"""" ;
+    glbase:hasCreator <TODO>, <http://data.geolink.org/id/dataone/b71cf33050f3435dae7028fab349b6a9>, <http://data.geolink.org/id/dataone/d6d5af3ec1b44cfda1ca6ac2dec0bccd> ;
+    glbase:hasGeometryAsWktLiteral "POLYGON ((-112.25159 33.503475, -111.75936 33.503475, -111.75936 33.28722, -112.25159, 33.28722))" ;
+    glbase:hasIdentifier [
+        glbase:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glbase:hasIdentifierValue "knb-lter-cap.148.9" ;
+        a glbase:Identifier ;
+        rdfs:label "knb-lter-cap.148.9"
+    ] ;
+    glbase:hasRightsHolder <TODO> ;
+    glbase:title "Hohokam canals as multi-use facilities: Pre-historic canal system in the central Arizona-Phoenix metropolitan area" ;
+    doview:hasAuthoritativeDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasLandingPage "https://search.dataone.org/#view/knb-lter-cap.148.9" ;
+    doview:hasOriginDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasReplicaDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:CN>, <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    a glbase:Dataset ;
+    rdfs:label "Hohokam canals as multi-use facilities: Pre-historic canal system in the central Arizona-Phoenix metropolitan area" .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-cap.160.10>
+    dcterms:creator <http://data.geolink.org/id/dataone/18f4e905a6374d4d81dad8965fb7da5d>, <http://data.geolink.org/id/dataone/a15a9c946ee64555905d5125706bd5c7>, <http://data.geolink.org/id/dataone/ee6eb7086bce4af3ae85090e2fc34f46> ;
+    glbase:description """Project Goal: To study the patterns in bird species diversity,
+                    abundance and distribution over time and space, and the processes behind these
+                    patterns as a result of urbanization.  The ongoing project (since October 2000) is documenting the abundance and
+                distribution of birds in four habitats (51 sites): Urban (18) Desert (15) Riparian
+                (11) and agricultural (7). The 40 non-riparian sites are a subset of the 200 CAP-
+                LTER points. We are using point counts to survey birds four times a year (January,
+                April, July and October). During each session each point is visited by three birders
+                who count all birds seen or heard for 15 minutes. Our goal is to study how different
+                land-use forms affect bird abundance, distribution and diversity in the greater
+                Phoenix area in order to predict and preserve high bird species diversity as urban
+                development is proceeding. We have now just completed 3 years of monitoring, and are
+                also beginning to see some of the sites changing due to new urban development. The
+                results described below are based on analyses of the first two years' data.""" ;
+    glbase:hasCreator <TODO>, <http://data.geolink.org/id/dataone/18f4e905a6374d4d81dad8965fb7da5d>, <http://data.geolink.org/id/dataone/a15a9c946ee64555905d5125706bd5c7>, <http://data.geolink.org/id/dataone/ee6eb7086bce4af3ae85090e2fc34f46> ;
+    glbase:hasGeometryAsWktLiteral "POLYGON ((-112.74354 33.88345, -111.61843 33.88345, -111.61843 33.20808, -112.74354, 33.20808))" ;
+    glbase:hasIdentifier [
+        glbase:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glbase:hasIdentifierValue "knb-lter-cap.160.10" ;
+        a glbase:Identifier ;
+        rdfs:label "knb-lter-cap.160.10"
+    ] ;
+    glbase:hasRightsHolder <TODO> ;
+    glbase:title "Point count bird censusing - long term study in central Arizona-Phoenix: Study sites" ;
+    doview:hasAuthoritativeDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasEndDate "2003-11-07T00:00:00Z" ;
+    doview:hasLandingPage "https://search.dataone.org/#view/knb-lter-cap.160.10" ;
+    doview:hasOriginDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasReplicaDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:CN>, <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    a glbase:Dataset ;
+    rdfs:label "Point count bird censusing - long term study in central Arizona-Phoenix: Study sites" ;
+    prov:wasRevisionOf <https://cn.dataone.org/cn/v1/resolve/knb-lter-cap.160.9> .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-cap.36.9>
+    dcterms:creator <http://data.geolink.org/id/dataone/2fb15cbc240446a2a4715d91097f38ab>, <http://data.geolink.org/id/dataone/594a0de1e9774b75ba38b8997a701d2c>, <http://data.geolink.org/id/dataone/7a0e31a2c48a4546932fbabad079ff3d>, <http://data.geolink.org/id/dataone/e8e5796f5f27491092c105a0f003d80c> ;
+    glbase:description "These data result from a study that examined the effects of land use on microclimate along several commercial-to-rural land use transects in the greater Phoenix metropolitan area." ;
+    glbase:hasCreator <TODO>, <http://data.geolink.org/id/dataone/2fb15cbc240446a2a4715d91097f38ab>, <http://data.geolink.org/id/dataone/594a0de1e9774b75ba38b8997a701d2c>, <http://data.geolink.org/id/dataone/7a0e31a2c48a4546932fbabad079ff3d>, <http://data.geolink.org/id/dataone/e8e5796f5f27491092c105a0f003d80c> ;
+    glbase:hasGeometryAsWktLiteral "POLYGON ((-112.28258 33.626396, -111.57527 33.626396, -111.57527 33.437096, -112.28258, 33.437096))" ;
+    glbase:hasIdentifier [
+        glbase:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glbase:hasIdentifierValue "knb-lter-cap.36.9" ;
+        a glbase:Identifier ;
+        rdfs:label "knb-lter-cap.36.9"
+    ] ;
+    glbase:hasRightsHolder <TODO> ;
+    glbase:title "Land use effects on temperature and humidity along an urban-rural transect gradient in central Arizona-Phoenix, 1999" ;
+    doview:hasAuthoritativeDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasEndDate "2000-01-07T00:00:00Z" ;
+    doview:hasLandingPage "https://search.dataone.org/#view/knb-lter-cap.36.9" ;
+    doview:hasOriginDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasReplicaDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:CN>, <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    a glbase:Dataset ;
+    rdfs:label "Land use effects on temperature and humidity along an urban-rural transect gradient in central Arizona-Phoenix, 1999" ;
+    prov:wasRevisionOf <https://cn.dataone.org/cn/v1/resolve/knb-lter-cap.36.8> .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-cap.518.5>
+    dcterms:creator <http://data.geolink.org/id/dataone/89cf248f174d4ad1b3d26854b866d928> ;
+    glbase:description """By studying vegetation leafing phenology and its coupling with climate along the
+				urban-rural gradient in Phoenix metropolitan region, USA, we elucidated the degree
+				of urbanization-induced transformations of phenology and primary productivity. In
+				this study we used time-series of Normalized Difference Vegetation Index (NDVI) from
+				the Moderate Resolution Imaging Spectroradiometer (MODIS) and spatially interpolated
+				rainfall. Our analyses were stratified by major land covers and dominant soil
+				texture. We also assessed time scales at which NDVI responds most strongly to
+				climatic factors. No distinctive patterns in phenology were found along the
+				urban-rural gradient; however some important generalities were confirmed.
+				Agricultural and urban developments introduce growth multimodality, which is not
+				attributable to desert but customarily found in riparian ecosystems of the area.
+				Despite the existence of summer flush of growth in the desert its signal is not
+				detected by de-noised satellite data. Urban and agricultural vegetation is
+				characterized by fast growth and senescence rates. While agriculture has the
+				shortest growth length, most urban vegetation stays photosynthetically active for
+				longer periods. Growth in the desert is controlled by precipitation accumulated for
+				2-5 months. Spatial patterns of NDVI are predicted by precipitation grids. Positive
+				relationship between these two variables changes seasonally reaching the maximum
+				near the peak of annual growth. Spring and summer NDVI grids are in better agreement
+				with longer term accumulated precipitation, but the early autumn growth is
+				correlated more with immediate rainfall. Spatial and temporal correlations of desert
+				NDVI with temperature are negative confirming the role of temperature in stimulating
+				water loss from the soil. Our results supported the hypothesis that coarse-textured
+				soils limit evaporative losses of soil water and promote growth. Riparian NDVI are
+				moderately positively correlated with temperature but only weakly with
+				precipitation. NDVI dynamics in urban and agricultural land covers are completely
+				unsynchronized with natural vegetation communities and decoupled with precipitation.
+				They exhibit positive, yet low, correlation with temperature. Overall, urbanization
+				adds a greater diversity of phenological patterns that are not determined by
+				climatic variability. Instead, urban and agricultural vegetation dynamics is
+				expected to be explained largely by socio-economic variables.""" ;
+    glbase:hasCreator <TODO>, <http://data.geolink.org/id/dataone/89cf248f174d4ad1b3d26854b866d928> ;
+    glbase:hasGeometryAsWktLiteral "POLYGON ((-112.78623 33.84684, -111.569046 33.84684, -111.569046 33.192875, -112.78623, 33.192875))" ;
+    glbase:hasIdentifier [
+        glbase:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glbase:hasIdentifierValue "knb-lter-cap.518.5" ;
+        a glbase:Identifier ;
+        rdfs:label "knb-lter-cap.518.5"
+    ] ;
+    glbase:hasRightsHolder <TODO> ;
+    glbase:title "End of the second growth period in 2001-2002 (Day of Year)" ;
+    doview:hasAuthoritativeDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasEndDate "2002-12-31T00:00:00Z" ;
+    doview:hasLandingPage "https://search.dataone.org/#view/knb-lter-cap.518.5" ;
+    doview:hasOriginDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasReplicaDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:CN>, <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    a glbase:Dataset ;
+    rdfs:label "End of the second growth period in 2001-2002 (Day of Year)" ;
+    prov:wasRevisionOf <https://cn.dataone.org/cn/v1/resolve/knb-lter-cap.518.4> .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-fce.1056.3>
+    dcterms:creator <http://data.geolink.org/id/dataone/016fa4a1c01e4c1eb3408cc8abb5f76f> ;
+    glbase:description "</field>cted monthly observations of water microbial characteristics from each of the FCE LTER sites beginning in February 2001.  Bacteria counts using DAPI epifluorescence, heterotrophic bacteria production with tritiated Thymidine uptake, and algal energetics and chl a using the PAM fluorometer were determined from each of the water samples.  Bacteria counts in Shark River Slough in the freshwater end of the transect revealed highest bacteria numbers upon marsh rewetting after the dry down.  The highest overall count of bacteria was found at the most freshwater point adjacent to the perimeter of the water conservation area but only in March of 2001.  Peak numbers of bacteria in the saline end of Shark River transect occurred in December and July.  There is some evidence that these higher bacteria numbers in the SR transect are associated with higher salinities.   Highest bacteria counts along the Taylor slough transect were observed at the mouth of the Taylor River with peak counts in the wet season in October.  Bacteria densities also increased  from the eastern to western end of the transect in Florida Bay.  Heterotrophic bacterial production did not relate closely bacteria numbers and exhibited highest numbers in the dry season.  There was no discernible relationship between salinity and bacteria production as seen in bacteria numbers.  Monthly observations using PAM fluorometry revealed that brown algae was the greatest contribution to the algal chal a pool and this relationship was consistent across all FCE LTER sites.  Converse to the pattern of bacteria abundance along the Shark River transect, there was evidence that algal biomass decreases from freshwater to estuary.  In the Shark River, algal energetics increased from marsh to estuary as well as in the panhandle region of the Taylor River transect.  From these observations we conclude the behavior of the microbial loop and interactions generated between functional guilds is highly variable along individual transects and between the Shark River and Taylor River transect.  Wet dry season dynamics partially explain temporal variability in microbial dynamics along the individual transects yet responses were unique for each section of the transect as freshwater versus estuarine versus Bay.   Relationships between salinity and microbial parameters in this case, were not easily discerned but were more consistent within the two river transects than between river transects." ;
+    glbase:hasCreator <TODO>, <http://data.geolink.org/id/dataone/016fa4a1c01e4c1eb3408cc8abb5f76f> ;
+    glbase:hasGeometryAsWktLiteral "POLYGON ((-81.078 25.761, -80.49 25.761, -80.49 24.913, -81.078, 24.913))" ;
+    glbase:hasIdentifier [
+        glbase:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glbase:hasIdentifierValue "knb-lter-fce.1056.3" ;
+        a glbase:Identifier ;
+        rdfs:label "knb-lter-fce.1056.3"
+    ] ;
+    glbase:hasRightsHolder <TODO> ;
+    glbase:title "Microbial Sampling from Shark River Slough and Taylor Slough, Everglades National Park, South Florida (FCE) from January 2001 to Present" ;
+    doview:hasAuthoritativeDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasEndDate "2012-12-20T00:00:00Z" ;
+    doview:hasLandingPage "https://search.dataone.org/#view/knb-lter-fce.1056.3" ;
+    doview:hasOriginDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasReplicaDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:CN>, <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    a glbase:Dataset ;
+    rdfs:label "Microbial Sampling from Shark River Slough and Taylor Slough, Everglades National Park, South Florida (FCE) from January 2001 to Present" ;
+    prov:wasRevisionOf <https://cn.dataone.org/cn/v1/resolve/knb-lter-fce.1056.2> .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-fce.1070.3>
+    dcterms:creator <http://data.geolink.org/id/dataone/a8075746c5d64021b4b4f778d5912b5f>, <http://data.geolink.org/id/dataone/fdfd4d407a1043449e17720e10844fe0> ;
+    glbase:description "Once a year during the dry season (Dec-May) three live sawgrass plants are collected from each site. These plants are divided into their live above and live below ground  parts. Then both the above and below ground parts are analyzed for TN, TC, and TP." ;
+    glbase:hasCreator <TODO>, <http://data.geolink.org/id/dataone/a8075746c5d64021b4b4f778d5912b5f>, <http://data.geolink.org/id/dataone/fdfd4d407a1043449e17720e10844fe0> ;
+    glbase:hasGeometryAsWktLiteral "POLYGON ((-80.853 25.758, -80.726 25.758, -80.726 25.468, -80.853, 25.468))" ;
+    glbase:hasIdentifier [
+        glbase:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glbase:hasIdentifierValue "knb-lter-fce.1070.3" ;
+        a glbase:Identifier ;
+        rdfs:label "knb-lter-fce.1070.3"
+    ] ;
+    glbase:hasRightsHolder <TODO> ;
+    glbase:title "Sawgrass Above and Below Ground Total Nitrogen and Total Carbon from the Shark River Slough, Everglades National Park (FCE), from September 2002 to Present" ;
+    doview:hasAuthoritativeDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasEndDate "2013-03-01T00:00:00Z" ;
+    doview:hasLandingPage "https://search.dataone.org/#view/knb-lter-fce.1070.3" ;
+    doview:hasOriginDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasReplicaDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:CN>, <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    a glbase:Dataset ;
+    rdfs:label "Sawgrass Above and Below Ground Total Nitrogen and Total Carbon from the Shark River Slough, Everglades National Park (FCE), from September 2002 to Present" ;
+    prov:wasRevisionOf <https://cn.dataone.org/cn/v1/resolve/knb-lter-fce.1070.2> .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-fce.1071.3>
+    dcterms:creator <http://data.geolink.org/id/dataone/a8075746c5d64021b4b4f778d5912b5f>, <http://data.geolink.org/id/dataone/fdfd4d407a1043449e17720e10844fe0> ;
+    glbase:description "Once a year during the dry season (Dec-May) three live sawgrass plants are collected from each site. These plants are divided into their live above and live below ground  parts. Then both the above and below ground parts are analyzed for TN, TC, and TP." ;
+    glbase:hasCreator <TODO>, <http://data.geolink.org/id/dataone/a8075746c5d64021b4b4f778d5912b5f>, <http://data.geolink.org/id/dataone/fdfd4d407a1043449e17720e10844fe0> ;
+    glbase:hasGeometryAsWktLiteral "POLYGON ((-80.853 25.758, -80.726 25.758, -80.726 25.468, -80.853, 25.468))" ;
+    glbase:hasIdentifier [
+        glbase:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glbase:hasIdentifierValue "knb-lter-fce.1071.3" ;
+        a glbase:Identifier ;
+        rdfs:label "knb-lter-fce.1071.3"
+    ] ;
+    glbase:hasRightsHolder <TODO> ;
+    glbase:title "Sawgrass Above and Below Ground Total Phosphorus from the Shark River Slough, Everglades National Park (FCE), from September 2002 to Present" ;
+    doview:hasAuthoritativeDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasEndDate "2013-03-01T00:00:00Z" ;
+    doview:hasLandingPage "https://search.dataone.org/#view/knb-lter-fce.1071.3" ;
+    doview:hasOriginDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasReplicaDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:CN>, <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    a glbase:Dataset ;
+    rdfs:label "Sawgrass Above and Below Ground Total Phosphorus from the Shark River Slough, Everglades National Park (FCE), from September 2002 to Present" ;
+    prov:wasRevisionOf <https://cn.dataone.org/cn/v1/resolve/knb-lter-fce.1071.2> .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-fce.1074.4>
+    dcterms:creator <http://data.geolink.org/id/dataone/a8075746c5d64021b4b4f778d5912b5f>, <http://data.geolink.org/id/dataone/fdfd4d407a1043449e17720e10844fe0> ;
+    glbase:description "Water quality samples are being collected using ISCO autosamplers at all wetland sites (that is, all sites except TS/Ph-9, 10, and 11). The autosamplers contain 24 1L bottles. Water is sampled by programming the autosamplers to take composite samples once every 3 days. These samples are a composite of four 250mL subsamples drawn every 18 hours (a sampling scheme that captures a dawn, noon, dusk, and midnight sample in every three day composite). The samples are collected every 3-4 weeks and analyzed for total phosphorus (TP), total nitrogen (TN), and salinity. When sites are visited to collect these samples, we also collect a grab sample that is immediately put on ice. A portion of these grab samples is filtered through a Whatman GF/F filter immediately upon return to the lab, and the filtered samples are analyzed for inorganic nutrients such as NO2-, NO3-, NH4+, SRP, and DOC. The unfiltered fraction of these grab samples is analyzed for TP, TN, and TOC. We use these monthly grab samples to generate relationships between TP and SRP, and between TN and NO2- + NO3- + NH4+. Dissolved nutrients are measured using standard rapid flow analyzer (RFA) techniques. TP is analyzed with a modified Solorzano and Sharp (1980) technique. TN is measured with an Antec TN analyzer, TOC and DOC are quantified on a Shimadzu TOC Analyzer, and salinity is measured with an YSI conductivity meter. In addition to the regular water quality monitoring, we use the rain level actuators at all freshwater sites to trigger water sampling after rain events exceed a given threshold of duration and/or intensity. As currently programmed, when the threshold of = 2.5 cm of rain per hour is passed, the autosampler at that site collects a 500mL sample 30 minutes after the threshold has been reached. Rain event samples are collected, treated, and analyzed as all other water quality samples." ;
+    glbase:hasCreator <TODO>, <http://data.geolink.org/id/dataone/a8075746c5d64021b4b4f778d5912b5f>, <http://data.geolink.org/id/dataone/fdfd4d407a1043449e17720e10844fe0> ;
+    glbase:hasGeometryAsWktLiteral "POLYGON ((-80.649 25.327, -80.525 25.327, -80.525 25.191, -80.649, 25.191))" ;
+    glbase:hasIdentifier [
+        glbase:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glbase:hasIdentifierValue "knb-lter-fce.1074.4" ;
+        a glbase:Identifier ;
+        rdfs:label "knb-lter-fce.1074.4"
+    ] ;
+    glbase:hasRightsHolder <TODO> ;
+    glbase:title "Water Quality Data (Extensive) from the Shark River Slough, Everglades National Park (FCE), from April 1996 to Present" ;
+    doview:hasAuthoritativeDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasEndDate "2012-07-19T00:00:00Z" ;
+    doview:hasLandingPage "https://search.dataone.org/#view/knb-lter-fce.1074.4" ;
+    doview:hasOriginDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasReplicaDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:CN>, <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    a glbase:Dataset ;
+    rdfs:label "Water Quality Data (Extensive) from the Shark River Slough, Everglades National Park (FCE), from April 1996 to Present" ;
+    prov:wasRevisionOf <https://cn.dataone.org/cn/v1/resolve/knb-lter-fce.1074.3> .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-fce.1075.4>
+    dcterms:creator <http://data.geolink.org/id/dataone/a8075746c5d64021b4b4f778d5912b5f>, <http://data.geolink.org/id/dataone/fdfd4d407a1043449e17720e10844fe0> ;
+    glbase:description "Water quality samples are being collected using ISCO autosamplers at all wetland sites (that is, all sites except TS/Ph-9, 10, and 11). The autosamplers contain 24 1L bottles. Water is sampled by programming the autosamplers to take composite samples once every 3 days. These samples are a composite of four 250mL subsamples drawn every 18 hours (a sampling scheme that captures a dawn, noon, dusk, and midnight sample in every three day composite). The samples are collected every 3-4 weeks and analyzed for total phosphorus (TP), total nitrogen (TN), and salinity. When sites are visited to collect these samples, we also collect a grab sample that is immediately put on ice. A portion of these grab samples is filtered through a Whatman GF/F filter immediately upon return to the lab, and the filtered samples are analyzed for inorganic nutrients such as NO2-, NO3-, NH4+, SRP, and DOC. The unfiltered fraction of these grab samples is analyzed for TP, TN, and TOC. We use these montly grab samples to generate relationships between TP and SRP, and between TN and NO2- + NO3- + NH4+. Dissolved nutrients are measured using standard rapid flow analyzer (RFA) techniques. TP is analyzed with a modified Solorzano and Sharp (1980) technique. TN is measured with an Antec TN analyzer, TOC and DOC are quantified on a Shimadzu TOC Analyzer, and salinity is measured with a YSI conductivity meter. In addition to the regular water quality monitoring, we use the rain level actuators at all freshwater sites to trigger water sampling after rain events exceed a given threshold of duration and/or intensity. As currently programmed, when the threshold of = 2.5 cm of rain per hour is passed, the autosampler at that site collects a 500mL sample 30 minutes after the threshold has been reached. Rain event samples are collected, treated, and analyzed as all other water quality samples." ;
+    glbase:hasCreator <TODO>, <http://data.geolink.org/id/dataone/a8075746c5d64021b4b4f778d5912b5f>, <http://data.geolink.org/id/dataone/fdfd4d407a1043449e17720e10844fe0> ;
+    glbase:hasGeometryAsWktLiteral "POLYGON ((-80.649 25.327, -80.525 25.327, -80.525 25.191, -80.649, 25.191))" ;
+    glbase:hasIdentifier [
+        glbase:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glbase:hasIdentifierValue "knb-lter-fce.1075.4" ;
+        a glbase:Identifier ;
+        rdfs:label "knb-lter-fce.1075.4"
+    ] ;
+    glbase:hasRightsHolder <TODO> ;
+    glbase:title "Water Quality Data (Grab Samples) from the Taylor Slough, Everglades National Park (FCE), from May 2001 to Present" ;
+    doview:hasAuthoritativeDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasEndDate "2012-03-21T00:00:00Z" ;
+    doview:hasLandingPage "https://search.dataone.org/#view/knb-lter-fce.1075.4" ;
+    doview:hasOriginDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasReplicaDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:CN>, <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    a glbase:Dataset ;
+    rdfs:label "Water Quality Data (Grab Samples) from the Taylor Slough, Everglades National Park (FCE), from May 2001 to Present" ;
+    prov:wasRevisionOf <https://cn.dataone.org/cn/v1/resolve/knb-lter-fce.1075.3> .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-fce.1079.4>
+    dcterms:creator <http://data.geolink.org/id/dataone/a8075746c5d64021b4b4f778d5912b5f>, <http://data.geolink.org/id/dataone/fdfd4d407a1043449e17720e10844fe0> ;
+    glbase:description "Water quality samples are being collected using ISCO autosamplers at all wetland sites (that is, all sites except TS/Ph-9, 10, and 11). The autosamplers contain 24 1L bottles. Water is sampled by programming the autosamplers to take composite samples once every 3 days. These samples are a composite of four 250mL subsamples drawn every 18 hours (a sampling scheme that captures a dawn, noon, dusk, and midnight sample in every three day composite). The samples are collected every 3-4 weeks and analyzed for total phosphorus (TP), total nitrogen (TN), and salinity. When sites are visited to collect these samples, we also collect a grab sample that is immediately put on ice. A portion of these grab samples is filtered through a Whatman GF/F filter immediately upon return to the lab, and the filtered samples are analyzed for inorganic nutrients such as NO2-, NO3-, NH4+, SRP, and DOC. The unfiltered fraction of these grab samples is analyzed for TP, TN, and TOC. We use these monthly grab samples to generate relationships between TP and SRP, and between TN and NO2- + NO3- + NH4+. Dissolved nutrients are measured using standard rapid flow analyzer (RFA) techniques. TP is analyzed with a modified Solorzano and Sharp (1980) technique. TN is measured with an Antec TN analyzer, TOC and DOC are quantified on a Shimadzu TOC Analyzer, and salinity is measured with an YSI conductivity meter. In addition to the regular water quality monitoring, we use the rain level actuators at all freshwater sites to trigger water sampling after rain events exceed a given threshold of duration and/or intensity. As currently programmed, when the threshold of = 2.5 cm of rain per hour is passed, the autosampler at that site collects a 500mL sample 30 minutes after the threshold has been reached. Rain event samples are collected, treated, and analyzed as all other water quality samples." ;
+    glbase:hasCreator <TODO>, <http://data.geolink.org/id/dataone/a8075746c5d64021b4b4f778d5912b5f>, <http://data.geolink.org/id/dataone/fdfd4d407a1043449e17720e10844fe0> ;
+    glbase:hasGeometryAsWktLiteral "POLYGON ((-80.663 25.439, -80.59 25.439, -80.59 25.252, -80.663, 25.252))" ;
+    glbase:hasIdentifier [
+        glbase:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glbase:hasIdentifierValue "knb-lter-fce.1079.4" ;
+        a glbase:Identifier ;
+        rdfs:label "knb-lter-fce.1079.4"
+    ] ;
+    glbase:hasRightsHolder <TODO> ;
+    glbase:title "Water Quality Data (Extensive) from the Taylor Slough, Everglades National Park (FCE), South Florida from July 1999 to Present" ;
+    doview:hasAuthoritativeDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasEndDate "2012-08-05T00:00:00Z" ;
+    doview:hasLandingPage "https://search.dataone.org/#view/knb-lter-fce.1079.4" ;
+    doview:hasOriginDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasReplicaDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:CN>, <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    a glbase:Dataset ;
+    rdfs:label "Water Quality Data (Extensive) from the Taylor Slough, Everglades National Park (FCE), South Florida from July 1999 to Present" ;
+    prov:wasRevisionOf <https://cn.dataone.org/cn/v1/resolve/knb-lter-fce.1079.3> .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-fce.1080.3>
+    dcterms:creator <http://data.geolink.org/id/dataone/a8075746c5d64021b4b4f778d5912b5f>, <http://data.geolink.org/id/dataone/fdfd4d407a1043449e17720e10844fe0> ;
+    glbase:description "Water quality samples are being collected using ISCO autosamplers at all wetland sites (that is, all sites except TS/Ph-9, 10, and 11). The autosamplers contain 24 1L bottles. Water is sampled by programming the autosamplers to take composite samples once every 3 days. These samples are a composite of four 250mL subsamples drawn every 18 hours (a sampling scheme that captures a dawn, noon, dusk, and midnight sample in every three day composite). The samples are collected every 3-4 weeks and analyzed for total phosphorus (TP), total nitrogen (TN), and salinity. When sites are visited to collect these samples, we also collect a grab sample that is immediately put on ice. A portion of these grab samples is filtered through a Whatman GF/F filter immediately upon return to the lab, and the filtered samples are analyzed for inorganic nutrients such as NO2-, NO3-, NH4+, SRP, and DOC. The unfiltered fraction of these grab samples is analyzed for TP, TN, and TOC. We use these montly grab samples to generate relationships between TP and SRP, and between TN and NO2- + NO3- + NH4+. Dissolved nutrients are measured using standard rapid flow analyzer (RFA) techniques. TP is analyzed with a modified Solorzano and Sharp (1980) technique. TN is measured with an Antec TN analyzer, TOC and DOC are quantified on a Shimadzu TOC Analyzer, and salinity is measured with a YSI conductivity meter. In addition to the regular water quality monitoring, we use the rain level actuators at all freshwater sites to trigger water sampling after rain events exceed a given threshold of duration and/or intensity. As currently programmed, when the threshold of = 2.5 cm of rain per hour is passed, the autosampler at that site collects a 500mL sample 30 minutes after the threshold has been reached. Rain event samples are collected, treated, and analyzed as all other water quality samples." ;
+    glbase:hasCreator <TODO>, <http://data.geolink.org/id/dataone/a8075746c5d64021b4b4f778d5912b5f>, <http://data.geolink.org/id/dataone/fdfd4d407a1043449e17720e10844fe0> ;
+    glbase:hasGeometryAsWktLiteral "POLYGON ((-80.663 25.439, -80.59 25.439, -80.59 25.252, -80.663, 25.252))" ;
+    glbase:hasIdentifier [
+        glbase:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glbase:hasIdentifierValue "knb-lter-fce.1080.3" ;
+        a glbase:Identifier ;
+        rdfs:label "knb-lter-fce.1080.3"
+    ] ;
+    glbase:hasRightsHolder <TODO> ;
+    glbase:title "Water Quality Data (Grab Samples) from the Taylor Slough, Everglades National Park (FCE), South Florida from September 1999 to Present" ;
+    doview:hasAuthoritativeDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasEndDate "2012-08-06T00:00:00Z" ;
+    doview:hasLandingPage "https://search.dataone.org/#view/knb-lter-fce.1080.3" ;
+    doview:hasOriginDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasReplicaDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:CN>, <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    a glbase:Dataset ;
+    rdfs:label "Water Quality Data (Grab Samples) from the Taylor Slough, Everglades National Park (FCE), South Florida from September 1999 to Present" ;
+    prov:wasRevisionOf <https://cn.dataone.org/cn/v1/resolve/knb-lter-fce.1080.2> .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-fce.1092.5>
+    dcterms:creator <http://data.geolink.org/id/dataone/a8075746c5d64021b4b4f778d5912b5f>, <http://data.geolink.org/id/dataone/fdfd4d407a1043449e17720e10844fe0> ;
+    glbase:description "Rain level is recorded at least every thirty minutes at SRS1a, 2, & 3 (data since 2000).  Rain level data are collected using ISCO rain level gages attached to ISCO autosamplers, which also act as dataloggers.  We condense these data into daily cumulative rainfall, although hourly rain level data are also available." ;
+    glbase:hasCreator <TODO>, <http://data.geolink.org/id/dataone/a8075746c5d64021b4b4f778d5912b5f>, <http://data.geolink.org/id/dataone/fdfd4d407a1043449e17720e10844fe0> ;
+    glbase:hasGeometryAsWktLiteral "POLYGON ((-80.853 25.761, -80.727 25.761, -80.727 25.468, -80.853, 25.468))" ;
+    glbase:hasIdentifier [
+        glbase:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glbase:hasIdentifierValue "knb-lter-fce.1092.5" ;
+        a glbase:Identifier ;
+        rdfs:label "knb-lter-fce.1092.5"
+    ] ;
+    glbase:hasRightsHolder <TODO> ;
+    glbase:title "Precipitation from the Shark River Slough, Everglades National Park (FCE), South Florida from November 2000 to Present" ;
+    doview:hasAuthoritativeDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasEndDate "2013-01-31T00:00:00Z" ;
+    doview:hasLandingPage "https://search.dataone.org/#view/knb-lter-fce.1092.5" ;
+    doview:hasOriginDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasReplicaDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:CN>, <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    a glbase:Dataset ;
+    rdfs:label "Precipitation from the Shark River Slough, Everglades National Park (FCE), South Florida from November 2000 to Present" ;
+    prov:wasRevisionOf <https://cn.dataone.org/cn/v1/resolve/knb-lter-fce.1092.4> .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-fce.1098.3>
+    dcterms:creator <http://data.geolink.org/id/dataone/a8075746c5d64021b4b4f778d5912b5f>, <http://data.geolink.org/id/dataone/fdfd4d407a1043449e17720e10844fe0> ;
+    glbase:description "Water level is recorded at least hourly at TS/Ph2 and TS/Ph3. Water level is measured with acoustic water level gages that digitally record relative water height relative to the local soil surface." ;
+    glbase:hasCreator <TODO>, <http://data.geolink.org/id/dataone/a8075746c5d64021b4b4f778d5912b5f>, <http://data.geolink.org/id/dataone/fdfd4d407a1043449e17720e10844fe0> ;
+    glbase:hasGeometryAsWktLiteral "POLYGON ((-80.663 25.404, -80.607 25.404, -80.607 25.252, -80.663, 25.252))" ;
+    glbase:hasIdentifier [
+        glbase:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glbase:hasIdentifierValue "knb-lter-fce.1098.3" ;
+        a glbase:Identifier ;
+        rdfs:label "knb-lter-fce.1098.3"
+    ] ;
+    glbase:hasRightsHolder <TODO> ;
+    glbase:title "Water Levels from the Taylor Slough,  Everglades National Park (FCE), South Florida from August 1999 to Present" ;
+    doview:hasAuthoritativeDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasEndDate "2011-08-03T00:00:00Z" ;
+    doview:hasLandingPage "https://search.dataone.org/#view/knb-lter-fce.1098.3" ;
+    doview:hasOriginDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasReplicaDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:CN>, <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    a glbase:Dataset ;
+    rdfs:label "Water Levels from the Taylor Slough,  Everglades National Park (FCE), South Florida from August 1999 to Present" ;
+    prov:wasRevisionOf <https://cn.dataone.org/cn/v1/resolve/knb-lter-fce.1098.2> .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-gce.431.8>
+    dcterms:creator <http://data.geolink.org/id/dataone/ccfb3c93d6fa4845bed83bc990c5ac84>, <http://data.geolink.org/id/dataone/ed99899170d2433c92a142ec3ad2da0a> ;
+    glbase:description "A quadrat survey was conducted in October 2012 to measure the species and size distribution of plants at 3 sampling sites on the creekbank of the Altamaha River. The sites were chosen to capture the transition from Spartina alterniflora to Spartina cynosuroides (site SCSA) and the transition from Spartina cynosuroides to Zizaniopsis miliacea (sites ZSC1 and ZSC2). The quadrats were established as permanent plots in October 2012 by placing PVC stakes along the creekbank at each site.  Plots were evenly spaced, but were not randomly located because the goal was to start with mixtures of vegetation in most of the plots, and vegetation was distributed in patches along the creekbanks. Therefore, these plots provide useful measures of vegetation change, but are not a random sample of the vegetation at the site. Plots will be replaced as needed in future years to replace any lost to disturbance. The plots were visually surveyed and the species, shoot height, and flowering status was recorded individually for each shoot over 10 cm in height present in each plot. Observations from plots exhibiting signs of disturbance were noted in the data set. This survey will be repeated annually to assess changes in plant distribution and biomass in relation to environmental changes documented by other GCE LTER monitoring efforts." ;
+    glbase:hasCreator <TODO>, <http://data.geolink.org/id/dataone/ccfb3c93d6fa4845bed83bc990c5ac84>, <http://data.geolink.org/id/dataone/ed99899170d2433c92a142ec3ad2da0a> ;
+    glbase:hasGeometryAsWktLiteral "POLYGON ((-81.45525 31.342026, -81.37126 31.342026, -81.37126 31.32224, -81.45525, 31.32224))" ;
+    glbase:hasIdentifier [
+        glbase:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glbase:hasIdentifierValue "knb-lter-gce.431.8" ;
+        a glbase:Identifier ;
+        rdfs:label "knb-lter-gce.431.8"
+    ] ;
+    glbase:hasRightsHolder <TODO> ;
+    glbase:title "GCE-LTER Altamaha River Plant Community Monitoring Survey in October 2012" ;
+    doview:hasAuthoritativeDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasEndDate "2012-10-12T00:00:00Z" ;
+    doview:hasLandingPage "https://search.dataone.org/#view/knb-lter-gce.431.8" ;
+    doview:hasOriginDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasReplicaDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:CN>, <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    a glbase:Dataset ;
+    rdfs:label "GCE-LTER Altamaha River Plant Community Monitoring Survey in October 2012" ;
+    prov:wasRevisionOf <https://cn.dataone.org/cn/v1/resolve/knb-lter-gce.431.7> .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-pie.252.1>
+    dcterms:creator <http://data.geolink.org/id/dataone/cfc435d49b984c76b2f57af15526feb4> ;
+    glbase:description """This datalayer is part of a group of layers used for research in the Ipswich River Watershed. This is Digital Elevation Model data for the 
+        study area, in a 30-meter grid. The source elevation tile data was provided on the MassGIS website www.state.ma.us/mgis/massgis.htm in 
+        ESRI-format shapefile format and imported into IDRISI software using the ShapeIdr command. The resulting vector elevation files were converted 
+        to raster format using successive Lineras macro commands. This has the effect of mosaicing the tiles as well. The raster image was filtered once 
+        using a low-pass (mean) filter, then masked to the Ipswich study area parameters (extent). This datalayer was produced as part of a research 
+        project concerning the Ipswich River Watershed.""" ;
+    glbase:hasCreator <TODO>, <http://data.geolink.org/id/dataone/cfc435d49b984c76b2f57af15526feb4> ;
+    glbase:hasGeometryAsWktLiteral "POLYGON ((-71.33431 42.446598, -70.71342 42.446598, -70.71342 42.760254, -71.33431, 42.760254))" ;
+    glbase:hasIdentifier [
+        glbase:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glbase:hasIdentifierValue "knb-lter-pie.252.1" ;
+        a glbase:Identifier ;
+        rdfs:label "knb-lter-pie.252.1"
+    ] ;
+    glbase:hasRightsHolder <TODO> ;
+    glbase:title "Digital Elevation Model - Ipswich Watershed - Idrisi Raster File" ;
+    doview:hasAuthoritativeDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasEndDate "2002-01-01T00:00:00Z" ;
+    doview:hasLandingPage "https://search.dataone.org/#view/knb-lter-pie.252.1" ;
+    doview:hasOriginDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasReplicaDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:CN>, <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    a glbase:Dataset ;
+    rdfs:label "Digital Elevation Model - Ipswich Watershed - Idrisi Raster File" .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-pie.255.1>
+    dcterms:creator <http://data.geolink.org/id/dataone/a3fc7fa6968540bf8efe7c570116564a> ;
+    glbase:description """This layer shows land use for the Ipswich Study area, based upon MassGIS classification and grouped in accordance with the Anderson: Level I convention. 
+      	It is intended to be used in connection with other Ipswich Study Area maps.""" ;
+    glbase:hasCreator <TODO>, <http://data.geolink.org/id/dataone/a3fc7fa6968540bf8efe7c570116564a> ;
+    glbase:hasGeometryAsWktLiteral "POLYGON ((-71.33431 42.446598, -70.71342 42.446598, -70.71342 42.760254, -71.33431, 42.760254))" ;
+    glbase:hasIdentifier [
+        glbase:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glbase:hasIdentifierValue "knb-lter-pie.255.1" ;
+        a glbase:Identifier ;
+        rdfs:label "knb-lter-pie.255.1"
+    ] ;
+    glbase:hasRightsHolder <TODO> ;
+    glbase:title "Land Use, Anderson Level I - Ipswich Watershed - 1991 - Idrisi Raster File" ;
+    doview:hasAuthoritativeDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasEndDate "1991-01-01T00:00:00Z" ;
+    doview:hasLandingPage "https://search.dataone.org/#view/knb-lter-pie.255.1" ;
+    doview:hasOriginDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasReplicaDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:CN>, <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    a glbase:Dataset ;
+    rdfs:label "Land Use, Anderson Level I - Ipswich Watershed - 1991 - Idrisi Raster File" .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-pie.258.1>
+    dcterms:creator <http://data.geolink.org/id/dataone/b2ad13e6390a4a0bbbc2ccbdebba7299> ;
+    glbase:description """This datalayer is part of a group of layers used for research in the Ipswich River Watershed. This layer contains the single pixel locations of each water nutrient sampling site within the 
+      	Ipswich River Watershed. This layer is the basis for further analysis of possible influences on nutrient sample site data.""" ;
+    glbase:hasCreator <TODO>, <http://data.geolink.org/id/dataone/b2ad13e6390a4a0bbbc2ccbdebba7299> ;
+    glbase:hasGeometryAsWktLiteral "POLYGON ((-71.33431 42.446598, -70.71342 42.446598, -70.71342 42.760254, -71.33431, 42.760254))" ;
+    glbase:hasIdentifier [
+        glbase:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glbase:hasIdentifierValue "knb-lter-pie.258.1" ;
+        a glbase:Identifier ;
+        rdfs:label "knb-lter-pie.258.1"
+    ] ;
+    glbase:hasRightsHolder <TODO> ;
+    glbase:title "Nutrient Sample Sites - Ipswich Watershed - 1999 through 2002 - Idrisi Raster File" ;
+    doview:hasAuthoritativeDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasEndDate "2001-01-01T00:00:00Z" ;
+    doview:hasLandingPage "https://search.dataone.org/#view/knb-lter-pie.258.1" ;
+    doview:hasOriginDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasReplicaDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:CN>, <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    a glbase:Dataset ;
+    rdfs:label "Nutrient Sample Sites - Ipswich Watershed - 1999 through 2002 - Idrisi Raster File" .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-pie.261.1>
+    dcterms:creator <http://data.geolink.org/id/dataone/a3fc7fa6968540bf8efe7c570116564a> ;
+    glbase:description "This datalayer is part of a group of layers used for research in the Ipswich River Watershed. This datalayer shows the Status for areas that are defined as Protected and Recreational Open Space by MassGIS (www.state.ma.us/mgis). This layer is derived from the Protected and Recreational Open Space layer provided by for each town. The values are from the status field (status_fee) field in the data table. To show the status of land designated as open space in the Ipswich Watershed." ;
+    glbase:hasCreator <TODO>, <http://data.geolink.org/id/dataone/a3fc7fa6968540bf8efe7c570116564a> ;
+    glbase:hasGeometryAsWktLiteral "POLYGON ((-71.33431 42.446598, -70.71342 42.446598, -70.71342 42.760254, -71.33431, 42.760254))" ;
+    glbase:hasIdentifier [
+        glbase:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glbase:hasIdentifierValue "knb-lter-pie.261.1" ;
+        a glbase:Identifier ;
+        rdfs:label "knb-lter-pie.261.1"
+    ] ;
+    glbase:hasRightsHolder <TODO> ;
+    glbase:title "Status and Custodianship of Designated Open Space - Ipswich Watershed - Idrisi Raster File" ;
+    doview:hasAuthoritativeDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasEndDate "2002-01-01T00:00:00Z" ;
+    doview:hasLandingPage "https://search.dataone.org/#view/knb-lter-pie.261.1" ;
+    doview:hasOriginDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasReplicaDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:CN>, <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    a glbase:Dataset ;
+    rdfs:label "Status and Custodianship of Designated Open Space - Ipswich Watershed - Idrisi Raster File" .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-pie.267.1>
+    dcterms:creator <http://data.geolink.org/id/dataone/b2ad13e6390a4a0bbbc2ccbdebba7299> ;
+    glbase:description "This map shows the location of wetland areas inside of the Ipswich Study Area This map can be used to show where wetlands are located within the Ipswich Study Area." ;
+    glbase:hasCreator <TODO>, <http://data.geolink.org/id/dataone/b2ad13e6390a4a0bbbc2ccbdebba7299> ;
+    glbase:hasGeometryAsWktLiteral "POLYGON ((-71.33431 42.446598, -70.71342 42.446598, -70.71342 42.760254, -71.33431, 42.760254))" ;
+    glbase:hasIdentifier [
+        glbase:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glbase:hasIdentifierValue "knb-lter-pie.267.1" ;
+        a glbase:Identifier ;
+        rdfs:label "knb-lter-pie.267.1"
+    ] ;
+    glbase:hasRightsHolder <TODO> ;
+    glbase:title "Wetland Areas - Ipswich Watershed - Idrisi Raster File" ;
+    doview:hasAuthoritativeDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasEndDate "2001-01-01T00:00:00Z" ;
+    doview:hasLandingPage "https://search.dataone.org/#view/knb-lter-pie.267.1" ;
+    doview:hasOriginDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasReplicaDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:CN>, <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    a glbase:Dataset ;
+    rdfs:label "Wetland Areas - Ipswich Watershed - Idrisi Raster File" .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-pie.274.1>
+    dcterms:creator <http://data.geolink.org/id/dataone/20438a27dcff458b98b65130fd732cc0> ;
+    glbase:description """This datalayer is part of a group of layers used for research in the Ipswich River Watershed. This layer was created in July 2006 for 
+        Marine Biological Laboratory (MBL) in Woods Hole. This layer shows the land use for the towns in the Ipswich River Watershed and the Parker 
+        River Watershed for 1971. This datalayer has complete information. Provide land use information for general mapping and display, and landuse 
+        change analysis.""" ;
+    glbase:hasCreator <TODO>, <http://data.geolink.org/id/dataone/20438a27dcff458b98b65130fd732cc0> ;
+    glbase:hasGeometryAsWktLiteral "POLYGON ((-71.33431 42.446598, -70.71342 42.446598, -70.71342 42.760254, -71.33431, 42.760254))" ;
+    glbase:hasIdentifier [
+        glbase:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glbase:hasIdentifierValue "knb-lter-pie.274.1" ;
+        a glbase:Identifier ;
+        rdfs:label "knb-lter-pie.274.1"
+    ] ;
+    glbase:hasRightsHolder <TODO> ;
+    glbase:title "Land Use, 21 Categories - Ipswich and Parker River Watersheds - 1971 - Idrisi Raster File" ;
+    doview:hasAuthoritativeDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasEndDate "1971-01-01T00:00:00Z" ;
+    doview:hasLandingPage "https://search.dataone.org/#view/knb-lter-pie.274.1" ;
+    doview:hasOriginDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasReplicaDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:CN>, <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    a glbase:Dataset ;
+    rdfs:label "Land Use, 21 Categories - Ipswich and Parker River Watersheds - 1971 - Idrisi Raster File" .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-pie.275.1>
+    dcterms:creator <http://data.geolink.org/id/dataone/20438a27dcff458b98b65130fd732cc0> ;
+    glbase:description """This datalayer is part of a group of layers used for research in the Ipswich River Watershed. This layer was created in July 2006 for 
+        Marine Biological Laboratory (MBL) in Woods Hole. This layer shows the land use for the towns in the Ipswich River Watershed and the Parker 
+        River Watershed for 1985. This datalayer has complete information. Provide land use information for general mapping and display, and landuse 
+        change analysis.""" ;
+    glbase:hasCreator <TODO>, <http://data.geolink.org/id/dataone/20438a27dcff458b98b65130fd732cc0> ;
+    glbase:hasGeometryAsWktLiteral "POLYGON ((-71.33431 42.446598, -70.71342 42.446598, -70.71342 42.760254, -71.33431, 42.760254))" ;
+    glbase:hasIdentifier [
+        glbase:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glbase:hasIdentifierValue "knb-lter-pie.275.1" ;
+        a glbase:Identifier ;
+        rdfs:label "knb-lter-pie.275.1"
+    ] ;
+    glbase:hasRightsHolder <TODO> ;
+    glbase:title "Land Use, 21 Categories - Ipswich and Parker River Watersheds - 1985 - Idrisi Raster File" ;
+    doview:hasAuthoritativeDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasEndDate "1985-01-01T00:00:00Z" ;
+    doview:hasLandingPage "https://search.dataone.org/#view/knb-lter-pie.275.1" ;
+    doview:hasOriginDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasReplicaDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:CN>, <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    a glbase:Dataset ;
+    rdfs:label "Land Use, 21 Categories - Ipswich and Parker River Watersheds - 1985 - Idrisi Raster File" .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-pie.277.1>
+    dcterms:creator <http://data.geolink.org/id/dataone/92dca973c93e46a2b3e0367feea340d8> ;
+    glbase:description """This datalayer is part of a group of layers used for research in the Ipswich River Watershed. This layer was created in July 2006 for 
+        Marine Biological Laboratory (MBL) in Woods Hole. This layer shows the land use for the towns in the Ipswich River Watershed and the Parker 
+        River Watershed for 1999. This datalayer has complete information. Provide land use information for general mapping and display, and landuse 
+        change analysis.""" ;
+    glbase:hasCreator <TODO>, <http://data.geolink.org/id/dataone/92dca973c93e46a2b3e0367feea340d8> ;
+    glbase:hasGeometryAsWktLiteral "POLYGON ((-71.33431 42.446598, -70.71342 42.446598, -70.71342 42.760254, -71.33431, 42.760254))" ;
+    glbase:hasIdentifier [
+        glbase:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glbase:hasIdentifierValue "knb-lter-pie.277.1" ;
+        a glbase:Identifier ;
+        rdfs:label "knb-lter-pie.277.1"
+    ] ;
+    glbase:hasRightsHolder <TODO> ;
+    glbase:title "Land Use, 21 Categories - Ipswich and Parker River Watersheds - 1999 - Idrisi Raster File" ;
+    doview:hasAuthoritativeDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasEndDate "1999-01-01T00:00:00Z" ;
+    doview:hasLandingPage "https://search.dataone.org/#view/knb-lter-pie.277.1" ;
+    doview:hasOriginDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasReplicaDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:CN>, <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    a glbase:Dataset ;
+    rdfs:label "Land Use, 21 Categories - Ipswich and Parker River Watersheds - 1999 - Idrisi Raster File" .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-pie.278.1>
+    dcterms:creator <http://data.geolink.org/id/dataone/92dca973c93e46a2b3e0367feea340d8> ;
+    glbase:description "This datalayer is part of a group of layers used for research in the Ipswich River Watershed. This layer was created in July 2006 for Marine Biological Laboratory (MBL) in Woods Hole. This layer shows the land use for the towns in the Ipswich River Watershed and the Parker River Watershed for 1985. This datalayer has complete information. Provide land use information for general mapping and display, and landuse change analysis." ;
+    glbase:hasCreator <TODO>, <http://data.geolink.org/id/dataone/92dca973c93e46a2b3e0367feea340d8> ;
+    glbase:hasGeometryAsWktLiteral "POLYGON ((-71.33431 42.446598, -70.71342 42.446598, -70.71342 42.760254, -71.33431, 42.760254))" ;
+    glbase:hasIdentifier [
+        glbase:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glbase:hasIdentifierValue "knb-lter-pie.278.1" ;
+        a glbase:Identifier ;
+        rdfs:label "knb-lter-pie.278.1"
+    ] ;
+    glbase:hasRightsHolder <TODO> ;
+    glbase:title "Land Use, 37 Categories - Ipswich and Parker River Watersheds - 1985 - Idrisi Raster File" ;
+    doview:hasAuthoritativeDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasEndDate "1985-01-01T00:00:00Z" ;
+    doview:hasLandingPage "https://search.dataone.org/#view/knb-lter-pie.278.1" ;
+    doview:hasOriginDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasReplicaDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:CN>, <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    a glbase:Dataset ;
+    rdfs:label "Land Use, 37 Categories - Ipswich and Parker River Watersheds - 1985 - Idrisi Raster File" .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-pie.283.1>
+    dcterms:creator <http://data.geolink.org/id/dataone/92dca973c93e46a2b3e0367feea340d8> ;
+    glbase:description "This datalayer is part of a group of layers used for research in the Ipswich River Watershed. This layer was created in July 2006 for Marine Biological Laboratory (MBL) in Woods Hole. This layer shows the boundaries for the towns in the Ipswich River Watershed and the Parker River Watershed. This data layer was created so that the town boundaries would correspond to the boundaries of the corresponding land use maps. This datalayer has complete information. Display town boundaries for the study area." ;
+    glbase:hasCreator <TODO>, <http://data.geolink.org/id/dataone/92dca973c93e46a2b3e0367feea340d8> ;
+    glbase:hasGeometryAsWktLiteral "POLYGON ((-71.33431 42.446598, -70.71342 42.446598, -70.71342 42.760254, -71.33431, 42.760254))" ;
+    glbase:hasIdentifier [
+        glbase:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glbase:hasIdentifierValue "knb-lter-pie.283.1" ;
+        a glbase:Identifier ;
+        rdfs:label "knb-lter-pie.283.1"
+    ] ;
+    glbase:hasRightsHolder <TODO> ;
+    glbase:title "Individual Towns that are Fully or Partially in the Ipswich and Parker River Watersheds - Idrisi Raster File" ;
+    doview:hasAuthoritativeDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasEndDate "2006-01-01T00:00:00Z" ;
+    doview:hasLandingPage "https://search.dataone.org/#view/knb-lter-pie.283.1" ;
+    doview:hasOriginDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasReplicaDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:CN>, <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    a glbase:Dataset ;
+    rdfs:label "Individual Towns that are Fully or Partially in the Ipswich and Parker River Watersheds - Idrisi Raster File" .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-pie.290.1>
+    dcterms:creator <http://data.geolink.org/id/dataone/08bebe22a81742ad9b022a06ee3dba38> ;
+    glbase:description "This datalayer is a gridded data set of the contributing area to each grid cell for rivers in Plum Island Sound watershed. The resolution is 120 m x 120 m. This layer gives drainage area (km2) of each grid cell based on the flow directions in: WAT-RGIS-120m-FlowDirection.asc Provide the drainage area for each grid cell." ;
+    glbase:hasCreator <TODO>, <http://data.geolink.org/id/dataone/08bebe22a81742ad9b022a06ee3dba38> ;
+    glbase:hasGeometryAsWktLiteral "POLYGON ((-71.2552 42.8907, -70.5754 42.8907, -70.5754 42.4638, -71.2552, 42.4638))" ;
+    glbase:hasIdentifier [
+        glbase:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glbase:hasIdentifierValue "knb-lter-pie.290.1" ;
+        a glbase:Identifier ;
+        rdfs:label "knb-lter-pie.290.1"
+    ] ;
+    glbase:hasRightsHolder <TODO> ;
+    glbase:title "Contributing drainage areas - Parker and Ipswich Watersheds - ASCII Raster File" ;
+    doview:hasAuthoritativeDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasEndDate "2003-01-01T00:00:00Z" ;
+    doview:hasLandingPage "https://search.dataone.org/#view/knb-lter-pie.290.1" ;
+    doview:hasOriginDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasReplicaDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:CN>, <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    a glbase:Dataset ;
+    rdfs:label "Contributing drainage areas - Parker and Ipswich Watersheds - ASCII Raster File" .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-sev.15.25199>
+    dcterms:creator <http://data.geolink.org/id/dataone/13ba4d8abffe497f94870c286c3a0ce1> ;
+    glbase:hasCreator <TODO>, <http://data.geolink.org/id/dataone/13ba4d8abffe497f94870c286c3a0ce1> ;
+    glbase:hasGeometryAsWktLiteral "POINT (34.30726 -106.6759)" ;
+    glbase:hasIdentifier [
+        glbase:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glbase:hasIdentifierValue "knb-lter-sev.15.25199" ;
+        a glbase:Identifier ;
+        rdfs:label "knb-lter-sev.15.25199"
+    ] ;
+    glbase:hasRightsHolder <TODO> ;
+    glbase:title "Burn Exclosure Rodent Population Study at the Sevilleta National Wildlife Refuge, New Mexico, (1991-1993)" ;
+    doview:hasAuthoritativeDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasEndDate "1993-09-01T00:00:00Z" ;
+    doview:hasLandingPage "https://search.dataone.org/#view/knb-lter-sev.15.25199" ;
+    doview:hasOriginDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasReplicaDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:CN>, <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    a glbase:Dataset ;
+    rdfs:label "Burn Exclosure Rodent Population Study at the Sevilleta National Wildlife Refuge, New Mexico, (1991-1993)" ;
+    prov:wasRevisionOf <https://cn.dataone.org/cn/v1/resolve/knb-lter-sev.15.23078> .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-sev.22.35079>
+    dcterms:creator <http://data.geolink.org/id/dataone/13ba4d8abffe497f94870c286c3a0ce1> ;
+    glbase:description "The litterfall study was designed to assess the quantity of biomass (leaves, twigs, reproductive materials) falling from tree species in different ecosystem types. Three study sites selected were:  (1) the pinyon-juniper woodland site near Cerro Montoso on the Sevilleta NWR; (2) the cottonwood forest LTER site along the Rio Grande at Bosque del Apache NWR; and (2) the old-growth spruce-fir-aspen site near South Baldy in the Magdalena Mountains (Cibola National Forest).  The study was conducted over two years (1992-1993) to compare litterfall rates and quantities among sites, seasons and years." ;
+    glbase:hasCreator <TODO>, <http://data.geolink.org/id/dataone/13ba4d8abffe497f94870c286c3a0ce1> ;
+    glbase:hasGeometryAsWktLiteral "POINT (34.368 -106.535)" ;
+    glbase:hasIdentifier [
+        glbase:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glbase:hasIdentifierValue "knb-lter-sev.22.35079" ;
+        a glbase:Identifier ;
+        rdfs:label "knb-lter-sev.22.35079"
+    ] ;
+    glbase:hasRightsHolder <TODO> ;
+    glbase:title "Litter Fall Collection Study in Pinyon-Juniper, Cottowood, and Spruce-Fir-Aspen Forests at the Sevilleta NWR, Bosque del Apache NWR, and the Cibola National Forest, New Mexico (1992-1993)" ;
+    doview:hasAuthoritativeDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasEndDate "1993-09-15T00:00:00Z" ;
+    doview:hasLandingPage "https://search.dataone.org/#view/knb-lter-sev.22.35079" ;
+    doview:hasOriginDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasReplicaDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:CN>, <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    a glbase:Dataset ;
+    rdfs:label "Litter Fall Collection Study in Pinyon-Juniper, Cottowood, and Spruce-Fir-Aspen Forests at the Sevilleta NWR, Bosque del Apache NWR, and the Cibola National Forest, New Mexico (1992-1993)" ;
+    prov:wasRevisionOf <https://cn.dataone.org/cn/v1/resolve/knb-lter-sev.22.33904> .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-sev.25.44125>
+    dcterms:creator <http://data.geolink.org/id/dataone/df718d0435604e53b225a2a3e5d8ceb9> ;
+    glbase:description "This project was designed to investigate the response of plant growth  and reproduction to short- and long-term variation in biotic and  abiotic environmental variables.  Several perennial taxa, including tree  (Juniperus monsperma and Pinus edulis), shrub (Larrea tridentata) and bunch grasses (Oryzopsis hymenoides (now Achnaterum hymenoides) and Sporobolus contractus)  species, were monitored at 1-3 sites differing in elevation and  topography as well as edaphic variables and annual precipitation.  The  sites represented optimal or marginal/transitional zones for particular  species.  Demographic measurements were made biannually, after the 'wet'  (fall) and 'dry' (spring) seasons.  For tree and shrub species,  estimates of growth and reproduction were based on branch demography,  with ten branch tips from 10-20 individuals per species per site  repeatedly measured from 1989-1993.   For J. monsperma, P. edulis and L. tridentata,  vegetative growth (i.e., branch growth) as well as reproduction were  monitored. Additional measurements included needle length for P. edulis and leaf production, leaf size and branchlet production for L. tridentata.  For grasses, basal diameter, leaf length and reproduction were monitored for 100 individuals per species per site.Pinon-juniper plant dimension data was collected to obtain a measure of the change in the size of individual pinon and juniper trees through time. This data encompasses growth over 11 years and was to be used in conjunction with data in the Sevilleta plant demography and plant physiology data bases.  However, those studies were discontinued in 1993. This project, SEV025, contains only data on pinon-juniper plant dimensions.   Data on other variables and species is contained in SEV006, SEV024,  SEV026, SEV027, and SEV028." ;
+    glbase:hasCreator <TODO>, <http://data.geolink.org/id/dataone/df718d0435604e53b225a2a3e5d8ceb9> ;
+    glbase:hasGeometryAsWktLiteral "POINT (34.302 -106.618)" ;
+    glbase:hasIdentifier [
+        glbase:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glbase:hasIdentifierValue "knb-lter-sev.25.44125" ;
+        a glbase:Identifier ;
+        rdfs:label "knb-lter-sev.25.44125"
+    ] ;
+    glbase:hasRightsHolder <TODO> ;
+    glbase:title "Pinon-Juniper Plant Dimension Study at the Sevilleta National Wildlife Refuge, New Mexico: 1989-1999" ;
+    doview:hasAuthoritativeDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasEndDate "1999-11-16T00:00:00Z" ;
+    doview:hasLandingPage "https://search.dataone.org/#view/knb-lter-sev.25.44125" ;
+    doview:hasOriginDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasReplicaDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:CN>, <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    a glbase:Dataset ;
+    rdfs:label "Pinon-Juniper Plant Dimension Study at the Sevilleta National Wildlife Refuge, New Mexico: 1989-1999" ;
+    prov:wasRevisionOf <https://cn.dataone.org/cn/v1/resolve/knb-lter-sev.25.42884> .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-sev.27.50402>
+    dcterms:creator <http://data.geolink.org/id/dataone/50e5f777f3cd4a7396d8ddab55e4f08c> ;
+    glbase:description "This project was designed to investigate the response of plant growth   and reproduction to short- and long-term variation in biotic and   abiotic environmental variables.  Several perennial taxa, including tree   (Juniperus monsperma and Pinus edulis), shrub (Larrea tridentata) and bunch grasses (Oryzopsis hymenoides (now Achnaterum hymenoides) and Sporobolus contractus)   species, were monitored at 1-3 sites differing in elevation and   topography as well as edaphic variables and annual precipitation.  The   sites represented optimal or marginal/transitional zones for particular   species.  Demographic measurements were made biannually, after the  'wet'  (fall) and 'dry' (spring) seasons.  For tree and shrub species,   estimates of growth and reproduction were based on branch demography,   with ten branch tips from 10-20 individuals per species per site   repeatedly measured from 1989-1993.   For J. monsperma, P. edulis and L. tridentata,   vegetative growth (i.e., branch growth) as well as reproduction were   monitored. Additional measurements included needle length for P. edulis and leaf production, leaf size and branchlet production for L. tridentata.  For grasses, basal diameter, leaf length and reproduction were monitored for 100 individuals per species per site. This project, SEV027, contains only data on grass  demography.   Data on other variables and species is contained in  SEV006, SEV024, SEV025, SEV026, and SEV028." ;
+    glbase:hasCreator <TODO>, <http://data.geolink.org/id/dataone/50e5f777f3cd4a7396d8ddab55e4f08c> ;
+    glbase:hasGeometryAsWktLiteral "POINT (34.3381 106.717)" ;
+    glbase:hasIdentifier [
+        glbase:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glbase:hasIdentifierValue "knb-lter-sev.27.50402" ;
+        a glbase:Identifier ;
+        rdfs:label "knb-lter-sev.27.50402"
+    ] ;
+    glbase:hasRightsHolder <TODO> ;
+    glbase:title "Biannual Grass Demography Study at the Sevilleta National Wildlife Refuge, New Mexico: 1989-1993" ;
+    doview:hasAuthoritativeDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasEndDate "1989-05-10T00:00:00Z" ;
+    doview:hasLandingPage "https://search.dataone.org/#view/knb-lter-sev.27.50402" ;
+    doview:hasOriginDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasReplicaDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:CN>, <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    a glbase:Dataset ;
+    rdfs:label "Biannual Grass Demography Study at the Sevilleta National Wildlife Refuge, New Mexico: 1989-1993" ;
+    prov:wasRevisionOf <https://cn.dataone.org/cn/v1/resolve/knb-lter-sev.27.49160> .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-sev.29.61108>
+    dcterms:creator <http://data.geolink.org/id/dataone/dbc098788df14daeb7e171a6c04edba0> ;
+    glbase:description "This data set contains records for the numbers of selected groups of ground-dwelling arthropod species and individuals collected from pitfall traps at 4 sites on the Sevilleta NWR, including creotostebush shrubland, both black and blue grama grasslands, and a pinyon/juniper woodland. Data collections begin in May of 1989, and are represented by subsequent sample collections every 2 months. One site (Goat Draw/Cerro Montosa) was discontinued in 2001, and a new site (Blue Grama) was initiated . Only three sites, creosotebush, black grama, and blue grama were continued between 2001-2004." ;
+    glbase:hasCreator <TODO>, <http://data.geolink.org/id/dataone/dbc098788df14daeb7e171a6c04edba0> ;
+    glbase:hasGeometryAsWktLiteral "POINT (34.3331 -106.736)" ;
+    glbase:hasIdentifier [
+        glbase:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glbase:hasIdentifierValue "knb-lter-sev.29.61108" ;
+        a glbase:Identifier ;
+        rdfs:label "knb-lter-sev.29.61108"
+    ] ;
+    glbase:hasRightsHolder <TODO> ;
+    glbase:title "Ground Arthropod Community Survey in Grassland, Shrubland, and Woodland at the Sevilleta National Wildlife Refuge, New Mexico (1992-2004)" ;
+    doview:hasAuthoritativeDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasEndDate "2004-12-15T00:00:00Z" ;
+    doview:hasLandingPage "https://search.dataone.org/#view/knb-lter-sev.29.61108" ;
+    doview:hasOriginDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasReplicaDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:CN>, <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    a glbase:Dataset ;
+    rdfs:label "Ground Arthropod Community Survey in Grassland, Shrubland, and Woodland at the Sevilleta National Wildlife Refuge, New Mexico (1992-2004)" ;
+    prov:wasRevisionOf <https://cn.dataone.org/cn/v1/resolve/knb-lter-sev.29.60450> .
+
+<https://cn.dataone.org/cn/v1/resolve/knb-lter-sgs.112.12>
+    dcterms:creator <http://data.geolink.org/id/dataone/90575aa3153f4f9b8ce2604c6d5b525c> ;
+    glbase:description "The objective of this study is to collect baseline meteorological data for the CPER.  Datasets  auto12_climdb and man11_climdb  have been processed for quality and missing values." ;
+    glbase:hasCreator <TODO>, <http://data.geolink.org/id/dataone/90575aa3153f4f9b8ce2604c6d5b525c> ;
+    glbase:hasGeometryAsWktLiteral "POLYGON ((-104.785835 40.8575, -104.73055 40.8575, -104.73055 40.800278, -104.785835, 40.800278))" ;
+    glbase:hasIdentifier [
+        glbase:hasIdentifierScheme datacite:local-resource-identifier-scheme ;
+        glbase:hasIdentifierValue "knb-lter-sgs.112.12" ;
+        a glbase:Identifier ;
+        rdfs:label "knb-lter-sgs.112.12"
+    ] ;
+    glbase:hasRightsHolder <TODO> ;
+    glbase:title "SGS-LTER Standard Met Data: 1971-2010 Manually Collected Soil Temperature Data in English Units on the Central Plains Experimental Range, Nunn, Colorado, USA 1971-2008" ;
+    doview:hasAuthoritativeDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasEndDate "2008-07-31T00:00:00Z" ;
+    doview:hasLandingPage "https://search.dataone.org/#view/knb-lter-sgs.112.12" ;
+    doview:hasOriginDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    doview:hasReplicaDigitalRepository <https://cn.dataone.org/cn/v1/node/urn:node:CN>, <https://cn.dataone.org/cn/v1/node/urn:node:LTER> ;
+    a glbase:Dataset ;
+    rdfs:label "SGS-LTER Standard Met Data: 1971-2010 Manually Collected Soil Temperature Data in English Units on the Central Plains Experimental Range, Nunn, Colorado, USA 1971-2008" ;
+    prov:wasRevisionOf <https://cn.dataone.org/cn/v1/resolve/knb-lter-sgs.112.10> .
+

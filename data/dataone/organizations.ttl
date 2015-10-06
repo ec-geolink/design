@@ -1,0 +1,786 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix glview: <http://schema.geolink.org/dev/view/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix d1org: <https://dataone.org/organization/> .
+@prefix d1resolve: <https://cn.dataone.org/cn/v1/resolve/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix d1people: <https://dataone.org/person/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+<https://dataone.org/organization/011cc9fb-688c-4ebc-ab12-c7cc141a89ef>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013061118094027795.1> ;
+    rdf:label "國立澎湖科技大學觀光休閒學系" .
+
+<https://dataone.org/organization/0359bbe0-fe9a-4477-bdba-53929ac7b932>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013061118085637473.1> ;
+    rdf:label "National Taiwan University" .
+
+<https://dataone.org/organization/037c2449-c19f-4e38-912c-11008e31f486>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2015031111462592852.1> ;
+    rdf:label "Plum Island Ecosystems LTER Program" .
+
+<https://dataone.org/organization/065fc8ee-bcfe-4a09-986a-8ee7709b715d>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013061413452362657.1> ;
+    rdf:label "Jornada LTER" .
+
+<https://dataone.org/organization/072cf8fc-a7be-49a0-9e45-566c06a3282e>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2012061417183581692.1> ;
+    rdf:label "Biological Sciences, University of Lethbridge" .
+
+<https://dataone.org/organization/07e21d52-2f80-48c2-9ff0-251d372feed7>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2015033022152161229.1> ;
+    rdf:label "台北市中正區南海路53號" .
+
+<https://dataone.org/organization/0c3dba5e-1d4b-48b8-aa67-458efa0608d7>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2012061420095759434.1> ;
+    rdf:label "Gabriella" .
+
+<https://dataone.org/organization/0c582371-de74-4d1a-8f32-b84d9b21ec99>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013061118301038631.1> ;
+    rdf:label "Taiwan forestry research institute" .
+
+<https://dataone.org/organization/0da317e9-c389-4b67-b346-43d9c54bad2f>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013121316001430490.1> ;
+    rdf:label "North Gulf Oceanic Society" .
+
+<https://dataone.org/organization/107da4b9-2042-480d-a23a-b1b6fd920c6e>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013102416000772945.1> ;
+    rdf:label "Indiana University, Bloomington Libraries" .
+
+<https://dataone.org/organization/116c95a4-f6e1-4838-b4b1-d385cb5f8aff>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2012071022084931411.1> ;
+    rdf:label "SBCLTER" .
+
+<https://dataone.org/organization/1347eff2-e6f7-4768-9758-2edeac7f6e01>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2012062608441035002.1> ;
+    rdf:label "SGS LTER" .
+
+<https://dataone.org/organization/142ba149-e542-4449-996f-73cb05de4356>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2012081112542726718.1> ;
+    rdf:label "University of Georgia Odum School of Ecology" .
+
+<https://dataone.org/organization/147e895d-3563-4dc6-b31d-670f907ccf13>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2012061417190852174.1> ;
+    rdf:label "University of California, Davis, Department of Evolution and Ecology" .
+
+<https://dataone.org/organization/14f4c1d6-6c20-4f31-8410-ce2e37b2edbb>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013061118004898161.1> ;
+    rdf:label "Division of Wood Cellulose, Taiwan Forestry Research Institute." .
+
+<https://dataone.org/organization/1710eab5-a341-447b-b2e0-eeb8c9844a91>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013061620312498562.1> ;
+    rdf:label "Division of Forest Biology, TFRI" .
+
+<https://dataone.org/organization/18fa71f5-0568-4132-bd51-658ccb395a46>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013110115363868886.1> ;
+    rdf:label "Prince William Sound Science Center" .
+
+<https://dataone.org/organization/199616e3-6ee8-4e8f-88c2-b68173908609>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2012082506485553473.1> ;
+    rdf:label "PISCO" .
+
+<https://dataone.org/organization/1a4b17da-1296-4fa5-b48a-efe9ace8466e>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2015033001272159417.1> ;
+    rdf:label "Taiwan Forestry Research Institute" .
+
+<https://dataone.org/organization/1b229364-1fa9-423b-88e8-6d47703e1620>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2012062608551905239.1> ;
+    rdf:label "Department of Soil and Crop Sciences" .
+
+<https://dataone.org/organization/1b6b2e81-0601-460b-8c2e-bc2ace1a7687>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013061023575234836.1> ;
+    rdf:label "Maricopa Association of Governments" .
+
+<https://dataone.org/organization/1bc8b265-4f77-4f3a-8f72-6eef1ee6ed9e>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2012062300422562971.1> ;
+    rdf:label "Unaffiliated" .
+
+<https://dataone.org/organization/1cb20e06-c131-4563-ac24-96bca80c2eef>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2015031111530742782.1> ;
+    rdf:label "HERO-CM, Clark University" .
+
+<https://dataone.org/organization/1dc8b099-423e-4df5-987d-c41178370fa4>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013103015215111983.1> ;
+    rdf:label """Urban Horticulture Program, Arizona State
+				University""" .
+
+<https://dataone.org/organization/1f1aa1fc-1eb6-4bd6-803c-b94616ca6e74>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2012062605454210449.1> ;
+    rdf:label "FIU" .
+
+<https://dataone.org/organization/2397fece-ffc0-4b12-b3c6-9278d5d21288>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013100416191890924.1> ;
+    rdf:label """School of Geographical Sciences, Arizona State
+                University""" .
+
+<https://dataone.org/organization/24ad82e0-8940-4a46-a69b-a1ea86bb57f9>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2015031108253115634.1> ;
+    rdf:label "Southeast Environmental Research Center" .
+
+<https://dataone.org/organization/268c6b26-44e5-4824-9805-6462670177f6>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2014020310372526705.1> ;
+    rdf:label "Percy FitzPatrick Institute of African Ornithology, University of Cape Town (now retired)." .
+
+<https://dataone.org/organization/276c1083-7ab6-4662-9264-223020fb6270>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013061118094027795.1> ;
+    rdf:label "國立中興大學森林學系" .
+
+<https://dataone.org/organization/27ba7360-8906-495d-9f89-7612ada5eea2>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013110115083059129.1> ;
+    rdf:label "Simon Fraser Univeristy" .
+
+<https://dataone.org/organization/29f52ea8-35ac-4a07-8ec9-eb8fd3828962>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2012081112542726718.1> ;
+    rdf:label "Florida State University Coastal & Marine Lab" .
+
+<https://dataone.org/organization/2ad24300-7882-4392-9a34-6d97f9727ea5>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2012081112542726718.1> ;
+    rdf:label "Gulf of Maine Research Institute" .
+
+<https://dataone.org/organization/2e0a6fa1-b2ac-41a8-b217-9accef063cc0>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013061118035418536.1> ;
+    rdf:label "Division of Forest Biology, COA Forestry Research Institute, Taipei, Taiwan, ROC." .
+
+<https://dataone.org/organization/311260b2-0d80-4cbc-ba81-30f807f7fe5b>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2012061420004238383.1> ;
+    rdf:label "University of western Australia" .
+
+<https://dataone.org/organization/328f5012-7f8c-4b8c-9891-611ebb291672>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013061413413908904.1> ;
+    rdf:label "Department of Botany" .
+
+<https://dataone.org/organization/33059c92-72e6-4131-afaa-54be5c01cd7a>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2012071021542500117.1> ;
+    rdf:label "Partnership for the Interdisciplinary Studies of Costal Oceans" .
+
+<https://dataone.org/organization/3686d2a2-a591-487e-be6b-fb6c50e46189>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2012062600340523925.1> ;
+    rdf:label "California Current Ecosystem Long-Term Ecological Research Program" .
+
+<https://dataone.org/organization/36909053-e5dc-4f05-8cea-87627ace7eb6>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013110116010682002.1> ;
+    rdf:label "Alaska Department of Fish & Game" .
+
+<https://dataone.org/organization/38a50a72-b409-47b3-9373-c53e6ccf8fc6>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2015012120091604636.1> ;
+    rdf:label "University of California Santa Barbara" .
+
+<https://dataone.org/organization/3941678e-2890-4030-99ed-301a2a032eb4>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2012061404391484697.1> ;
+    rdf:label "Klamath Bird Observatory" .
+
+<https://dataone.org/organization/39b985e5-8a83-475e-aa08-f248cfef71a4>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013103015181998668.1> ;
+    rdf:label """Global Institute of Sustainability, Arizona State
+                University""" .
+
+<https://dataone.org/organization/3debf6ab-373a-4789-8685-5b724977b65d>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2015031109281034288.1> ;
+    rdf:label "Duke University" .
+
+<https://dataone.org/organization/3f9e2517-1c5a-45fc-b49e-e2226ef68351>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2015060416131206604.1> ;
+    rdf:label "University of Georgia" .
+
+<https://dataone.org/organization/3fd7c647-efa2-443d-9cd2-c933f05c7c14>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013110115170237627.1> ;
+    rdf:label "Eye of the Whale" .
+
+<https://dataone.org/organization/407ebaf7-7e65-4316-a219-26412da90455>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013061118325675319.1> ;
+    rdf:label "Taiwan  Forestry Research Institute" .
+
+<https://dataone.org/organization/41d7e89b-8be3-4da5-b9ab-54544375acca>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2012061417190282870.1> ;
+    rdf:label "National Center for Ecological Analysis and Synthesis" .
+
+<https://dataone.org/organization/45f7fb47-d7ce-46a8-8582-dc5da406c7df>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013061118085637473.1> ;
+    rdf:label "Kyushu University" .
+
+<https://dataone.org/organization/4668dc06-8b84-459b-8ec3-960899c92f07>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2014051515281740807.1> ;
+    rdf:label "Moorea Coral Reef LTER" .
+
+<https://dataone.org/organization/46af4778-8959-4689-85db-dd00b3fd6c49>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2015031910030443508.1> ;
+    rdf:label "SEV LTER" .
+
+<https://dataone.org/organization/46f12d5e-84e0-463b-9688-212842a12dac>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2014091915481467422.1> ;
+    rdf:label "United States Fish and Wildlife Service" .
+
+<https://dataone.org/organization/48218e9b-47d0-4fe8-b580-beb9aa819184>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013061118314000806.1> ;
+    rdf:label "Taiwan Forestry Institute" .
+
+<https://dataone.org/organization/484bfaaf-1f5a-4ac1-b88d-3aa9ef430354>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013110115170393629.1> ;
+    rdf:label "NOAA" .
+
+<https://dataone.org/organization/493445b3-e7e0-47bb-adc8-6672f2364e13>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2012062608030557458.1> ;
+    rdf:label "Institute of Ecosystem Studies" .
+
+<https://dataone.org/organization/4962a232-7aad-4bdc-a92a-b6a013f8b84f>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2015061211181866528.1> ;
+    rdf:label "Westmont College" .
+
+<https://dataone.org/organization/49e8ad18-79b2-4be3-ba92-763efceb1490>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2012111811151379581.1> ;
+    rdf:label "Macquarie University" .
+
+<https://dataone.org/organization/4a9abaad-a7d2-495c-8b58-985731c51d02>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2012062604520491521.1> ;
+    rdf:label "U.S. Geological Survey" .
+
+<https://dataone.org/organization/4b0b6104-ac78-4018-b0fd-5553568e863e>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2012062608011998108.1> ;
+    rdf:label "US Forest Service" .
+
+<https://dataone.org/organization/4f20224a-f805-4dec-b681-3d4429e9a2c0>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013061118283296498.1> ;
+    rdf:label "林業試驗所植物園組" .
+
+<https://dataone.org/organization/51d09c3b-9780-4e7c-9f99-c04c431910b0>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2015031800032306799.1> ;
+    rdf:label "林業試驗所" .
+
+<https://dataone.org/organization/522dc507-8e21-4f48-8a44-2b7080de57d0>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013061119414592326.1> ;
+    rdf:label "TERI" .
+
+<https://dataone.org/organization/5259636e-e072-46ca-92fa-7b92d3a66a24>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013100416181677602.1> ;
+    rdf:label "Baker Environmental Consulting, Inc." .
+
+<https://dataone.org/organization/527d0e80-53af-4dd2-b89c-18742575b4f6>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2015031105470140054.1> ;
+    rdf:label "Cary Institute Of Ecosystem Studies" .
+
+<https://dataone.org/organization/542b15ac-84f0-4c9d-ab38-43ab5ab41949>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2015031111515132438.1> ;
+    rdf:label "Ipswich Project, Clark University" .
+
+<https://dataone.org/organization/54480295-e702-48ed-81d6-7df63c3c59d5>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2015031020454197572.1> ;
+    rdf:label "Yale School of Forestry and Environmental Studies" .
+
+<https://dataone.org/organization/56756c4d-59cf-46cd-a4b4-5135c33ddd08>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2015031109274310378.1> ;
+    rdf:label "University of Houston" .
+
+<https://dataone.org/organization/57a933b3-7f5e-48f2-a11c-60969081e6ba>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2012062605110526015.1> ;
+    rdf:label "Cyberinfrastructure Laboratory for Environmental Observing Systems (CLEOS)" .
+
+<https://dataone.org/organization/5cddbfd3-1fb4-419f-8358-f4b3fc57aa9c>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2015070709183709673.1> ;
+    rdf:label "University of Wisconsin" .
+
+<https://dataone.org/organization/5e705e17-bf7c-4e6c-bffb-490264c55cf7>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013061620332598014.1> ;
+    rdf:label "Senior Scientist, Forest Utilization Division, Taiwan Forestry Research    Institute." .
+
+<https://dataone.org/organization/5f878ee1-163a-47b3-bec3-c08b2991f583>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2012082808541283118.1> ;
+    rdf:label "US Environmental Protection Agency, Region 2" .
+
+<https://dataone.org/organization/612874cf-b788-401d-8c88-e192a899ceb9>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2014051515243729302.1> ;
+    rdf:label "Alaska Department of Fish and Game" .
+
+<https://dataone.org/organization/6146fada-d833-43aa-8adb-086fb54ed8fb>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013061118094027795.1> ;
+    rdf:label "國立自然科學博物館" .
+
+<https://dataone.org/organization/65093442-7e91-43d8-b7e5-e2dd4c1f0787>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013061023590546457.1> ;
+    rdf:label """Department of Geological Sciences, Arizona State
+                University""" .
+
+<https://dataone.org/organization/659e3732-6a8e-4ecf-aefe-f1127185ad29>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2012061404181899920.1> ;
+    rdf:label "Agropecuaria Aruana" .
+
+<https://dataone.org/organization/66805728-aac0-457c-9533-5fc73d3a97ed>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013061118061163191.1> ;
+    rdf:label "4Department of Life Science, National Taiwan Normal University" .
+
+<https://dataone.org/organization/67c06b60-55c4-4185-b94c-547383b69169>
+    glview:address "Denver Federal Center, Building 810, MS 302 Denver Colorado 80225" ;
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013062508435610216.1> ;
+    rdf:label "USGS/CSS/Core Science Analytics and Synthesis" ;
+    foaf:mbox <mailto:gs-b-npsveg@usgs.gov> .
+
+<https://dataone.org/organization/681c0d15-d0bb-48ab-ad62-d6e47159b09d>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013090509361534087.1> ;
+    rdf:label "Northern Arizona University" .
+
+<https://dataone.org/organization/681d480c-2475-496e-9dc8-94b3da293d3b>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2012062609170844310.1> ;
+    rdf:label "LTER Network Office" .
+
+<https://dataone.org/organization/690d78f3-b079-4a64-85ff-d431a58f002e>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2012062607585963408.1> ;
+    rdf:label "USDA Forest Service, Northeastern Research Station" .
+
+<https://dataone.org/organization/6a0d7ad9-7215-4a8c-a66a-bbadd8be7266>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013061118193398586.1> ;
+    rdf:label "Division of Forest Chemistry, Taiwan Forestry Research Institute" .
+
+<https://dataone.org/organization/6a494925-14cf-493d-ae28-65cdd022e8b0>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2014091606031454710.1> ;
+    rdf:label "Louisiana Sea Grant Program" .
+
+<https://dataone.org/organization/6e0a4706-19a2-4494-aa64-17cea80905e4>
+    glview:address "Denver Federal Center, Building 810, Room 8000, MS 302 Denver Colorado 80225" ;
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013030809434041069.1> ;
+    rdf:label "USGS BRD Center for Biological Informatics" ;
+    foaf:mbox <mailto:gs-b-npsveg@usgs.gov> .
+
+<https://dataone.org/organization/6e4b6041-0202-40bc-8be8-2b57dbf3174f>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2014102317190480251.1> ;
+    rdf:label "Arctic Observing Network (AON)" .
+
+<https://dataone.org/organization/6e67b14e-e337-4991-a0d8-ecdefbead9c2>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2014091915481467422.1> ;
+    rdf:label "Universitry of Alaska-Fairbanks" .
+
+<https://dataone.org/organization/6ec34678-ddba-447c-8967-d458aa15778f>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2015031108394629657.1> ;
+    rdf:label "Florida Coastal Everglades LTER Program" .
+
+<https://dataone.org/organization/6f471179-fe5b-4df6-a46b-1190f0446fd2>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2012061420420344357.1> ;
+    rdf:label "SANParks, South Africa" .
+
+<https://dataone.org/organization/7069aab5-52bd-461e-98cd-0f885d405b3b>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2012061417183216189.1> ;
+    rdf:label "Universidad Rey Juan Carlos" .
+
+<https://dataone.org/organization/740a766a-5d3a-4ecc-b720-3ab2d17d3e8c>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013061620332598014.1> ;
+    rdf:label "Assistant Scientist, Wood Cellulose Division, Taiwan Forestry Research" .
+
+<https://dataone.org/organization/7572be61-d2c9-4cf7-97aa-22ffc400a7fb>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2014020315015669640.1> ;
+    rdf:label "IFCA" .
+
+<https://dataone.org/organization/757d683b-03e4-4b13-ba78-e1441eeb7244>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013082211241522527.1> ;
+    rdf:label "Universidad Nacional Autonoma de Mexico, Centro de Ciencias de la Atmosfera." .
+
+<https://dataone.org/organization/764fefe1-2412-4b2d-afa7-57c1cfb222a0>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2014020316391550034.1> ;
+    rdf:label "University of California, Davis" .
+
+<https://dataone.org/organization/7791b560-13c5-4ecd-8e87-efec0f128153>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013071623544387831.1> ;
+    rdf:label "Centre for African Conservation Ecology, Nelson Mandela Metropolitan University" .
+
+<https://dataone.org/organization/78e6baec-2188-4fd0-a090-e691ca3d4a4d>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2012061417184416339.1> ;
+    rdf:label "Department of Ecology and Evolutionary Biology and Environmental Studies Program," .
+
+<https://dataone.org/organization/7d8a9682-1256-4fe6-b16b-9d6ace1c3a59>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013061118152212630.1> ;
+    rdf:label "林業試驗所保護組" .
+
+<https://dataone.org/organization/7f0ec271-7485-479c-a1e9-869359864c6a>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013061118094027795.1> ;
+    rdf:label "林業試驗所中埔研究中心" .
+
+<https://dataone.org/organization/807c630c-4eb2-479d-abea-8ce839d2d157>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2015031112315883030.1> ;
+    rdf:label """Haub School and Ruckelshaus Institute of Environment and Natural Resources
+Haub School and Ruckelshaus Institute of Environment and Natural Resources""" .
+
+<https://dataone.org/organization/80a5a49d-0c75-4a4c-b608-9e268bf47c0f>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2012082808541283118.1> ;
+    rdf:label "Cornell Biological Field Station" .
+
+<https://dataone.org/organization/80d4cac8-0fa7-4dfe-8a5c-b94c4076cc0f>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2012062607585963408.1> ;
+    rdf:label "Department of Natural Resources, Cornell University" .
+
+<https://dataone.org/organization/812c0554-5e5a-41e6-a845-e7e3e3131d7e>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2012062600353530465.1> ;
+    rdf:label "ASU International Institute for Sustainability" .
+
+<https://dataone.org/organization/8206fa9f-6427-44b6-8c93-3ab493b0dded>
+    glview:address "University of California, Davis One Shields Avenue Davis CA 95616 USA" ;
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2014102018461253304.1> ;
+    rdf:label "Information Center for the Environment http://ice.ucdavis.edu" .
+
+<https://dataone.org/organization/82bf1e62-707e-42d4-9031-8a2d4c805fcf>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2015031108253115634.1> ;
+    rdf:label "Global Institute of Sustainability| School of Sustainability" .
+
+<https://dataone.org/organization/82d1c312-0360-44de-85d3-78c5eb2784a6>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013061620314162065.1> ;
+    rdf:label "林業試驗所育林組" .
+
+<https://dataone.org/organization/83803ae6-645a-4f90-9849-acf05b3e31e4>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2015080814181217782.1> ;
+    rdf:label "University of California, Santa Barbara" .
+
+<https://dataone.org/organization/83ae19c3-f861-42b3-ad87-ecd4f38973b8>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2012061419534820895.1> ;
+    rdf:label "Universit of California Berkeley" .
+
+<https://dataone.org/organization/84a498f5-52fd-4bb0-ae80-3d71c06c6a60>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2012062605431499490.1> ;
+    rdf:label "Louisiana State University" .
+
+<https://dataone.org/organization/8626201e-87ed-476f-b811-2677ee0bdbaf>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2012062609201094395.1> ;
+    rdf:label "University of New Hamshire" .
+
+<https://dataone.org/organization/89fce508-eaf6-40d4-9f5e-19a8c71559b6>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013071010361419215.1> ;
+    rdf:label "United States Geological Survey" .
+
+<https://dataone.org/organization/8a2b651f-bb48-4449-9d12-3255941f8be2>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013061119343287060.1> ;
+    rdf:label "林業試驗所蓮華池研究中心" .
+
+<https://dataone.org/organization/8a8c2be9-6552-4f1b-9e02-684decea517a>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2012061404182801052.1> ;
+    rdf:label "Embrapa" .
+
+<https://dataone.org/organization/8ad9c5e1-6401-45e7-8815-db56f93b7239>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013110116010682002.1> ;
+    rdf:label "Alaska SeaLife Center" .
+
+<https://dataone.org/organization/8d805feb-cd6d-49a1-b3bc-0473fac3fd7a>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2012082808541283118.1> ;
+    rdf:label "Great Lakes Laboratory for Fisheries and Aquatic Sciences, Fisheries and Oceans Canada" .
+
+<https://dataone.org/organization/8d9bc8b1-9da4-41c1-beb9-3a06526e8a3b>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013061118513841888.1> ;
+    rdf:label "TaiwanForestry Research Institute" .
+
+<https://dataone.org/organization/8da7a612-cc4c-441b-8a80-48e769ef6e4c>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2015031110044296571.1> ;
+    rdf:label "Michigan State University" .
+
+<https://dataone.org/organization/9096f8f1-0962-47d2-a928-c287d375e515>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013061118041203148.1> ;
+    rdf:label "Division of Forest Biology, COA Forestry Research Institute, Taipei, Taiwan, R.O.C." .
+
+<https://dataone.org/organization/93a258d7-fdf1-4f3b-b1bf-42518a4384f9>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2012062610000097328.1> ;
+    rdf:label "Baruch Marine Field Laboratory" .
+
+<https://dataone.org/organization/940bc144-bbde-4254-bf4b-d1558d94b705>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013110115170237627.1> ;
+    rdf:label "Juneau Center, School of Fisheries and Ocean Sciences, University of Alaska Fairbanks" .
+
+<https://dataone.org/organization/94a68168-3d7f-4a43-b218-0fd0d8fab21e>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2012062610255410645.1> ;
+    rdf:label "University of Central Oklahoma" .
+
+<https://dataone.org/organization/9707b255-5287-47d8-9a53-e65c8f049165>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013110115170393629.1> ;
+    rdf:label "University of Alaska Southeast" .
+
+<https://dataone.org/organization/9a90f93e-64ac-44b3-a61b-81ddeb910850>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2015031021502903864.1> ;
+    rdf:label "Harvard Forest" .
+
+<https://dataone.org/organization/9d5790b2-efbe-4edf-9e4d-ba5f85604d27>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2012062607585963408.1> ;
+    rdf:label "Institute of Ecosystem Studies, Hubbard Brook Experimental Forest" .
+
+<https://dataone.org/organization/9ebff60a-089c-4272-9a87-e20eac74e5bf>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013061118283296498.1> ;
+    rdf:label "國立臺灣大學生物資源暨農學院實驗林管理處" .
+
+<https://dataone.org/organization/9f32fd40-4154-485f-b40b-3cf8436164a5>
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2015031108434759466.1> ;
+    rdf:label "University of Georgia Marine Institute" .
+
+d1org:a2d33386-fdb9-48a4-bc4c-c5a2fd973e6a
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013103015181998668.1> ;
+    rdf:label "School of Life Sciences, Arizona State University" .
+
+d1org:a56ee3c5-be59-480c-9a43-f56d3b5f736f
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2012062610100845665.1> ;
+    rdf:label """Fulton School of Engineering, Arizona State
+                University""" .
+
+d1org:a6f60b8a-b410-4f85-97e2-74d06e8c897d
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013100416242224870.1> ;
+    rdf:label """Global Institute of Sustainability, Arizona State
+				University""" .
+
+d1org:a8d774c7-23a1-4705-a5a4-9c348e1046fb
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013061413170594070.1> ;
+    rdf:label "Natural Resource Ecology Laboratory" .
+
+d1org:a8e31818-872b-419d-9296-6a4b8bb22a42
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2012061417191480621.1> ;
+    rdf:label "Environment Institute, The University of Adelaide" .
+
+d1org:a92ede2e-becc-44c0-871b-2357f9391820
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2015031101475483559.1> ;
+    rdf:label "Department of Anthropology, University of Georgia" .
+
+d1org:ab02b4ba-95aa-4a64-bece-3d7518bd3e7a
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2015031110274589465.1> ;
+    rdf:label "University of Puerto Rico" .
+
+d1org:ab49f002-ece7-45a0-9d64-0f88998df63d
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013061118072578014.1> ;
+    rdf:label "林業試驗所森林化學組" .
+
+d1org:abcb867a-fcbb-4bed-b805-7a150c712b75
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013110115504562808.1> ;
+    rdf:label "Triton Environmental Consultants Ltd." .
+
+d1org:acea83e1-33f3-4ba4-b917-c287e14f7675
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013110116010682002.1> ;
+    rdf:label "Prince William Sound Aquaculture Corporation (PWSAC)" .
+
+d1org:b0d9ff35-8300-41f6-ae19-bc2eebe51de2
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2014081311514097117.1> ;
+    rdf:label "Department of Ecology, Evolution, and Behavior, University of Minnesota" .
+
+d1org:b24dfc87-d0fc-4126-9947-fb7583f02411
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013110115550351300.1> ;
+    rdf:label "Scool of Fisheries and Ocean Sciences, University of Alaska, Fairbanks" .
+
+d1org:b28936ed-d2ca-482c-a676-d772af88bf61
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013061413313828401.1> ;
+    rdf:label "Global Institute of Sustainability" .
+
+d1org:b2d44211-92c4-48a1-9318-f07f37faa3dd
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013080611301613029.1> ;
+    rdf:label "Centro de Ciencias de la Atmosfera" .
+
+d1org:b706efe9-8203-4aa0-b0c4-ce8f1f95e75d
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013061620332598014.1> ;
+    rdf:label "Associate Scientist, Forest Chemistry Division, Taiwan Forestry Research    Institute." .
+
+d1org:b7bb4b20-ea44-4fb1-8fb4-64068dd373b7
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2014091606031454710.1> ;
+    rdf:label "Wetland Biogeochemistry Institute" .
+
+d1org:b8a11bd8-9970-45a2-b22d-827d21da89e2
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2015031100261723887.1> ;
+    rdf:label "North Temperate Lake LTER" .
+
+d1org:b9c39b9d-6768-439b-a703-1801f3fce3f6
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013061118193398586.1> ;
+    rdf:label "Division of Silviculture, Taiwan Forestry Research Institute" .
+
+d1org:bc1f12e1-a3ea-44f2-96e4-a7c96c9ba66e
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2015031108125838875.1> ;
+    rdf:label "USDA Forest Service" .
+
+d1org:befbb4fe-a71e-477d-a80f-6740aa89ad3d
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2015042709511451390.1> ;
+    rdf:label "Jornada Basin LTER" .
+
+d1org:bf579d8a-8f1a-4132-837e-a1cb53ed3661
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2012071014421739109.1> ;
+    rdf:label "UCSB" .
+
+d1org:bfe123b1-c757-41e3-a00d-d77aef19bb37
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2012081112542726718.1> ;
+    rdf:label "University of North Carolina at Chapel Hill" .
+
+d1org:c012d6ee-b84a-4f17-8d8e-204dee31bf3c
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013110115170393629.1> ;
+    rdf:label "University of Alaska Fairbanks, School of Fisheries & Ocean Sciences" .
+
+d1org:c06fab4f-50e9-4048-a66f-88c4e2168817
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2014051515265550364.1> ;
+    rdf:label "Georgia Southern University" .
+
+d1org:c09d7188-cff2-434b-9398-3482c6f87342
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013061119181150989.1> ;
+    rdf:label "Forest Economics Division" .
+
+d1org:c1947387-be02-4710-b361-586841a68053
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2012071104311957222.1> ;
+    rdf:label "Partnership for Interdisciplinary Studies of Coastal Oceans" .
+
+d1org:c2d13add-7058-454b-a9d3-899d30b45761
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2015031111104520449.1> ;
+    rdf:label "NTL LTER" .
+
+d1org:c3091c44-7a3c-4b98-92e4-4904c61826b5
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013081911001517758.1> ;
+    rdf:label "Universidad Nacional Autonoma de Mexico, Centro de Ciencas Atmosfericas" .
+
+d1org:c5251494-d20c-4f5b-9999-adc4ba9d4104
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2015031110350259393.1> ;
+    rdf:label "LUQ LTER" .
+
+d1org:c594bdb0-13a4-40e5-8db2-a5d8ee6ce0f5
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2012062606382111270.1> ;
+    rdf:label "Palmer Station, Antarctica Long-Term Ecological Research Program" .
+
+d1org:c76bfe45-3359-4b57-83aa-8586e325fea7
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013110115044540659.1> ;
+    rdf:label "Axiom Consulting & Design" .
+
+d1org:c87ba040-7ed9-47a2-a6b0-6aa37de4f9b9
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2012082717301268017.1> ;
+    rdf:label "University of British Columbia" .
+
+d1org:cbb87726-7a3d-4939-a68c-2670e960cf85
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2015031101475483559.1> ;
+    rdf:label "Inter-University Consortium for Political and Social Research" .
+
+d1org:cd12db62-5f3c-4225-ae1e-3150f8895d9e
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2012071104232194320.1> ;
+    rdf:label "Marine Science Institute" .
+
+d1org:d18e9d34-484b-42cb-9e97-cee9ff9066b0
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2015031101475483559.1> ;
+    rdf:label "School of Human Evolution & Social Change and the Global Institute for Sustainability" .
+
+d1org:d20f768c-d4e6-485f-a65a-99728d5f228b
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2012062607585963408.1> ;
+    rdf:label "USDA Forest Service, Hubbard Brook Experimental Forest" .
+
+d1org:d2d5c422-9737-4381-9fd1-0d443bb66e25
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013061712421601457.1> ;
+    rdf:label "Division of Forestry Biology, Taiwan Forestry Research Institute" .
+
+d1org:d31de13b-986e-4e0e-bf9f-1e8ee2f161da
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013110115575772146.1> ;
+    rdf:label "Littoral Ecological & Environmental Services" .
+
+d1org:d4012c9f-f14c-4012-84a2-333b494e584b
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2012062605250135489.1> ;
+    rdf:label "University of South Carolina" .
+
+d1org:d57c6153-963d-4da4-bd01-9bc92d779f6a
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2015070709183709673.1> ;
+    rdf:label "University of Wisconson" .
+
+d1org:d5ed7e63-24e1-450c-9515-f8fc2c5d1bd5
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013061118040467949.1> ;
+    rdf:label "Forest research insititute" .
+
+d1org:d621c43e-c1c7-48c4-8189-dbf162edb152
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013061118505151245.1> ;
+    rdf:label "Division of Forestry Bioloy, Taiwan Forestry Research Institute" .
+
+d1org:d76902fb-a558-488c-a505-cf25222d9caf
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013090505362973485.1> ;
+    rdf:label "SANParks" .
+
+d1org:d888cbde-ebf0-46bd-bfb9-81408b8a9fc4
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.20130614134133774100.1> ;
+    rdf:label "Department of Biological Science" .
+
+d1org:e4ed25f6-c6f7-440b-8be0-63d5c94892bb
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013061413201977314.1> ;
+    rdf:label "USDA-ARS" .
+
+d1org:e61790a7-116f-411c-af7c-14c0b582e46e
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2012071014421739109.1> ;
+    rdf:label "UCSC" .
+
+d1org:e6591083-0834-4191-b1f8-238d9b6e7d72
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013061118543355857.1> ;
+    rdf:label "行政院農委會林業試驗所育林組" .
+
+d1org:e76b2ad9-9fd1-46b7-8148-ad5e7840ee8b
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2012062606201498039.1> ;
+    rdf:label "Global Institute of Sustainability, Arizona State University" .
+
+d1org:eb1e9b6a-3a46-4dc2-8121-d2b378c32b1e
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013061712404519761.1> ;
+    rdf:label "Taiwan Forest Research Institute" .
+
+d1org:ecf264f5-d65d-4bdd-9ea4-acde6b98cca7
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2012062607585963408.1> ;
+    rdf:label "Department of Geological Sciences, The University of Michigan" .
+
+d1org:ee84e457-c2ab-44f9-8031-af4660ad731b
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013061119394278621.1> ;
+    rdf:label "國立中興大學水土保持學系" .
+
+d1org:eea17fbd-2317-4301-a24f-58a56217cdd0
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013100416181677602.1> ;
+    rdf:label "Arizona State University" .
+
+d1org:eeed1d54-17ae-45f0-914c-489a8ea0aa85
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013061620423038953.1> ;
+    rdf:label "TFRI" .
+
+d1org:eeff7e54-bdbe-4426-92fd-f3b72a24ee72
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2012062600393907629.1> ;
+    rdf:label "Department of Forestry, University of Kentucky" .
+
+d1org:f32ee937-bde1-4a50-b33f-67ae3205c9be
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2012071014421739109.1> ;
+    rdf:label "MMS" .
+
+d1org:f3abe379-74a0-4b51-8258-f6479de88602
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013061118094027795.1> ;
+    rdf:label "國立中興大學森林系" .
+
+d1org:f3d48228-5182-44d9-8047-91321c41715a
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2015031020454197572.1> ;
+    rdf:label "Department of Civil and Environmental Engineering, Syracuse University" .
+
+d1org:f4531d56-ad5b-450c-8a6a-2f6842b5f7f6
+    glview:address "MSC01 1110 1 University of New Mexico Albuquerque NM 87131-0001 USA" ;
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2014060318170934309.1> ;
+    rdf:label "Earth Data Analysis Center" ;
+    foaf:mbox <mailto:clearinghouse@edac.unm.edu> .
+
+d1org:f81d8e3e-f990-4814-9a7e-2ea6c474c621
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013061118242963814.1> ;
+    rdf:label "Division of Wood Cellulose,Taiwan Forestry Reasearch Institute" .
+
+d1org:f86d9550-7972-4608-a38c-a5ada0c5db5a
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2015031020454197572.1> ;
+    rdf:label "New York Botanical Garden" .
+
+d1org:fa2d08ef-e35a-4ffd-a3a9-9bc87e3de0d0
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2012062606584057916.1> ;
+    rdf:label "Indiana University at Bloomington" .
+
+d1org:fa7e43d8-671d-4ac7-ad68-d5c1945cbb24
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013022810241332213.1> ;
+    rdf:label "University of California, Los Angeles" .
+
+d1org:fadc50b8-b481-426d-b1a8-264693c332dc
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2015031105271201497.1> ;
+    rdf:label "Arctic LTER Program" .
+
+d1org:fd7c7870-411b-43f8-a448-188e559fb06f
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2012062609191470979.1> ;
+    rdf:label "University of Connecticut" .
+
+d1org:fe0b2c6a-5924-4cce-85cb-04f6c032c4cc
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2014053016182063142.1> ;
+    rdf:label "CNR - Institute of Ecosystem Study" .
+
+d1org:fe6747f5-b6ae-441b-9a25-5acc38292ef8
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013061118313557160.1> ;
+    rdf:label "林業試驗所森林保護組" .
+
+d1org:fe7d2d3c-d39a-43d4-8ee7-a2a439a525ce
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2015031109065873452.1> ;
+    rdf:label "Skidaway Institute of Oceanography" .
+
+d1org:ff663759-c5ce-4846-8682-548993c28dd6
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2013072911061570205.1> ;
+    rdf:label "Wildlife Conservation Society" .
+
+d1org:ffa3d47b-139e-4741-9fba-dcb6420688c0
+    glview:isCreatorOf <https://cn.dataone.org/cn/v1/resolve/autogen.2012061420150122262.1> ;
+    rdf:label "Wageningen University" .
+
