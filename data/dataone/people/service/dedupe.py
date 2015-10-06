@@ -91,14 +91,21 @@ class Dedupe:
             json.dump(self.stores[kind], f)
 
 
-    def add(self, kind, key, record):
+    def add(self, record):
         """
         Add the record to the `kind` store at key `key`
         """
 
+        if 'type' not in record:
+            raise Exception("Record was passed to find() that did not have a type.")
+
+        kind = record['type']
+
         if kind not in self.stores:
             print "Invalid store type: %s." % kind
             return
+
+        key = get_key(record)
 
         if key is None:
             self.stores[kind]['unmatched'].append({'records': record})
@@ -117,18 +124,24 @@ class Dedupe:
         self.save_json_store(kind)
 
 
-    def find(self, kind, key):
+    def find(self, record):
         """
-        Find `key` in the key-value store with the key `kind`.
+        Find record in its appropriate store.
 
         Returns True/False
         """
 
+        if 'type' not in record:
+            raise Exception("Record was passed to find() that did not have a type.")
+
+        kind = record['type']
 
         if kind not in self.stores:
             raise Exception("Store '%s' not found." % kind)
 
-        if key not in self.stores[kind]:
+        key = get_key(record)
+
+        if key is None or key not in self.stores[kind]:
             return False
 
         # Get a reference to the store
@@ -139,3 +152,27 @@ class Dedupe:
             return True
         else:
             return False
+
+    def get_key(self, record):
+        """
+        Generates a key (or None if invalid record) for deduplicating the
+        record.
+        """
+
+        key = None
+
+        if 'type' not in record:
+            return key
+
+        if record['type'] == "person":
+            if 'name' in record and 'email' in record and len(record['name']) > 0 and len(record['email']) > 0:
+                key  = "%s#%s" % (record['name'], record['email'])
+        elif record['type'] == "organization":
+            if 'name' in record and len(record['name']) > 0:
+            key  = "%s" % (record['name'])
+
+        return key
+
+    def mint_uri(self, record):
+        if 'type' not in record:
+            return

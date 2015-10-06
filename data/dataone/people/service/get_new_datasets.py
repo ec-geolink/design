@@ -39,9 +39,11 @@ def main():
     identifiers = dataone.getDocumentIdentifiersSince(from_string, to_string)
 
     print "Retrieved %d identifiers." % len(identifiers)
-    util.continue_or_quit()
 
-    all_records = []
+    deduper = dedupe.Dedupe()
+    deduper.register_store("../graph/people_unique.json", 'person', 'json')
+    deduper.register_store("../graph/organizations_unique.json", 'organization', 'json')
+
 
     # Get documents themselves
     for identifier in identifiers[0:1]:
@@ -65,56 +67,30 @@ def main():
         for record in records:
             print json.dumps(record, sort_keys=True, indent=2)
 
-        all_records.append(records)
+            # De-dupe and integrate records
+            found = deduper.find(record)
 
-    deduper = dedupe.Dedupe()
-    deduper.register_store("../graph/people_unique.json", 'person', 'json')
-    deduper.register_store("../graph/organizations_unique.json", 'organization', 'json')
+            if found:
+                print "Found"
+                uri = deduper.get_uri(record)
 
-    for record in records:
-        if 'type' not in record:
-            continue
+                if uri is not None:
+                    print "URI exists and is %s." % uri
 
-        if record['type'] == "person":
-            if 'name' not in record and 'email' not in record and len(record['name']) <= 0 and len(record['email']) <= 0:
-                key = None
+                else:
+                    print "URI does not exist."
+
+                    deduper.mint_uri(record)
+                    deduper.save_json_store(record['type'])
             else:
-                key  = "%s#%s" % (record['name'], record['email'])
-        elif record['type'] == "organization":
-            if 'name' not in record and len(record['name']) <= 0:
-                continue
+                print "Record not found."
 
-            key  = "%s" % (record['name'])
+                deduper.mint_uri(record)
+                deduper.add(record)
 
-        print "Looking up %s: %s." % (record['type'], key)
 
-        # De-dupe and integrate records
-        found = deduper.find(record['type'], key)
 
-        if found:
-            print "Found"
 
-            # Look for a URI
-            # If it has one, use it
-            # If it doesn't have one, mint one
-
-            if 'uri' in deduper.stores[record['type']][key]:
-                print "URI exists"
-                print deduper.stores[record['type']][key]['uri']
-            else:
-                print "Minting URI..."
-                uri = str(uuid.uuid4())
-
-                deduper.stores[record['type']][key]['uri'] = uri
-                deduper.save_json_store(record['type'])
-
-        else:
-            print "Not found"
-            # Mint a new URI for it too!
-            print "Minting URI"
-            uri = str(uuid.uuid4())
-            record['uri'] = uri
-            deduper.add(record['type'], key, record)
 
 
     # Save settings
