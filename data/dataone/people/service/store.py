@@ -1,16 +1,15 @@
-"""
-Wrapper class that can be used to query a Jena endpoint that speaks Fuseki.
-"""
-
 import requests
 
 
 class Store():
     """
+    Wrapper class that can be used to query a Jena endpoint that speaks Fuseki.
     """
 
     def __init__(self, endpoint, dataset):
         """
+        Stores the dataset name and SPARQL endpoint URL and prepopulates
+        SPARQL QUERY and UPDATE URLs for executing SPARQL queries.
         """
 
         # Strip surrounding slashes in arguments
@@ -24,6 +23,7 @@ class Store():
 
     def query(self, query):
         """
+        Execute a SPARQL QUERY.
         """
 
         r = requests.get(self.query_url, params={ 'query': query })
@@ -33,6 +33,7 @@ class Store():
 
     def update(self, query):
         """
+        Execute a SPARQL UPDATE.
         """
 
         r = requests.post(self.update_url, data=query)
@@ -42,6 +43,7 @@ class Store():
 
     def count(self):
         """
+        Return the number of triples in dataset.
         """
 
         q = """
@@ -56,6 +58,7 @@ class Store():
 
     def all(self):
         """
+        Return all triples in the dataset.
         """
 
         q = """
@@ -70,6 +73,7 @@ class Store():
 
     def delete_all(self):
         """
+        Delete all triples in the dataset.
         """
 
         q = """
@@ -82,6 +86,8 @@ class Store():
 
     def delete_by_subject(self, subject):
         """
+        Delete all triples with the given subject.
+        The subject argument should be a URI string.
         """
 
         q = """
