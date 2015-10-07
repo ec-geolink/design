@@ -284,14 +284,6 @@
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasCreator">
         <rdfs:label>hasCreator</rdfs:label>
         <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isCreatorOf"/>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Organization"/>
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Person"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -300,6 +292,14 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Organization"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Person"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -351,6 +351,23 @@
         <rdfs:label>hasDataset</rdfs:label>
         <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Dataset"/>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasDive -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasDive">
+        <rdfs:label>hasDive</rdfs:label>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Dive"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#DigitalObject"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
     </owl:ObjectProperty>
     
 
