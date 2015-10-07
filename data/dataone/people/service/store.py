@@ -98,6 +98,20 @@ class Store():
         r = self.update(q)
 
 
+    def delete_by_object(self, object):
+        """
+        Delete all triples with the given object.
+        The object argument should be a URI string.
+        """
+
+        q = """
+        DELETE
+        WHERE { ?s ?p <%s> }
+        """ % object
+
+        r = self.update(q)
+
+
 if __name__ == "__main__":
     s = Store("http://localhost:3030/", 'ds')
 
