@@ -1919,7 +1919,14 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasPublicationDate">
         <rdfs:label>hasPublicationDate</rdfs:label>
-        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Document"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Document"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:unionOf rdf:parseType="Collection">
