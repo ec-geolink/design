@@ -34,7 +34,7 @@ def createSinceQuery(from_string, to_string, start=0, page_size=1000):
                    "KNB+OR+datasource:*PISCO+OR+datasource:*GOA)+AND+-"\
                    "obsoletedBy:*"
 
-    query_params += "+AND+dateUploaded:[" +\
+    query_params += "+AND+dateModified:[" +\
                     from_string +\
                     "%20TO%20" +\
                     to_string +\
@@ -68,7 +68,7 @@ def getDocumentIdentifiersSince(from_string, to_string, page_size=1000):
         num_pages += 1
 
     print "Found %d documents over %d pages." % (num_results, num_pages)
-    util.continue_or_quit()
+    # util.continue_or_quit()
 
     # Collect the identifiers
     identifiers = []
@@ -107,7 +107,7 @@ def getIdentifiers(from_string, to_string, page, page_size=1000):
 def getDocument(identifier):
     """ Get XML document (sysmeta) at `identifier`"""
 
-    query_string = "http://cn.dataone.org/cn/v1/resolve/%s" % identifier
+    query_string = "http://cn.dataone.org/cn/v1/object/%s" % identifier
     query_xml = util.getXML(query_string)
 
     return query_xml
