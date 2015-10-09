@@ -72,7 +72,12 @@ class Dedupe:
 
         with open(store, "rb") as f:
             self.stores[kind] = json.loads(f.read())
-            print "JSON Store registered with key %s. %d keys loaded." % (kind, len(self.stores[kind]))
+            store_length = len(self.stores[kind])
+
+            if kind == 'person':
+                store_length += len(self.stores[kind]['unmatched']) - 1
+
+            print "JSON Store registered with key %s. %d records loaded." % (kind, store_length)
 
         self.store_filepaths[kind] = store
 
@@ -171,8 +176,8 @@ class Dedupe:
             return key
 
         if record['type'] == "person":
-            if 'full_name' in record and 'email' in record and len(record['full_name']) > 0 and len(record['email']) > 0:
-                key  = "%s#%s" % (record['full_name'], record['email'])
+            if 'last_name' in record and 'email' in record and len(record['last_name']) > 0 and len(record['email']) > 0:
+                key  = "%s#%s" % (record['last_name'], record['email'])
         elif record['type'] == "organization":
             if 'name' in record and len(record['name']) > 0:
                 key  = "%s" % (record['name'])
