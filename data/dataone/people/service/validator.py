@@ -111,6 +111,9 @@ class Validator():
         By default, all records are considered valid until proven otherwise.
         """
 
+        if record is None:
+            return None
+
         if 'type' not in record:
             raise Exception("Record had no type: %s." % record)
 
