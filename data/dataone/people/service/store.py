@@ -390,10 +390,16 @@ class Store():
 
 
     def addDataset(self):
+    def addDataset(self, doc):
         """
         This method needs to determine if the dataset is already in the graph.
         This means that there may be triples in in datasets, people, and
         organizations that need to be deleted.
+
+        Parameters:
+
+            doc:
+                XML from the <doc> tag off the Solr index
         """
 
         print "addDataset"
