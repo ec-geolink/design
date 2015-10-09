@@ -1,6 +1,7 @@
-""" dataone.py
+"""
+dataone.py
 
-    Functions related to querying the DataOne v1 API.
+Functions related to querying the DataOne v1 API.
 """
 
 
@@ -8,7 +9,8 @@ from service import util
 
 
 def getNumResults(query):
-    """ Performs a query and extracts just the number of results in the query.
+    """
+    Performs a query and extracts just the number of results in the query.
     """
 
     num_results = -1
@@ -22,14 +24,32 @@ def getNumResults(query):
     return int(num_results)
 
 
-def createSinceQuery(from_string, to_string, start=0, page_size=1000):
-    """ Creates a query string to get documents uploaded since `from_string` up
-        to `to_string`.
+def createSinceQuery(from_string, to_string, fields=None, start=0, page_size=1000):
+    """
+    Creates a query string to get documents uploaded since `from_string` up
+    to `to_string`.
+
+    Parameters:
+
+        from_string|to_string:
+            String of form '2015-05-30T23:21:15.567Z'
+
+        fields: optional
+            List of string field names
+
+        start|page_size: optional
+            Solr query parameters
     """
 
     # Create the URL
     base_url = "https://cn.dataone.org/cn/v1/query/solr/"
-    fields = ",".join(["identifier"])
+
+    # Create a set of fields to grab
+    if fields is None:
+        fields = ",".join(["identifier"])
+    else:
+        fields = ",".join(fields)
+
     query_params = "formatType:METADATA+AND+(datasource:*LTER+OR+datasource:*"\
                    "KNB+OR+datasource:*PISCO+OR+datasource:*GOA)+AND+-"\
                    "obsoletedBy:*"
@@ -52,14 +72,17 @@ def createSinceQuery(from_string, to_string, start=0, page_size=1000):
     return query_string
 
 
-def getDocumentIdentifiersSince(from_string, to_string, page_size=1000):
-    """ Get document identifiers for documents uploaded since `since`
+def getDocumentIdentifiersSince(from_string, to_string, fields=None, page_size=1000):
+    """
+    Get document identifiers for documents uploaded since `since`
 
-        since: String of form '2015-05-30T23:21:15.567Z'
+    Parameters:
+        from_string|to_string:
+            String of form '2015-05-30T23:21:15.567Z'
     """
 
     # Get the number of pages we need
-    query_string = createSinceQuery(from_string, to_string)
+    query_string = createSinceQuery(from_string, to_string, fields, page_size)
     num_results = getNumResults(query_string)
 
     # Calculate the number of pages we need to get to get all results
@@ -80,12 +103,26 @@ def getDocumentIdentifiersSince(from_string, to_string, page_size=1000):
     return identifiers
 
 
-def getIdentifiers(from_string, to_string, page, page_size=1000):
-    """ Query page `page` of the Solr index using and retrieve the PIDs
-        of the documents in the response.
+def getSincePage(from_string, to_string, fields=None, page=1, page_size=1000):
+    """
+    Get a page off the Solr index for a query between two time periods.
+    """
+
+    start = (page-1) * page_size
+    query_string = createSinceQuery(from_string, to_string, fields, start, page_size)
+    print query_string
+    query_xml = util.getXML(query_string)
+
+    return query_xml
+
+
+def getIdentifiers(from_string, to_string, fields=None, page=1, page_size=1000):
+    """
+    Query page `page` of the Solr index using and retrieve the PIDs
+    of the documents in the response.
     """
     start = (page-1) * page_size
-    query_string = createSinceQuery(from_string, to_string, start)
+    query_string = createSinceQuery(from_string, to_string, fields, start)
 
     query_xml = util.getXML(query_string)
 
@@ -105,7 +142,9 @@ def getIdentifiers(from_string, to_string, page, page_size=1000):
 
 
 def getDocument(identifier):
-    """ Get XML document (sysmeta) at `identifier`"""
+    """
+    Get XML document (sysmeta) for an identifier.
+    """
 
     query_string = "http://cn.dataone.org/cn/v1/object/%s" % identifier
     query_xml = util.getXML(query_string)
