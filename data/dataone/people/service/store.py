@@ -163,6 +163,30 @@ class Store():
         self.update(q)
 
 
+    def exists(self, triple):
+        """
+        Check if the triple exists.
+        """
+
+        if type(triple) is not list and len(triple) != 3:
+            print "Failed to check triple for existence: Expected triple argument to be an array of size 3."
+            return
+
+        q = """
+        SELECT (COUNT(*) AS ?num) {%s %s %s}
+        """ % (self.ns_interp(triple[0]), self.ns_interp(triple[1]), self.ns_interp(triple[2]))
+
+        r = self.query(q).json()
+
+        if len(r['results']['bindings']) == 1 and r['results']['bindings'][0]['num']['value'] == u'1':
+            return True
+
+        return False
+
+
+
+
+
     def find(self, conditions):
         """
         Finds records with the given set of conditions.
