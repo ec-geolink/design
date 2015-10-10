@@ -2,6 +2,9 @@ import requests
 import os
 import uuid
 
+from service import util
+
+
 class Store():
     """
     Wrapper class that can be used to query a Jena endpoint that speaks Fuseki.
@@ -391,6 +394,7 @@ class Store():
 
     def addDataset(self):
     def addDataset(self, doc):
+    def addDataset(self, doc, scimeta, formats = {}):
         """
         This method needs to determine if the dataset is already in the graph.
         This means that there may be triples in in datasets, people, and
@@ -402,8 +406,75 @@ class Store():
                 XML from the <doc> tag off the Solr index
         """
 
+        identifier = doc.find(".//str[@name='identifier']").text
+
         print "addDataset"
 
+        if any(['d1resolve:'+identifier, '?p', '?o']):
+            self.deleteDatasetTriples(doc, scimeta, formats)
+
+        self.addDatasetTriples(doc, scimeta, formats)
+
+
+
+
+    def addDatasetTriples(self, doc, scimeta, formats = {}):
+        """
+
+        """
+        identifier = doc.find(".//str[@name='identifier']").text
+
+        # type Dataset
+        self.add(['d1resolve:'+identifier, 'rdf:type', 'glview:Dataset'])
+
+
+        # Title
+        title_element = doc.find("./str[@name='title']")
+
+        if title_element is not None:
+            self.add(['d1resolve:'+identifier, 'glview:title', title_element.text])
+            self.add(['d1resolve:'+identifier, 'rdf:label', title_element.text])
+
+        # Add glview Identifier
+        id_blank_node = "<_:%s>" % identifier
+
+        # Determine identifier scheme
+        if (identifier.startswith("doi:") |
+                identifier.startswith("http://doi.org/") | identifier.startswith("https://doi.org/") |
+                identifier.startswith("https://dx.doi.org/") | identifier.startswith("https://dx.doi.org/")):
+            scheme = 'doi'
+        elif (identifier.startswith("ark:")):
+            scheme = 'ark'
+        elif (identifier.startswith("http:")):
+            scheme = 'uri'
+        elif (identifier.startswith("https:")):
+            scheme = 'uri'
+        elif (identifier.startswith("urn:")):
+            scheme = 'urn'
+        else:
+            scheme = 'local-resource-identifier-scheme'
+
+        self.add([id_blank_node, 'rdf:type', 'glview:Identifier'])
+        self.add([id_blank_node, 'glview:hasIdentifierValue', identifier])
+        self.add([id_blank_node, 'rdfs:label', identifier])
+        self.add([id_blank_node, 'glview:hasIdentifierScheme', 'datacite:'+scheme])
+
+        self.add(['d1resolve:'+identifier, 'glview:hasIdentifier', id_blank_node])
+
+        # Abstract
+        abstract_element = doc.find("./str[@name='abstract']")
+
+        if (abstract_element is not None):
+            self.add(['d1resolve:'+identifier, 'glview:description', abstract_element.text])
+
+
+        # For digital Object in this dataset
+        #self.addDigitalObject(identifier, digital_object, formats)
+        # Digital Objects
+        digital_objects = doc.findall("./arr[@name='documents']/str")
+
+        for digital_object in digital_objects:
+            self.addDigitalObject(identifier, digital_object, formats)
 
 
     def deleteDatasetTriples(self):
@@ -429,6 +500,83 @@ class Store():
         print "deleteDataset"
 
 
+    def addDigitalObject(self, identifier, digital_object, formats):
+        """
+        """
+
+        self.addDigitalObjectTriples(identifier, digital_object, formats)
+
+
+    def addDigitalObjectTriples(self, identifier, digital_object, formats):
+        """
+        Notes:
+            Creates only two triples (type and isPartOf) if the scimeta for the
+            digital object can't be retrieved off the CN.
+        """
+
+        data_id = digital_object.text
+
+        self.add(['d1base:'+data_id, 'rdf:type', 'glview:DigitalObject'])
+        self.add(['d1base:'+data_id, 'glview:isPartOf', 'd1base'+identifier])
+
+        # Get data object meta
+        data_meta = util.getXML("https://cn.dataone.org/cn/v1/meta/" + data_id)
+
+        if data_meta is None:
+            print "Metadata for data object %s was not found. Continuing to next data object." % data_id
+            return
+
+        # Checksum and checksum algorithm
+        checksum_node = data_meta.find(".//checksum")
+
+        if checksum_node is not None:
+            self.add(['d1base:'+data_id, 'glview:hasChecksum', checksum_node.text])
+            self.add(['d1base:'+data_id, 'glview:hasChecksumAlgorithm', checksum_node.get("algorithm")])
+
+        # Size
+        size_node = data_meta.find("./size")
+
+        if size_node is not None:
+            self.add(['d1base:'+data_id, 'glview:hasByteLength', size_node.text])
+
+        # Format
+        format_id_node = data_meta.find("./formatId")
+
+        if format_id_node is not None:
+            if format_id_node.text in formats:
+                self.add(['d1base:'+data_id, 'glview:hasFormat', formats[format_id_node.text]['uri']])
+
+            else:
+                print "Format not found."
+
+
+        # Date uploaded
+        date_uploaded_node = data_meta.find("./dateUploaded")
+
+        if date_uploaded_node is not None:
+            self.add(['d1base:'+data_id, 'glview:dateUploaded', date_uploaded_node.text])
+
+
+        # Submitter and rights holders
+        # submitter_node = data_meta.find("./submitter")
+        #
+        # if submitter_node is not None:
+        #     submitter_node_text = " ".join(re.findall(r"o=(\w+)", submitter_node.text, re.IGNORECASE))
+        #
+        #     if len(submitter_node_text) > 0:
+        #         self.add(['d1base:'+data_id, 'glview:hasCreator', ])
+
+
+        # rights_holder_node = data_meta.find("./rightsHolder")
+        #
+        # if rights_holder_node is not None:
+        #     rights_holder_node_text = " ".join(re.findall(r"o=(\w+)", rights_holder_node.text, re.IGNORECASE))
+        #
+        #     if len(rights_holder_node_text) > 0:
+        #         addStatement(model, d1base+data_id, ns["glbase"]+"hasRightsHolder", RDF.Uri("urn:node:" + rights_holder_node_text.upper()))
+
+
+
     def addPersonTriples(self, uri, record):
         print "addPersonTriples"
 
@@ -450,6 +598,11 @@ class Store():
         #
         # if 'organization' in record:
         #     self.add([uri, 'glview:nameFull', ])
+        if 'organization' in record:
+            if self.exists(['?s', 'rdf:label', record['organization']]):
+                print 'exists'
+            # org_uri =
+            # self.add([uri, 'glview:hasAffiliation', org_uri])
 
         if 'email' in record:
             self.add([uri, 'foaf:mbox', '<mailto:'+record['email']+'>'])
