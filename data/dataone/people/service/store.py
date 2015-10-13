@@ -237,7 +237,7 @@ class Store():
 
         find_result = self.find(condition)
 
-        if len(find_result) != 1:
+        if len(find_result) < 1:
             print "empty find result"
             return None
 
@@ -252,7 +252,7 @@ class Store():
 
         result = self.findPerson(family, email)
 
-        if result is None or len(result) != 1:
+        if result is None or len(result) < 1:
             return False
         else:
             return True
@@ -269,8 +269,7 @@ class Store():
 
         find_result = self.find(condition)
 
-        if len(find_result) != 1:
-            print "empty find result"
+        if len(find_result) < 1:
             return None
 
         return find_result[0]['subject']['value']
@@ -284,7 +283,7 @@ class Store():
 
         result = self.findOrganization(name)
 
-        if result is None or len(result) != 1:
+        if result is None or len(result) < 1:
             return False
         else:
             return True
