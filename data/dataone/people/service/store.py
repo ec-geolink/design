@@ -485,29 +485,6 @@ class Store():
             self.addDigitalObject(identifier, digital_object, formats)
 
 
-    def deleteDatasetTriples(self):
-        """
-        This method will get called from addDataset() if the dataset already
-        exists in the graph.
-
-        In deleting a dataset's triples, we'll also need modify triples in
-        the person and organization graphs. This is the trickiest part of this
-        method.
-
-        Because we never want to remote URIs from the graph that we've minted,
-        but we want to keep the triples in our graphs up to date, we'll want to
-        remove triples like:
-
-            <person> isCreatorOf <somedataset>
-
-        but not
-
-            <person> hasFirstName 'Spike'
-        """
-
-        print "deleteDataset"
-
-
     def addDigitalObject(self, identifier, digital_object, formats):
         """
         """
@@ -583,6 +560,51 @@ class Store():
         #     if len(rights_holder_node_text) > 0:
         #         addStatement(model, d1base+data_id, ns["glbase"]+"hasRightsHolder", RDF.Uri("urn:node:" + rights_holder_node_text.upper()))
 
+
+    def deleteDatasetTriples(self, doc, scimeta, formats):
+        """
+        This method will get called from addDataset() if the dataset already
+        exists in the graph.
+
+        In deleting a dataset's triples, we'll also need modify triples in
+        the person and organization graphs. This is the trickiest part of this
+        method.
+
+        Because we never want to remote URIs from the graph that we've minted,
+        but we want to keep the triples in our graphs up to date, we'll want to
+        remove triples like:
+
+            <person> isCreatorOf <somedataset>
+
+        but not
+
+            <person> hasFirstName 'Spike'
+        """
+
+        print "deleteDataset"
+
+        identifier = doc.find(".//str[@name='identifier']").text
+
+
+        # Dataset itself
+        self.delete_by_subject('d1resolve:'+identifier)
+
+        # Digital Objects
+        digital_objects = doc.findall("./arr[@name='documents']/str")
+
+        for digital_object in digital_objects:
+            self.delete_by_subject('d1resolve:'+digital_object.text)
+
+        # Identifier
+
+
+        # Remove any isCreatorOf for this dataset
+
+        creator_of = self.find({'glview:isCreatorOf':'d1resolve:'+identifier})
+
+        if len(creator_of) == 1:
+            existing_uri = creator_of[0]['subject']['value']
+            s.delete([existing_uri, 'glview:isCreatorOf', 'd1resolve:'+identifier])
 
 
     def addPersonTriples(self, uri, record):
