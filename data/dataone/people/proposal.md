@@ -175,6 +175,80 @@ Always:
   - For attributes that are already known, do nothing.
   - For attributes that are not known, added them to the triple store
 
+
+### Issues
+
+What to do about people URIs where we only have the name?
+
+When a dataset is re-processed, we remove all the triples we added the last time the dataset was processed and then add them again with the (possibly) updated information.
+When we re-process a dataset, either because it is updated or because we manually reprocess the dataset, people without sufficient distinguishing information (i.e., without emails addresses) will always trigger the minting of a new URI even though we minted them a new URI the last time their document was processed.
+This is because we never remove knowledge about a person (like their first name) from the graph when we remove triples for a dataset prior to re-processing.
+The only knowledge we remove is that they are the creator of the given dataset which is easy to remove.
+
+Below is a worked example with TTL syntax showing what happens under the current system:
+
+First, Dataset X is added, which contains person Jane Doe.
+The people graph looks like this:
+
+```{ttl}
+<https://dataone.org/person/urn:uri:someuuid>
+        <http://schema.geolink.org/dev/view/isCreatorOf>
+                <https://cn.dataone.org/cn/v1/resolve/X> ;
+        <http://schema.geolink.org/dev/view/nameFamily>
+                "Doe" ;
+        <http://schema.geolink.org/dev/view/nameFull>
+                "Jane Doe" ;
+        <http://schema.geolink.org/dev/view/nameGiven>
+                "Jane" .
+```
+
+All is well. Then we re-process dataset X because it is updated. We remove the `isCreatorOf` triple from Jane Doe.
+
+```{ttl}
+<https://dataone.org/person/urn:uri:someuuid>
+        <http://schema.geolink.org/dev/view/nameFamily>
+                "Doe" ;
+        <http://schema.geolink.org/dev/view/nameFull>
+                "Jane Doe" ;
+        <http://schema.geolink.org/dev/view/nameGiven>
+                "Jane" .
+```
+
+And continue re-processing.
+Because we can't be sure if Jane Doe with URI `<https://dataone.org/person/urn:uri:someuuid>` is the same Jane Doe as is in dataset X, we mint a new URI and end up with:
+
+```{ttl}
+<https://dataone.org/person/urn:uri:someuuid>
+        <http://schema.geolink.org/dev/view/nameFamily>
+                "Doe" ;
+        <http://schema.geolink.org/dev/view/nameFull>
+                "Jane Doe" ;
+        <http://schema.geolink.org/dev/view/nameGiven>
+                "Jane" .
+
+<https://dataone.org/person/urn:uri:another_uuid>
+        <http://schema.geolink.org/dev/view/isCreatorOf>
+                <https://cn.dataone.org/cn/v1/resolve/X> ;
+        <http://schema.geolink.org/dev/view/nameFamily>
+                "Doe" ;
+        <http://schema.geolink.org/dev/view/nameFull>
+                "Jane Doe" ;
+        <http://schema.geolink.org/dev/view/nameGiven>
+                "Jane" .
+```
+
+If we think just about the knowledge stored in this graph, it would seem reasonable to simply re-use the first URI for Jane Doe given that it contains no `isCreatorOf` triples.
+This is because the first URI we minted no longer contains any `isCreatorOf` triples so we wouldn't be saying anything inconsistent.
+However, this might not be a good idea if we consider that triples may have been created outside of our graph using the first URI and that re-using the URI might result in assertions that a different person than we say created this dataset, either in our graph or another.
+I'm not sure if this is really an issue.
+
+Solutions I can see at this time are to either accept this reality and aim to never re-process datasets manually or  introduce a provenance graph for document processing that will allow us to delete these problem triples.
+I recommend accepting the reality and moving on, aiming to limit manual re-processing (this should be easy).
+This would mean accepting that the people graph might contain URIs that aren't `isCreatorOf` for any datasets.
+
+
+### DataOne Integration
+
 Regarding #4 (above), when new HTTP URIs are created for a person or organization, that person or organization may exist in another system we operate. Ideally, at the time of creating a new HTTP URI also, we would find out of the person or organization we're creating a new HTTP URI for exists in other systems and make the appropriate associations. The key benefit of doing this would not just be directly linking, for example, someone in LDAP with their GeoLink HTTP URI but, instead, linking a someone in LDAP with datasets they created. In creating these linkages, it's important that no linkages that would result in changes to access privileges are made unless those changes are done through a secure system. For example, you wouldn't want to parse an EML document, find a person in LDAP with similar name, and allow that person to delete that dataset. It would be good to present linkages we have confidence in to the authenticated user (e.g. on LDAP) and allow them to confirm or deny sameness.
 
 Once the linkages are made, visiting a person's user account page (e.g. [http://dataone.org/people/brycemecum](http://dataone.org/people/brycemecum)) would show both datasets that certainly reference the user as well as datasets that may reference the user. These linkages could be confirmed or denied by the logging-in user. Linkages made in this way would still be imperfect because a user could mistakenly claim someone else's data when the data weren't uploaded with sufficiently unique identifying information. But if, for example, the dataset contained a DataOne URI or an ORCID and the user account had one of these identifiers, then the match between the user and the reference to a person in the dataset would be essentially certain (absent typos).
