@@ -9,8 +9,8 @@ email: mecum@nceas.ucsb.edu
 - [Finding unique people and organizations](#finding-unique-people-and-organizations)
 - [Minting new HTTP URIs](#minting-new-http-uris)
 - [Matching DataOne Accounts](#matching-dataone-accounts)
-- [The Service](#the-service)
 - [Timeline](#timeline)
+- [Graph Service](#graph-service)
 - [Notes](#notes)
 
 ## Overview
@@ -111,7 +111,70 @@ Updating existing people and organizations will involve updating both `glview:Pe
 
 Existing services on DataOne are Java programs but the language of the current implementation is Python. This can be changed.
 
-### Service Integration
+
+### Graph Service Details
+
+Because the graph of datasets needs to be kept up-to-date, triples will need to be added and/or removed over time in order to keep the RDF graph in sync with datasets in the network.
+There is a chance here to integrate with existing infrastructure in DataOne and this may be the best way to do things.
+In the existing system, when a dataset is added to a member node, a series of actions may be spun off, such as generating system metadata and replicating scientific metadata and the data itself to other nodes.
+It's easy to imagine kicking off another action to direct another piece of DataOne infrastructure to analyze the newly-added dataset for information relevant to the RDF graph of datasets.
+
+The alternative to this integrated service is to develop separate infrastructure which polls a coordinating node at regular intervals and initiates the necessary steps to update the RDF graph of datasets.
+
+Assume we have a single triple-store which contains all the triples for all datasets.
+Assume we have some URI database which stores already-minted URIs which can look up URIs by unique keys.
+What should happen when datasets change?
+Below I sketch out a number of scenarios and write out what should be done for each one:
+
+#### New Dataset, New People, new Organizations
+
+- Parse dataset, harvesting information on all concepts
+- Check whether the dataset already exists in the triple store
+  - Find it does not
+- Check with the URI database for People/Oorganization URIs
+  - Find there are all new People/Organizations
+    - Mint new People/Organization URIs
+- Generate triples and store them in the triple store
+
+#### New Dataset, Some New & Existing People, Some New & Existing Organizations
+
+- Parse dataset, harvesting information on all concepts
+- Check whether the dataset already exists in the triple store
+  - Find it does not exist
+- Check with the URI database for People/Oorganization URIs
+  - Find there are some existing, some new URIs
+    - Fetch existing URIs for existing People and Organizations
+    - Mint new People/Organization URIs for the new People and Organizations
+- Generate triples and store them in the triple store
+  - For each Person/Organization we already knew about, check whether their associated attributes (email, organization) that have been harvested from the current dataset are known.
+    - For attributes that are already known, do nothing.
+    - For attributes that are not known, added them to the triple store
+
+#### Existing Dataset, Existing People, Existing Organizations
+- Parse dataset, harvesting information on all concepts
+- Check whether the dataset already exists in the triple store
+  - Find it does exist
+  - Remove all triples related to the dataset
+- Check with the URI database for People/Oorganization URIs
+  - Find all People/Organizations already have URIs
+    - Fetch existing URIs for existing People and Organizations
+- Generate triples and store them in the triple store
+- For each Person/Organization, check whether their associated attributes (email, organization) that have been harvested from the current dataset are known.
+  - For attributes that are already known, do nothing.
+  - For attributes that are not known, added them to the triple store
+
+
+There are a number of steps that are always executed, and some that are executed conditionally.
+
+Always:
+- Parse dataset, harvesting information on all concepts
+- Check whether the dataset already exists in the triple store
+- Check with the URI database for People/Oorganization URIs
+- Generate triples and store them in the triple store
+- For each Person/Organization, check whether their associated attributes (email, organization) that have been harvested from the current dataset are known.
+  - For attributes that are already known, do nothing.
+  - For attributes that are not known, added them to the triple store
+
 Regarding #4 (above), when new HTTP URIs are created for a person or organization, that person or organization may exist in another system we operate. Ideally, at the time of creating a new HTTP URI also, we would find out of the person or organization we're creating a new HTTP URI for exists in other systems and make the appropriate associations. The key benefit of doing this would not just be directly linking, for example, someone in LDAP with their GeoLink HTTP URI but, instead, linking a someone in LDAP with datasets they created. In creating these linkages, it's important that no linkages that would result in changes to access privileges are made unless those changes are done through a secure system. For example, you wouldn't want to parse an EML document, find a person in LDAP with similar name, and allow that person to delete that dataset. It would be good to present linkages we have confidence in to the authenticated user (e.g. on LDAP) and allow them to confirm or deny sameness.
 
 Once the linkages are made, visiting a person's user account page (e.g. [http://dataone.org/people/brycemecum](http://dataone.org/people/brycemecum)) would show both datasets that certainly reference the user as well as datasets that may reference the user. These linkages could be confirmed or denied by the logging-in user. Linkages made in this way would still be imperfect because a user could mistakenly claim someone else's data when the data weren't uploaded with sufficiently unique identifying information. But if, for example, the dataset contained a DataOne URI or an ORCID and the user account had one of these identifiers, then the match between the user and the reference to a person in the dataset would be essentially certain (absent typos).

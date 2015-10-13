@@ -41,7 +41,10 @@ class Store():
 
 
     def mintURI(self, ns):
-        return "%s:urn:uri:%s" % (ns, str(uuid.uuid4()))
+        if ns not in self.ns:
+            raise Exception("URI string passed to mintURI that didn't exist in the namespace mappings.")
+
+        return "%s:urn:uri:%s" % (self.ns_interp(ns), str(uuid.uuid4()))
 
 
     def get_key(self, record):
@@ -78,9 +81,12 @@ class Store():
 
         This method does that interpolation using the class instance's
         namespaces.
+
+        Returns:
+            String, either modified or not.
         """
 
-        if self.ns is None or len(self.ns) == 0:
+        if self.ns is None:
             print "No namespaces to interpolate with."
             return text
 
@@ -158,9 +164,18 @@ class Store():
             print "Failed to add triple: Expected triple argument to be an array of size 3."
             return
 
+        """ Process object string.
+            If it doesn't start with a <, make it a string literal.
+        """
+        object_string = self.ns_interp(triple[2])
+
+        if not object_string.startswith("<"):
+            object_string = "'%s'" % object_string
+
+
         q = """
         INSERT DATA { %s %s %s }
-        """ % (self.ns_interp(triple[0]), self.ns_interp(triple[1]), self.ns_interp(triple[2]))
+        """ % (self.ns_interp(triple[0]), self.ns_interp(triple[1]), object_string)
         print q.strip()
         self.update(q)
 
@@ -367,7 +382,8 @@ class Store():
             last,email = key.split("#")
 
             if self.personExists(last, email):
-                person_uri = self.findPerson(last, email)
+                person_uri = "<%s>" % self.findPerson(last, email)
+                print "%s already existed. Using existing URI of %s." % (key, person_uri)
 
             else:
                 person_uri = self.mintURI('d1people')
@@ -376,14 +392,16 @@ class Store():
 
 
     def addOrganization(self, record):
+        print "ADD ORGANIZATION"
+
         key = record['name']
 
         if key is None:
             organization_uri = self.mintURI('d1org')
-
         else:
             if self.organizationExists(key):
-                organization_uri  = self.findOrganization(key)
+                organization_uri = "<%s>" % self.findOrganization(key)
+                print "%s already existed. Using existing URI of %s." % (key, organization_uri)
             else:
                 print "  notexist"
                 organization_uri = self.mintURI('d1org')
@@ -450,7 +468,7 @@ class Store():
             scheme = 'local-resource-identifier-scheme'
 
         self.add([id_blank_node, 'rdf:type', 'glview:Identifier'])
-        self.add([id_blank_node, 'glview:hasIdentifierValue', "'%s'" % identifier])
+        self.add([id_blank_node, 'glview:hasIdentifierValue', identifier])
         self.add([id_blank_node, 'rdfs:label', identifier])
         self.add([id_blank_node, 'glview:hasIdentifierScheme', 'datacite:'+scheme])
 
@@ -598,32 +616,35 @@ class Store():
         print "addPersonTriples"
 
         if 'salutation' in record:
-            self.add([uri, 'glview:namePrefix', "'%s'" % record['salutation']])
+            self.add([uri, 'glview:namePrefix', record['salutation']])
 
         if 'full_name' in record:
-            self.add([uri, 'glview:nameFull', "'%s'" % record['full_name']])
+            self.add([uri, 'glview:nameFull', record['full_name']])
 
         if 'first_name' in record:
-            self.add([uri, 'glview:nameGiven', "'%s'" % record['first_name']])
+            self.add([uri, 'glview:nameGiven', record['first_name']])
 
         if 'last_name' in record:
-            self.add([uri, 'glview:nameFamily', "'%s'" % record['last_name']])
+            self.add([uri, 'glview:nameFamily', record['last_name']])
 
-        #TODO
-        #find or mint org uri
-        # record['organization']
-        #
         if 'organization' in record:
-            if self.exists(['?s', 'rdfs:label', record['organization']]):
-                print 'exists'
-            # org_uri =
-            # self.add([uri, 'glview:hasAffiliation', org_uri])
+            print "organization is in record"
+            if self.organizationExists(record['organization']):
+                organization_uri = self.findOrganization(record['organization'])
+                print "used existing uri"
+            else:
+                organization_uri = self.mintURI('d1org')
+                print "minted new URI"
+
+            print organization_uri
+
+            self.add([uri, 'glview:hasAffiliation', organization_uri])
 
         if 'email' in record:
             self.add([uri, 'foaf:mbox', '<mailto:'+record['email']+'>'])
 
         if 'address' in record:
-            self.add([uri, 'glview:address', "'%s'" % record['address']])
+            self.add([uri, 'glview:address', record['address']])
 
         if 'document' in record:
             self.add([uri, 'glview:isCreatorOf', 'd1resolve:' + record['document']])
@@ -633,13 +654,13 @@ class Store():
         print "addOrganizationTriples"
 
         if 'name' in record:
-            self.add([uri, 'rdfs:label', "'%s'" % record['name']])
+            self.add([uri, 'rdfs:label', record['name']])
 
         if 'email' in record:
             self.add([uri, 'foaf:mbox', '<mailto:'+record['email']+'>'])
 
         if 'address' in record:
-            self.add([uri, 'glview:address', "'%s'" % record['address']])
+            self.add([uri, 'glview:address', record['address']])
 
         if 'document' in record:
             self.add([uri, 'glview:isCreatorOf', 'd1resolve:' + record['document']])
