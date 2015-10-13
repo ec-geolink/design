@@ -60,6 +60,21 @@ def main():
         print "Read in %d identifier mappings." % len(identifier_map)
         print identifier_table.head()
 
+    # Load formats map
+    print "Loading formats map from GitHub..."
+
+    formats_table = pandas.read_csv("https://raw.githubusercontent.com/ec-geolink/design/master/data/dataone/formats/formats.csv")
+
+    formats_map = {}
+
+    for row_num in range(formats_table.shape[0]):
+        fmt_id = formats_table['id'][row_num]
+        fmt_name = formats_table['name'][row_num]
+        fmt_type = formats_table['type'][row_num]
+        fmt_uri = formats_table['uri'][row_num]
+
+        formats_map[fmt_id] = { 'name': fmt_name, 'type': fmt_type, 'uri': fmt_uri }
+
     # Load triple stores
     d1people = store.Store("http://localhost:3030/", 'ds')
     d1orgs = store.Store("http://localhost:3131/", 'ds')
