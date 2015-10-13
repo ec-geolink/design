@@ -318,11 +318,10 @@ class Store():
         The subject argument should be a URI string.
         """
 
-        q = self.ns
-        q += """
+        q = """
         DELETE
-        WHERE { <%s> ?p ?o}
-        """ % subject
+        WHERE { %s ?p ?o}
+        """ % self.ns_interp(subject)
 
         r = self.update(q)
 
