@@ -456,6 +456,7 @@ class Store():
 
         self.add([id_blank_node, 'rdf:type', 'glview:Identifier'])
         self.add([id_blank_node, 'glview:hasIdentifierValue', identifier])
+        self.add([id_blank_node, 'glview:hasIdentifierValue', "'%s'" % identifier])
         self.add([id_blank_node, 'rdfs:label', identifier])
         self.add([id_blank_node, 'glview:hasIdentifierScheme', 'datacite:'+scheme])
 
