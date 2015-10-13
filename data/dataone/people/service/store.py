@@ -105,7 +105,7 @@ class Store():
 
         r = requests.get(self.query_url, params={ 'query': query.encode('utf-8') })
 
-        # print "Query (Status: %s): %s" % (r.status_code, query)
+        print query.strip()
 
         return r
 
@@ -162,7 +162,7 @@ class Store():
         q = """
         INSERT DATA { %s %s %s }
         """ % (self.ns_interp(triple[0]), self.ns_interp(triple[1]), self.ns_interp(triple[2]))
-        print q
+        print q.strip()
         self.update(q)
 
 
@@ -298,6 +298,7 @@ class Store():
         DELETE { ?s ?p ?o }
         WHERE { ?s ?p ?o}
         """
+        print q.strip()
 
         r = self.update(q)
 
