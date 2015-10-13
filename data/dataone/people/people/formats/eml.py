@@ -110,14 +110,14 @@ def processCreator(creator, document):
     if individual is not None:
         record['type'] = 'person'
 
-        for organization in organizations:
-            if organization.text is not None:
-                org_text = organization.text.strip()
-
-                new_record = record.copy()
-                new_record['type'] = 'organization'
-                new_record['organization'] = org_text
-                records.append(new_record)
+        # for organization in organizations:
+        #     if organization.text is not None:
+        #         org_text = organization.text.strip()
+        #
+        #         new_record = record.copy()
+        #         new_record['type'] = 'organization'
+        #         new_record['organization'] = org_text
+        #         records.append(new_record)
     else:
         record['type'] = 'organization'
 
