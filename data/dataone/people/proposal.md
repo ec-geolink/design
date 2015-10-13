@@ -4,12 +4,14 @@ email: mecum@nceas.ucsb.edu
 ---
 
 # Proposal for Handling DataOne People & Organizations
+
 ## Contents
+
 - [Overview](#overview)
+- [Timeline](#timeline)
 - [Finding unique people and organizations](#finding-unique-people-and-organizations)
 - [Minting new HTTP URIs](#minting-new-http-uris)
 - [Matching DataOne Accounts](#matching-dataone-accounts)
-- [Timeline](#timeline)
 - [Graph Service](#graph-service)
 - [Notes](#notes)
 
@@ -28,7 +30,16 @@ To generate an initial RDF graph dump for the GeoLink project, the above steps w
 
 This proposal serves as a working document describing the approach to accomplish the above tasks.
 
+## Timeline
+
+Creating the pieces outlined above will take a great deal of work as a whole but can be broken down into sequential deliverables with an attached timeline.
+- Create initial LOD graph of existing DataOne datasets: September 4: DONE
+- Create service which pulls new metadata and integrates it into the graph: September 18
+- Integrate with DataOne V2 API: TBD
+
+
 ## Finding unique people and organizations
+
 Determining whether two instances of a person (i.e. the strings "B Mecum" and "Bryce Mecum") refer to the same person is often referred to as record linkage or co-reference resolution. There is no universal solution that can be expected to work in all situations and it may be the case that many instances cannot be confidently linked. Two general approaches for record linkage might be used.
 - Static matching (i.e. if name is the same, both records refer to the same thing)
 - Machine learning (i.e. support vector machine on features such as Levenshtein distance)
@@ -261,11 +272,6 @@ In the above scenario, a user account might contain hierarchical person informat
 
 And from this hierarchical set of user information, we could link in datasets attributed to these people.
 
-## Timeline
-Creating the pieces outlined above will take a great deal of work as a whole but can be broken down into sequential deliverables with an attached timeline.
-- Create initial LOD graph of existing DataOne datasets: September 4: DONE
-- Create service which pulls new metadata and integrates it into the graph: September 18
-- Integrate with DataOne V2 API: TBD
 
 ## Notes
 Use of solr dateModified
