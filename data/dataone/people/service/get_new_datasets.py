@@ -27,10 +27,87 @@ from service import store
 from service import validator
 
 
+def extractCreators(identifier, document):
+    """
+    Detect the format of and extract people/organization creators from a document.
+
+    Arguments:
+        document:
+            An XML document
+
+    Returns:
+        List of records.
+    """
+
+    # Detect the format
+    metadata_format = processing.detectMetadataFormat(document)
+
+    # Process the document for people/orgs
+    if metadata_format == "eml":
+        records = eml.process(document, identifier)
+    elif metadata_format == "dryad":
+        records = dryad.process(document, identifier)
+    elif metadata_format == "fgdc":
+        records = fgdc.process(document, identifier)
+    else:
+        print "Unknown format."
+        records = []
+
+    return records
+
+
+def getSciMeta(identifier, identifier_map, cache_dir):
+    """
+    Retrieves scientific metadata from either a cache on the local filesystem
+    or the CN.
+
+    Returns:
+        An XML document
+    """
+
+    scimeta = None
+
+    if identifier in identifier_map:
+        mapped_filename = identifier_map[identifier]
+        mapped_file_path = cache_dir + mapped_filename
+
+        if os.path.isfile(mapped_file_path):
+            scimeta = ET.parse(mapped_file_path).getroot()
+            print 'getting document from cache'
+
+    if scimeta is None:
+        print "getting doc off cn"
+        scimeta = dataone.getDocument(identifier)
+
+    return scimeta
+
+
+def createIdentifierMap(path):
+    """
+    Converts a CSV of identifier<->filename mappings into a Dict.
+
+    Returns:
+        Dict of identifier<->filename mappings
+    """
+
+    identifier_map = None # Will be a docid <-> PID map
+
+    if os.path.isfile(path):
+        print "Loading identifiers map..."
+
+        identifier_table = pandas.read_csv(path)
+        identifier_map = dict(zip(identifier_table.guid, identifier_table.filepath))
+
+    return identifier_map
+
+
 def loadFormatsMap():
     """
     Gets the formats map from GitHub. These are the GeoLink URIs for the
     file format types DataOne knows about.
+
+    Returns:
+        A Dict of formats, indexed by format ID.
     """
 
     formats_table = pandas.read_csv("https://raw.githubusercontent.com/ec-geolink/design/master/data/dataone/formats/formats.csv")
@@ -59,23 +136,13 @@ def main():
     # Create from and to strings
     # from_string = config['last_run']
     # to_string = datetime.datetime.today().strftime("%Y-%m-%dT%H:%M:%S.0Z")
-
     from_string = "2015-01-06T16:00:00.0Z"
     to_string = "2015-01-06T16:05:00.0Z"
 
     # Load scimeta cache
     cache_dir = "/Users/mecum/src/d1dump/documents/"
-    identifier_map_filepath = "/Users/mecum/src/d1dump/idents.csv"
-    identifier_map = None # Will be a docid <-> PID map
-
-    if os.path.isfile(identifier_map_filepath):
-        print "Loading identifiers map..."
-
-        identifier_table = pandas.read_csv(identifier_map_filepath)
-        identifier_map = dict(zip(identifier_table.guid, identifier_table.filepath))
-
-        print "Read in %d identifier mappings." % len(identifier_map)
-        print identifier_table.head()
+    identifier_map = createIdentifierMap("/Users/mecum/src/d1dump/idents.csv")
+    print "Read in %d identifier mappings." % len(identifier_map)
 
     # Load formats map
     print "Loading formats map from GitHub..."
@@ -97,7 +164,6 @@ def main():
     # Create a record validator
     vld = validator.Validator()
 
-
     query_string = dataone.createSinceQuery(from_string, to_string, None, 0)
     num_results = dataone.getNumResults(query_string)
 
@@ -107,6 +173,7 @@ def main():
     if num_results % page_size > 0:
         num_pages += 1
 
+    # Establish which fields we want to get from the Solr index
     fields = ["identifier","title","abstract","author",
     "authorLastName", "origin","submitter","rightsHolder","documents",
     "resourceMap","authoritativeMN","obsoletes","northBoundCoord",
@@ -115,6 +182,7 @@ def main():
 
     print "Found %d documents over %d page(s)." % (num_results, num_pages)
 
+    # Process each page
     for page in range(1, num_pages + 1):
         print "Processing page %d." % page
 
@@ -125,37 +193,12 @@ def main():
             identifier = doc.find("./str[@name='identifier']").text
             print "Adding dataset for %s. " % identifier
 
-            scimeta = None
-
-            if identifier in identifier_map:
-                mapped_filename = identifier_map[identifier]
-                mapped_file_path = cache_dir + mapped_filename
-
-                if os.path.isfile(mapped_file_path):
-                    scimeta = ET.parse(mapped_file_path).getroot()
-                    print 'getting document from cache'
-
-            if scimeta is None:
-                print "getting doc off cn"
-                scimeta = dataone.getDocument(identifier)
+            scimeta = getSciMeta(identifier, identifier_map, cache_dir)
 
             if scimeta is None:
                 print "Unable to get scimeta for %s. Skipping." % identifier
-                raise Exception("Scimeta should never be none.")
 
-            # Detect the format
-            fmt = processing.detectMetadataFormat(scimeta)
-
-            # Process the document for people/orgs
-            if fmt == "eml":
-                records = eml.process(scimeta, identifier)
-            elif fmt == "dryad":
-                records = dryad.process(scimeta, identifier)
-            elif fmt == "fgdc":
-                records = fgdc.process(scimeta, identifier)
-            else:
-                print "Unknown format."
-                records = []
+            records = extractCreators(identifier, scimeta)
 
             print "Found %d record(s)." % len(records)
 
