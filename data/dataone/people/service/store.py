@@ -36,7 +36,10 @@ class Store():
             "glview": "http://schema.geolink.org/dev/view/",
             "d1people": "https://dataone.org/person/",
             "d1org": "https://dataone.org/organization/",
-            "d1resolve": "https://cn.dataone.org/cn/v1/resolve/"
+            "d1resolve": "https://cn.dataone.org/cn/v1/resolve/",
+            "prov": "http://www.w3.org/ns/prov#",
+            "d1node": "https://cn.dataone.org/cn/v1/node/",
+            "d1landing": "https://search.dataone.org/#view/"
         }
 
 
@@ -434,12 +437,16 @@ class Store():
     def addDatasetTriples(self, doc, scimeta, formats = {}):
         """
 
+        TODO:
+            submitter
+            rightsholder
+            funding
+            measurementType
         """
         identifier = doc.find(".//str[@name='identifier']").text
 
         # type Dataset
         self.add(['d1resolve:'+identifier, 'rdf:type', 'glview:Dataset'])
-
 
         # Title
         title_element = doc.find("./str[@name='title']")
@@ -471,7 +478,6 @@ class Store():
         self.add([id_blank_node, 'glview:hasIdentifierValue', identifier])
         self.add([id_blank_node, 'rdfs:label', identifier])
         self.add([id_blank_node, 'glview:hasIdentifierScheme', 'datacite:'+scheme])
-
         self.add(['d1resolve:'+identifier, 'glview:hasIdentifier', id_blank_node])
 
         # Abstract
@@ -480,9 +486,54 @@ class Store():
         if (abstract_element is not None):
             self.add(['d1resolve:'+identifier, 'glview:description', abstract_element.text])
 
+        # Spatial Coverage
+        bound_north = doc.find("./float[@name='northBoundCoord']")
+        bound_east = doc.find("./float[@name='eastBoundCoord']")
+        bound_south = doc.find("./float[@name='southBoundCoord']")
+        bound_west = doc.find("./float[@name='westBoundCoord']")
 
-        # For digital Object in this dataset
-        #self.addDigitalObject(identifier, digital_object, formats)
+        if all(ele is not None for ele in [bound_north, bound_east, bound_south, bound_west]):
+            if bound_north.text == bound_south.text and bound_west.text == bound_east.text:
+                wktliteral = "POINT (%s %s)" % (bound_north.text, bound_east.text)
+            else:
+                wktliteral = "POLYGON ((%s %s, %s %s, %s %s, %s, %s))" % (bound_west.text, bound_north.text, bound_east.text, bound_north.text, bound_east.text, bound_south.text, bound_west.text, bound_south.text)
+
+            self.add(['d1resolve:'+identifier, 'glview:hasGeometryAsWktLiteral', wktliteral])
+
+        # Temporal Coverage
+        start_date = doc.find("./date[@name='startDate']")
+        end_date = doc.find("./date[@name='endDate']")
+
+        if start_date is not None:
+            self.add(['d1base:'+identifier, 'glview:hasStartDate', start_date.text])
+
+        if end_date is not None:
+            self.add(['d1base:'+identifier, 'glview:hasEndDate', end_date.text])
+
+        # Repositories: authoritative, replica, origin
+        # Authoritative MN
+        repository_authMN = doc.find("./str[@name='authoritativeMN']")
+        self.add(['d1base:'+identifier, 'glview:hasAuthoritativeDigitalRepository', 'd1repo:'+repository_authMN.text])
+
+        # Replica MN's
+        repository_replicas = doc.findall("./arr[@name='replicaMN']/str")
+
+        for repo in repository_replicas:
+            self.add(['d1base:'+identifier, 'glview:hasReplicaDigitalRepository', 'd1repo:'+repository_authMN.text])
+
+        # Origin MN
+        repository_datasource = doc.find("./str[@name='datasource']")
+        self.add(['d1base:'+identifier, 'glview:hasOriginDigitalRepository', 'd1repo:'+repository_datasource.text])
+
+        # Obsoletes as PROV#wasRevisionOf
+        obsoletes_node = doc.find("./str[@name='obsoletes']")
+
+        if obsoletes_node is not None:
+            self.add(['d1base:'+identifier, 'prov:wasRevisionOf', 'd1resolve:'+obsoletes_node.text])
+
+        # Landing page
+        self.add(['d1base:'+identifier, 'glview:hasLandingPage', 'd1landing:'+identifier])
+
         # Digital Objects
         digital_objects = doc.findall("./arr[@name='documents']/str")
 
@@ -492,7 +543,11 @@ class Store():
 
     def addDigitalObject(self, identifier, digital_object, formats):
         """
+        This is a wrapper function around addDigitalObjectTriples so digital
+        objects can be removed when parent dataset is removed.
         """
+
+        # TODO: Delete if necessary
 
         self.addDigitalObjectTriples(identifier, digital_object, formats)
 
