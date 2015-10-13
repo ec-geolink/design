@@ -42,10 +42,6 @@ def main():
     from_string = "2015-01-06T16:00:00.0Z"
     to_string = "2015-01-06T16:05:00.0Z"
 
-    # Get document identifiers
-    identifiers = dataone.getDocumentIdentifiersSince(from_string, to_string)
-    print "Retrieved %d identifiers." % len(identifiers)
-
     # Load scimeta cache
     cache_dir = "/Users/mecum/src/d1dump/documents/"
     identifier_map_filepath = "/Users/mecum/src/d1dump/idents.csv"
@@ -80,6 +76,10 @@ def main():
     d1orgs = store.Store("http://localhost:3131/", 'ds')
     d1datasets = store.Store("http://localhost:3232/", 'ds')
 
+    # d1people.delete_all()
+    # d1orgs.delete_all()
+    # d1datasets.delete_all()
+
     print "d1people store initial size %s" % d1people.count()
     print "d1orgs store initial size %s" % d1orgs.count()
     print "d1datasets store initial size %s" % d1datasets.count()
@@ -87,13 +87,7 @@ def main():
     # Create a record validator
     vld = validator.Validator()
 
-    # Get documents themselves
-    for identifier in identifiers:
-        print "----------"
-        print "Getting document with identifier `%s`" % identifier
 
-        # Decide to grab from CN or from cache
-        doc = None
     query_string = dataone.createSinceQuery(from_string, to_string, None, 0)
     num_results = dataone.getNumResults(query_string)
 
@@ -111,53 +105,34 @@ def main():
 
     print "Found %d documents over %d page(s)." % (num_results, num_pages)
 
-        if identifier in identifier_map:
-            mapped_filename = identifier_map[identifier]
-            mapped_file_path = cache_dir + mapped_filename
     for page in range(1, num_pages + 1):
-        doc = dataone.getSincePage(from_string, to_string, fields, page, page_size)
+        print "Processing page %d." % page
 
-            if os.path.isfile(mapped_file_path):
-                doc = ET.parse(mapped_file_path).getroot()
-        docs = doc.findall(".//doc")
+        page_xml = dataone.getSincePage(from_string, to_string, fields, page, page_size)
+        docs = page_xml.findall(".//doc")
 
-        if doc is None:
-            doc = dataone.getDocument(identifier)
         for doc in docs:
             identifier = doc.find("./str[@name='identifier']").text
             print "Adding dataset for %s. " % identifier
 
-        # Detect the format
-        fmt = processing.detectMetadataFormat(doc)
             scimeta = None
 
-        # Process the document for people/orgs
-        if fmt == "eml":
-            records = eml.process(doc, identifier)
-        elif fmt == "dryad":
-            records = dryad.process(doc, identifier)
-        elif fmt == "fgdc":
-            records = fgdc.process(doc, identifier)
-        else:
-            print "Unknown format."
             if identifier in identifier_map:
                 mapped_filename = identifier_map[identifier]
                 mapped_file_path = cache_dir + mapped_filename
 
-        print "Found %d record(s)." % len(records)
                 if os.path.isfile(mapped_file_path):
                     scimeta = ET.parse(mapped_file_path).getroot()
                     print 'getting document from cache'
 
-        # Add records and organizations
-        people = [p for p in records if 'type' in p and p['type'] == 'person']
-        organizations = [o for o in records if 'type' in o and o['type'] == 'organization']
             if scimeta is None:
                 print "getting doc off cn"
                 scimeta = dataone.getDocument(identifier)
 
-        for organization in organizations:
-            organization = vld.validate(organization)
+            if scimeta is None:
+                print "Unable to get scimeta for %s. Skipping." % identifier
+                raise Exception("Scimeta should never be none.")
+
             # Detect the format
             fmt = processing.detectMetadataFormat(scimeta)
 
@@ -174,23 +149,17 @@ def main():
                 print "Unknown format."
                 records = []
 
-            d1orgs.addOrganization(organization)
             print "Found %d record(s)." % len(records)
 
-        for person in people:
-            person = vld.validate(person)
             # Add records and organizations
             people = [p for p in records if 'type' in p and p['type'] == 'person']
             organizations = [o for o in records if 'type' in o and o['type'] == 'organization']
 
-            if person is None:
-                continue
             # Always do organizations first, so peoples' organization URIs exist
             for organization in organizations:
                 organization = vld.validate(organization)
                 d1orgs.addOrganization(organization)
 
-            d1people.addPerson(person)
             for person in people:
                 person = vld.validate(person)
                 d1people.addPerson(person)
