@@ -649,17 +649,26 @@ class Store():
         # Dataset itself
         self.delete_by_subject('d1resolve:'+identifier)
 
+        # The Dataset's identifier
+        delete_identifier_query = """
+        DELETE
+        WHERE {
+            ?b ?p ?o .
+            ?b %s '%s'
+        }
+        """ % (self.ns_interp('glview:'+'hasIdentifierValue'), identifier)
+
+        print delete_identifier_query
+
+        self.update(delete_identifier_query)
+
         # Digital Objects
         digital_objects = doc.findall("./arr[@name='documents']/str")
 
         for digital_object in digital_objects:
             self.delete_by_subject('d1resolve:'+digital_object.text)
 
-        # Identifier
-
-
         # Remove any isCreatorOf for this dataset
-
         creator_of = self.find({'glview:isCreatorOf':'d1resolve:'+identifier})
 
         if len(creator_of) == 1:
