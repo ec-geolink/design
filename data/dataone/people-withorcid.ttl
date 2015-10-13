@@ -11,6 +11,7 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 
 <https://dataone.org/person/000b862b-186f-4232-95da-f32efebe5bdf>
+    a glview:Person ;
     glview:isCreatorOf <http://dx.doi.org/10.5061/dryad.mj226/3?ver=2015-01-12T17:47:29.899-05:00> ;
     glview:nameFamily "Boettiger" ;
     glview:nameFull "Carl Boettiger" ;
