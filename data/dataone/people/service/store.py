@@ -264,7 +264,7 @@ class Store():
         """
 
         condition = {
-            'rdf:label': name,
+            'rdfs:label': name,
         }
 
         find_result = self.find(condition)
@@ -433,7 +433,7 @@ class Store():
 
         if title_element is not None:
             self.add(['d1resolve:'+identifier, 'glview:title', title_element.text])
-            self.add(['d1resolve:'+identifier, 'rdf:label', title_element.text])
+            self.add(['d1resolve:'+identifier, 'rdfs:label', title_element.text])
 
         # Add glview Identifier
         id_blank_node = "<_:%s>" % identifier
@@ -600,7 +600,7 @@ class Store():
         # if 'organization' in record:
         #     self.add([uri, 'glview:nameFull', ])
         if 'organization' in record:
-            if self.exists(['?s', 'rdf:label', record['organization']]):
+            if self.exists(['?s', 'rdfs:label', record['organization']]):
                 print 'exists'
             # org_uri =
             # self.add([uri, 'glview:hasAffiliation', org_uri])
@@ -619,7 +619,7 @@ class Store():
         print "addOrganizationTriples"
 
         if 'name' in record:
-            self.add([uri, 'rdf:label', "'%s'" % record['name']])
+            self.add([uri, 'rdfs:label', "'%s'" % record['name']])
 
         if 'email' in record:
             self.add([uri, 'foaf:mbox', '<mailto:'+record['email']+'>'])
