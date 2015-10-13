@@ -76,9 +76,9 @@ def main():
     d1orgs = store.Store("http://localhost:3131/", 'ds')
     d1datasets = store.Store("http://localhost:3232/", 'ds')
 
-    # d1people.delete_all()
-    # d1orgs.delete_all()
-    # d1datasets.delete_all()
+    d1people.delete_all()
+    d1orgs.delete_all()
+    d1datasets.delete_all()
 
     print "d1people store initial size %s" % d1people.count()
     print "d1orgs store initial size %s" % d1orgs.count()
@@ -136,8 +136,6 @@ def main():
             # Detect the format
             fmt = processing.detectMetadataFormat(scimeta)
 
-            if organization is None:
-                continue
             # Process the document for people/orgs
             if fmt == "eml":
                 records = eml.process(scimeta, identifier)
@@ -164,8 +162,7 @@ def main():
                 person = vld.validate(person)
                 d1people.addPerson(person)
 
-        # store.addDataset(identifier)
-            d1datasets.addDataset(doc)
+            d1datasets.addDataset(doc, scimeta, formats_map)
 
 
     d1people.export("d1people.ttl")
