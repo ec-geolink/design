@@ -294,10 +294,19 @@ class Store():
         Delete all triples in the dataset.
         """
 
+        self.delete(['?s', '?p', '?o'])
+
+
+    def delete(self, triple):
+        """
+        Deletes a triple.
+        """
+
         q = """
         DELETE { ?s ?p ?o }
-        WHERE { ?s ?p ?o}
-        """
+        WHERE { %s %s %s }
+        """ % (self.ns_interp(triple[0]), self.ns_interp(triple[1]), self.ns_interp(triple[2]))
+
         print q.strip()
 
         r = self.update(q)
