@@ -15,7 +15,9 @@ email: mecum@nceas.ucsb.edu
 - [Graph Service](#graph-service)
 - [Notes](#notes)
 
+
 ## Overview
+
 The linked open data (LOD) graph for the datasets that exist in DataOne's network is nearly complete. However, resources of type `glview:People` and `glview:Organization` are not represented as HTTP URIs but they need to be in order for our RDF graph to be an LOD RDF graph. Instances of these two concepts present in DataOne datasets often are represented by the person or organization's name but do not come with existing HTTP URIs we can re-use in our graph. Therefore, new HTTP URIs will need to be created for instances of people and organizations that across datasets in the DataOne network.
 
 Complicating this task, many instances of a person or organization present in the metadata may actually refer to the same person or organization. When this is the case, we don't want to mint separate HTTP URIs for each instance of the same person or organization and instead we want to re-use existing HTTP URIs when appropriate.
@@ -46,7 +48,8 @@ Determining whether two instances of a person (i.e. the strings "B Mecum" and "B
 
 I have experimented with both approaches and found value in both but I have also found limitations in both. Static matching is simple to understand and implement but it can be hard to add enough flexibility to handle common problems such as typographical errors or abbreviations in names. The machine learning approach is easy to implement but is a black box solution. However, this approach offers a great deal of flexibility. For the initial implementation of the tool that performs this task, only static matching will be used. The machine learning approach may be re-visited later on for use within this workflow or as a separate workflow which tries to establish linkages between existing HTTP URIs.
 
-### Proposed Approach
+Proposed Approach:
+
 1. Get a set of datasets (either from a dump or from the CN's Solr index)
 2. Pre-process those datasets
 3. Generate derived fields (i.e. full name = salutation + givenName + surName)
@@ -55,14 +58,17 @@ I have experimented with both approaches and found value in both but I have also
 6. Detect false positives
 
 ## Minting new HTTP URIs
+
 ### Minting Principles:
+
 - It's okay if the same person has multiple HTTP URIs. We can later assert their sameness with something like `owl:sameAs`.
 - Never assert two instances of a person or organization are the same person or organization (no false positives)
 - URIs exist forever (URIs are never recycled or deleted)
 - What those HTTP URIs resolve to may change
   - This is especially import because the DataOne API may change but we don't want these URIs to ever change and we will want them to resolve to the active/latest API.
 
-### Proposed Approach
+Proposed Approach:
+
 While it may seem reasonable to take a person in metadata record with the full name 'Bryce Mecum' and mint a nice HTTP URI like `https://www.dataone.org/people/brycemecum`, it is not feasible to do this for every person or organization given how many possible name collisions are possible, the vast number of non-ASCII characters present in names (i.e. 象形字), and the presence of datasets where only a last named was filled in. Universally Unique Identifiers (UUIDs) are a potential option.
 - People URIs at `https://dataone.org/person/`
   - i.e. `https://dataone.org/person/urn:uuid:123e4567-e89b-12d3-a456-426655440000`
@@ -81,7 +87,9 @@ Summary:
 - If we can match with 100% certainty to a DataOne account (i.e. both have an ORCID), re-use their user account portal URI (e.g. /people/brycemecum).
 - If we cannot match them with 100% confidence but have more than 0% confidence, assert a property named something like `:couldBeSameAs`.
 
+
 ## Matching DataOne Accounts
+
 Performing this record linkage activity for GeoLink project could be considered useful in and of itself. However, we have the opportunity to make this even more useful by integrating it with work already being done at DataOne on linking authenticated user accounts together. Users who directly interact with the DataOne network may have records in one or more authentication systems (e.g. LDAP) operated by DataOne. Any particular person, by having interacted with DataOne in multiple ways over time, may exist in multiple authentication systems and, therefore, have multiple accounts associated with themselves. DataOne is working on a manual tool for users to bundle their multiple accounts together under a single account. This record linkage activity within DataOne is useful because DataOne wants to be able to link scholarly work to people and having multiple accounts per person could splinter their scholarly work across multiple accounts. As for a person's datasets, they are often associated with a single account by virtue of the way metadata/data are uploaded and won't be immediately linked to that user's accounts in other authentication systems. This could change in the future if tools for uploading data to DataOne change but it remains a problem for now. Without the link between authentication systems, a person may not be able to find all of the datasets they have uploaded over time which would lessen the utility of what DataOne is offering.
 
 The previous activity only solves the problem of linking users to their datasets for users that directly interact with the DataOne authentication systems. This is a very small subset of all the people and organizations who exist within metadata records. The work being done in the GeoLink project nicely fills this gap because we are already harvesting instances of people and organizations from the metadata in the DataOne network.
@@ -92,8 +100,9 @@ In these cases where the match is not certain, we will use a different semantic 
 
 See [Service Integration](#service-integration) for a description of how the linkage between DataOne accounts and instances of people and organizations could be done.
 
-## The Service
-The service needs to run continuously and know about two things. The first is what datasets are new or updated since the last graph was created. This can be done with a Solr query like:
+## Graph Service
+
+The graph service needs to run continuously and know about two things. The first is what datasets are new or updated since the last graph was created. This can be done with a Solr query like:
 
 ```{text}
 https://cn.dataone.org/cn/v1/query/solr/?q=dateUploaded:[2015-05-30T23:21:15.567Z%20TO%202015-08-21T00:00:00.0Z]
