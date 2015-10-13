@@ -324,8 +324,7 @@ class Store():
         The object argument should be a URI string.
         """
 
-        q = self.ns
-        q += """
+        q = """
         DELETE
         WHERE { ?s ?p <%s> }
         """ % object
