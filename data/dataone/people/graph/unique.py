@@ -11,6 +11,7 @@ import unicodecsv
 import json
 import os.path
 import sys
+import uuid
 
 
 def uniquify(filename, type):
@@ -40,7 +41,8 @@ def uniquify(filename, type):
                            "document",
                            "type",
                            "source",
-                           "format"]
+                           "format",
+                           "uri"]
 
     organization_field_names = ["Id",
                                  "name",
@@ -55,7 +57,8 @@ def uniquify(filename, type):
                                  "document",
                                  "type",
                                  "source",
-                                 "format"]
+                                 "format",
+                                 "uri"]
 
     # Do the processing
     if type == "people":
@@ -104,7 +107,7 @@ def uniquifyPeople(input_file, output_file, field_names):
             key = key.encode('utf-8')
 
         if key is None:
-            unmatched.append({'records': row})
+            unmatched.append({'records': row, 'uri': str(uuid.uuid4())})
         else:
             if key in seen:
                 row['same'] = key
@@ -114,6 +117,9 @@ def uniquifyPeople(input_file, output_file, field_names):
 
                 if 'records' not in seen[key]:
                     seen[key]['records'] = []
+
+                if 'uri' not in seen[key]:
+                    seen[key]['uri'] = str(uuid.uuid4())
 
                 seen[key]['records'].append(row)
 
@@ -161,9 +167,10 @@ def uniquifyOrganizations(input_file, output_file, field_names):
 
             if key in seen:
                 row['same'] = key
+                row['uri'] = str(uuid.uuid4())
                 seen[key]['records'].append(row)
             else:
-                seen[key] = { 'records': [ row ] }
+                seen[key] = { 'records': [ row ], 'uri': str(uuid.uuid4())}
 
         output_writer.writerow(row)
 
