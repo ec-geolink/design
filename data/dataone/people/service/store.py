@@ -206,12 +206,12 @@ class Store():
         where_strings = []
 
         for predicate in conditions:
-            object_string = conditions[predicate]
+            object_string = self.ns_interp(conditions[predicate])
 
             if not object_string.startswith("<"):
                 object_string = "'%s'" % object_string
 
-            where_string = "?subject %s %s" % (self.ns_interp(predicate), self.ns_interp(object_string))
+            where_string = "?subject %s %s" % (self.ns_interp(predicate), object_string)
             where_strings.append(where_string)
 
         where_clause = " WHERE { %s }" % " . ".join(where_strings)
