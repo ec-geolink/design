@@ -116,7 +116,6 @@ class Store():
         """
 
         r = requests.post(self.update_url, data=query.encode('utf-8'))
-
         return r
 
 
@@ -185,9 +184,6 @@ class Store():
             return True
 
         return False
-
-
-
 
 
     def find(self, conditions):
@@ -345,10 +341,6 @@ class Store():
         Exports the Store as a Turtle file.
         """
 
-        if os.path.isfile(filename):
-            print "File at `%s` already exists. Delete this file first." % filename
-            return
-
         q = """
         DESCRIBE ?s ?p ?o
         WHERE { ?s ?p ?o }
@@ -399,8 +391,6 @@ class Store():
         self.addOrganizationTriples(organization_uri, record)
 
 
-    def addDataset(self):
-    def addDataset(self, doc):
     def addDataset(self, doc, scimeta, formats = {}):
         """
         This method needs to determine if the dataset is already in the graph.
@@ -421,8 +411,6 @@ class Store():
             self.deleteDatasetTriples(doc, scimeta, formats)
 
         self.addDatasetTriples(doc, scimeta, formats)
-
-
 
 
     def addDatasetTriples(self, doc, scimeta, formats = {}):
@@ -462,7 +450,6 @@ class Store():
             scheme = 'local-resource-identifier-scheme'
 
         self.add([id_blank_node, 'rdf:type', 'glview:Identifier'])
-        self.add([id_blank_node, 'glview:hasIdentifierValue', identifier])
         self.add([id_blank_node, 'glview:hasIdentifierValue', "'%s'" % identifier])
         self.add([id_blank_node, 'rdfs:label', identifier])
         self.add([id_blank_node, 'glview:hasIdentifierScheme', 'datacite:'+scheme])
@@ -626,8 +613,6 @@ class Store():
         #find or mint org uri
         # record['organization']
         #
-        # if 'organization' in record:
-        #     self.add([uri, 'glview:nameFull', ])
         if 'organization' in record:
             if self.exists(['?s', 'rdfs:label', record['organization']]):
                 print 'exists'
@@ -668,8 +653,5 @@ if __name__ == "__main__":
     s-put http://localhost:3030/ds/data default ../../people.ttl
     """
 
-    s = Store("http://localhost:3030/", 'ds')
-
-    print s.count()
-
-    # s.export("people_and_organizations.ttl")
+    s = Store("http://localhost:3131/", 'ds')
+    s.delete(['?s', '?p', '?o'])
