@@ -443,7 +443,7 @@ class Store():
             self.add(['d1resolve:'+identifier, 'rdfs:label', title_element.text])
 
         # Add glview Identifier
-        id_blank_node = "<_:%s>" % identifier
+        id_blank_node = "<_:%s#identifier>" % identifier
 
         # Determine identifier scheme
         if (identifier.startswith("doi:") |
