@@ -27,6 +27,27 @@ from service import store
 from service import validator
 
 
+def loadFormatsMap():
+    """
+    Gets the formats map from GitHub. These are the GeoLink URIs for the
+    file format types DataOne knows about.
+    """
+
+    formats_table = pandas.read_csv("https://raw.githubusercontent.com/ec-geolink/design/master/data/dataone/formats/formats.csv")
+
+    formats_map = {}
+
+    for row_num in range(formats_table.shape[0]):
+        fmt_id = formats_table['id'][row_num]
+        fmt_name = formats_table['name'][row_num]
+        fmt_type = formats_table['type'][row_num]
+        fmt_uri = formats_table['uri'][row_num]
+
+        formats_map[fmt_id] = { 'name': fmt_name, 'type': fmt_type, 'uri': fmt_uri }
+
+    return formats_map
+
+
 def main():
     # Settings
     config = util.loadJSONFile('settings.json')
@@ -58,18 +79,7 @@ def main():
 
     # Load formats map
     print "Loading formats map from GitHub..."
-
-    formats_table = pandas.read_csv("https://raw.githubusercontent.com/ec-geolink/design/master/data/dataone/formats/formats.csv")
-
-    formats_map = {}
-
-    for row_num in range(formats_table.shape[0]):
-        fmt_id = formats_table['id'][row_num]
-        fmt_name = formats_table['name'][row_num]
-        fmt_type = formats_table['type'][row_num]
-        fmt_uri = formats_table['uri'][row_num]
-
-        formats_map[fmt_id] = { 'name': fmt_name, 'type': fmt_type, 'uri': fmt_uri }
+    formats_map = loadFormatsMap()
 
     # Load triple stores
     d1people = store.Store("http://localhost:3030/", 'ds')
