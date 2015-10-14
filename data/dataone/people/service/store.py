@@ -30,8 +30,12 @@ class Store():
 
     def ns_interp(self, text):
         """
-        Helper function to call self.ns_interp without having to specify
+        Helper function to call util.ns_interp without having to specify
         namespaces.
+
+        Arguments:
+            text: str
+                The text to interpolate, i.e., 'example:foo'
         """
 
         return util.ns_interp(text, self.ns)
@@ -257,4 +261,3 @@ if __name__ == "__main__":
     """
 
     s = Store("http://localhost:3131/", 'ds')
-    print type(s)
