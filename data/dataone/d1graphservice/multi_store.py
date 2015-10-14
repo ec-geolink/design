@@ -186,7 +186,7 @@ class MultiStore():
         if any(['d1resolve:'+urllib.quote_plus(identifier), '?p', '?o']):
             self.deleteDatasetTriples(doc, scimeta, formats)
 
-        self.addDatasetTriples(doc, scimeta, formats)
+        # self.addDatasetTriples(doc, scimeta, formats)
 
 
     def addDatasetTriples(self, doc, scimeta, formats = {}):
@@ -414,7 +414,17 @@ class MultiStore():
         if 'datasets' not in self.stores:
             raise Exception("Datasets store not found.")
 
-        store = self.stores['datasets']
+        datasets = self.stores['datasets']
+
+        if 'people' not in self.stores:
+            raise Exception("People store not found.")
+
+        people = self.stores['people']
+
+        if 'organizations' not in self.stores:
+            raise Exception("Organizations store not found.")
+
+        organizations = self.stores['organizations']
 
 
         identifier = doc.find(".//str[@name='identifier']").text
@@ -432,22 +442,27 @@ class MultiStore():
         }
         """ % (self.ns_interp('glview:'+'hasIdentifierValue'), identifier)
 
-        print delete_identifier_query
-
-        store.update(delete_identifier_query)
+        datasets.update(delete_identifier_query)
 
         # Digital Objects
-        digital_objects = doc.findall("./arr[@name='documents']/str")
+        delete_digital_objects_query = """
+        DELETE
+        WHERE {
+            ?s %s %s
+        }
+        """ % (self.ns_interp('glview:'+'isPartOf'), self.ns_interp('d1resolve:'+urllib_quote_plus(identifier)))
 
-        for digital_object in digital_objects:
-            store.delete_by_subject('d1resolve:'+digital_object.text)
+        datasets.update(delete_digital_objects_query)
 
         # Remove any isCreatorOf for this dataset
-        creator_of = store.find({'glview:isCreatorOf':'d1resolve:'+identifier})
+        # In both people and organizations
 
-        if len(creator_of) == 1:
-            existing_uri = creator_of[0]['subject']['value']
-            s.delete([existing_uri, 'glview:isCreatorOf', 'd1resolve:'+identifier])
+        delete_is_creator_of_query = """
+        DELETE
+        WHERE {
+            ?s %s %s
+        }
+        """ % (self.ns_interp('glview:'+'isCreatorOf'), self.ns_interp('d1resolve:'+urllib_quote_plus(identifier)))
 
 
     def addPersonTriples(self, uri, record):

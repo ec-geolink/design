@@ -105,8 +105,6 @@ class Store():
             If it doesn't start with a <, make it a string literal.
         """
 
-        print triple
-
         object_string = self.ns_interp(triple[2])
 
         if object_string is None:
