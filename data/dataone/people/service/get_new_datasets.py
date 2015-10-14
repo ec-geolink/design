@@ -164,7 +164,8 @@ def main():
         "d1resolve": "https://cn.dataone.org/cn/v1/resolve/",
         "prov": "http://www.w3.org/ns/prov#",
         "d1node": "https://cn.dataone.org/cn/v1/node/",
-        "d1landing": "https://search.dataone.org/#view/"
+        "d1landing": "https://search.dataone.org/#view/",
+        "d1repo": "https://cn.dataone.org/cn/v1/node/"
     }
 
     stores = {
