@@ -450,7 +450,7 @@ class MultiStore():
         WHERE {
             ?s %s %s
         }
-        """ % (self.ns_interp('glview:'+'isPartOf'), self.ns_interp('d1resolve:'+urllib_quote_plus(identifier)))
+        """ % (self.ns_interp('glview:'+'isPartOf'), self.ns_interp('d1resolve:'+urllib.quote_plus(identifier)))
 
         datasets.update(delete_digital_objects_query)
 
@@ -462,7 +462,7 @@ class MultiStore():
         WHERE {
             ?s %s %s
         }
-        """ % (self.ns_interp('glview:'+'isCreatorOf'), self.ns_interp('d1resolve:'+urllib_quote_plus(identifier)))
+        """ % (self.ns_interp('glview:'+'isCreatorOf'), self.ns_interp('d1resolve:'+urllib.quote_plus(identifier)))
 
 
     def addPersonTriples(self, uri, record):
