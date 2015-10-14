@@ -431,7 +431,7 @@ class MultiStore():
         identifier_esc = urllib.quote_plus(identifier)
 
         # Dataset itself
-        store.delete_by_subject('d1resolve:'+identifier_esc)
+        datasets.delete_by_subject('d1resolve:'+identifier_esc)
 
         # The Dataset's identifier
         delete_identifier_query = """
