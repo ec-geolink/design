@@ -6,7 +6,6 @@
 """
 
 import re
-from people import find
 
 
 def process(xmldoc, document):

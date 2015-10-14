@@ -17,9 +17,9 @@ import re
 import xml.etree.ElementTree as ET
 from xml.etree.ElementTree import ParseError
 
-from people.formats import eml
-from people.formats import dryad
-from people.formats import fgdc
+from d1graphservice.people.formats import eml
+from d1graphservice.people.formats import dryad
+from d1graphservice.people.formats import fgdc
 
 
 def processDirectory(job):

@@ -5,7 +5,7 @@ Functions related to querying the DataOne v1 API.
 """
 
 
-from service import util
+from d1graphservice import util
 
 
 def getNumResults(query):

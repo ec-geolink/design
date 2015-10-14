@@ -9,7 +9,7 @@ to separate RDF/XML or TTL files.
 import urllib
 import uuid
 
-from service import util
+from d1graphservice import util
 
 
 class MultiStore():

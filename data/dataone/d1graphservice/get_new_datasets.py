@@ -14,18 +14,18 @@ import uuid
 import pandas
 import xml.etree.ElementTree as ET
 
-from people import processing
-from people.formats import eml
-from people.formats import dryad
-from people.formats import fgdc
+from d1graphservice.people import processing
 
-from service import settings
-from service import dataone
-from service import util
-from service import dedupe
-from service import validator
-from service import store
-from service import multi_store
+from d1graphservice import settings
+from d1graphservice import dataone
+from d1graphservice import util
+from d1graphservice import validator
+from d1graphservice import store
+from d1graphservice import multi_store
+
+from d1graphservice.people.formats import eml
+from d1graphservice.people.formats import dryad
+from d1graphservice.people.formats import fgdc
 
 
 def extractCreators(identifier, document):

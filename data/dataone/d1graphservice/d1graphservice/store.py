@@ -2,7 +2,7 @@ import requests
 import os
 import uuid
 
-from service import util
+from d1graphservice import util
 
 
 class Store():
