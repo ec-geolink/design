@@ -72,3 +72,38 @@ def saveJSONFile(content, filename):
                             sort_keys=True,
                             indent=2,
                             separators=(',', ': ')))
+
+
+def ns_interp(text, ns=None):
+    """
+    Triple strings (e.g. foo:Bar) have to be expanded because SPARQL queries
+    can't handle the subject of a triple being
+
+        d1resolve:doi:10.6073/AA/knb-lter-pie.77.3
+
+    but can handle
+
+        <https://cn.dataone.org/cn/v1/resolve/doi:10.6073/AA/knb-lter-pie.77.3>
+
+    This method does that interpolation using the class instance's
+    namespaces.
+
+    Returns:
+        String, either modified or not.
+    """
+
+    if ns is None:
+        return text
+
+    colon_index = text.find(":")
+
+    if len(text) <= colon_index + 1:
+        return text
+
+    namespace = text[0:colon_index]
+    rest = text[(colon_index)+1:]
+
+    if namespace not in ns:
+        return text
+
+    return "<%s%s>" % (ns[namespace], rest)

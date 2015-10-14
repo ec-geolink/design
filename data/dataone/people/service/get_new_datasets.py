@@ -23,8 +23,9 @@ from service import settings
 from service import dataone
 from service import util
 from service import dedupe
-from service import store
 from service import validator
+from service import store
+from service import multi_store
 
 
 def extractCreators(identifier, document):
@@ -149,17 +150,32 @@ def main():
     formats_map = loadFormatsMap()
 
     # Load triple stores
-    d1people = store.Store("http://localhost:3030/", 'ds')
-    d1orgs = store.Store("http://localhost:3131/", 'ds')
-    d1datasets = store.Store("http://localhost:3232/", 'ds')
+    namespaces = {
+        "foaf": "http://xmlns.com/foaf/0.1/",
+        "dcterms": "http://purl.org/dc/terms/",
+        "datacite": "http://purl.org/spar/datacite/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "glview": "http://schema.geolink.org/dev/view/",
+        "d1people": "https://dataone.org/person/",
+        "d1org": "https://dataone.org/organization/",
+        "d1resolve": "https://cn.dataone.org/cn/v1/resolve/",
+        "prov": "http://www.w3.org/ns/prov#",
+        "d1node": "https://cn.dataone.org/cn/v1/node/",
+        "d1landing": "https://search.dataone.org/#view/"
+    }
 
-    d1people.delete_all()
-    d1orgs.delete_all()
-    d1datasets.delete_all()
+    stores = {
+        'people': store.Store("http://localhost:3030/", 'ds', namespaces),
+        'organizations': store.Store("http://localhost:3131/", 'ds', namespaces),
+        'datasets': store.Store("http://localhost:3232/", 'ds', namespaces)
+    }
 
-    print "d1people store initial size %s" % d1people.count()
-    print "d1orgs store initial size %s" % d1orgs.count()
-    print "d1datasets store initial size %s" % d1datasets.count()
+
+
+    stores = multi_store.MultiStore(stores, namespaces)
 
     # Create a record validator
     vld = validator.Validator()
@@ -209,18 +225,16 @@ def main():
             # Always do organizations first, so peoples' organization URIs exist
             for organization in organizations:
                 organization = vld.validate(organization)
-                d1orgs.addOrganization(organization)
+                stores.addOrganization(organization)
 
             for person in people:
                 person = vld.validate(person)
-                d1people.addPerson(person)
+                stores.addPerson(person)
 
-            d1datasets.addDataset(doc, scimeta, formats_map)
+            stores.addDataset(doc, scimeta, formats_map)
 
 
-    d1people.export("d1people.ttl")
-    d1orgs.export("d1orgs.ttl")
-    d1datasets.export("d1datasets.ttl")
+    stores.save()
 
     # Save settings
     # config['last_run'] = to_string
