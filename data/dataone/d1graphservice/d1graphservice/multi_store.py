@@ -134,6 +134,9 @@ class MultiStore():
 
 
     def addPerson(self, record):
+        if record is None:
+            return
+
         key = self.get_key(record)
 
         if key is None:
@@ -152,6 +155,9 @@ class MultiStore():
 
 
     def addOrganization(self, record):
+        if record is None:
+            return
+
         key = self.get_key(record)
 
         if key is None:
@@ -181,6 +187,11 @@ class MultiStore():
 
         print "addDataset"
 
+        if doc is None:
+            raise Exception("Attemtped to add a dataset without sysmeta information.")
+
+        if scimeta is None:
+            raise Exception("Attempted to add a dataset without scientific metadata.")
         if any(['d1resolve:'+urllib.quote_plus(identifier), '?p', '?o']):
             self.deleteDatasetTriples(doc, scimeta, formats)
 
@@ -274,7 +285,9 @@ class MultiStore():
         # Repositories: authoritative, replica, origin
         # Authoritative MN
         repository_authMN = doc.find("./str[@name='authoritativeMN']")
-        store.add(['d1resolve:'+identifier_esc, 'glview:hasAuthoritativeDigitalRepository', 'd1repo:'+repository_authMN.text])
+
+        if repository_authMN is not None:
+            store.add(['d1resolve:'+identifier_esc, 'glview:hasAuthoritativeDigitalRepository', 'd1repo:'+repository_authMN.text])
 
         # Replica MN's
         repository_replicas = doc.findall("./arr[@name='replicaMN']/str")
@@ -539,6 +552,9 @@ class MultiStore():
         """
 
         key = None
+
+        if record is None:
+            return key
 
         if 'type' not in record:
             return key
