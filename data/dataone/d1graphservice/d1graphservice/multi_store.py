@@ -10,6 +10,7 @@ import urllib
 import uuid
 
 from d1graphservice import util
+from d1graphservice import dataone
 
 
 class MultiStore():
@@ -192,6 +193,7 @@ class MultiStore():
 
         if scimeta is None:
             raise Exception("Attempted to add a dataset without scientific metadata.")
+        identifier = dataone.getDocumentIdentifier(doc)
         if any(['d1resolve:'+urllib.quote_plus(identifier), '?p', '?o']):
             self.deleteDatasetTriples(doc, scimeta, formats)
 
