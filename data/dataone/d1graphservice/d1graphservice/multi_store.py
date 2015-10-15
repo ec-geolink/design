@@ -179,8 +179,6 @@ class MultiStore():
                 XML from the <doc> tag off the Solr index
         """
 
-        identifier = doc.find(".//str[@name='identifier']").text
-
         print "addDataset"
 
         if any(['d1resolve:'+urllib.quote_plus(identifier), '?p', '?o']):
@@ -205,7 +203,7 @@ class MultiStore():
         store = self.stores['datasets']
 
 
-        identifier = doc.find(".//str[@name='identifier']").text
+        identifier = dataone.getDocumentIdentifier(doc)
         identifier_esc = urllib.quote_plus(identifier)
 
         # type Dataset
@@ -427,7 +425,7 @@ class MultiStore():
         organizations = self.stores['organizations']
 
 
-        identifier = doc.find(".//str[@name='identifier']").text
+        identifier = dataone.getDocumentIdentifier(doc)
         identifier_esc = urllib.quote_plus(identifier)
 
         # Dataset itself

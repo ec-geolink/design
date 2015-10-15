@@ -150,3 +150,24 @@ def getDocument(identifier):
     query_xml = util.getXML(query_string)
 
     return query_xml
+def getDocumentIdentifier(doc):
+    """
+    Get an identifier from an XML document.
+
+    doc can either be a sysmeta or a Solr index result
+
+    We try to use it as if it was a Solr index element
+    then fall back to trying it as a sysmeta record
+    """
+
+    identifier = None
+
+    if doc.find(".//str[@name='identifier']") is not None:
+        identifier = doc.find(".//str[@name='identifier']").text
+    elif doc.find(".//identifier") is not None:
+        identifier = doc.find(".//identifier").text
+
+    if identifier is None:
+        raise Exception("Failed to add dataset because the identifier couldn't be processed.")
+
+    return identifier
