@@ -324,7 +324,8 @@ class MultiStore():
         obsoletes_node = doc.find("./str[@name='obsoletes']")
 
         if obsoletes_node is not None:
-            store.add(['d1resolve:'+identifier_esc, 'prov:wasRevisionOf', 'd1resolve:'+obsoletes_node.text])
+            other_document = urllib.quote_plus(obsoletes_node.text)
+            store.add(['d1resolve:'+identifier_esc, 'prov:wasRevisionOf', 'd1resolve:'+other_document])
 
         # Landing page
         store.add(['d1resolve:'+identifier_esc, 'glview:hasLandingPage', 'd1landing:'+identifier_esc])
