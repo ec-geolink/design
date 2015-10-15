@@ -23,7 +23,6 @@
     <owl:Ontology rdf:about="http://schema.geolink.org/dev/doview"/>
 
 
-
     <!--
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -40,82 +39,6 @@
     //
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
-
-     <!-- http://schema.geolink.org/dev/doview#hasChecksumAlgorithm -->
-
-     <owl:DatatypeProperty rdf:about="&dataone;hasChecksumAlgorithm">
-        <rdfs:label>dataone:hasChecksumAlgorithm</rdfs:label>
-        <rdfs:domain rdf:resource="&ecglview;DigitalObject"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-     </owl:DatatypeProperty>
-
-
-     <!-- http://schema.geolink.org/dev/doview#dateUploaded -->
-
-     <owl:DatatypeProperty rdf:about="&dataone;dateUploaded">
-        <rdfs:label>dataone:dateUploaded</rdfs:label>
-        <rdfs:comment>The range of this property is a dateTime indicating when the Dataset or DigitalObject was uploaded to its originDigitalRepository.</rdfs:comment>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&ecglview;Dataset"/>
-                    <rdf:Description rdf:about="&ecglview;DigitalObject"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
-        <rdfs:range rdf:resource="&xsd;dateTime"/>
-     </owl:DatatypeProperty>
-
-
-
-    <!-- http://schema.geolink.org/dev/doview#hasStartDate -->
-    <!-- This declaration just serves as a reminder that the range needs to be expanded to include this class -->
-
-    <owl:DatatypeProperty rdf:about="&doview;hasStartDate">
-        <rdfs:label>dataone:hasStartDate</rdfs:label>
-        <rdfs:range rdf:resource="&xsd;dateTime"/>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&ecglview;Dataset"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
-    </owl:DatatypeProperty>
-
-
-
-    <!-- http://schema.geolink.org/dev/doview#hasEndDate -->
-    <!-- This declaration just serves as a reminder that the range needs to be expanded to include this class -->
-
-    <owl:DatatypeProperty rdf:about="&doview;hasEndDate">
-        <rdfs:label>dataone:hasEndDate</rdfs:label>
-        <rdfs:range rdf:resource="&xsd;dateTime"/>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&ecglview;Dataset"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
-    </owl:DatatypeProperty>
-
-
-
-    <!-- http://schema.geolink.org/dev/doview#hasLandingPage -->
-
-    <owl:DatatypeProperty rdf:about="&dataone;hasLandingPage">
-        <rdfs:label>dataone:hasLandingPage</rdfs:label>
-        <rdfs:description>A URI pointing to a human-readable landing page for a Dataset or DigitalObject.</rdfs:description>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                <rdf:Description rdf:about="&ecglview;Dataset"/>
-                <rdf:Description rdf:about="&ecglview;DigitalObject"/>
-            </owl:Class>
-        </rdfs:domain>
-        <rdfs:range rdf:resource="&xsd;anyURI"/>
-    </owl:DatatypeProperty>
 
 
     <!--
