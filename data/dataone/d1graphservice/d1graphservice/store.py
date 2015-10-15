@@ -14,6 +14,21 @@ class Store():
         """
         Stores the dataset name and SPARQL endpoint URL and prepopulates
         SPARQL QUERY and UPDATE URLs for executing SPARQL queries.
+
+        Usage:
+            s = store.Store("http://localhost:3030/", 'ds', namespaces)
+
+        Arguments:
+            endpoint: str
+                An HTTP URI for the Fueski endpoint.
+                e.g., http://localhost:3030/
+
+            dataset: str
+                The name of the dataset
+
+            ns: Dict
+                Dictionary of name<->URI mappings for any namespaces that will
+                be used.
         """
 
         # Strip surrounding slashes in arguments
