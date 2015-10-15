@@ -28,6 +28,8 @@ from d1graphservice.people.formats import fgdc
 
 
 if __name__ == "__main__":
+    identifier = 'doi:10.5063/AA/nceas.920.2'
+
     cache_dir = "/Users/mecum/src/d1dump/documents/"
     formats_map = util.loadFormatsMap()
 
@@ -58,8 +60,6 @@ if __name__ == "__main__":
 
     stores = multi_store.MultiStore(stores, namespaces)
 
-    identifier = 'doi:10.5063/AA/nceas.920.2'
-
     # Establish which fields we want to get from the Solr index
     fields = ["identifier","title","abstract","author",
     "authorLastName", "origin","submitter","rightsHolder","documents",
@@ -67,8 +67,6 @@ if __name__ == "__main__":
     "eastBoundCoord","southBoundCoord","westBoundCoord","startDate","endDate",
     "datasource","replicaMN"]
 
-
-    identifier_esc = urllib.quote_plus(identifier)
     vld = validator.Validator()
 
     scimeta = dataone.getScientificMetadata(identifier)
