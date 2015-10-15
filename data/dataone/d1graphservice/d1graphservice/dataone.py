@@ -4,6 +4,7 @@ dataone.py
 Functions related to querying the DataOne v1 API.
 """
 
+import urllib
 
 from d1graphservice import util
 
@@ -150,6 +151,42 @@ def getDocument(identifier):
     query_xml = util.getXML(query_string)
 
     return query_xml
+
+
+def getSciMeta(identifier):
+    """
+    Get XML document (scimeta) for an identifier.
+    """
+
+    query_string = "http://cn.dataone.org/cn/v1/meta/%s" % identifier
+    query_xml = util.getXML(query_string)
+
+    return query_xml
+
+
+def getDocumentByIdentifier(identifier, fields=['identifier']):
+    """
+    Gets a single document off the Solr index by searching for its identifier.
+    """
+
+    # Replace everything, up to and including, the last : in the string
+    # Solr can't handle colons, even escaped
+
+    last_colon = identifier.rfind(":")
+
+    if last_colon != -1:
+        identifier = "*" + identifier[last_colon+1:]
+
+    identifier_esc = urllib.quote_plus(identifier)
+
+    query_string = "http://cn.dataone.org/cn/v1/query/solr/?fl=" + ",".join(fields) + "&q=id:" + identifier_esc + "&rows=1&start=0"
+    query_xml = util.getXML(query_string)
+
+    print query_string
+
+    return query_xml.find(".//doc")
+
+
 def getDocumentIdentifier(doc):
     """
     Get an identifier from an XML document.
