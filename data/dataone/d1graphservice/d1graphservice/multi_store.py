@@ -60,6 +60,23 @@ class MultiStore():
         return util.ns_interp(text, self.ns)
 
 
+    def datasetExists(self, identifier):
+        """
+        Returns True or False depending on whether the dataset's URI is the
+        subject of any triples in the datasets store.
+        """
+
+        if 'datasets' not in self.stores:
+            raise Exception("Datasets store not found.")
+
+        datasets = self.stores['datasets']
+
+        if datasets.exists(['d1resolve:'+urllib.quote_plus(identifier), '?p', '?o']):
+            return True
+        else:
+            return False
+
+
     def findPerson(self, family, email):
         """
         Finds a person by their family name and email.
