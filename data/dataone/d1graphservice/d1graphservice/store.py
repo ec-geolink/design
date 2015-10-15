@@ -118,9 +118,11 @@ class Store():
 
         """ Process object string.
             If it doesn't start with a <, make it a string literal.
+            Escape single quotes out.
         """
 
         object_string = self.ns_interp(triple[2])
+        object_string = object_string.replace("'", "\\'")
 
         if object_string is None:
             raise Exception("Object string interpolation failed.")
@@ -132,7 +134,9 @@ class Store():
         q = """
         INSERT DATA { %s %s %s }
         """ % (self.ns_interp(triple[0]), self.ns_interp(triple[1]), object_string)
+
         print q.strip()
+
         self.update(q)
 
 
@@ -146,8 +150,8 @@ class Store():
             return
 
         q = """
-        SELECT (COUNT(*) AS ?num) {%s %s %s}
-        """ % (self.ns_interp(triple[0]), self.ns_interp(triple[1]), self.ns_interp(triple[2]))
+        SELECT (COUNT(*) AS ?num) { %s %s %s }
+        """ % (self.ns_interp(triple[0]), self.ns_interp(triple[1]), self.ns_interp(triple[2]).replace("'", "\\'"))
 
         r = self.query(q).json()
 
@@ -176,7 +180,7 @@ class Store():
             object_string = self.ns_interp(conditions[predicate])
 
             if not object_string.startswith("<"):
-                object_string = "'%s'" % object_string
+                object_string = "'%s'" % object_string.replace("'", "\\'")
 
             where_string = "?subject %s %s" % (self.ns_interp(predicate), object_string)
             where_strings.append(where_string)
@@ -184,10 +188,7 @@ class Store():
         where_clause = " WHERE { %s }" % " . ".join(where_strings)
         q += where_clause
 
-        print q
         response = self.query(q).json()
-
-        print response
 
         return response['results']['bindings']
 
@@ -208,7 +209,7 @@ class Store():
         q = """
         DELETE { ?s ?p ?o }
         WHERE { %s %s %s }
-        """ % (self.ns_interp(triple[0]), self.ns_interp(triple[1]), self.ns_interp(triple[2]))
+        """ % (self.ns_interp(triple[0]), self.ns_interp(triple[1]), self.ns_interp(triple[2]).replace("'", "\\'"))
 
         print q.strip()
 
@@ -229,7 +230,7 @@ class Store():
         r = self.update(q)
 
 
-    def delete_by_object(self, object):
+    def delete_by_object(self, object_string):
         """
         Delete all triples with the given object.
         The object argument should be a URI string.
@@ -238,7 +239,7 @@ class Store():
         q = """
         DELETE
         WHERE { ?s ?p <%s> }
-        """ % object
+        """ % object_string
 
         r = self.update(q)
 
