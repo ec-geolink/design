@@ -210,11 +210,13 @@ class MultiStore():
 
         if scimeta is None:
             raise Exception("Attempted to add a dataset without scientific metadata.")
-        identifier = dataone.getDocumentIdentifier(doc)
+
+        identifier = dataone.extractDocumentIdentifier(doc)
+
         if any(['d1resolve:'+urllib.quote_plus(identifier), '?p', '?o']):
             self.deleteDatasetTriples(doc, scimeta, formats)
 
-        # self.addDatasetTriples(doc, scimeta, formats)
+        self.addDatasetTriples(doc, scimeta, formats)
 
 
     def addDatasetTriples(self, doc, scimeta, formats = {}):
@@ -233,7 +235,7 @@ class MultiStore():
         store = self.stores['datasets']
 
 
-        identifier = dataone.getDocumentIdentifier(doc)
+        identifier = dataone.extractDocumentIdentifier(doc)
         identifier_esc = urllib.quote_plus(identifier)
 
         # type Dataset
@@ -457,7 +459,7 @@ class MultiStore():
         organizations = self.stores['organizations']
 
 
-        identifier = dataone.getDocumentIdentifier(doc)
+        identifier = dataone.extractDocumentIdentifier(doc)
         identifier_esc = urllib.quote_plus(identifier)
 
         # Dataset itself
@@ -569,6 +571,7 @@ class MultiStore():
         Generates a key (or None if invalid record) for deduplicating the
         record.
         """
+        print record
 
         key = None
 

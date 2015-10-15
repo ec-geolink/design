@@ -12,7 +12,6 @@ import datetime
 import json
 import uuid
 import pandas
-import xml.etree.ElementTree as ET
 
 from d1graphservice.people import processing
 
@@ -23,108 +22,11 @@ from d1graphservice import validator
 from d1graphservice import store
 from d1graphservice import multi_store
 
+from d1graphservice.people import processing
+
 from d1graphservice.people.formats import eml
 from d1graphservice.people.formats import dryad
 from d1graphservice.people.formats import fgdc
-
-
-def extractCreators(identifier, document):
-    """
-    Detect the format of and extract people/organization creators from a document.
-
-    Arguments:
-        document:
-            An XML document
-
-    Returns:
-        List of records.
-    """
-
-    # Detect the format
-    metadata_format = processing.detectMetadataFormat(document)
-
-    # Process the document for people/orgs
-    if metadata_format == "eml":
-        records = eml.process(document, identifier)
-    elif metadata_format == "dryad":
-        records = dryad.process(document, identifier)
-    elif metadata_format == "fgdc":
-        records = fgdc.process(document, identifier)
-    else:
-        print "Unknown format."
-        records = []
-
-    return records
-
-
-def getSciMeta(identifier, identifier_map, cache_dir):
-    """
-    Retrieves scientific metadata from either a cache on the local filesystem
-    or the CN.
-
-    Returns:
-        An XML document
-    """
-
-    scimeta = None
-
-    if identifier in identifier_map:
-        mapped_filename = identifier_map[identifier]
-        mapped_file_path = cache_dir + mapped_filename
-
-        if os.path.isfile(mapped_file_path):
-            scimeta = ET.parse(mapped_file_path).getroot()
-            print 'getting document from cache'
-
-    if scimeta is None:
-        print "getting doc off cn"
-        scimeta = dataone.getDocument(identifier)
-
-    return scimeta
-
-
-def createIdentifierMap(path):
-    """
-    Converts a CSV of identifier<->filename mappings into a Dict.
-
-    Returns:
-        Dict of identifier<->filename mappings
-    """
-
-    identifier_map = None # Will be a docid <-> PID map
-
-    if os.path.isfile(path):
-        print "Loading identifiers map..."
-
-        identifier_table = pandas.read_csv(path)
-        identifier_map = dict(zip(identifier_table.guid, identifier_table.filepath))
-
-    return identifier_map
-
-
-def loadFormatsMap():
-    """
-    Gets the formats map from GitHub. These are the GeoLink URIs for the
-    file format types DataOne knows about.
-
-    Returns:
-        A Dict of formats, indexed by format ID.
-    """
-
-    formats_table = pandas.read_csv("https://raw.githubusercontent.com/ec-geolink/design/master/data/dataone/formats/formats.csv")
-
-    formats_map = {}
-
-    for row_num in range(formats_table.shape[0]):
-        fmt_id = formats_table['id'][row_num]
-        fmt_name = formats_table['name'][row_num]
-        fmt_type = formats_table['type'][row_num]
-        fmt_uri = formats_table['uri'][row_num]
-
-        formats_map[fmt_id] = { 'name': fmt_name, 'type': fmt_type, 'uri': fmt_uri }
-
-    return formats_map
-
 
 def main():
     # Settings
@@ -137,17 +39,18 @@ def main():
     # Create from and to strings
     # from_string = config['last_run']
     # to_string = datetime.datetime.today().strftime("%Y-%m-%dT%H:%M:%S.0Z")
-    from_string = "2015-01-06T16:00:00.0Z"
-    to_string = "2015-01-06T16:05:00.0Z"
+    from_string =   "2015-01-06T16:00:00.0Z"
+    to_string =     "2015-01-06T16:05:00.0Z"
 
     # Load scimeta cache
     cache_dir = "/Users/mecum/src/d1dump/documents/"
-    identifier_map = createIdentifierMap("/Users/mecum/src/d1dump/idents.csv")
+    identifier_map = util.createIdentifierMap("/Users/mecum/src/d1dump/idents.csv")
     print "Read in %d identifier mappings." % len(identifier_map)
 
     # Load formats map
     print "Loading formats map from GitHub..."
-    formats_map = loadFormatsMap()
+    formats_map = util.loadFormatsMap()
+    print "Loaded %d format URIs from GitHub." % len(formats_map)
 
     # Load triple stores
     namespaces = {
@@ -210,13 +113,20 @@ def main():
             identifier = doc.find("./str[@name='identifier']").text
             print "Adding dataset for %s. " % identifier
 
-            scimeta = getSciMeta(identifier, identifier_map, cache_dir)
+            # Skip if it's already in the datasets graph
+            if stores.datasetExists(identifier):
+                print "Dataset %s already in graph. Continuing." % identifier
+                continue
+
+            # continue
+            scimeta = dataone.getScientificMetadata(identifier, identifier_map, cache_dir)
 
             if scimeta is None:
                 print "Unable to get scimeta for %s. Skipping." % identifier
 
-            records = extractCreators(identifier, scimeta)
+            records = processing.extractCreators(identifier, scimeta)
 
+            print records
             print "Found %d record(s)." % len(records)
 
             # Add records and organizations

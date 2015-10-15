@@ -4,7 +4,9 @@ dataone.py
 Functions related to querying the DataOne v1 API.
 """
 
+import os
 import urllib
+import xml.etree.ElementTree as ET
 
 from d1graphservice import util
 
@@ -142,26 +144,80 @@ def getIdentifiers(from_string, to_string, fields=None, page=1, page_size=1000):
     return identifier_strings
 
 
-def getDocument(identifier):
+def getSystemMetadata(identifier):
     """
-    Get XML document (sysmeta) for an identifier.
-    """
+    Gets the system metadata for an identifier.
 
-    query_string = "http://cn.dataone.org/cn/v1/object/%s" % identifier
-    query_xml = util.getXML(query_string)
+    Arguments:
+        identifier: str
+            PID of the document
 
-    return query_xml
-
-
-def getSciMeta(identifier):
-    """
-    Get XML document (scimeta) for an identifier.
+    Returns:
+        An XML document
     """
 
     query_string = "http://cn.dataone.org/cn/v1/meta/%s" % identifier
     query_xml = util.getXML(query_string)
 
     return query_xml
+
+
+def getScientificMetadata(identifier, identifier_map={}, cache_dir=None):
+    """
+    Gets the scientific metadata for an identifier.
+    Optionally, loads the file from a cache.
+
+    Arguments:
+        identifier: str
+            PID of the document
+
+        identifier_map: Dict
+            An identifier<->filename mapping
+
+        cache_dir: str
+            The base directory path to the cache
+
+    Returns:
+        An XML document
+    """
+
+    scimeta = None
+
+    if identifier in identifier_map:
+        mapped_filename = identifier_map[identifier]
+        mapped_file_path = cache_dir + mapped_filename
+
+        if os.path.isfile(mapped_file_path):
+            scimeta = ET.parse(mapped_file_path).getroot()
+
+    if scimeta is None:
+        query_string = "http://cn.dataone.org/cn/v1/object/%s" % identifier
+        scimeta = util.getXML(query_string)
+
+    return scimeta
+
+
+def extractDocumentIdentifier(doc):
+    """
+    Get an identifier from an XML document.
+
+    doc can either be a sysmeta or a Solr index result
+
+    We try to use it as if it was a Solr index element
+    then fall back to trying it as a sysmeta record
+    """
+
+    identifier = None
+
+    if doc.find(".//str[@name='identifier']") is not None:
+        identifier = doc.find(".//str[@name='identifier']").text
+    elif doc.find(".//identifier") is not None:
+        identifier = doc.find(".//identifier").text
+
+    if identifier is None:
+        raise Exception("Failed to add dataset because the identifier couldn't be processed.")
+
+    return identifier
 
 
 def getDocumentByIdentifier(identifier, fields=['identifier']):
@@ -185,26 +241,3 @@ def getDocumentByIdentifier(identifier, fields=['identifier']):
     print query_string
 
     return query_xml.find(".//doc")
-
-
-def getDocumentIdentifier(doc):
-    """
-    Get an identifier from an XML document.
-
-    doc can either be a sysmeta or a Solr index result
-
-    We try to use it as if it was a Solr index element
-    then fall back to trying it as a sysmeta record
-    """
-
-    identifier = None
-
-    if doc.find(".//str[@name='identifier']") is not None:
-        identifier = doc.find(".//str[@name='identifier']").text
-    elif doc.find(".//identifier") is not None:
-        identifier = doc.find(".//identifier").text
-
-    if identifier is None:
-        raise Exception("Failed to add dataset because the identifier couldn't be processed.")
-
-    return identifier
