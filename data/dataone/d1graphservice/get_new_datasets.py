@@ -168,7 +168,7 @@ def main():
         "d1repo": "https://cn.dataone.org/cn/v1/node/"
     }
 
-    stores = {
+    store_dict = {
         'people': store.Store("http://localhost:3030/", 'ds', namespaces),
         'organizations': store.Store("http://localhost:3131/", 'ds', namespaces),
         'datasets': store.Store("http://localhost:3232/", 'ds', namespaces)
@@ -176,7 +176,7 @@ def main():
 
 
 
-    stores = multi_store.MultiStore(stores, namespaces)
+    stores = multi_store.MultiStore(store_dict, namespaces)
 
     # Create a record validator
     vld = validator.Validator()
