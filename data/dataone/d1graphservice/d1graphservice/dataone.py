@@ -220,7 +220,7 @@ def extractDocumentIdentifier(doc):
     return identifier
 
 
-def getDocumentByIdentifier(identifier, fields=['identifier']):
+def getSolrIndex(identifier, fields=['identifier']):
     """
     Gets a single document off the Solr index by searching for its identifier.
     """

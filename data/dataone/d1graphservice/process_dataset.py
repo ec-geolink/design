@@ -72,7 +72,7 @@ if __name__ == "__main__":
     vld = validator.Validator()
 
     scimeta = dataone.getScientificMetadata(identifier)
-    doc = dataone.getDocumentByIdentifier(identifier, fields)
+    doc = dataone.getSolrIndex(identifier, fields)
     records = processing.extractCreators(identifier, scimeta)
 
     # Add records and organizations
