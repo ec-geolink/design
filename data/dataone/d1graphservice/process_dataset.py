@@ -69,7 +69,7 @@ if __name__ == "__main__":
 
     vld = validator.Validator()
 
-    scimeta = dataone.getScientificMetadata(identifier)
+    scimeta = dataone.getScientificMetadata(identifier, cache=True)
     doc = dataone.getSolrIndex(identifier, fields)
     records = processing.extractCreators(identifier, scimeta)
 

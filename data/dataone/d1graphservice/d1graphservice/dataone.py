@@ -7,6 +7,7 @@ Functions related to querying the DataOne v1 API.
 import os
 import urllib
 import xml.etree.ElementTree as ET
+import base64
 
 from d1graphservice import util
 
@@ -162,10 +163,15 @@ def getSystemMetadata(identifier):
     return query_xml
 
 
-def getScientificMetadata(identifier, identifier_map={}, cache_dir=None):
+def getScientificMetadata(identifier, identifier_map={}, cache_dir=None, cache=False):
     """
     Gets the scientific metadata for an identifier.
-    Optionally, loads the file from a cache.
+    Optionally, loads the file from a cache which is a dump of documents with
+    filenames like 'autogen...' (which need to be mapped to a PID).
+
+    In development, I'm keeping a cache of documents in the root of the
+    d1graphservice folder at ./cache. This will need to be removed in
+    production. This is toggled with the argument `cache`.
 
     Arguments:
         identifier: str
@@ -177,11 +183,36 @@ def getScientificMetadata(identifier, identifier_map={}, cache_dir=None):
         cache_dir: str
             The base directory path to the cache
 
+        cache: bool
+            Whether to cache files in the current working directory
+
     Returns:
         An XML document
     """
 
     scimeta = None
+
+    # Try from cache first
+    if cache is True:
+        print "Attempting from local cache..."
+
+        if not os.path.exists("./cache"):
+            os.mkdir("./cache")
+
+        cache_filename = base64.urlsafe_b64encode(identifier)
+        cache_filepath = './cache/' + cache_filename
+
+        if os.path.exists(cache_filepath):
+            print "  Loading from cache."
+
+            scimeta = ET.parse(cache_filepath)
+
+            if scimeta is not None:
+                scimeta = scimeta.getroot()
+
+    # Return cached copy if we successfully got it
+    if scimeta is not None:
+        return scimeta
 
     if identifier in identifier_map:
         mapped_filename = identifier_map[identifier]
@@ -193,6 +224,11 @@ def getScientificMetadata(identifier, identifier_map={}, cache_dir=None):
     if scimeta is None:
         query_string = "http://cn.dataone.org/cn/v1/object/%s" % identifier
         scimeta = util.getXML(query_string)
+
+    # Cache what we found for next time
+    if scimeta is not None and cache is True:
+        with open(cache_filepath, "wb") as f:
+            f.write(ET.tostring(scimeta))
 
     return scimeta
 

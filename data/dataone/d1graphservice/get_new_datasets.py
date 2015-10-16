@@ -114,7 +114,7 @@ def main():
                 continue
 
             # continue
-            scimeta = dataone.getScientificMetadata(identifier, identifier_map, cache_dir)
+            scimeta = dataone.getScientificMetadata(identifier, identifier_map, cache_dir, cache=True)
 
             if scimeta is None:
                 print "Unable to get scimeta for %s. Skipping." % identifier
