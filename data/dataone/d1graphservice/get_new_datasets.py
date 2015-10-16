@@ -13,8 +13,6 @@ import json
 import uuid
 import pandas
 
-from d1graphservice.people import processing
-
 from d1graphservice import settings
 from d1graphservice import dataone
 from d1graphservice import util
@@ -24,9 +22,6 @@ from d1graphservice import multi_store
 
 from d1graphservice.people import processing
 
-from d1graphservice.people.formats import eml
-from d1graphservice.people.formats import dryad
-from d1graphservice.people.formats import fgdc
 
 def main():
     # Settings
