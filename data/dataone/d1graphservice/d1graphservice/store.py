@@ -142,7 +142,7 @@ class Store():
 
     def exists(self, triple):
         """
-        Check if the triple exists.
+        Check if any triples exist with the given triple pattern.
         """
 
         if type(triple) is not list and len(triple) != 3:
@@ -155,8 +155,11 @@ class Store():
 
         r = self.query(q).json()
 
-        if len(r['results']['bindings']) == 1 and r['results']['bindings'][0]['num']['value'] == u'1':
-            return True
+        if len(r['results']['bindings']) == 1:
+            count = int(r['results']['bindings'][0]['num']['value'])
+            
+            if count > 0:
+                return True
 
         return False
 
