@@ -40,6 +40,7 @@ def processDirectory(job):
 
     print "Processed a total of %d documents" % i
 
+
 def detectMetadataFormat(xmldoc):
     """ Detect the format of the metadata in `xmldoc`.
 
@@ -57,7 +58,7 @@ def detectMetadataFormat(xmldoc):
         return "unknown"
 
 
-def extractCreators(identifier, xmldoc):
+def extractCreators(identifier, doc):
     """
     Detect the format of and extract people/organization creators from a document.
 
@@ -65,23 +66,26 @@ def extractCreators(identifier, xmldoc):
         document: str
             The document's PID
 
-        xmldoc:
+        doc:
             An XML document of the scientific metadata
 
     Returns:
         List of records.
     """
 
+    if doc is None:
+        raise Exception("No XML document was passed.")
+
     # Detect the format
-    metadata_format = detectMetadataFormat(xmldoc)
+    metadata_format = detectMetadataFormat(doc)
 
     # Process the document for people/orgs
     if metadata_format == "eml":
-        records = eml.process(xmldoc, identifier)
+        records = eml.process(doc, identifier)
     elif metadata_format == "dryad":
-        records = dryad.process(xmldoc, identifier)
+        records = dryad.process(doc, identifier)
     elif metadata_format == "fgdc":
-        records = fgdc.process(xmldoc, identifier)
+        records = fgdc.process(doc, identifier)
     else:
         print "Unknown format."
         records = []
