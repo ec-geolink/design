@@ -31,6 +31,27 @@ class MultiStore():
         self.ns = namespaces
 
 
+    def getStore(self, store_name):
+        """
+        Attempt to return a store instance by name.
+
+        Arguments:
+            store_name: str
+                The name of the store, e.g., 'datasets'
+
+        Returns:
+            An instance of a Store
+        """
+
+        if store_name is None:
+            raise Exception("Attempted to get a store without specifying a name.")
+
+        if store_name not in self.stores:
+            raise Exception("Store with name %s not found." % store_name)
+
+        return self.stores[store_name]
+
+
     def load(self):
         """
         Load triples into the stores from files.
@@ -66,10 +87,7 @@ class MultiStore():
         subject of any triples in the datasets store.
         """
 
-        if 'datasets' not in self.stores:
-            raise Exception("Datasets store not found.")
-
-        datasets = self.stores['datasets']
+        datasets = self.getStore('datasets')
 
         if datasets.exists(['d1resolve:'+urllib.quote_plus(identifier), '?p', '?o']):
             return True
@@ -82,10 +100,7 @@ class MultiStore():
         Finds a person by their family name and email.
         """
 
-        if 'people' not in self.stores:
-            raise Exception("Person store not found.")
-
-        store = self.stores['people']
+        store = self.getStore('people')
 
         condition = {
             'glview:nameFamily': family,
@@ -120,10 +135,7 @@ class MultiStore():
         Finds an organization by their name.
         """
 
-        if 'organizations' not in self.stores:
-            raise Exception("Organization store not found.")
-
-        store = self.stores['organizations']
+        store = self.getStore('organizations')
 
         condition = {
             'rdfs:label': name,
@@ -229,11 +241,7 @@ class MultiStore():
             measurementType
         """
 
-        if 'datasets' not in self.stores:
-            raise Exception("Datasets store not found.")
-
-        store = self.stores['datasets']
-
+        store = self.getStore('datasets')
 
         identifier = dataone.extractDocumentIdentifier(doc)
         identifier_esc = urllib.quote_plus(identifier)
@@ -355,11 +363,7 @@ class MultiStore():
             digital object can't be retrieved off the CN.
         """
 
-        if 'datasets' not in self.stores:
-            raise Exception("Datasets store not found.")
-
-        store = self.stores['datasets']
-
+        store = self.getStore('datasets')
 
         data_id = digital_object.text
         data_id_esc = urllib.quote_plus(data_id)
@@ -444,21 +448,9 @@ class MultiStore():
             <person> hasFirstName 'Spike'
         """
 
-        if 'datasets' not in self.stores:
-            raise Exception("Datasets store not found.")
-
-        datasets = self.stores['datasets']
-
-        if 'people' not in self.stores:
-            raise Exception("People store not found.")
-
-        people = self.stores['people']
-
-        if 'organizations' not in self.stores:
-            raise Exception("Organizations store not found.")
-
-        organizations = self.stores['organizations']
-
+        datasets = self.getStore('datasets')
+        people = self.getStore('people')
+        organizations = self.getStore('organizations')
 
         identifier = dataone.extractDocumentIdentifier(doc)
         identifier_esc = urllib.quote_plus(identifier)
@@ -499,11 +491,7 @@ class MultiStore():
 
 
     def addPersonTriples(self, uri, record):
-        if 'people' not in self.stores:
-            raise Exception("People store not found.")
-
-        store = self.stores['people']
-
+        store = self.getStore('people')
 
         if 'salutation' in record:
             store.add([uri, 'glview:namePrefix', record['salutation']])
@@ -541,11 +529,7 @@ class MultiStore():
 
 
     def addOrganizationTriples(self, uri, record):
-        if 'organizations' not in self.stores:
-            raise Exception("Datasets store not found.")
-
-        store = self.stores['organizations']
-
+        store = self.getStore('organizations')
 
         if 'name' in record:
             store.add([uri, 'rdfs:label', record['name']])
