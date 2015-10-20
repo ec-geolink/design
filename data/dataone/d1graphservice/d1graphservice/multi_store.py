@@ -110,7 +110,27 @@ class MultiStore():
         find_result = store.find(condition)
 
         if len(find_result) < 1:
-            print "empty find result"
+            return None
+
+        return find_result[0]['subject']['value']
+
+
+    def findPersonInRevisionChain(self, first, last, document):
+        """
+        Finds a person by their full name and document (as revision).
+        """
+
+        store = self.getStore('people')
+
+        condition = {
+            'glview:nameGiven': first,
+            'glview:nameFamily': last,
+            'prov:wasRevisionOf': "d1resolve:" + document
+        }
+
+        find_result = store.find(condition)
+
+        if len(find_result) < 1:
             return None
 
         return find_result[0]['subject']['value']
@@ -164,27 +184,51 @@ class MultiStore():
 
 
     def addPerson(self, record):
+        """
+        Add a person to the graph.
+
+        Attempts to find an existing URI for them and will mint a new URI if
+        one is not found.
+
+        Sameness is assumed under the following conditions:
+
+            - Same last + emails
+            - Same first + last and exist in a revision of the same file
+        """
         if record is None:
             return
 
-        key = self.get_key(record)
+        people = self.getStore('people')
+        person_uri = None
 
-        if key is None:
+        # Match Rule: Same last + email
+        if all([k in ['last_name', 'email'] for k in record])
+            print "Same last + email test"
+            person_uri = self.findPerson(last, email)
+        # Match Rule: Same first + last + revision
+        elif all([k in ['first_name', 'last_name', 'document'] for k in record]):
+            print "Same first last, email test"
+            person_uri = self.findPersonInRevisionChain(record['first'], record['last'], record['document'])
+
+        # Fall back to minting a new URI
+        if person_uri is None:
             person_uri = self.mintURI('d1people')
-        else:
-            last,email = key.split("#")
-
-            if self.personExists(last, email):
-                person_uri = "<%s>" % self.findPerson(last, email)
-                print "%s already existed. Using existing URI of %s." % (key, person_uri)
-
-            else:
-                person_uri = self.mintURI('d1people')
 
         self.addPersonTriples(person_uri, record)
 
 
     def addOrganization(self, record):
+        """
+        Add an organization to the graph.
+
+        Attempts to find an existing URI for them and will mint a new URI if
+        one is not found.
+
+        Sameness is assumed under the following conditions:
+
+            - Same names
+        """
+
         if record is None:
             return
 
