@@ -462,7 +462,7 @@ class MultiStore():
         store.add(['d1resolve:'+data_id_esc, 'glview:isPartOf', 'd1resolve:'+urllib.quote_plus(identifier)])
 
         # Get data object meta
-        data_meta = dataone.getSystemMetadata(identifier)
+        data_meta = dataone.getSystemMetadata(identifier, cache=True)
 
         if data_meta is None:
             print "Metadata for data object %s was not found. Continuing to next data object." % data_id
