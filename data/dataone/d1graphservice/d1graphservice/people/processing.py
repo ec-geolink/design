@@ -74,7 +74,7 @@ def extractCreators(identifier, doc):
     """
 
     if doc is None:
-        raise Exception("No XML document was passed.")
+        return []
 
     # Detect the format
     metadata_format = detectMetadataFormat(doc)
