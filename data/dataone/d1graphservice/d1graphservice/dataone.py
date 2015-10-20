@@ -175,7 +175,7 @@ def getSystemMetadata(identifier, cache=False):
         cache_filename = base64.urlsafe_b64encode(identifier)
         cache_filepath = './cache/' + cache_filename
 
-        if os.path.exists(cache_filepath):
+        if os.path.isfile(cache_filepath):
             print "  Loading from cache."
 
             sysmeta = ET.parse(cache_filepath)
@@ -233,7 +233,7 @@ def getScientificMetadata(identifier, identifier_map={}, cache_dir=None, cache=F
         cache_filename = base64.urlsafe_b64encode(identifier)
         cache_filepath = './cache/' + cache_filename
 
-        if os.path.exists(cache_filepath):
+        if os.path.isfile(cache_filepath):
             print "  Loading from cache."
 
             scimeta = ET.parse(cache_filepath)
