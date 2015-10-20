@@ -167,7 +167,7 @@ def getSystemMetadata(identifier, cache=False):
 
     # Try from cache first
     if cache is True:
-        print "Attempt to get sysmeta from local cache..."
+        print "Attempting to get scimeta from local cache for...%s" % identifier
 
         if not os.path.exists("./cache"):
             os.mkdir("./cache")
@@ -225,13 +225,15 @@ def getScientificMetadata(identifier, identifier_map={}, cache_dir=None, cache=F
 
     # Try from cache first
     if cache is True:
-        print "Attempting to get scimeta from local cache..."
+        print "Attempting to get scimeta from local cache for...%s" % identifier
 
         if not os.path.exists("./cache"):
             os.mkdir("./cache")
 
         cache_filename = base64.urlsafe_b64encode(identifier)
         cache_filepath = './cache/' + cache_filename
+
+        print "  Looking for filename %s" % cache_filename
 
         if os.path.isfile(cache_filepath):
             print "  Loading from cache."
