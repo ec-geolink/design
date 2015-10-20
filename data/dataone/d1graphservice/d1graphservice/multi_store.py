@@ -95,19 +95,46 @@ class MultiStore():
             return False
 
 
-    def findPerson(self, family, email):
+    def findPerson(self, record):
         """
         Finds a person by their family name and email.
+
+        Returns:
+            A URI string if found, None otherwise.
         """
 
         store = self.getStore('people')
 
+        if 'first_name' not in record and len(record['first_name']) < 1:
+            return None
+
+        if 'last_name' not in record and len(record['last_name']) < 1:
+            return None
+
+        # Temp
+        # if 'email' not in record and len(record['email']) < 1:
+        #     return None
+
+        family = record['last_name']
+        # Temp
+        # email = record['email']
+
+        # Temp
+        # condition = {
+        #     'glview:nameFamily': family,
+        #     'foaf:mbox': "<mailto:%s>" % email
+        # }
+        given = record['first_name']
+
         condition = {
             'glview:nameFamily': family,
-            'foaf:mbox': "<mailto:%s>" % email
+            'glview:nameGiven': given
         }
 
         find_result = store.find(condition)
+        print ''
+        print find_result
+        print ''
 
         if len(find_result) < 1:
             return None
@@ -115,12 +142,28 @@ class MultiStore():
         return find_result[0]['subject']['value']
 
 
-    def findPersonInRevisionChain(self, first, last, document):
+    def findPersonInRevisionChain(self, record):
         """
         Finds a person by their full name and document (as revision).
+
+        Returns:
+            A URI string if found, None otherwise.
         """
 
         store = self.getStore('people')
+
+        if 'first_name' not in record and len(record['first_name']) < 1:
+            return None
+
+        if 'last_name' not in record and len(record['last_name']) < 1:
+            return None
+
+        if 'document' not in record and len(record['document']) < 1:
+            return None
+
+        first = record['first_name']
+        last = record['last_name']
+        document = record['document']
 
         condition = {
             'glview:nameGiven': first,
@@ -136,13 +179,13 @@ class MultiStore():
         return find_result[0]['subject']['value']
 
 
-    def personExists(self, family, email):
+    def personExists(self, record):
         """
         Returns True or False whether the person with the given family name
         and email exists (has a URI).
         """
 
-        result = self.findPerson(family, email)
+        result = self.findPerson(record)
 
         if result is None or len(result) < 1:
             return False
@@ -150,12 +193,20 @@ class MultiStore():
             return True
 
 
-    def findOrganization(self, name):
+    def findOrganization(self, record):
         """
         Finds an organization by their name.
+
+        Returns:
+            A URI string if found, None otherwise.
         """
 
         store = self.getStore('organizations')
+
+        if 'name' not in record and len(record['name']) < 1:
+            return None
+
+        name = record['name']
 
         condition = {
             'rdfs:label': name,
@@ -169,13 +220,13 @@ class MultiStore():
         return find_result[0]['subject']['value']
 
 
-    def organizationExists(self, name):
+    def organizationExists(self, record):
         """
         Returns True or False whether the organization with the given name
         exists (has a URI).
         """
 
-        result = self.findOrganization(name)
+        result = self.findOrganization(record)
 
         if result is None or len(result) < 1:
             return False
@@ -199,16 +250,13 @@ class MultiStore():
             return
 
         people = self.getStore('people')
+
         person_uri = None
 
-        # Match Rule: Same last + email
-        if all([k in ['last_name', 'email'] for k in record])
-            print "Same last + email test"
-            person_uri = self.findPerson(last, email)
-        # Match Rule: Same first + last + revision
-        elif all([k in ['first_name', 'last_name', 'document'] for k in record]):
-            print "Same first last, email test"
-            person_uri = self.findPersonInRevisionChain(record['first'], record['last'], record['document'])
+        person_uri = self.findPerson(record)
+
+        if person_uri is None:
+            person_uri = self.findPersonInRevisionChain(record)
 
         # Fall back to minting a new URI
         if person_uri is None:
@@ -237,11 +285,9 @@ class MultiStore():
         if key is None:
             organization_uri = self.mintURI('d1org')
         else:
-            if self.organizationExists(key):
-                organization_uri = "<%s>" % self.findOrganization(key)
-                print "%s already existed. Using existing URI of %s." % (key, organization_uri)
+            if self.organizationExists(record):
+                organization_uri = "<%s>" % self.findOrganization(record)
             else:
-                print "  notexist"
                 organization_uri = self.mintURI('d1org')
 
         self.addOrganizationTriples(organization_uri, record)
@@ -258,8 +304,6 @@ class MultiStore():
             doc:
                 XML from the <doc> tag off the Solr index
         """
-
-        print "addDataset"
 
         if doc is None:
             raise Exception("Attemtped to add a dataset without sysmeta information.")
@@ -550,15 +594,11 @@ class MultiStore():
             store.add([uri, 'glview:nameFamily', record['last_name']])
 
         if 'organization' in record:
-            print "organization is in record"
             if self.organizationExists(record['organization']):
-                organization_uri = self.findOrganization(record['organization'])
-                print "used existing uri"
+                organization_uri = self.findOrganization({'name':record['organization']})
             else:
                 organization_uri = self.mintURI('d1org')
-                print "minted new URI"
-
-            print organization_uri
+                store.add([organization_uri, 'rdfs:label', record['organization']])
 
             store.add([uri, 'glview:hasAffiliation', organization_uri])
 
@@ -600,8 +640,6 @@ class MultiStore():
         Generates a key (or None if invalid record) for deduplicating the
         record.
         """
-        print record
-
         key = None
 
         if record is None:
