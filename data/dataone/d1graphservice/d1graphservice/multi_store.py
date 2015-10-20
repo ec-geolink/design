@@ -414,7 +414,9 @@ class MultiStore():
 
         # Origin MN
         repository_datasource = doc.find("./str[@name='datasource']")
-        store.add(['d1resolve:'+identifier_esc, 'glview:hasOriginDigitalRepository', 'd1repo:'+repository_datasource.text])
+
+        if repository_datasource is not None:
+            store.add(['d1resolve:'+identifier_esc, 'glview:hasOriginDigitalRepository', 'd1repo:'+repository_datasource.text])
 
         # Obsoletes as PROV#wasRevisionOf
         obsoletes_node = doc.find("./str[@name='obsoletes']")
