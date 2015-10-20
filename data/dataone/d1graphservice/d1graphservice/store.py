@@ -116,6 +116,15 @@ class Store():
             print "Failed to add triple: Expected triple argument to be an array of size 3."
             return
 
+        """ Process subject string.
+
+        If it starts with http..., wrap it in <>
+        """
+
+        subject_string = triple[0]
+        if subject_string.startswith('http'):
+            subject_string = "<%s>" % subject_string
+
         """ Process object string.
             If it doesn't start with a <, make it a string literal.
             Escape single quotes out.
@@ -133,9 +142,9 @@ class Store():
 
         q = """
         INSERT DATA { %s %s %s }
-        """ % (self.ns_interp(triple[0]), self.ns_interp(triple[1]), object_string)
 
         print q.strip()
+        """ % (self.ns_interp(subject_string), self.ns_interp(triple[1]), object_string)
 
         self.update(q)
 
