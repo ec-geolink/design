@@ -34,8 +34,8 @@ def main():
     # Create from and to strings
     # from_string = config['last_run']
     # to_string = datetime.datetime.today().strftime("%Y-%m-%dT%H:%M:%S.0Z")
-    from_string =   "2015-01-06T16:00:00.0Z"
-    to_string =     "2015-01-06T16:05:00.0Z"
+    from_string =   "2015-01-01T15:00:00.0Z"
+    to_string   =   "2015-01-06T16:05:00.0Z"
 
     # Load scimeta cache
     cache_dir = "/Users/mecum/src/d1dump/documents/"
@@ -111,18 +111,16 @@ def main():
             # Skip if it's already in the datasets graph
             if stores.datasetExists(identifier):
                 print "Dataset %s already in graph. Continuing." % identifier
-                continue
+                # continue
 
             # continue
             scimeta = dataone.getScientificMetadata(identifier, identifier_map, cache_dir, cache=True)
 
             if scimeta is None:
                 print "Unable to get scimeta for %s. Skipping." % identifier
+                continue
 
             records = processing.extractCreators(identifier, scimeta)
-
-            print records
-            print "Found %d record(s)." % len(records)
 
             # Add records and organizations
             people = [p for p in records if 'type' in p and p['type'] == 'person']
