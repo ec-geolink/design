@@ -63,8 +63,6 @@ class Store():
 
         r = requests.get(self.query_url, params={ 'query': query.encode('utf-8') })
 
-        print query.strip()
-
         return r
 
 
@@ -142,8 +140,6 @@ class Store():
 
         q = """
         INSERT DATA { %s %s %s }
-
-        print q.strip()
         """ % (self.ns_interp(subject_string), self.ns_interp(triple[1]), object_string)
 
         self.update(q)
@@ -166,7 +162,7 @@ class Store():
 
         if len(r['results']['bindings']) == 1:
             count = int(r['results']['bindings'][0]['num']['value'])
-            
+
             if count > 0:
                 return True
 
@@ -222,8 +218,6 @@ class Store():
         DELETE { ?s ?p ?o }
         WHERE { %s %s %s }
         """ % (self.ns_interp(triple[0]), self.ns_interp(triple[1]), self.ns_interp(triple[2]).replace("'", "\\'"))
-
-        print q.strip()
 
         r = self.update(q)
 
