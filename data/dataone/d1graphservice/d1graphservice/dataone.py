@@ -255,6 +255,7 @@ def getScientificMetadata(identifier, identifier_map={}, cache_dir=None, cache=F
             scimeta = ET.parse(mapped_file_path).getroot()
 
     if scimeta is None:
+        query_string = "https://cn.dataone.org/cn/v1/object/%s" % urllib.quote_plus(identifier)
         scimeta = util.getXML(query_string)
 
     # Cache what we found for next time
