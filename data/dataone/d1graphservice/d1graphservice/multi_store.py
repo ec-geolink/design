@@ -611,7 +611,7 @@ class MultiStore():
             store.add([uri, 'glview:address', record['address']])
 
         if 'document' in record:
-            store.add([uri, 'glview:isCreatorOf', 'd1resolve:' + record['document']])
+            store.add([uri, 'glview:isCreatorOf', 'd1resolve:' + urllib.quote_plus(record['document'])])
 
 
     def addOrganizationTriples(self, uri, record):
