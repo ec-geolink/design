@@ -145,22 +145,53 @@ def getIdentifiers(from_string, to_string, fields=None, page=1, page_size=1000):
     return identifier_strings
 
 
-def getSystemMetadata(identifier):
+def getSystemMetadata(identifier, cache=False):
     """
     Gets the system metadata for an identifier.
+
+    In development, I'm keeping a cache of documents in the root of the
+    d1graphservice folder at ./cache. This will need to be removed in
+    production. This is toggled with the argument `cache`.
 
     Arguments:
         identifier: str
             PID of the document
+        cache: bool
+            Whether to cache files in the current working directory
 
     Returns:
         An XML document
     """
 
-    query_string = "http://cn.dataone.org/cn/v1/meta/%s" % identifier
-    query_xml = util.getXML(query_string)
+    sysmeta = None
 
-    return query_xml
+    # Try from cache first
+    if cache is True:
+        print "Attempt to get sysmeta from local cache..."
+
+        if not os.path.exists("./cache"):
+            os.mkdir("./cache")
+
+        cache_filename = base64.urlsafe_b64encode(identifier)
+        cache_filepath = './cache/' + cache_filename
+
+        if os.path.exists(cache_filepath):
+            print "  Loading from cache."
+
+            sysmeta = ET.parse(cache_filepath)
+
+    if sysmeta is not None:
+        return sysmeta
+
+    query_string = "http://cn.dataone.org/cn/v1/meta/%s" % identifier
+    sysmeta = util.getXML(query_string)
+
+    # Cache what we found for next time
+    if sysmeta is not None and cache is True:
+        with open(cache_filepath, "wb") as f:
+            f.write(ET.tostring(sysmeta))
+
+    return sysmeta
 
 
 def getScientificMetadata(identifier, identifier_map={}, cache_dir=None, cache=False):
@@ -194,7 +225,7 @@ def getScientificMetadata(identifier, identifier_map={}, cache_dir=None, cache=F
 
     # Try from cache first
     if cache is True:
-        print "Attempting from local cache..."
+        print "Attempting to get scimeta from local cache..."
 
         if not os.path.exists("./cache"):
             os.mkdir("./cache")
@@ -273,7 +304,5 @@ def getSolrIndex(identifier, fields=['identifier']):
 
     query_string = "http://cn.dataone.org/cn/v1/query/solr/?fl=" + ",".join(fields) + "&q=id:" + identifier_esc + "&rows=1&start=0"
     query_xml = util.getXML(query_string)
-
-    print query_string
 
     return query_xml.find(".//doc")
