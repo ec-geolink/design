@@ -183,7 +183,7 @@ def getSystemMetadata(identifier, cache=False):
     if sysmeta is not None:
         return sysmeta
 
-    query_string = "http://cn.dataone.org/cn/v1/meta/%s" % identifier
+    query_string = "https://cn.dataone.org/cn/v1/meta/%s" % identifier
     sysmeta = util.getXML(query_string)
 
     # Cache what we found for next time
@@ -253,7 +253,6 @@ def getScientificMetadata(identifier, identifier_map={}, cache_dir=None, cache=F
             scimeta = ET.parse(mapped_file_path).getroot()
 
     if scimeta is None:
-        query_string = "http://cn.dataone.org/cn/v1/object/%s" % identifier
         scimeta = util.getXML(query_string)
 
     # Cache what we found for next time
