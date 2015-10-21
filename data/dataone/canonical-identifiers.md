@@ -57,6 +57,21 @@ It might be really nice to ensure we take a similar approach for all identifiers
 
 For example, DOI suggests using http://doi.org/{DOI} while FundRef uses http://dx.doi.org/{DOI} as their identifiers. It may be confusing to store DOIs in different forms but in a way, a DOI that is used as a FundRef DOI Is more of a 'FundRef DOI' rather than an 'DOI DOI'.
 
+
+### Machine Form vs. Display Form vs. Web-Resolvable Form
+
+As mentioned above, many identifiers come with some form of resolution service which can be used to retrieve the entity the identifier refers to.
+In some cases, an identifier may be resolved using numerous resolution services (e.g., ARK, DOI) -- some of all of which may cease to exist in the future -- while the identifier itself is considered permanent.
+For embedding identifiers into RDF, it would be good to take care to use the right form of the identifier (if numerous exist).
+For each identifier, information on the forms an identifier may take is recorded and, if the authority for the identifier recommends specific forms of its identifiers for different uses (e.g., use in RDF, display on a website), those recommendations will be documented.
+
+Three terms will be used to describe these forms:
+
+- Machine Form: The best form to use when serializing and storing the identifier
+- Display Form: The best form to use when displaying in print or on the web
+- Resolvable Form: Whether the identifier has a web resolvable form and what that form looks like
+
+
 ### Related Work
 
 http://bioinformatics.oxfordjournals.org/content/31/11/1875.full
@@ -74,9 +89,11 @@ Notes:
 	- http://example.org/ark:/12025/654xz321/s3/f8.05v.tiff
 
 
-General form: [http://NMAH/]ark:/NAAN/Name[Qualifier]
+Recommendation:
 
-Recommend: ...
+- Machine Form? `ark:/12025/654xz321/s3/f8.05v.tiff` or `http://example.org/ark:/12025/654xz321/s3/f8.05v.tiff`
+- Display Form? Unknown
+- Resolvable Form? Yes (`http://example.org/ark:/12025/654xz321/s3/f8.05v.tiff`)
 
 
 ## arXiv
