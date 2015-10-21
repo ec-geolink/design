@@ -29,7 +29,6 @@ from d1graphservice.people.formats import fgdc
 
 if __name__ == "__main__":
     identifier = 'doi:10.5063/AA/nceas.920.2'
-
     cache_dir = "/Users/mecum/src/d1dump/documents/"
     formats_map = util.loadFormatsMap()
 
@@ -72,6 +71,8 @@ if __name__ == "__main__":
     scimeta = dataone.getScientificMetadata(identifier, cache=True)
     doc = dataone.getSolrIndex(identifier, fields)
     records = processing.extractCreators(identifier, scimeta)
+
+    print records
 
     # Add records and organizations
     people = [p for p in records if 'type' in p and p['type'] == 'person']

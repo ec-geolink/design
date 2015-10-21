@@ -37,6 +37,15 @@ def main():
     from_string =   "2015-01-01T15:00:00.0Z"
     to_string   =   "2015-01-06T16:05:00.0Z"
 
+    from_string = "2015-01-06T16:00:00.0Z"
+    to_string = "2015-01-06T16:05:00.0Z"
+
+    # from_string =   "2015-01-01T15:00:00.0Z"
+    # to_string   =   "2015-01-06T16:05:00.0Z"
+
+    from_string =   "2015-03-15T23:21:15.567Z"
+    to_string   =   "2015-05-30T23:21:15.567Z"
+
     # Load scimeta cache
     cache_dir = "/Users/mecum/src/d1dump/documents/"
     identifier_map = util.createIdentifierMap("/Users/mecum/src/d1dump/idents.csv")
@@ -96,6 +105,9 @@ def main():
     "datasource","replicaMN"]
 
     print "Found %d documents over %d page(s)." % (num_results, num_pages)
+
+    sys.exit()
+
 
     # Process each page
     for page in range(1, num_pages + 1):
