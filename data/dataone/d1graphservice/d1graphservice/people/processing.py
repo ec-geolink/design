@@ -40,6 +40,7 @@ def processDirectory(job):
 
     print "Processed a total of %d documents" % i
 
+
 def detectMetadataFormat(xmldoc):
     """ Detect the format of the metadata in `xmldoc`.
 
@@ -55,6 +56,41 @@ def detectMetadataFormat(xmldoc):
         return "fgdc"
     else:
         return "unknown"
+
+
+def extractCreators(identifier, doc):
+    """
+    Detect the format of and extract people/organization creators from a document.
+
+    Arguments:
+        document: str
+            The document's PID
+
+        doc:
+            An XML document of the scientific metadata
+
+    Returns:
+        List of records.
+    """
+
+    if doc is None:
+        return []
+
+    # Detect the format
+    metadata_format = detectMetadataFormat(doc)
+
+    # Process the document for people/orgs
+    if metadata_format == "eml":
+        records = eml.process(doc, identifier)
+    elif metadata_format == "dryad":
+        records = dryad.process(doc, identifier)
+    elif metadata_format == "fgdc":
+        records = fgdc.process(doc, identifier)
+    else:
+        print "Unknown format."
+        records = []
+
+    return records
 
 
 def processDocument(job, xmldoc, filename):
@@ -77,28 +113,10 @@ def processDocument(job, xmldoc, filename):
         if document not in job.public_pids:
             document = ''
 
-    metadata_format = detectMetadataFormat(xmldoc.getroot())
+    records = extractCreators(document, xmldoc)
 
-    if metadata_format == "eml":
-        records = eml.process(xmldoc, document)
-
-        if records is not None:
-            saveRecords(job, records)
-
-    elif metadata_format == "dryad":
-        records = dryad.process(xmldoc, document)
-
-        if records is not None:
-            saveRecords(job, records)
-
-    elif metadata_format == "fgdc":
-        records = fgdc.process(xmldoc, document)
-
-        if records is not None:
-            saveRecords(job, records)
-
-    else:
-        print "Unknown format: %s" % metadata_format
+    if records is not None:
+        saveRecords(job, records)
 
 
 def saveRecords(job, records):

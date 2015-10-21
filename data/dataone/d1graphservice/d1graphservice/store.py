@@ -63,8 +63,6 @@ class Store():
 
         r = requests.get(self.query_url, params={ 'query': query.encode('utf-8') })
 
-        print query.strip()
-
         return r
 
 
@@ -116,6 +114,15 @@ class Store():
             print "Failed to add triple: Expected triple argument to be an array of size 3."
             return
 
+        """ Process subject string.
+
+        If it starts with http..., wrap it in <>
+        """
+
+        subject_string = triple[0]
+        if subject_string.startswith('http'):
+            subject_string = "<%s>" % subject_string
+
         """ Process object string.
             If it doesn't start with a <, make it a string literal.
             Escape single quotes out.
@@ -133,16 +140,14 @@ class Store():
 
         q = """
         INSERT DATA { %s %s %s }
-        """ % (self.ns_interp(triple[0]), self.ns_interp(triple[1]), object_string)
-
-        print q.strip()
+        """ % (self.ns_interp(subject_string), self.ns_interp(triple[1]), object_string)
 
         self.update(q)
 
 
     def exists(self, triple):
         """
-        Check if the triple exists.
+        Check if any triples exist with the given triple pattern.
         """
 
         if type(triple) is not list and len(triple) != 3:
@@ -155,8 +160,11 @@ class Store():
 
         r = self.query(q).json()
 
-        if len(r['results']['bindings']) == 1 and r['results']['bindings'][0]['num']['value'] == u'1':
-            return True
+        if len(r['results']['bindings']) == 1:
+            count = int(r['results']['bindings'][0]['num']['value'])
+
+            if count > 0:
+                return True
 
         return False
 
@@ -210,8 +218,6 @@ class Store():
         DELETE { ?s ?p ?o }
         WHERE { %s %s %s }
         """ % (self.ns_interp(triple[0]), self.ns_interp(triple[1]), self.ns_interp(triple[2]).replace("'", "\\'"))
-
-        print q.strip()
 
         r = self.update(q)
 

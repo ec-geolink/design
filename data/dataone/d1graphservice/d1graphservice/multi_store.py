@@ -31,6 +31,27 @@ class MultiStore():
         self.ns = namespaces
 
 
+    def getStore(self, store_name):
+        """
+        Attempt to return a store instance by name.
+
+        Arguments:
+            store_name: str
+                The name of the store, e.g., 'datasets'
+
+        Returns:
+            An instance of a Store
+        """
+
+        if store_name is None:
+            raise Exception("Attempted to get a store without specifying a name.")
+
+        if store_name not in self.stores:
+            raise Exception("Store with name %s not found." % store_name)
+
+        return self.stores[store_name]
+
+
     def load(self):
         """
         Load triples into the stores from files.
@@ -66,10 +87,7 @@ class MultiStore():
         subject of any triples in the datasets store.
         """
 
-        if 'datasets' not in self.stores:
-            raise Exception("Datasets store not found.")
-
-        datasets = self.stores['datasets']
+        datasets = self.getStore('datasets')
 
         if datasets.exists(['d1resolve:'+urllib.quote_plus(identifier), '?p', '?o']):
             return True
@@ -77,37 +95,97 @@ class MultiStore():
             return False
 
 
-    def findPerson(self, family, email):
+    def findPerson(self, record):
         """
         Finds a person by their family name and email.
+
+        Returns:
+            A URI string if found, None otherwise.
         """
 
-        if 'people' not in self.stores:
-            raise Exception("Person store not found.")
+        store = self.getStore('people')
 
-        store = self.stores['people']
+        if 'first_name' not in record or len(record['first_name']) < 1:
+            return None
+
+        if 'last_name' not in record or len(record['last_name']) < 1:
+            return None
+
+        # Temp
+        # if 'email' not in record and len(record['email']) < 1:
+        #     return None
+
+        family = record['last_name']
+        # Temp
+        # email = record['email']
+
+        # Temp
+        # condition = {
+        #     'glview:nameFamily': family,
+        #     'foaf:mbox': "<mailto:%s>" % email
+        # }
+        given = record['first_name']
 
         condition = {
             'glview:nameFamily': family,
-            'foaf:mbox': "<mailto:%s>" % email
+            'glview:nameGiven': given
         }
 
         find_result = store.find(condition)
+        print ''
+        print find_result
+        print ''
 
         if len(find_result) < 1:
-            print "empty find result"
             return None
 
         return find_result[0]['subject']['value']
 
 
-    def personExists(self, family, email):
+    def findPersonInRevisionChain(self, record):
+        """
+        Finds a person by their full name and document (as revision).
+
+        Returns:
+            A URI string if found, None otherwise.
+        """
+
+        store = self.getStore('people')
+
+        if 'first_name' not in record or len(record['first_name']) < 1:
+            return None
+
+        if 'last_name' not in record or len(record['last_name']) < 1:
+            return None
+
+        if 'document' not in record or len(record['document']) < 1:
+            return None
+
+        first = record['first_name']
+        last = record['last_name']
+        document = record['document']
+
+        condition = {
+            'glview:nameGiven': first,
+            'glview:nameFamily': last,
+            'prov:wasRevisionOf': "d1resolve:" + document
+        }
+
+        find_result = store.find(condition)
+
+        if len(find_result) < 1:
+            return None
+
+        return find_result[0]['subject']['value']
+
+
+    def personExists(self, record):
         """
         Returns True or False whether the person with the given family name
         and email exists (has a URI).
         """
 
-        result = self.findPerson(family, email)
+        result = self.findPerson(record)
 
         if result is None or len(result) < 1:
             return False
@@ -115,15 +193,20 @@ class MultiStore():
             return True
 
 
-    def findOrganization(self, name):
+    def findOrganization(self, record):
         """
         Finds an organization by their name.
+
+        Returns:
+            A URI string if found, None otherwise.
         """
 
-        if 'organizations' not in self.stores:
-            raise Exception("Organization store not found.")
+        store = self.getStore('organizations')
 
-        store = self.stores['organizations']
+        if 'name' not in record or len(record['name']) < 1:
+            return None
+
+        name = record['name']
 
         condition = {
             'rdfs:label': name,
@@ -137,13 +220,13 @@ class MultiStore():
         return find_result[0]['subject']['value']
 
 
-    def organizationExists(self, name):
+    def organizationExists(self, record):
         """
         Returns True or False whether the organization with the given name
         exists (has a URI).
         """
 
-        result = self.findOrganization(name)
+        result = self.findOrganization(record)
 
         if result is None or len(result) < 1:
             return False
@@ -152,27 +235,48 @@ class MultiStore():
 
 
     def addPerson(self, record):
+        """
+        Add a person to the graph.
+
+        Attempts to find an existing URI for them and will mint a new URI if
+        one is not found.
+
+        Sameness is assumed under the following conditions:
+
+            - Same last + emails
+            - Same first + last and exist in a revision of the same file
+        """
         if record is None:
             return
 
-        key = self.get_key(record)
+        people = self.getStore('people')
 
-        if key is None:
+        person_uri = None
+
+        person_uri = self.findPerson(record)
+
+        if person_uri is None:
+            person_uri = self.findPersonInRevisionChain(record)
+
+        # Fall back to minting a new URI
+        if person_uri is None:
             person_uri = self.mintURI('d1people')
-        else:
-            last,email = key.split("#")
-
-            if self.personExists(last, email):
-                person_uri = "<%s>" % self.findPerson(last, email)
-                print "%s already existed. Using existing URI of %s." % (key, person_uri)
-
-            else:
-                person_uri = self.mintURI('d1people')
 
         self.addPersonTriples(person_uri, record)
 
 
     def addOrganization(self, record):
+        """
+        Add an organization to the graph.
+
+        Attempts to find an existing URI for them and will mint a new URI if
+        one is not found.
+
+        Sameness is assumed under the following conditions:
+
+            - Same names
+        """
+
         if record is None:
             return
 
@@ -181,11 +285,9 @@ class MultiStore():
         if key is None:
             organization_uri = self.mintURI('d1org')
         else:
-            if self.organizationExists(key):
-                organization_uri = "<%s>" % self.findOrganization(key)
-                print "%s already existed. Using existing URI of %s." % (key, organization_uri)
+            if self.organizationExists(record):
+                organization_uri = "<%s>" % self.findOrganization(record)
             else:
-                print "  notexist"
                 organization_uri = self.mintURI('d1org')
 
         self.addOrganizationTriples(organization_uri, record)
@@ -203,18 +305,18 @@ class MultiStore():
                 XML from the <doc> tag off the Solr index
         """
 
-        print "addDataset"
-
         if doc is None:
             raise Exception("Attemtped to add a dataset without sysmeta information.")
 
         if scimeta is None:
             raise Exception("Attempted to add a dataset without scientific metadata.")
-        identifier = dataone.getDocumentIdentifier(doc)
+
+        identifier = dataone.extractDocumentIdentifier(doc)
+
         if any(['d1resolve:'+urllib.quote_plus(identifier), '?p', '?o']):
             self.deleteDatasetTriples(doc, scimeta, formats)
 
-        # self.addDatasetTriples(doc, scimeta, formats)
+        self.addDatasetTriples(doc, scimeta, formats)
 
 
     def addDatasetTriples(self, doc, scimeta, formats = {}):
@@ -227,13 +329,9 @@ class MultiStore():
             measurementType
         """
 
-        if 'datasets' not in self.stores:
-            raise Exception("Datasets store not found.")
+        store = self.getStore('datasets')
 
-        store = self.stores['datasets']
-
-
-        identifier = dataone.getDocumentIdentifier(doc)
+        identifier = dataone.extractDocumentIdentifier(doc)
         identifier_esc = urllib.quote_plus(identifier)
 
         # type Dataset
@@ -316,13 +414,16 @@ class MultiStore():
 
         # Origin MN
         repository_datasource = doc.find("./str[@name='datasource']")
-        store.add(['d1resolve:'+identifier_esc, 'glview:hasOriginDigitalRepository', 'd1repo:'+repository_datasource.text])
+
+        if repository_datasource is not None:
+            store.add(['d1resolve:'+identifier_esc, 'glview:hasOriginDigitalRepository', 'd1repo:'+repository_datasource.text])
 
         # Obsoletes as PROV#wasRevisionOf
         obsoletes_node = doc.find("./str[@name='obsoletes']")
 
         if obsoletes_node is not None:
-            store.add(['d1resolve:'+identifier_esc, 'prov:wasRevisionOf', 'd1resolve:'+obsoletes_node.text])
+            other_document = urllib.quote_plus(obsoletes_node.text)
+            store.add(['d1resolve:'+identifier_esc, 'prov:wasRevisionOf', 'd1resolve:'+other_document])
 
         # Landing page
         store.add(['d1resolve:'+identifier_esc, 'glview:hasLandingPage', 'd1landing:'+identifier_esc])
@@ -352,11 +453,7 @@ class MultiStore():
             digital object can't be retrieved off the CN.
         """
 
-        if 'datasets' not in self.stores:
-            raise Exception("Datasets store not found.")
-
-        store = self.stores['datasets']
-
+        store = self.getStore('datasets')
 
         data_id = digital_object.text
         data_id_esc = urllib.quote_plus(data_id)
@@ -365,7 +462,7 @@ class MultiStore():
         store.add(['d1resolve:'+data_id_esc, 'glview:isPartOf', 'd1resolve:'+urllib.quote_plus(identifier)])
 
         # Get data object meta
-        data_meta = util.getXML("https://cn.dataone.org/cn/v1/meta/" + data_id_esc)
+        data_meta = dataone.getSystemMetadata(identifier, cache=True)
 
         if data_meta is None:
             print "Metadata for data object %s was not found. Continuing to next data object." % data_id
@@ -441,23 +538,11 @@ class MultiStore():
             <person> hasFirstName 'Spike'
         """
 
-        if 'datasets' not in self.stores:
-            raise Exception("Datasets store not found.")
+        datasets = self.getStore('datasets')
+        people = self.getStore('people')
+        organizations = self.getStore('organizations')
 
-        datasets = self.stores['datasets']
-
-        if 'people' not in self.stores:
-            raise Exception("People store not found.")
-
-        people = self.stores['people']
-
-        if 'organizations' not in self.stores:
-            raise Exception("Organizations store not found.")
-
-        organizations = self.stores['organizations']
-
-
-        identifier = dataone.getDocumentIdentifier(doc)
+        identifier = dataone.extractDocumentIdentifier(doc)
         identifier_esc = urllib.quote_plus(identifier)
 
         # Dataset itself
@@ -496,11 +581,7 @@ class MultiStore():
 
 
     def addPersonTriples(self, uri, record):
-        if 'people' not in self.stores:
-            raise Exception("People store not found.")
-
-        store = self.stores['people']
-
+        store = self.getStore('people')
 
         if 'salutation' in record:
             store.add([uri, 'glview:namePrefix', record['salutation']])
@@ -515,15 +596,11 @@ class MultiStore():
             store.add([uri, 'glview:nameFamily', record['last_name']])
 
         if 'organization' in record:
-            print "organization is in record"
             if self.organizationExists(record['organization']):
-                organization_uri = self.findOrganization(record['organization'])
-                print "used existing uri"
+                organization_uri = self.findOrganization({'name':record['organization']})
             else:
                 organization_uri = self.mintURI('d1org')
-                print "minted new URI"
-
-            print organization_uri
+                store.add([organization_uri, 'rdfs:label', record['organization']])
 
             store.add([uri, 'glview:hasAffiliation', organization_uri])
 
@@ -534,15 +611,11 @@ class MultiStore():
             store.add([uri, 'glview:address', record['address']])
 
         if 'document' in record:
-            store.add([uri, 'glview:isCreatorOf', 'd1resolve:' + record['document']])
+            store.add([uri, 'glview:isCreatorOf', 'd1resolve:' + urllib.quote_plus(record['document'])])
 
 
     def addOrganizationTriples(self, uri, record):
-        if 'organizations' not in self.stores:
-            raise Exception("Datasets store not found.")
-
-        store = self.stores['organizations']
-
+        store = self.getStore('organizations')
 
         if 'name' in record:
             store.add([uri, 'rdfs:label', record['name']])
@@ -569,7 +642,6 @@ class MultiStore():
         Generates a key (or None if invalid record) for deduplicating the
         record.
         """
-
         key = None
 
         if record is None:

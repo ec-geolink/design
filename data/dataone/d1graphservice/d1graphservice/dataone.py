@@ -4,7 +4,10 @@ dataone.py
 Functions related to querying the DataOne v1 API.
 """
 
+import os
 import urllib
+import xml.etree.ElementTree as ET
+import base64
 
 from d1graphservice import util
 
@@ -142,52 +145,128 @@ def getIdentifiers(from_string, to_string, fields=None, page=1, page_size=1000):
     return identifier_strings
 
 
-def getDocument(identifier):
+def getSystemMetadata(identifier, cache=False):
     """
-    Get XML document (sysmeta) for an identifier.
-    """
+    Gets the system metadata for an identifier.
 
-    query_string = "http://cn.dataone.org/cn/v1/object/%s" % identifier
-    query_xml = util.getXML(query_string)
+    In development, I'm keeping a cache of documents in the root of the
+    d1graphservice folder at ./cache. This will need to be removed in
+    production. This is toggled with the argument `cache`.
 
-    return query_xml
+    Arguments:
+        identifier: str
+            PID of the document
+        cache: bool
+            Whether to cache files in the current working directory
 
-
-def getSciMeta(identifier):
-    """
-    Get XML document (scimeta) for an identifier.
-    """
-
-    query_string = "http://cn.dataone.org/cn/v1/meta/%s" % identifier
-    query_xml = util.getXML(query_string)
-
-    return query_xml
-
-
-def getDocumentByIdentifier(identifier, fields=['identifier']):
-    """
-    Gets a single document off the Solr index by searching for its identifier.
+    Returns:
+        An XML document
     """
 
-    # Replace everything, up to and including, the last : in the string
-    # Solr can't handle colons, even escaped
+    sysmeta = None
 
-    last_colon = identifier.rfind(":")
+    # Try from cache first
+    if cache is True:
+        print "Attempting to get scimeta from local cache for...%s" % identifier
 
-    if last_colon != -1:
-        identifier = "*" + identifier[last_colon+1:]
+        if not os.path.exists("./cache"):
+            os.mkdir("./cache")
 
-    identifier_esc = urllib.quote_plus(identifier)
+        cache_filename = base64.urlsafe_b64encode(identifier)
+        cache_filepath = './cache/' + cache_filename
 
-    query_string = "http://cn.dataone.org/cn/v1/query/solr/?fl=" + ",".join(fields) + "&q=id:" + identifier_esc + "&rows=1&start=0"
-    query_xml = util.getXML(query_string)
+        if os.path.isfile(cache_filepath):
+            print "  Loading from cache."
 
-    print query_string
+            sysmeta = ET.parse(cache_filepath)
 
-    return query_xml.find(".//doc")
+    if sysmeta is not None:
+        return sysmeta
+
+    query_string = "https://cn.dataone.org/cn/v1/meta/%s" % identifier
+    sysmeta = util.getXML(query_string)
+
+    # Cache what we found for next time
+    if sysmeta is not None and cache is True:
+        with open(cache_filepath, "wb") as f:
+            f.write(ET.tostring(sysmeta))
+
+    return sysmeta
 
 
-def getDocumentIdentifier(doc):
+def getScientificMetadata(identifier, identifier_map={}, cache_dir=None, cache=False):
+    """
+    Gets the scientific metadata for an identifier.
+    Optionally, loads the file from a cache which is a dump of documents with
+    filenames like 'autogen...' (which need to be mapped to a PID).
+
+    In development, I'm keeping a cache of documents in the root of the
+    d1graphservice folder at ./cache. This will need to be removed in
+    production. This is toggled with the argument `cache`.
+
+    Arguments:
+        identifier: str
+            PID of the document
+
+        identifier_map: Dict
+            An identifier<->filename mapping
+
+        cache_dir: str
+            The base directory path to the cache
+
+        cache: bool
+            Whether to cache files in the current working directory
+
+    Returns:
+        An XML document
+    """
+
+    scimeta = None
+
+    # Try from cache first
+    if cache is True:
+        print "Attempting to get scimeta from local cache for...%s" % identifier
+
+        if not os.path.exists("./cache"):
+            os.mkdir("./cache")
+
+        cache_filename = base64.urlsafe_b64encode(identifier)
+        cache_filepath = './cache/' + cache_filename
+
+        print "  Looking for filename %s" % cache_filename
+
+        if os.path.isfile(cache_filepath):
+            print "  Loading from cache."
+
+            scimeta = ET.parse(cache_filepath)
+
+            if scimeta is not None:
+                scimeta = scimeta.getroot()
+
+    # Return cached copy if we successfully got it
+    if scimeta is not None:
+        return scimeta
+
+    if identifier in identifier_map:
+        mapped_filename = identifier_map[identifier]
+        mapped_file_path = cache_dir + mapped_filename
+
+        if os.path.isfile(mapped_file_path):
+            scimeta = ET.parse(mapped_file_path).getroot()
+
+    if scimeta is None:
+        query_string = "https://cn.dataone.org/cn/v1/object/%s" % urllib.quote_plus(identifier)
+        scimeta = util.getXML(query_string)
+
+    # Cache what we found for next time
+    if scimeta is not None and cache is True:
+        with open(cache_filepath, "wb") as f:
+            f.write(ET.tostring(scimeta))
+
+    return scimeta
+
+
+def extractDocumentIdentifier(doc):
     """
     Get an identifier from an XML document.
 
@@ -208,3 +287,24 @@ def getDocumentIdentifier(doc):
         raise Exception("Failed to add dataset because the identifier couldn't be processed.")
 
     return identifier
+
+
+def getSolrIndex(identifier, fields=['identifier']):
+    """
+    Gets a single document off the Solr index by searching for its identifier.
+    """
+
+    # Replace everything, up to and including, the last : in the string
+    # Solr can't handle colons, even escaped
+
+    last_colon = identifier.rfind(":")
+
+    if last_colon != -1:
+        identifier = "*" + identifier[last_colon+1:]
+
+    identifier_esc = urllib.quote_plus(identifier)
+
+    query_string = "http://cn.dataone.org/cn/v1/query/solr/?fl=" + ",".join(fields) + "&q=id:" + identifier_esc + "&rows=1&start=0"
+    query_xml = util.getXML(query_string)
+
+    return query_xml.find(".//doc")

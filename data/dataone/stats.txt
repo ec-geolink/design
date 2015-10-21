@@ -1,0 +1,28 @@
+Statistics on the number of triples that could be in DataOne.
+
+I processed 5884 documents.
+
+TRIPLES
+
+Which generated 2763 (people) 10636 (organizaiton) 218057 (dataset) triples
+(Sum 231456).
+
+Assuming ~250,000 datasets on D1, we'd generate 11,572,800 if the whole graph
+where generated.
+
+
+URIS
+
+Using matching rules:
+  People: Same First+Last
+  Organizations: Same organization name
+
+I produced 314 unique people URIs
+           47 unique organization URIs
+
+
+TTL Files
+
+people-testing.ttl 359 KB
+organizations-testing.ttl 1.2 MB
+datasets-testing.ttl 43.7 MB

@@ -86,7 +86,16 @@ def processCreator(creator, document):
     email = creator.find("./electronicMailAddress")
 
     if email is not None and email.text is not None:
+        # Extract email address, replacng 'at' with '@'
         record['email'] = email.text.strip().replace(" at ", "@")
+
+        # Check for the weird pattern where a person enters
+        # 'My Name &lt;my@email&gt;'
+        email_match = re.match(".*&lt;(.+)&gt;.*", record['email'])
+
+        if email_match and len(email_match.groups()) == 1:
+            record['email'] = email_match.group(1)
+
 
     phone = creator.find("./phone[@phonetype='voice']")
 

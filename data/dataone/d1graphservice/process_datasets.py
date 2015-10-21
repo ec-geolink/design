@@ -1,5 +1,5 @@
 """
-Process a dataset (by PID) for dataset/people/org triples.
+For testing purposes: Process a specific page on the Solr index.
 """
 
 import os
@@ -28,7 +28,10 @@ from d1graphservice.people.formats import fgdc
 
 
 if __name__ == "__main__":
-    identifier = 'doi:10.5063/AA/nceas.920.2'
+    # query = "https://cn.dataone.org/cn/v1/query/solr/?fl=author,identifier,title,authoritativeMN&q=author:*Jones*Matthew*&rows=1000&start=0"
+    # query = "https://cn.dataone.org/cn/v1/query/solr/?fl=author,identifier,title,authoritativeMN&q=author:*Jones*&rows=20&start=0"
+    query = "https://cn.dataone.org/cn/v1/query/solr/?fl=author,identifier,title,authoritativeMN&q=author:Jeremy*Jones*&rows=20&start=0"
+
     cache_dir = "/Users/mecum/src/d1dump/documents/"
     formats_map = util.loadFormatsMap()
 
@@ -57,36 +60,40 @@ if __name__ == "__main__":
         'datasets': store.Store("http://localhost:3232/", 'ds', namespaces)
     }
 
+    for store_name in stores:
+        stores[store_name].delete_all()
+
     stores = multi_store.MultiStore(stores, namespaces)
-
-    # Establish which fields we want to get from the Solr index
-    fields = ["identifier","title","abstract","author",
-    "authorLastName", "origin","submitter","rightsHolder","documents",
-    "resourceMap","authoritativeMN","obsoletes","northBoundCoord",
-    "eastBoundCoord","southBoundCoord","westBoundCoord","startDate","endDate",
-    "datasource","replicaMN"]
-
     vld = validator.Validator()
 
-    scimeta = dataone.getScientificMetadata(identifier, cache=True)
-    doc = dataone.getSolrIndex(identifier, fields)
-    records = processing.extractCreators(identifier, scimeta)
+    page_xml = util.getXML(query)
+    documents = page_xml.findall(".//doc")
 
-    print records
+    for doc in documents:
+        identifier = doc.find(".//str[@name='identifier']").text
 
-    # Add records and organizations
-    people = [p for p in records if 'type' in p and p['type'] == 'person']
-    organizations = [o for o in records if 'type' in o and o['type'] == 'organization']
+        print identifier
 
-    # Always do organizations first, so peoples' organization URIs exist
-    for organization in organizations:
-        organization = vld.validate(organization)
-        stores.addOrganization(organization)
+        scimeta = dataone.getScientificMetadata(identifier, cache=True)
 
-    for person in people:
-        person = vld.validate(person)
-        stores.addPerson(person)
+        if scimeta is None:
+            continue
 
-    stores.addDataset(doc, scimeta, formats_map)
+        records = processing.extractCreators(identifier, scimeta)
+
+        # Add records and organizations
+        people = [p for p in records if 'type' in p and p['type'] == 'person']
+        organizations = [o for o in records if 'type' in o and o['type'] == 'organization']
+
+        # Always do organizations first, so peoples' organization URIs exist
+        for organization in organizations:
+            organization = vld.validate(organization)
+            stores.addOrganization(organization)
+
+        for person in people:
+            person = vld.validate(person)
+            stores.addPerson(person)
+
+        stores.addDataset(doc, scimeta, formats_map)
 
     stores.save()
