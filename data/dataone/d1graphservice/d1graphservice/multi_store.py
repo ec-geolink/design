@@ -105,10 +105,10 @@ class MultiStore():
 
         store = self.getStore('people')
 
-        if 'first_name' not in record and len(record['first_name']) < 1:
+        if 'first_name' not in record or len(record['first_name']) < 1:
             return None
 
-        if 'last_name' not in record and len(record['last_name']) < 1:
+        if 'last_name' not in record or len(record['last_name']) < 1:
             return None
 
         # Temp
@@ -152,13 +152,13 @@ class MultiStore():
 
         store = self.getStore('people')
 
-        if 'first_name' not in record and len(record['first_name']) < 1:
+        if 'first_name' not in record or len(record['first_name']) < 1:
             return None
 
-        if 'last_name' not in record and len(record['last_name']) < 1:
+        if 'last_name' not in record or len(record['last_name']) < 1:
             return None
 
-        if 'document' not in record and len(record['document']) < 1:
+        if 'document' not in record or len(record['document']) < 1:
             return None
 
         first = record['first_name']
@@ -203,7 +203,7 @@ class MultiStore():
 
         store = self.getStore('organizations')
 
-        if 'name' not in record and len(record['name']) < 1:
+        if 'name' not in record or len(record['name']) < 1:
             return None
 
         name = record['name']
