@@ -2304,7 +2304,7 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#GeoFeature">
         <rdfs:label>GeoFeature</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Place"/>
-        <rdfs:comment>A significant locality where observations are made. GEBCO vocabulary terms are included as subclasses.</rdfs:comment>
+        <rdfs:comment>A significant geospatial locality where observations are made. GEBCO vocabulary terms are included as subclasses.</rdfs:comment>
     </owl:Class>
     
 
