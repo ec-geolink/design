@@ -239,14 +239,6 @@
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasContact">
         <rdfs:label>hasContact</rdfs:label>
         <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isContactOf"/>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Organization"/>
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Person"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -256,6 +248,14 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Organization"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Person"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
@@ -432,19 +432,8 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasFeatureOfInterest">
         <rdfs:label>hasFeatureOfInterest</rdfs:label>
-        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://schema.geolink.org/dev/base/main#hasFeatureType -->
-
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasFeatureType">
-        <rdfs:label>hasFeatureType</rdfs:label>
-        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
-        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
-        <rdfs:subPropertyOf rdf:resource="http://schema.geolink.org/dev/base/main#hasPlaceType"/>
     </owl:ObjectProperty>
     
 
@@ -466,6 +455,17 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
         <rdfs:label>hasFormat</rdfs:label>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#DigitalObject"/>
         <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Format"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasGeoFeatureType -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasGeoFeatureType">
+        <rdfs:label>hasGeoFeatureType</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
+        <rdfs:subPropertyOf rdf:resource="http://schema.geolink.org/dev/base/main#hasPlaceType"/>
     </owl:ObjectProperty>
     
 
@@ -1223,15 +1223,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     
 
 
-    <!-- http://schema.geolink.org/dev/base/main#isFeatureTypeOf -->
-
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isFeatureTypeOf">
-        <rdfs:label>isFeatureTypeOf</rdfs:label>
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://schema.geolink.org/dev/base/main#isFirstAppearanceOf -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isFirstAppearanceOf"/>
@@ -1243,6 +1234,15 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isFormatOf">
         <rdfs:label>isFormatOf</rdfs:label>
         <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasFormat"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#isGeoFeatureTypeOf -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isGeoFeatureTypeOf">
+        <rdfs:label>isGeoFeatureTypeOf</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
     </owl:ObjectProperty>
     
 
@@ -1794,7 +1794,7 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#DigitalObject"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Dive"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Document"/>
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Feature"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#GeoFeature"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Place"/>
                 </owl:unionOf>
@@ -1888,7 +1888,7 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Feature"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#GeoFeature"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
                 </owl:unionOf>
             </owl:Class>
@@ -2063,7 +2063,7 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Dataset"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#DigitalObject"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Document"/>
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Feature"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#GeoFeature"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Instrument"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Organization"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Person"/>
@@ -2150,7 +2150,7 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Dataset"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#DigitalObject"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Document"/>
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Feature"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#GeoFeature"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Instrument"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Organization"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Person"/>
@@ -2186,7 +2186,7 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Dataset"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#DigitalObject"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Document"/>
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Feature"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#GeoFeature"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Instrument"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Organization"/>
                     <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Person"/>
@@ -2290,31 +2290,31 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     
 
 
-    <!-- http://schema.geolink.org/dev/base/main#Feature -->
+    <!-- http://schema.geolink.org/dev/base/main#Format -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#Feature">
-        <rdfs:label>Feature</rdfs:label>
+    <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#Format">
+        <rdfs:label>Format</rdfs:label>
+        <rdfs:comment>The type of data format for a DigitalObject</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#GeoFeature -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#GeoFeature">
+        <rdfs:label>GeoFeature</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Place"/>
         <rdfs:comment>A significant locality where observations are made. GEBCO vocabulary terms are included as subclasses.</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/base/main#FeatureType -->
+    <!-- http://schema.geolink.org/dev/base/main#GeoFeatureType -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#FeatureType">
-        <rdfs:label>FeatureType</rdfs:label>
+    <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#GeoFeatureType">
+        <rdfs:label>GeoFeatureType</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#PlaceType"/>
         <rdfs:comment>The type of spatial feature - from gazetteer. GEBCO vocabulary terms are included as instances.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/dev/base/main#Format -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#Format">
-        <rdfs:label>Format</rdfs:label>
-        <rdfs:comment>The type of data format for a DigitalObject</rdfs:comment>
     </owl:Class>
     
 
