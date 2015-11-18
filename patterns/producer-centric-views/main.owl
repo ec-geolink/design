@@ -939,6 +939,17 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     
 
 
+    <!-- http://schema.geolink.org/dev/base/main#hasSampleType -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasSampleType">
+        <rdfs:label>hasSampleType</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#PhysicalSampleType"/>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isSampleTypeOf"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://schema.geolink.org/dev/base/main#hasScheduler -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasScheduler">
@@ -1511,6 +1522,14 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     
 
 
+    <!-- http://schema.geolink.org/dev/base/main#isSampleTypeOf -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isSampleTypeOf">
+        <rdfs:label>isSampleTypeOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://schema.geolink.org/dev/base/main#isSchedulerOf -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isSchedulerOf">
@@ -1979,23 +1998,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
                     <rdf:Description rdf:about="&xsd;dateTime"/>
                     <rdf:Description rdf:about="&xsd;gYear"/>
                     <rdf:Description rdf:about="&xsd;gYearMonth"/>
-                </owl:unionOf>
-            </rdfs:Datatype>
-        </rdfs:range>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://schema.geolink.org/dev/base/main#hasSamplingType -->
-
-    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasSamplingType">
-        <rdfs:label>hasSamplingType</rdfs:label>
-        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
-        <rdfs:range>
-            <rdfs:Datatype>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&xsd;anyURI"/>
-                    <rdf:Description rdf:about="&xsd;string"/>
                 </owl:unionOf>
             </rdfs:Datatype>
         </rdfs:range>
@@ -2498,6 +2500,15 @@ http://purl.org/spar/datacite/doi for DOI.</rdfs:comment>
     <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#PhysicalSample">
         <rdfs:label>PhysicalSample</rdfs:label>
         <rdfs:comment>An object of observation that may be preserved, catalogued, and/or preserved.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#PhysicalSampleType -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#PhysicalSampleType">
+        <rdfs:label>PhysicalSampleType</rdfs:label>
+        <rdfs:comment>Types of physical samples.</rdfs:comment>
     </owl:Class>
     
 
