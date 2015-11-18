@@ -1734,6 +1734,26 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     
 
 
+    <!-- http://schema.geolink.org/dev/base/main#hasCollectionEndDate -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasCollectionEndDate">
+        <rdfs:label>hasCollectionEndDate</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasCollectionStartDate -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasCollectionStartDate">
+        <rdfs:label>hasCollectionStartDate</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://schema.geolink.org/dev/base/main#hasDescription -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasDescription">
@@ -1898,6 +1918,16 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     
 
 
+    <!-- http://schema.geolink.org/dev/base/main#hasLastUpdateDate -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasLastUpdateDate">
+        <rdfs:label>hasLastUpdateDate</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://schema.geolink.org/dev/base/main#hasMaterial -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasMaterial">
@@ -2001,6 +2031,16 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
                 </owl:unionOf>
             </rdfs:Datatype>
         </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/dev/base/main#hasRegistrationDate -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasRegistrationDate">
+        <rdfs:label>hasRegistrationDate</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
     </owl:DatatypeProperty>
     
 
