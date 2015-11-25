@@ -39,9 +39,9 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/base/main#hasFeatureType -->
+    <!-- http://schema.geolink.org/dev/base/main#hasGeoFeatureType -->
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
     
 
 
@@ -56,15 +56,15 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/base/main#Feature -->
+    <!-- http://schema.geolink.org/dev/base/main#GeoFeature -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#Feature"/>
+    <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     
 
 
-    <!-- http://schema.geolink.org/dev/base/main#FeatureType -->
+    <!-- http://schema.geolink.org/dev/base/main#GeoFeatureType -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#FeatureType"/>
+    <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     
 
 
@@ -73,11 +73,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Abyssal_Hill">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Abyssal_Hill"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -87,11 +87,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Abyssal_Plain">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Abyssal_Plain"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -101,11 +101,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Apron">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Apron"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -115,11 +115,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Archipelagic_Apron">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Archipelagic_Apron"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -129,11 +129,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Arrugado">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Arrugado"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -143,11 +143,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Bank">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Bank"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -157,11 +157,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Banks">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Banks"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -171,11 +171,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Basin">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Basin"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -185,11 +185,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Basin_and_Ridge_Province">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Basin_and_Ridge_Province"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -199,11 +199,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Borderland">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Borderland"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -213,11 +213,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Caldera">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Caldera"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -227,11 +227,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Calderas">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Calderas"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -241,11 +241,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Canyon">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Canyon"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -255,11 +255,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Canyons">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Canyons"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -269,11 +269,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Cap">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Cap"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -283,11 +283,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Channel">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Channel"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -297,11 +297,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Cone">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Cone"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -311,11 +311,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Continental_Margin">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Continental_Margin"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -325,11 +325,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Continental_Rise">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Continental_Rise"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -339,11 +339,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Continental_Shelf">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Continental_Shelf"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -353,11 +353,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Continental_Slope">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Continental_Slope"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -367,11 +367,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Deep">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Deep"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -381,11 +381,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Deeps">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Deeps"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -395,11 +395,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Discordance">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Discordance"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -409,11 +409,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Escarpment">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Escarpment"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -423,11 +423,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Fan">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Fan"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -437,11 +437,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Fracture_Zone">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Fracture_Zone"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -451,11 +451,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Fracture_Zone_Province">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Fracture_Zone_Province"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -465,11 +465,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Fracture_Zone_System">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Fracture_Zone_System"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -479,11 +479,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Gap">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Gap"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -493,11 +493,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Ground">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Ground"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -507,11 +507,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Guyot">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Guyot"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -521,11 +521,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Guyots">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Guyots"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -535,11 +535,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Hill">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Hill"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -549,11 +549,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Hills">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Hills"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -563,11 +563,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Hole">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Hole"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -577,11 +577,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Knoll">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Knoll"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -591,11 +591,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Knolls">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Knolls"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -605,11 +605,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Levee">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Levee"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -619,11 +619,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Median_Valley">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Median_Valley"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -633,11 +633,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Mid-Oceanic_Ridge">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Mid-Oceanic_Ridge"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -647,11 +647,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Moat">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Moat"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -661,11 +661,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Mound">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Mound"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -675,11 +675,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Mounds">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Mounds"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -689,11 +689,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Mud_Volcano">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Mud_Volcano"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -703,11 +703,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Mud_Volcanoes">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Mud_Volcanoes"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -717,11 +717,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Pass">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Pass"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -731,11 +731,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Passage">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Passage"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -745,11 +745,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Peak">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Peak"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -759,11 +759,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Pinnacle">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Pinnacle"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -773,11 +773,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Plain">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Plain"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -787,11 +787,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Plateau">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Plateau"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -801,11 +801,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Promontory">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Promontory"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -815,11 +815,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Province">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Province"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -829,11 +829,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Reef">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Reef"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -843,11 +843,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Reefs">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Reefs"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -857,11 +857,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Ridge">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Ridge"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -871,11 +871,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Ridges">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Ridges"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -885,11 +885,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Rift">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Rift"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -899,11 +899,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Rise">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Rise"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -913,11 +913,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Saddle">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Saddle"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -927,11 +927,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Salt_Dome">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Salt_Dome"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -941,11 +941,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Salt_Dome_Province">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Salt_Dome_Province"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -955,11 +955,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Sand_Ridge">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Sand_Ridge"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -969,11 +969,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Sand_Ridge_Province">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Sand_Ridge_Province"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -983,11 +983,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Scarp">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Scarp"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -997,11 +997,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Sea_Channel">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Sea_Channel"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -1011,11 +1011,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Sea_Valley">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Sea_Valley"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -1025,11 +1025,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Seabight">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Seabight"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -1039,11 +1039,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Seachannel">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Seachannel"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -1053,11 +1053,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Seamount">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Seamount"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -1067,11 +1067,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Seamount_Chain">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Seamount_Chain"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -1081,11 +1081,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Seamount_Group">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Seamount_Group"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -1095,11 +1095,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Seamount_Province">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Seamount_Province"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -1109,11 +1109,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Seamounts">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Seamounts"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -1123,11 +1123,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Shelf">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Shelf"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -1137,11 +1137,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Shelf-Edge">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Shelf-Edge"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -1151,11 +1151,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Shelf_Break">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Shelf_Break"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -1165,11 +1165,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Shoal">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Shoal"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -1179,11 +1179,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Shoals">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Shoals"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -1193,11 +1193,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Sill">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Sill"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -1207,11 +1207,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Slope">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Slope"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -1221,11 +1221,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Spur">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Spur"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -1235,11 +1235,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Submarine_Valley">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Submarine_Valley"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -1249,11 +1249,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Tablemount">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Tablemount"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -1263,11 +1263,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Terrace">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Terrace"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -1277,11 +1277,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Trench">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Trench"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -1291,11 +1291,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Trough">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Trough"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -1305,11 +1305,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Valley">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Valley"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -1319,11 +1319,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Valleys">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Valleys"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -1333,11 +1333,11 @@
     <owl:Class rdf:about="&glvoc_gebco;Zone">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
                 <owl:hasValue rdf:resource="&glvoc_gebco;Zone"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
     </owl:Class>
     
 
@@ -1356,7 +1356,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Abyssal_Hill -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Abyssal_Hill">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1364,7 +1364,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Abyssal_Plain -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Abyssal_Plain">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1372,7 +1372,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Apron -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Apron">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1380,7 +1380,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Archipelagic_Apron -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Archipelagic_Apron">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1388,7 +1388,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Arrugado -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Arrugado">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1396,7 +1396,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Bank -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Bank">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1404,7 +1404,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Banks -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Banks">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1412,7 +1412,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Basin -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Basin">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1420,7 +1420,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Basin_and_Ridge_Province -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Basin_and_Ridge_Province">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1428,7 +1428,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Borderland -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Borderland">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1436,7 +1436,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Caldera -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Caldera">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1444,7 +1444,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Calderas -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Calderas">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1452,7 +1452,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Canyon -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Canyon">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1460,7 +1460,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Canyons -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Canyons">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1468,7 +1468,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Cap -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Cap">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1476,7 +1476,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Channel -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Channel">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1484,7 +1484,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Cone -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Cone">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1492,7 +1492,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Continental_Margin -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Continental_Margin">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1500,7 +1500,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Continental_Rise -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Continental_Rise">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1508,7 +1508,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Continental_Shelf -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Continental_Shelf">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1516,7 +1516,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Continental_Slope -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Continental_Slope">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1524,7 +1524,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Deep -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Deep">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1532,7 +1532,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Deeps -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Deeps">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1540,7 +1540,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Discordance -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Discordance">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1548,7 +1548,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Escarpment -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Escarpment">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1556,7 +1556,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Fan -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Fan">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1564,7 +1564,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Fracture_Zone -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Fracture_Zone">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1572,7 +1572,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Fracture_Zone_Province -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Fracture_Zone_Province">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1580,7 +1580,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Fracture_Zone_System -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Fracture_Zone_System">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1588,7 +1588,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Gap -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Gap">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1596,7 +1596,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Ground -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Ground">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1604,7 +1604,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Guyot -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Guyot">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1612,7 +1612,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Guyots -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Guyots">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1620,7 +1620,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Hill -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Hill">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1628,7 +1628,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Hills -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Hills">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1636,7 +1636,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Hole -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Hole">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1644,7 +1644,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Knoll -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Knoll">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1652,7 +1652,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Knolls -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Knolls">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1660,7 +1660,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Levee -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Levee">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1668,7 +1668,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Median_Valley -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Median_Valley">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1676,7 +1676,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Mid-Oceanic_Ridge -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Mid-Oceanic_Ridge">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1684,7 +1684,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Moat -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Moat">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1692,7 +1692,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Mound -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Mound">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1700,7 +1700,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Mounds -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Mounds">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1708,7 +1708,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Mud_Volcano -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Mud_Volcano">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1716,7 +1716,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Mud_Volcanoes -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Mud_Volcanoes">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1724,7 +1724,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Pass -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Pass">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1732,7 +1732,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Passage -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Passage">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1740,7 +1740,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Peak -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Peak">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1748,7 +1748,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Pinnacle -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Pinnacle">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1756,7 +1756,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Plain -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Plain">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1764,7 +1764,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Plateau -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Plateau">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1772,7 +1772,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Promontory -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Promontory">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1780,7 +1780,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Province -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Province">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1788,7 +1788,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Reef -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Reef">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1796,7 +1796,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Reefs -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Reefs">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1804,7 +1804,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Ridge -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Ridge">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1812,7 +1812,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Ridges -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Ridges">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1820,7 +1820,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Rift -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Rift">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1828,7 +1828,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Rise -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Rise">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1836,7 +1836,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Saddle -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Saddle">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1844,7 +1844,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Salt_Dome -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Salt_Dome">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1852,7 +1852,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Salt_Dome_Province -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Salt_Dome_Province">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1860,7 +1860,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Sand_Ridge -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Sand_Ridge">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1868,7 +1868,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Sand_Ridge_Province -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Sand_Ridge_Province">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1876,7 +1876,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Scarp -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Scarp">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1884,7 +1884,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Sea_Channel -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Sea_Channel">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1892,7 +1892,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Sea_Valley -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Sea_Valley">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1900,7 +1900,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Seabight -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Seabight">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1908,7 +1908,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Seachannel -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Seachannel">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1916,7 +1916,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Seamount -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Seamount">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1924,7 +1924,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Seamount_Chain -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Seamount_Chain">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1932,7 +1932,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Seamount_Group -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Seamount_Group">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1940,7 +1940,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Seamount_Province -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Seamount_Province">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1948,7 +1948,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Seamounts -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Seamounts">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1956,7 +1956,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Shelf -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Shelf">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1964,7 +1964,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Shelf-Edge -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Shelf-Edge">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1972,7 +1972,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Shelf_Break -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Shelf_Break">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1980,7 +1980,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Shoal -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Shoal">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1988,7 +1988,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Shoals -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Shoals">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -1996,7 +1996,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Sill -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Sill">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -2004,7 +2004,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Slope -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Slope">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -2012,7 +2012,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Spur -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Spur">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -2020,7 +2020,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Submarine_Valley -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Submarine_Valley">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -2028,7 +2028,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Tablemount -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Tablemount">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -2036,7 +2036,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Terrace -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Terrace">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -2044,7 +2044,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Trench -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Trench">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -2052,7 +2052,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Trough -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Trough">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -2060,7 +2060,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Valley -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Valley">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -2068,7 +2068,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Valleys -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Valleys">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
     
 
@@ -2076,7 +2076,7 @@
     <!-- http://schema.geolink.org/dev/voc/gebco/featuretype#Zone -->
 
     <owl:NamedIndividual rdf:about="&glvoc_gebco;Zone">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
+        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
     </owl:NamedIndividual>
 </rdf:RDF>
 
