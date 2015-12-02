@@ -215,7 +215,7 @@ Notes:
 
 - I just found this on CrossRef: [https://api.crossref.org/v1/works/http://dx.doi.org/10.3390/e17041701](https://api.crossref.org/v1/works/http://dx.doi.org/10.3390/e17041701). The ISSN is given as just '1099-4300'. Maybe that's the best way.
 
-Recommend: `0317-8471` because the ISSN part is redundant and I've seen a use in the wild (see above) that omits the 'ISSN' before the numbers.
+- Use `0317-8471` because the ISSN part is redundant and I've seen a use in the wild (see above) that omits the 'ISSN' before the numbers.
 
 Recommendation:
 
@@ -418,8 +418,6 @@ Notes:
 - the vent field using path alias, e.g., Mariner is [http://irvents-new3.whoi.edu/node/1001](http://irvents-new3.whoi.edu/node/1001) and
 - [http://irvents-new3.whoi.edu/ventfield/mariner](http://irvents-new3.whoi.edu/ventfield/mariner)."
 
-Recommend: InterRidge:13-n-ridge-site
-
 Recommendation:
 
 Predicate                 | Object
@@ -554,12 +552,9 @@ Notes:
 - They are of the form `urn:lsid:<Authority>:<Namespace>:<ObjectID>[:<Version>]`
 - LSIDs may be resolved by HTTP URIs, e.g. `<http://zoobank.org/urn:lsid:zoobank.org:pub:CDC8D258-8F57-41DC-B560-247E17D3DC8C>`
 
-
-Recommend: 'urn:lsid:XXXX'
+Recommendation:
 
 - Downcase urn and lsid, but leave the rest in-tact.
-
-Recommendation:
 
 Predicate                 | Object
 --------------------------|--------------------------
@@ -606,9 +601,9 @@ Notes:
 
 - Under OpenID Auth 1.1 ([http://openid.net/specs/openid-authentication-1_1.html](http://openid.net/specs/openid-authentication-1_1.html)), OpenID Identifiers are just URLs and follow the same rules.
 
-Recommend: Format as URLs.
-
 Recommendation:
+
+- Format as URLs
 
 Predicate                 | Object
 --------------------------|--------------------------
@@ -625,8 +620,6 @@ Notes:
   - 0000-0001-9923-4648
 
 - ORCID responds to RDF/XML if you send an accept header to them (redirects to something like [https://pub.orcid.org/experimental_rdf_v1/0000-0001-9923-4648](https://pub.orcid.org/experimental_rdf_v1/0000-0001-9923-4648)).
-
-Recommend: [http://orcid.org/0000-0001-9923-4648](http://orcid.org/0000-0001-9923-4648)
 
 Recommendation:
 
@@ -655,9 +648,9 @@ Examples:
 	- "PII: Sxxxx-xxxx(yy)iiiii-d"
 	- "B x-xxx-xxxxx-x/iiiii-d"
 
-Recommend: Just store the 17 characters (no hyphens, slashes).
-
 Recommendation:
+
+- Just store the 17 characters (no hyphens, slashes).
 
 Predicate                 | Object
 --------------------------|--------------------------
@@ -686,8 +679,6 @@ Predicate                 | Object
 These appear to just be a string of numbers, e.g. 23193287.
 
 Resolve URL: http://www.ncbi.nlm.nih.gov/pubmed/23193287
-
-Recommend: '23193287'
 
 Recommendation:
 
