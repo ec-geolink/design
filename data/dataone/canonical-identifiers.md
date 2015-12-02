@@ -4,33 +4,33 @@
 
 Identifiers (e.g., DOI, ORCID, etc.) will be used in GeoLink LOD graphs and we would like to have a set of guidelines for how each type of identifier should be entered into our graphs. See #51 for discussion on this topic.
 
-Here's what I did:
+In general, identifiers have attributes such as a schema, some concept resembling a value (normalized and then used for comparison of identifiers by character), a display form (for print), and one of more HTTP-resolvable URI forms. However, it is often the case that the a specification does not exist or does not provide guidance on all of the aforementioned attributes. In the common case, all that is made available is a specification of a schema and a value and recommendations about how to display an identifier in print (or in RDF) are left undiscussed.
 
-- Tried to find a best source of information for each identifier and included a link if I found one.
+While it may be difficult to decide on the best way to serialize identifiers in GeoLink, deciding as a group on a single way to do things will ensure we're doing something reasonable and that we're all doing the same reasonable thing in our graphs. In this document I present a list of identifiers, information about their specification and attributes, and provide my recommendations for how we should serialize them in our graphs.
+
+For each identifier, I:
+
+- Tried to find a best source of information for the identifier and included a link if I found one
 - Tried to find an example usage of the identifier in the wild
-- Tried to make the distinction between the identifier itself and the resolution method for that identifier
-- Tried to make the distinction between use cases and make sure we had the best form for use in an LOD graph.
+- Tried to make the distinction between use cases and make sure we had the best form for use in an LOD graph
 - Tried to find an endpoint that responds with RDF/XML or some other serialization of triples for each identifier
 
 I then wrote recommendations for what values to fill in as properties of `glbase:Identifier` resources we put in our graphs.
 
-
 The current set of properties are:
 
-- `glbase:hasIdentifierScheme`: Captures the scheme (e.g., DOI) for an identifier. Always use [DataCite named individuals](http://www.essepuntato.it/lode/http://purl.org/spar/datacite#namedindividuals). Use `datacite:local-resource-identifier` for internal identifiers (e.g., DataONE PIDs)
-- `glbase:hasIdentifierValue`: Defined in the ontology as: "Points to the actual string value of identifier., e.g.: &quot;doi:10.5063/AA/ArchivalTag.4.1&quot;"
+- `glbase:hasIdentifierScheme`: Captures the scheme (e.g., DOI) for an identifier. Always use [DataCite named individuals](http://www.essepuntato.it/lode/http://purl.org/spar/datacite#namedindividuals). Use `datacite:local-resource-identifier` for internal identifiers (e.g., some DataONE PIDs)
+- `glbase:hasIdentifierValue`: Defined in the ontology as: "Points to the actual string value of identifier., e.g.: &quot;doi:10.5063/AA/ArchivalTag.4.1&quot;". This is vague.
 
-
-
-I propose to break up `glbase:hasIdentifierValue` into at two properties, `glbase:hasIdentifierValue` and `glbase:hasIdentifierResolveURI`. I welcome feedback on the names of the properties and also the number.
+I propose to break up `glbase:hasIdentifierValue` into two properties, `glbase:hasIdentifierValue` and `glbase:hasIdentifierResolveURI`. Note the latter may irk I welcome feedback on the names of the properties and also the number of properties we need to properly serialize identifiers in our graphs.
 
 - `glbase:hasIdentifierValue`: Captures the canonical form of the identifier. Subject to two principles:
-  - Avoid using resolve URIs: e.g., prefer `'doi:10.1006/jmbi.1998.2354'` to '[http://doi.org/10.1006/jmbi.1998.2354](http://doi.org/10.1006/jmbi.1998.2354)'
-  - Avoid forms that need other information to be recognized as an identifier of its schema: e.g., prefer `doi:10.1006/jmbi.1998.2354` to `10.1006/jmbi.1998.2354`
+  1. Avoid using resolve URIs: e.g., prefer `'doi:10.1006/jmbi.1998.2354'` to '[http://doi.org/10.1006/jmbi.1998.2354](http://doi.org/10.1006/jmbi.1998.2354)'
+  2. Avoid forms that need other information to be recognized as an identifier of its schema: e.g., prefer `doi:10.1006/jmbi.1998.2354` to `10.1006/jmbi.1998.2354`
 
-- `glbase:hasIdentifierResolveURI`: If present, include the preferred HTTP URI at which the identifier can be resolved in some form
+- `glbase:hasIdentifierResolveURI`: If present, include the preferred HTTP URI at which the identifier can be resolved in some way. Always starts with 'http(s)://' and may return anything relevant to the identifier.
 
-A dataset (`:x`) with a DOI identifier (10.1006/jmbi.1998.2354) serialized in Turtle form using the latter properties would look like this (excuse any invalid Turtle):
+A dataset (`:x`) with a DOI identifier with DOI name '10.1006/jmbi.1998.2354' serialized in Turtle form using the latter properties would look like this (excuse any invalid Turtle):
 
 ```{ttl}
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -38,13 +38,13 @@ A dataset (`:x`) with a DOI identifier (10.1006/jmbi.1998.2354) serialized in Tu
 @prefix datacite: <http://purl.spar.org/datacite/> .
 
 :x a glbase:Dataset ;
-  ...elided...
+  #...elided...
   glbase:hasIdentifier [
     glbase:hasIdentifierScheme datacite:doi ;
     glbase:hasIdentifierValue "doi:10.1006/jmbi.1998.2354" ;
     glbase:hasIdentifierResolveURI <http://doi.org/10.1006/jmbi.1998.2354> .
   ] ;
-  ...elided...
+  #...elided...
 ```
 
 ### Contents
@@ -86,20 +86,10 @@ Here's the set of identifiers the GeoLink project has expressed interest in putt
 - [VIAF](#viaf)
 
 ### A Note on Web-Resolvable Identifiers
+
 It might be really nice to ensure we take a similar approach for all identifiers that have resolution services (e.g. DOI, Handle). This gets tricky because a number of services use identifiers of this form but they recommend slightly different use patterns.
 
 For example, DOI suggests using [http://doi.org/{DOI}](http://doi.org/{DOI}) while FundRef uses [http://dx.doi.org/{DOI}](http://dx.doi.org/{DOI}) as their identifiers. It may be confusing to store DOIs in different forms but in a way, a DOI that is used as a FundRef DOI Is more of a 'FundRef DOI' rather than an 'DOI DOI'.
-
-### A Note on Machine Form vs. Display Form vs. Web-Resolvable Form
-As mentioned above, many identifiers come with some form of resolution service which can be used to go to the entity the identifier refers to. In some cases, an identifier may be resolved using numerous resolution services (e.g., ARK, DOI) -- some of all of which may cease to exist in the future -- while the identifier itself is considered permanent. For embedding identifiers into RDF, it would be good to take care to use the right form of the identifier (if numerous exist). For each identifier, information on the forms an identifier may take is recorded and, if the authority for the identifier recommends specific forms of its identifiers for different uses (e.g., use in RDF, display on a website), those recommendations will be documented.
-
-Three terms will be used to describe these forms:
-- Machine Form: The best form to use when serializing and storing the identifier
-- Display Form: The best form to use when displaying in print or on the web
-- Resolvable Form: Whether the identifier has a web resolvable form and what that form looks like
-
-### Related Work
-[http://bioinformatics.oxfordjournals.org/content/31/11/1875.full](http://bioinformatics.oxfordjournals.org/content/31/11/1875.full)
 
 ## ARK
 Source: [https://confluence.ucop.edu/display/Curation/ARK](https://confluence.ucop.edu/display/Curation/ARK) (See: ARK Anatomy)
@@ -219,7 +209,9 @@ Notes:
 
 > e. g.:
 
-> ISSN 0317-8471 ISSN 1050-124X
+> ISSN 0317-8471
+
+> ISSN 1050-124X
 
 - I just found this on CrossRef: [https://api.crossref.org/v1/works/http://dx.doi.org/10.3390/e17041701](https://api.crossref.org/v1/works/http://dx.doi.org/10.3390/e17041701). The ISSN is given as just '1099-4300'. Maybe that's the best way.
 
@@ -298,7 +290,7 @@ Recommendation:
 Predicate                 | Object
 --------------------------|--------------------------
 `hasIdentifierValue`      | `"10.1045/may99-payette"`
-`hasIdentifierResolveURI` |
+`hasIdentifierResolveURI` | `<http://hdl.handle.net/10.1045/may99-payette>`
 
 
 ## IGSN
@@ -755,7 +747,7 @@ The Scientific Committee on Antarctic Research (SCAR),  through its recommendati
 Notes:
 
 - It does not publish URIs that speak RDF
- 
+
 Examples:
 
 - SCAR:883
@@ -846,7 +838,7 @@ Examples:
 - `tel:+1-816-555-1212`
 - `telnet://192.0.2.16:80/`
 - `urn:oasis:names:specification:docbook:dtd:xml:4.1.2`
-      
+
 Recommendation:
 
 Predicate                 | Object
@@ -863,7 +855,7 @@ Notes:
 
 - In general, URLs are written as follows: <scheme>:<scheme-specific-part>
 - And then IP-based schemes use '//<user>:<password>@<host>:<port>/<url-path>' in their <scheme-specific-part>
-       
+
 Examples:
 
 - `http://<host>:<port>/<path>?<searchpart>`
