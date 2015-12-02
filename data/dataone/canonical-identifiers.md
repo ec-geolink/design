@@ -558,7 +558,7 @@ Recommendation:
 
 Predicate                 | Object
 --------------------------|--------------------------
-`hasIdentifierValue`      | "urn:lsid:zoobank.org:pub:CDC8D258-8F57-41DC-B560-247E17D3DC8C"
+`hasIdentifierValue`      | `"urn:lsid:zoobank.org:pub:CDC8D258-8F57-41DC-B560-247E17D3DC8C"`
 `hasIdentifierResolveURI` | `<http://zoobank.org/urn:lsid:zoobank.org:pub:CDC8D258-8F57-41DC-B560-247E17D3DC8C>`
 
 
@@ -878,7 +878,7 @@ Recommendation:
 
 Predicate                 | Object
 --------------------------|--------------------------
-`hasIdentifierValue`      | "urn:foo:a123,456"
+`hasIdentifierValue`      | `"urn:foo:a123,456"`
 `hasIdentifierResolveURI` |
 
 
