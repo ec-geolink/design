@@ -733,17 +733,19 @@ Sources:
 - No good source describing identifier structure/representation.
 - [https://www1.data.antarctica.gov.au/aadc/gaz/scar/information.cfm](https://www1.data.antarctica.gov.au/aadc/gaz/scar/information.cfm)
 
-About:
-
-The Scientific Committee on Antarctic Research (SCAR),  through its recommendations, expresses the hope that the present effort will contribute to the adoption in Antarctica of the general principle of 'one name per feature' by all Antarctic place naming authorities.
-
 Notes:
 
+- The SCAR identifiers are from a gazetteer placenames in Antarctica, the Composite Gazetteer of Antarctica (CGA)
+- "The CGA is a compilation of recognized features, with a numerical Unique Identifier code (UID) assigned to each of them, jointly with a list of applicable place names." (http://www.scar.org/cga)
+- Individual countries act as naming authorities
+- No prefix like "SCAR:XXX" is used with these identifiers as far as I can tell so I'm recommending we just put the code itself inside `hasIdentifierValue`
 - It does not publish URIs that speak RDF
 
 Examples:
 
-- SCAR:883
+- 883
+- 121542
+- 79989642000
 
 
 
@@ -751,7 +753,7 @@ Recommendation:
 
 Predicate                 | Object
 --------------------------|--------------------------
-`hasIdentifierValue`      | `"SCAR:883"`
+`hasIdentifierValue`      | `"883"`
 `hasIdentifierResolveURI` |
 
 
