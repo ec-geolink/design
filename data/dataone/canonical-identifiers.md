@@ -870,8 +870,7 @@ Predicate                 | Object
 
 Sources:
 
-- https://tools.ietf.org/html/rfc2141
-- https://www.ietf.org/rfc/rfc3406.txt
+- http://datatracker.ietf.org/doc/rfc3406/
 
 Notes:
 
