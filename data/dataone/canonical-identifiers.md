@@ -84,6 +84,7 @@ Here's the set of identifiers the GeoLink project has expressed interest in putt
 - [URI](#uri)
 - [URL](#url)
 - [URN](#urn)
+- [UUID](#uuid)
 - [VIAF](#viaf)
 
 ### A Note on Web-Resolvable Identifiers
@@ -880,6 +881,37 @@ Recommendation:
 Predicate                 | Object
 --------------------------|--------------------------
 `hasIdentifierValue`      | `"urn:foo:a123,456"`
+`hasIdentifierResolveURI` |
+
+
+## UUID
+
+Sources:
+
+- https://www.ietf.org/rfc/rfc4122.txt
+
+Notes:
+
+> The following is an example of the string representation of a UUID as
+   a URN:
+>
+> urn:uuid:f81d4fae-7dec-11d0-a765-00a0c91e6bf6
+
+- "The string representation of a UUID is fully compatible with the
+      URN syntax."
+- "The UUID format is 16 octets; some bits of the eight octet variant
+   field specified below determine finer structure."
+- "Since UUIDs are unique and persistent, they make excellent Uniform
+   Resource Names.  The unique ability to generate a new UUID without a
+   registration process allows for UUIDs to be one of the URNs with the
+   lowest minting cost."
+- UUIDs are commonly displayed as URNs (which are URIs)
+
+Recommendation:
+
+Predicate                 | Object
+--------------------------|--------------------------
+`hasIdentifierValue`      | `urn:uuid:f81d4fae-7dec-11d0-a765-00a0c91e6bf6`
 `hasIdentifierResolveURI` |
 
 
