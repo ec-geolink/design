@@ -253,21 +253,28 @@ Sources:
 - No good source describing identifier structure/representation.
 - [http://volcano.si.edu/gvp_vnums.cfm](http://volcano.si.edu/gvp_vnums.cfm)
 - [http://volcano.si.edu/list_volcano_holocene.cfm](http://volcano.si.edu/list_volcano_holocene.cfm)
+- https://en.wikipedia.org/wiki/Template:VNUM
 
 About:
 
 Smithsonian's Global Volcanism Program (GVP) announces new and permanent unique identifiers (Volcano Numbers, or VNums) for volcanoes documented in the Volcanoes of the World (VOTW) database maintained by GVP and accessible at www.volcano.si.edu.
 
+Notes:
+
+- There doesn't appear to be any common prefix (like GVP:XXXXX) used with this identifier
+
 Examples:
 
-- GVP:210010
+- 210010
+- 0803-001
 - [http://volcano.si.edu/volcano.cfm?vn=210010](http://volcano.si.edu/volcano.cfm?vn=210010)
+
 
 Recommendation:
 
 Predicate                 | Object
 --------------------------|--------------------------
-`hasIdentifierValue`      | `"GVP:210010"`
+`hasIdentifierValue`      | `"210010"`
 `hasIdentifierResolveURI` | `<http://volcano.si.edu/volcano.cfm?vn=210010>`
 
 
