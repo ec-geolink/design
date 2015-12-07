@@ -846,8 +846,8 @@ Source: https://www.ietf.org/rfc/rfc1738.txt
 
 Notes:
 
-- In general, URLs are written as follows: <scheme>:<scheme-specific-part>
-- And then IP-based schemes use '//<user>:<password>@<host>:<port>/<url-path>' in their <scheme-specific-part>
+- In general, URLs are written as follows: `<scheme>:<scheme-specific-part>`
+- And then IP-based schemes use `//<user>:<password>@<host>:<port>/<url-path>` in their `<scheme-specific-part>`
 
 Examples:
 
