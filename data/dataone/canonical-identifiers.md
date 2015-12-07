@@ -2,9 +2,9 @@
 
 ## Overview
 
-Identifiers (e.g., DOI, ORCID, etc.) will be used in GeoLink LOD graphs and we would like to have a set of guidelines for how each type of identifier should be entered into our graphs. See #51 for discussion on this topic.
+Identifiers (e.g., DOI, ORCID, etc.) will be used in GeoLink LOD graphs and we would like to have a set of guidelines for how each type of identifier should show up in our graphs. See #51 for discussion on this topic.
 
-In general, identifiers have attributes such as a schema, some concept resembling a value (normalized and then used for comparison of identifiers by character), a display form (for print), and one of more HTTP-resolvable URI forms. However, it is often the case that the a specification does not exist or does not provide guidance on all of the aforementioned attributes. In the common case, all that is made available is a specification of a schema and a value and recommendations about how to display an identifier in print (or in RDF) are left undiscussed.
+In general, identifiers have attributes such as a schema, some concept resembling a value (sometimes normalized and then used for comparison of identifiers), a display form (for print), and one of more HTTP-resolvable URI forms. However, it is often the case that the a specification detailing these forms does not exist or does not provide guidance on all of the aforementioned attributes. Commonly, all that is made available is a specification of a schema and a value and recommendations about how to display an identifier in print (or in RDF) are left undiscussed.
 
 While it may be difficult to decide on the best way to serialize identifiers in GeoLink, deciding as a group on a single way to do things will ensure we're doing something reasonable and that we're all doing the same reasonable thing in our graphs. In this document I present a list of identifiers, information about their specification and attributes, and provide my recommendations for how we should serialize them in our graphs.
 
@@ -22,15 +22,16 @@ The current set of properties are:
 - `glbase:hasIdentifierScheme`: Captures the scheme (e.g., DOI) for an identifier. Always use [DataCite named individuals](http://www.essepuntato.it/lode/http://purl.org/spar/datacite#namedindividuals). Use `datacite:local-resource-identifier` for internal identifiers (e.g., some DataONE PIDs)
 - `glbase:hasIdentifierValue`: Defined in the ontology as: "Points to the actual string value of identifier., e.g.: &quot;doi:10.5063/AA/ArchivalTag.4.1&quot;". This is vague.
 
-I propose to break up `glbase:hasIdentifierValue` into two properties, `glbase:hasIdentifierValue` and `glbase:hasIdentifierResolveURI`. Note the latter may irk I welcome feedback on the names of the properties and also the number of properties we need to properly serialize identifiers in our graphs.
+I propose we break up `glbase:hasIdentifierValue` into two properties, `glbase:hasIdentifierValue` and `glbase:hasIdentifierResolveURI`. I welcome feedback on the names of the properties (esp the latter) and also the number of properties we need to properly serialize identifiers in our graphs.
 
 - `glbase:hasIdentifierValue`: Captures the canonical form of the identifier. Subject to two principles:
-  1. Avoid using resolve URIs: e.g., prefer `'doi:10.1006/jmbi.1998.2354'` to '[http://doi.org/10.1006/jmbi.1998.2354](http://doi.org/10.1006/jmbi.1998.2354)'
-  2. Avoid forms that need other information to be recognized as an identifier of its schema: e.g., prefer `doi:10.1006/jmbi.1998.2354` to `10.1006/jmbi.1998.2354`
+  1. Avoid using HTTP resolve URIs: e.g., prefer `'doi:10.1006/jmbi.1998.2354'` to '[http://doi.org/10.1006/jmbi.1998.2354](http://doi.org/10.1006/jmbi.1998.2354)'
+  2. Avoid forms that need other information to be recognized as an identifier of its scheme: e.g., prefer `doi:10.1006/jmbi.1998.2354` to `10.1006/jmbi.1998.2354`
+  3. If an identifier has an established URI scheme, use it, and if it doesn't, don't make something up.
 
 - `glbase:hasIdentifierResolveURI`: If present, include the preferred HTTP URI at which the identifier can be resolved in some way. Always starts with 'http(s)://' and may return anything relevant to the identifier.
 
-A dataset (`:x`) with a DOI identifier with DOI name '10.1006/jmbi.1998.2354' serialized in Turtle form using the latter properties would look like this (excuse any invalid Turtle):
+For dataset (`:x`) with a DOI identifier that has the DOI name '10.1006/jmbi.1998.2354', the corresponding (elided) Turtle serialization would look like this:
 
 ```{ttl}
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
