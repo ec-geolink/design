@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY datacite "http://purl.org/spar/datacite" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY identifiers "http://schema.geolink.org/voc/identifiers#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://schema.geolink.org/voc/identifiers#"
+     xml:base="http://schema.geolink.org/voc/identifiers"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:datacite="http://purl.org/spar/datacite"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:identifiers="http://schema.geolink.org/voc/identifiers#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://schema.geolink.org/voc/identifiers">
+        <dc:date>2015-12-07</dc:date>
+        <dc:description>This ontology extends the list of identifiers provided by the DataCite Ontology and does this by containing a set of NamedIndividuals that conform to the DataCite Ontology.</dc:description>
+        <dc:creator>Bryce Mecum</dc:creator>
+        <dc:title>GeoLink Identifier Ontology</dc:title>
+        <owl:imports rdf:resource="&datacite;/"/>
+    </owl:Ontology>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+     <!-- http://www.w3.org/2000/01/rdf-schema#comment -->
+
+     <owl:AnnotationProperty rdf:about="&rdfs;comment"/>
+
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="&dc;creator"/>
+
+
+
+    <!-- http://purl.org/dc/elements/1.1/date -->
+
+    <owl:AnnotationProperty rdf:about="&dc;date"/>
+
+
+
+    <!-- http://purl.org/dc/elements/1.1/description -->
+
+    <owl:AnnotationProperty rdf:about="&dc;description"/>
+
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+    <owl:AnnotationProperty rdf:about="&dc;title"/>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- http://schema.geolink.org/voc/identifiers#scar -->
+
+    <owl:NamedIndividual rdf:about="&identifiers;scar">
+        <rdf:type rdf:resource="&datacite;/ResourceIdentifierScheme"/>
+        <rdfs:label xml:lang="en">scar</rdfs:label>
+        <rdfs:comment xml:lang="en">Scientific Committee on Antarctic Research (SCAR) Composite Gazetteer of Antarctica (CGA) Unique Identifier Code</rdfs:comment>
+        <rdfs:seeAlso>https://www1.data.antarctica.gov.au/aadc/gaz/scar/information.cfm</rdfs:seeAlso>
+    </owl:NamedIndividual>
+
+
+
+    <!-- http://schema.geolink.org/voc/identifiers#gvp -->
+
+    <owl:NamedIndividual rdf:about="&identifiers;gvp">
+        <rdf:type rdf:resource="&datacite;/ResourceIdentifierScheme"/>
+        <rdfs:label xml:lang="en">gvp</rdfs:label>
+        <rdfs:seeAlso>http://volcano.si.edu/gvp_vnums.cfm</rdfs:seeAlso>
+        <rdfs:comment xml:lang="en">Global Volcanism Program (GVP) Volcano Number (VNUM)</rdfs:comment>
+    </owl:NamedIndividual>
+
+
+
+    <!-- http://schema.geolink.org/voc/identifiers#igsn -->
+
+    <owl:NamedIndividual rdf:about="&identifiers;igsn">
+        <rdf:type rdf:resource="&datacite;/ResourceIdentifierScheme"/>
+        <rdfs:label xml:lang="en">igsn</rdfs:label>
+        <rdfs:comment xml:lang="en">International Geo Sample Number</rdfs:comment>
+        <rdfs:seeAlso>http://www.geosamples.org/igsnabout</rdfs:seeAlso>
+    </owl:NamedIndividual>
+
+
+
+    <!-- http://schema.geolink.org/voc/identifiers#interridge -->
+
+    <owl:NamedIndividual rdf:about="&identifiers;interridge">
+        <rdf:type rdf:resource="&datacite;/ResourceIdentifierScheme"/>
+        <rdfs:label xml:lang="en">interridge</rdfs:label>
+        <rdfs:comment xml:lang="en">InterRidge Vents Database Identifier</rdfs:comment>
+        <rdfs:seeAlso>http://vents-data.interridge.org/about_the_database</rdfs:seeAlso>
+    </owl:NamedIndividual>
+
+
+
+    <!-- http://schema.geolink.org/voc/identifiers#uuid -->
+
+    <owl:NamedIndividual rdf:about="&identifiers;uuid">
+        <rdf:type rdf:resource="&datacite;/ResourceIdentifierScheme"/>
+        <rdfs:label xml:lang="en">uuid</rdfs:label>
+        <rdfs:isDefinedBy>https://www.ietf.org/rfc/rfc4122.txt</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="en">Universally Unique Identifier</rdfs:comment>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
