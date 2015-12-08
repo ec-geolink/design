@@ -48,7 +48,23 @@ For dataset (`:x`) with a DOI identifier that has the DOI name '10.1006/jmbi.199
   #...elided...
 ```
 
+### GeoLink Identifiers Ontology
+
+To use identifiers not listed under the DataCite ontology while still giving every identifier a `hasIdentifierScheme` property, we needed to create an ontology of NamedIndividuals for these extra identifiers. See https://github.com/ec-geolink/design/issues/81.
+
+The extra identifiers are:
+
+- IGSN
+- IMA
+- InterRidge
+- GVP
+- SCAR
+- UUID
+
+The ontology is located in this repo at https://github.com/ec-geolink/design/blob/master/voc/identifiers.owl and can be hosted at a URL like `<http://schema.geolink.org/voc/identifiers#>` with the prefix `glidentifiers`. This prefix (`glidentifiers`) is used in the recommendations below to reference this ontology.
+
 ### Contents
+
 Here's the set of identifiers the GeoLink project has expressed interest in putting into our graphs. The list started as a 1:1 copy of the identifiers listed at [http://purl.org/spar/datacite](http://purl.org/spar/datacite) but has expanded to a few identifiers requested by members of the GeoLink team.
 - [ARK](#ark)
 - [arXiv](#arxiv)
@@ -137,6 +153,7 @@ Predicate                 | Object
 --------------------------|--------------------------
 `hasIdentifierValue`      | `"arXiv:1501.00001"`
 `hasIdentifierResolveURI` | `<http://arxiv.org/abs/1501.00001>`
+`hasIdentifierScheme`     | `datacite:arxiv`
 
 
 ## DAI
@@ -157,6 +174,7 @@ Predicate                 | Object
 --------------------------|--------------------------
 `hasIdentifierValue`      | `"info:eu-repo/dai/nl/275853993"`
 `hasIdentifierResolveURI` |
+`hasIdentifierScheme`     | `datacite:dia`
 
 
 ## DOI
@@ -182,6 +200,7 @@ Predicate                 | Object
 --------------------------|--------------------------
 `hasIdentifierValue`      | `"doi:10.1006/jmbi.1998.2354"`
 `hasIdentifierResolveURI` | `<http://dx.doi.org/10.1006/jmbi.1998.2354>`
+`hasIdentifierScheme`     | `datacite:doi`
 
 
 ## EAN13
@@ -196,6 +215,7 @@ Predicate                 | Object
 --------------------------|--------------------------
 `hasIdentifierValue`      | `"9501101530003"`
 `hasIdentifierResolveURI` |
+`hasIdentifierScheme`     | `datacite:ean13`
 
 
 ## EISSN
@@ -225,6 +245,7 @@ Predicate                 | Object
 --------------------------|--------------------------
 `hasIdentifierValue`      | `"1099-4300"`
 `hasIdentifierResolveURI` |
+`hasIdentifierScheme`     | `datacite:eissn`
 
 
 ## FundRef
@@ -245,6 +266,8 @@ Predicate                 | Object
 --------------------------|--------------------------
 `hasIdentifierValue`      | `"doi:10.13039/100000001"`
 `hasIdentifierResolveURI` | `<http://doi.org/10.13039/100000001>`
+`hasIdentifierScheme`     | `datacite:fundref`
+
 
 ## GVP
 
@@ -276,6 +299,7 @@ Predicate                 | Object
 --------------------------|--------------------------
 `hasIdentifierValue`      | `"210010"`
 `hasIdentifierResolveURI` | `<http://volcano.si.edu/volcano.cfm?vn=210010>`
+`hasIdentifierScheme`     | `glidentifiers:gvp`
 
 
 ## Handle
@@ -300,6 +324,7 @@ Predicate                 | Object
 --------------------------|--------------------------
 `hasIdentifierValue`      | `"10.1045/may99-payette"`
 `hasIdentifierResolveURI` | `<http://hdl.handle.net/10.1045/may99-payette>`
+`hasIdentifierScheme`     | `datacite:handle`
 
 
 ## IGSN
@@ -333,6 +358,7 @@ Predicate                 | Object
 --------------------------|--------------------------
 `hasIdentifierValue`      | `"IGSN:HRV003M16"`
 `hasIdentifierResolveURI` |
+`hasIdentifierScheme`     | `glidentifiers:igsn`
 
 
 ## IMA
@@ -371,6 +397,7 @@ Predicate                 | Object
 --------------------------|--------------------------
 `hasIdentifierValue`      | `"2014-028"`
 `hasIdentifierResolveURI` |
+`hasIdentifierScheme`     | `datacite:ima`
 
 
 ## InfoURI
@@ -408,6 +435,7 @@ Predicate                 | Object
 --------------------------|--------------------------
 `hasIdentifierValue`      | `"info:pii/S0888-7543(02)96852-7"`
 `hasIdentifierResolveURI` |
+`hasIdentifierScheme`     | `datacite:infouri`
 
 
 ## InterRidge
@@ -447,6 +475,7 @@ Predicate                 | Object
 --------------------------|--------------------------
 `hasIdentifierValue`      | `"13-n-ridge-site"`
 `hasIdentifierResolveURI` |
+`hasIdentifierScheme`     | `glidentifiers:interridge`
 
 
 ## ISBN
@@ -464,6 +493,7 @@ Predicate                 | Object
 --------------------------|--------------------------
 `hasIdentifierValue`      | `"978-0-571-08989-5"`
 `hasIdentifierResolveURI` |
+`hasIdentifierScheme`     | `datacite:isbn`
 
 
 ## ISNI
@@ -495,6 +525,7 @@ Predicate                 | Object
 --------------------------|--------------------------
 `hasIdentifierValue`      | `"ISN:0000000395916013"`
 `hasIdentifierResolveURI` | `<http://isni.org/isni/0000000395916013>` (no www)
+`hasIdentifierScheme`     | `datacite:isni`
 
 
 ## ISSN
@@ -514,6 +545,7 @@ Predicate                 | Object
 --------------------------|--------------------------
 `hasIdentifierValue`      | `"1562-6865"`
 `hasIdentifierResolveURI` |
+`hasIdentifierScheme`     | `datacite:issn`
 
 
 ## ISSN-L
@@ -526,6 +558,7 @@ Predicate                 | Object
 --------------------------|--------------------------
 `hasIdentifierValue`      | `"1748-7188"`
 `hasIdentifierResolveURI` |
+`hasIdentifierScheme`     | `datacite:issn-l`
 
 
 ## ISTC
@@ -549,6 +582,7 @@ Predicate                 | Object
 --------------------------|--------------------------
 `hasIdentifierValue`      | `"A022009000004BEA"`
 `hasIdentifierResolveURI` |
+`hasIdentifierScheme`     | `datacite:istc`
 
 
 ## JST
@@ -561,6 +595,7 @@ Predicate                 | Object
 --------------------------|--------------------------
 `hasIdentifierValue`      | None (To be done)
 `hasIdentifierResolveURI` |
+`hasIdentifierScheme`     | `datacite:jst`
 
 
 ## LSID
@@ -583,6 +618,7 @@ Predicate                 | Object
 --------------------------|--------------------------
 `hasIdentifierValue`      | `"urn:lsid:zoobank.org:pub:CDC8D258-8F57-41DC-B560-247E17D3DC8C"`
 `hasIdentifierResolveURI` | `<http://zoobank.org/urn:lsid:zoobank.org:pub:CDC8D258-8F57-41DC-B560-247E17D3DC8C>`
+`hasIdentifierScheme`     | `datacite:lsid`
 
 
 ## National Insurance Number
@@ -616,6 +652,7 @@ Predicate                 | Object
 --------------------------|--------------------------
 `hasIdentifierValue`      | `"44135"` (no 'NIHMS' prefix)
 `hasIdentifierResolveURI` |
+`hasIdentifierScheme`     | `datacite:nihmsid`
 
 
 # OpenID
@@ -632,6 +669,7 @@ Predicate                 | Object
 --------------------------|--------------------------
 `hasIdentifierValue`      | `"http(s)://example.org"`
 `hasIdentifierResolveURI` |
+`hasIdentifierScheme`     | `datacite:openid`
 
 
 # ORCID
@@ -650,6 +688,7 @@ Predicate                 | Object
 --------------------------|--------------------------
 `hasIdentifierValue`      | `"0000-0002-2389-8429"`
 `hasIdentifierResolveURI` | `<http://orcid.org/0000-0002-2389-8429>`
+`hasIdentifierScheme`     | `datacite:orcid`
 
 
 ## PII
@@ -679,6 +718,7 @@ Predicate                 | Object
 --------------------------|--------------------------
 `hasIdentifierValue`      | `"Sxxxx-xxxx(yy)iiiii-d"`
 `hasIdentifierResolveURI` |
+`hasIdentifierScheme`     | `datacite:pii`
 
 
 ## PMCID
@@ -696,6 +736,7 @@ Predicate                 | Object
 --------------------------|--------------------------
 `hasIdentifierValue`      | `"3531190"`
 `hasIdentifierResolveURI` | `<http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3531190/>`
+`hasIdentifierScheme`     | `datacite:pmcid`
 
 
 ## PMID
@@ -709,6 +750,7 @@ Predicate                 | Object
 --------------------------|--------------------------
 `hasIdentifierValue`      | `"23193287"`
 `hasIdentifierResolveURI` | `<http://www.ncbi.nlm.nih.gov/pubmed/23193287>`
+`hasIdentifierScheme`     | `datacite:pmid`
 
 
 ## PURL
@@ -725,6 +767,7 @@ Predicate                 | Object
 --------------------------|--------------------------
 `hasIdentifierValue`      | `"http(s)://example.org/"`
 `hasIdentifierResolveURI` |
+`hasIdentifierScheme`     | `datacite:purl`
 
 
 ## ResearcherID
@@ -745,6 +788,7 @@ Predicate                 | Object
 --------------------------|--------------------------
 `hasIdentifierValue`      | `"X-XXXX-XXXX"`
 `hasIdentifierResolveURI` |
+`hasIdentifierScheme`     | `datacite:researcherid`
 
 
 ## SCAR
@@ -776,6 +820,7 @@ Predicate                 | Object
 --------------------------|--------------------------
 `hasIdentifierValue`      | `"883"`
 `hasIdentifierResolveURI` |
+`hasIdentifierScheme`     | `glidentifiers:gvp`
 
 
 ## SICI
@@ -799,6 +844,7 @@ Predicate                 | Object
 --------------------------|--------------------------
 `hasIdentifierValue`      | `"0015-6914(19960101)157:1<62:KTSW>2.O.TX;2-F"`
 `hasIdentifierResolveURI` |
+`hasIdentifierScheme`     | `datacite:sici`
 
 
 ## SSN
@@ -818,6 +864,7 @@ Predicate                 | Object
 --------------------------|--------------------------
 `hasIdentifierValue`      | `"123-45-6789"`
 `hasIdentifierResolveURI` |
+`hasIdentifierScheme`     | `datacite:social-security-number`
 
 
 ## UPC
@@ -838,6 +885,7 @@ Predicate                 | Object
 --------------------------|--------------------------
 `hasIdentifierValue`      | `"12345678"` or `"123456789012"`
 `hasIdentifierResolveURI` |
+`hasIdentifierScheme`     | `datacite:upc`
 
 
 ## URI
@@ -861,6 +909,7 @@ Predicate                 | Object
 --------------------------|--------------------------
 `hasIdentifierValue`      | `"ftp://ftp.is.co.za/rfc/rfc1808.txt"`
 `hasIdentifierResolveURI` |
+`hasIdentifierScheme`     | `datacite:uri`
 
 
 ## URL
@@ -885,6 +934,7 @@ Predicate                 | Object
 --------------------------|--------------------------
 `hasIdentifierValue`      | `"http://<host>:<port>/<path>?<searchpart>"`
 `hasIdentifierResolveURI` |
+`hasIdentifierScheme`     | `datacite:url`
 
 
 ## URN
@@ -904,6 +954,7 @@ Predicate                 | Object
 --------------------------|--------------------------
 `hasIdentifierValue`      | `"urn:foo:a123,456"`
 `hasIdentifierResolveURI` |
+`hasIdentifierScheme`     | `datacite:urn`
 
 
 ## UUID
@@ -935,6 +986,7 @@ Predicate                 | Object
 --------------------------|--------------------------
 `hasIdentifierValue`      | `urn:uuid:f81d4fae-7dec-11d0-a765-00a0c91e6bf6`
 `hasIdentifierResolveURI` |
+`hasIdentifierScheme`     | `glidentifiers:uuid`
 
 
 ## VIAF
@@ -957,3 +1009,4 @@ Predicate                 | Object
 --------------------------|--------------------------
 `hasIdentifierValue`      | `"120062731"` (just numbers)
 `hasIdentifierResolveURI` |
+`hasIdentifierScheme`     | `datacite:viaf`
