@@ -316,7 +316,7 @@ IGSN stands for _International Geo Sample Number_. The IGSN is 9-digit alphanume
 Notes:
 
 - The IGSN is 9-digit alphanumeric code that uniquely identifies samples from our natural environment and related sampling features.
-- IGSN's can have URIs, though not consistently: [http://www.geosamples.org/profile?igsn=IECUR001E](http://www.geosamples.org/profile?igsn=IECUR001E)
+- IGSN's can have resolve URIs, though not consistently: [http://www.geosamples.org/profile?igsn=IECUR001E](http://www.geosamples.org/profile?igsn=IECUR001E)
 - The IGSN follows the syntax of the URN (Uniform Resource Name) which is composed of a 'Namespace Identifier' (NID), a unique, short string, and the 'Namespace Specific String' (NSS).
 - "...the first five digits of the IGSN represent a name space (a unique user code) that uniquely identifies the person or institution that registers the sample."
 - "The last 4 digits of the IGSN are a random string of alphanumeric characters (0-9, A-Z)."
@@ -340,6 +340,7 @@ Predicate                 | Object
 Sources:
 
 - [http://www.ima-mineralogy.org/Minlist.htm](http://www.ima-mineralogy.org/Minlist.htm)
+- Recent list of identifiers: http://nrmima.nrm.se//IMA_Master_List_2015-11.pdf
 
 About:
 
@@ -347,13 +348,20 @@ International Mineralogical Association (IMA) publish the list contains names an
 
 Examples:
 
-- IMA:2014-028
-- IMA1975-013 (on [http://rruff.info/ima/](http://rruff.info/ima/))
+- 2014-028
+- 1975-013
 - 'No. 2014-103' in print.
 
 Notes:
 
+- Definition of the IMA number from the master list:
+  > **IMA No. / Year:** for approved minerals the IMA No. is given: it has the form XXXX-YYY, where XXXX is the year and YYY a sequential number; for
+grandfathered minerals the year of the original description is given.
+
 - "The continuing integrity of the (web-based) IMA mineral list will be maintained by the IMA outreach committee, and additional features are being developed by the RRUFF™ Project."
+- Each mineral has a "IMA No." which is something like "2015-041"
+- These numbers can be found in scheduled update PDFs, e.g.,  http://nrmima.nrm.se//CNMNC_Newsletter_27-2015.pdf
+
 - It does not publish the URIs that speak RDF
 
 
@@ -361,7 +369,7 @@ Recommendation:
 
 Predicate                 | Object
 --------------------------|--------------------------
-`hasIdentifierValue`      | `"IMA:2014-028"`
+`hasIdentifierValue`      | `"2014-028"`
 `hasIdentifierResolveURI` |
 
 
@@ -415,8 +423,11 @@ The InterRidge Global Database of Active Submarine Hydrothermal Vent Fields, her
 
 Examples:
 
-- InterRidge:13-n-ridge-site
-- [http://vents-data.interridge.org/ventfield/13-n-ridge-site](http://vents-data.interridge.org/ventfield/13-n-ridge-site)
+- `13-n-ridge-site`
+  - and, e.g., has associated resolve URL: [http://vents-data.interridge.org/ventfield/13-n-ridge-site](http://vents-data.interridge.org/ventfield/13-n-ridge-site)
+- `aden-new-century-mountains`
+- `frsc-rc-129-and-ctd-24-plume-sites`
+
 
 Notes:
 
@@ -424,14 +435,17 @@ Notes:
 - "In the vents database, the URIs are comprised of the site
 - namespace, which should be persistent ... and the node ID (nid) for each vent field (i.e., the
 - node ID for each vent field is effectively the unique identifier for that vent field) or unique name of
-- the vent field using path alias, e.g., Mariner is [http://irvents-new3.whoi.edu/node/1001](http://irvents-new3.whoi.edu/node/1001) and
-- [http://irvents-new3.whoi.edu/ventfield/mariner](http://irvents-new3.whoi.edu/ventfield/mariner)."
+- the vent field using path alias, e.g., Mariner is [http://irvents-new3.whoi.edu/node/1001](http://irvents-new3.whoi.edu/node/1001) and [http://irvents-new3.whoi.edu/ventfield/mariner](http://irvents-new3.whoi.edu/ventfield/mariner)."
+
+- These identifiers don't have a commonly-used prefix string
+- The name might be "FRSC, RC 129 and CTD 24 plume sites" but the special characters (commas, spaces) are replaced with hyphens when encoding the identifier: `frsc-rc-129-and-ctd-24-plume-sites`
+- The RDF for an identifier uses `<http://vents-data.interridge.org/ventfield/frsc-rc-129-and-ctd-24-plume-sites>` as the subject of triples
 
 Recommendation:
 
 Predicate                 | Object
 --------------------------|--------------------------
-`hasIdentifierValue`      | `"InterRidge:13-n-ridge-site"`
+`hasIdentifierValue`      | `"13-n-ridge-site"`
 `hasIdentifierResolveURI` |
 
 
