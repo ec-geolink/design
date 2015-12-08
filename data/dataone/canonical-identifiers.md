@@ -24,7 +24,7 @@ The current set of properties are:
 
 I propose we break up `glbase:hasIdentifierValue` into two properties, `glbase:hasIdentifierValue` and `glbase:hasIdentifierResolveURI`. I welcome feedback on the names of the properties (esp the latter) and also the number of properties we need to properly serialize identifiers in our graphs.
 
-- `glbase:hasIdentifierValue`: Captures the canonical form of the identifier. Subject to two principles:
+- `glbase:hasIdentifierValue`: Captures the canonical form of the identifier. Subject to three principles:
   1. Avoid using HTTP resolve URIs: e.g., prefer `'doi:10.1006/jmbi.1998.2354'` to '[http://doi.org/10.1006/jmbi.1998.2354](http://doi.org/10.1006/jmbi.1998.2354)'
   2. Avoid forms that need other information to be recognized as an identifier of its scheme: e.g., prefer `doi:10.1006/jmbi.1998.2354` to `10.1006/jmbi.1998.2354`
   3. If an identifier has an established URI scheme, use it, and if it doesn't, don't make something up.
