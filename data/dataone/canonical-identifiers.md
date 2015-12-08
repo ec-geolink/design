@@ -2,7 +2,7 @@
 
 ## Overview
 
-Identifiers (e.g., DOI, ORCID, etc.) will be used in GeoLink LOD graphs and we would like to have a set of guidelines for how each type of identifier should show up in our graphs. See #51 for discussion on this topic.
+Identifiers (e.g., DOI, ORCID, etc.) will be used in GeoLink LOD graphs and we would like to have a set of guidelines for how each type of identifier should show up in our graphs. See https://github.com/ec-geolink/design/issues/81 for discussion on this topic.
 
 In general, identifiers have attributes such as a schema, some concept resembling a value (sometimes normalized and then used for comparison of identifiers), a display form (for print), and one of more HTTP-resolvable URI forms. However, it is often the case that the a specification detailing these forms does not exist or does not provide guidance on all of the aforementioned attributes. Commonly, all that is made available is a specification of a schema and a value and recommendations about how to display an identifier in print (or in RDF) are left undiscussed.
 
