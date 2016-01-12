@@ -1,38 +1,25 @@
 <?xml version="1.0"?>
-
-
-<!DOCTYPE rdf:RDF [
-    <!ENTITY dcterms "http://purl.org/dc/terms/" >
-    <!ENTITY foaf "http://xmlns.com/foaf/0.1/" >
-    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
-    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY ecglview "http://schema.geolink.org/dev/view#" >
-    <!ENTITY geosparql "http://www.opengis.net/ont/geosparql#" >
-    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
-    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-]>
-
-
-<rdf:RDF xmlns="http://schema.geolink.org/dev/view#"
-     xml:base="http://schema.geolink.org/dev/view"
+<rdf:RDF xmlns="http://schema.geolink.org/dev/base/main#"
+     xml:base="http://schema.geolink.org/dev/base/main"
      xmlns:geosparql="http://www.opengis.net/ont/geosparql#"
-     xmlns:ecglview="http://schema.geolink.org/dev/view#"
+     xmlns:ecglview="http://schema.geolink.org/dev/base/main#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:dcterms="http://purl.org/dc/terms/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:foaf="http://xmlns.com/foaf/0.1/">
     <owl:Ontology rdf:about="http://schema.geolink.org/dev/base/main">
+        <owl:imports rdf:resource="http://schema.geolink.org/dev/voc/local"/>
+        <owl:imports rdf:resource="http://schema.geolink.org/dev/voc/nvs/L22"/>
+        <owl:imports rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03"/>
+        <owl:imports rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06"/>
+        <owl:imports rdf:resource="http://schema.geolink.org/dev/voc/nvs/P02"/>
+        <owl:imports rdf:resource="http://schema.geolink.org/dev/voc/nvs/L05"/>
+        <owl:imports rdf:resource="http://schema.geolink.org/dev/voc/gebco/featuretype"/>
         <rdfs:label>GeoLink base ontology.</rdfs:label>
         <rdfs:comment>A base ontology providing a conceptual view into the GeoLink patterns.</rdfs:comment>
-        <owl:imports rdf:resource="http://schema.geolink.org/dev/voc/local"/>
-        <owl:imports rdf:resource="http://schema.geolink.org/dev/voc/gebco/featuretype"/>
-        <owl:imports rdf:resource="http://schema.geolink.org/dev/voc/nvs/L05"/>
-        <owl:imports rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06"/>
-        <owl:imports rdf:resource="http://schema.geolink.org/dev/voc/nvs/L22"/>
-        <owl:imports rdf:resource="http://schema.geolink.org/dev/voc/nvs/P02"/>
-        <owl:imports rdf:resource="http://schema.geolink.org/dev/voc/nvs/P03"/>
     </owl:Ontology>
     
 
@@ -50,31 +37,31 @@
 
     <!-- http://www.opengis.net/ont/geosparql#wktLiteral -->
 
-    <rdfs:Datatype rdf:about="&geosparql;wktLiteral">
-        <rdfs:label>geosparql:wktLiteral</rdfs:label>
+    <rdfs:Datatype rdf:about="http://www.opengis.net/ont/geosparql#wktLiteral">
         <rdfs:comment>Enables the use of Well Known Text strings</rdfs:comment>
+        <rdfs:label>geosparql:wktLiteral</rdfs:label>
     </rdfs:Datatype>
     
 
 
     <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML -->
 
-    <rdfs:Datatype rdf:about="&rdf;HTML">
-        <rdfs:label>rdf:HTML</rdfs:label>
+    <rdfs:Datatype rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML">
         <rdfs:comment>Enables the use of HTML strings</rdfs:comment>
+        <rdfs:label>rdf:HTML</rdfs:label>
     </rdfs:Datatype>
     
 
 
     <!-- http://www.w3.org/2001/XMLSchema#gYear -->
 
-    <rdfs:Datatype rdf:about="&xsd;gYear"/>
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#gYear"/>
     
 
 
     <!-- http://www.w3.org/2001/XMLSchema#gYearMonth -->
 
-    <rdfs:Datatype rdf:about="&xsd;gYearMonth"/>
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#gYearMonth"/>
     
 
 
@@ -92,10 +79,11 @@
     <!-- http://schema.geolink.org/dev/base/main#atPort -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#atPort">
-        <rdfs:label>atPort</rdfs:label>
-        <rdfs:comment>The domain of this property is PortCall, which acts as the range of &apos;hasStartPortCall&apos;, &apos;hasMidPortCall&apos;, or &apos;hasEndPortCall&apos; properties.</rdfs:comment>
-        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Place"/>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isPortOf"/>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#PortCall"/>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Place"/>
+        <rdfs:comment>The domain of this property is PortCall, which acts as the range of &apos;hasStartPortCall&apos;, &apos;hasMidPortCall&apos;, or &apos;hasEndPortCall&apos; properties.</rdfs:comment>
+        <rdfs:label>atPort</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -103,10 +91,10 @@
     <!-- http://schema.geolink.org/dev/base/main#containsDataset -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#containsDataset">
-        <rdfs:label>containsDataset</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isContainedDatasetBy"/>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Dataset"/>
         <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Dataset"/>
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isContainedDatasetBy"/>
+        <rdfs:label>containsDataset</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -114,8 +102,6 @@
     <!-- http://schema.geolink.org/dev/base/main#fromCountry -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#fromCountry">
-        <rdfs:label>fromCountry</rdfs:label>
-        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Country"/>
         <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isCountryOf"/>
         <rdfs:domain>
             <owl:Class>
@@ -125,6 +111,8 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Country"/>
+        <rdfs:label>fromCountry</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -132,9 +120,7 @@
     <!-- http://schema.geolink.org/dev/base/main#hasAffiliation -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasAffiliation">
-        <rdfs:label>hasAffiliation</rdfs:label>
-        <rdfs:comment>The domain of this property includes, besides persons, also instances of Participant class that act as the range of &apos;hasParticipant&apos; property.</rdfs:comment>
-        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Organization"/>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isAffiliationOf"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -143,6 +129,9 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Organization"/>
+        <rdfs:comment>The domain of this property includes, besides persons, also instances of Participant class that act as the range of &apos;hasParticipant&apos; property.</rdfs:comment>
+        <rdfs:label>hasAffiliation</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -150,9 +139,8 @@
     <!-- http://schema.geolink.org/dev/base/main#hasAuthor -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasAuthor">
-        <rdfs:label>hasAuthor</rdfs:label>
-        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Document"/>
         <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isAuthorOf"/>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Document"/>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -161,6 +149,7 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
+        <rdfs:label>hasAuthor</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -168,8 +157,6 @@
     <!-- http://schema.geolink.org/dev/base/main#hasAuthoritativeRepository -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasAuthoritativeRepository">
-        <rdfs:label>hasAuthoritativeDigitalRepository</rdfs:label>
-        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Repository"/>
         <rdfs:subPropertyOf rdf:resource="http://schema.geolink.org/dev/base/main#hasRepository"/>
         <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isAuthoritativeDigitalRepositoryOf"/>
         <rdfs:domain>
@@ -181,6 +168,8 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Repository"/>
+        <rdfs:label>hasAuthoritativeDigitalRepository</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -188,9 +177,10 @@
     <!-- http://schema.geolink.org/dev/base/main#hasAward -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasAward">
-        <rdfs:label>hasAward</rdfs:label>
-        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Award"/>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isAwardOf"/>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Cruise"/>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Award"/>
+        <rdfs:label>hasAward</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -198,10 +188,10 @@
     <!-- http://schema.geolink.org/dev/base/main#hasChiefScientist -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasChiefScientist">
-        <rdfs:label>hasChiefScientist</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isChiefScientistOf"/>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Cruise"/>
         <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Person"/>
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isChiefScientistOf"/>
+        <rdfs:label>hasChiefScientist</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -209,10 +199,10 @@
     <!-- http://schema.geolink.org/dev/base/main#hasCoChiefScientist -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasCoChiefScientist">
-        <rdfs:label>hasCoChiefScientist</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isCoChiefScientistOf"/>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Cruise"/>
         <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Person"/>
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isCoChiefScientistOf"/>
+        <rdfs:label>hasCoChiefScientist</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -220,8 +210,7 @@
     <!-- http://schema.geolink.org/dev/base/main#hasCoPrincipalInvestigator -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasCoPrincipalInvestigator">
-        <rdfs:label>hasCoPrincipalInvestigator</rdfs:label>
-        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Person"/>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isCoPrincipalInvestigatorOf"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -230,6 +219,8 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Person"/>
+        <rdfs:label>hasCoPrincipalInvestigator</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -237,10 +228,10 @@
     <!-- http://schema.geolink.org/dev/base/main#hasCollector -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasCollector">
-        <rdfs:label>hasCollector</rdfs:label>
-        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Person"/>
-        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
         <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isCollectorOf"/>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Person"/>
+        <rdfs:label>hasCollector</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -248,7 +239,6 @@
     <!-- http://schema.geolink.org/dev/base/main#hasContact -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasContact">
-        <rdfs:label>hasContact</rdfs:label>
         <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isContactOf"/>
         <rdfs:domain>
             <owl:Class>
@@ -267,6 +257,7 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
+        <rdfs:label>hasContact</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -274,8 +265,6 @@
     <!-- http://schema.geolink.org/dev/base/main#hasContributor -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasContributor">
-        <rdfs:label>hasContributor</rdfs:label>
-        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Person"/>
         <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isContributorOf"/>
         <rdfs:domain>
             <owl:Class>
@@ -286,6 +275,8 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Person"/>
+        <rdfs:label>hasContributor</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -293,16 +284,7 @@
     <!-- http://schema.geolink.org/dev/base/main#hasCreator -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasCreator">
-        <rdfs:label>hasCreator</rdfs:label>
         <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isCreatorOf"/>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Organization"/>
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Person"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -311,6 +293,15 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Organization"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Person"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:label>hasCreator</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -318,8 +309,7 @@
     <!-- http://schema.geolink.org/dev/base/main#hasCruise -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasCruise">
-        <rdfs:label>hasCruise</rdfs:label>
-        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Cruise"/>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isCruiseOf"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -331,6 +321,8 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Cruise"/>
+        <rdfs:label>hasCruise</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -338,9 +330,10 @@
     <!-- http://schema.geolink.org/dev/base/main#hasCruiseType -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasCruiseType">
-        <rdfs:label>hasCruiseType</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isCruiseTypeOf"/>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Cruise"/>
         <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#CruiseType"/>
+        <rdfs:label>hasCruiseType</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -348,10 +341,10 @@
     <!-- http://schema.geolink.org/dev/base/main#hasCurator -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasCurator">
-        <rdfs:label>hasCurator</rdfs:label>
-        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Person"/>
-        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
         <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isCuratorOf"/>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Person"/>
+        <rdfs:label>hasCurator</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -359,9 +352,10 @@
     <!-- http://schema.geolink.org/dev/base/main#hasDataset -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasDataset">
-        <rdfs:label>hasDataset</rdfs:label>
-        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Dataset"/>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isDatasetOf"/>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Dataset"/>
+        <rdfs:label>hasDataset</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -369,8 +363,6 @@
     <!-- http://schema.geolink.org/dev/base/main#hasDive -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasDive">
-        <rdfs:label>hasDive</rdfs:label>
-        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Dive"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -379,6 +371,8 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Dive"/>
+        <rdfs:label>hasDive</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -386,12 +380,12 @@
     <!-- http://schema.geolink.org/dev/base/main#hasDocumentType -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasDocumentType">
-        <rdfs:label>hasDocumentType</rdfs:label>
-        <rdfs:comment>E.g., article, book, book chapter, presentation, etc. 
-Should use vocabulary from BiBO or CrossRef</rdfs:comment>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isDocumentTypeOf"/>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Document"/>
         <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#DocumentType"/>
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isDocumentTypeOf"/>
+        <rdfs:comment>E.g., article, book, book chapter, presentation, etc. 
+Should use vocabulary from BiBO or CrossRef</rdfs:comment>
+        <rdfs:label>hasDocumentType</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -399,8 +393,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasEditor -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasEditor">
-        <rdfs:label>hasEditor</rdfs:label>
-        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Person"/>
         <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isEditorOf"/>
         <rdfs:domain>
             <owl:Class>
@@ -412,6 +404,8 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Person"/>
+        <rdfs:label>hasEditor</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -419,10 +413,10 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasEducator -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasEducator">
-        <rdfs:label>hasEducator</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isEducatorIn"/>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Cruise"/>
         <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Person"/>
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isEducatorIn"/>
+        <rdfs:label>hasEducator</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -430,11 +424,12 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasEndPortCall -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasEndPortCall">
-        <rdfs:label>hasEndPortCall</rdfs:label>
-        <rdfs:comment>The range of this property is PortCall that acts as the domain of the &apos;atPort&apos; and &apos;hasTimeStamp&apos; property. Graph patterns for data using this property can be of the form:
--   ?X :hasEndPortCall ?Y . ?Y a PortCall;  :atPort ?PL ; :hasTimeStamp ?T.</rdfs:comment>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isEndPortCallOf"/>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Cruise"/>
         <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#PortCall"/>
+        <rdfs:comment>The range of this property is PortCall that acts as the domain of the &apos;atPort&apos; and &apos;hasTimeStamp&apos; property. Graph patterns for data using this property can be of the form:
+-   ?X :hasEndPortCall ?Y . ?Y a PortCall;  :atPort ?PL ; :hasTimeStamp ?T.</rdfs:comment>
+        <rdfs:label>hasEndPortCall</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -442,9 +437,10 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasFeatureOfInterest -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasFeatureOfInterest">
-        <rdfs:label>hasFeatureOfInterest</rdfs:label>
-        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isFeatureOfInterestOf"/>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
+        <rdfs:label>hasFeatureOfInterest</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -452,10 +448,10 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasFeatureType -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasFeatureType">
-        <rdfs:label>hasFeatureType</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isFeatureTypeOf"/>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
         <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isFeatureTypeOf"/>
+        <rdfs:label>hasFeatureType</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -463,10 +459,10 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasFirstAppearance -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasFirstAppearance">
-        <rdfs:label>hasFirstAppearance</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isFirstAppearanceOf"/>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#GeologicAge"/>
         <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#GeologicAgeAppearance"/>
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isFirstAppearanceOf"/>
+        <rdfs:label>hasFirstAppearance</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -474,9 +470,10 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasFormat -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasFormat">
-        <rdfs:label>hasFormat</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isFormatOf"/>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#DigitalObject"/>
         <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Format"/>
+        <rdfs:label>hasFormat</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -484,11 +481,12 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasGeoFeatureType -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasGeoFeatureType">
-        <rdfs:label>hasGeoFeatureType</rdfs:label>
-        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
-        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
         <rdfs:subPropertyOf rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureType"/>
         <rdfs:subPropertyOf rdf:resource="http://schema.geolink.org/dev/base/main#hasPlaceType"/>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isGeoFeatureTypeOf"/>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeature"/>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#GeoFeatureType"/>
+        <rdfs:label>hasGeoFeatureType</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -496,10 +494,10 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasGeologicAge -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasGeologicAge">
-        <rdfs:label>hasGeologicAge</rdfs:label>
-        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#GeologicAge"/>
-        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
         <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isGeologicAgeOf"/>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#GeologicAge"/>
+        <rdfs:label>hasGeologicAge</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -507,16 +505,16 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasIdentifier -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasIdentifier">
-        <rdfs:label>hasIdentifier</rdfs:label>
-        <rdfs:comment>May be used by itself or in conjunction with hasIdentifierScheme and hasIdentifierValue data properties.</rdfs:comment>
-        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Identifier"/>
-        <rdfs:seeAlso rdf:resource="http://schema.geolink.org/dev/base/main#hasIdentifierValue"/>
         <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isIdentifierOf"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:complementOf rdf:resource="http://schema.geolink.org/dev/base/main#Identifier"/>
             </owl:Class>
         </rdfs:domain>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Identifier"/>
+        <rdfs:comment>May be used by itself or in conjunction with hasIdentifierScheme and hasIdentifierValue data properties.</rdfs:comment>
+        <rdfs:label>hasIdentifier</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://schema.geolink.org/dev/base/main#hasIdentifierValue"/>
     </owl:ObjectProperty>
     
 
@@ -524,9 +522,9 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasIdentifierScheme -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasIdentifierScheme">
-        <rdfs:label>hasIdentifierScheme</rdfs:label>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Identifier"/>
         <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#IdentifierScheme"/>
+        <rdfs:label>hasIdentifierScheme</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -534,8 +532,7 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasInstrument -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasInstrument">
-        <rdfs:label>hasInstrument</rdfs:label>
-        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Instrument"/>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isInstrumentOf"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -544,6 +541,8 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Instrument"/>
+        <rdfs:label>hasInstrument</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -551,9 +550,10 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasInstrumentType -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasInstrumentType">
-        <rdfs:label>hasInstrumentType</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isInstrumentTypeOf"/>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Instrument"/>
         <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#InstrumentType"/>
+        <rdfs:label>hasInstrumentType</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -561,10 +561,10 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasLastAppearance -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasLastAppearance">
-        <rdfs:label>hasLastAppearance</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isLastAppearanceOf"/>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#GeologicAge"/>
         <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#GeologicAgeAppearance"/>
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isLastAppearanceOf"/>
+        <rdfs:label>hasLastAppearance</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -572,8 +572,7 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasMeasurementType -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasMeasurementType">
-        <rdfs:label>hasMeasurementType</rdfs:label>
-        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isMeasurementTypeOf"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -582,6 +581,8 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+        <rdfs:label>hasMeasurementType</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -589,9 +590,9 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasMeetingParticipant -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasMeetingParticipant">
-        <rdfs:label>hasMeetingParticipant</rdfs:label>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Meeting"/>
         <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Person"/>
+        <rdfs:label>hasMeetingParticipant</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -599,11 +600,12 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasMidPortCall -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasMidPortCall">
-        <rdfs:label>hasMidPortCall</rdfs:label>
-        <rdfs:comment>The range of this property is PortCall that acts as the domain of the &apos;atPort&apos; and &apos;hasTimeStamp&apos; property. Graph patterns for data using this property can be of the form:
--   ?X :hasEndPortCall ?Y . ?Y a PortCall;  :atPort ?PL ; :hasTimeStamp ?T.</rdfs:comment>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isMidPortCallOf"/>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Cruise"/>
         <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#PortCall"/>
+        <rdfs:comment>The range of this property is PortCall that acts as the domain of the &apos;atPort&apos; and &apos;hasTimeStamp&apos; property. Graph patterns for data using this property can be of the form:
+-   ?X :hasEndPortCall ?Y . ?Y a PortCall;  :atPort ?PL ; :hasTimeStamp ?T.</rdfs:comment>
+        <rdfs:label>hasMidPortCall</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -611,8 +613,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasObserver -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasObserver">
-        <rdfs:label>hasObserver</rdfs:label>
-        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Person"/>
         <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isObserverIn"/>
         <rdfs:domain>
             <owl:Class>
@@ -622,6 +622,8 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Person"/>
+        <rdfs:label>hasObserver</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -629,10 +631,10 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasOperationArea -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasOperationArea">
-        <rdfs:label>hasOperationArea</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isOperationAreaOf"/>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Dive"/>
         <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Place"/>
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isOperationAreaOf"/>
+        <rdfs:label>hasOperationArea</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -640,9 +642,10 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasOperator -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasOperator">
-        <rdfs:label>hasOperator</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isOperatorOf"/>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Cruise"/>
         <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Organization"/>
+        <rdfs:label>hasOperator</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -650,8 +653,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasOriginDigitalRepository -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasOriginDigitalRepository">
-        <rdfs:label>hasOriginDigitalRepository</rdfs:label>
-        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Repository"/>
         <rdfs:subPropertyOf rdf:resource="http://schema.geolink.org/dev/base/main#hasRepository"/>
         <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isOriginDigitalRepositoryOf"/>
         <rdfs:domain>
@@ -663,6 +664,8 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Repository"/>
+        <rdfs:label>hasOriginDigitalRepository</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -670,8 +673,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasPart -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasPart">
-        <rdfs:label>hasPart</rdfs:label>
-        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#DigitalObject"/>
         <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isPartOf"/>
         <rdfs:domain>
             <owl:Class>
@@ -681,6 +682,8 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#DigitalObject"/>
+        <rdfs:label>hasPart</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -688,10 +691,7 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasParticipant -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasParticipant">
-        <rdfs:label>hasParticipant</rdfs:label>
-        <rdfs:comment>The range of this property includes instances of Participant that act as the domain of the &apos;hasRoleType&apos;, &apos;isPerformedBy&apos;, and &apos;hasAffiliation&apos; property. Graph patterns for data using this property can be of the form:
-?X :hasParticipant ?Y.  ?Y a :Participant; :hasRoleType ?RT ; :isPerformedBy ?P; :hasAffiliation ?O.</rdfs:comment>
-        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Participant"/>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isParticipantOf"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -703,6 +703,10 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Participant"/>
+        <rdfs:comment>The range of this property includes instances of Participant that act as the domain of the &apos;hasRoleType&apos;, &apos;isPerformedBy&apos;, and &apos;hasAffiliation&apos; property. Graph patterns for data using this property can be of the form:
+?X :hasParticipant ?Y.  ?Y a :Participant; :hasRoleType ?RT ; :isPerformedBy ?P; :hasAffiliation ?O.</rdfs:comment>
+        <rdfs:label>hasParticipant</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -710,10 +714,9 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasPhysicalRepository -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasPhysicalRepository">
-        <rdfs:label>hasPhysicalRepository</rdfs:label>
-        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
         <rdfs:subPropertyOf rdf:resource="http://schema.geolink.org/dev/base/main#hasRepository"/>
         <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isPhysicalRepositoryOf"/>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -722,6 +725,7 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
+        <rdfs:label>hasPhysicalRepository</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -729,10 +733,10 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasPilot -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasPilot">
-        <rdfs:label>hasPilot</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isPilotOf"/>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Dive"/>
         <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Person"/>
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isPilotOf"/>
+        <rdfs:label>hasPilot</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -740,8 +744,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasPlace -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasPlace">
-        <rdfs:label>hasPlace</rdfs:label>
-        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Place"/>
         <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isPlaceOf"/>
         <rdfs:domain>
             <owl:Class>
@@ -751,6 +753,8 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Place"/>
+        <rdfs:label>hasPlace</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -758,9 +762,10 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasPlaceType -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasPlaceType">
-        <rdfs:label>hasPlaceType</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isPlaceTypeOf"/>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Place"/>
         <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#PlaceType"/>
+        <rdfs:label>hasPlaceType</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -768,9 +773,10 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasPlatformType -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasPlatformType">
-        <rdfs:label>hasPlatformType</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isPlatformTypeOf"/>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Platform"/>
         <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+        <rdfs:label>hasPlatformType</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -778,8 +784,7 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasPrincipalInvestigator -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasPrincipalInvestigator">
-        <rdfs:label>hasPrincipalInvestigator</rdfs:label>
-        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Person"/>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isPrincipalInvestigatorOf"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -788,6 +793,8 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Person"/>
+        <rdfs:label>hasPrincipalInvestigator</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -795,8 +802,7 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasProgram -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasProgram">
-        <rdfs:label>hasProgram</rdfs:label>
-        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Program"/>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isProgramOf"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -805,6 +811,8 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Program"/>
+        <rdfs:label>hasProgram</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -812,8 +820,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasProgramManager -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasProgramManager">
-        <rdfs:label>hasProgramManager</rdfs:label>
-        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Person"/>
         <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isProgramManagerOf"/>
         <rdfs:domain>
             <owl:Class>
@@ -823,6 +829,8 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Person"/>
+        <rdfs:label>hasProgramManager</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -830,9 +838,8 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasPublisher -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasPublisher">
-        <rdfs:label>hasPublisher</rdfs:label>
-        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Document"/>
         <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isPublisherOf"/>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Document"/>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -841,6 +848,7 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
+        <rdfs:label>hasPublisher</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -848,6 +856,7 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasReferenceTo -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasReferenceTo">
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isReferencedBy"/>
         <rdfs:label>hasReferenceTo</rdfs:label>
     </owl:ObjectProperty>
     
@@ -856,11 +865,11 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasRelatedCruise -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasRelatedCruise">
-        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
-        <rdfs:label>hasRelatedCruise</rdfs:label>
-        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Cruise"/>
-        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Cruise"/>
         <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasRelatedCruise"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Cruise"/>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Cruise"/>
+        <rdfs:label>hasRelatedCruise</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -868,8 +877,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasReplicaRepository -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasReplicaRepository">
-        <rdfs:label>hasReplicaDigitalRepository</rdfs:label>
-        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Repository"/>
         <rdfs:subPropertyOf rdf:resource="http://schema.geolink.org/dev/base/main#hasRepository"/>
         <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isReplicaDigitalRepositoryOf"/>
         <rdfs:domain>
@@ -881,6 +888,8 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Repository"/>
+        <rdfs:label>hasReplicaDigitalRepository</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -888,15 +897,7 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasRepository -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasRepository">
-        <rdfs:label>hasRepository</rdfs:label>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Organization"/>
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Repository"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isRepositoryOf"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -907,6 +908,15 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Organization"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Repository"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:label>hasRepository</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -914,7 +924,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasRightsHolder -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasRightsHolder">
-        <rdfs:label>hasRightsHolder</rdfs:label>
         <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isRightsHolderOf"/>
         <rdfs:domain>
             <owl:Class>
@@ -934,6 +943,7 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
+        <rdfs:label>hasRightsHolder</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -941,11 +951,12 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasRoleType -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasRoleType">
-        <rdfs:label>hasRoleType</rdfs:label>
-        <rdfs:comment>The domain of this property is Participant that acts as the range of &apos;hasParticipant&apos; property. Graph patterns for data using this property can be of the form:
--   ?X :hasParticipation ?Y . ?Y a :Participant;  :hasRoleType ?RT ; :isPerformedBy ?P; :hasAffiliation ?O .</rdfs:comment>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isRoleTypeOf"/>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Participant"/>
         <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#RoleType"/>
+        <rdfs:comment>The domain of this property is Participant that acts as the range of &apos;hasParticipant&apos; property. Graph patterns for data using this property can be of the form:
+-   ?X :hasParticipation ?Y . ?Y a :Participant;  :hasRoleType ?RT ; :isPerformedBy ?P; :hasAffiliation ?O .</rdfs:comment>
+        <rdfs:label>hasRoleType</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -953,10 +964,10 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasSampleType -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasSampleType">
-        <rdfs:label>hasSampleType</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isSampleTypeOf"/>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
         <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#PhysicalSampleType"/>
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isSampleTypeOf"/>
+        <rdfs:label>hasSampleType</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -964,9 +975,10 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasScheduler -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasScheduler">
-        <rdfs:label>hasScheduler</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isSchedulerOf"/>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Cruise"/>
         <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Organization"/>
+        <rdfs:label>hasScheduler</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -974,10 +986,10 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasScientist -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasScientist">
-        <rdfs:label>hasScientist</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isScientistOf"/>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Cruise"/>
         <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Person"/>
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isScientistOf"/>
+        <rdfs:label>hasScientist</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -985,9 +997,10 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasSponsor -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasSponsor">
-        <rdfs:label>hasSponsor</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isSponsorOf"/>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Award"/>
         <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Organization"/>
+        <rdfs:label>hasSponsor</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -995,11 +1008,12 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasStartPortCall -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasStartPortCall">
-        <rdfs:label>hasStartPortCall</rdfs:label>
-        <rdfs:comment>The range of this property is PortCall that acts as the domain of the &apos;atPort&apos; and &apos;hasTimeStamp&apos; property. Graph patterns for data using this property can be of the form:
--   ?X :hasEndPortCall ?Y . ?Y a PortCall;  :atPort ?PL ; :hasTimeStamp ?T.</rdfs:comment>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isStartPortCallOf"/>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Cruise"/>
         <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#PortCall"/>
+        <rdfs:comment>The range of this property is PortCall that acts as the domain of the &apos;atPort&apos; and &apos;hasTimeStamp&apos; property. Graph patterns for data using this property can be of the form:
+-   ?X :hasEndPortCall ?Y . ?Y a PortCall;  :atPort ?PL ; :hasTimeStamp ?T.</rdfs:comment>
+        <rdfs:label>hasStartPortCall</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1007,9 +1021,9 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasStratigraphicUnit -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasStratigraphicUnit">
-        <rdfs:label>hasStratigraphicUnit</rdfs:label>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
         <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#StratigraphicUnit"/>
+        <rdfs:label>hasStratigraphicUnit</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1017,10 +1031,10 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasStudent -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasStudent">
-        <rdfs:label>hasStudent</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isStudentIn"/>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Cruise"/>
         <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Person"/>
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isStudentIn"/>
+        <rdfs:label>hasStudent</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1028,9 +1042,10 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasSubOrganization -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasSubOrganization">
-        <rdfs:label>hasSubOrganization</rdfs:label>
-        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Organization"/>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isSubOrganizationOf"/>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Organization"/>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Organization"/>
+        <rdfs:label>hasSubOrganization</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1038,9 +1053,9 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasSubmersible -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasSubmersible">
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isSubmersibleOf"/>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Dive"/>
         <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Submersible"/>
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isSubmersibleOf"/>
     </owl:ObjectProperty>
     
 
@@ -1048,10 +1063,10 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasTechnician -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasTechnician">
-        <rdfs:label>hasTechnician</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isTechnicianOf"/>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Cruise"/>
         <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Person"/>
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isTechnicianOf"/>
+        <rdfs:label>hasTechnician</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1059,9 +1074,10 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasVendor -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasVendor">
-        <rdfs:label>hasVendor</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isVendorOf"/>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Instrument"/>
         <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Organization"/>
+        <rdfs:label>hasVendor</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1069,8 +1085,7 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasVessel -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasVessel">
-        <rdfs:label>hasVessel</rdfs:label>
-        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Vessel"/>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isVesselOf"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -1079,6 +1094,8 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+        <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Vessel"/>
+        <rdfs:label>hasVessel</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1087,7 +1104,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isAffiliationOf">
         <rdfs:label>isAffiliationOf</rdfs:label>
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasAffiliation"/>
     </owl:ObjectProperty>
     
 
@@ -1112,7 +1128,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isAwardOf">
         <rdfs:label>isAwardOf</rdfs:label>
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasAward"/>
     </owl:ObjectProperty>
     
 
@@ -1137,7 +1152,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isCoPrincipalInvestigatorOf">
         <rdfs:label>isCoPrincipalInvestigatorOf</rdfs:label>
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasCoPrincipalInvestigator"/>
     </owl:ObjectProperty>
     
 
@@ -1194,7 +1208,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isCruiseOf">
         <rdfs:label>isCruiseOf</rdfs:label>
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasCruise"/>
     </owl:ObjectProperty>
     
 
@@ -1203,7 +1216,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isCruiseTypeOf">
         <rdfs:label>isCruiseTypeOf</rdfs:label>
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasCruiseType"/>
     </owl:ObjectProperty>
     
 
@@ -1218,7 +1230,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isDatasetOf">
         <rdfs:label>isDatasetOf</rdfs:label>
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasDataset"/>
     </owl:ObjectProperty>
     
 
@@ -1251,7 +1262,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isEndPortCallOf">
         <rdfs:label>isEndPortCallOf</rdfs:label>
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasEndPortCall"/>
     </owl:ObjectProperty>
     
 
@@ -1260,7 +1270,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isFeatureOfInterestOf">
         <rdfs:label>isFeatureOfInterestOf</rdfs:label>
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasFeatureOfInterest"/>
     </owl:ObjectProperty>
     
 
@@ -1283,7 +1292,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isFormatOf">
         <rdfs:label>isFormatOf</rdfs:label>
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasFormat"/>
     </owl:ObjectProperty>
     
 
@@ -1292,7 +1300,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isGeoFeatureTypeOf">
         <rdfs:label>isGeoFeatureTypeOf</rdfs:label>
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasGeoFeatureType"/>
     </owl:ObjectProperty>
     
 
@@ -1313,7 +1320,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isInstrumentOf">
         <rdfs:label>isInstrumentOf</rdfs:label>
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasInstrument"/>
     </owl:ObjectProperty>
     
 
@@ -1322,7 +1328,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isInstrumentTypeOf">
         <rdfs:label>isInstrumentTypeOf</rdfs:label>
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasInstrumentType"/>
     </owl:ObjectProperty>
     
 
@@ -1337,7 +1342,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isMeasurementTypeOf">
         <rdfs:label>isMeasurementTypeOf</rdfs:label>
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasMeasurementType"/>
     </owl:ObjectProperty>
     
 
@@ -1346,7 +1350,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isMidPortCallOf">
         <rdfs:label>isMidPortCallOf</rdfs:label>
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasMidPortCall"/>
     </owl:ObjectProperty>
     
 
@@ -1369,7 +1372,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isOperatorOf">
         <rdfs:label>isOperatorOf</rdfs:label>
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasOperator"/>
     </owl:ObjectProperty>
     
 
@@ -1385,6 +1387,7 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#isOriginOf -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isOriginOf">
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#originatesFrom"/>
         <rdfs:label>isOriginOf</rdfs:label>
     </owl:ObjectProperty>
     
@@ -1402,7 +1405,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isParticipantOf">
         <rdfs:label>isParticipantOf</rdfs:label>
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasParticipant"/>
     </owl:ObjectProperty>
     
 
@@ -1410,9 +1412,10 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#isPerformedBy -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isPerformedBy">
-        <rdfs:label>isPerformedBy</rdfs:label>
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#performs"/>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Participant"/>
         <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Person"/>
+        <rdfs:label>isPerformedBy</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1441,7 +1444,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isPlaceTypeOf">
         <rdfs:label>isPlaceTypeOf</rdfs:label>
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasPlaceType"/>
     </owl:ObjectProperty>
     
 
@@ -1450,7 +1452,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isPlatformTypeOf">
         <rdfs:label>isPlatformTypeOf</rdfs:label>
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
     </owl:ObjectProperty>
     
 
@@ -1459,7 +1460,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isPortOf">
         <rdfs:label>isPortOf</rdfs:label>
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#atPort"/>
     </owl:ObjectProperty>
     
 
@@ -1468,7 +1468,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isPrincipalInvestigatorOf">
         <rdfs:label>isPrincipalInvestigatorOf</rdfs:label>
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasPrincipalInvestigator"/>
     </owl:ObjectProperty>
     
 
@@ -1485,7 +1484,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isProgramOf">
         <rdfs:label>isProgramOf</rdfs:label>
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasProgram"/>
     </owl:ObjectProperty>
     
 
@@ -1502,7 +1500,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isReferencedBy">
         <rdfs:label>isReferencedBy</rdfs:label>
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasReferenceTo"/>
     </owl:ObjectProperty>
     
 
@@ -1519,7 +1516,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isRepositoryOf">
         <rdfs:label>isRepositoryOf</rdfs:label>
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasRepository"/>
     </owl:ObjectProperty>
     
 
@@ -1536,7 +1532,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isRoleTypeOf">
         <rdfs:label>isRoleTypeOf</rdfs:label>
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasRoleType"/>
     </owl:ObjectProperty>
     
 
@@ -1553,7 +1548,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isSchedulerOf">
         <rdfs:label>isSchedulerOf</rdfs:label>
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasScheduler"/>
     </owl:ObjectProperty>
     
 
@@ -1570,7 +1564,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isSponsorOf">
         <rdfs:label>isSponsorOf</rdfs:label>
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasSponsor"/>
     </owl:ObjectProperty>
     
 
@@ -1579,7 +1572,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isStartPortCallOf">
         <rdfs:label>isStartPortCallOf</rdfs:label>
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasStartPortCall"/>
     </owl:ObjectProperty>
     
 
@@ -1596,7 +1588,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isSubOrganizationOf">
         <rdfs:label>isSubOrganizationOf</rdfs:label>
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasSubOrganization"/>
     </owl:ObjectProperty>
     
 
@@ -1619,7 +1610,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isVendorOf">
         <rdfs:label>isVendorOf</rdfs:label>
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasVendor"/>
     </owl:ObjectProperty>
     
 
@@ -1628,7 +1618,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#isVesselOf">
         <rdfs:label>isVesselOf</rdfs:label>
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#hasVessel"/>
     </owl:ObjectProperty>
     
 
@@ -1636,9 +1625,7 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#originatesFrom -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#originatesFrom">
-        <rdfs:label>originatesFrom</rdfs:label>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isOriginOf"/>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -1647,6 +1634,7 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
+        <rdfs:label>originatesFrom</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1655,7 +1643,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#performs">
         <rdfs:label>performs</rdfs:label>
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isPerformedBy"/>
     </owl:ObjectProperty>
     
 
@@ -1674,9 +1661,9 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#accordingTo -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#accordingTo">
-        <rdfs:label>accordingTo</rdfs:label>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#GeologicAge"/>
-        <rdfs:range rdf:resource="&xsd;anyURI"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:label>accordingTo</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1684,9 +1671,9 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#acronym -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#acronym">
-        <rdfs:label>acronym</rdfs:label>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Program"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>acronym</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1694,8 +1681,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasAbstract -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasAbstract">
-        <rdfs:label>hasAbstract</rdfs:label>
-        <rdfs:range rdf:resource="&xsd;string"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -1707,6 +1692,8 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>hasAbstract</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1714,9 +1701,9 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasByteLength -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasByteLength">
-        <rdfs:label>hasByteLength</rdfs:label>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#DigitalObject"/>
-        <rdfs:range rdf:resource="&owl;real"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#real"/>
+        <rdfs:label>hasByteLength</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1724,9 +1711,9 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasChecksum -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasChecksum">
-        <rdfs:label>hasChecksum</rdfs:label>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#DigitalObject"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>hasChecksum</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1734,11 +1721,11 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasChecksumAlgorithm -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasChecksumAlgorithm">
-        <rdfs:label>hasChecksumAlgorithm</rdfs:label>
-        <rdfs:comment>For specifying the checksum algorithm&apos;s used to compute the checksum value of the digital objects. The value is provided in hasChecksum property.</rdfs:comment>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#DigitalObject"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>For specifying the checksum algorithm&apos;s used to compute the checksum value of the digital objects. The value is provided in hasChecksum property.</rdfs:comment>
+        <rdfs:label>hasChecksumAlgorithm</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://schema.geolink.org/dev/base/main#hasChecksum"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
 
@@ -1746,9 +1733,9 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasCitationText -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasCitationText">
-        <rdfs:label>hasCitationText</rdfs:label>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Document"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>hasCitationText</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1756,9 +1743,9 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasCollectionEndDate -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasCollectionEndDate">
-        <rdfs:label>hasCollectionEndDate</rdfs:label>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
-        <rdfs:range rdf:resource="&xsd;dateTime"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:label>hasCollectionEndDate</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1766,9 +1753,9 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasCollectionStartDate -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasCollectionStartDate">
-        <rdfs:label>hasCollectionStartDate</rdfs:label>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
-        <rdfs:range rdf:resource="&xsd;dateTime"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:label>hasCollectionStartDate</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1776,28 +1763,28 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasDescription -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasDescription">
-        <rdfs:label>hasDescription</rdfs:label>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&rdf;HTML"/>
-                    <rdf:Description rdf:about="&xsd;string"/>
+                    <rdf:Description rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
                 </owl:unionOf>
             </rdfs:Datatype>
         </rdfs:range>
+        <rdfs:label>hasDescription</rdfs:label>
     </owl:DatatypeProperty>
     <owl:Axiom>
-        <rdfs:comment>Note that rdfs:Literal includes both xsd:string and rdf:HTML</rdfs:comment>
         <owl:annotatedSource rdf:resource="http://schema.geolink.org/dev/base/main#hasDescription"/>
-        <owl:annotatedProperty rdf:resource="&rdfs;range"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#range"/>
         <owl:annotatedTarget>
             <rdfs:Datatype>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&rdf;HTML"/>
-                    <rdf:Description rdf:about="&xsd;string"/>
+                    <rdf:Description rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
                 </owl:unionOf>
             </rdfs:Datatype>
         </owl:annotatedTarget>
+        <rdfs:comment>Note that rdfs:Literal includes both xsd:string and rdf:HTML</rdfs:comment>
     </owl:Axiom>
     
 
@@ -1805,8 +1792,8 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasDuration -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasDuration">
-        <rdfs:label>hasDuration</rdfs:label>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Dive"/>
+        <rdfs:label>hasDuration</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1814,9 +1801,9 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasElevationDescription -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasElevationDescription">
-        <rdfs:label>hasElevationDescription</rdfs:label>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>hasElevationDescription</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1824,8 +1811,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasEndDate -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasEndDate">
-        <rdfs:label>hasEndDate</rdfs:label>
-        <rdfs:range rdf:resource="&xsd;dateTime"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -1836,6 +1821,8 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:label>hasEndDate</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1844,7 +1831,7 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasEndTime">
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Dive"/>
-        <rdfs:range rdf:resource="&xsd;dateTime"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     </owl:DatatypeProperty>
     
 
@@ -1852,9 +1839,9 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasFormatType -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasFormatType">
-        <rdfs:label>hasFormatType</rdfs:label>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Format"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>hasFormatType</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1862,16 +1849,16 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasGeologicAgeUnit -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasGeologicAgeUnit">
-        <rdfs:label>hasGeologicAgeUnit</rdfs:label>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#GeologicAgeAppearance"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&xsd;anyURI"/>
-                    <rdf:Description rdf:about="&xsd;string"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
                 </owl:unionOf>
             </rdfs:Datatype>
         </rdfs:range>
+        <rdfs:label>hasGeologicAgeUnit</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1879,9 +1866,9 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasGeologicAgeValue -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasGeologicAgeValue">
-        <rdfs:label>hasGeologicAgeValue</rdfs:label>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#GeologicAgeAppearance"/>
-        <rdfs:range rdf:resource="&xsd;double"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:label>hasGeologicAgeValue</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1889,8 +1876,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasGeometryAsWktLiteral -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasGeometryAsWktLiteral">
-        <rdfs:label>hasGeometryAsWktLiteral</rdfs:label>
-        <rdfs:range rdf:resource="&geosparql;wktLiteral"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -1904,6 +1889,8 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#wktLiteral"/>
+        <rdfs:label>hasGeometryAsWktLiteral</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1911,10 +1898,10 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasIdentifierValue -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasIdentifierValue">
-        <rdfs:label>hasIdentifierValue</rdfs:label>
-        <rdfs:comment>Points to the actual string value of identifier., e.g.: &quot;doi:10.5063/AA/ArchivalTag.4.1&quot;</rdfs:comment>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Identifier"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Points to the actual string value of identifier., e.g.: &quot;doi:10.5063/AA/ArchivalTag.4.1&quot;</rdfs:comment>
+        <rdfs:label>hasIdentifierValue</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1922,9 +1909,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasLandingPage -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasLandingPage">
-        <rdfs:label>hasLandingPage</rdfs:label>
-        <rdfs:comment>A URI pointing to a human-readable landing page for a Dataset or DigitalObject.</rdfs:comment>
-        <rdfs:range rdf:resource="&xsd;anyURI"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -1933,6 +1917,9 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:comment>A URI pointing to a human-readable landing page for a Dataset or DigitalObject.</rdfs:comment>
+        <rdfs:label>hasLandingPage</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1940,9 +1927,9 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasLastUpdateDate -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasLastUpdateDate">
-        <rdfs:label>hasLastUpdateDate</rdfs:label>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
-        <rdfs:range rdf:resource="&xsd;dateTime"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:label>hasLastUpdateDate</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1950,10 +1937,10 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasMaterial -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasMaterial">
-        <rdfs:label>hasMaterial</rdfs:label>
-        <rdfs:comment>values drawn from multiple vocabularies eg. mineral types, rock types</rdfs:comment>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
-        <rdfs:range rdf:resource="&xsd;anyURI"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:comment>values drawn from multiple vocabularies eg. mineral types, rock types</rdfs:comment>
+        <rdfs:label>hasMaterial</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1961,16 +1948,16 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasMaterialType -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasMaterialType">
-        <rdfs:label>hasMaterialType</rdfs:label>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&xsd;anyURI"/>
-                    <rdf:Description rdf:about="&xsd;string"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
                 </owl:unionOf>
             </rdfs:Datatype>
         </rdfs:range>
+        <rdfs:label>hasMaterialType</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1978,8 +1965,8 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasMaxDepth -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasMaxDepth">
-        <rdfs:label>hasMaxDepth</rdfs:label>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Dive"/>
+        <rdfs:label>hasMaxDepth</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1987,9 +1974,9 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasModel -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasModel">
-        <rdfs:label>hasModel</rdfs:label>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Instrument"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>hasModel</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1997,8 +1984,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasPosition -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasPosition">
-        <rdfs:label>hasPosition</rdfs:label>
-        <rdfs:range rdf:resource="&geosparql;wktLiteral"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -2007,6 +1992,8 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#wktLiteral"/>
+        <rdfs:label>hasPosition</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -2014,8 +2001,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasProject -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasProject">
-        <rdfs:label>hasProject</rdfs:label>
-        <rdfs:range rdf:resource="&xsd;string"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -2025,6 +2010,8 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>hasProject</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -2032,16 +2019,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasPublicationDate -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasPublicationDate">
-        <rdfs:label>hasPublicationDate</rdfs:label>
-        <rdfs:range>
-            <rdfs:Datatype>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&xsd;dateTime"/>
-                    <rdf:Description rdf:about="&xsd;gYear"/>
-                    <rdf:Description rdf:about="&xsd;gYearMonth"/>
-                </owl:unionOf>
-            </rdfs:Datatype>
-        </rdfs:range>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -2050,6 +2027,16 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#dateTime"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#gYear"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#gYearMonth"/>
+                </owl:unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:label>hasPublicationDate</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -2057,9 +2044,9 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasRegistrationDate -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasRegistrationDate">
-        <rdfs:label>hasRegistrationDate</rdfs:label>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
-        <rdfs:range rdf:resource="&xsd;dateTime"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:label>hasRegistrationDate</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -2068,7 +2055,7 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasStageName">
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#GeologicAge"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
@@ -2076,8 +2063,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasStartDate -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasStartDate">
-        <rdfs:label>hasStartDate</rdfs:label>
-        <rdfs:range rdf:resource="&xsd;dateTime"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -2088,6 +2073,8 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:label>hasStartDate</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -2096,7 +2083,7 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasStartTime">
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Dive"/>
-        <rdfs:range rdf:resource="&xsd;dateTime"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     </owl:DatatypeProperty>
     
 
@@ -2104,16 +2091,16 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasTectonicSetting -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasTectonicSetting">
-        <rdfs:label>hasTectonicSetting</rdfs:label>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&xsd;anyURI"/>
-                    <rdf:Description rdf:about="&xsd;string"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
                 </owl:unionOf>
             </rdfs:Datatype>
         </rdfs:range>
+        <rdfs:label>hasTectonicSetting</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -2121,10 +2108,10 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasTimeStamp -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasTimeStamp">
-        <rdfs:label>hasTimeStamp</rdfs:label>
-        <rdfs:comment>The domain of this property is PortCall that acts as the range of &apos;hasStartPortCall&apos;, &apos;hasMidPortCall&apos;, or &apos;hasEndPortCall&apos; properties.</rdfs:comment>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#PortCall"/>
-        <rdfs:range rdf:resource="&xsd;dateTime"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>The domain of this property is PortCall that acts as the range of &apos;hasStartPortCall&apos;, &apos;hasMidPortCall&apos;, or &apos;hasEndPortCall&apos; properties.</rdfs:comment>
+        <rdfs:label>hasTimeStamp</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -2132,9 +2119,9 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasTrack -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasTrack">
-        <rdfs:label>hasTrack</rdfs:label>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Cruise"/>
-        <rdfs:range rdf:resource="&geosparql;wktLiteral"/>
+        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#wktLiteral"/>
+        <rdfs:label>hasTrack</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -2142,9 +2129,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#hasUploadDate -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#hasUploadDate">
-        <rdfs:label>hasUploadDate</rdfs:label>
-        <rdfs:comment>The range of this property is a dateTime indicating when the Dataset or DigitalObject was uploaded to its originDigitalRepository.</rdfs:comment>
-        <rdfs:range rdf:resource="&xsd;dateTime"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -2153,6 +2137,9 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>The range of this property is a dateTime indicating when the Dataset or DigitalObject was uploaded to its originDigitalRepository.</rdfs:comment>
+        <rdfs:label>hasUploadDate</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -2160,8 +2147,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#matches -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#matches">
-        <rdfs:label>matches</rdfs:label>
-        <rdfs:range rdf:resource="&xsd;anyURI"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -2180,6 +2165,8 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:label>matches</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -2187,9 +2174,9 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#nameFamily -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#nameFamily">
-        <rdfs:label>nameFamily</rdfs:label>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Person"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>nameFamily</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -2197,9 +2184,9 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#nameFull -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#nameFull">
-        <rdfs:label>nameFull</rdfs:label>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Person"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>nameFull</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -2207,9 +2194,9 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#nameGiven -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#nameGiven">
-        <rdfs:label>nameGiven</rdfs:label>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Person"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>nameGiven</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -2217,9 +2204,9 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#nameMiddle -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#nameMiddle">
-        <rdfs:label>nameMiddle</rdfs:label>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Person"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>nameMiddle</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -2227,9 +2214,9 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#namePrefix -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#namePrefix">
-        <rdfs:label>namePrefix</rdfs:label>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Person"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>namePrefix</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -2237,9 +2224,9 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#nameSuffix -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#nameSuffix">
-        <rdfs:label>nameSuffix</rdfs:label>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#Person"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>nameSuffix</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -2247,8 +2234,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#seeAlso -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#seeAlso">
-        <rdfs:label>seeAlso</rdfs:label>
-        <rdfs:range rdf:resource="&xsd;anyURI"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -2266,6 +2251,8 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:label>seeAlso</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -2273,9 +2260,9 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#source -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#source">
-        <rdfs:label>source</rdfs:label>
         <rdfs:domain rdf:resource="http://schema.geolink.org/dev/base/main#DigitalObject"/>
-        <rdfs:range rdf:resource="&xsd;anyURI"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:label>source</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -2283,8 +2270,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#title -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/dev/base/main#title">
-        <rdfs:label>title</rdfs:label>
-        <rdfs:range rdf:resource="&xsd;string"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -2302,6 +2287,8 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>title</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -2320,8 +2307,8 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#Award -->
 
     <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#Award">
-        <rdfs:label>Award</rdfs:label>
         <rdfs:comment>Funding provided by an Organization enabling Participation.</rdfs:comment>
+        <rdfs:label>Award</rdfs:label>
     </owl:Class>
     
 
@@ -2329,8 +2316,8 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#Country -->
 
     <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#Country">
-        <rdfs:label>Country</rdfs:label>
         <rdfs:comment>A formally recognized, governed nation of Persons with a defined territory</rdfs:comment>
+        <rdfs:label>Country</rdfs:label>
     </owl:Class>
     
 
@@ -2338,8 +2325,8 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#Cruise -->
 
     <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#Cruise">
-        <rdfs:label>Cruise</rdfs:label>
         <rdfs:comment>An event occuring on a Vessel traversing a Trajectory.</rdfs:comment>
+        <rdfs:label>Cruise</rdfs:label>
     </owl:Class>
     
 
@@ -2347,8 +2334,8 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#CruiseType -->
 
     <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#CruiseType">
-        <rdfs:label>CruiseType</rdfs:label>
         <rdfs:comment>The type of Cruise - operational, transit, etc.</rdfs:comment>
+        <rdfs:label>CruiseType</rdfs:label>
     </owl:Class>
     
 
@@ -2356,8 +2343,8 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#Dataset -->
 
     <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#Dataset">
-        <rdfs:label>Dataset</rdfs:label>
         <rdfs:comment>A collection of Measurements.</rdfs:comment>
+        <rdfs:label>Dataset</rdfs:label>
     </owl:Class>
     
 
@@ -2365,8 +2352,8 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#DigitalObject -->
 
     <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#DigitalObject">
-        <rdfs:label>DigitalObject</rdfs:label>
         <rdfs:comment>A digital representation of a Thing</rdfs:comment>
+        <rdfs:label>DigitalObject</rdfs:label>
     </owl:Class>
     
 
@@ -2374,8 +2361,8 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#Dive -->
 
     <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#Dive">
-        <rdfs:label>Dive</rdfs:label>
         <rdfs:comment>Analogous to cruise being an expedition/event/deployment conducted aboard vessel, dive is an expedition/event/deployment conducted on/in a submersible platform.</rdfs:comment>
+        <rdfs:label>Dive</rdfs:label>
     </owl:Class>
     
 
@@ -2383,8 +2370,8 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#Document -->
 
     <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#Document">
-        <rdfs:label>Document</rdfs:label>
         <rdfs:comment>A textual, word-based, non-structured expression of information, such as a report, presentation, published article, or lecture.</rdfs:comment>
+        <rdfs:label>Document</rdfs:label>
     </owl:Class>
     
 
@@ -2400,8 +2387,8 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#Feature -->
 
     <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#Feature">
-        <rdfs:label>Feature</rdfs:label>
         <rdfs:comment>A significant locality where observations are made, samples are acquired, or measurements are done. Not necessarily geospatial in nature.</rdfs:comment>
+        <rdfs:label>Feature</rdfs:label>
     </owl:Class>
     
 
@@ -2409,8 +2396,8 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#FeatureType -->
 
     <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#FeatureType">
-        <rdfs:label>FeatureType</rdfs:label>
         <rdfs:comment>Types of generic features.</rdfs:comment>
+        <rdfs:label>FeatureType</rdfs:label>
     </owl:Class>
     
 
@@ -2418,8 +2405,8 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#Format -->
 
     <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#Format">
-        <rdfs:label>Format</rdfs:label>
         <rdfs:comment>The type of data format for a DigitalObject</rdfs:comment>
+        <rdfs:label>Format</rdfs:label>
     </owl:Class>
     
 
@@ -2427,10 +2414,10 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#GeoFeature -->
 
     <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#GeoFeature">
-        <rdfs:label>GeoFeature</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Feature"/>
         <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Place"/>
         <rdfs:comment>A significant geospatial locality where observations are made. GEBCO vocabulary terms are included as subclasses.</rdfs:comment>
+        <rdfs:label>GeoFeature</rdfs:label>
     </owl:Class>
     
 
@@ -2438,10 +2425,10 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#GeoFeatureType -->
 
     <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#GeoFeatureType">
-        <rdfs:label>GeoFeatureType</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#FeatureType"/>
         <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#PlaceType"/>
         <rdfs:comment>The type of spatial feature - from gazetteer. GEBCO vocabulary terms are included as instances.</rdfs:comment>
+        <rdfs:label>GeoFeatureType</rdfs:label>
     </owl:Class>
     
 
@@ -2449,8 +2436,8 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#GeologicAge -->
 
     <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#GeologicAge">
-        <rdfs:label>GeologicAge</rdfs:label>
         <rdfs:comment>Captures geologic age, e.g., jurassic, pleistocene, etc.</rdfs:comment>
+        <rdfs:label>GeologicAge</rdfs:label>
     </owl:Class>
     
 
@@ -2458,7 +2445,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#GeologicAgeAppearance -->
 
     <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#GeologicAgeAppearance">
-        <rdfs:label>GeologicAgeAppearance</rdfs:label>
         <rdfs:comment>This class essentially is intended to capture the relation exemplified by the sentence &quot;Pleistocene has first appearance of 1.6 million years before present&quot;. Here, Pleistocene is a geologic age, and &apos;hast first appearance&apos; points to an entity that has a value component and a unit component.
 Data providers can opt not to populate this class directly with explicit URI instances, but rather use blank nodes as instances of this class. An example set of triples would be as follows where the blank node that acts as the filler of the hasFirstAppearance property is an instance of this class:
 
@@ -2466,6 +2452,7 @@ d:age1 a :GeologicAge .
 d:age1 :hasFirstAppearance 
    [ :hasGeologicAgeValue &quot;1.6&quot;^^xsd:double ;
      :hasGeologicAgeUnit iso31:Ma ] .</rdfs:comment>
+        <rdfs:label>GeologicAgeAppearance</rdfs:label>
     </owl:Class>
     
 
@@ -2473,8 +2460,8 @@ d:age1 :hasFirstAppearance
     <!-- http://schema.geolink.org/dev/base/main#Identifier -->
 
     <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#Identifier">
-        <rdfs:label>Identifier</rdfs:label>
         <rdfs:comment>Capturing various forms of identifiers, e.g., DOIs, ARKs, local strings, UUID strings, etc. Can be any URI that is understood as identifier of an entity, or a blank node, in which case, hasIdentifierScheme and hasIdentifierValue properties should be used to provide details.</rdfs:comment>
+        <rdfs:label>Identifier</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://schema.geolink.org/dev/base/main#hasIdentifier"/>
         <rdfs:seeAlso rdf:resource="http://schema.geolink.org/dev/base/main#hasIdentifierValue"/>
     </owl:Class>
@@ -2484,9 +2471,9 @@ d:age1 :hasFirstAppearance
     <!-- http://schema.geolink.org/dev/base/main#IdentifierScheme -->
 
     <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#IdentifierScheme">
-        <rdfs:label>IdentifierScheme</rdfs:label>
         <rdfs:comment>Represents URIs of identifier schemes, e.g., http://purl.org/spar/datacite/ark for ARK, or
 http://purl.org/spar/datacite/doi for DOI.</rdfs:comment>
+        <rdfs:label>IdentifierScheme</rdfs:label>
     </owl:Class>
     
 
@@ -2494,8 +2481,8 @@ http://purl.org/spar/datacite/doi for DOI.</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#Instrument -->
 
     <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#Instrument">
-        <rdfs:label>Instrument</rdfs:label>
         <rdfs:comment>A specific instance of an Instrument being used to make observations resulting in a Dataset.NERC&apos;s L05 and L22 vocabulary terms are included as subclasses.</rdfs:comment>
+        <rdfs:label>Instrument</rdfs:label>
     </owl:Class>
     
 
@@ -2503,8 +2490,8 @@ http://purl.org/spar/datacite/doi for DOI.</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#InstrumentType -->
 
     <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#InstrumentType">
-        <rdfs:label>InstrumentType</rdfs:label>
         <rdfs:comment>The type of Instrument being used to make observations - CTD, ADCP, microscope. NERC&apos;s L05 and L22 vocabulary terms are included as instances.</rdfs:comment>
+        <rdfs:label>InstrumentType</rdfs:label>
     </owl:Class>
     
 
@@ -2512,8 +2499,8 @@ http://purl.org/spar/datacite/doi for DOI.</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#MeasurementType -->
 
     <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#MeasurementType">
-        <rdfs:label>MeasurementType</rdfs:label>
         <rdfs:comment>The type of Measurement being recorded - atmospheric emission, land surface temperature, depth, salinity of the water column. NERC&apos;s P02 and P03 vocabulary terms are included as instances.</rdfs:comment>
+        <rdfs:label>MeasurementType</rdfs:label>
     </owl:Class>
     
 
@@ -2521,8 +2508,8 @@ http://purl.org/spar/datacite/doi for DOI.</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#Meeting -->
 
     <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#Meeting">
-        <rdfs:label>Meeting</rdfs:label>
         <rdfs:comment>To represent, e.g., &quot;Person W attends Conference X at Place Y which occurred on Start/End Dates Z1-Z2&quot;</rdfs:comment>
+        <rdfs:label>Meeting</rdfs:label>
     </owl:Class>
     
 
@@ -2530,8 +2517,8 @@ http://purl.org/spar/datacite/doi for DOI.</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#Organization -->
 
     <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#Organization">
-        <rdfs:label>Organization</rdfs:label>
         <rdfs:comment>A physical or virtual collection of Agents in some formally recognized capacity of significance.</rdfs:comment>
+        <rdfs:label>Organization</rdfs:label>
     </owl:Class>
     
 
@@ -2539,8 +2526,8 @@ http://purl.org/spar/datacite/doi for DOI.</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#Participant -->
 
     <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#Participant">
-        <rdfs:label>Participant</rdfs:label>
         <rdfs:comment>A reification of the 4-ary relation representing a participation of a Person, who is affiliated to an Organization, in a Cruise with a certain RoleType.</rdfs:comment>
+        <rdfs:label>Participant</rdfs:label>
     </owl:Class>
     
 
@@ -2548,8 +2535,8 @@ http://purl.org/spar/datacite/doi for DOI.</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#Person -->
 
     <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#Person">
-        <rdfs:label>Person</rdfs:label>
         <rdfs:comment>A homo sapien Agent of some significance</rdfs:comment>
+        <rdfs:label>Person</rdfs:label>
     </owl:Class>
     
 
@@ -2557,8 +2544,8 @@ http://purl.org/spar/datacite/doi for DOI.</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#PhysicalSample -->
 
     <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#PhysicalSample">
-        <rdfs:label>PhysicalSample</rdfs:label>
         <rdfs:comment>An object of observation that may be preserved, catalogued, and/or preserved.</rdfs:comment>
+        <rdfs:label>PhysicalSample</rdfs:label>
     </owl:Class>
     
 
@@ -2566,8 +2553,8 @@ http://purl.org/spar/datacite/doi for DOI.</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#PhysicalSampleType -->
 
     <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#PhysicalSampleType">
-        <rdfs:label>PhysicalSampleType</rdfs:label>
         <rdfs:comment>Types of physical samples.</rdfs:comment>
+        <rdfs:label>PhysicalSampleType</rdfs:label>
     </owl:Class>
     
 
@@ -2575,8 +2562,8 @@ http://purl.org/spar/datacite/doi for DOI.</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#Place -->
 
     <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#Place">
-        <rdfs:label>Place</rdfs:label>
         <rdfs:comment>A location with at least some type of spatial extent.</rdfs:comment>
+        <rdfs:label>Place</rdfs:label>
     </owl:Class>
     
 
@@ -2584,8 +2571,8 @@ http://purl.org/spar/datacite/doi for DOI.</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#PlaceType -->
 
     <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#PlaceType">
-        <rdfs:label>PlaceType</rdfs:label>
         <rdfs:comment>A common descriptor for a type of Place - ocean, shoreline, island, etc.</rdfs:comment>
+        <rdfs:label>PlaceType</rdfs:label>
     </owl:Class>
     
 
@@ -2593,8 +2580,8 @@ http://purl.org/spar/datacite/doi for DOI.</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#Platform -->
 
     <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#Platform">
-        <rdfs:label>Platform</rdfs:label>
         <rdfs:comment>A physical object of significance enabling observations resulting in a Dataset. NERC&apos;s L06 vocabulary terms (i.e., ICES platform codes) are included as subclasses.</rdfs:comment>
+        <rdfs:label>Platform</rdfs:label>
     </owl:Class>
     
 
@@ -2602,8 +2589,8 @@ http://purl.org/spar/datacite/doi for DOI.</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#PlatformType -->
 
     <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#PlatformType">
-        <rdfs:label>PlatformType</rdfs:label>
         <rdfs:comment>A type of Platform - vessel, glider, float, laboratory, etc. NERC&apos;s L06 vocabulary terms are included as instances.</rdfs:comment>
+        <rdfs:label>PlatformType</rdfs:label>
     </owl:Class>
     
 
@@ -2611,8 +2598,8 @@ http://purl.org/spar/datacite/doi for DOI.</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#PortCall -->
 
     <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#PortCall">
-        <rdfs:label>PortCall</rdfs:label>
         <rdfs:comment>A designated, specific port visited by a Vessel for some significant reason - the start or end of a mission; transfer of passengers, goods, or equipment.</rdfs:comment>
+        <rdfs:label>PortCall</rdfs:label>
     </owl:Class>
     
 
@@ -2620,8 +2607,8 @@ http://purl.org/spar/datacite/doi for DOI.</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#Program -->
 
     <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#Program">
-        <rdfs:label>Program</rdfs:label>
         <rdfs:comment>A formally recognized scientific effort receiving significant funding, requiring large scale coordination</rdfs:comment>
+        <rdfs:label>Program</rdfs:label>
     </owl:Class>
     
 
@@ -2629,8 +2616,8 @@ http://purl.org/spar/datacite/doi for DOI.</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#Repository -->
 
     <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#Repository">
-        <rdfs:label>Repository</rdfs:label>
         <rdfs:comment>A recognized, formal entity responsible for curating a certain set of Datasets or DigitalObjects</rdfs:comment>
+        <rdfs:label>Repository</rdfs:label>
     </owl:Class>
     
 
@@ -2638,8 +2625,8 @@ http://purl.org/spar/datacite/doi for DOI.</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#RoleType -->
 
     <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#RoleType">
-        <rdfs:label>RoleType</rdfs:label>
         <rdfs:comment>A specific type of role performed by an Agent - Principal Investigator, Chief Scientist, Publisher, etc.</rdfs:comment>
+        <rdfs:label>RoleType</rdfs:label>
     </owl:Class>
     
 
@@ -2647,8 +2634,8 @@ http://purl.org/spar/datacite/doi for DOI.</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#Station -->
 
     <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#Station">
-        <rdfs:label>Station</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Place"/>
+        <rdfs:label>Station</rdfs:label>
     </owl:Class>
     
 
@@ -2656,8 +2643,8 @@ http://purl.org/spar/datacite/doi for DOI.</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#StratigraphicUnit -->
 
     <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#StratigraphicUnit">
-        <rdfs:label>StratigraphicUnit</rdfs:label>
         <rdfs:comment>Captures named instances (URIs have to be minted for them) from stratigraphic gazetteers such as the USGS National Geologic Map Database or controlled vocabulary from the International Stratigraphic Union. Examples of stratigraphic units include Bonneville Formation, Portland Formation, Gray Gulch Formation, etc.</rdfs:comment>
+        <rdfs:label>StratigraphicUnit</rdfs:label>
     </owl:Class>
     
 
@@ -2665,9 +2652,9 @@ http://purl.org/spar/datacite/doi for DOI.</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#Submersible -->
 
     <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#Submersible">
-        <rdfs:label>Submersible</rdfs:label>
         <owl:equivalentClass rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#20"/>
         <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Platform"/>
+        <rdfs:label>Submersible</rdfs:label>
     </owl:Class>
     
 
@@ -2675,10 +2662,10 @@ http://purl.org/spar/datacite/doi for DOI.</rdfs:comment>
     <!-- http://schema.geolink.org/dev/base/main#Vessel -->
 
     <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#Vessel">
-        <rdfs:label>Vessel</rdfs:label>
         <owl:equivalentClass rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#3Z"/>
         <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Platform"/>
         <rdfs:comment>The platform enabling a Cruise</rdfs:comment>
+        <rdfs:label>Vessel</rdfs:label>
     </owl:Class>
     
 
@@ -2698,5 +2685,5 @@ http://purl.org/spar/datacite/doi for DOI.</rdfs:comment>
 
 
 
-<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+<!-- Generated by the OWL API (version 4.1.3.20151118-2017) https://github.com/owlcs/owlapi -->
 
