@@ -1,0 +1,748 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY time "http://www.w3.org/2006/time#" >
+    <!ENTITY od "http://schema.oceanlink.org/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="&od;repository-object#"
+     xml:base="&od;repository-object"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:time="http://www.w3.org/2006/time#"
+     xmlns:od="http://schema.oceanlink.org/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="&od;repository-object">
+        <owl:imports rdf:resource="&od;agent-role"/>
+        <owl:imports rdf:resource="&od;information-object"/>
+        <owl:versionIRI rdf:resource="&od;repository-object/1.0"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.oceanlink.org/agent-role#isAgentRoleIn -->
+
+    <rdf:Description rdf:about="&od;agent-role#isAgentRoleIn">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;repository-object#hasOriginator"/>
+            </rdf:Description>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;repository-object#hasOriginatorList"/>
+            </rdf:Description>
+            <rdf:Description rdf:about="&od;repository-object#rollifiedRepositoryObject"/>
+        </owl:propertyChainAxiom>
+    </rdf:Description>
+    
+
+
+    <!-- http://schema.oceanlink.org/funding-award#isFundedBy -->
+
+    <owl:ObjectProperty rdf:about="&od;funding-award#isFundedBy">
+        <rdfs:range rdf:resource="&od;funding-award#FundingAward"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanlink.org/program#isAssociatedWithProgram -->
+
+    <owl:ObjectProperty rdf:about="&od;program#isAssociatedWithProgram">
+        <rdfs:range rdf:resource="&od;program#Program"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanlink.org/repository-object#belongsTo -->
+
+    <owl:ObjectProperty rdf:about="&od;repository-object#belongsTo"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/repository-object#cites -->
+
+    <owl:ObjectProperty rdf:about="&od;repository-object#cites">
+        <rdfs:subPropertyOf rdf:resource="&od;repository-object#hasRepositoryObjectRelationTo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanlink.org/repository-object#compiles -->
+
+    <owl:ObjectProperty rdf:about="&od;repository-object#compiles">
+        <rdfs:subPropertyOf rdf:resource="&od;repository-object#hasRepositoryObjectRelationTo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanlink.org/repository-object#continues -->
+
+    <owl:ObjectProperty rdf:about="&od;repository-object#continues">
+        <rdfs:subPropertyOf rdf:resource="&od;repository-object#hasRepositoryObjectRelationTo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanlink.org/repository-object#documents -->
+
+    <owl:ObjectProperty rdf:about="&od;repository-object#documents">
+        <rdfs:subPropertyOf rdf:resource="&od;repository-object#hasRepositoryObjectRelationTo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanlink.org/repository-object#hasFirstOriginator -->
+
+    <owl:ObjectProperty rdf:about="&od;repository-object#hasFirstOriginator">
+        <rdfs:subPropertyOf rdf:resource="&od;repository-object#hasOriginator"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanlink.org/repository-object#hasMetadata -->
+
+    <owl:ObjectProperty rdf:about="&od;repository-object#hasMetadata">
+        <rdfs:subPropertyOf rdf:resource="&od;repository-object#hasRepositoryObjectRelationTo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanlink.org/repository-object#hasOriginator -->
+
+    <owl:ObjectProperty rdf:about="&od;repository-object#hasOriginator"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/repository-object#hasOriginatorList -->
+
+    <owl:ObjectProperty rdf:about="&od;repository-object#hasOriginatorList"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/repository-object#hasPart -->
+
+    <owl:ObjectProperty rdf:about="&od;repository-object#hasPart">
+        <rdfs:subPropertyOf rdf:resource="&od;repository-object#hasRepositoryObjectRelationTo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanlink.org/repository-object#hasRepositoryObjectID -->
+
+    <owl:ObjectProperty rdf:about="&od;repository-object#hasRepositoryObjectID"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/repository-object#hasRepositoryObjectIDScheme -->
+
+    <owl:ObjectProperty rdf:about="&od;repository-object#hasRepositoryObjectIDScheme"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/repository-object#hasRepositoryObjectRelationTo -->
+
+    <owl:ObjectProperty rdf:about="&od;repository-object#hasRepositoryObjectRelationTo"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/repository-object#isCitedBy -->
+
+    <owl:ObjectProperty rdf:about="&od;repository-object#isCitedBy">
+        <rdfs:subPropertyOf rdf:resource="&od;repository-object#hasRepositoryObjectRelationTo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanlink.org/repository-object#isCompiledBy -->
+
+    <owl:ObjectProperty rdf:about="&od;repository-object#isCompiledBy">
+        <rdfs:subPropertyOf rdf:resource="&od;repository-object#hasRepositoryObjectRelationTo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanlink.org/repository-object#isContinuedBy -->
+
+    <owl:ObjectProperty rdf:about="&od;repository-object#isContinuedBy">
+        <rdfs:subPropertyOf rdf:resource="&od;repository-object#hasRepositoryObjectRelationTo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanlink.org/repository-object#isCreatedOn -->
+
+    <owl:ObjectProperty rdf:about="&od;repository-object#isCreatedOn"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/repository-object#isDocumentedBy -->
+
+    <owl:ObjectProperty rdf:about="&od;repository-object#isDocumentedBy">
+        <rdfs:subPropertyOf rdf:resource="&od;repository-object#hasRepositoryObjectRelationTo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanlink.org/repository-object#isIdenticalTo -->
+
+    <owl:ObjectProperty rdf:about="&od;repository-object#isIdenticalTo">
+        <rdfs:subPropertyOf rdf:resource="&od;repository-object#hasRepositoryObjectRelationTo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanlink.org/repository-object#isIssuedOn -->
+
+    <owl:ObjectProperty rdf:about="&od;repository-object#isIssuedOn"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/repository-object#isMetadataFor -->
+
+    <owl:ObjectProperty rdf:about="&od;repository-object#isMetadataFor">
+        <rdfs:subPropertyOf rdf:resource="&od;repository-object#hasRepositoryObjectRelationTo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanlink.org/repository-object#isNewVersionOf -->
+
+    <owl:ObjectProperty rdf:about="&od;repository-object#isNewVersionOf">
+        <rdfs:subPropertyOf rdf:resource="&od;repository-object#hasRepositoryObjectRelationTo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanlink.org/repository-object#isOriginalFormOf -->
+
+    <owl:ObjectProperty rdf:about="&od;repository-object#isOriginalFormOf">
+        <rdfs:subPropertyOf rdf:resource="&od;repository-object#hasRepositoryObjectRelationTo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanlink.org/repository-object#isPartOf -->
+
+    <owl:ObjectProperty rdf:about="&od;repository-object#isPartOf">
+        <rdfs:subPropertyOf rdf:resource="&od;repository-object#hasRepositoryObjectRelationTo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanlink.org/repository-object#isPreviousVersionOf -->
+
+    <owl:ObjectProperty rdf:about="&od;repository-object#isPreviousVersionOf">
+        <rdfs:subPropertyOf rdf:resource="&od;repository-object#hasRepositoryObjectRelationTo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanlink.org/repository-object#isReferencedBy -->
+
+    <owl:ObjectProperty rdf:about="&od;repository-object#isReferencedBy">
+        <rdfs:subPropertyOf rdf:resource="&od;repository-object#hasRepositoryObjectRelationTo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanlink.org/repository-object#isReleasedOn -->
+
+    <owl:ObjectProperty rdf:about="&od;repository-object#isReleasedOn"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/repository-object#isSupplementTo -->
+
+    <owl:ObjectProperty rdf:about="&od;repository-object#isSupplementTo">
+        <rdfs:subPropertyOf rdf:resource="&od;repository-object#hasRepositoryObjectRelationTo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanlink.org/repository-object#isSupplementedBy -->
+
+    <owl:ObjectProperty rdf:about="&od;repository-object#isSupplementedBy">
+        <rdfs:subPropertyOf rdf:resource="&od;repository-object#hasRepositoryObjectRelationTo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanlink.org/repository-object#isVariantFormOf -->
+
+    <owl:ObjectProperty rdf:about="&od;repository-object#isVariantFormOf">
+        <rdfs:subPropertyOf rdf:resource="&od;repository-object#hasRepositoryObjectRelationTo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanlink.org/repository-object#nextOriginator -->
+
+    <owl:ObjectProperty rdf:about="&od;repository-object#nextOriginator"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/repository-object#originatesFrom -->
+
+    <owl:ObjectProperty rdf:about="&od;repository-object#originatesFrom"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/repository-object#references -->
+
+    <owl:ObjectProperty rdf:about="&od;repository-object#references">
+        <rdfs:subPropertyOf rdf:resource="&od;repository-object#hasRepositoryObjectRelationTo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanlink.org/repository-object#rollifiedRepositoryObject -->
+
+    <owl:ObjectProperty rdf:about="&od;repository-object#rollifiedRepositoryObject"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.oceanlink.org/repository-object#hasAbstract -->
+
+    <owl:DatatypeProperty rdf:about="&od;repository-object#hasAbstract">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.oceanlink.org/repository-object#hasKeyword -->
+
+    <owl:DatatypeProperty rdf:about="&od;repository-object#hasKeyword">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.oceanlink.org/repository-object#hasLanguageSpecifier -->
+
+    <owl:DatatypeProperty rdf:about="&od;repository-object#hasLanguageSpecifier">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.oceanlink.org/repository-object#hasRepositoryObjectIDValue -->
+
+    <owl:DatatypeProperty rdf:about="&od;repository-object#hasRepositoryObjectIDValue">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.oceanlink.org/repository-object#hasRepositoryObjectTitle -->
+
+    <owl:DatatypeProperty rdf:about="&od;repository-object#hasRepositoryObjectTitle">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.oceanlink.org/repository-object#hasScienceTheme -->
+
+    <owl:DatatypeProperty rdf:about="&od;repository-object#hasScienceTheme">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.oceanlink.org/repository-object#hasSubject -->
+
+    <owl:DatatypeProperty rdf:about="&od;repository-object#hasSubject">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.oceanlink.org/cruise#Cruise -->
+
+    <owl:Class rdf:about="&od;cruise#Cruise"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/funding-award#FundingAward -->
+
+    <owl:Class rdf:about="&od;funding-award#FundingAward"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/program#Program -->
+
+    <owl:Class rdf:about="&od;program#Program"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/repository#Repository -->
+
+    <owl:Class rdf:about="&od;repository#Repository"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/repository-object#Originator -->
+
+    <owl:Class rdf:about="&od;repository-object#Originator">
+        <rdfs:subClassOf rdf:resource="&od;agent-role#AgentRole"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&od;agent-role#hasAgentRoleType"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:oneOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&od;repository-object#originator_roletype"/>
+                        </owl:oneOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&od;agent-role#isAgentRoleIn"/>
+                <owl:someValuesFrom rdf:resource="&od;repository-object#RepositoryObject"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanlink.org/repository-object#OriginatorList -->
+
+    <owl:Class rdf:about="&od;repository-object#OriginatorList">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&od;repository-object#hasFirstOriginator"/>
+                <owl:onClass rdf:resource="&od;repository-object#Originator"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&od;repository-object#hasOriginator"/>
+                <owl:someValuesFrom rdf:resource="&od;repository-object#Originator"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanlink.org/repository-object#RepositoryObject -->
+
+    <owl:Class rdf:about="&od;repository-object#RepositoryObject">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&od;repository-object#rollifiedRepositoryObject"/>
+                <owl:hasSelf rdf:datatype="&xsd;boolean">true</owl:hasSelf>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&od;information-object#InformationObject"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&od;repository-object#hasRepositoryObjectID"/>
+                <owl:onClass rdf:resource="&od;repository-object#RepositoryObjectID"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&od;agent-role#providesAgentRoleType"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:oneOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&od;repository-object#originator_roletype"/>
+                        </owl:oneOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&od;repository-object#hasOriginatorList"/>
+                <owl:onClass rdf:resource="&od;repository-object#OriginatorList"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanlink.org/repository-object#RepositoryObjectID -->
+
+    <owl:Class rdf:about="&od;repository-object#RepositoryObjectID">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&od;repository-object#hasRepositoryObjectIDValue"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&od;repository-object#hasRepositoryObjectIDScheme"/>
+                <owl:onClass rdf:resource="&od;repository-object#RepositoryObjectIDScheme"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanlink.org/repository-object#RepositoryObjectIDScheme -->
+
+    <owl:Class rdf:about="&od;repository-object#RepositoryObjectIDScheme"/>
+    
+
+
+    <!-- http://www.w3.org/2006/time#Instant -->
+
+    <owl:Class rdf:about="&time;Instant"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.oceanlink.org/repository-object#originator_roletype -->
+
+    <owl:NamedIndividual rdf:about="&od;repository-object#originator_roletype">
+        <rdf:type rdf:resource="&od;agent-role#AgentRoleType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;repository-object#Originator"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;repository-object#hasOriginator"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;repository-object#OriginatorList"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;repository-object#RepositoryObject"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;repository-object#hasRepositoryObjectRelationTo"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;repository-object#RepositoryObject"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;repository-object#OriginatorList"/>
+        <owl:onProperty rdf:resource="&od;repository-object#hasOriginator"/>
+        <owl:someValuesFrom rdf:resource="&od;repository-object#Originator"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;repository-object#RepositoryObjectID"/>
+        <owl:onProperty rdf:resource="&od;repository-object#hasRepositoryObjectIDValue"/>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;repository-object#RepositoryObject"/>
+        <owl:onProperty rdf:resource="&od;repository-object#hasRepositoryObjectRelationTo"/>
+        <owl:someValuesFrom rdf:resource="&od;repository-object#RepositoryObject"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;repository-object#RepositoryObject"/>
+        <owl:onProperty rdf:resource="&od;repository-object#originatesFrom"/>
+        <owl:someValuesFrom rdf:resource="&od;cruise#Cruise"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;repository-object#RepositoryObject"/>
+        <owl:onProperty rdf:resource="&od;repository-object#belongsTo"/>
+        <owl:someValuesFrom rdf:resource="&od;repository#Repository"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&time;Instant"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;repository-object#isIssuedOn"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;repository-object#RepositoryObject"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;repository-object#RepositoryObject"/>
+        <owl:onProperty rdf:resource="&od;repository-object#hasSubject"/>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;repository#Repository"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;repository-object#belongsTo"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;repository-object#RepositoryObject"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;repository-object#RepositoryObjectID"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;repository-object#hasRepositoryObjectID"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;repository-object#RepositoryObject"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;repository-object#Originator"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;repository-object#nextOriginator"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;repository-object#Originator"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;repository-object#RepositoryObject"/>
+        <owl:onProperty rdf:resource="&od;repository-object#hasRepositoryObjectID"/>
+        <owl:someValuesFrom rdf:resource="&od;repository-object#RepositoryObjectID"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;repository-object#RepositoryObject"/>
+        <owl:onProperty rdf:resource="&od;repository-object#hasRepositoryObjectTitle"/>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;repository-object#RepositoryObject"/>
+        <owl:onProperty rdf:resource="&od;repository-object#hasScienceTheme"/>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&time;Instant"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;repository-object#isReleasedOn"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;repository-object#RepositoryObject"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;repository-object#Originator"/>
+        <owl:onProperty rdf:resource="&od;repository-object#nextOriginator"/>
+        <owl:someValuesFrom rdf:resource="&od;repository-object#Originator"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;repository-object#RepositoryObjectID"/>
+        <owl:onProperty rdf:resource="&od;repository-object#hasRepositoryObjectIDScheme"/>
+        <owl:someValuesFrom rdf:resource="&od;repository-object#RepositoryObjectIDScheme"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&time;Instant"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;repository-object#isCreatedOn"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;repository-object#RepositoryObject"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;repository-object#RepositoryObject"/>
+        <owl:onProperty rdf:resource="&od;repository-object#hasAbstract"/>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;repository-object#OriginatorList"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;repository-object#hasOriginatorList"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;repository-object#RepositoryObject"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;repository-object#RepositoryObjectIDScheme"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;repository-object#hasRepositoryObjectIDScheme"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;repository-object#RepositoryObjectID"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;repository-object#RepositoryObject"/>
+        <owl:onProperty rdf:resource="&od;repository-object#hasLanguageSpecifier"/>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;repository-object#RepositoryObject"/>
+        <owl:onProperty rdf:resource="&od;repository-object#hasKeyword"/>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;cruise#Cruise"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;repository-object#originatesFrom"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;repository-object#RepositoryObject"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;repository-object#RepositoryObject"/>
+        <owl:onProperty rdf:resource="&od;repository-object#hasOriginatorList"/>
+        <owl:someValuesFrom rdf:resource="&od;repository-object#OriginatorList"/>
+    </owl:Restriction>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

@@ -1,0 +1,250 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY time "http://www.w3.org/2006/time#" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://schema.oceanlink.org/event#"
+     xml:base="http://schema.oceanlink.org/event"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:time="http://www.w3.org/2006/time#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://schema.oceanlink.org/event">
+        <owl:versionIRI rdf:resource="http://schema.oceanlink.org/event/1.0"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.oceanlink.org/event#happensDuring -->
+
+    <owl:ObjectProperty rdf:about="http://schema.oceanlink.org/event#happensDuring"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/event#hasActivityType -->
+
+    <owl:ObjectProperty rdf:about="http://schema.oceanlink.org/event#hasActivityType">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanlink.org/event#hasActor -->
+
+    <owl:ObjectProperty rdf:about="http://schema.oceanlink.org/event#hasActor"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/event#hasEventType -->
+
+    <owl:ObjectProperty rdf:about="http://schema.oceanlink.org/event#hasEventType">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanlink.org/event#occursAtPlace -->
+
+    <owl:ObjectProperty rdf:about="http://schema.oceanlink.org/event#occursAtPlace"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/event#occursAtTime -->
+
+    <owl:ObjectProperty rdf:about="http://schema.oceanlink.org/event#occursAtTime"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.oceanlink.org/event#Activity -->
+
+    <owl:Class rdf:about="http://schema.oceanlink.org/event#Activity">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.oceanlink.org/event#happensDuring"/>
+                <owl:someValuesFrom rdf:resource="http://schema.oceanlink.org/event#Event"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.oceanlink.org/event#hasActivityType"/>
+                <owl:someValuesFrom rdf:resource="http://schema.oceanlink.org/event#ActivityType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.oceanlink.org/event#hasActor"/>
+                <owl:someValuesFrom rdf:resource="&owl;Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanlink.org/event#ActivityType -->
+
+    <owl:Class rdf:about="http://schema.oceanlink.org/event#ActivityType"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/event#Event -->
+
+    <owl:Class rdf:about="http://schema.oceanlink.org/event#Event">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.oceanlink.org/event#occursAtPlace"/>
+                <owl:someValuesFrom rdf:resource="http://schema.oceanlink.org/place#Place"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.oceanlink.org/event#occursAtTime"/>
+                <owl:someValuesFrom rdf:resource="&time;TemporalEntity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.oceanlink.org/event#hasEventType"/>
+                <owl:someValuesFrom rdf:resource="http://schema.oceanlink.org/event#EventType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanlink.org/event#EventType -->
+
+    <owl:Class rdf:about="http://schema.oceanlink.org/event#EventType"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/place#Place -->
+
+    <owl:Class rdf:about="http://schema.oceanlink.org/place#Place"/>
+    
+
+
+    <!-- http://www.w3.org/2006/time#TemporalEntity -->
+
+    <owl:Class rdf:about="&time;TemporalEntity"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.oceanlink.org/event#Event"/>
+        <owl:onProperty rdf:resource="http://schema.oceanlink.org/event#occursAtTime"/>
+        <owl:someValuesFrom rdf:resource="&time;TemporalEntity"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.oceanlink.org/event#Event"/>
+        <owl:onProperty rdf:resource="http://schema.oceanlink.org/event#hasEventType"/>
+        <owl:someValuesFrom rdf:resource="http://schema.oceanlink.org/event#EventType"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.oceanlink.org/event#ActivityType"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://schema.oceanlink.org/event#hasActivityType"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="http://schema.oceanlink.org/event#Activity"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.oceanlink.org/event#Activity"/>
+        <owl:onProperty rdf:resource="http://schema.oceanlink.org/event#happensDuring"/>
+        <owl:someValuesFrom rdf:resource="http://schema.oceanlink.org/event#Event"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.oceanlink.org/event#Event"/>
+        <owl:onProperty rdf:resource="http://schema.oceanlink.org/event#occursAtPlace"/>
+        <owl:someValuesFrom rdf:resource="http://schema.oceanlink.org/place#Place"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&time;TemporalEntity"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://schema.oceanlink.org/event#occursAtTime"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="http://schema.oceanlink.org/event#Event"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.oceanlink.org/event#EventType"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://schema.oceanlink.org/event#hasEventType"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="http://schema.oceanlink.org/event#Event"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.oceanlink.org/event#Activity"/>
+        <owl:onProperty rdf:resource="http://schema.oceanlink.org/event#hasActor"/>
+        <owl:someValuesFrom rdf:resource="&owl;Thing"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.oceanlink.org/event#Activity"/>
+        <owl:onProperty rdf:resource="http://schema.oceanlink.org/event#hasActivityType"/>
+        <owl:someValuesFrom rdf:resource="http://schema.oceanlink.org/event#ActivityType"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.oceanlink.org/place#Place"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://schema.oceanlink.org/event#occursAtPlace"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="http://schema.oceanlink.org/event#Event"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.oceanlink.org/event#Event"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://schema.oceanlink.org/event#happensDuring"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="http://schema.oceanlink.org/event#Activity"/>
+    </owl:Restriction>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

@@ -1,0 +1,1492 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY time "http://www.w3.org/2006/time#" >
+    <!ENTITY od "http://schema.oceanlink.org/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="&od;vessel#"
+     xml:base="&od;vessel"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:time="http://www.w3.org/2006/time#"
+     xmlns:od="http://schema.oceanlink.org/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="&od;vessel">
+        <owl:imports rdf:resource="&od;information-object"/>
+        <owl:versionIRI rdf:resource="&od;vessel/1.0"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#hasCommissioningYear -->
+
+    <owl:ObjectProperty rdf:about="&od;vessel#hasCommissioningYear"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#hasObservableProperty -->
+
+    <owl:ObjectProperty rdf:about="&od;vessel#hasObservableProperty"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#hasQuantityKind -->
+
+    <owl:ObjectProperty rdf:about="&od;vessel#hasQuantityKind"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#hasQuantityUnit -->
+
+    <owl:ObjectProperty rdf:about="&od;vessel#hasQuantityUnit"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#hasQuantityValue -->
+
+    <owl:ObjectProperty rdf:about="&od;vessel#hasQuantityValue"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#hasVesselID -->
+
+    <owl:ObjectProperty rdf:about="&od;vessel#hasVesselID"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#hasVesselIDProvider -->
+
+    <owl:ObjectProperty rdf:about="&od;vessel#hasVesselIDProvider"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#hasVesselIDScheme -->
+
+    <owl:ObjectProperty rdf:about="&od;vessel#hasVesselIDScheme"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#hasVesselOwner -->
+
+    <owl:ObjectProperty rdf:about="&od;vessel#hasVesselOwner"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#hasVesselPlatformType -->
+
+    <owl:ObjectProperty rdf:about="&od;vessel#hasVesselPlatformType"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#hasQuantityValueNumeric -->
+
+    <owl:DatatypeProperty rdf:about="&od;vessel#hasQuantityValueNumeric">
+        <rdfs:range rdf:resource="&xsd;double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#hasSeaVoXL06Key -->
+
+    <owl:DatatypeProperty rdf:about="&od;vessel#hasSeaVoXL06Key">
+        <rdfs:domain rdf:resource="&od;vessel#SeaVoXL06"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#hasSeaVoXL06Term -->
+
+    <owl:DatatypeProperty rdf:about="&od;vessel#hasSeaVoXL06Term">
+        <rdfs:domain rdf:resource="&od;vessel#SeaVoXL06"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#hasVesselIDValue -->
+
+    <owl:DatatypeProperty rdf:about="&od;vessel#hasVesselIDValue">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.oceanlink.org/agent#Agent -->
+
+    <owl:Class rdf:about="&od;agent#Agent"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#Quantity -->
+
+    <owl:Class rdf:about="&od;vessel#Quantity">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&od;vessel#hasQuantityKind"/>
+                <owl:onClass rdf:resource="&od;vessel#QuantityKind"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&od;vessel#hasQuantityValue"/>
+                <owl:onClass rdf:resource="&od;vessel#QuantityValue"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#QuantityKind -->
+
+    <owl:Class rdf:about="&od;vessel#QuantityKind"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#QuantityUnit -->
+
+    <owl:Class rdf:about="&od;vessel#QuantityUnit"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#QuantityValue -->
+
+    <owl:Class rdf:about="&od;vessel#QuantityValue">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&od;vessel#hasQuantityUnit"/>
+                <owl:onClass rdf:resource="&od;vessel#QuantityUnit"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&od;vessel#hasQuantityValueNumeric"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;double"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#SeaVoXL06 -->
+
+    <owl:Class rdf:about="&od;vessel#SeaVoXL06">
+        <rdfs:subClassOf rdf:resource="&od;vessel#VesselPlatformType"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&od;vessel#hasSeaVoXL06Key"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&od;vessel#hasSeaVoXL06Term"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#Vessel -->
+
+    <owl:Class rdf:about="&od;vessel#Vessel">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&od;vessel#hasVesselOwner"/>
+                <owl:someValuesFrom rdf:resource="&od;agent#Agent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&od;vessel#hasObservableProperty"/>
+                <owl:onClass>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&od;vessel#hasQuantityKind"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:oneOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&od;vessel#length"/>
+                                </owl:oneOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:onClass>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&od;vessel#hasCommissioningYear"/>
+                <owl:onClass rdf:resource="&time;Instant"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&od;vessel#hasObservableProperty"/>
+                <owl:onClass>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&od;vessel#hasQuantityKind"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:oneOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&od;vessel#draft"/>
+                                </owl:oneOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:onClass>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&od;vessel#hasObservableProperty"/>
+                <owl:onClass>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&od;vessel#hasQuantityKind"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:oneOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&od;vessel#displacement"/>
+                                </owl:oneOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:onClass>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&od;vessel#hasObservableProperty"/>
+                <owl:onClass>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&od;vessel#hasQuantityKind"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:oneOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&od;vessel#beam"/>
+                                </owl:oneOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:onClass>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&od;information-object#isDescribedBy"/>
+                <owl:someValuesFrom rdf:resource="&od;vessel#VesselInformationObject"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#VesselID -->
+
+    <owl:Class rdf:about="&od;vessel#VesselID">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&od;vessel#hasVesselIDValue"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&od;vessel#hasVesselIDProvider"/>
+                <owl:onClass rdf:resource="&od;agent#Agent"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&od;vessel#hasVesselIDScheme"/>
+                <owl:onClass rdf:resource="&od;vessel#VesselIDScheme"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#VesselIDScheme -->
+
+    <owl:Class rdf:about="&od;vessel#VesselIDScheme"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#VesselInformationObject -->
+
+    <owl:Class rdf:about="&od;vessel#VesselInformationObject">
+        <rdfs:subClassOf rdf:resource="&od;information-object#InformationObject"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&od;vessel#hasVesselID"/>
+                <owl:someValuesFrom rdf:resource="&od;vessel#VesselID"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#VesselPlatformType -->
+
+    <owl:Class rdf:about="&od;vessel#VesselPlatformType"/>
+    
+
+
+    <!-- http://www.w3.org/2006/time#Instant -->
+
+    <owl:Class rdf:about="&time;Instant"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#beam -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#beam">
+        <rdf:type rdf:resource="&od;vessel#QuantityKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#displacement -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#displacement">
+        <rdf:type rdf:resource="&od;vessel#QuantityKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#draft -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#draft">
+        <rdf:type rdf:resource="&od;vessel#QuantityKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#length -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#length">
+        <rdf:type rdf:resource="&od;vessel#QuantityKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type0 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type0">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">0</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">unknown</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type10 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type10">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">10</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">land or seafloor</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type11 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type11">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">11</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">fixed benthic node</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type12 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type12">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">12</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">sea bed vehicle</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type13 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type13">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">13</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">beach/intertidal zone structure</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type14 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type14">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">14</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">land/onshore structure</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type15 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type15">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">15</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">land/onshore vehicle</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type16 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type16">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">16</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">offshore structure</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type17 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type17">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">17</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">coastal structure</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type18 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type18">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">18</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">river station</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type19 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type19">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">19</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">mesocosm bag</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type20 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type20">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">20</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">submersible</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type21 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type21">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">21</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">propelled manned submersible</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type22 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type22">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">22</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">propelled unmanned submersible</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type23 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type23">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">23</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">towed unmanned submersible</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type24 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type24">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">24</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">drifting manned submersible</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type25 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type25">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">25</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">autonomous underwater vehicle</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type26 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type26">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">26</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">lowered unmanned submersible</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type27 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type27">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">27</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">sub-surface gliders</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type30 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type30">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">30</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">ship</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type31 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type31">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">31</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">research vessel</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type32 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type32">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">32</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">vessel of opportunity</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type33 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type33">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">33</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">self-propelled small boat</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type34 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type34">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">34</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">vessel at fixed position</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type35 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type35">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">35</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">vessel of opportunity on fixed route</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type36 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type36">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">36</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">fishing vessel</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type37 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type37">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">37</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">self-propelled boat</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type38 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type38">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">38</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">man-powered boat</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type39 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type39">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">39</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">naval vessel</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type3A -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type3A">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">3A</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">man-powered small boat</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type3B -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type3B">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">3B</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">autonomous surface water vehicle</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type3C -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type3C">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">3C</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">surface gliders</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type3Z -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type3Z">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">3Z</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">surface vessel</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type41 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type41">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">41</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">moored surface buoy</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type42 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type42">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">42</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">drifting surface float</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type43 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type43">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">43</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">subsurface mooring</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type44 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type44">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">44</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">drifting subsurface float</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type45 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type45">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">45</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">fixed subsurface vertical profiler</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type46 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type46">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">46</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">drifting subsurface profiling float</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type47 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type47">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">47</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">float</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type48 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type48">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">48</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">mooring</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type49 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type49">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">49</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">surface ice buoy</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type50 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type50">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">50</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">buoyant aircraft</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type51 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type51">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">51</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">free-rising balloon</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type52 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type52">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">52</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">free-floating balloon</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type53 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type53">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">53</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">tethered balloon</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type54 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type54">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">54</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">airship</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type60 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type60">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">60</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">non-buoyant aircraft</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type61 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type61">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">61</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">research aeroplane</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type62 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type62">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">62</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">aeroplane</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type63 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type63">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">63</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">rocket</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type64 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type64">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">64</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">geostationary orbiting satellite</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type65 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type65">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">65</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">orbiting satellite</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type66 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type66">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">66</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">manned spacecraft</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type67 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type67">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">67</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">helicopter</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type68 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type68">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">68</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">satellite</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type69 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type69">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">69</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">autogyro</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type6A -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type6A">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">6A</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">glider</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type6B -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type6B">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">6B</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">kite</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type6C -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type6C">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">6C</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">parachute</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type6Z -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type6Z">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">6Z</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">spacecraft</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type70 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type70">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">70</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">organism</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type71 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type71">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">71</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">human</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type72 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type72">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">72</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">diver</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type73 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type73">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">73</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">flightless bird</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type74 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type74">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">74</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">seabird and duck</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type75 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type75">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">75</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">cetacean</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type76 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type76">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">76</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">fish</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type77 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type77">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">77</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">land-sea mammals</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type90 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type90">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">90</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">cryosphere</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type91 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type91">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">91</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">ice island</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type92 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type92">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">92</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">ice shelf</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type93 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type93">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">93</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">pack ice</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type94 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type94">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">94</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">drift ice</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type95 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type95">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">95</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">amphibious vehicle</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type96 -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type96">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">96</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">amphibious crawler</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type9A -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type9A">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">9A</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">DUKW</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#seavoxl06_type9B -->
+
+    <owl:NamedIndividual rdf:about="&od;vessel#seavoxl06_type9B">
+        <rdf:type rdf:resource="&od;vessel#SeaVoXL06"/>
+        <hasSeaVoXL06Key rdf:datatype="&xsd;string">9B</hasSeaVoXL06Key>
+        <hasSeaVoXL06Term rdf:datatype="&xsd;string">hovercraft</hasSeaVoXL06Term>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;vessel#VesselID"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;vessel#hasVesselID"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;vessel#VesselInformationObject"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;vessel#Quantity"/>
+        <owl:onProperty rdf:resource="&od;vessel#hasQuantityValue"/>
+        <owl:someValuesFrom rdf:resource="&od;vessel#QuantityValue"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;vessel#VesselID"/>
+        <owl:onProperty rdf:resource="&od;vessel#hasVesselIDProvider"/>
+        <owl:someValuesFrom rdf:resource="&od;agent#Agent"/>
+    </owl:Restriction>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="&od;vessel#beam"/>
+            <rdf:Description rdf:about="&od;vessel#displacement"/>
+            <rdf:Description rdf:about="&od;vessel#draft"/>
+            <rdf:Description rdf:about="&od;vessel#length"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;vessel#VesselPlatformType"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;vessel#hasVesselPlatformType"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;vessel#Vessel"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&time;Instant"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;vessel#hasCommissioningYear"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;vessel#Vessel"/>
+    </owl:Restriction>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="&od;vessel#beam"/>
+            <rdf:Description rdf:about="&od;vessel#displacement"/>
+            <rdf:Description rdf:about="&od;vessel#draft"/>
+            <rdf:Description rdf:about="&od;vessel#length"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type0"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type10"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type11"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type12"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type13"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type14"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type15"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type16"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type17"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type18"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type19"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type20"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type21"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type22"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type23"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type24"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type25"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type26"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type27"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type30"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type31"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type32"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type33"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type34"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type35"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type36"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type37"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type38"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type39"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type3A"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type3B"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type3C"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type3Z"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type41"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type42"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type43"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type44"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type45"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type46"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type47"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type48"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type49"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type50"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type51"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type52"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type53"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type54"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type60"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type61"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type62"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type63"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type64"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type65"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type66"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type67"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type68"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type69"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type6A"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type6B"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type6C"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type6Z"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type70"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type71"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type72"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type73"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type74"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type75"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type76"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type77"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type90"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type91"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type92"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type93"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type94"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type95"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type96"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type9A"/>
+            <rdf:Description rdf:about="&od;vessel#seavoxl06_type9B"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;vessel#QuantityValue"/>
+        <owl:onProperty rdf:resource="&od;vessel#hasQuantityUnit"/>
+        <owl:someValuesFrom rdf:resource="&od;vessel#QuantityUnit"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;vessel#VesselID"/>
+        <owl:onProperty rdf:resource="&od;vessel#hasVesselIDValue"/>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;agent#Agent"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;vessel#hasVesselIDProvider"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;vessel#VesselID"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;vessel#Vessel"/>
+        <owl:onProperty rdf:resource="&od;vessel#hasCommissioningYear"/>
+        <owl:someValuesFrom rdf:resource="&time;Instant"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;vessel#Vessel"/>
+        <owl:onProperty rdf:resource="&od;vessel#hasObservableProperty"/>
+        <owl:someValuesFrom rdf:resource="&od;vessel#Quantity"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;vessel#VesselID"/>
+        <owl:onProperty rdf:resource="&od;vessel#hasVesselIDScheme"/>
+        <owl:someValuesFrom rdf:resource="&od;vessel#VesselIDScheme"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;vessel#QuantityUnit"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;vessel#hasQuantityUnit"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;vessel#QuantityValue"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;vessel#QuantityValue"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;vessel#hasQuantityValue"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;vessel#Quantity"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;vessel#QuantityValue"/>
+        <owl:onProperty rdf:resource="&od;vessel#hasQuantityValueNumeric"/>
+        <owl:someValuesFrom rdf:resource="&xsd;double"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;vessel#Quantity"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;vessel#hasObservableProperty"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;vessel#Vessel"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;vessel#Quantity"/>
+        <owl:onProperty rdf:resource="&od;vessel#hasQuantityKind"/>
+        <owl:someValuesFrom rdf:resource="&od;vessel#QuantityKind"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;vessel#Vessel"/>
+        <owl:onProperty rdf:resource="&od;vessel#hasVesselPlatformType"/>
+        <owl:someValuesFrom rdf:resource="&od;vessel#VesselPlatformType"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;vessel#Vessel"/>
+        <owl:onProperty rdf:resource="&od;vessel#hasVesselOwner"/>
+        <owl:someValuesFrom rdf:resource="&od;agent#Agent"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;vessel#VesselInformationObject"/>
+        <owl:onProperty rdf:resource="&od;vessel#hasVesselID"/>
+        <owl:someValuesFrom rdf:resource="&od;vessel#VesselID"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;agent#Agent"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;vessel#hasVesselOwner"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;vessel#Vessel"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;vessel#QuantityKind"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;vessel#hasQuantityKind"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;vessel#Quantity"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;vessel#VesselInformationObject"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;information-object#isDescribedBy"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;vessel#Vessel"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;vessel#VesselIDScheme"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;vessel#hasVesselIDScheme"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;vessel#VesselID"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;vessel#Vessel"/>
+        <owl:onProperty rdf:resource="&od;information-object#isDescribedBy"/>
+        <owl:someValuesFrom rdf:resource="&od;vessel#VesselInformationObject"/>
+    </owl:Restriction>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

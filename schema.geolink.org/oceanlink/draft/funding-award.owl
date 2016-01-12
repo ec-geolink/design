@@ -1,0 +1,364 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY time "http://www.w3.org/2006/time#" >
+    <!ENTITY od "http://schema.oceanlink.org/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="&od;funding-award#"
+     xml:base="&od;funding-award"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:time="http://www.w3.org/2006/time#"
+     xmlns:od="http://schema.oceanlink.org/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="&od;funding-award">
+        <owl:imports rdf:resource="&od;information-object"/>
+        <owl:versionIRI rdf:resource="&od;funding-award/1.0"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.oceanlink.org/agent-role#providesAgentRoleType -->
+
+    <owl:ObjectProperty rdf:about="&od;agent-role#providesAgentRoleType">
+        <rdfs:range rdf:resource="&od;agent-role#AgentRoleType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanlink.org/funding-award#endsAt -->
+
+    <owl:ObjectProperty rdf:about="&od;funding-award#endsAt"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/funding-award#hasAwardAmount -->
+
+    <owl:ObjectProperty rdf:about="&od;funding-award#hasAwardAmount"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/funding-award#hasCurrencyCode -->
+
+    <owl:ObjectProperty rdf:about="&od;funding-award#hasCurrencyCode"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/funding-award#hasDescriptionDocument -->
+
+    <owl:ObjectProperty rdf:about="&od;funding-award#hasDescriptionDocument"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/funding-award#hasFundingAgent -->
+
+    <owl:ObjectProperty rdf:about="&od;funding-award#hasFundingAgent"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/funding-award#isFundedBy -->
+
+    <owl:ObjectProperty rdf:about="&od;funding-award#isFundedBy">
+        <rdfs:range rdf:resource="&od;funding-award#FundingAward"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanlink.org/funding-award#startsAt -->
+
+    <owl:ObjectProperty rdf:about="&od;funding-award#startsAt"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.oceanlink.org/funding-award#hasAwardID -->
+
+    <owl:DatatypeProperty rdf:about="&od;funding-award#hasAwardID">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.oceanlink.org/funding-award#hasCurrencyValue -->
+
+    <owl:DatatypeProperty rdf:about="&od;funding-award#hasCurrencyValue">
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.oceanlink.org/agent#Agent -->
+
+    <owl:Class rdf:about="&od;agent#Agent"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/agent-role#AgentRoleType -->
+
+    <owl:Class rdf:about="&od;agent-role#AgentRoleType"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/document-set#DocumentSet -->
+
+    <owl:Class rdf:about="&od;document-set#DocumentSet"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/funding-award#AwardAmount -->
+
+    <owl:Class rdf:about="&od;funding-award#AwardAmount">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&od;funding-award#hasCurrencyCode"/>
+                <owl:onClass rdf:resource="&od;funding-award#CurrencyCode"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&od;funding-award#hasCurrencyValue"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;decimal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanlink.org/funding-award#CurrencyCode -->
+
+    <owl:Class rdf:about="&od;funding-award#CurrencyCode"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/funding-award#FundingAward -->
+
+    <owl:Class rdf:about="&od;funding-award#FundingAward">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&od;funding-award#hasFundingAgent"/>
+                <owl:someValuesFrom rdf:resource="&od;agent#Agent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&od;funding-award#startsAt"/>
+                <owl:onClass rdf:resource="&time;Instant"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&od;funding-award#hasAwardAmount"/>
+                <owl:onClass rdf:resource="&od;funding-award#AwardAmount"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&od;information-object#isDescribedBy"/>
+                <owl:someValuesFrom rdf:resource="&od;funding-award#FundingAwardInformationObject"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&od;funding-award#endsAt"/>
+                <owl:onClass rdf:resource="&time;Instant"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanlink.org/funding-award#FundingAwardInformationObject -->
+
+    <owl:Class rdf:about="&od;funding-award#FundingAwardInformationObject">
+        <rdfs:subClassOf rdf:resource="&od;information-object#InformationObject"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&od;information-object#hasCanonicalName"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&od;funding-award#hasAwardID"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2006/time#Instant -->
+
+    <owl:Class rdf:about="&time;Instant"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;funding-award#FundingAward"/>
+        <owl:onProperty rdf:resource="&od;information-object#isDescribedBy"/>
+        <owl:someValuesFrom rdf:resource="&od;funding-award#FundingAwardInformationObject"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;funding-award#AwardAmount"/>
+        <owl:onProperty rdf:resource="&od;funding-award#hasCurrencyValue"/>
+        <owl:someValuesFrom rdf:resource="&xsd;decimal"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;document-set#DocumentSet"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;funding-award#hasDescriptionDocument"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;funding-award#FundingAwardInformationObject"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;funding-award#CurrencyCode"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;funding-award#hasCurrencyCode"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;funding-award#AwardAmount"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&time;Instant"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;funding-award#endsAt"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;funding-award#FundingAward"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;funding-award#FundingAward"/>
+        <owl:onProperty rdf:resource="&od;funding-award#startsAt"/>
+        <owl:someValuesFrom rdf:resource="&time;Instant"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;funding-award#FundingAwardInformationObject"/>
+        <owl:onProperty rdf:resource="&od;funding-award#hasDescriptionDocument"/>
+        <owl:someValuesFrom rdf:resource="&od;document-set#DocumentSet"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;funding-award#FundingAwardInformationObject"/>
+        <owl:onProperty rdf:resource="&od;funding-award#hasAwardID"/>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;funding-award#FundingAward"/>
+        <owl:onProperty rdf:resource="&od;funding-award#hasFundingAgent"/>
+        <owl:someValuesFrom rdf:resource="&od;agent#Agent"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&time;Instant"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;funding-award#startsAt"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;funding-award#FundingAward"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;agent#Agent"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;funding-award#hasFundingAgent"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;funding-award#FundingAward"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;funding-award#FundingAward"/>
+        <owl:onProperty rdf:resource="&od;funding-award#hasAwardAmount"/>
+        <owl:someValuesFrom rdf:resource="&od;funding-award#AwardAmount"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;funding-award#FundingAwardInformationObject"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;information-object#isDescribedBy"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;funding-award#FundingAward"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;funding-award#AwardAmount"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;funding-award#hasAwardAmount"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;funding-award#FundingAward"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;funding-award#FundingAward"/>
+        <owl:onProperty rdf:resource="&od;funding-award#endsAt"/>
+        <owl:someValuesFrom rdf:resource="&time;Instant"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;funding-award#AwardAmount"/>
+        <owl:onProperty rdf:resource="&od;funding-award#hasCurrencyCode"/>
+        <owl:someValuesFrom rdf:resource="&od;funding-award#CurrencyCode"/>
+    </owl:Restriction>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

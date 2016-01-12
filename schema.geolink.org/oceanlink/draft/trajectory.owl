@@ -1,0 +1,333 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY time "http://www.w3.org/2006/time#" >
+    <!ENTITY od "http://schema.oceanlink.org/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="&od;trajectory#"
+     xml:base="&od;trajectory"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:time="http://www.w3.org/2006/time#"
+     xmlns:od="http://schema.oceanlink.org/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="&od;trajectory">
+        <owl:versionIRI rdf:resource="&od;trajectory/1.0"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.oceanlink.org/trajectory#atTime -->
+
+    <owl:ObjectProperty rdf:about="&od;trajectory#atTime"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/trajectory#endsAt -->
+
+    <owl:ObjectProperty rdf:about="&od;trajectory#endsAt"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/trajectory#hasAttribute -->
+
+    <owl:ObjectProperty rdf:about="&od;trajectory#hasAttribute"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/trajectory#hasCreator -->
+
+    <owl:ObjectProperty rdf:about="&od;trajectory#hasCreator"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/trajectory#hasFix -->
+
+    <owl:ObjectProperty rdf:about="&od;trajectory#hasFix"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/trajectory#hasLocation -->
+
+    <owl:ObjectProperty rdf:about="&od;trajectory#hasLocation"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/trajectory#hasSegment -->
+
+    <owl:ObjectProperty rdf:about="&od;trajectory#hasSegment"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/trajectory#hasSpatialFootprint -->
+
+    <owl:ObjectProperty rdf:about="&od;trajectory#hasSpatialFootprint"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/trajectory#isTraversedBy -->
+
+    <owl:ObjectProperty rdf:about="&od;trajectory#isTraversedBy"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/trajectory#startsFrom -->
+
+    <owl:ObjectProperty rdf:about="&od;trajectory#startsFrom"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.oceanlink.org/place#Place -->
+
+    <owl:Class rdf:about="&od;place#Place"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/trajectory#Attribute -->
+
+    <owl:Class rdf:about="&od;trajectory#Attribute"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/trajectory#Fix -->
+
+    <owl:Class rdf:about="&od;trajectory#Fix"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/trajectory#MovingObject -->
+
+    <owl:Class rdf:about="&od;trajectory#MovingObject"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/trajectory#Position -->
+
+    <owl:Class rdf:about="&od;trajectory#Position"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/trajectory#Segment -->
+
+    <owl:Class rdf:about="&od;trajectory#Segment"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/trajectory#Source -->
+
+    <owl:Class rdf:about="&od;trajectory#Source"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/trajectory#Trajectory -->
+
+    <owl:Class rdf:about="&od;trajectory#Trajectory"/>
+    
+
+
+    <!-- http://www.w3.org/2006/time#TemporalEntity -->
+
+    <owl:Class rdf:about="&time;TemporalEntity"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;trajectory#Fix"/>
+        <owl:onProperty rdf:resource="&od;trajectory#atTime"/>
+        <owl:someValuesFrom rdf:resource="&time;TemporalEntity"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;trajectory#Fix"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;trajectory#hasFix"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;trajectory#Trajectory"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&od;trajectory#Fix"/>
+                    <rdf:Description rdf:about="&od;trajectory#Segment"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <owl:onProperty rdf:resource="&od;trajectory#hasAttribute"/>
+        <owl:someValuesFrom rdf:resource="&od;trajectory#Attribute"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;trajectory#Fix"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;trajectory#startsFrom"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;trajectory#Segment"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;trajectory#Attribute"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;trajectory#hasAttribute"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;trajectory#Fix"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;trajectory#Segment"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;trajectory#hasSegment"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;trajectory#Trajectory"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;trajectory#Fix"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;trajectory#endsAt"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;trajectory#Segment"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;trajectory#Position"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;trajectory#hasLocation"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;trajectory#Fix"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;trajectory#Source"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;trajectory#hasCreator"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;trajectory#Fix"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;trajectory#Fix"/>
+        <owl:onProperty rdf:resource="&od;trajectory#hasCreator"/>
+        <owl:someValuesFrom rdf:resource="&od;trajectory#Source"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;trajectory#Fix"/>
+        <owl:onProperty rdf:resource="&od;trajectory#hasLocation"/>
+        <owl:someValuesFrom rdf:resource="&od;trajectory#Position"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;trajectory#Segment"/>
+        <owl:onProperty rdf:resource="&od;trajectory#endsAt"/>
+        <owl:someValuesFrom rdf:resource="&od;trajectory#Fix"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;trajectory#Attribute"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;trajectory#hasAttribute"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;trajectory#Segment"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;trajectory#Segment"/>
+        <owl:onProperty rdf:resource="&od;trajectory#startsFrom"/>
+        <owl:someValuesFrom rdf:resource="&od;trajectory#Fix"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;trajectory#MovingObject"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;trajectory#isTraversedBy"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;trajectory#Segment"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;trajectory#Position"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;trajectory#hasSpatialFootprint"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;place#Place"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&time;TemporalEntity"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;trajectory#atTime"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;trajectory#Fix"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;place#Place"/>
+        <owl:onProperty rdf:resource="&od;trajectory#hasSpatialFootprint"/>
+        <owl:someValuesFrom rdf:resource="&od;trajectory#Position"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;trajectory#Segment"/>
+        <owl:onProperty rdf:resource="&od;trajectory#isTraversedBy"/>
+        <owl:someValuesFrom rdf:resource="&od;trajectory#MovingObject"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;trajectory#Trajectory"/>
+        <owl:onProperty rdf:resource="&od;trajectory#hasSegment"/>
+        <owl:someValuesFrom rdf:resource="&od;trajectory#Segment"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;trajectory#Trajectory"/>
+        <owl:onProperty rdf:resource="&od;trajectory#hasFix"/>
+        <owl:someValuesFrom rdf:resource="&od;trajectory#Fix"/>
+    </owl:Restriction>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

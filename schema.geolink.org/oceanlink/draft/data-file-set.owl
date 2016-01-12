@@ -1,0 +1,245 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY time "http://www.w3.org/2006/time#" >
+    <!ENTITY od "http://schema.oceanlink.org/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="&od;data-file-set#"
+     xml:base="&od;data-file-set"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:time="http://www.w3.org/2006/time#"
+     xmlns:od="http://schema.oceanlink.org/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="&od;data-file-set">
+        <owl:imports rdf:resource="&od;repository-object"/>
+        <owl:versionIRI rdf:resource="&od;data-file-set/1.0"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.oceanlink.org/data-file-set#contains -->
+
+    <owl:ObjectProperty rdf:about="&od;data-file-set#contains"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/data-file-set#hasSpatialExtent -->
+
+    <owl:ObjectProperty rdf:about="&od;data-file-set#hasSpatialExtent"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/data-file-set#hasTemporalExtent -->
+
+    <owl:ObjectProperty rdf:about="&od;data-file-set#hasTemporalExtent"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/data-file-set#isCreatedByInstrument -->
+
+    <owl:ObjectProperty rdf:about="&od;data-file-set#isCreatedByInstrument"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/data-file-set#isCreatedByProcess -->
+
+    <owl:ObjectProperty rdf:about="&od;data-file-set#isCreatedByProcess"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.oceanlink.org/data-file-set#isSetDownloadableAt -->
+
+    <owl:DatatypeProperty rdf:about="&od;data-file-set#isSetDownloadableAt">
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.oceanlink.org/data-file-set#providesObservationFor -->
+
+    <owl:DatatypeProperty rdf:about="&od;data-file-set#providesObservationFor">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.oceanlink.org/data-file#DataFile -->
+
+    <owl:Class rdf:about="&od;data-file#DataFile"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/data-file-set#DataFileSet -->
+
+    <owl:Class rdf:about="&od;data-file-set#DataFileSet">
+        <rdfs:subClassOf rdf:resource="&od;repository-object#RepositoryObject"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&od;data-file-set#contains"/>
+                <owl:someValuesFrom rdf:resource="&od;data-file#DataFile"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanlink.org/instrument#Instrument -->
+
+    <owl:Class rdf:about="&od;instrument#Instrument"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/place#Place -->
+
+    <owl:Class rdf:about="&od;place#Place"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/process#Process -->
+
+    <owl:Class rdf:about="&od;process#Process"/>
+    
+
+
+    <!-- http://www.w3.org/2006/time#TemporalEntity -->
+
+    <owl:Class rdf:about="&time;TemporalEntity"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;data-file-set#DataFileSet"/>
+        <owl:onProperty rdf:resource="&od;data-file-set#isCreatedByInstrument"/>
+        <owl:someValuesFrom rdf:resource="&od;instrument#Instrument"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&time;TemporalEntity"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;data-file-set#hasTemporalExtent"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;data-file-set#DataFileSet"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;data-file-set#DataFileSet"/>
+        <owl:onProperty rdf:resource="&od;data-file-set#hasTemporalExtent"/>
+        <owl:someValuesFrom rdf:resource="&time;TemporalEntity"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;data-file-set#DataFileSet"/>
+        <owl:onProperty rdf:resource="&od;data-file-set#hasSpatialExtent"/>
+        <owl:someValuesFrom rdf:resource="&od;place#Place"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;data-file-set#DataFileSet"/>
+        <owl:onProperty rdf:resource="&od;data-file-set#isCreatedByProcess"/>
+        <owl:someValuesFrom rdf:resource="&od;process#Process"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;process#Process"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;data-file-set#isCreatedByProcess"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;data-file-set#DataFileSet"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;instrument#Instrument"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;data-file-set#isCreatedByInstrument"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;data-file-set#DataFileSet"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;place#Place"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;data-file-set#hasSpatialExtent"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;data-file-set#DataFileSet"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;data-file-set#DataFileSet"/>
+        <owl:onProperty rdf:resource="&od;data-file-set#isSetDownloadableAt"/>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;data-file#DataFile"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;data-file-set#contains"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;data-file-set#DataFileSet"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;data-file-set#DataFileSet"/>
+        <owl:onProperty rdf:resource="&od;data-file-set#providesObservationFor"/>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;data-file-set#DataFileSet"/>
+        <owl:onProperty rdf:resource="&od;data-file-set#contains"/>
+        <owl:someValuesFrom rdf:resource="&od;data-file#DataFile"/>
+    </owl:Restriction>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

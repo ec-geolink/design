@@ -1,0 +1,246 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY time "http://www.w3.org/2006/time#" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://schema.oceanlink.org/person#"
+     xml:base="http://schema.oceanlink.org/person"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:time="http://www.w3.org/2006/time#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://schema.oceanlink.org/person">
+        <owl:imports rdf:resource="http://schema.oceanlink.org/agent"/>
+        <owl:imports rdf:resource="http://schema.oceanlink.org/event"/>
+        <owl:versionIRI rdf:resource="http://schema.oceanlink.org/person/1.0"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.oceanlink.org/event#hasActor -->
+
+    <rdf:Description rdf:about="http://schema.oceanlink.org/event#hasActor"/>
+    <rdf:Description>
+        <owl:inverseOf rdf:resource="http://schema.oceanlink.org/event#hasActor"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://schema.oceanlink.org/person#hasCredential -->
+
+    <owl:ObjectProperty rdf:about="http://schema.oceanlink.org/person#hasCredential"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/person#hasPersonalInfoItem -->
+
+    <owl:ObjectProperty rdf:about="http://schema.oceanlink.org/person#hasPersonalInfoItem"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.oceanlink.org/credential#Credential -->
+
+    <owl:Class rdf:about="http://schema.oceanlink.org/credential#Credential"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/organization#Organization -->
+
+    <owl:Class rdf:about="http://schema.oceanlink.org/organization#Organization">
+        <owl:disjointWith rdf:resource="http://schema.oceanlink.org/person#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanlink.org/person#BirthEvent -->
+
+    <owl:Class rdf:about="http://schema.oceanlink.org/person#BirthEvent">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.oceanlink.org/event#Event"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://schema.oceanlink.org/event#hasEventType"/>
+                        <owl:hasValue rdf:resource="http://schema.oceanlink.org/person#birth_event"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://schema.oceanlink.org/event#occursAtPlace"/>
+                        <owl:onClass rdf:resource="http://schema.oceanlink.org/place#Place"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://schema.oceanlink.org/event#occursAtTime"/>
+                        <owl:onClass rdf:resource="&time;Instant"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanlink.org/person#Person -->
+
+    <owl:Class rdf:about="http://schema.oceanlink.org/person#Person">
+        <rdfs:subClassOf rdf:resource="http://schema.oceanlink.org/agent#Agent"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://schema.oceanlink.org/event#hasActor"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:onClass rdf:resource="http://schema.oceanlink.org/person#PersonBeingBornActivity"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanlink.org/person#PersonBeingBornActivity -->
+
+    <owl:Class rdf:about="http://schema.oceanlink.org/person#PersonBeingBornActivity">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.oceanlink.org/event#Activity"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://schema.oceanlink.org/event#hasActivityType"/>
+                        <owl:hasValue rdf:resource="http://schema.oceanlink.org/person#being_born"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://schema.oceanlink.org/event#happensDuring"/>
+                        <owl:onClass rdf:resource="http://schema.oceanlink.org/person#BirthEvent"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://schema.oceanlink.org/event#hasActor"/>
+                        <owl:onClass rdf:resource="http://schema.oceanlink.org/person#Person"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanlink.org/personal-info-item#PersonalInfoItem -->
+
+    <owl:Class rdf:about="http://schema.oceanlink.org/personal-info-item#PersonalInfoItem"/>
+    
+
+
+    <!-- http://www.w3.org/2006/time#Instant -->
+
+    <owl:Class rdf:about="&time;Instant"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.oceanlink.org/person#being_born -->
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanlink.org/person#being_born">
+        <rdf:type rdf:resource="http://schema.oceanlink.org/event#ActivityType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/person#birth_event -->
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanlink.org/person#birth_event">
+        <rdf:type rdf:resource="http://schema.oceanlink.org/event#EventType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.oceanlink.org/person#Person"/>
+        <owl:onProperty rdf:resource="http://schema.oceanlink.org/person#hasPersonalInfoItem"/>
+        <owl:someValuesFrom rdf:resource="http://schema.oceanlink.org/personal-info-item#PersonalInfoItem"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.oceanlink.org/credential#Credential"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://schema.oceanlink.org/person#hasCredential"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="http://schema.oceanlink.org/person#Person"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.oceanlink.org/person#Person"/>
+        <owl:onProperty rdf:resource="http://schema.oceanlink.org/person#hasCredential"/>
+        <owl:someValuesFrom rdf:resource="http://schema.oceanlink.org/credential#Credential"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="http://schema.oceanlink.org/personal-info-item#PersonalInfoItem"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://schema.oceanlink.org/person#hasPersonalInfoItem"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="http://schema.oceanlink.org/person#Person"/>
+    </owl:Restriction>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://schema.oceanlink.org/person#birth_event"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

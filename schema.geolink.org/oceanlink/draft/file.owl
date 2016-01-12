@@ -1,0 +1,255 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY od "http://schema.oceanlink.org/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="&od;file#"
+     xml:base="&od;file"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:od="http://schema.oceanlink.org/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="&od;file">
+        <owl:imports rdf:resource="&od;information-object"/>
+        <owl:versionIRI rdf:resource="&od;file/1.0"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.oceanlink.org/file#hasFileAttribute -->
+
+    <owl:ObjectProperty rdf:about="&od;file#hasFileAttribute"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/file#hasFileAttributeKind -->
+
+    <owl:ObjectProperty rdf:about="&od;file#hasFileAttributeKind"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/file#hasFileAttributeUnit -->
+
+    <owl:ObjectProperty rdf:about="&od;file#hasFileAttributeUnit"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/file#hasFileAttributeValue -->
+
+    <owl:ObjectProperty rdf:about="&od;file#hasFileAttributeValue"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.oceanlink.org/file#hasFileAttributeValueNumeric -->
+
+    <owl:DatatypeProperty rdf:about="&od;file#hasFileAttributeValueNumeric">
+        <rdfs:range rdf:resource="&xsd;double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.oceanlink.org/file#hasFileAttributeValueString -->
+
+    <owl:DatatypeProperty rdf:about="&od;file#hasFileAttributeValueString">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.oceanlink.org/file#File -->
+
+    <owl:Class rdf:about="&od;file#File">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&od;information-object#isDescribedBy"/>
+                <owl:someValuesFrom rdf:resource="&od;information-object#InformationObject"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanlink.org/file#FileAttribute -->
+
+    <owl:Class rdf:about="&od;file#FileAttribute">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&od;file#hasFileAttributeKind"/>
+                <owl:onClass rdf:resource="&od;file#FileAttributeKind"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&od;file#hasFileAttributeValue"/>
+                <owl:onClass rdf:resource="&od;file#FileAttributeValue"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanlink.org/file#FileAttributeKind -->
+
+    <owl:Class rdf:about="&od;file#FileAttributeKind"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/file#FileAttributeUnit -->
+
+    <owl:Class rdf:about="&od;file#FileAttributeUnit"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/file#FileAttributeValue -->
+
+    <owl:Class rdf:about="&od;file#FileAttributeValue">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&od;file#hasFileAttributeValueNumeric"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onDataRange rdf:resource="&xsd;double"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&od;file#hasFileAttributeValueString"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onDataRange rdf:resource="&xsd;string"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&od;file#hasFileAttributeUnit"/>
+                <owl:onClass rdf:resource="&od;file#FileAttributeUnit"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;file#FileAttributeValue"/>
+        <owl:onProperty rdf:resource="&od;file#hasFileAttributeValueString"/>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;file#FileAttribute"/>
+        <owl:onProperty rdf:resource="&od;file#hasFileAttributeKind"/>
+        <owl:someValuesFrom rdf:resource="&od;file#FileAttributeKind"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;file#FileAttributeKind"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;file#hasFileAttributeKind"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;file#FileAttribute"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;file#FileAttributeValue"/>
+        <owl:onProperty rdf:resource="&od;file#hasFileAttributeValueNumeric"/>
+        <owl:someValuesFrom rdf:resource="&xsd;double"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;file#FileAttributeValue"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;file#hasFileAttributeValue"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;file#FileAttribute"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;file#FileAttribute"/>
+        <owl:onProperty rdf:resource="&od;file#hasFileAttributeValue"/>
+        <owl:someValuesFrom rdf:resource="&od;file#FileAttributeValue"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;file#FileAttributeValue"/>
+        <owl:onProperty rdf:resource="&od;file#hasFileAttributeUnit"/>
+        <owl:someValuesFrom rdf:resource="&od;file#FileAttributeUnit"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;file#FileAttributeUnit"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;file#hasFileAttributeUnit"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;file#FileAttributeValue"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;file#FileAttribute"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;file#hasFileAttribute"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;file#File"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;file#File"/>
+        <owl:onProperty rdf:resource="&od;file#hasFileAttribute"/>
+        <owl:someValuesFrom rdf:resource="&od;file#FileAttribute"/>
+    </owl:Restriction>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

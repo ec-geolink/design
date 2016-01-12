@@ -1,0 +1,161 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY od "http://schema.oceanlink.org/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="&od;document-set#"
+     xml:base="&od;document-set"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:od="http://schema.oceanlink.org/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="&od;document-set">
+        <owl:imports rdf:resource="&od;repository-object"/>
+        <owl:versionIRI rdf:resource="&od;document-set/1.0"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.oceanlink.org/document-set#contains -->
+
+    <owl:ObjectProperty rdf:about="&od;document-set#contains"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/document-set#hasDocumentType -->
+
+    <owl:ObjectProperty rdf:about="&od;document-set#hasDocumentType"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/document-set#isPublishedBy -->
+
+    <owl:ObjectProperty rdf:about="&od;document-set#isPublishedBy"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.oceanlink.org/document#Document -->
+
+    <owl:Class rdf:about="&od;document#Document"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/document-set#DocumentSet -->
+
+    <owl:Class rdf:about="&od;document-set#DocumentSet">
+        <rdfs:subClassOf rdf:resource="&od;repository-object#RepositoryObject"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&od;document-set#contains"/>
+                <owl:someValuesFrom rdf:resource="&od;document#Document"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&od;document-set#isPublishedBy"/>
+                <owl:someValuesFrom rdf:resource="&od;agent#Agent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&od;document-set#hasDocumentType"/>
+                <owl:onClass rdf:resource="&od;document-set#DocumentType"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanlink.org/document-set#DocumentType -->
+
+    <owl:Class rdf:about="&od;document-set#DocumentType"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;document-set#DocumentSet"/>
+        <owl:onProperty rdf:resource="&od;document-set#contains"/>
+        <owl:someValuesFrom rdf:resource="&od;document#Document"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;document-set#DocumentSet"/>
+        <owl:onProperty rdf:resource="&od;document-set#isPublishedBy"/>
+        <owl:someValuesFrom rdf:resource="&od;agent#Agent"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;document#Document"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;document-set#contains"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;document-set#DocumentSet"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;agent#Agent"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;document-set#isPublishedBy"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;document-set#DocumentSet"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;document-set#DocumentType"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;document-set#hasDocumentType"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;document#Document"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;document#Document"/>
+        <owl:onProperty rdf:resource="&od;document-set#hasDocumentType"/>
+        <owl:someValuesFrom rdf:resource="&od;document-set#DocumentType"/>
+    </owl:Restriction>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

@@ -1,0 +1,374 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY time "http://www.w3.org/2006/time#" >
+    <!ENTITY od "http://schema.oceanlink.org/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="&od;cruise#"
+     xml:base="&od;cruise"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:time="http://www.w3.org/2006/time#"
+     xmlns:od="http://schema.oceanlink.org/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="&od;cruise">
+        <owl:imports rdf:resource="&od;information-object"/>
+        <owl:imports rdf:resource="&od;trajectory"/>
+        <owl:versionIRI rdf:resource="&od;cruise/1.0"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.oceanlink.org/agent-role#providesAgentRoleType -->
+
+    <owl:ObjectProperty rdf:about="&od;agent-role#providesAgentRoleType">
+        <rdfs:range rdf:resource="&od;agent-role#AgentRoleType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanlink.org/cruise#hasCruiseOperator -->
+
+    <owl:ObjectProperty rdf:about="&od;cruise#hasCruiseOperator"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/cruise#hasCruiseScheduler -->
+
+    <owl:ObjectProperty rdf:about="&od;cruise#hasCruiseScheduler"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/cruise#hasCruiseType -->
+
+    <owl:ObjectProperty rdf:about="&od;cruise#hasCruiseType"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/cruise#hasTrajectory -->
+
+    <owl:ObjectProperty rdf:about="&od;cruise#hasTrajectory"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/cruise#isUndertakenBy -->
+
+    <owl:ObjectProperty rdf:about="&od;cruise#isUndertakenBy"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/funding-award#isFundedBy -->
+
+    <owl:ObjectProperty rdf:about="&od;funding-award#isFundedBy">
+        <rdfs:range rdf:resource="&od;funding-award#FundingAward"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanlink.org/program#isAssociatedWithProgram -->
+
+    <owl:ObjectProperty rdf:about="&od;program#isAssociatedWithProgram">
+        <rdfs:range rdf:resource="&od;program#Program"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.oceanlink.org/cruise#hasCruiseID -->
+
+    <owl:DatatypeProperty rdf:about="&od;cruise#hasCruiseID">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.oceanlink.org/agent#Agent -->
+
+    <owl:Class rdf:about="&od;agent#Agent"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/agent-role#AgentRoleType -->
+
+    <owl:Class rdf:about="&od;agent-role#AgentRoleType"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/cruise#Cruise -->
+
+    <owl:Class rdf:about="&od;cruise#Cruise"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/cruise#CruiseInformationObject -->
+
+    <owl:Class rdf:about="&od;cruise#CruiseInformationObject">
+        <rdfs:subClassOf rdf:resource="&od;information-object#InformationObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanlink.org/cruise#CruiseTrajectory -->
+
+    <owl:Class rdf:about="&od;cruise#CruiseTrajectory">
+        <rdfs:subClassOf rdf:resource="&od;trajectory#Trajectory"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanlink.org/cruise#CruiseType -->
+
+    <owl:Class rdf:about="&od;cruise#CruiseType">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&od;cruise#operational"/>
+                    <rdf:Description rdf:about="&od;cruise#maintenance"/>
+                    <rdf:Description rdf:about="&od;cruise#other"/>
+                    <rdf:Description rdf:about="&od;cruise#transit"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanlink.org/cruise#Port -->
+
+    <owl:Class rdf:about="&od;cruise#Port">
+        <rdfs:subClassOf rdf:resource="&od;place#Place"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanlink.org/funding-award#FundingAward -->
+
+    <owl:Class rdf:about="&od;funding-award#FundingAward"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/program#Program -->
+
+    <owl:Class rdf:about="&od;program#Program"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/vessel#Vessel -->
+
+    <owl:Class rdf:about="&od;vessel#Vessel">
+        <rdfs:subClassOf rdf:resource="&od;trajectory#MovingObject"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.oceanlink.org/cruise#chief_scientist -->
+
+    <owl:NamedIndividual rdf:about="&od;cruise#chief_scientist">
+        <rdf:type rdf:resource="&od;agent-role#AgentRoleType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/cruise#maintenance -->
+
+    <owl:NamedIndividual rdf:about="&od;cruise#maintenance">
+        <rdf:type rdf:resource="&od;cruise#CruiseType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/cruise#operational -->
+
+    <owl:NamedIndividual rdf:about="&od;cruise#operational">
+        <rdf:type rdf:resource="&od;cruise#CruiseType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/cruise#other -->
+
+    <owl:NamedIndividual rdf:about="&od;cruise#other">
+        <rdf:type rdf:resource="&od;cruise#CruiseType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/cruise#port_stop_arrival -->
+
+    <owl:NamedIndividual rdf:about="&od;cruise#port_stop_arrival">
+        <rdf:type rdf:resource="&od;trajectory#Attribute"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/cruise#port_stop_departure -->
+
+    <owl:NamedIndividual rdf:about="&od;cruise#port_stop_departure">
+        <rdf:type rdf:resource="&od;trajectory#Attribute"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/cruise#transit -->
+
+    <owl:NamedIndividual rdf:about="&od;cruise#transit">
+        <rdf:type rdf:resource="&od;cruise#CruiseType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;cruise#Cruise"/>
+        <owl:onProperty rdf:resource="&od;cruise#hasTrajectory"/>
+        <owl:someValuesFrom rdf:resource="&od;cruise#CruiseTrajectory"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;cruise#CruiseTrajectory"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;cruise#hasTrajectory"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;cruise#Cruise"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;cruise#Cruise"/>
+        <owl:onProperty rdf:resource="&od;cruise#isUndertakenBy"/>
+        <owl:someValuesFrom rdf:resource="&od;vessel#Vessel"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;cruise#CruiseInformationObject"/>
+        <owl:onProperty rdf:resource="&od;cruise#hasCruiseType"/>
+        <owl:someValuesFrom rdf:resource="&od;cruise#CruiseType"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;cruise#Cruise"/>
+        <owl:onProperty rdf:resource="&od;cruise#hasCruiseScheduler"/>
+        <owl:someValuesFrom rdf:resource="&od;agent#Agent"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;cruise#Cruise"/>
+        <owl:onProperty rdf:resource="&od;cruise#hasCruiseOperator"/>
+        <owl:someValuesFrom rdf:resource="&od;agent#Agent"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;cruise#CruiseType"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;cruise#hasCruiseType"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;cruise#CruiseInformationObject"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;agent#Agent"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;cruise#hasCruiseScheduler"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;cruise#Cruise"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;cruise#CruiseInformationObject"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;information-object#isDescribedBy"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;cruise#Cruise"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;agent#Agent"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;cruise#hasCruiseOperator"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;cruise#Cruise"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;vessel#Vessel"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;cruise#isUndertakenBy"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;cruise#Cruise"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;cruise#CruiseInformationObject"/>
+        <owl:onProperty rdf:resource="&od;cruise#hasCruiseID"/>
+        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;cruise#Cruise"/>
+        <owl:onProperty rdf:resource="&od;information-object#isDescribedBy"/>
+        <owl:someValuesFrom rdf:resource="&od;cruise#CruiseInformationObject"/>
+    </owl:Restriction>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

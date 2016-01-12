@@ -1,0 +1,287 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://schema.oceanlink.org/data-file#"
+     xml:base="http://schema.oceanlink.org/data-file"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://schema.oceanlink.org/data-file">
+        <owl:imports rdf:resource="http://schema.oceanlink.org/file"/>
+        <owl:versionIRI rdf:resource="http://schema.oceanlink.org/data-file/1.0"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.oceanlink.org/data-file#DataFile -->
+
+    <owl:Class rdf:about="http://schema.oceanlink.org/data-file#DataFile">
+        <rdfs:subClassOf rdf:resource="http://schema.oceanlink.org/file#File"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.oceanlink.org/file#hasFileAttribute"/>
+                <owl:someValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://schema.oceanlink.org/file#hasFileAttributeKind"/>
+                        <owl:hasValue rdf:resource="http://schema.oceanlink.org/data-file#file_format"/>
+                    </owl:Restriction>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.oceanlink.org/file#hasFileAttribute"/>
+                <owl:someValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://schema.oceanlink.org/file#hasFileAttributeKind"/>
+                        <owl:hasValue rdf:resource="http://schema.oceanlink.org/data-file#file_size"/>
+                    </owl:Restriction>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.oceanlink.org/data-file#adler32_checksum -->
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanlink.org/data-file#adler32_checksum">
+        <rdf:type rdf:resource="http://schema.oceanlink.org/file#FileAttributeKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/data-file#crc32_checksum -->
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanlink.org/data-file#crc32_checksum">
+        <rdf:type rdf:resource="http://schema.oceanlink.org/file#FileAttributeKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/data-file#file_format -->
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanlink.org/data-file#file_format">
+        <rdf:type rdf:resource="http://schema.oceanlink.org/file#FileAttributeKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/data-file#file_size -->
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanlink.org/data-file#file_size">
+        <rdf:type rdf:resource="http://schema.oceanlink.org/file#FileAttributeKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/data-file#haval256_4_checksum -->
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanlink.org/data-file#haval256_4_checksum">
+        <rdf:type rdf:resource="http://schema.oceanlink.org/file#FileAttributeKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/data-file#haval256_5_checksum -->
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanlink.org/data-file#haval256_5_checksum">
+        <rdf:type rdf:resource="http://schema.oceanlink.org/file#FileAttributeKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/data-file#haval_256_3_checksum -->
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanlink.org/data-file#haval_256_3_checksum">
+        <rdf:type rdf:resource="http://schema.oceanlink.org/file#FileAttributeKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/data-file#md2_checksum -->
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanlink.org/data-file#md2_checksum">
+        <rdf:type rdf:resource="http://schema.oceanlink.org/file#FileAttributeKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/data-file#md4_checksum -->
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanlink.org/data-file#md4_checksum">
+        <rdf:type rdf:resource="http://schema.oceanlink.org/file#FileAttributeKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/data-file#md5_checksum -->
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanlink.org/data-file#md5_checksum">
+        <rdf:type rdf:resource="http://schema.oceanlink.org/file#FileAttributeKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/data-file#ripemd128_checksum -->
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanlink.org/data-file#ripemd128_checksum">
+        <rdf:type rdf:resource="http://schema.oceanlink.org/file#FileAttributeKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/data-file#ripemd160_checksum -->
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanlink.org/data-file#ripemd160_checksum">
+        <rdf:type rdf:resource="http://schema.oceanlink.org/file#FileAttributeKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/data-file#sha1_checksum -->
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanlink.org/data-file#sha1_checksum">
+        <rdf:type rdf:resource="http://schema.oceanlink.org/file#FileAttributeKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/data-file#sha2_224_checksum -->
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanlink.org/data-file#sha2_224_checksum">
+        <rdf:type rdf:resource="http://schema.oceanlink.org/file#FileAttributeKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/data-file#sha2_256_checksum -->
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanlink.org/data-file#sha2_256_checksum">
+        <rdf:type rdf:resource="http://schema.oceanlink.org/file#FileAttributeKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/data-file#sha2_384_checksum -->
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanlink.org/data-file#sha2_384_checksum">
+        <rdf:type rdf:resource="http://schema.oceanlink.org/file#FileAttributeKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/data-file#sha2_512_224_checksum -->
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanlink.org/data-file#sha2_512_224_checksum">
+        <rdf:type rdf:resource="http://schema.oceanlink.org/file#FileAttributeKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/data-file#sha2_512_256_checksum -->
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanlink.org/data-file#sha2_512_256_checksum">
+        <rdf:type rdf:resource="http://schema.oceanlink.org/file#FileAttributeKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/data-file#sha2_512_checksum -->
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanlink.org/data-file#sha2_512_checksum">
+        <rdf:type rdf:resource="http://schema.oceanlink.org/file#FileAttributeKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/data-file#sha3_224_checksum -->
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanlink.org/data-file#sha3_224_checksum">
+        <rdf:type rdf:resource="http://schema.oceanlink.org/file#FileAttributeKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/data-file#sha3_256_checksum -->
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanlink.org/data-file#sha3_256_checksum">
+        <rdf:type rdf:resource="http://schema.oceanlink.org/file#FileAttributeKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/data-file#sha3_384_checksum -->
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanlink.org/data-file#sha3_384_checksum">
+        <rdf:type rdf:resource="http://schema.oceanlink.org/file#FileAttributeKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/data-file#sha3_512_checksum -->
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanlink.org/data-file#sha3_512_checksum">
+        <rdf:type rdf:resource="http://schema.oceanlink.org/file#FileAttributeKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/data-file#tiger_checksum -->
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanlink.org/data-file#tiger_checksum">
+        <rdf:type rdf:resource="http://schema.oceanlink.org/file#FileAttributeKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/data-file#whirlpool0_checksum -->
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanlink.org/data-file#whirlpool0_checksum">
+        <rdf:type rdf:resource="http://schema.oceanlink.org/file#FileAttributeKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanlink.org/data-file#whirlpool1_checksum -->
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanlink.org/data-file#whirlpool1_checksum">
+        <rdf:type rdf:resource="http://schema.oceanlink.org/file#FileAttributeKind"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

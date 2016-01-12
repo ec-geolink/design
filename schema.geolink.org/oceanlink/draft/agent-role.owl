@@ -1,0 +1,224 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY time "http://www.w3.org/2006/time#" >
+    <!ENTITY od "http://schema.oceanlink.org/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="&od;agent-role#"
+     xml:base="&od;agent-role"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:time="http://www.w3.org/2006/time#"
+     xmlns:od="http://schema.oceanlink.org/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="&od;agent-role">
+        <owl:versionIRI rdf:resource="&od;agent-role/1.0"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.oceanlink.org/agent-role#endsAt -->
+
+    <owl:ObjectProperty rdf:about="&od;agent-role#endsAt"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/agent-role#hasAgentRoleType -->
+
+    <owl:ObjectProperty rdf:about="&od;agent-role#hasAgentRoleType"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/agent-role#isAgentRoleIn -->
+
+    <owl:ObjectProperty rdf:about="&od;agent-role#isAgentRoleIn">
+        <rdfs:domain rdf:resource="&od;agent-role#AgentRole"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanlink.org/agent-role#isPerformedBy -->
+
+    <owl:ObjectProperty rdf:about="&od;agent-role#isPerformedBy"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/agent-role#providesAgentRoleType -->
+
+    <owl:ObjectProperty rdf:about="&od;agent-role#providesAgentRoleType">
+        <rdfs:range rdf:resource="&od;agent-role#AgentRoleType"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;agent-role#isAgentRoleIn"/>
+            </rdf:Description>
+            <rdf:Description rdf:about="&od;agent-role#hasAgentRoleType"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanlink.org/agent-role#startsAt -->
+
+    <owl:ObjectProperty rdf:about="&od;agent-role#startsAt"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.oceanlink.org/agent#Agent -->
+
+    <owl:Class rdf:about="&od;agent#Agent"/>
+    
+
+
+    <!-- http://schema.oceanlink.org/agent-role#AgentRole -->
+
+    <owl:Class rdf:about="&od;agent-role#AgentRole">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&od;agent-role#endsAt"/>
+                <owl:onClass rdf:resource="&time;Instant"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&od;agent-role#startsAt"/>
+                <owl:onClass rdf:resource="&time;Instant"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&od;agent-role#hasAgentRoleType"/>
+                <owl:onClass rdf:resource="&od;agent-role#AgentRoleType"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&od;agent-role#isAgentRoleIn"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&od;agent-role#isPerformedBy"/>
+                <owl:onClass rdf:resource="&od;agent#Agent"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanlink.org/agent-role#AgentRoleType -->
+
+    <owl:Class rdf:about="&od;agent-role#AgentRoleType"/>
+    
+
+
+    <!-- http://www.w3.org/2006/time#Instant -->
+
+    <owl:Class rdf:about="&time;Instant"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;agent#Agent"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;agent-role#isPerformedBy"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;agent-role#AgentRole"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;agent-role#AgentRole"/>
+        <owl:onProperty rdf:resource="&od;agent-role#isPerformedBy"/>
+        <owl:someValuesFrom rdf:resource="&od;agent#Agent"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;agent-role#AgentRoleType"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;agent-role#hasAgentRoleType"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;agent-role#AgentRole"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;agent-role#AgentRole"/>
+        <owl:onProperty rdf:resource="&od;agent-role#endsAt"/>
+        <owl:someValuesFrom rdf:resource="&time;Instant"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;agent-role#AgentRole"/>
+        <owl:onProperty rdf:resource="&od;agent-role#startsAt"/>
+        <owl:someValuesFrom rdf:resource="&time;Instant"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&time;Instant"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;agent-role#endsAt"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;agent-role#AgentRole"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&time;Instant"/>
+        <owl:onProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="&od;agent-role#startsAt"/>
+            </rdf:Description>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="&od;agent-role#AgentRole"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <rdfs:subClassOf rdf:resource="&od;agent-role#AgentRole"/>
+        <owl:onProperty rdf:resource="&od;agent-role#hasAgentRoleType"/>
+        <owl:someValuesFrom rdf:resource="&od;agent-role#AgentRoleType"/>
+    </owl:Restriction>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
