@@ -1,105 +1,25 @@
 <?xml version="1.0"?>
-
-
-<!DOCTYPE rdf:RDF [
-    <!ENTITY ff "http://factforge.net/" >
-    <!ENTITY umbel "http://umbel.org/umbel#" >
-    <!ENTITY geonames "http://sws.geonames.org/" >
-    <!ENTITY nytimes "http://data.nytimes.com/" >
-    <!ENTITY ot "http://www.ontotext.com/" >
-    <!ENTITY void "http://rdfs.org/ns/void#" >
-    <!ENTITY dc-term "http://purl.org/dc/terms/" >
-    <!ENTITY umbel-ac "http://umbel.org/umbel/ac/" >
-    <!ENTITY umbel-sc "http://umbel.org/umbel/sc/" >
-    <!ENTITY foaf "http://xmlns.com/foaf/0.1/" >
-    <!ENTITY fb "http://rdf.freebase.com/ns/" >
-    <!ENTITY dbp-ont "http://dbpedia.org/ontology/" >
-    <!ENTITY dbpedia "http://dbpedia.org/resource/" >
-    <!ENTITY dbp-prop "http://dbpedia.org/property/" >
-    <!ENTITY bbc-pont "http://purl.org/ontology/po/" >
-    <!ENTITY music-ont "http://purl.org/ontology/mo/" >
-    <!ENTITY yago "http://mpii.de/yago/resource/" >
-    <!ENTITY wordnet16 "http://xmlns.com/wordnet/1.6/" >
-    <!ENTITY om "http://www.ontotext.com/owlim/" >
-    <!ENTITY opencyc "http://sw.opencyc.org/concept/" >
-    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
-    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
-    <!ENTITY lingvoj "http://www.lingvoj.org/ontology#" >
-    <!ENTITY dbtune "http://dbtune.org/bbc/peel/work/" >
-    <!ENTITY gr "http://purl.org/goodrelations/v1#" >
-    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY geo-ont "http://www.geonames.org/ontology#" >
-    <!ENTITY oasis "http://psi.oasis-open.org/iso/639/#" >
-    <!ENTITY skos "http://www.w3.org/2004/02/skos/core#" >
-    <!ENTITY grg "http://www.isotc211.org/schemas/grg/" >
-    <!ENTITY umbel-en "http://umbel.org/umbel/ne/wikipedia/" >
-    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
-    <!ENTITY pkm "http://proton.semanticweb.org/protonkm#" >
-    <!ENTITY geo-pos "http://www.w3.org/2003/01/geo/wgs84_pos#" >
-    <!ENTITY psys "http://proton.semanticweb.org/protonsys#" >
-    <!ENTITY ptop "http://proton.semanticweb.org/protontop#" >
-    <!ENTITY pext "http://proton.semanticweb.org/protonext#" >
-    <!ENTITY wordn-sc "http://www.w3.org/2006/03/wn/wn20/schema/" >
-    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-    <!ENTITY opencyc-en "http://sw.opencyc.org/2008/06/10/concept/en/" >
-    <!ENTITY wordnet "http://www.w3.org/2006/03/wn/wn20/instances/" >
-    <!ENTITY sw-vocab "http://www.w3.org/2003/06/sw-vocab-status/ns#" >
-    <!ENTITY factbook "http://www.daml.org/2001/12/factbook/factbook-ont#" >
-    <!ENTITY ub "http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#" >
-]>
-
-
-<rdf:RDF xmlns="http://schema.geolink.org/dev/voc/nvs/L06#"
-     xml:base="http://schema.geolink.org/dev/voc/nvs/L06"
-     xmlns:ff="http://factforge.net/"
-     xmlns:opencyc-en="http://sw.opencyc.org/2008/06/10/concept/en/"
-     xmlns:umbel-sc="http://umbel.org/umbel/sc/"
-     xmlns:oasis="http://psi.oasis-open.org/iso/639/#"
+<rdf:RDF xmlns="http://schema.geolink.org/1.0/voc/nvs/L06#"
+     xml:base="http://schema.geolink.org/1.0/voc/nvs/L06"
+     xmlns:void="http://rdfs.org/ns/void#"
      xmlns:geonames="http://sws.geonames.org/"
-     xmlns:pext="http://proton.semanticweb.org/protonext#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:yago="http://mpii.de/yago/resource/"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:ub="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#"
-     xmlns:ptop="http://proton.semanticweb.org/protontop#"
-     xmlns:umbel-ac="http://umbel.org/umbel/ac/"
-     xmlns:umbel="http://umbel.org/umbel#"
-     xmlns:pkm="http://proton.semanticweb.org/protonkm#"
      xmlns:geo-ont="http://www.geonames.org/ontology#"
-     xmlns:opencyc="http://sw.opencyc.org/concept/"
-     xmlns:lingvoj="http://www.lingvoj.org/ontology#"
-     xmlns:bbc-pont="http://purl.org/ontology/po/"
-     xmlns:grg="http://www.isotc211.org/schemas/grg/"
-     xmlns:om="&ot;owlim/"
-     xmlns:foaf="http://xmlns.com/foaf/0.1/"
-     xmlns:nytimes="http://data.nytimes.com/"
-     xmlns:factbook="http://www.daml.org/2001/12/factbook/factbook-ont#"
-     xmlns:wordnet16="http://xmlns.com/wordnet/1.6/"
-     xmlns:wordn-sc="http://www.w3.org/2006/03/wn/wn20/schema/"
-     xmlns:music-ont="http://purl.org/ontology/mo/"
-     xmlns:void="http://rdfs.org/ns/void#"
-     xmlns:ot="http://www.ontotext.com/"
-     xmlns:psys="http://proton.semanticweb.org/protonsys#"
-     xmlns:umbel-en="http://umbel.org/umbel/ne/wikipedia/"
-     xmlns:dbpedia="http://dbpedia.org/resource/"
-     xmlns:sw-vocab="http://www.w3.org/2003/06/sw-vocab-status/ns#"
-     xmlns:gr="http://purl.org/goodrelations/v1#"
-     xmlns:dbp-ont="http://dbpedia.org/ontology/"
-     xmlns:geo-pos="http://www.w3.org/2003/01/geo/wgs84_pos#"
-     xmlns:dc-term="http://purl.org/dc/terms/"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:wordnet="http://www.w3.org/2006/03/wn/wn20/instances/"
-     xmlns:dbtune="http://dbtune.org/bbc/peel/work/"
-     xmlns:dbp-prop="http://dbpedia.org/property/"
-     xmlns:fb="http://rdf.freebase.com/ns/"
+     xmlns:geo-pos="http://www.w3.org/2003/01/geo/wgs84_pos#"
+     xmlns:glbase="http://schema.geolink.org/1.0/base/main#"
+     xmlns:dc-term="http://purl.org/dc/terms/"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:dc="http://purl.org/dc/elements/1.1/">
-    <owl:Ontology rdf:about="http://schema.geolink.org/dev/voc/nvs/L06">
-        <rdfs:label>SeaVoX Platform Categories</rdfs:label>
-        <dc-term:date>2015-03-27 02:00:03.0</dc-term:date>
-        <rdfs:comment xml:lang="en">This ontology captures SeaVoX platform categories (e.g., vessel, mooring, etc.) as hosted in the NERC vocabulary server</rdfs:comment>
+    <owl:Ontology rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06">
         <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/"/>
+        <rdfs:comment xml:lang="en">This ontology captures SeaVoX platform categories (e.g., vessel, mooring, etc.) as hosted in the NERC vocabulary server</rdfs:comment>
+        <dc-term:date>2015-03-27 02:00:03.0</dc-term:date>
+        <rdfs:label>SeaVoX Platform Categories</rdfs:label>
     </owl:Ontology>
     
 
@@ -115,9 +35,9 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/base/main#hasPlatformType -->
+    <!-- http://schema.geolink.org/1.0/base/main#hasPlatformType -->
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
     
 
 
@@ -132,647 +52,647 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/base/main#Platform -->
+    <!-- http://schema.geolink.org/1.0/base/main#Platform -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#Platform"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/base/main#Platform"/>
     
 
 
-    <!-- http://schema.geolink.org/dev/base/main#PlatformType -->
+    <!-- http://schema.geolink.org/1.0/base/main#PlatformType -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#0 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#0 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#0">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Platform"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#0">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#Platform"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#10 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#10 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#10">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Platform"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#10">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#Platform"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#11 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#11 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#11">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#10"/>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#48"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#11">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#10"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#48"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#12 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#12 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#12">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#10"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#12">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#10"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#13 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#13 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#13">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#10"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#13">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#10"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#14 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#14 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#14">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#10"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#14">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#10"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#15 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#15 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#15">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#10"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#15">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#10"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#16 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#16 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#16">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#10"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#16">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#10"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#17 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#17 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#17">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#10"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#17">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#10"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#18 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#18 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#18">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#10"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#18">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#10"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#19 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#19 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#19">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#10"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#19">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#10"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#20 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#20 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#20">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Platform"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#20">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#Platform"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#21 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#21 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#21">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#20"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#21">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#20"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#22 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#22 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#22">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#20"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#22">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#20"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#23 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#23 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#23">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#20"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#23">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#20"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#24 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#24 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#24">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#20"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#24">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#20"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#25 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#25 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#25">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#20"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#25">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#20"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#26 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#26 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#26">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#20"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#26">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#20"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#27 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#27 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#27">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#25"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#27">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#25"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#3A -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#3A -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#3A">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#3Z"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#3A">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#3Z"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#3B -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#3B -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#3B">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#3Z"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#3B">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#3Z"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#3C -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#3C -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#3C">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#3B"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#3C">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#3B"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#3Z -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#3Z -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#3Z">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Platform"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#3Z">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#Platform"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#30 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#30 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#30">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#3Z"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#30">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#3Z"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#31 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#31 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#31">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#3Z"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#31">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#3Z"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#32 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#32 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#32">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#3Z"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#32">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#3Z"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#33 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#33 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#33">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#3Z"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#33">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#3Z"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#34 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#34 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#34">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#3Z"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#34">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#3Z"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#35 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#35 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#35">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#3Z"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#35">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#3Z"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#36 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#36 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#36">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#3Z"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#36">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#3Z"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#37 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#37 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#37">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#3Z"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#37">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#3Z"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#38 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#38 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#38">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#3Z"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#38">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#3Z"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#39 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#39 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#39">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#3Z"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#39">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#3Z"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#41 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#41 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#41">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#48"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#41">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#48"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#42 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#42 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#42">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#47"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#42">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#47"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#43 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#43 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#43">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#48"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#43">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#48"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#44 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#44 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#44">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#47"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#44">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#47"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#45 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#45 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#45">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#48"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#45">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#48"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#46 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#46 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#46">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#47"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#46">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#47"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#47 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#47 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#47">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Platform"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#47">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#Platform"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#48 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#48 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#48">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Platform"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#48">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#Platform"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#49 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#49 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#49">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#42"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#49">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#42"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#50 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#50 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#50">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Platform"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#50">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#Platform"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#51 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#51 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#51">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#50"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#51">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#50"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#52 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#52 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#52">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#50"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#52">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#50"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#53 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#53 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#53">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#50"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#53">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#50"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#54 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#54 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#54">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#50"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#54">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#50"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#6A -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#6A -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#6A">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#60"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#6A">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#60"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#6B -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#6B -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#6B">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#60"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#6B">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#60"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#6C -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#6C -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#6C">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#60"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#6C">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#60"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#6D -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#6D -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#6D">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#60"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#6D">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#60"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#6Z -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#6Z -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#6Z">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Platform"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#6Z">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#Platform"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#60 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#60 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#60">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Platform"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#60">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#Platform"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#61 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#61 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#61">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#60"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#61">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#60"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#62 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#62 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#62">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#60"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#62">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#60"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#63 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#63 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#63">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#60"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#63">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#60"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#64 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#64 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#64">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#6Z"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#64">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#6Z"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#65 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#65 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#65">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#6Z"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#65">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#6Z"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#66 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#66 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#66">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#6Z"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#66">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#6Z"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#67 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#67 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#67">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#60"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#67">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#60"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#68 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#68 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#68">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#6Z"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#68">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#6Z"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#69 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#69 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#69">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#60"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#69">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#60"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#70 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#70 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#70">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Platform"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#70">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#Platform"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#71 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#71 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#71">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#70"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#71">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#70"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#72 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#72 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#72">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#70"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#72">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#70"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#73 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#73 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#73">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#70"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#73">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#70"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#74 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#74 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#74">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#70"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#74">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#70"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#75 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#75 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#75">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#70"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#75">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#70"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#76 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#76 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#76">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#70"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#76">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#70"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#77 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#77 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#77">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#70"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#77">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#70"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#9A -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#9A -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#9A">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#95"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#9A">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#95"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#9B -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#9B -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#9B">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#95"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#9B">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#95"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#90 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#90 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#90">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Platform"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#90">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#Platform"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#91 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#91 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#91">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#90"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#91">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#90"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#92 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#92 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#92">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#90"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#92">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#90"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#93 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#93 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#93">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#90"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#93">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#90"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#94 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#94 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#94">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#90"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#94">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#90"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#95 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#95 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#95">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/base/main#Platform"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#95">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#Platform"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#96 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#96 -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#96">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#10"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#96">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#10"/>
     </owl:Class>
     
 
@@ -788,634 +708,634 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#0 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#0 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#0">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#0">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#10 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#10 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#10">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#10">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#11 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#11 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#11">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#11">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#12 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#12 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#12">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#12">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#13 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#13 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#13">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#13">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#14 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#14 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#14">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#14">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#15 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#15 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#15">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#15">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#16 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#16 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#16">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#16">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#17 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#17 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#17">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#17">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#18 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#18 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#18">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#18">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#19 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#19 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#19">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#19">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#20 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#20 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#20">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#20">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#21 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#21 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#21">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#21">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#22 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#22 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#22">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#22">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#23 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#23 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#23">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#23">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#24 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#24 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#24">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#24">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#25 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#25 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#25">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#25">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#26 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#26 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#26">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#26">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#27 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#27 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#27">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#27">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#3A -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#3A -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#3A">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#3A">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#3B -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#3B -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#3B">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#3B">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#3C -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#3C -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#3C">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#3C">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#3Z -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#3Z -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#3Z">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#3Z">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#30 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#30 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#30">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#30">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#31 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#31 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#31">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#31">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#32 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#32 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#32">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#32">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#33 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#33 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#33">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#33">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#34 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#34 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#34">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#34">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#35 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#35 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#35">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#35">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#36 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#36 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#36">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#36">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#37 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#37 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#37">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#37">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#38 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#38 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#38">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#38">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#39 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#39 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#39">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#39">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#41 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#41 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#41">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#41">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#42 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#42 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#42">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#42">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#43 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#43 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#43">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#43">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#44 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#44 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#44">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#44">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#45 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#45 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#45">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#45">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#46 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#46 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#46">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#46">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#47 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#47 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#47">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#47">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#48 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#48 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#48">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#48">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#49 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#49 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#49">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#49">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#50 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#50 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#50">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#50">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#51 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#51 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#51">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#51">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#52 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#52 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#52">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#52">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#53 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#53 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#53">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#53">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#54 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#54 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#54">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#54">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#6A -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#6A -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#6A">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#6A">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#6B -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#6B -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#6B">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#6B">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#6C -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#6C -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#6C">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#6C">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#6D -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#6D -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#6D">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#6D">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#6Z -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#6Z -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#6Z">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#6Z">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#60 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#60 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#60">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#60">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#61 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#61 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#61">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#61">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#62 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#62 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#62">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#62">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#63 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#63 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#63">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#63">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#64 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#64 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#64">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#64">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#65 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#65 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#65">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#65">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#66 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#66 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#66">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#66">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#67 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#67 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#67">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#67">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#68 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#68 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#68">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#68">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#69 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#69 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#69">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#69">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#70 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#70 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#70">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#70">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#71 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#71 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#71">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#71">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#72 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#72 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#72">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#72">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#73 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#73 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#73">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#73">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#74 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#74 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#74">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#74">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#75 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#75 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#75">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#75">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#76 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#76 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#76">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#76">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#77 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#77 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#77">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#77">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#9A -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#9A -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#9A">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#9A">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#9B -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#9B -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#9B">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#9B">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#90 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#90 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#90">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#90">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#91 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#91 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#91">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#91">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#92 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#92 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#92">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#92">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#93 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#93 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#93">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#93">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#94 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#94 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#94">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#94">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#95 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#95 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#95">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#95">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://schema.geolink.org/dev/voc/nvs/L06#96 -->
+    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#96 -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#96">
-        <rdf:type rdf:resource="http://schema.geolink.org/dev/base/main#PlatformType"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#96">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#PlatformType"/>
     </owl:NamedIndividual>
     
 
@@ -1428,321 +1348,321 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#3Z">
-        <rdfs:label xml:lang="en">surface vessel</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/3Z/"/>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#0">
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/0/"/>
+        <rdfs:label xml:lang="en">unknown</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#13">
-        <rdfs:label xml:lang="en">beach/intertidal zone structure</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/13/"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#12">
-        <rdfs:label xml:lang="en">sea bed vehicle</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/12/"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#11">
-        <rdfs:label xml:lang="en">fixed benthic node</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/11/"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#10">
-        <rdfs:label xml:lang="en">land or seafloor</rdfs:label>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#10">
         <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/10/"/>
+        <rdfs:label xml:lang="en">land or seafloor</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#54">
-        <rdfs:label xml:lang="en">airship</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/54/"/>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#11">
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/11/"/>
+        <rdfs:label xml:lang="en">fixed benthic node</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#6Z">
-        <rdfs:label xml:lang="en">spacecraft</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/6Z/"/>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#12">
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/12/"/>
+        <rdfs:label xml:lang="en">sea bed vehicle</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#53">
-        <rdfs:label xml:lang="en">tethered balloon</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/53/"/>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#13">
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/13/"/>
+        <rdfs:label xml:lang="en">beach/intertidal zone structure</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#96">
-        <rdfs:label xml:lang="en">amphibious crawler</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/96/"/>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#14">
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/14/"/>
+        <rdfs:label xml:lang="en">land/onshore structure</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#52">
-        <rdfs:label xml:lang="en">free-floating balloon</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/52/"/>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#15">
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/15/"/>
+        <rdfs:label xml:lang="en">land/onshore vehicle</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#51">
-        <rdfs:label xml:lang="en">free-rising balloon</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/51/"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#95">
-        <rdfs:label xml:lang="en">amphibious vehicle</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/95/"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#50">
-        <rdfs:label xml:lang="en">buoyant aircraft</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/50/"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#94">
-        <rdfs:label xml:lang="en">drift ice</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/94/"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#93">
-        <rdfs:label xml:lang="en">pack ice</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/93/"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#92">
-        <rdfs:label xml:lang="en">ice shelf</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/92/"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#91">
-        <rdfs:label xml:lang="en">ice island</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/91/"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#90">
-        <rdfs:label xml:lang="en">cryosphere</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/90/"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#49">
-        <rdfs:label xml:lang="en">surface ice buoy</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/49/"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#48">
-        <rdfs:label xml:lang="en">mooring</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/48/"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#47">
-        <rdfs:label xml:lang="en">float</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/47/"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#68">
-        <rdfs:label xml:lang="en">satellite</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/68/"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#24">
-        <rdfs:label xml:lang="en">drifting manned submersible</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/24/"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#23">
-        <rdfs:label xml:lang="en">towed unmanned submersible</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/23/"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#67">
-        <rdfs:label xml:lang="en">helicopter</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/67/"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#66">
-        <rdfs:label xml:lang="en">manned spacecraft</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/66/"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#22">
-        <rdfs:label xml:lang="en">propelled unmanned submersible</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/22/"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#65">
-        <rdfs:label xml:lang="en">orbiting satellite</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/65/"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#21">
-        <rdfs:label xml:lang="en">propelled manned submersible</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/21/"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#20">
-        <rdfs:label xml:lang="en">submersible</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/20/"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#64">
-        <rdfs:label xml:lang="en">geostationary orbiting satellite</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/64/"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#63">
-        <rdfs:label xml:lang="en">rocket</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/63/"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#62">
-        <rdfs:label xml:lang="en">aeroplane</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/62/"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#61">
-        <rdfs:label xml:lang="en">research aeroplane</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/61/"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#3A">
-        <rdfs:label xml:lang="en">man-powered small boat</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/3A/"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#60">
-        <rdfs:label xml:lang="en">non-buoyant aircraft</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/60/"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#3B">
-        <rdfs:label xml:lang="en">autonomous surface water vehicle</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/3B/"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#3C">
-        <rdfs:label xml:lang="en">surface gliders</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/3C/"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#6A">
-        <rdfs:label xml:lang="en">glider</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/6A/"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#6B">
-        <rdfs:label xml:lang="en">kite</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/6B/"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#6C">
-        <rdfs:label xml:lang="en">parachute</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/6C/"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#6D">
-        <rdfs:label xml:lang="en">unmanned aerial vehicle</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/6D/"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#9A">
-        <rdfs:label xml:lang="en">DUKW</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/9A/"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#9B">
-        <rdfs:label xml:lang="en">hovercraft</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/9B/"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#19">
-        <rdfs:label xml:lang="en">mesocosm bag</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/19/"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#18">
-        <rdfs:label xml:lang="en">river station</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/18/"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#17">
-        <rdfs:label xml:lang="en">coastal structure</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/17/"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#16">
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#16">
         <rdfs:label xml:lang="en">offshore structure</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/16/"/>
     </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#15">
-        <rdfs:label xml:lang="en">land/onshore vehicle</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/15/"/>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#17">
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/17/"/>
+        <rdfs:label xml:lang="en">coastal structure</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#14">
-        <rdfs:label xml:lang="en">land/onshore structure</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/14/"/>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#18">
+        <rdfs:label xml:lang="en">river station</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/18/"/>
     </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#35">
-        <rdfs:label xml:lang="en">vessel of opportunity on fixed route</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/35/"/>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#19">
+        <rdfs:label xml:lang="en">mesocosm bag</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/19/"/>
     </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#34">
-        <rdfs:label xml:lang="en">vessel at fixed position</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/34/"/>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#20">
+        <rdfs:label xml:lang="en">submersible</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/20/"/>
     </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#33">
-        <rdfs:label xml:lang="en">self-propelled small boat</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/33/"/>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#21">
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/21/"/>
+        <rdfs:label xml:lang="en">propelled manned submersible</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#77">
-        <rdfs:label xml:lang="en">land-sea mammals</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/77/"/>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#22">
+        <rdfs:label xml:lang="en">propelled unmanned submersible</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/22/"/>
     </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#76">
-        <rdfs:label xml:lang="en">fish</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/76/"/>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#23">
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/23/"/>
+        <rdfs:label xml:lang="en">towed unmanned submersible</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#32">
-        <rdfs:label xml:lang="en">vessel of opportunity</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/32/"/>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#24">
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/24/"/>
+        <rdfs:label xml:lang="en">drifting manned submersible</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#31">
-        <rdfs:label xml:lang="en">research vessel</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/31/"/>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#25">
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/25/"/>
+        <rdfs:label xml:lang="en">autonomous underwater vehicle</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#75">
-        <rdfs:label xml:lang="en">cetacean</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/75/"/>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#26">
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/26/"/>
+        <rdfs:label xml:lang="en">lowered unmanned submersible</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#74">
-        <rdfs:label xml:lang="en">seabird and duck</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/74/"/>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#27">
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/27/"/>
+        <rdfs:label xml:lang="en">sub-surface gliders</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#30">
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#3A">
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/3A/"/>
+        <rdfs:label xml:lang="en">man-powered small boat</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#3B">
+        <rdfs:label xml:lang="en">autonomous surface water vehicle</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/3B/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#3C">
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/3C/"/>
+        <rdfs:label xml:lang="en">surface gliders</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#3Z">
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/3Z/"/>
+        <rdfs:label xml:lang="en">surface vessel</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#30">
         <rdfs:label xml:lang="en">ship</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/30/"/>
     </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#73">
-        <rdfs:label xml:lang="en">flightless bird</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/73/"/>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#31">
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/31/"/>
+        <rdfs:label xml:lang="en">research vessel</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#72">
-        <rdfs:label xml:lang="en">diver</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/72/"/>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#32">
+        <rdfs:label xml:lang="en">vessel of opportunity</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/32/"/>
     </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#71">
-        <rdfs:label xml:lang="en">human</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/71/"/>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#33">
+        <rdfs:label xml:lang="en">self-propelled small boat</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/33/"/>
     </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#70">
-        <rdfs:label xml:lang="en">organism</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/70/"/>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#34">
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/34/"/>
+        <rdfs:label xml:lang="en">vessel at fixed position</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#27">
-        <rdfs:label xml:lang="en">sub-surface gliders</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/27/"/>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#35">
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/35/"/>
+        <rdfs:label xml:lang="en">vessel of opportunity on fixed route</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#26">
-        <rdfs:label xml:lang="en">lowered unmanned submersible</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/26/"/>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#36">
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/36/"/>
+        <rdfs:label xml:lang="en">fishing vessel</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#69">
-        <rdfs:label xml:lang="en">autogyro</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/69/"/>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#37">
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/37/"/>
+        <rdfs:label xml:lang="en">self-propelled boat</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#25">
-        <rdfs:label xml:lang="en">autonomous underwater vehicle</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/25/"/>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#38">
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/38/"/>
+        <rdfs:label xml:lang="en">man-powered boat</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#46">
-        <rdfs:label xml:lang="en">drifting subsurface profiling float</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/46/"/>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#39">
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/39/"/>
+        <rdfs:label xml:lang="en">naval vessel</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#45">
-        <rdfs:label xml:lang="en">fixed subsurface vertical profiler</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/45/"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#44">
-        <rdfs:label xml:lang="en">drifting subsurface float</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/44/"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#0">
-        <rdfs:label xml:lang="en">unknown</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/0/"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#43">
-        <rdfs:label xml:lang="en">subsurface mooring</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/43/"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#42">
-        <rdfs:label xml:lang="en">drifting surface float</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/42/"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#41">
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#41">
         <rdfs:label xml:lang="en">moored surface buoy</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/41/"/>
     </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#39">
-        <rdfs:label xml:lang="en">naval vessel</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/39/"/>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#42">
+        <rdfs:label xml:lang="en">drifting surface float</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/42/"/>
     </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#38">
-        <rdfs:label xml:lang="en">man-powered boat</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/38/"/>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#43">
+        <rdfs:label xml:lang="en">subsurface mooring</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/43/"/>
     </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#37">
-        <rdfs:label xml:lang="en">self-propelled boat</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/37/"/>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#44">
+        <rdfs:label xml:lang="en">drifting subsurface float</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/44/"/>
     </rdf:Description>
-    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#36">
-        <rdfs:label xml:lang="en">fishing vessel</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/36/"/>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#45">
+        <rdfs:label xml:lang="en">fixed subsurface vertical profiler</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/45/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#46">
+        <rdfs:label xml:lang="en">drifting subsurface profiling float</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/46/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#47">
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/47/"/>
+        <rdfs:label xml:lang="en">float</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#48">
+        <rdfs:label xml:lang="en">mooring</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/48/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#49">
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/49/"/>
+        <rdfs:label xml:lang="en">surface ice buoy</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#50">
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/50/"/>
+        <rdfs:label xml:lang="en">buoyant aircraft</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#51">
+        <rdfs:label xml:lang="en">free-rising balloon</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/51/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#52">
+        <rdfs:label xml:lang="en">free-floating balloon</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/52/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#53">
+        <rdfs:label xml:lang="en">tethered balloon</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/53/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#54">
+        <rdfs:label xml:lang="en">airship</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/54/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#6A">
+        <rdfs:label xml:lang="en">glider</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/6A/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#6B">
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/6B/"/>
+        <rdfs:label xml:lang="en">kite</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#6C">
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/6C/"/>
+        <rdfs:label xml:lang="en">parachute</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#6D">
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/6D/"/>
+        <rdfs:label xml:lang="en">unmanned aerial vehicle</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#6Z">
+        <rdfs:label xml:lang="en">spacecraft</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/6Z/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#60">
+        <rdfs:label xml:lang="en">non-buoyant aircraft</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/60/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#61">
+        <rdfs:label xml:lang="en">research aeroplane</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/61/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#62">
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/62/"/>
+        <rdfs:label xml:lang="en">aeroplane</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#63">
+        <rdfs:label xml:lang="en">rocket</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/63/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#64">
+        <rdfs:label xml:lang="en">geostationary orbiting satellite</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/64/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#65">
+        <rdfs:label xml:lang="en">orbiting satellite</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/65/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#66">
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/66/"/>
+        <rdfs:label xml:lang="en">manned spacecraft</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#67">
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/67/"/>
+        <rdfs:label xml:lang="en">helicopter</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#68">
+        <rdfs:label xml:lang="en">satellite</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/68/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#69">
+        <rdfs:label xml:lang="en">autogyro</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/69/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#70">
+        <rdfs:label xml:lang="en">organism</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/70/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#71">
+        <rdfs:label xml:lang="en">human</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/71/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#72">
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/72/"/>
+        <rdfs:label xml:lang="en">diver</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#73">
+        <rdfs:label xml:lang="en">flightless bird</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/73/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#74">
+        <rdfs:label xml:lang="en">seabird and duck</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/74/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#75">
+        <rdfs:label xml:lang="en">cetacean</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/75/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#76">
+        <rdfs:label xml:lang="en">fish</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/76/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#77">
+        <rdfs:label xml:lang="en">land-sea mammals</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/77/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#9A">
+        <rdfs:label xml:lang="en">DUKW</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/9A/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#9B">
+        <rdfs:label xml:lang="en">hovercraft</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/9B/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#90">
+        <rdfs:label xml:lang="en">cryosphere</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/90/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#91">
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/91/"/>
+        <rdfs:label xml:lang="en">ice island</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#92">
+        <rdfs:label xml:lang="en">ice shelf</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/92/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#93">
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/93/"/>
+        <rdfs:label xml:lang="en">pack ice</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#94">
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/94/"/>
+        <rdfs:label xml:lang="en">drift ice</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#95">
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/95/"/>
+        <rdfs:label xml:lang="en">amphibious vehicle</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#96">
+        <rdfs:label xml:lang="en">amphibious crawler</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/96/"/>
     </rdf:Description>
     
 
@@ -1756,877 +1676,877 @@
      -->
 
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#6Z"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#6Z"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#0"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#0"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#51"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#51"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#10"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#10"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#19"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#19"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#11"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#11"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#38"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#38"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#12"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#12"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#9B"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#9B"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#13"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#13"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#17"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#17"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#14"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#14"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#20"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#20"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#15"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#15"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#52"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#52"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#16"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#16"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#6A"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#6A"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#17"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#17"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#34"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#34"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#18"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#18"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#74"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#74"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#19"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#19"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#70"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#70"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#20"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#20"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#96"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#96"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#21"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#21"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#61"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#61"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#22"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#22"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#6C"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#6C"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#23"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#23"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#72"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#72"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#24"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#24"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#49"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#49"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#25"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#25"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#16"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#16"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#26"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#26"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#69"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#69"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#27"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#27"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#24"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#24"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#3A"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#3A"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#48"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#48"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#3B"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#3B"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#45"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#45"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#3C"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#3C"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#35"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#35"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#3Z"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#3Z"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#68"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#68"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#30"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#30"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#65"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#65"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#31"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#31"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#63"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#63"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#32"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#32"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#31"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#31"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#33"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#33"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#50"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#50"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#34"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#34"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#43"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#43"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#35"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#35"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#44"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#44"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#36"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#36"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#26"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#26"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#37"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#37"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#91"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#91"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#38"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#38"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#11"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#11"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#39"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#39"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#9A"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#9A"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#41"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#41"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#6D"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#6D"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#42"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#42"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#0"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#0"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#43"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#43"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#27"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#27"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#44"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#44"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#23"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#23"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#45"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#45"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#10"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#10"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#46"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#46"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#77"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#77"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#47"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#47"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#12"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#12"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#48"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#48"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#64"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#64"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#49"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#49"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#13"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#13"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#50"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#50"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#54"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#54"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#51"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#51"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#21"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#21"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#52"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#52"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#3A"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#3A"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#53"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#53"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#60"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#60"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#54"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#54"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#6B"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#6B"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#6A"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#6A"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#73"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#73"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#6B"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#6B"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#47"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#47"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#6C"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#6C"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#41"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#41"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#6D"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#6D"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#46"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#46"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#6Z"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#6Z"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#66"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#66"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#60"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#60"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#37"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#37"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#61"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#61"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#71"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#71"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#62"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#62"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#32"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#32"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#63"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#63"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#18"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#18"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#64"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#64"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#25"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#25"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#65"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#65"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#42"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#42"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#66"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#66"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#3Z"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#3Z"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#67"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#67"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#14"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#14"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#68"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#68"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#93"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#93"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#69"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#69"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#62"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#62"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#70"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#70"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#90"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#90"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#71"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#71"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#3B"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#3B"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#72"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#72"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#15"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#15"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#73"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#73"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#95"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#95"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#74"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#74"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#30"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#30"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#75"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#75"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#39"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#39"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#76"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#76"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#67"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#67"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#77"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#77"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#33"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#33"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#9A"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#9A"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#92"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#92"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#9B"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#9B"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#94"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#94"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#90"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#90"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#76"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#76"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#91"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#91"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#75"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#75"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#92"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#92"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#53"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#53"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#93"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#93"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#22"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#22"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#94"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#94"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#3C"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#3C"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#95"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#95"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/voc/nvs/L06#36"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/base/main#hasPlatformType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasPlatformType"/>
         <owl:someValuesFrom>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/dev/voc/nvs/L06#36"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#96"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#96"/>
     </owl:Restriction>
 </rdf:RDF>
 
 
 
-<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+<!-- Generated by the OWL API (version 4.1.3.20151118-2017) https://github.com/owlcs/owlapi -->
 
