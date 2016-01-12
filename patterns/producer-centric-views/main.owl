@@ -508,7 +508,38 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
         <owl:inverseOf rdf:resource="http://schema.geolink.org/dev/base/main#isIdentifierOf"/>
         <rdfs:domain>
             <owl:Class>
-                <owl:complementOf rdf:resource="http://schema.geolink.org/dev/base/main#Identifier"/>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Award"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Country"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Cruise"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#CruiseType"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Dataset"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#DigitalObject"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Dive"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Document"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#DocumentType"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Feature"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#FeatureType"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Format"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#GeologicAge"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Instrument"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#InstrumentType"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#MeasurementType"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Meeting"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Organization"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Person"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#PhysicalSample"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#PhysicalSampleType"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Place"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#PlaceType"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Platform"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#PlatformType"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#PortCall"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Program"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#Repository"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#RoleType"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/dev/base/main#StratigraphicUnit"/>
+                </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
         <rdfs:range rdf:resource="http://schema.geolink.org/dev/base/main#Identifier"/>
@@ -2437,6 +2468,7 @@ d:age1 :hasFirstAppearance
         <rdfs:comment>Capturing various forms of identifiers, e.g., DOIs, ARKs, local strings, UUID strings, etc. Can be any URI that is understood as identifier of an entity, or a blank node, in which case, hasIdentifierScheme and hasIdentifierValue properties should be used to provide details.</rdfs:comment>
         <rdfs:label>Identifier</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://schema.geolink.org/dev/base/main#hasIdentifier"/>
+        <rdfs:seeAlso rdf:resource="http://schema.geolink.org/dev/base/main#hasIdentifierScheme"/>
         <rdfs:seeAlso rdf:resource="http://schema.geolink.org/dev/base/main#hasIdentifierValue"/>
     </owl:Class>
     
