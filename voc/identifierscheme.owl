@@ -1,37 +1,27 @@
 <?xml version="1.0"?>
-
-
-<!DOCTYPE rdf:RDF [
-    <!ENTITY datacite "http://purl.org/spar/datacite" >
-    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
-    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
-    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
-    <!ENTITY idscheme "http://schema.geolink.org/1.0/voc/identifierscheme#" >
-    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-]>
-
-
 <rdf:RDF xmlns="http://schema.geolink.org/1.0/voc/identifierscheme#"
      xml:base="http://schema.geolink.org/1.0/voc/identifierscheme"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:datacite="http://purl.org/spar/datacite"
-     xmlns:dc="http://purl.org/dc/elements/1.1/"
-     xmlns:idscheme="http://schema.geolink.org/1.0/voc/identifierscheme#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:datacite="http://purl.org/spar/datacite/"
+     xmlns:cpannotationschema="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-    <owl:Ontology rdf:about="http://schema.geolink.org/voc/identifierscheme">
-        <dc:date>2015-12-07</dc:date>
-        <dc:description>This ontology extends the list of identifiers provided by the DataCite Ontology and does this by containing a set of NamedIndividuals that conform to the DataCite Ontology.</dc:description>
-        <dc:creator>Bryce Mecum</dc:creator>
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:idscheme="http://schema.geolink.org/1.0/voc/identifierscheme#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owlapi="http://www.semanticweb.org/owlapi#">
+    <owl:Ontology rdf:about="http://schema.geolink.org/1.0/voc/identifierscheme">
+        <owl:imports rdf:resource="http://purl.org/spar/datacite/"/>
         <dc:title>GeoLink Identifier Ontology</dc:title>
-        <owl:imports rdf:resource="&datacite;/"/>
+        <dc:creator>Bryce Mecum</dc:creator>
+        <dc:description>This ontology extends the list of identifiers provided by the DataCite Ontology and does this by containing a set of NamedIndividuals that conform to the DataCite Ontology.</dc:description>
+        <dc:date>2015-12-07</dc:date>
     </owl:Ontology>
+    
 
 
-
-    <!--
+    <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Annotation properties
@@ -39,40 +29,40 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-
-
-
-     <!-- http://www.w3.org/2000/01/rdf-schema#comment -->
-
-     <owl:AnnotationProperty rdf:about="&rdfs;comment"/>
-
+    
 
 
     <!-- http://purl.org/dc/elements/1.1/creator -->
 
-    <owl:AnnotationProperty rdf:about="&dc;creator"/>
-
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
 
 
     <!-- http://purl.org/dc/elements/1.1/date -->
 
-    <owl:AnnotationProperty rdf:about="&dc;date"/>
-
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date"/>
+    
 
 
     <!-- http://purl.org/dc/elements/1.1/description -->
 
-    <owl:AnnotationProperty rdf:about="&dc;description"/>
-
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    
 
 
     <!-- http://purl.org/dc/elements/1.1/title -->
 
-    <owl:AnnotationProperty rdf:about="&dc;title"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    
 
 
+    <!-- http://www.w3.org/2000/01/rdf-schema#comment -->
 
-    <!--
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#comment"/>
+    
+
+
+    <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Individuals
@@ -80,63 +70,64 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
 
 
+    <!-- http://schema.geolink.org/1.0/voc/identifierscheme#gvp -->
 
-    <!-- http://schema.geolink.org/voc/identifiers#scar -->
-
-    <owl:NamedIndividual rdf:about="&idscheme;scar">
-        <rdf:type rdf:resource="&datacite;/ResourceIdentifierScheme"/>
-        <rdfs:label xml:lang="en">scar</rdfs:label>
-        <rdfs:comment xml:lang="en">Scientific Committee on Antarctic Research (SCAR) Composite Gazetteer of Antarctica (CGA) Unique Identifier Code</rdfs:comment>
-        <rdfs:seeAlso>https://www1.data.antarctica.gov.au/aadc/gaz/scar/information.cfm</rdfs:seeAlso>
-    </owl:NamedIndividual>
-
-
-
-    <!-- http://schema.geolink.org/voc/identifiers#gvp -->
-
-    <owl:NamedIndividual rdf:about="&idscheme;gvp">
-        <rdf:type rdf:resource="&datacite;/ResourceIdentifierScheme"/>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/identifierscheme#gvp">
+        <rdf:type rdf:resource="http://purl.org/spar/datacite/ResourceIdentifierScheme"/>
+        <rdfs:comment xml:lang="en">Global Volcanism Program (GVP) Volcano Number (VNUM)</rdfs:comment>
         <rdfs:label xml:lang="en">gvp</rdfs:label>
         <rdfs:seeAlso>http://volcano.si.edu/gvp_vnums.cfm</rdfs:seeAlso>
-        <rdfs:comment xml:lang="en">Global Volcanism Program (GVP) Volcano Number (VNUM)</rdfs:comment>
     </owl:NamedIndividual>
+    
 
 
+    <!-- http://schema.geolink.org/1.0/voc/identifierscheme#igsn -->
 
-    <!-- http://schema.geolink.org/voc/identifiers#igsn -->
-
-    <owl:NamedIndividual rdf:about="&idscheme;igsn">
-        <rdf:type rdf:resource="&datacite;/ResourceIdentifierScheme"/>
-        <rdfs:label xml:lang="en">igsn</rdfs:label>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/identifierscheme#igsn">
+        <rdf:type rdf:resource="http://purl.org/spar/datacite/ResourceIdentifierScheme"/>
         <rdfs:comment xml:lang="en">International Geo Sample Number</rdfs:comment>
+        <rdfs:label xml:lang="en">igsn</rdfs:label>
         <rdfs:seeAlso>http://www.geosamples.org/igsnabout</rdfs:seeAlso>
     </owl:NamedIndividual>
+    
 
 
+    <!-- http://schema.geolink.org/1.0/voc/identifierscheme#interridge -->
 
-    <!-- http://schema.geolink.org/voc/identifiers#interridge -->
-
-    <owl:NamedIndividual rdf:about="&idscheme;interridge">
-        <rdf:type rdf:resource="&datacite;/ResourceIdentifierScheme"/>
-        <rdfs:label xml:lang="en">interridge</rdfs:label>
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/identifierscheme#interridge">
+        <rdf:type rdf:resource="http://purl.org/spar/datacite/ResourceIdentifierScheme"/>
         <rdfs:comment xml:lang="en">InterRidge Vents Database Identifier</rdfs:comment>
+        <rdfs:label xml:lang="en">interridge</rdfs:label>
         <rdfs:seeAlso>http://vents-data.interridge.org/about_the_database</rdfs:seeAlso>
     </owl:NamedIndividual>
+    
 
 
+    <!-- http://schema.geolink.org/1.0/voc/identifierscheme#scar -->
 
-    <!-- http://schema.geolink.org/voc/identifiers#uuid -->
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/identifierscheme#scar">
+        <rdf:type rdf:resource="http://purl.org/spar/datacite/ResourceIdentifierScheme"/>
+        <rdfs:comment xml:lang="en">Scientific Committee on Antarctic Research (SCAR) Composite Gazetteer of Antarctica (CGA) Unique Identifier Code</rdfs:comment>
+        <rdfs:label xml:lang="en">scar</rdfs:label>
+        <rdfs:seeAlso>https://www1.data.antarctica.gov.au/aadc/gaz/scar/information.cfm</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
 
-    <owl:NamedIndividual rdf:about="&idscheme;uuid">
-        <rdf:type rdf:resource="&datacite;/ResourceIdentifierScheme"/>
-        <rdfs:label xml:lang="en">uuid</rdfs:label>
-        <rdfs:isDefinedBy>https://www.ietf.org/rfc/rfc4122.txt</rdfs:isDefinedBy>
+
+    <!-- http://schema.geolink.org/1.0/voc/identifierscheme#uuid -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/identifierscheme#uuid">
+        <rdf:type rdf:resource="http://purl.org/spar/datacite/ResourceIdentifierScheme"/>
         <rdfs:comment xml:lang="en">Universally Unique Identifier</rdfs:comment>
+        <rdfs:isDefinedBy>https://www.ietf.org/rfc/rfc4122.txt</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">uuid</rdfs:label>
     </owl:NamedIndividual>
 </rdf:RDF>
 
 
 
-<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+<!-- Generated by the OWL API (version 4.1.3.20151118-2017) https://github.com/owlcs/owlapi -->
+
