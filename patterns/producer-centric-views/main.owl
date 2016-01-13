@@ -2658,7 +2658,7 @@ http://purl.org/spar/datacite/doi for DOI.</rdfs:comment>
     <!-- http://schema.geolink.org/1.0/base/main#Submersible -->
 
     <owl:Class rdf:about="http://schema.geolink.org/1.0/base/main#Submersible">
-        <owl:equivalentClass rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#20"/>
+        <owl:equivalentClass rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/20/"/>
         <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#Platform"/>
         <rdfs:label>Submersible</rdfs:label>
     </owl:Class>
@@ -2668,7 +2668,7 @@ http://purl.org/spar/datacite/doi for DOI.</rdfs:comment>
     <!-- http://schema.geolink.org/1.0/base/main#Vessel -->
 
     <owl:Class rdf:about="http://schema.geolink.org/1.0/base/main#Vessel">
-        <owl:equivalentClass rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L06#3Z"/>
+        <owl:equivalentClass rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/3Z/"/>
         <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#Platform"/>
         <rdfs:comment>The platform enabling a Cruise</rdfs:comment>
         <rdfs:label>Vessel</rdfs:label>
@@ -2676,17 +2676,15 @@ http://purl.org/spar/datacite/doi for DOI.</rdfs:comment>
     
 
 
-    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#20 -->
+    <!-- http://vocab.nerc.ac.uk/collection/L06/current/20/ -->
 
-    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#20"/>
+    <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/20/"/>
     
 
 
-    <!-- http://schema.geolink.org/1.0/voc/nvs/L06#3Z -->
+    <!-- http://vocab.nerc.ac.uk/collection/L06/current/3Z/ -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/nvs/L06#3Z">
-        <rdfs:label>NERC Vocabulary Server : Vocabulary L06 : Term 3Z</rdfs:label>
-    </owl:Class>
+    <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/3Z/"/>
 </rdf:RDF>
 
 
