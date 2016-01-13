@@ -2263,6 +2263,31 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     
 
 
+    <!-- http://schema.geolink.org/1.0/base/main#hasTitle -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/1.0/base/main#hasTitle">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/base/main#Award"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/base/main#Cruise"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/base/main#Dataset"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/base/main#DigitalObject"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/base/main#Document"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/base/main#Feature"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/base/main#Instrument"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/base/main#Organization"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/base/main#Place"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/base/main#Program"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>hasTitle</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://schema.geolink.org/1.0/base/main#hasTrack -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/1.0/base/main#hasTrack">
@@ -2287,32 +2312,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:comment>The range of this property is a dateTime indicating when the Dataset or DigitalObject was uploaded to its originDigitalRepository.</rdfs:comment>
         <rdfs:label>hasUploadDate</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/base/main#title -->
-
-    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/1.0/base/main#title">
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/base/main#Award"/>
-                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/base/main#Cruise"/>
-                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/base/main#Dataset"/>
-                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/base/main#DigitalObject"/>
-                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/base/main#Document"/>
-                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/base/main#Feature"/>
-                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/base/main#Instrument"/>
-                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/base/main#Organization"/>
-                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/base/main#Person"/>
-                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/base/main#Place"/>
-                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/base/main#Program"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:label>title</rdfs:label>
     </owl:DatatypeProperty>
     
 
