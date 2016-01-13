@@ -12,16 +12,16 @@
 ]>
 
 
-<rdf:RDF xmlns="http://schema.geolink.org/voc/identifiers#"
-     xml:base="http://schema.geolink.org/voc/identifiers"
+<rdf:RDF xmlns="http://schema.geolink.org/1.0/voc/identifierscheme#"
+     xml:base="http://schema.geolink.org/1.0/voc/identifierscheme"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:datacite="http://purl.org/spar/datacite"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
-     xmlns:identifiers="http://schema.geolink.org/voc/identifiers#"
+     xmlns:idscheme="http://schema.geolink.org/1.0/voc/identifierscheme#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-    <owl:Ontology rdf:about="http://schema.geolink.org/voc/identifiers">
+    <owl:Ontology rdf:about="http://schema.geolink.org/voc/identifierscheme">
         <dc:date>2015-12-07</dc:date>
         <dc:description>This ontology extends the list of identifiers provided by the DataCite Ontology and does this by containing a set of NamedIndividuals that conform to the DataCite Ontology.</dc:description>
         <dc:creator>Bryce Mecum</dc:creator>
@@ -85,7 +85,7 @@
 
     <!-- http://schema.geolink.org/voc/identifiers#scar -->
 
-    <owl:NamedIndividual rdf:about="&identifiers;scar">
+    <owl:NamedIndividual rdf:about="&identifierscheme;scar">
         <rdf:type rdf:resource="&datacite;/ResourceIdentifierScheme"/>
         <rdfs:label xml:lang="en">scar</rdfs:label>
         <rdfs:comment xml:lang="en">Scientific Committee on Antarctic Research (SCAR) Composite Gazetteer of Antarctica (CGA) Unique Identifier Code</rdfs:comment>
@@ -96,7 +96,7 @@
 
     <!-- http://schema.geolink.org/voc/identifiers#gvp -->
 
-    <owl:NamedIndividual rdf:about="&identifiers;gvp">
+    <owl:NamedIndividual rdf:about="&identifierscheme;gvp">
         <rdf:type rdf:resource="&datacite;/ResourceIdentifierScheme"/>
         <rdfs:label xml:lang="en">gvp</rdfs:label>
         <rdfs:seeAlso>http://volcano.si.edu/gvp_vnums.cfm</rdfs:seeAlso>
@@ -107,7 +107,7 @@
 
     <!-- http://schema.geolink.org/voc/identifiers#igsn -->
 
-    <owl:NamedIndividual rdf:about="&identifiers;igsn">
+    <owl:NamedIndividual rdf:about="&identifierscheme;igsn">
         <rdf:type rdf:resource="&datacite;/ResourceIdentifierScheme"/>
         <rdfs:label xml:lang="en">igsn</rdfs:label>
         <rdfs:comment xml:lang="en">International Geo Sample Number</rdfs:comment>
@@ -118,7 +118,7 @@
 
     <!-- http://schema.geolink.org/voc/identifiers#interridge -->
 
-    <owl:NamedIndividual rdf:about="&identifiers;interridge">
+    <owl:NamedIndividual rdf:about="&identifierscheme;interridge">
         <rdf:type rdf:resource="&datacite;/ResourceIdentifierScheme"/>
         <rdfs:label xml:lang="en">interridge</rdfs:label>
         <rdfs:comment xml:lang="en">InterRidge Vents Database Identifier</rdfs:comment>
@@ -129,7 +129,7 @@
 
     <!-- http://schema.geolink.org/voc/identifiers#uuid -->
 
-    <owl:NamedIndividual rdf:about="&identifiers;uuid">
+    <owl:NamedIndividual rdf:about="&identifierscheme;uuid">
         <rdf:type rdf:resource="&datacite;/ResourceIdentifierScheme"/>
         <rdfs:label xml:lang="en">uuid</rdfs:label>
         <rdfs:isDefinedBy>https://www.ietf.org/rfc/rfc4122.txt</rdfs:isDefinedBy>
