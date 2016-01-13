@@ -6,7 +6,9 @@
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="http://schema.geolink.org/1.0/base/physicalsample"/>
+    <owl:Ontology rdf:about="http://schema.geolink.org/1.0/base/physicalsample">
+        <rdfs:comment>This ontology is imported by main.owl (the GeoLink base ontology). It contains classes relevant for physical samples: PhysicalSample, PhysicalSampleType, GeologicAge, GeologicAgeAppearance, and StratigraphicUnit, and properties specific for those classes but not for other classes in the base ontology. Note that the base ontology also defines a number of properties used by classes in this ontology, but not specific to them, e.g., hasIdentifier, hasContributor, etc.</rdfs:comment>
+    </owl:Ontology>
     
 
 
@@ -216,6 +218,15 @@
     
 
 
+    <!-- http://schema.geolink.org/1.0/base/main#isOriginOf -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/base/main#isOriginOf">
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/1.0/base/main#originatesFrom"/>
+        <rdfs:label>isOriginOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://schema.geolink.org/1.0/base/main#isPhysicalRepositoryOf -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/base/main#isPhysicalRepositoryOf">
@@ -244,6 +255,23 @@
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/base/main#isStratigraphicUnitOf">
         <rdfs:label>isStratigraphicUnitOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/1.0/base/main#originatesFrom -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/base/main#originatesFrom">
+        <rdfs:domain rdf:resource="http://schema.geolink.org/1.0/base/main#PhysicalSample"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/base/main#Feature"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/base/main#PhysicalSample"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:label>originatesFrom</rdfs:label>
     </owl:ObjectProperty>
     
 

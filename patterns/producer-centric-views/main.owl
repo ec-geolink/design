@@ -1298,15 +1298,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     
 
 
-    <!-- http://schema.geolink.org/1.0/base/main#isOriginOf -->
-
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/base/main#isOriginOf">
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/1.0/base/main#originatesFrom"/>
-        <rdfs:label>isOriginOf</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://schema.geolink.org/1.0/base/main#isPartOf -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/base/main#isPartOf">
@@ -1508,23 +1499,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/base/main#isVesselOf">
         <rdfs:label>isVesselOf</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/base/main#originatesFrom -->
-
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/base/main#originatesFrom">
-        <rdfs:domain rdf:resource="http://schema.geolink.org/1.0/base/main#PhysicalSample"/>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/base/main#Feature"/>
-                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/base/main#PhysicalSample"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
-        <rdfs:label>originatesFrom</rdfs:label>
     </owl:ObjectProperty>
     
 
