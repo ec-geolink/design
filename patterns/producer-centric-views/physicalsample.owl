@@ -7,7 +7,11 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="http://schema.geolink.org/1.0/base/physicalsample">
-        <rdfs:comment>This ontology is imported by main.owl (the GeoLink base ontology). It contains classes relevant for physical samples: PhysicalSample, PhysicalSampleType, GeologicAge, GeologicAgeAppearance, and StratigraphicUnit, and properties specific for those classes but not for other classes in the base ontology. Note that the base ontology also defines a number of properties used by classes in this ontology, but not specific to them, e.g., hasIdentifier, hasContributor, etc.</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="http://schema.igsn.org"/>
+        <rdfs:seeAlso rdf:resource="http://schema.geolink.org/1.0/base/main"/>
+        <rdfs:comment>This ontology is imported by main.owl (the GeoLink base ontology). It contains classes relevant for physical samples: PhysicalSample, PhysicalSampleType, GeologicAge, GeologicAgeAppearance, and StratigraphicUnit, and properties specific for those classes but not for other classes in the base ontology. Note that the base ontology also defines a number of properties used by classes in this ontology, but not specific to them, e.g., hasIdentifier, hasContributor, etc.
+
+Our modeling of physical sample metadata roughly corresponds to the International Geo Sample Number (IGSN) metadata schema.</rdfs:comment>
     </owl:Ontology>
     
 
