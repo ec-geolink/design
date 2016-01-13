@@ -1809,6 +1809,7 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     <!-- http://schema.geolink.org/1.0/base/main#hasDescription -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/1.0/base/main#hasDescription">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:unionOf rdf:parseType="Collection">
@@ -1882,12 +1883,42 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     
 
 
+    <!-- http://schema.geolink.org/1.0/base/main#hasFamilyName -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/1.0/base/main#hasFamilyName">
+        <rdfs:domain rdf:resource="http://schema.geolink.org/1.0/base/main#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>hasFamilyName</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://schema.geolink.org/1.0/base/main#hasFullName"/>
+        <rdfs:seeAlso rdf:resource="http://schema.geolink.org/1.0/base/main#hasGivenName"/>
+        <rdfs:seeAlso rdf:resource="http://schema.geolink.org/1.0/base/main#hasMiddleName"/>
+        <rdfs:seeAlso rdf:resource="http://schema.geolink.org/1.0/base/main#hasNamePrefix"/>
+        <rdfs:seeAlso rdf:resource="http://schema.geolink.org/1.0/base/main#hasNameSuffix"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://schema.geolink.org/1.0/base/main#hasFormatType -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/1.0/base/main#hasFormatType">
         <rdfs:domain rdf:resource="http://schema.geolink.org/1.0/base/main#Format"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:label>hasFormatType</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/1.0/base/main#hasFullName -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/1.0/base/main#hasFullName">
+        <rdfs:domain rdf:resource="http://schema.geolink.org/1.0/base/main#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>hasFullName</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://schema.geolink.org/1.0/base/main#hasFamilyName"/>
+        <rdfs:seeAlso rdf:resource="http://schema.geolink.org/1.0/base/main#hasGivenName"/>
+        <rdfs:seeAlso rdf:resource="http://schema.geolink.org/1.0/base/main#hasMiddleName"/>
+        <rdfs:seeAlso rdf:resource="http://schema.geolink.org/1.0/base/main#hasNamePrefix"/>
+        <rdfs:seeAlso rdf:resource="http://schema.geolink.org/1.0/base/main#hasNameSuffix"/>
     </owl:DatatypeProperty>
     
 
@@ -1937,6 +1968,21 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
         </rdfs:domain>
         <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#wktLiteral"/>
         <rdfs:label>hasGeometryAsWktLiteral</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/1.0/base/main#hasGivenName -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/1.0/base/main#hasGivenName">
+        <rdfs:domain rdf:resource="http://schema.geolink.org/1.0/base/main#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>hasGivenName</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://schema.geolink.org/1.0/base/main#hasFamilyName"/>
+        <rdfs:seeAlso rdf:resource="http://schema.geolink.org/1.0/base/main#hasFullName"/>
+        <rdfs:seeAlso rdf:resource="http://schema.geolink.org/1.0/base/main#hasMiddleName"/>
+        <rdfs:seeAlso rdf:resource="http://schema.geolink.org/1.0/base/main#hasNamePrefix"/>
+        <rdfs:seeAlso rdf:resource="http://schema.geolink.org/1.0/base/main#hasNameSuffix"/>
     </owl:DatatypeProperty>
     
 
@@ -2017,12 +2063,57 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     
 
 
+    <!-- http://schema.geolink.org/1.0/base/main#hasMiddleName -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/1.0/base/main#hasMiddleName">
+        <rdfs:domain rdf:resource="http://schema.geolink.org/1.0/base/main#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>hasMiddleName</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://schema.geolink.org/1.0/base/main#hasFamilyName"/>
+        <rdfs:seeAlso rdf:resource="http://schema.geolink.org/1.0/base/main#hasFullName"/>
+        <rdfs:seeAlso rdf:resource="http://schema.geolink.org/1.0/base/main#hasGivenName"/>
+        <rdfs:seeAlso rdf:resource="http://schema.geolink.org/1.0/base/main#hasNamePrefix"/>
+        <rdfs:seeAlso rdf:resource="http://schema.geolink.org/1.0/base/main#hasNameSuffix"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://schema.geolink.org/1.0/base/main#hasModel -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/1.0/base/main#hasModel">
         <rdfs:domain rdf:resource="http://schema.geolink.org/1.0/base/main#Instrument"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:label>hasModel</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/1.0/base/main#hasNamePrefix -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/1.0/base/main#hasNamePrefix">
+        <rdfs:domain rdf:resource="http://schema.geolink.org/1.0/base/main#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>hasNamePrefix</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://schema.geolink.org/1.0/base/main#hasFamilyName"/>
+        <rdfs:seeAlso rdf:resource="http://schema.geolink.org/1.0/base/main#hasFullName"/>
+        <rdfs:seeAlso rdf:resource="http://schema.geolink.org/1.0/base/main#hasGivenName"/>
+        <rdfs:seeAlso rdf:resource="http://schema.geolink.org/1.0/base/main#hasMiddleName"/>
+        <rdfs:seeAlso rdf:resource="http://schema.geolink.org/1.0/base/main#hasNameSuffix"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.geolink.org/1.0/base/main#hasNameSuffix -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/1.0/base/main#hasNameSuffix">
+        <rdfs:domain rdf:resource="http://schema.geolink.org/1.0/base/main#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>hasNameSuffix</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://schema.geolink.org/1.0/base/main#hasFamilyName"/>
+        <rdfs:seeAlso rdf:resource="http://schema.geolink.org/1.0/base/main#hasFullName"/>
+        <rdfs:seeAlso rdf:resource="http://schema.geolink.org/1.0/base/main#hasGivenName"/>
+        <rdfs:seeAlso rdf:resource="http://schema.geolink.org/1.0/base/main#hasMiddleName"/>
+        <rdfs:seeAlso rdf:resource="http://schema.geolink.org/1.0/base/main#hasNamePrefix"/>
     </owl:DatatypeProperty>
     
 
@@ -2186,66 +2277,6 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:comment>The range of this property is a dateTime indicating when the Dataset or DigitalObject was uploaded to its originDigitalRepository.</rdfs:comment>
         <rdfs:label>hasUploadDate</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/base/main#nameFamily -->
-
-    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/1.0/base/main#nameFamily">
-        <rdfs:domain rdf:resource="http://schema.geolink.org/1.0/base/main#Person"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:label>nameFamily</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/base/main#nameFull -->
-
-    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/1.0/base/main#nameFull">
-        <rdfs:domain rdf:resource="http://schema.geolink.org/1.0/base/main#Person"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:label>nameFull</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/base/main#nameGiven -->
-
-    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/1.0/base/main#nameGiven">
-        <rdfs:domain rdf:resource="http://schema.geolink.org/1.0/base/main#Person"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:label>nameGiven</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/base/main#nameMiddle -->
-
-    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/1.0/base/main#nameMiddle">
-        <rdfs:domain rdf:resource="http://schema.geolink.org/1.0/base/main#Person"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:label>nameMiddle</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/base/main#namePrefix -->
-
-    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/1.0/base/main#namePrefix">
-        <rdfs:domain rdf:resource="http://schema.geolink.org/1.0/base/main#Person"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:label>namePrefix</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/base/main#nameSuffix -->
-
-    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/1.0/base/main#nameSuffix">
-        <rdfs:domain rdf:resource="http://schema.geolink.org/1.0/base/main#Person"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:label>nameSuffix</rdfs:label>
     </owl:DatatypeProperty>
     
 
