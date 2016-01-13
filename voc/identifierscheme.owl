@@ -85,7 +85,7 @@
 
     <!-- http://schema.geolink.org/voc/identifiers#scar -->
 
-    <owl:NamedIndividual rdf:about="&identifierscheme;scar">
+    <owl:NamedIndividual rdf:about="&idscheme;scar">
         <rdf:type rdf:resource="&datacite;/ResourceIdentifierScheme"/>
         <rdfs:label xml:lang="en">scar</rdfs:label>
         <rdfs:comment xml:lang="en">Scientific Committee on Antarctic Research (SCAR) Composite Gazetteer of Antarctica (CGA) Unique Identifier Code</rdfs:comment>
@@ -96,7 +96,7 @@
 
     <!-- http://schema.geolink.org/voc/identifiers#gvp -->
 
-    <owl:NamedIndividual rdf:about="&identifierscheme;gvp">
+    <owl:NamedIndividual rdf:about="&idscheme;gvp">
         <rdf:type rdf:resource="&datacite;/ResourceIdentifierScheme"/>
         <rdfs:label xml:lang="en">gvp</rdfs:label>
         <rdfs:seeAlso>http://volcano.si.edu/gvp_vnums.cfm</rdfs:seeAlso>
@@ -107,7 +107,7 @@
 
     <!-- http://schema.geolink.org/voc/identifiers#igsn -->
 
-    <owl:NamedIndividual rdf:about="&identifierscheme;igsn">
+    <owl:NamedIndividual rdf:about="&idscheme;igsn">
         <rdf:type rdf:resource="&datacite;/ResourceIdentifierScheme"/>
         <rdfs:label xml:lang="en">igsn</rdfs:label>
         <rdfs:comment xml:lang="en">International Geo Sample Number</rdfs:comment>
@@ -118,7 +118,7 @@
 
     <!-- http://schema.geolink.org/voc/identifiers#interridge -->
 
-    <owl:NamedIndividual rdf:about="&identifierscheme;interridge">
+    <owl:NamedIndividual rdf:about="&idscheme;interridge">
         <rdf:type rdf:resource="&datacite;/ResourceIdentifierScheme"/>
         <rdfs:label xml:lang="en">interridge</rdfs:label>
         <rdfs:comment xml:lang="en">InterRidge Vents Database Identifier</rdfs:comment>
@@ -129,7 +129,7 @@
 
     <!-- http://schema.geolink.org/voc/identifiers#uuid -->
 
-    <owl:NamedIndividual rdf:about="&identifierscheme;uuid">
+    <owl:NamedIndividual rdf:about="&idscheme;uuid">
         <rdf:type rdf:resource="&datacite;/ResourceIdentifierScheme"/>
         <rdfs:label xml:lang="en">uuid</rdfs:label>
         <rdfs:isDefinedBy>https://www.ietf.org/rfc/rfc4122.txt</rdfs:isDefinedBy>
