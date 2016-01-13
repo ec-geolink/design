@@ -735,8 +735,12 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
             </owl:Class>
         </rdfs:domain>
         <rdfs:range rdf:resource="http://schema.geolink.org/1.0/base/main#Participant"/>
-        <rdfs:comment>The range of this property includes instances of Participant that act as the domain of the &apos;hasRoleType&apos;, &apos;isPerformedBy&apos;, and &apos;hasAffiliation&apos; property. Graph patterns for data using this property can be of the form:
-?X :hasParticipant ?Y.  ?Y a :Participant; :hasRoleType ?RT ; :isPerformedBy ?P; :hasAffiliation ?O.</rdfs:comment>
+        <rdfs:comment>The range of this property includes instances of Participant that act as the domain of the &apos;hasRoleType&apos;, &apos;isPerformedBy&apos;, &apos;hasAffiliation&apos; property. Graph patterns for data using this property can be of the form:
+?X :hasParticipant ?Y.  
+?Y a :Participant . 
+?Y :hasRoleType ?RT. 
+?Y :isPerformedBy ?P. 
+?Y :hasAffiliation ?O.</rdfs:comment>
         <rdfs:label>hasParticipant</rdfs:label>
     </owl:ObjectProperty>
     
@@ -2532,7 +2536,7 @@ http://purl.org/spar/datacite/doi for DOI.</rdfs:comment>
     <!-- http://schema.geolink.org/1.0/base/main#Participant -->
 
     <owl:Class rdf:about="http://schema.geolink.org/1.0/base/main#Participant">
-        <rdfs:comment>A reification of the 4-ary relation representing a participation of a Person, who is affiliated to an Organization, in a Cruise with a certain RoleType.</rdfs:comment>
+        <rdfs:comment>A reification of the n-ary (n &gt;= 3) relation representing a participation of a Person performing a certain RoleType in a Cruise/Award/Program/Dataset/PhysicalSample. To an instance of Participant, one can attach additional information using properties such as hasAffiliation</rdfs:comment>
         <rdfs:label>Participant</rdfs:label>
     </owl:Class>
     

@@ -593,7 +593,8 @@
         <rdfs:label>Role: Co-Principal Investigator</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_collector">
-        <rdfs:comment>Role: Collector (used by PhysicalSample)</rdfs:comment>
+        <rdfs:label>Role: Collector</rdfs:label>
+        <rdfs:comment>Used by PhysicalSample</rdfs:comment>
     </rdf:Description>
     <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_contact">
         <rdfs:label>Role: Contact</rdfs:label>
