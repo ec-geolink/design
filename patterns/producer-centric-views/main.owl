@@ -91,6 +91,8 @@
     <!-- http://schema.geolink.org/1.0/base/main#coReferentOf -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/base/main#coReferentOf">
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/1.0/base/main#coReferentOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
         <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:comment>This property is used to state that an object (instance) matches with another object. This can either be a result of manual matching or running some coreference resolution algorithm.</rdfs:comment>
