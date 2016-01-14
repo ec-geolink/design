@@ -11,7 +11,7 @@
 <http://schema.geolink.org/1.0/base/main> a owl:Ontology ;
 	owl:imports <http://schema.geolink.org/1.0/voc/nvs/L06> , <http://schema.geolink.org/1.0/voc/nvs/P02> , <http://schema.geolink.org/1.0/voc/nvs/P03> , <http://schema.geolink.org/1.0/base/physicalsample> , <http://schema.geolink.org/1.0/voc/nvs/C17> , <http://schema.geolink.org/1.0/voc/nvs/L22> , <http://schema.geolink.org/1.0/voc/gebco/featuretype> , <http://schema.geolink.org/1.0/voc/local> , <http://schema.geolink.org/1.0/voc/nvs/L05> ;
 	rdfs:label "GeoLink base ontology." ;
-	rdfs:comment "A base ontology providing a conceptual view into the GeoLink patterns." .
+	rdfs:comment "A base ontology providing a conceptual view into the GeoLink patterns. For data providers, this is the default view of the patterns." .
 # 
 # 
 # #################################################################
@@ -20,6 +20,10 @@
 # #
 # #################################################################
 # 
+# 
+# http://org.semanticweb.owlapi/error#Error1
+
+<http://org.semanticweb.owlapi/error#Error1> a rdfs:Datatype .
 # 
 # http://www.opengis.net/ont/geosparql#wktLiteral
 
@@ -346,10 +350,18 @@ _:genid35 a rdf:List ;
 	rdfs:domain _:genid40 .
 
 _:genid40 a owl:Class ;
-	owl:unionOf _:genid42 .
+	owl:unionOf _:genid44 .
+
+_:genid44 a rdf:List ;
+	rdf:first :Dataset ;
+	rdf:rest _:genid43 .
+
+_:genid43 a rdf:List ;
+	rdf:first :DigitalObject ;
+	rdf:rest _:genid42 .
 
 _:genid42 a rdf:List ;
-	rdf:first :DigitalObject ;
+	rdf:first :Document ;
 	rdf:rest _:genid41 .
 
 _:genid41 a rdf:List ;
@@ -373,24 +385,24 @@ Should use vocabulary from BiBO or CrossRef""" ;
 
 :hasEditor a owl:ObjectProperty ;
 	owl:inverseOf :isEditorOf ;
-	rdfs:domain _:genid43 .
+	rdfs:domain _:genid45 .
 
-_:genid43 a owl:Class ;
-	owl:unionOf _:genid47 .
+_:genid45 a owl:Class ;
+	owl:unionOf _:genid49 .
+
+_:genid49 a rdf:List ;
+	rdf:first :Dataset ;
+	rdf:rest _:genid48 .
+
+_:genid48 a rdf:List ;
+	rdf:first :DigitalObject ;
+	rdf:rest _:genid47 .
 
 _:genid47 a rdf:List ;
-	rdf:first :Dataset ;
+	rdf:first :Document ;
 	rdf:rest _:genid46 .
 
 _:genid46 a rdf:List ;
-	rdf:first :DigitalObject ;
-	rdf:rest _:genid45 .
-
-_:genid45 a rdf:List ;
-	rdf:first :Document ;
-	rdf:rest _:genid44 .
-
-_:genid44 a rdf:List ;
 	rdf:first :PhysicalSample ;
 	rdf:rest rdf:nil .
 
@@ -444,128 +456,128 @@ _:genid44 a rdf:List ;
 
 :hasIdentifier a owl:ObjectProperty ;
 	owl:inverseOf :isIdentifierOf ;
-	rdfs:domain _:genid48 .
+	rdfs:domain _:genid50 .
 
-_:genid48 a owl:Class ;
-	owl:unionOf _:genid78 .
+_:genid50 a owl:Class ;
+	owl:unionOf _:genid80 .
+
+_:genid80 a rdf:List ;
+	rdf:first :Award ;
+	rdf:rest _:genid79 .
+
+_:genid79 a rdf:List ;
+	rdf:first :Country ;
+	rdf:rest _:genid78 .
 
 _:genid78 a rdf:List ;
-	rdf:first :Award ;
+	rdf:first :Cruise ;
 	rdf:rest _:genid77 .
 
 _:genid77 a rdf:List ;
-	rdf:first :Country ;
+	rdf:first :CruiseType ;
 	rdf:rest _:genid76 .
 
 _:genid76 a rdf:List ;
-	rdf:first :Cruise ;
+	rdf:first :Dataset ;
 	rdf:rest _:genid75 .
 
 _:genid75 a rdf:List ;
-	rdf:first :CruiseType ;
+	rdf:first :DigitalObject ;
 	rdf:rest _:genid74 .
 
 _:genid74 a rdf:List ;
-	rdf:first :Dataset ;
+	rdf:first :Dive ;
 	rdf:rest _:genid73 .
 
 _:genid73 a rdf:List ;
-	rdf:first :DigitalObject ;
+	rdf:first :Document ;
 	rdf:rest _:genid72 .
 
 _:genid72 a rdf:List ;
-	rdf:first :Dive ;
+	rdf:first :DocumentType ;
 	rdf:rest _:genid71 .
 
 _:genid71 a rdf:List ;
-	rdf:first :Document ;
+	rdf:first :Feature ;
 	rdf:rest _:genid70 .
 
 _:genid70 a rdf:List ;
-	rdf:first :DocumentType ;
+	rdf:first :FeatureType ;
 	rdf:rest _:genid69 .
 
 _:genid69 a rdf:List ;
-	rdf:first :Feature ;
+	rdf:first :Format ;
 	rdf:rest _:genid68 .
 
 _:genid68 a rdf:List ;
-	rdf:first :FeatureType ;
+	rdf:first :GeologicAge ;
 	rdf:rest _:genid67 .
 
 _:genid67 a rdf:List ;
-	rdf:first :Format ;
+	rdf:first :Instrument ;
 	rdf:rest _:genid66 .
 
 _:genid66 a rdf:List ;
-	rdf:first :GeologicAge ;
+	rdf:first :InstrumentType ;
 	rdf:rest _:genid65 .
 
 _:genid65 a rdf:List ;
-	rdf:first :Instrument ;
+	rdf:first :MeasurementType ;
 	rdf:rest _:genid64 .
 
 _:genid64 a rdf:List ;
-	rdf:first :InstrumentType ;
+	rdf:first :Meeting ;
 	rdf:rest _:genid63 .
 
 _:genid63 a rdf:List ;
-	rdf:first :MeasurementType ;
+	rdf:first :Organization ;
 	rdf:rest _:genid62 .
 
 _:genid62 a rdf:List ;
-	rdf:first :Meeting ;
+	rdf:first :Person ;
 	rdf:rest _:genid61 .
 
 _:genid61 a rdf:List ;
-	rdf:first :Organization ;
+	rdf:first :PhysicalSample ;
 	rdf:rest _:genid60 .
 
 _:genid60 a rdf:List ;
-	rdf:first :Person ;
+	rdf:first :PhysicalSampleType ;
 	rdf:rest _:genid59 .
 
 _:genid59 a rdf:List ;
-	rdf:first :PhysicalSample ;
+	rdf:first :Place ;
 	rdf:rest _:genid58 .
 
 _:genid58 a rdf:List ;
-	rdf:first :PhysicalSampleType ;
+	rdf:first :PlaceType ;
 	rdf:rest _:genid57 .
 
 _:genid57 a rdf:List ;
-	rdf:first :Place ;
+	rdf:first :Platform ;
 	rdf:rest _:genid56 .
 
 _:genid56 a rdf:List ;
-	rdf:first :PlaceType ;
+	rdf:first :PlatformType ;
 	rdf:rest _:genid55 .
 
 _:genid55 a rdf:List ;
-	rdf:first :Platform ;
+	rdf:first :PortCall ;
 	rdf:rest _:genid54 .
 
 _:genid54 a rdf:List ;
-	rdf:first :PlatformType ;
+	rdf:first :Program ;
 	rdf:rest _:genid53 .
 
 _:genid53 a rdf:List ;
-	rdf:first :PortCall ;
+	rdf:first :Repository ;
 	rdf:rest _:genid52 .
 
 _:genid52 a rdf:List ;
-	rdf:first :Program ;
+	rdf:first :RoleType ;
 	rdf:rest _:genid51 .
 
 _:genid51 a rdf:List ;
-	rdf:first :Repository ;
-	rdf:rest _:genid50 .
-
-_:genid50 a rdf:List ;
-	rdf:first :RoleType ;
-	rdf:rest _:genid49 .
-
-_:genid49 a rdf:List ;
 	rdf:first :StratigraphicUnit ;
 	rdf:rest rdf:nil .
 
@@ -586,16 +598,16 @@ _:genid49 a rdf:List ;
 
 :hasInstrument a owl:ObjectProperty ;
 	owl:inverseOf :isInstrumentOf ;
-	rdfs:domain _:genid79 .
+	rdfs:domain _:genid81 .
 
-_:genid79 a owl:Class ;
-	owl:unionOf _:genid81 .
+_:genid81 a owl:Class ;
+	owl:unionOf _:genid83 .
 
-_:genid81 a rdf:List ;
+_:genid83 a rdf:List ;
 	rdf:first :Dataset ;
-	rdf:rest _:genid80 .
+	rdf:rest _:genid82 .
 
-_:genid80 a rdf:List ;
+_:genid82 a rdf:List ;
 	rdf:first :DigitalObject ;
 	rdf:rest rdf:nil .
 
@@ -614,16 +626,16 @@ _:genid80 a rdf:List ;
 
 :hasMeasurementType a owl:ObjectProperty ;
 	owl:inverseOf :isMeasurementTypeOf ;
-	rdfs:domain _:genid82 .
+	rdfs:domain _:genid84 .
 
-_:genid82 a owl:Class ;
-	owl:unionOf _:genid84 .
+_:genid84 a owl:Class ;
+	owl:unionOf _:genid86 .
 
-_:genid84 a rdf:List ;
+_:genid86 a rdf:List ;
 	rdf:first :Dataset ;
-	rdf:rest _:genid83 .
+	rdf:rest _:genid85 .
 
-_:genid83 a rdf:List ;
+_:genid85 a rdf:List ;
 	rdf:first :DigitalObject ;
 	rdf:rest rdf:nil .
 
@@ -652,16 +664,16 @@ _:genid83 a rdf:List ;
 
 :hasObserver a owl:ObjectProperty ;
 	owl:inverseOf :isObserverIn ;
-	rdfs:domain _:genid85 .
+	rdfs:domain _:genid87 .
 
-_:genid85 a owl:Class ;
-	owl:unionOf _:genid87 .
+_:genid87 a owl:Class ;
+	owl:unionOf _:genid89 .
 
-_:genid87 a rdf:List ;
+_:genid89 a rdf:List ;
 	rdf:first :Cruise ;
-	rdf:rest _:genid86 .
+	rdf:rest _:genid88 .
 
-_:genid86 a rdf:List ;
+_:genid88 a rdf:List ;
 	rdf:first :Dive ;
 	rdf:rest rdf:nil .
 
@@ -689,20 +701,20 @@ _:genid86 a rdf:List ;
 :hasOriginDigitalRepository a owl:ObjectProperty ;
 	rdfs:subPropertyOf :hasRepository ;
 	owl:inverseOf :isOriginDigitalRepositoryOf ;
-	rdfs:domain _:genid88 .
+	rdfs:domain _:genid90 .
 
-_:genid88 a owl:Class ;
-	owl:unionOf _:genid91 .
+_:genid90 a owl:Class ;
+	owl:unionOf _:genid93 .
+
+_:genid93 a rdf:List ;
+	rdf:first :Dataset ;
+	rdf:rest _:genid92 .
+
+_:genid92 a rdf:List ;
+	rdf:first :DigitalObject ;
+	rdf:rest _:genid91 .
 
 _:genid91 a rdf:List ;
-	rdf:first :Dataset ;
-	rdf:rest _:genid90 .
-
-_:genid90 a rdf:List ;
-	rdf:first :DigitalObject ;
-	rdf:rest _:genid89 .
-
-_:genid89 a rdf:List ;
 	rdf:first :PhysicalSample ;
 	rdf:rest rdf:nil .
 
@@ -713,16 +725,16 @@ _:genid89 a rdf:List ;
 
 :hasPart a owl:ObjectProperty ;
 	owl:inverseOf :isPartOf ;
-	rdfs:domain _:genid92 .
+	rdfs:domain _:genid94 .
 
-_:genid92 a owl:Class ;
-	owl:unionOf _:genid94 .
+_:genid94 a owl:Class ;
+	owl:unionOf _:genid96 .
 
-_:genid94 a rdf:List ;
+_:genid96 a rdf:List ;
 	rdf:first :Dataset ;
-	rdf:rest _:genid93 .
+	rdf:rest _:genid95 .
 
-_:genid93 a rdf:List ;
+_:genid95 a rdf:List ;
 	rdf:first :Document ;
 	rdf:rest rdf:nil .
 
@@ -733,28 +745,28 @@ _:genid93 a rdf:List ;
 
 :hasParticipant a owl:ObjectProperty ;
 	owl:inverseOf :isParticipantOf ;
-	rdfs:domain _:genid95 .
+	rdfs:domain _:genid97 .
 
-_:genid95 a owl:Class ;
-	owl:unionOf _:genid100 .
+_:genid97 a owl:Class ;
+	owl:unionOf _:genid102 .
+
+_:genid102 a rdf:List ;
+	rdf:first :Award ;
+	rdf:rest _:genid101 .
+
+_:genid101 a rdf:List ;
+	rdf:first :Cruise ;
+	rdf:rest _:genid100 .
 
 _:genid100 a rdf:List ;
-	rdf:first :Award ;
+	rdf:first :Dataset ;
 	rdf:rest _:genid99 .
 
 _:genid99 a rdf:List ;
-	rdf:first :Cruise ;
+	rdf:first :PhysicalSample ;
 	rdf:rest _:genid98 .
 
 _:genid98 a rdf:List ;
-	rdf:first :Dataset ;
-	rdf:rest _:genid97 .
-
-_:genid97 a rdf:List ;
-	rdf:first :PhysicalSample ;
-	rdf:rest _:genid96 .
-
-_:genid96 a rdf:List ;
 	rdf:first :Program ;
 	rdf:rest rdf:nil .
 
@@ -779,16 +791,16 @@ _:genid96 a rdf:List ;
 
 :hasPlace a owl:ObjectProperty ;
 	owl:inverseOf :isPlaceOf ;
-	rdfs:domain _:genid101 .
+	rdfs:domain _:genid103 .
 
-_:genid101 a owl:Class ;
-	owl:unionOf _:genid103 .
+_:genid103 a owl:Class ;
+	owl:unionOf _:genid105 .
 
-_:genid103 a rdf:List ;
+_:genid105 a rdf:List ;
 	rdf:first :Document ;
-	rdf:rest _:genid102 .
+	rdf:rest _:genid104 .
 
-_:genid102 a rdf:List ;
+_:genid104 a rdf:List ;
 	rdf:first :Meeting ;
 	rdf:rest rdf:nil .
 
@@ -815,16 +827,16 @@ _:genid102 a rdf:List ;
 
 :hasPrincipalInvestigator a owl:ObjectProperty ;
 	owl:inverseOf :isPrincipalInvestigatorOf ;
-	rdfs:domain _:genid104 .
+	rdfs:domain _:genid106 .
 
-_:genid104 a owl:Class ;
-	owl:unionOf _:genid106 .
+_:genid106 a owl:Class ;
+	owl:unionOf _:genid108 .
 
-_:genid106 a rdf:List ;
+_:genid108 a rdf:List ;
 	rdf:first :Award ;
-	rdf:rest _:genid105 .
+	rdf:rest _:genid107 .
 
-_:genid105 a rdf:List ;
+_:genid107 a rdf:List ;
 	rdf:first :Program ;
 	rdf:rest rdf:nil .
 
@@ -835,16 +847,16 @@ _:genid105 a rdf:List ;
 
 :hasProgram a owl:ObjectProperty ;
 	owl:inverseOf :isProgramOf ;
-	rdfs:domain _:genid107 .
+	rdfs:domain _:genid109 .
 
-_:genid107 a owl:Class ;
-	owl:unionOf _:genid109 .
+_:genid109 a owl:Class ;
+	owl:unionOf _:genid111 .
 
-_:genid109 a rdf:List ;
+_:genid111 a rdf:List ;
 	rdf:first :Cruise ;
-	rdf:rest _:genid108 .
+	rdf:rest _:genid110 .
 
-_:genid108 a rdf:List ;
+_:genid110 a rdf:List ;
 	rdf:first :Document ;
 	rdf:rest rdf:nil .
 
@@ -855,16 +867,16 @@ _:genid108 a rdf:List ;
 
 :hasProgramManager a owl:ObjectProperty ;
 	owl:inverseOf :isProgramManagerOf ;
-	rdfs:domain _:genid110 .
+	rdfs:domain _:genid112 .
 
-_:genid110 a owl:Class ;
-	owl:unionOf _:genid112 .
+_:genid112 a owl:Class ;
+	owl:unionOf _:genid114 .
 
-_:genid112 a rdf:List ;
+_:genid114 a rdf:List ;
 	rdf:first :Award ;
-	rdf:rest _:genid111 .
+	rdf:rest _:genid113 .
 
-_:genid111 a rdf:List ;
+_:genid113 a rdf:List ;
 	rdf:first :Program ;
 	rdf:rest rdf:nil .
 
@@ -876,16 +888,16 @@ _:genid111 a rdf:List ;
 :hasPublisher a owl:ObjectProperty ;
 	owl:inverseOf :isPublisherOf ;
 	rdfs:domain :Document ;
-	rdfs:range _:genid113 .
+	rdfs:range _:genid115 .
 
-_:genid113 a owl:Class ;
-	owl:unionOf _:genid115 .
+_:genid115 a owl:Class ;
+	owl:unionOf _:genid117 .
 
-_:genid115 a rdf:List ;
+_:genid117 a rdf:List ;
 	rdf:first :Organization ;
-	rdf:rest _:genid114 .
+	rdf:rest _:genid116 .
 
-_:genid114 a rdf:List ;
+_:genid116 a rdf:List ;
 	rdf:first :Person ;
 	rdf:rest rdf:nil .
 
@@ -905,20 +917,20 @@ _:genid114 a rdf:List ;
 :hasReplicaRepository a owl:ObjectProperty ;
 	rdfs:subPropertyOf :hasRepository ;
 	owl:inverseOf :isReplicaDigitalRepositoryOf ;
-	rdfs:domain _:genid116 .
+	rdfs:domain _:genid118 .
 
-_:genid116 a owl:Class ;
-	owl:unionOf _:genid119 .
+_:genid118 a owl:Class ;
+	owl:unionOf _:genid121 .
+
+_:genid121 a rdf:List ;
+	rdf:first :Dataset ;
+	rdf:rest _:genid120 .
+
+_:genid120 a rdf:List ;
+	rdf:first :DigitalObject ;
+	rdf:rest _:genid119 .
 
 _:genid119 a rdf:List ;
-	rdf:first :Dataset ;
-	rdf:rest _:genid118 .
-
-_:genid118 a rdf:List ;
-	rdf:first :DigitalObject ;
-	rdf:rest _:genid117 .
-
-_:genid117 a rdf:List ;
 	rdf:first :PhysicalSample ;
 	rdf:rest rdf:nil .
 
@@ -929,37 +941,37 @@ _:genid117 a rdf:List ;
 
 :hasRepository a owl:ObjectProperty ;
 	owl:inverseOf :isRepositoryOf ;
-	rdfs:domain _:genid120 .
+	rdfs:domain _:genid122 .
 
-_:genid120 a owl:Class ;
-	owl:unionOf _:genid124 .
+_:genid122 a owl:Class ;
+	owl:unionOf _:genid126 .
+
+_:genid126 a rdf:List ;
+	rdf:first :Dataset ;
+	rdf:rest _:genid125 .
+
+_:genid125 a rdf:List ;
+	rdf:first :DigitalObject ;
+	rdf:rest _:genid124 .
 
 _:genid124 a rdf:List ;
-	rdf:first :Dataset ;
+	rdf:first :Document ;
 	rdf:rest _:genid123 .
 
 _:genid123 a rdf:List ;
-	rdf:first :DigitalObject ;
-	rdf:rest _:genid122 .
-
-_:genid122 a rdf:List ;
-	rdf:first :Document ;
-	rdf:rest _:genid121 .
-
-_:genid121 a rdf:List ;
 	rdf:first :PhysicalSample ;
 	rdf:rest rdf:nil .
 
-:hasRepository rdfs:range _:genid125 .
+:hasRepository rdfs:range _:genid127 .
 
-_:genid125 a owl:Class ;
-	owl:unionOf _:genid127 .
+_:genid127 a owl:Class ;
+	owl:unionOf _:genid129 .
 
-_:genid127 a rdf:List ;
+_:genid129 a rdf:List ;
 	rdf:first :Organization ;
-	rdf:rest _:genid126 .
+	rdf:rest _:genid128 .
 
-_:genid126 a rdf:List ;
+_:genid128 a rdf:List ;
 	rdf:first :Repository ;
 	rdf:rest rdf:nil .
 
@@ -969,37 +981,37 @@ _:genid126 a rdf:List ;
 
 :hasRightsHolder a owl:ObjectProperty ;
 	owl:inverseOf :isRightsHolderOf ;
-	rdfs:domain _:genid128 .
+	rdfs:domain _:genid130 .
 
-_:genid128 a owl:Class ;
-	owl:unionOf _:genid132 .
+_:genid130 a owl:Class ;
+	owl:unionOf _:genid134 .
+
+_:genid134 a rdf:List ;
+	rdf:first :Dataset ;
+	rdf:rest _:genid133 .
+
+_:genid133 a rdf:List ;
+	rdf:first :DigitalObject ;
+	rdf:rest _:genid132 .
 
 _:genid132 a rdf:List ;
-	rdf:first :Dataset ;
+	rdf:first :Document ;
 	rdf:rest _:genid131 .
 
 _:genid131 a rdf:List ;
-	rdf:first :DigitalObject ;
-	rdf:rest _:genid130 .
-
-_:genid130 a rdf:List ;
-	rdf:first :Document ;
-	rdf:rest _:genid129 .
-
-_:genid129 a rdf:List ;
 	rdf:first :PhysicalSample ;
 	rdf:rest rdf:nil .
 
-:hasRightsHolder rdfs:range _:genid133 .
+:hasRightsHolder rdfs:range _:genid135 .
 
-_:genid133 a owl:Class ;
-	owl:unionOf _:genid135 .
+_:genid135 a owl:Class ;
+	owl:unionOf _:genid137 .
 
-_:genid135 a rdf:List ;
+_:genid137 a rdf:List ;
 	rdf:first :Organization ;
-	rdf:rest _:genid134 .
+	rdf:rest _:genid136 .
 
-_:genid134 a rdf:List ;
+_:genid136 a rdf:List ;
 	rdf:first :Person ;
 	rdf:rest rdf:nil .
 
@@ -1092,16 +1104,16 @@ _:genid134 a rdf:List ;
 
 :hasVessel a owl:ObjectProperty ;
 	owl:inverseOf :isVesselOf ;
-	rdfs:domain _:genid136 .
+	rdfs:domain _:genid138 .
 
-_:genid136 a owl:Class ;
-	owl:unionOf _:genid138 .
+_:genid138 a owl:Class ;
+	owl:unionOf _:genid140 .
 
-_:genid138 a rdf:List ;
+_:genid140 a rdf:List ;
 	rdf:first :Cruise ;
-	rdf:rest _:genid137 .
+	rdf:rest _:genid139 .
 
-_:genid137 a rdf:List ;
+_:genid139 a rdf:List ;
 	rdf:first :Document ;
 	rdf:rest rdf:nil .
 
@@ -1426,28 +1438,28 @@ _:genid137 a rdf:List ;
 # http://schema.geolink.org/1.0/base/main#hasAbstract
 
 :hasAbstract a owl:DatatypeProperty ;
-	rdfs:domain _:genid139 .
+	rdfs:domain _:genid141 .
 
-_:genid139 a owl:Class ;
-	owl:unionOf _:genid144 .
+_:genid141 a owl:Class ;
+	owl:unionOf _:genid146 .
+
+_:genid146 a rdf:List ;
+	rdf:first :Award ;
+	rdf:rest _:genid145 .
+
+_:genid145 a rdf:List ;
+	rdf:first :Cruise ;
+	rdf:rest _:genid144 .
 
 _:genid144 a rdf:List ;
-	rdf:first :Award ;
+	rdf:first :Dataset ;
 	rdf:rest _:genid143 .
 
 _:genid143 a rdf:List ;
-	rdf:first :Cruise ;
+	rdf:first :Document ;
 	rdf:rest _:genid142 .
 
 _:genid142 a rdf:List ;
-	rdf:first :Dataset ;
-	rdf:rest _:genid141 .
-
-_:genid141 a rdf:List ;
-	rdf:first :Document ;
-	rdf:rest _:genid140 .
-
-_:genid140 a rdf:List ;
 	rdf:first :Program ;
 	rdf:rest rdf:nil .
 
@@ -1495,25 +1507,26 @@ _:genid140 a rdf:List ;
 
 :hasDescription a owl:DatatypeProperty ;
 	rdfs:domain owl:Thing ;
-	rdfs:range _:genid145 .
+	rdfs:range _:genid147 .
 
-_:genid145 a rdfs:Datatype ;
-	owl:unionOf _:genid147 .
+_:genid147 a rdfs:Datatype ;
+	owl:unionOf _:genid149 .
 
-_:genid147 a rdf:List ;
+_:genid149 a rdf:List ;
 	rdf:first rdf:HTML ;
-	rdf:rest _:genid146 .
+	rdf:rest _:genid148 .
 
-_:genid146 a rdf:List ;
+_:genid148 a rdf:List ;
 	rdf:first xsd:string ;
 	rdf:rest rdf:nil .
 
-:hasDescription rdfs:label "hasDescription" .
+:hasDescription rdfs:range <http://org.semanticweb.owlapi/error#Error1> ;
+	rdfs:label "hasDescription" .
 
-_:genid148 a owl:Axiom ;
+_:genid150 a owl:Axiom ;
 	owl:annotatedSource :hasDescription ;
 	owl:annotatedProperty rdfs:range ;
-	owl:annotatedTarget _:genid145 ;
+	owl:annotatedTarget <http://org.semanticweb.owlapi/error#Error1> ;
 	rdfs:comment "Note that rdfs:Literal includes both xsd:string and rdf:HTML" .
 # 
 # http://schema.geolink.org/1.0/base/main#hasDuration
@@ -1525,24 +1538,24 @@ _:genid148 a owl:Axiom ;
 # http://schema.geolink.org/1.0/base/main#hasEndDate
 
 :hasEndDate a owl:DatatypeProperty ;
-	rdfs:domain _:genid149 .
+	rdfs:domain _:genid151 .
 
-_:genid149 a owl:Class ;
-	owl:unionOf _:genid153 .
+_:genid151 a owl:Class ;
+	owl:unionOf _:genid155 .
+
+_:genid155 a rdf:List ;
+	rdf:first :Award ;
+	rdf:rest _:genid154 .
+
+_:genid154 a rdf:List ;
+	rdf:first :Dataset ;
+	rdf:rest _:genid153 .
 
 _:genid153 a rdf:List ;
-	rdf:first :Award ;
+	rdf:first :Meeting ;
 	rdf:rest _:genid152 .
 
 _:genid152 a rdf:List ;
-	rdf:first :Dataset ;
-	rdf:rest _:genid151 .
-
-_:genid151 a rdf:List ;
-	rdf:first :Meeting ;
-	rdf:rest _:genid150 .
-
-_:genid150 a rdf:List ;
 	rdf:first :Program ;
 	rdf:rest rdf:nil .
 
@@ -1581,36 +1594,36 @@ _:genid150 a rdf:List ;
 # http://schema.geolink.org/1.0/base/main#hasGeometryAsWktLiteral
 
 :hasGeometryAsWktLiteral a owl:DatatypeProperty ;
-	rdfs:domain _:genid154 .
+	rdfs:domain _:genid156 .
 
-_:genid154 a owl:Class ;
-	owl:unionOf _:genid161 .
+_:genid156 a owl:Class ;
+	owl:unionOf _:genid163 .
+
+_:genid163 a rdf:List ;
+	rdf:first :Dataset ;
+	rdf:rest _:genid162 .
+
+_:genid162 a rdf:List ;
+	rdf:first :DigitalObject ;
+	rdf:rest _:genid161 .
 
 _:genid161 a rdf:List ;
-	rdf:first :Dataset ;
+	rdf:first :Dive ;
 	rdf:rest _:genid160 .
 
 _:genid160 a rdf:List ;
-	rdf:first :DigitalObject ;
+	rdf:first :Document ;
 	rdf:rest _:genid159 .
 
 _:genid159 a rdf:List ;
-	rdf:first :Dive ;
+	rdf:first :GeoFeature ;
 	rdf:rest _:genid158 .
 
 _:genid158 a rdf:List ;
-	rdf:first :Document ;
+	rdf:first :PhysicalSample ;
 	rdf:rest _:genid157 .
 
 _:genid157 a rdf:List ;
-	rdf:first :GeoFeature ;
-	rdf:rest _:genid156 .
-
-_:genid156 a rdf:List ;
-	rdf:first :PhysicalSample ;
-	rdf:rest _:genid155 .
-
-_:genid155 a rdf:List ;
 	rdf:first :Place ;
 	rdf:rest rdf:nil .
 
@@ -1636,16 +1649,16 @@ _:genid155 a rdf:List ;
 # http://schema.geolink.org/1.0/base/main#hasLandingPage
 
 :hasLandingPage a owl:DatatypeProperty ;
-	rdfs:domain _:genid162 .
+	rdfs:domain _:genid164 .
 
-_:genid162 a owl:Class ;
-	owl:unionOf _:genid164 .
+_:genid164 a owl:Class ;
+	owl:unionOf _:genid166 .
 
-_:genid164 a rdf:List ;
+_:genid166 a rdf:List ;
 	rdf:first :Dataset ;
-	rdf:rest _:genid163 .
+	rdf:rest _:genid165 .
 
-_:genid163 a rdf:List ;
+_:genid165 a rdf:List ;
 	rdf:first :DigitalObject ;
 	rdf:rest rdf:nil .
 
@@ -1707,16 +1720,16 @@ _:genid163 a rdf:List ;
 # http://schema.geolink.org/1.0/base/main#hasPosition
 
 :hasPosition a owl:DatatypeProperty ;
-	rdfs:domain _:genid165 .
+	rdfs:domain _:genid167 .
 
-_:genid165 a owl:Class ;
-	owl:unionOf _:genid167 .
+_:genid167 a owl:Class ;
+	owl:unionOf _:genid169 .
 
-_:genid167 a rdf:List ;
+_:genid169 a rdf:List ;
 	rdf:first :GeoFeature ;
-	rdf:rest _:genid166 .
+	rdf:rest _:genid168 .
 
-_:genid166 a rdf:List ;
+_:genid168 a rdf:List ;
 	rdf:first :PhysicalSample ;
 	rdf:rest rdf:nil .
 
@@ -1726,20 +1739,20 @@ _:genid166 a rdf:List ;
 # http://schema.geolink.org/1.0/base/main#hasProject
 
 :hasProject a owl:DatatypeProperty ;
-	rdfs:domain _:genid168 .
+	rdfs:domain _:genid170 .
 
-_:genid168 a owl:Class ;
-	owl:unionOf _:genid171 .
+_:genid170 a owl:Class ;
+	owl:unionOf _:genid173 .
+
+_:genid173 a rdf:List ;
+	rdf:first :Cruise ;
+	rdf:rest _:genid172 .
+
+_:genid172 a rdf:List ;
+	rdf:first :Dataset ;
+	rdf:rest _:genid171 .
 
 _:genid171 a rdf:List ;
-	rdf:first :Cruise ;
-	rdf:rest _:genid170 .
-
-_:genid170 a rdf:List ;
-	rdf:first :Dataset ;
-	rdf:rest _:genid169 .
-
-_:genid169 a rdf:List ;
 	rdf:first :Document ;
 	rdf:rest rdf:nil .
 
@@ -1749,33 +1762,33 @@ _:genid169 a rdf:List ;
 # http://schema.geolink.org/1.0/base/main#hasPublicationDate
 
 :hasPublicationDate a owl:DatatypeProperty ;
-	rdfs:domain _:genid172 .
+	rdfs:domain _:genid174 .
 
-_:genid172 a owl:Class ;
-	owl:unionOf _:genid174 .
+_:genid174 a owl:Class ;
+	owl:unionOf _:genid176 .
 
-_:genid174 a rdf:List ;
+_:genid176 a rdf:List ;
 	rdf:first :Document ;
-	rdf:rest _:genid173 .
+	rdf:rest _:genid175 .
 
-_:genid173 a rdf:List ;
+_:genid175 a rdf:List ;
 	rdf:first :PhysicalSample ;
 	rdf:rest rdf:nil .
 
-:hasPublicationDate rdfs:range _:genid175 .
+:hasPublicationDate rdfs:range _:genid177 .
 
-_:genid175 a rdfs:Datatype ;
-	owl:unionOf _:genid178 .
+_:genid177 a rdfs:Datatype ;
+	owl:unionOf _:genid180 .
+
+_:genid180 a rdf:List ;
+	rdf:first xsd:dateTime ;
+	rdf:rest _:genid179 .
+
+_:genid179 a rdf:List ;
+	rdf:first xsd:gYear ;
+	rdf:rest _:genid178 .
 
 _:genid178 a rdf:List ;
-	rdf:first xsd:dateTime ;
-	rdf:rest _:genid177 .
-
-_:genid177 a rdf:List ;
-	rdf:first xsd:gYear ;
-	rdf:rest _:genid176 .
-
-_:genid176 a rdf:List ;
 	rdf:first xsd:gYearMonth ;
 	rdf:rest rdf:nil .
 
@@ -1791,24 +1804,24 @@ _:genid176 a rdf:List ;
 # http://schema.geolink.org/1.0/base/main#hasStartDate
 
 :hasStartDate a owl:DatatypeProperty ;
-	rdfs:domain _:genid179 .
+	rdfs:domain _:genid181 .
 
-_:genid179 a owl:Class ;
-	owl:unionOf _:genid183 .
+_:genid181 a owl:Class ;
+	owl:unionOf _:genid185 .
+
+_:genid185 a rdf:List ;
+	rdf:first :Award ;
+	rdf:rest _:genid184 .
+
+_:genid184 a rdf:List ;
+	rdf:first :Dataset ;
+	rdf:rest _:genid183 .
 
 _:genid183 a rdf:List ;
-	rdf:first :Award ;
+	rdf:first :Meeting ;
 	rdf:rest _:genid182 .
 
 _:genid182 a rdf:List ;
-	rdf:first :Dataset ;
-	rdf:rest _:genid181 .
-
-_:genid181 a rdf:List ;
-	rdf:first :Meeting ;
-	rdf:rest _:genid180 .
-
-_:genid180 a rdf:List ;
 	rdf:first :Program ;
 	rdf:rest rdf:nil .
 
@@ -1832,52 +1845,52 @@ _:genid180 a rdf:List ;
 # http://schema.geolink.org/1.0/base/main#hasTitle
 
 :hasTitle a owl:DatatypeProperty ;
-	rdfs:domain _:genid184 .
+	rdfs:domain _:genid186 .
 
-_:genid184 a owl:Class ;
-	owl:unionOf _:genid195 .
+_:genid186 a owl:Class ;
+	owl:unionOf _:genid197 .
+
+_:genid197 a rdf:List ;
+	rdf:first :Award ;
+	rdf:rest _:genid196 .
+
+_:genid196 a rdf:List ;
+	rdf:first :Cruise ;
+	rdf:rest _:genid195 .
 
 _:genid195 a rdf:List ;
-	rdf:first :Award ;
+	rdf:first :Dataset ;
 	rdf:rest _:genid194 .
 
 _:genid194 a rdf:List ;
-	rdf:first :Cruise ;
+	rdf:first :DigitalObject ;
 	rdf:rest _:genid193 .
 
 _:genid193 a rdf:List ;
-	rdf:first :Dataset ;
+	rdf:first :Document ;
 	rdf:rest _:genid192 .
 
 _:genid192 a rdf:List ;
-	rdf:first :DigitalObject ;
+	rdf:first :Feature ;
 	rdf:rest _:genid191 .
 
 _:genid191 a rdf:List ;
-	rdf:first :Document ;
+	rdf:first :Instrument ;
 	rdf:rest _:genid190 .
 
 _:genid190 a rdf:List ;
-	rdf:first :Feature ;
+	rdf:first :Organization ;
 	rdf:rest _:genid189 .
 
 _:genid189 a rdf:List ;
-	rdf:first :Instrument ;
+	rdf:first :PhysicalSample ;
 	rdf:rest _:genid188 .
 
 _:genid188 a rdf:List ;
-	rdf:first :Organization ;
+	rdf:first :Place ;
 	rdf:rest _:genid187 .
 
 _:genid187 a rdf:List ;
-	rdf:first :PhysicalSample ;
-	rdf:rest _:genid186 .
-
-_:genid186 a rdf:List ;
-	rdf:first :Place ;
-	rdf:rest _:genid185 .
-
-_:genid185 a rdf:List ;
 	rdf:first :Program ;
 	rdf:rest rdf:nil .
 
@@ -1894,16 +1907,16 @@ _:genid185 a rdf:List ;
 # http://schema.geolink.org/1.0/base/main#hasUploadDate
 
 :hasUploadDate a owl:DatatypeProperty ;
-	rdfs:domain _:genid196 .
+	rdfs:domain _:genid198 .
 
-_:genid196 a owl:Class ;
-	owl:unionOf _:genid198 .
+_:genid198 a owl:Class ;
+	owl:unionOf _:genid200 .
 
-_:genid198 a rdf:List ;
+_:genid200 a rdf:List ;
 	rdf:first :Dataset ;
-	rdf:rest _:genid197 .
+	rdf:rest _:genid199 .
 
-_:genid197 a rdf:List ;
+_:genid199 a rdf:List ;
 	rdf:first :DigitalObject ;
 	rdf:rest rdf:nil .
 
