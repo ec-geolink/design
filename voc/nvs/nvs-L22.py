@@ -21,6 +21,10 @@ print(graphURIString, "has %s statements." % len(g))
 
 ## write as OWL
 idschemeOntoNs = Namespace("http://schema.geolink.org/1.0/voc/identifierscheme#")
+## define appropriate idscheme
+## the identifier scheme is assumed to already be defined in identifierscheme.owl
+idscheme = idschemeOntoNs.SDNL22
+
 ontologyURIString = "http://schema.geolink.org/1.0/voc/nvs/" + collectionname
 defaultNS = Namespace(ontologyURIString + '#')
 glbaseNS = Namespace('http://schema.geolink.org/1.0/base/main#')
@@ -104,9 +108,7 @@ for instrumenttype in g.objects(collectionURI, SKOS.member):
     ident = g.value(instrumenttype, DCTERMS.identifier, None)
     owloutput.add((instrumenttype, glbaseNS.hasIdentifier, bn))
     owloutput.add((bn, glbaseNS.hasIdentifierValue, ident))
-    ## we assume idschemeOntoNs.sdnl22 as the identifier scheme for the instrument types (SeaDataNet L22)
-    ## the identifier scheme is assumed to already be defined in identifierscheme.owl
-    owloutput.add((bn, glbaseNS.hasIdentifierScheme, idschemeOntoNs.sdnl22))
+    owloutput.add((bn, glbaseNS.hasIdentifierScheme, idscheme))
 
     ## get equivclass
     for equivcls in g.objects(instrumenttype, OWL.sameAs):
