@@ -85,7 +85,7 @@ for platformtype in g.objects(collectionURI, SKOS.member):
     definition = g.value(platformtype, SKOS.definition, None)
     owloutput.add((platformtype, RDFS.comment, definition)) # add skos definition as rdfs:comment in the onto
     date = g.value(platformtype, DCTERMS.date, None)
-    owloutput.add((platformtype, DCTERMS.date, date)) # add original definition date of platformtype to onto
+    owloutput.add((platformtype, DCTERMS.date, date)) # add original definition date of platform to onto
     owloutput.add((platformtype, DCTERMS.creator, colcreator))
     # add identifier
     bn = BNode()
@@ -111,9 +111,10 @@ for platformtype in g.objects(collectionURI, SKOS.member):
         owloutput.add((platformtype, RDFS.subClassOf, glbaseNS.Platform))
 
 
-s = owloutput.serialize(format='pretty-xml').splitlines()
+outformat = 'turtle'
+s = owloutput.serialize(format=outformat, encoding='utf-8').splitlines()
 fout = open(datapath + collectionname + ".owl",'w',newline='\n')
-#fout = open("l06.owl",'w',newline='\n')
+# fout = open(collectionname + ".owl",'w',newline='\n')
 for l in s:
     if l:
         # print(l.decode('utf-8'))
@@ -121,6 +122,8 @@ for l in s:
         fout.write('\n')
 
 fout.close()
+
+print('Saved ' + datapath + collectionname + ".owl" + " in " + outformat)
 
 
 
