@@ -29,7 +29,7 @@ print((datapath + parentcollectionname + "-source.rdf"), "has %s statements." % 
 idschemeOntoNs = Namespace("http://schema.geolink.org/1.0/voc/identifierscheme#")
 ## define appropriate idscheme
 ## the identifier scheme is assumed to already be defined in identifierscheme.owl
-idscheme = idschemeOntoNs.SDNC17
+idscheme = idschemeOntoNs.sdn
 
 
 ontologyURIString = rootURIString + collectionname

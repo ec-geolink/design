@@ -17,7 +17,7 @@ print(graphURIString, "has %s statements." % len(g))
 idschemeOntoNs = Namespace("http://schema.geolink.org/1.0/voc/identifierscheme#")
 ## define appropriate idscheme
 ## the identifier scheme is assumed to already be defined in identifierscheme.owl
-idscheme = idschemeOntoNs.SDNL05
+idscheme = idschemeOntoNs.sdn
 
 ontologyURIString = "http://schema.geolink.org/1.0/voc/nvs/" + collectionname
 DefaultNS = Namespace(ontologyURIString + '#')
