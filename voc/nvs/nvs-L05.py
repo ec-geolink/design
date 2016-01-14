@@ -114,7 +114,8 @@ for instrumenttype in g.objects(collectionURI, SKOS.member):
         owloutput.add((instrumenttype, RDFS.subClassOf, GLBaseNS.Instrument))
 
 
-s = owloutput.serialize(format='pretty-xml').splitlines()
+outformat = 'turtle'
+s = owloutput.serialize(format=outformat, encoding='utf-8').splitlines()
 fout = open(datapath + collectionname + ".owl",'w',newline='\n')
 # fout = open(collectionname + ".owl",'w',newline='\n')
 for l in s:
@@ -124,6 +125,8 @@ for l in s:
         fout.write('\n')
 
 fout.close()
+
+print('Saved ' + datapath + collectionname + ".owl" + " in " + outformat)
 
 
 
