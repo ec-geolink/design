@@ -1,13 +1,15 @@
-<?xml version="1.0"?>
-<rdf:RDF xmlns="http://schema.geolink.org/1.0/base/physicalsample#"
-     xml:base="http://schema.geolink.org/1.0/base/physicalsample"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="http://schema.geolink.org/1.0/base/physicalsample">
-        <rdfs:comment>This ontology is imported by the GeoLink base ontology (http://schema.geolink.org/1.0/base/main). It contains classes relevant for physical samples: PhysicalSample, PhysicalSampleType, GeologicAge, GeologicAgeAppearance, and StratigraphicUnit, and properties specific for those classes but not for other classes in the base ontology. 
+@prefix : <http://schema.geolink.org/1.0/base/physicalsample#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix glbase: <http://schema.geolink.org/1.0/base/main#> .
+@base <http://schema.geolink.org/1.0/base/physicalsample> .
+
+<http://schema.geolink.org/1.0/base/physicalsample> rdf:type owl:Ontology ;
+                                                    
+                                                    rdfs:comment """This ontology is imported by the GeoLink base ontology (http://schema.geolink.org/1.0/base/main). It contains classes relevant for physical samples: PhysicalSample, PhysicalSampleType, GeologicAge, GeologicAgeAppearance, and StratigraphicUnit, and properties specific for those classes but not for other classes in the base ontology. 
 
 Note that the base ontology also defines a number of properties used by classes in this ontology, but not specific to them. These properties are: 
 - http://schema.geolink.org/1.0/base/main#hasAuthoritativeDigitalRepository
@@ -26,536 +28,580 @@ Note that the base ontology also defines a number of properties used by classes 
 - http://schema.geolink.org/1.0/base/main#hasRightsHolder; 
 - http://schema.geolink.org/1.0/base/main#hasTitle
 
-Our modeling of physical sample metadata roughly corresponds to the International Geo Sample Number (IGSN) metadata schema (http://schema.igsn.org/).</rdfs:comment>
-    </owl:Ontology>
-    
+Our modeling of physical sample metadata roughly corresponds to the International Geo Sample Number (IGSN) metadata schema (http://schema.igsn.org/).""" .
 
 
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Object Properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
 
-    
 
+###  http://schema.geolink.org/1.0/base/main#hasCollector
 
-    <!-- http://schema.geolink.org/1.0/base/main#hasCollector -->
+glbase:hasCollector rdf:type owl:ObjectProperty ;
+                    
+                    owl:inverseOf glbase:isCollectorOf ;
+                    
+                    rdfs:domain glbase:PhysicalSample ;
+                    
+                    rdfs:range glbase:Person ;
+                    
+                    rdfs:label "hasCollector" .
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/base/main#hasCollector">
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/1.0/base/main#isCollectorOf"/>
-        <rdfs:domain rdf:resource="http://schema.geolink.org/1.0/base/main#PhysicalSample"/>
-        <rdfs:range rdf:resource="http://schema.geolink.org/1.0/base/main#Person"/>
-        <rdfs:label>hasCollector</rdfs:label>
-    </owl:ObjectProperty>
-    
 
 
-    <!-- http://schema.geolink.org/1.0/base/main#hasCurator -->
+###  http://schema.geolink.org/1.0/base/main#hasCurator
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/base/main#hasCurator">
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/1.0/base/main#isCuratorOf"/>
-        <rdfs:domain rdf:resource="http://schema.geolink.org/1.0/base/main#PhysicalSample"/>
-        <rdfs:range rdf:resource="http://schema.geolink.org/1.0/base/main#Person"/>
-        <rdfs:label>hasCurator</rdfs:label>
-    </owl:ObjectProperty>
-    
+glbase:hasCurator rdf:type owl:ObjectProperty ;
+                  
+                  owl:inverseOf glbase:isCuratorOf ;
+                  
+                  rdfs:domain glbase:PhysicalSample ;
+                  
+                  rdfs:range glbase:Person ;
+                  
+                  rdfs:label "hasCurator" .
 
 
-    <!-- http://schema.geolink.org/1.0/base/main#hasDataset -->
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/base/main#hasDataset">
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/1.0/base/main#isDatasetOf"/>
-        <rdfs:domain rdf:resource="http://schema.geolink.org/1.0/base/main#PhysicalSample"/>
-        <rdfs:range rdf:resource="http://schema.geolink.org/1.0/base/main#Dataset"/>
-        <rdfs:label>hasDataset</rdfs:label>
-    </owl:ObjectProperty>
-    
+###  http://schema.geolink.org/1.0/base/main#hasDataset
 
+glbase:hasDataset rdf:type owl:ObjectProperty ;
+                  
+                  owl:inverseOf glbase:isDatasetOf ;
+                  
+                  rdfs:domain glbase:PhysicalSample ;
+                  
+                  rdfs:range glbase:Dataset ;
+                  
+                  rdfs:label "hasDataset" .
 
-    <!-- http://schema.geolink.org/1.0/base/main#hasFeatureOfInterest -->
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/base/main#hasFeatureOfInterest">
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/1.0/base/main#isFeatureOfInterestOf"/>
-        <rdfs:domain rdf:resource="http://schema.geolink.org/1.0/base/main#PhysicalSample"/>
-        <rdfs:range rdf:resource="http://schema.geolink.org/1.0/base/main#Feature"/>
-        <rdfs:label>hasFeatureOfInterest</rdfs:label>
-    </owl:ObjectProperty>
-    
 
+###  http://schema.geolink.org/1.0/base/main#hasFeatureOfInterest
 
-    <!-- http://schema.geolink.org/1.0/base/main#hasFirstAppearance -->
+glbase:hasFeatureOfInterest rdf:type owl:ObjectProperty ;
+                            
+                            owl:inverseOf glbase:isFeatureOfInterestOf ;
+                            
+                            rdfs:domain glbase:PhysicalSample ;
+                            
+                            rdfs:range glbase:Feature ;
+                            
+                            rdfs:label "hasFeatureOfInterest" .
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/base/main#hasFirstAppearance">
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/1.0/base/main#isFirstAppearanceOf"/>
-        <rdfs:domain rdf:resource="http://schema.geolink.org/1.0/base/main#GeologicAge"/>
-        <rdfs:range rdf:resource="http://schema.geolink.org/1.0/base/main#GeologicAgeAppearance"/>
-        <rdfs:label>hasFirstAppearance</rdfs:label>
-    </owl:ObjectProperty>
-    
 
 
-    <!-- http://schema.geolink.org/1.0/base/main#hasGeologicAge -->
+###  http://schema.geolink.org/1.0/base/main#hasFirstAppearance
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/base/main#hasGeologicAge">
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/1.0/base/main#isGeologicAgeOf"/>
-        <rdfs:domain rdf:resource="http://schema.geolink.org/1.0/base/main#PhysicalSample"/>
-        <rdfs:range rdf:resource="http://schema.geolink.org/1.0/base/main#GeologicAge"/>
-        <rdfs:label>hasGeologicAge</rdfs:label>
-    </owl:ObjectProperty>
-    
+glbase:hasFirstAppearance rdf:type owl:ObjectProperty ;
+                          
+                          owl:inverseOf glbase:isFirstAppearanceOf ;
+                          
+                          rdfs:domain glbase:GeologicAge ;
+                          
+                          rdfs:range glbase:GeologicAgeAppearance ;
+                          
+                          rdfs:label "hasFirstAppearance" .
 
 
-    <!-- http://schema.geolink.org/1.0/base/main#hasLastAppearance -->
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/base/main#hasLastAppearance">
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/1.0/base/main#isLastAppearanceOf"/>
-        <rdfs:domain rdf:resource="http://schema.geolink.org/1.0/base/main#GeologicAge"/>
-        <rdfs:range rdf:resource="http://schema.geolink.org/1.0/base/main#GeologicAgeAppearance"/>
-        <rdfs:label>hasLastAppearance</rdfs:label>
-    </owl:ObjectProperty>
-    
+###  http://schema.geolink.org/1.0/base/main#hasGeologicAge
 
+glbase:hasGeologicAge rdf:type owl:ObjectProperty ;
+                      
+                      owl:inverseOf glbase:isGeologicAgeOf ;
+                      
+                      rdfs:domain glbase:PhysicalSample ;
+                      
+                      rdfs:range glbase:GeologicAge ;
+                      
+                      rdfs:label "hasGeologicAge" .
 
-    <!-- http://schema.geolink.org/1.0/base/main#hasPhysicalRepository -->
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/base/main#hasPhysicalRepository">
-        <rdfs:subPropertyOf rdf:resource="http://schema.geolink.org/1.0/base/main#hasRepository"/>
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/1.0/base/main#isPhysicalRepositoryOf"/>
-        <rdfs:domain rdf:resource="http://schema.geolink.org/1.0/base/main#PhysicalSample"/>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/base/main#Organization"/>
-                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/base/main#Repository"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
-        <rdfs:label>hasPhysicalRepository</rdfs:label>
-    </owl:ObjectProperty>
-    
 
+###  http://schema.geolink.org/1.0/base/main#hasLastAppearance
 
-    <!-- http://schema.geolink.org/1.0/base/main#hasRegistrant -->
+glbase:hasLastAppearance rdf:type owl:ObjectProperty ;
+                         
+                         owl:inverseOf glbase:isLastAppearanceOf ;
+                         
+                         rdfs:domain glbase:GeologicAge ;
+                         
+                         rdfs:range glbase:GeologicAgeAppearance ;
+                         
+                         rdfs:label "hasLastAppearance" .
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/base/main#hasRegistrant">
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/1.0/base/main#isRegistrantOf"/>
-        <rdfs:domain rdf:resource="http://schema.geolink.org/1.0/base/main#PhysicalSample"/>
-        <rdfs:range rdf:resource="http://schema.geolink.org/1.0/base/main#Person"/>
-        <rdfs:label>hasRegistrant</rdfs:label>
-    </owl:ObjectProperty>
-    
 
 
-    <!-- http://schema.geolink.org/1.0/base/main#hasRelatedSample -->
+###  http://schema.geolink.org/1.0/base/main#hasPhysicalRepository
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/base/main#hasRelatedSample">
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/1.0/base/main#hasRelatedSample"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
-        <rdfs:domain rdf:resource="http://schema.geolink.org/1.0/base/main#PhysicalSample"/>
-        <rdfs:range rdf:resource="http://schema.geolink.org/1.0/base/main#PhysicalSample"/>
-        <rdfs:label>hasRelatedSample</rdfs:label>
-    </owl:ObjectProperty>
-    
+glbase:hasPhysicalRepository rdf:type owl:ObjectProperty ;
+                             
+                             rdfs:subPropertyOf glbase:hasRepository ;
+                             
+                             owl:inverseOf glbase:isPhysicalRepositoryOf ;
+                             
+                             rdfs:domain glbase:PhysicalSample ;
+                             
+                             rdfs:range [ rdf:type owl:Class ;
+                                          owl:unionOf ( glbase:Organization
+                                                        glbase:Repository
+                                                      )
+                                        ] ;
+                             
+                             rdfs:label "hasPhysicalRepository" .
 
 
-    <!-- http://schema.geolink.org/1.0/base/main#hasRepository -->
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/base/main#hasRepository"/>
-    
+###  http://schema.geolink.org/1.0/base/main#hasRegistrant
 
+glbase:hasRegistrant rdf:type owl:ObjectProperty ;
+                     
+                     owl:inverseOf glbase:isRegistrantOf ;
+                     
+                     rdfs:domain glbase:PhysicalSample ;
+                     
+                     rdfs:range glbase:Person ;
+                     
+                     rdfs:label "hasRegistrant" .
 
-    <!-- http://schema.geolink.org/1.0/base/main#hasSampleType -->
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/base/main#hasSampleType">
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/1.0/base/main#isSampleTypeOf"/>
-        <rdfs:domain rdf:resource="http://schema.geolink.org/1.0/base/main#PhysicalSample"/>
-        <rdfs:range rdf:resource="http://schema.geolink.org/1.0/base/main#PhysicalSampleType"/>
-        <rdfs:label>hasSampleType</rdfs:label>
-    </owl:ObjectProperty>
-    
 
+###  http://schema.geolink.org/1.0/base/main#hasRelatedSample
 
-    <!-- http://schema.geolink.org/1.0/base/main#hasStratigraphicUnit -->
+glbase:hasRelatedSample rdf:type owl:ObjectProperty ;
+                        
+                        owl:inverseOf glbase:hasRelatedSample ;
+                        
+                        rdf:type owl:SymmetricProperty ;
+                        
+                        rdfs:domain glbase:PhysicalSample ;
+                        
+                        rdfs:range glbase:PhysicalSample ;
+                        
+                        rdfs:label "hasRelatedSample" .
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/base/main#hasStratigraphicUnit">
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/1.0/base/main#isStratigraphicUnitOf"/>
-        <rdfs:domain rdf:resource="http://schema.geolink.org/1.0/base/main#PhysicalSample"/>
-        <rdfs:range rdf:resource="http://schema.geolink.org/1.0/base/main#StratigraphicUnit"/>
-        <rdfs:label>hasStratigraphicUnit</rdfs:label>
-    </owl:ObjectProperty>
-    
 
 
-    <!-- http://schema.geolink.org/1.0/base/main#isCollectorOf -->
+###  http://schema.geolink.org/1.0/base/main#hasRepository
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/base/main#isCollectorOf">
-        <rdfs:label>isCollectorOf</rdfs:label>
-    </owl:ObjectProperty>
-    
+glbase:hasRepository rdf:type owl:ObjectProperty .
 
 
-    <!-- http://schema.geolink.org/1.0/base/main#isCuratorOf -->
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/base/main#isCuratorOf"/>
-    
+###  http://schema.geolink.org/1.0/base/main#hasSampleType
 
+glbase:hasSampleType rdf:type owl:ObjectProperty ;
+                     
+                     owl:inverseOf glbase:isSampleTypeOf ;
+                     
+                     rdfs:domain glbase:PhysicalSample ;
+                     
+                     rdfs:range glbase:PhysicalSampleType ;
+                     
+                     rdfs:label "hasSampleType" .
 
-    <!-- http://schema.geolink.org/1.0/base/main#isDatasetOf -->
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/base/main#isDatasetOf">
-        <rdfs:label>isDatasetOf</rdfs:label>
-    </owl:ObjectProperty>
-    
 
+###  http://schema.geolink.org/1.0/base/main#hasStratigraphicUnit
 
-    <!-- http://schema.geolink.org/1.0/base/main#isFeatureOfInterestOf -->
+glbase:hasStratigraphicUnit rdf:type owl:ObjectProperty ;
+                            
+                            owl:inverseOf glbase:isStratigraphicUnitOf ;
+                            
+                            rdfs:domain glbase:PhysicalSample ;
+                            
+                            rdfs:range glbase:StratigraphicUnit ;
+                            
+                            rdfs:label "hasStratigraphicUnit" .
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/base/main#isFeatureOfInterestOf">
-        <rdfs:label>isFeatureOfInterestOf</rdfs:label>
-    </owl:ObjectProperty>
-    
 
 
-    <!-- http://schema.geolink.org/1.0/base/main#isFirstAppearanceOf -->
+###  http://schema.geolink.org/1.0/base/main#isCollectorOf
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/base/main#isFirstAppearanceOf"/>
-    
+glbase:isCollectorOf rdf:type owl:ObjectProperty ;
+                     
+                     rdfs:label "isCollectorOf" .
 
 
-    <!-- http://schema.geolink.org/1.0/base/main#isGeologicAgeOf -->
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/base/main#isGeologicAgeOf"/>
-    
+###  http://schema.geolink.org/1.0/base/main#isCuratorOf
 
+glbase:isCuratorOf rdf:type owl:ObjectProperty .
 
-    <!-- http://schema.geolink.org/1.0/base/main#isLastAppearanceOf -->
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/base/main#isLastAppearanceOf"/>
-    
 
+###  http://schema.geolink.org/1.0/base/main#isDatasetOf
 
-    <!-- http://schema.geolink.org/1.0/base/main#isOriginOf -->
+glbase:isDatasetOf rdf:type owl:ObjectProperty ;
+                   
+                   rdfs:label "isDatasetOf" .
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/base/main#isOriginOf">
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/1.0/base/main#originatesFrom"/>
-        <rdfs:label>isOriginOf</rdfs:label>
-    </owl:ObjectProperty>
-    
 
 
-    <!-- http://schema.geolink.org/1.0/base/main#isPhysicalRepositoryOf -->
+###  http://schema.geolink.org/1.0/base/main#isFeatureOfInterestOf
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/base/main#isPhysicalRepositoryOf">
-        <rdfs:label>isPhysicalRepositoryOf</rdfs:label>
-    </owl:ObjectProperty>
-    
+glbase:isFeatureOfInterestOf rdf:type owl:ObjectProperty ;
+                             
+                             rdfs:label "isFeatureOfInterestOf" .
 
 
-    <!-- http://schema.geolink.org/1.0/base/main#isRegistrantOf -->
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/base/main#isRegistrantOf">
-        <rdfs:label>isRegistrantOf</rdfs:label>
-    </owl:ObjectProperty>
-    
+###  http://schema.geolink.org/1.0/base/main#isFirstAppearanceOf
 
+glbase:isFirstAppearanceOf rdf:type owl:ObjectProperty .
 
-    <!-- http://schema.geolink.org/1.0/base/main#isSampleTypeOf -->
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/base/main#isSampleTypeOf">
-        <rdfs:label>isSampleTypeOf</rdfs:label>
-    </owl:ObjectProperty>
-    
 
+###  http://schema.geolink.org/1.0/base/main#isGeologicAgeOf
 
-    <!-- http://schema.geolink.org/1.0/base/main#isStratigraphicUnitOf -->
+glbase:isGeologicAgeOf rdf:type owl:ObjectProperty .
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/base/main#isStratigraphicUnitOf">
-        <rdfs:label>isStratigraphicUnitOf</rdfs:label>
-    </owl:ObjectProperty>
-    
 
 
-    <!-- http://schema.geolink.org/1.0/base/main#originatesFrom -->
+###  http://schema.geolink.org/1.0/base/main#isLastAppearanceOf
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/base/main#originatesFrom">
-        <rdfs:domain rdf:resource="http://schema.geolink.org/1.0/base/main#PhysicalSample"/>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/base/main#Feature"/>
-                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/base/main#PhysicalSample"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
-        <rdfs:label>originatesFrom</rdfs:label>
-    </owl:ObjectProperty>
-    
+glbase:isLastAppearanceOf rdf:type owl:ObjectProperty .
 
 
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Data properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
 
-    
+###  http://schema.geolink.org/1.0/base/main#isOriginOf
 
+glbase:isOriginOf rdf:type owl:ObjectProperty ;
+                  
+                  owl:inverseOf glbase:originatesFrom ;
+                  
+                  rdfs:label "isOriginOf" .
 
-    <!-- http://schema.geolink.org/1.0/base/main#accordingTo -->
 
-    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/1.0/base/main#accordingTo">
-        <rdfs:domain rdf:resource="http://schema.geolink.org/1.0/base/main#GeologicAge"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
-        <rdfs:label>accordingTo</rdfs:label>
-    </owl:DatatypeProperty>
-    
 
+###  http://schema.geolink.org/1.0/base/main#isPhysicalRepositoryOf
 
-    <!-- http://schema.geolink.org/1.0/base/main#hasCollectionEndDate -->
+glbase:isPhysicalRepositoryOf rdf:type owl:ObjectProperty ;
+                              
+                              rdfs:label "isPhysicalRepositoryOf" .
 
-    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/1.0/base/main#hasCollectionEndDate">
-        <rdfs:domain rdf:resource="http://schema.geolink.org/1.0/base/main#PhysicalSample"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-        <rdfs:label>hasCollectionEndDate</rdfs:label>
-    </owl:DatatypeProperty>
-    
 
 
-    <!-- http://schema.geolink.org/1.0/base/main#hasCollectionStartDate -->
+###  http://schema.geolink.org/1.0/base/main#isRegistrantOf
 
-    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/1.0/base/main#hasCollectionStartDate">
-        <rdfs:domain rdf:resource="http://schema.geolink.org/1.0/base/main#PhysicalSample"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-        <rdfs:label>hasCollectionStartDate</rdfs:label>
-    </owl:DatatypeProperty>
-    
+glbase:isRegistrantOf rdf:type owl:ObjectProperty ;
+                      
+                      rdfs:label "isRegistrantOf" .
 
 
-    <!-- http://schema.geolink.org/1.0/base/main#hasElevationDescription -->
 
-    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/1.0/base/main#hasElevationDescription">
-        <rdfs:domain rdf:resource="http://schema.geolink.org/1.0/base/main#PhysicalSample"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:label>hasElevationDescription</rdfs:label>
-    </owl:DatatypeProperty>
-    
+###  http://schema.geolink.org/1.0/base/main#isSampleTypeOf
 
+glbase:isSampleTypeOf rdf:type owl:ObjectProperty ;
+                      
+                      rdfs:label "isSampleTypeOf" .
 
-    <!-- http://schema.geolink.org/1.0/base/main#hasGeologicAgeUnit -->
 
-    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/1.0/base/main#hasGeologicAgeUnit">
-        <rdfs:domain rdf:resource="http://schema.geolink.org/1.0/base/main#GeologicAgeAppearance"/>
-        <rdfs:range>
-            <rdfs:Datatype>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
-                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
-                </owl:unionOf>
-            </rdfs:Datatype>
-        </rdfs:range>
-        <rdfs:label>hasGeologicAgeUnit</rdfs:label>
-    </owl:DatatypeProperty>
-    
 
+###  http://schema.geolink.org/1.0/base/main#isStratigraphicUnitOf
 
-    <!-- http://schema.geolink.org/1.0/base/main#hasGeologicAgeValue -->
+glbase:isStratigraphicUnitOf rdf:type owl:ObjectProperty ;
+                             
+                             rdfs:label "isStratigraphicUnitOf" .
 
-    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/1.0/base/main#hasGeologicAgeValue">
-        <rdfs:domain rdf:resource="http://schema.geolink.org/1.0/base/main#GeologicAgeAppearance"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <rdfs:label>hasGeologicAgeValue</rdfs:label>
-    </owl:DatatypeProperty>
-    
 
 
-    <!-- http://schema.geolink.org/1.0/base/main#hasLastUpdateDate -->
+###  http://schema.geolink.org/1.0/base/main#originatesFrom
 
-    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/1.0/base/main#hasLastUpdateDate">
-        <rdfs:domain rdf:resource="http://schema.geolink.org/1.0/base/main#PhysicalSample"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-        <rdfs:label>hasLastUpdateDate</rdfs:label>
-    </owl:DatatypeProperty>
-    
+glbase:originatesFrom rdf:type owl:ObjectProperty ;
+                      
+                      rdfs:domain glbase:PhysicalSample ;
+                      
+                      rdfs:range [ rdf:type owl:Class ;
+                                   owl:unionOf ( glbase:Feature
+                                                 glbase:PhysicalSample
+                                               )
+                                 ] ;
+                      
+                      rdfs:label "originatesFrom" .
 
 
-    <!-- http://schema.geolink.org/1.0/base/main#hasMaterial -->
 
-    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/1.0/base/main#hasMaterial">
-        <rdfs:domain rdf:resource="http://schema.geolink.org/1.0/base/main#PhysicalSample"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
-        <rdfs:comment>values drawn from multiple vocabularies eg. mineral types, rock types</rdfs:comment>
-        <rdfs:label>hasMaterial</rdfs:label>
-    </owl:DatatypeProperty>
-    
 
 
-    <!-- http://schema.geolink.org/1.0/base/main#hasMaterialType -->
+#################################################################
+#
+#    Data properties
+#
+#################################################################
 
-    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/1.0/base/main#hasMaterialType">
-        <rdfs:domain rdf:resource="http://schema.geolink.org/1.0/base/main#PhysicalSample"/>
-        <rdfs:range>
-            <rdfs:Datatype>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
-                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
-                </owl:unionOf>
-            </rdfs:Datatype>
-        </rdfs:range>
-        <rdfs:label>hasMaterialType</rdfs:label>
-    </owl:DatatypeProperty>
-    
 
+###  http://schema.geolink.org/1.0/base/main#accordingTo
 
-    <!-- http://schema.geolink.org/1.0/base/main#hasRegistrationDate -->
+glbase:accordingTo rdf:type owl:DatatypeProperty ;
+                   
+                   rdfs:domain glbase:GeologicAge ;
+                   
+                   rdfs:range xsd:anyURI ;
+                   
+                   rdfs:label "accordingTo" .
 
-    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/1.0/base/main#hasRegistrationDate">
-        <rdfs:domain rdf:resource="http://schema.geolink.org/1.0/base/main#PhysicalSample"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-        <rdfs:label>hasRegistrationDate</rdfs:label>
-    </owl:DatatypeProperty>
-    
 
 
-    <!-- http://schema.geolink.org/1.0/base/main#hasSamplingMethod -->
+###  http://schema.geolink.org/1.0/base/main#hasCollectionEndDate
 
-    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/1.0/base/main#hasSamplingMethod">
-        <rdfs:domain rdf:resource="http://schema.geolink.org/1.0/base/main#PhysicalSample"/>
-        <rdfs:range>
-            <rdfs:Datatype>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
-                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
-                </owl:unionOf>
-            </rdfs:Datatype>
-        </rdfs:range>
-        <rdfs:label>hasSamplingMethod</rdfs:label>
-    </owl:DatatypeProperty>
-    
+glbase:hasCollectionEndDate rdf:type owl:DatatypeProperty ;
+                            
+                            rdfs:domain glbase:PhysicalSample ;
+                            
+                            rdfs:range xsd:dateTime ;
+                            
+                            rdfs:label "hasCollectionEndDate" .
 
 
-    <!-- http://schema.geolink.org/1.0/base/main#hasStageName -->
 
-    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/1.0/base/main#hasStageName">
-        <rdfs:domain rdf:resource="http://schema.geolink.org/1.0/base/main#GeologicAge"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
+###  http://schema.geolink.org/1.0/base/main#hasCollectionStartDate
 
+glbase:hasCollectionStartDate rdf:type owl:DatatypeProperty ;
+                              
+                              rdfs:domain glbase:PhysicalSample ;
+                              
+                              rdfs:range xsd:dateTime ;
+                              
+                              rdfs:label "hasCollectionStartDate" .
 
-    <!-- http://schema.geolink.org/1.0/base/main#hasTectonicSetting -->
 
-    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/1.0/base/main#hasTectonicSetting">
-        <rdfs:domain rdf:resource="http://schema.geolink.org/1.0/base/main#PhysicalSample"/>
-        <rdfs:range>
-            <rdfs:Datatype>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
-                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
-                </owl:unionOf>
-            </rdfs:Datatype>
-        </rdfs:range>
-        <rdfs:label>hasTectonicSetting</rdfs:label>
-    </owl:DatatypeProperty>
-    
 
+###  http://schema.geolink.org/1.0/base/main#hasElevationDescription
 
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Classes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
+glbase:hasElevationDescription rdf:type owl:DatatypeProperty ;
+                               
+                               rdfs:domain glbase:PhysicalSample ;
+                               
+                               rdfs:range xsd:string ;
+                               
+                               rdfs:label "hasElevationDescription" .
 
-    
 
 
-    <!-- http://schema.geolink.org/1.0/base/main#Dataset -->
+###  http://schema.geolink.org/1.0/base/main#hasGeologicAgeUnit
 
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/base/main#Dataset"/>
-    
+glbase:hasGeologicAgeUnit rdf:type owl:DatatypeProperty ;
+                          
+                          rdfs:domain glbase:GeologicAgeAppearance ;
+                          
+                          rdfs:range [ rdf:type rdfs:Datatype ;
+                                       owl:unionOf ( xsd:anyURI
+                                                     xsd:string
+                                                   )
+                                     ] ;
+                          
+                          rdfs:label "hasGeologicAgeUnit" .
 
 
-    <!-- http://schema.geolink.org/1.0/base/main#Feature -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/base/main#Feature"/>
-    
+###  http://schema.geolink.org/1.0/base/main#hasGeologicAgeValue
 
+glbase:hasGeologicAgeValue rdf:type owl:DatatypeProperty ;
+                           
+                           rdfs:domain glbase:GeologicAgeAppearance ;
+                           
+                           rdfs:range xsd:double ;
+                           
+                           rdfs:label "hasGeologicAgeValue" .
 
-    <!-- http://schema.geolink.org/1.0/base/main#GeologicAge -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/base/main#GeologicAge">
-        <rdfs:comment>Captures geologic age, e.g., jurassic, pleistocene, etc.</rdfs:comment>
-        <rdfs:label>GeologicAge</rdfs:label>
-    </owl:Class>
-    
 
+###  http://schema.geolink.org/1.0/base/main#hasLastUpdateDate
 
-    <!-- http://schema.geolink.org/1.0/base/main#GeologicAgeAppearance -->
+glbase:hasLastUpdateDate rdf:type owl:DatatypeProperty ;
+                         
+                         rdfs:domain glbase:PhysicalSample ;
+                         
+                         rdfs:range xsd:dateTime ;
+                         
+                         rdfs:label "hasLastUpdateDate" .
 
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/base/main#GeologicAgeAppearance">
-        <rdfs:comment>This class essentially is intended to capture the relation exemplified by the sentence &quot;Pleistocene has first appearance of 1.6 million years before present&quot;. Here, Pleistocene is a geologic age, and &apos;hast first appearance&apos; points to an entity that has a value component and a unit component.
+
+
+###  http://schema.geolink.org/1.0/base/main#hasMaterial
+
+glbase:hasMaterial rdf:type owl:DatatypeProperty ;
+                   
+                   rdfs:domain glbase:PhysicalSample ;
+                   
+                   rdfs:range xsd:anyURI ;
+                   
+                   rdfs:comment "values drawn from multiple vocabularies eg. mineral types, rock types" ;
+                   
+                   rdfs:label "hasMaterial" .
+
+
+
+###  http://schema.geolink.org/1.0/base/main#hasMaterialType
+
+glbase:hasMaterialType rdf:type owl:DatatypeProperty ;
+                       
+                       rdfs:domain glbase:PhysicalSample ;
+                       
+                       rdfs:range [ rdf:type rdfs:Datatype ;
+                                    owl:unionOf ( xsd:anyURI
+                                                  xsd:string
+                                                )
+                                  ] ;
+                       
+                       rdfs:label "hasMaterialType" .
+
+
+
+###  http://schema.geolink.org/1.0/base/main#hasRegistrationDate
+
+glbase:hasRegistrationDate rdf:type owl:DatatypeProperty ;
+                           
+                           rdfs:domain glbase:PhysicalSample ;
+                           
+                           rdfs:range xsd:dateTime ;
+                           
+                           rdfs:label "hasRegistrationDate" .
+
+
+
+###  http://schema.geolink.org/1.0/base/main#hasSamplingMethod
+
+glbase:hasSamplingMethod rdf:type owl:DatatypeProperty ;
+                         
+                         rdfs:domain glbase:PhysicalSample ;
+                         
+                         rdfs:range [ rdf:type rdfs:Datatype ;
+                                      owl:unionOf ( xsd:anyURI
+                                                    xsd:string
+                                                  )
+                                    ] ;
+                         
+                         rdfs:label "hasSamplingMethod" .
+
+
+
+###  http://schema.geolink.org/1.0/base/main#hasStageName
+
+glbase:hasStageName rdf:type owl:DatatypeProperty ;
+                    
+                    rdfs:domain glbase:GeologicAge ;
+                    
+                    rdfs:range xsd:string .
+
+
+
+###  http://schema.geolink.org/1.0/base/main#hasTectonicSetting
+
+glbase:hasTectonicSetting rdf:type owl:DatatypeProperty ;
+                          
+                          rdfs:domain glbase:PhysicalSample ;
+                          
+                          rdfs:range [ rdf:type rdfs:Datatype ;
+                                       owl:unionOf ( xsd:anyURI
+                                                     xsd:string
+                                                   )
+                                     ] ;
+                          
+                          rdfs:label "hasTectonicSetting" .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://schema.geolink.org/1.0/base/main#Dataset
+
+glbase:Dataset rdf:type owl:Class .
+
+
+
+###  http://schema.geolink.org/1.0/base/main#Feature
+
+glbase:Feature rdf:type owl:Class .
+
+
+
+###  http://schema.geolink.org/1.0/base/main#GeologicAge
+
+glbase:GeologicAge rdf:type owl:Class ;
+                   
+                   rdfs:comment "Captures geologic age, e.g., jurassic, pleistocene, etc." ;
+                   
+                   rdfs:label "GeologicAge" .
+
+
+
+###  http://schema.geolink.org/1.0/base/main#GeologicAgeAppearance
+
+glbase:GeologicAgeAppearance rdf:type owl:Class ;
+                             
+                             rdfs:comment """This class essentially is intended to capture the relation exemplified by the sentence \"Pleistocene has first appearance of 1.6 million years before present\". Here, Pleistocene is a geologic age, and 'hast first appearance' points to an entity that has a value component and a unit component.
 Data providers can opt not to populate this class directly with explicit URI instances, but rather use blank nodes as instances of this class. An example set of triples would be as follows where the blank node that acts as the filler of the hasFirstAppearance property is an instance of this class:
 
 d:age1 a :GeologicAge .
 d:age1 :hasFirstAppearance 
-   [ :hasGeologicAgeValue &quot;1.6&quot;^^xsd:double ;
-     :hasGeologicAgeUnit iso31:Ma ] .</rdfs:comment>
-        <rdfs:label>GeologicAgeAppearance</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/base/main#Organization -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/base/main#Organization"/>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/base/main#Person -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/base/main#Person"/>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/base/main#PhysicalSample -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/base/main#PhysicalSample">
-        <rdfs:comment>An object of observation that may be preserved, catalogued, and/or preserved.</rdfs:comment>
-        <rdfs:label>PhysicalSample</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/base/main#PhysicalSampleType -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/base/main#PhysicalSampleType">
-        <rdfs:comment>Types of physical samples.</rdfs:comment>
-        <rdfs:label>PhysicalSampleType</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/base/main#Repository -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/base/main#Repository"/>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/base/main#StratigraphicUnit -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/base/main#StratigraphicUnit">
-        <rdfs:comment>Captures named instances (URIs have to be minted for them) from stratigraphic gazetteers such as the USGS National Geologic Map Database or controlled vocabulary from the International Stratigraphic Union. Examples of stratigraphic units include Bonneville Formation, Portland Formation, Gray Gulch Formation, etc.</rdfs:comment>
-        <rdfs:label>StratigraphicUnit</rdfs:label>
-    </owl:Class>
-</rdf:RDF>
+   [ :hasGeologicAgeValue \"1.6\"^^xsd:double ;
+     :hasGeologicAgeUnit iso31:Ma ] .""" ;
+                             
+                             rdfs:label "GeologicAgeAppearance" .
 
 
 
-<!-- Generated by the OWL API (version 4.1.3.20151118-2017) https://github.com/owlcs/owlapi -->
+###  http://schema.geolink.org/1.0/base/main#Organization
+
+glbase:Organization rdf:type owl:Class .
+
+
+
+###  http://schema.geolink.org/1.0/base/main#Person
+
+glbase:Person rdf:type owl:Class .
+
+
+
+###  http://schema.geolink.org/1.0/base/main#PhysicalSample
+
+glbase:PhysicalSample rdf:type owl:Class ;
+                      
+                      rdfs:comment "An object of observation that may be preserved, catalogued, and/or preserved." ;
+                      
+                      rdfs:label "PhysicalSample" .
+
+
+
+###  http://schema.geolink.org/1.0/base/main#PhysicalSampleType
+
+glbase:PhysicalSampleType rdf:type owl:Class ;
+                          
+                          rdfs:comment "Types of physical samples." ;
+                          
+                          rdfs:label "PhysicalSampleType" .
+
+
+
+###  http://schema.geolink.org/1.0/base/main#Repository
+
+glbase:Repository rdf:type owl:Class .
+
+
+
+###  http://schema.geolink.org/1.0/base/main#StratigraphicUnit
+
+glbase:StratigraphicUnit rdf:type owl:Class ;
+                         
+                         rdfs:comment "Captures named instances (URIs have to be minted for them) from stratigraphic gazetteers such as the USGS National Geologic Map Database or controlled vocabulary from the International Stratigraphic Union. Examples of stratigraphic units include Bonneville Formation, Portland Formation, Gray Gulch Formation, etc." ;
+                         
+                         rdfs:label "StratigraphicUnit" .
+
+
+
+
+###  Generated by the OWL API (version 4.1.3.20151118-2017) https://github.com/owlcs/owlapi
 
