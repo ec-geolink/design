@@ -22,6 +22,10 @@ print(graphURIString, "has %s statements." % len(g))
 
 ## write as OWL
 idschemeOntoNs = Namespace("http://schema.geolink.org/1.0/voc/identifierscheme#")
+## define appropriate idscheme
+## the identifier scheme is assumed to already be defined in identifierscheme.owl
+idscheme = idschemeOntoNs.SDNP02
+
 ontologyURIString = "http://schema.geolink.org/1.0/voc/nvs/" + collectionname
 defaultNS = Namespace(ontologyURIString + '#')
 glbaseNS = Namespace('http://schema.geolink.org/1.0/base/main#')
@@ -74,6 +78,12 @@ for measurementtype in g.objects(collectionURI, SKOS.member):
     owloutput.add((measurementtype, RDF.type, OWL.Class))
     owloutput.add((measurementtype, RDF.type, glbaseNS.MeasurementType))
 
+    ## add deprecation status if any
+    depre = g.value(measurementtype, OWL.deprecated, None)
+    if depre:
+        # if str(depre) == 'true': print(instrumenttype, depre)
+        owloutput.add((measurementtype, OWL.deprecated, depre))
+
     ## add typecasting axiom
     bn1 = BNode()
     bn2 = BNode()
@@ -99,9 +109,7 @@ for measurementtype in g.objects(collectionURI, SKOS.member):
     ident = g.value(measurementtype, DCTERMS.identifier, None)
     owloutput.add((measurementtype, glbaseNS.hasIdentifier, bn))
     owloutput.add((bn, glbaseNS.hasIdentifierValue, ident))
-    ## we assume idschemeOntoNs.sdnp02 as the identifier scheme for the measurement types (SeaDataNet L22)
-    ## the identifier scheme is assumed to already be defined in identifierscheme.owl
-    owloutput.add((bn, glbaseNS.hasIdentifierScheme, idschemeOntoNs.sdnl22))
+    owloutput.add((bn, glbaseNS.hasIdentifierScheme, idscheme))
 
     ## get equivclass
     for equivcls in g.objects(measurementtype, OWL.sameAs):
