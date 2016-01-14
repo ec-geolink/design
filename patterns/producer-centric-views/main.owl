@@ -2052,7 +2052,7 @@ http://purl.org/spar/datacite/doi for DOI.""" ;
 # http://schema.geolink.org/1.0/base/main#Participant
 
 :Participant a owl:Class ;
-	rdfs:comment "A reification of the n-ary (n >= 3) relation representing a participation of a Person performing a certain RoleType in a Cruise/Award/Program/Dataset/PhysicalSample. To an instance of Participant, one can attach additional information using properties such as hasAffiliation" ;
+	rdfs:comment "A reification of the n-ary (n >= 3) relation representing a participation of a Person performing a certain RoleType in a Cruise/Award/Program/Dataset/PhysicalSample. To an instance of Participant, one can attach additional information using properties such as hasAffiliation. One can also adds temporal information through hasParticipationStartTime and hasParticipationEndTime." ;
 	rdfs:label "Participant" .
 # 
 # http://schema.geolink.org/1.0/base/main#Person
