@@ -17,6 +17,10 @@ print(graphURIString, "has %s statements." % len(g))
 
 ## prepare namespace
 idschemeOntoNs = Namespace("http://schema.geolink.org/1.0/voc/identifierscheme#")
+## define appropriate idscheme
+## the identifier scheme is assumed to already be defined in identifierscheme.owl
+idscheme = idschemeOntoNs.SDNL06
+
 ontologyURIString = "http://schema.geolink.org/1.0/voc/nvs/" + collectionname
 defaultNS = Namespace(ontologyURIString + '#')
 glbaseNS = Namespace('http://schema.geolink.org/1.0/base/main#')
@@ -99,7 +103,7 @@ for platformtype in g.objects(collectionURI, SKOS.member):
     owloutput.add((bn, glbaseNS.hasIdentifierValue, ident))
     ## we assume idschemeOntoNs.sdnl06 as the identifier scheme for the platform types (SeaDataNet L06)
     ## the identifier scheme is assumed to already be defined in identifierscheme.owl
-    owloutput.add((bn, glbaseNS.hasIdentifierScheme, idschemeOntoNs.sdnl06))
+    owloutput.add((bn, glbaseNS.hasIdentifierScheme, idscheme))
 
     ## get subclass
     for subcls in g.objects(platformtype, SKOS.narrower):
