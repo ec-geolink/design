@@ -76,7 +76,7 @@ for instrumenttype in g.objects(collectionURI, SKOS.member):
     ## add deprecation status if any
     depre = g.value(instrumenttype, OWL.deprecated, None)
     if depre:
-        if str(depre) == 'true': print(instrumenttype, depre)
+        # if str(depre) == 'true': print(instrumenttype, depre)
         owloutput.add((instrumenttype, OWL.deprecated, depre))
 
     ## add typecasting axiom
