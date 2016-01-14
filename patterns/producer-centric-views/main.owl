@@ -5,2504 +5,2133 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix glbase: <http://schema.geolink.org/1.0/base/main#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix geosparql: <http://www.opengis.net/ont/geosparql#> .
-@base <http://schema.geolink.org/1.0/base/main> .
 
-<http://schema.geolink.org/1.0/base/main> rdf:type owl:Ontology ;
-                                          
-                                          owl:imports <http://schema.geolink.org/1.0/voc/nvs/L06> ,
-                                                      <http://schema.geolink.org/1.0/voc/nvs/P02> ,
-                                                      <http://schema.geolink.org/1.0/voc/nvs/P03> ,
-                                                      <http://schema.geolink.org/1.0/base/physicalsample> ,
-                                                      <http://schema.geolink.org/1.0/voc/nvs/C17> ,
-                                                      <http://schema.geolink.org/1.0/voc/nvs/L22> ,
-                                                      <http://schema.geolink.org/1.0/voc/gebco/featuretype> ,
-                                                      <http://schema.geolink.org/1.0/voc/local> ,
-                                                      <http://schema.geolink.org/1.0/voc/nvs/L05> ;
-                                          
-                                          rdfs:label "GeoLink base ontology." ;
-                                          
-                                          rdfs:comment "A base ontology providing a conceptual view into the GeoLink patterns." .
-
-
-#################################################################
-#
-#    Datatypes
-#
-#################################################################
-
-
-###  http://www.opengis.net/ont/geosparql#wktLiteral
-
-geosparql:wktLiteral rdf:type rdfs:Datatype ;
-                     
-                     rdfs:comment "Enables the use of Well Known Text strings" ;
-                     
-                     rdfs:label "geosparql:wktLiteral" .
-
-
-
-###  http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML
-
-rdf:HTML rdf:type rdfs:Datatype ;
-         
-         rdfs:comment "Enables the use of HTML strings" ;
-         
-         rdfs:label "rdf:HTML" .
-
-
-
-###  http://www.w3.org/2001/XMLSchema#gYear
-
-xsd:gYear rdf:type rdfs:Datatype .
-
-
-
-###  http://www.w3.org/2001/XMLSchema#gYearMonth
-
-xsd:gYearMonth rdf:type rdfs:Datatype .
-
-
-
-
-
-#################################################################
-#
-#    Object Properties
-#
-#################################################################
-
-
-###  http://schema.geolink.org/1.0/base/main#atPort
-
-glbase:atPort rdf:type owl:ObjectProperty ;
-              
-              owl:inverseOf glbase:isPortOf ;
-              
-              rdfs:domain glbase:PortCall ;
-              
-              rdfs:range glbase:Place ;
-              
-              rdfs:comment "The domain of this property is PortCall, which acts as the range of 'hasStartPortCall', 'hasMidPortCall', or 'hasEndPortCall' properties." ;
-              
-              rdfs:label "atPort" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#coReferentOf
-
-glbase:coReferentOf rdf:type owl:ObjectProperty ;
-                    
-                    owl:inverseOf glbase:coReferentOf ;
-                    
-                    rdf:type owl:SymmetricProperty ;
-                    
-                    rdfs:domain owl:Thing ;
-                    
-                    rdfs:range owl:Thing ;
-                    
-                    rdfs:comment "This property is used to state that an object (instance) matches with another object. This can either be a result of manual matching or running some coreference resolution algorithm." ;
-                    
-                    rdfs:label "coReferentOf" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#containsDataset
-
-glbase:containsDataset rdf:type owl:ObjectProperty ;
-                       
-                       owl:inverseOf glbase:isContainedDatasetBy ;
-                       
-                       rdfs:domain glbase:Dataset ;
-                       
-                       rdfs:range glbase:Dataset ;
-                       
-                       rdfs:label "containsDataset" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#fromCountry
-
-glbase:fromCountry rdf:type owl:ObjectProperty ;
-                   
-                   owl:inverseOf glbase:isCountryOf ;
-                   
-                   rdfs:domain [ rdf:type owl:Class ;
-                                 owl:unionOf ( glbase:Organization
-                                               glbase:Place
-                                             )
-                               ] ;
-                   
-                   rdfs:range glbase:Country ;
-                   
-                   rdfs:label "fromCountry" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#hasAffiliation
-
-glbase:hasAffiliation rdf:type owl:ObjectProperty ;
-                      
-                      owl:inverseOf glbase:isAffiliationOf ;
-                      
-                      rdfs:domain [ rdf:type owl:Class ;
-                                    owl:unionOf ( glbase:Participant
-                                                  glbase:Person
-                                                )
-                                  ] ;
-                      
-                      rdfs:range glbase:Organization ;
-                      
-                      rdfs:comment "The domain of this property includes, besides persons, also instances of Participant class that act as the range of 'hasParticipant' property." ;
-                      
-                      rdfs:label "hasAffiliation" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#hasAuthor
-
-glbase:hasAuthor rdf:type owl:ObjectProperty ;
-                 
-                 owl:inverseOf glbase:isAuthorOf ;
-                 
-                 rdfs:domain glbase:Document ;
-                 
-                 rdfs:range [ rdf:type owl:Class ;
-                              owl:unionOf ( glbase:Organization
-                                            glbase:Person
-                                          )
-                            ] ;
-                 
-                 rdfs:label "hasAuthor" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#hasAuthoritativeRepository
-
-glbase:hasAuthoritativeRepository rdf:type owl:ObjectProperty ;
-                                  
-                                  rdfs:subPropertyOf glbase:hasRepository ;
-                                  
-                                  owl:inverseOf glbase:isAuthoritativeDigitalRepositoryOf ;
-                                  
-                                  rdfs:domain [ rdf:type owl:Class ;
-                                                owl:unionOf ( glbase:Dataset
-                                                              glbase:DigitalObject
-                                                              glbase:PhysicalSample
-                                                            )
-                                              ] ;
-                                  
-                                  rdfs:range glbase:Repository ;
-                                  
-                                  rdfs:label "hasAuthoritativeDigitalRepository" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#hasAward
-
-glbase:hasAward rdf:type owl:ObjectProperty ;
-                
-                owl:inverseOf glbase:isAwardOf ;
-                
-                rdfs:domain glbase:Cruise ;
-                
-                rdfs:range glbase:Award ;
-                
-                rdfs:label "hasAward" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#hasChiefScientist
-
-glbase:hasChiefScientist rdf:type owl:ObjectProperty ;
-                         
-                         owl:inverseOf glbase:isChiefScientistOf ;
-                         
-                         rdfs:domain glbase:Cruise ;
-                         
-                         rdfs:range glbase:Person ;
-                         
-                         rdfs:label "hasChiefScientist" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#hasCoChiefScientist
-
-glbase:hasCoChiefScientist rdf:type owl:ObjectProperty ;
-                           
-                           owl:inverseOf glbase:isCoChiefScientistOf ;
-                           
-                           rdfs:domain glbase:Cruise ;
-                           
-                           rdfs:range glbase:Person ;
-                           
-                           rdfs:label "hasCoChiefScientist" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#hasCoPrincipalInvestigator
-
-glbase:hasCoPrincipalInvestigator rdf:type owl:ObjectProperty ;
-                                  
-                                  owl:inverseOf glbase:isCoPrincipalInvestigatorOf ;
-                                  
-                                  rdfs:domain [ rdf:type owl:Class ;
-                                                owl:unionOf ( glbase:Award
-                                                              glbase:Program
-                                                            )
-                                              ] ;
-                                  
-                                  rdfs:range glbase:Person ;
-                                  
-                                  rdfs:label "hasCoPrincipalInvestigator" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#hasContact
-
-glbase:hasContact rdf:type owl:ObjectProperty ;
-                  
-                  owl:inverseOf glbase:isContactOf ;
-                  
-                  rdfs:domain [ rdf:type owl:Class ;
-                                owl:unionOf ( glbase:Dataset
-                                              glbase:DigitalObject
-                                              glbase:PhysicalSample
-                                            )
-                              ] ;
-                  
-                  rdfs:range [ rdf:type owl:Class ;
-                               owl:unionOf ( glbase:Organization
-                                             glbase:Person
-                                           )
-                             ] ;
-                  
-                  rdfs:label "hasContact" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#hasContributor
-
-glbase:hasContributor rdf:type owl:ObjectProperty ;
-                      
-                      owl:inverseOf glbase:isContributorOf ;
-                      
-                      rdfs:domain [ rdf:type owl:Class ;
-                                    owl:unionOf ( glbase:Dataset
-                                                  glbase:DigitalObject
-                                                  glbase:PhysicalSample
-                                                )
-                                  ] ;
-                      
-                      rdfs:range glbase:Person ;
-                      
-                      rdfs:label "hasContributor" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#hasCreator
-
-glbase:hasCreator rdf:type owl:ObjectProperty ;
-                  
-                  owl:inverseOf glbase:isCreatorOf ;
-                  
-                  rdfs:domain [ rdf:type owl:Class ;
-                                owl:unionOf ( glbase:Dataset
-                                              glbase:DigitalObject
-                                            )
-                              ] ;
-                  
-                  rdfs:range [ rdf:type owl:Class ;
-                               owl:unionOf ( glbase:Organization
-                                             glbase:Person
-                                           )
-                             ] ;
-                  
-                  rdfs:label "hasCreator" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#hasCruise
-
-glbase:hasCruise rdf:type owl:ObjectProperty ;
-                 
-                 owl:inverseOf glbase:isCruiseOf ;
-                 
-                 rdfs:domain [ rdf:type owl:Class ;
-                               owl:unionOf ( glbase:Dataset
-                                             glbase:DigitalObject
-                                             glbase:Dive
-                                             glbase:Document
-                                             glbase:PhysicalSample
-                                           )
-                             ] ;
-                 
-                 rdfs:range glbase:Cruise ;
-                 
-                 rdfs:label "hasCruise" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#hasCruiseType
-
-glbase:hasCruiseType rdf:type owl:ObjectProperty ;
-                     
-                     owl:inverseOf glbase:isCruiseTypeOf ;
-                     
-                     rdfs:domain glbase:Cruise ;
-                     
-                     rdfs:range glbase:CruiseType ;
-                     
-                     rdfs:label "hasCruiseType" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#hasDive
-
-glbase:hasDive rdf:type owl:ObjectProperty ;
-               
-               owl:inverseOf glbase:isDiveOf ;
-               
-               rdfs:domain [ rdf:type owl:Class ;
-                             owl:unionOf ( glbase:DigitalObject
-                                           glbase:PhysicalSample
-                                         )
-                           ] ;
-               
-               rdfs:range glbase:Dive ;
-               
-               rdfs:label "hasDive" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#hasDocumentType
-
-glbase:hasDocumentType rdf:type owl:ObjectProperty ;
-                       
-                       owl:inverseOf glbase:isDocumentTypeOf ;
-                       
-                       rdfs:domain glbase:Document ;
-                       
-                       rdfs:range glbase:DocumentType ;
-                       
-                       rdfs:comment """E.g., article, book, book chapter, presentation, etc. 
+<http://schema.geolink.org/1.0/base/main> a owl:Ontology ;
+	owl:imports <http://schema.geolink.org/1.0/voc/nvs/L06> , <http://schema.geolink.org/1.0/voc/nvs/P02> , <http://schema.geolink.org/1.0/voc/nvs/P03> , <http://schema.geolink.org/1.0/base/physicalsample> , <http://schema.geolink.org/1.0/voc/nvs/C17> , <http://schema.geolink.org/1.0/voc/nvs/L22> , <http://schema.geolink.org/1.0/voc/gebco/featuretype> , <http://schema.geolink.org/1.0/voc/local> , <http://schema.geolink.org/1.0/voc/nvs/L05> ;
+	rdfs:label "GeoLink base ontology." ;
+	rdfs:comment "A base ontology providing a conceptual view into the GeoLink patterns." .
+# 
+# 
+# #################################################################
+# #
+# #    Datatypes
+# #
+# #################################################################
+# 
+# 
+# http://www.opengis.net/ont/geosparql#wktLiteral
+
+geosparql:wktLiteral a rdfs:Datatype ;
+	rdfs:comment "Enables the use of Well Known Text strings" ;
+	rdfs:label "geosparql:wktLiteral" .
+# 
+# http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML
+
+rdf:HTML a rdfs:Datatype ;
+	rdfs:comment "Enables the use of HTML strings" ;
+	rdfs:label "rdf:HTML" .
+# 
+# http://www.w3.org/2001/XMLSchema#gYear
+
+xsd:gYear a rdfs:Datatype .
+# 
+# http://www.w3.org/2001/XMLSchema#gYearMonth
+
+xsd:gYearMonth a rdfs:Datatype .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://schema.geolink.org/1.0/base/main#atPort
+
+:atPort a owl:ObjectProperty ;
+	owl:inverseOf :isPortOf ;
+	rdfs:domain :PortCall ;
+	rdfs:range :Place ;
+	rdfs:comment "The domain of this property is PortCall, which acts as the range of 'hasStartPortCall', 'hasMidPortCall', or 'hasEndPortCall' properties." ;
+	rdfs:label "atPort" .
+# 
+# http://schema.geolink.org/1.0/base/main#coReferentOf
+
+:coReferentOf a owl:ObjectProperty ;
+	owl:inverseOf :coReferentOf ;
+	a owl:SymmetricProperty ;
+	rdfs:domain owl:Thing ;
+	rdfs:range owl:Thing ;
+	rdfs:comment "This property is used to state that an object (instance) matches with another object. This can either be a result of manual matching or running some coreference resolution algorithm." ;
+	rdfs:label "coReferentOf" .
+# 
+# http://schema.geolink.org/1.0/base/main#containsDataset
+
+:containsDataset a owl:ObjectProperty ;
+	owl:inverseOf :isContainedDatasetBy ;
+	rdfs:domain :Dataset ;
+	rdfs:range :Dataset ;
+	rdfs:label "containsDataset" .
+# 
+# http://schema.geolink.org/1.0/base/main#fromCountry
+
+:fromCountry a owl:ObjectProperty ;
+	owl:inverseOf :isCountryOf ;
+	rdfs:domain _:genid1 .
+
+_:genid1 a owl:Class ;
+	owl:unionOf _:genid3 .
+
+_:genid3 a rdf:List ;
+	rdf:first :Organization ;
+	rdf:rest _:genid2 .
+
+_:genid2 a rdf:List ;
+	rdf:first :Place ;
+	rdf:rest rdf:nil .
+
+:fromCountry rdfs:range :Country ;
+	rdfs:label "fromCountry" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasAffiliation
+
+:hasAffiliation a owl:ObjectProperty ;
+	owl:inverseOf :isAffiliationOf ;
+	rdfs:domain _:genid4 .
+
+_:genid4 a owl:Class ;
+	owl:unionOf _:genid6 .
+
+_:genid6 a rdf:List ;
+	rdf:first :Participant ;
+	rdf:rest _:genid5 .
+
+_:genid5 a rdf:List ;
+	rdf:first :Person ;
+	rdf:rest rdf:nil .
+
+:hasAffiliation rdfs:range :Organization ;
+	rdfs:comment "The domain of this property includes, besides persons, also instances of Participant class that act as the range of 'hasParticipant' property." ;
+	rdfs:label "hasAffiliation" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasAuthor
+
+:hasAuthor a owl:ObjectProperty ;
+	owl:inverseOf :isAuthorOf ;
+	rdfs:domain :Document ;
+	rdfs:range _:genid7 .
+
+_:genid7 a owl:Class ;
+	owl:unionOf _:genid9 .
+
+_:genid9 a rdf:List ;
+	rdf:first :Organization ;
+	rdf:rest _:genid8 .
+
+_:genid8 a rdf:List ;
+	rdf:first :Person ;
+	rdf:rest rdf:nil .
+
+:hasAuthor rdfs:label "hasAuthor" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasAuthoritativeRepository
+
+:hasAuthoritativeRepository a owl:ObjectProperty ;
+	rdfs:subPropertyOf :hasRepository ;
+	owl:inverseOf :isAuthoritativeDigitalRepositoryOf ;
+	rdfs:domain _:genid10 .
+
+_:genid10 a owl:Class ;
+	owl:unionOf _:genid13 .
+
+_:genid13 a rdf:List ;
+	rdf:first :Dataset ;
+	rdf:rest _:genid12 .
+
+_:genid12 a rdf:List ;
+	rdf:first :DigitalObject ;
+	rdf:rest _:genid11 .
+
+_:genid11 a rdf:List ;
+	rdf:first :PhysicalSample ;
+	rdf:rest rdf:nil .
+
+:hasAuthoritativeRepository rdfs:range :Repository ;
+	rdfs:label "hasAuthoritativeDigitalRepository" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasAward
+
+:hasAward a owl:ObjectProperty ;
+	owl:inverseOf :isAwardOf ;
+	rdfs:domain :Cruise ;
+	rdfs:range :Award ;
+	rdfs:label "hasAward" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasChiefScientist
+
+:hasChiefScientist a owl:ObjectProperty ;
+	owl:inverseOf :isChiefScientistOf ;
+	rdfs:domain :Cruise ;
+	rdfs:range :Person ;
+	rdfs:label "hasChiefScientist" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasCoChiefScientist
+
+:hasCoChiefScientist a owl:ObjectProperty ;
+	owl:inverseOf :isCoChiefScientistOf ;
+	rdfs:domain :Cruise ;
+	rdfs:range :Person ;
+	rdfs:label "hasCoChiefScientist" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasCoPrincipalInvestigator
+
+:hasCoPrincipalInvestigator a owl:ObjectProperty ;
+	owl:inverseOf :isCoPrincipalInvestigatorOf ;
+	rdfs:domain _:genid14 .
+
+_:genid14 a owl:Class ;
+	owl:unionOf _:genid16 .
+
+_:genid16 a rdf:List ;
+	rdf:first :Award ;
+	rdf:rest _:genid15 .
+
+_:genid15 a rdf:List ;
+	rdf:first :Program ;
+	rdf:rest rdf:nil .
+
+:hasCoPrincipalInvestigator rdfs:range :Person ;
+	rdfs:label "hasCoPrincipalInvestigator" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasContact
+
+:hasContact a owl:ObjectProperty ;
+	owl:inverseOf :isContactOf ;
+	rdfs:domain _:genid17 .
+
+_:genid17 a owl:Class ;
+	owl:unionOf _:genid20 .
+
+_:genid20 a rdf:List ;
+	rdf:first :Dataset ;
+	rdf:rest _:genid19 .
+
+_:genid19 a rdf:List ;
+	rdf:first :DigitalObject ;
+	rdf:rest _:genid18 .
+
+_:genid18 a rdf:List ;
+	rdf:first :PhysicalSample ;
+	rdf:rest rdf:nil .
+
+:hasContact rdfs:range _:genid21 .
+
+_:genid21 a owl:Class ;
+	owl:unionOf _:genid23 .
+
+_:genid23 a rdf:List ;
+	rdf:first :Organization ;
+	rdf:rest _:genid22 .
+
+_:genid22 a rdf:List ;
+	rdf:first :Person ;
+	rdf:rest rdf:nil .
+
+:hasContact rdfs:label "hasContact" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasContributor
+
+:hasContributor a owl:ObjectProperty ;
+	owl:inverseOf :isContributorOf ;
+	rdfs:domain _:genid24 .
+
+_:genid24 a owl:Class ;
+	owl:unionOf _:genid27 .
+
+_:genid27 a rdf:List ;
+	rdf:first :Dataset ;
+	rdf:rest _:genid26 .
+
+_:genid26 a rdf:List ;
+	rdf:first :DigitalObject ;
+	rdf:rest _:genid25 .
+
+_:genid25 a rdf:List ;
+	rdf:first :PhysicalSample ;
+	rdf:rest rdf:nil .
+
+:hasContributor rdfs:range :Person ;
+	rdfs:label "hasContributor" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasCreator
+
+:hasCreator a owl:ObjectProperty ;
+	owl:inverseOf :isCreatorOf ;
+	rdfs:domain _:genid28 .
+
+_:genid28 a owl:Class ;
+	owl:unionOf _:genid30 .
+
+_:genid30 a rdf:List ;
+	rdf:first :Dataset ;
+	rdf:rest _:genid29 .
+
+_:genid29 a rdf:List ;
+	rdf:first :DigitalObject ;
+	rdf:rest rdf:nil .
+
+:hasCreator rdfs:range _:genid31 .
+
+_:genid31 a owl:Class ;
+	owl:unionOf _:genid33 .
+
+_:genid33 a rdf:List ;
+	rdf:first :Organization ;
+	rdf:rest _:genid32 .
+
+_:genid32 a rdf:List ;
+	rdf:first :Person ;
+	rdf:rest rdf:nil .
+
+:hasCreator rdfs:label "hasCreator" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasCruise
+
+:hasCruise a owl:ObjectProperty ;
+	owl:inverseOf :isCruiseOf ;
+	rdfs:domain _:genid34 .
+
+_:genid34 a owl:Class ;
+	owl:unionOf _:genid39 .
+
+_:genid39 a rdf:List ;
+	rdf:first :Dataset ;
+	rdf:rest _:genid38 .
+
+_:genid38 a rdf:List ;
+	rdf:first :DigitalObject ;
+	rdf:rest _:genid37 .
+
+_:genid37 a rdf:List ;
+	rdf:first :Dive ;
+	rdf:rest _:genid36 .
+
+_:genid36 a rdf:List ;
+	rdf:first :Document ;
+	rdf:rest _:genid35 .
+
+_:genid35 a rdf:List ;
+	rdf:first :PhysicalSample ;
+	rdf:rest rdf:nil .
+
+:hasCruise rdfs:range :Cruise ;
+	rdfs:label "hasCruise" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasCruiseType
+
+:hasCruiseType a owl:ObjectProperty ;
+	owl:inverseOf :isCruiseTypeOf ;
+	rdfs:domain :Cruise ;
+	rdfs:range :CruiseType ;
+	rdfs:label "hasCruiseType" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasDive
+
+:hasDive a owl:ObjectProperty ;
+	owl:inverseOf :isDiveOf ;
+	rdfs:domain _:genid40 .
+
+_:genid40 a owl:Class ;
+	owl:unionOf _:genid42 .
+
+_:genid42 a rdf:List ;
+	rdf:first :DigitalObject ;
+	rdf:rest _:genid41 .
+
+_:genid41 a rdf:List ;
+	rdf:first :PhysicalSample ;
+	rdf:rest rdf:nil .
+
+:hasDive rdfs:range :Dive ;
+	rdfs:label "hasDive" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasDocumentType
+
+:hasDocumentType a owl:ObjectProperty ;
+	owl:inverseOf :isDocumentTypeOf ;
+	rdfs:domain :Document ;
+	rdfs:range :DocumentType ;
+	rdfs:comment """E.g., article, book, book chapter, presentation, etc. 
 Should use vocabulary from BiBO or CrossRef""" ;
-                       
-                       rdfs:label "hasDocumentType" .
+	rdfs:label "hasDocumentType" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasEditor
 
+:hasEditor a owl:ObjectProperty ;
+	owl:inverseOf :isEditorOf ;
+	rdfs:domain _:genid43 .
 
+_:genid43 a owl:Class ;
+	owl:unionOf _:genid47 .
 
-###  http://schema.geolink.org/1.0/base/main#hasEditor
+_:genid47 a rdf:List ;
+	rdf:first :Dataset ;
+	rdf:rest _:genid46 .
 
-glbase:hasEditor rdf:type owl:ObjectProperty ;
-                 
-                 owl:inverseOf glbase:isEditorOf ;
-                 
-                 rdfs:domain [ rdf:type owl:Class ;
-                               owl:unionOf ( glbase:Dataset
-                                             glbase:DigitalObject
-                                             glbase:Document
-                                             glbase:PhysicalSample
-                                           )
-                             ] ;
-                 
-                 rdfs:range glbase:Person ;
-                 
-                 rdfs:label "hasEditor" .
+_:genid46 a rdf:List ;
+	rdf:first :DigitalObject ;
+	rdf:rest _:genid45 .
 
+_:genid45 a rdf:List ;
+	rdf:first :Document ;
+	rdf:rest _:genid44 .
 
+_:genid44 a rdf:List ;
+	rdf:first :PhysicalSample ;
+	rdf:rest rdf:nil .
 
-###  http://schema.geolink.org/1.0/base/main#hasEducator
+:hasEditor rdfs:range :Person ;
+	rdfs:label "hasEditor" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasEducator
 
-glbase:hasEducator rdf:type owl:ObjectProperty ;
-                   
-                   owl:inverseOf glbase:isEducatorIn ;
-                   
-                   rdfs:domain glbase:Cruise ;
-                   
-                   rdfs:range glbase:Person ;
-                   
-                   rdfs:label "hasEducator" .
+:hasEducator a owl:ObjectProperty ;
+	owl:inverseOf :isEducatorIn ;
+	rdfs:domain :Cruise ;
+	rdfs:range :Person ;
+	rdfs:label "hasEducator" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasEndPortCall
 
-
-
-###  http://schema.geolink.org/1.0/base/main#hasEndPortCall
-
-glbase:hasEndPortCall rdf:type owl:ObjectProperty ;
-                      
-                      owl:inverseOf glbase:isEndPortCallOf ;
-                      
-                      rdfs:domain glbase:Cruise ;
-                      
-                      rdfs:range glbase:PortCall ;
-                      
-                      rdfs:comment """The range of this property is PortCall that acts as the domain of the 'atPort' and 'hasTimeStamp' property. Graph patterns for data using this property can be of the form:
+:hasEndPortCall a owl:ObjectProperty ;
+	owl:inverseOf :isEndPortCallOf ;
+	rdfs:domain :Cruise ;
+	rdfs:range :PortCall ;
+	rdfs:comment """The range of this property is PortCall that acts as the domain of the 'atPort' and 'hasTimeStamp' property. Graph patterns for data using this property can be of the form:
 -   ?X :hasEndPortCall ?Y . ?Y a PortCall;  :atPort ?PL ; :hasTimeStamp ?T.""" ;
-                      
-                      rdfs:label "hasEndPortCall" .
+	rdfs:label "hasEndPortCall" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasFeatureType
 
+:hasFeatureType a owl:ObjectProperty ;
+	owl:inverseOf :isFeatureTypeOf ;
+	rdfs:domain :Feature ;
+	rdfs:range :FeatureType ;
+	rdfs:label "hasFeatureType" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasFormat
 
+:hasFormat a owl:ObjectProperty ;
+	owl:inverseOf :isFormatOf ;
+	rdfs:domain :DigitalObject ;
+	rdfs:range :Format ;
+	rdfs:label "hasFormat" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasGeoFeatureType
 
-###  http://schema.geolink.org/1.0/base/main#hasFeatureType
+:hasGeoFeatureType a owl:ObjectProperty ;
+	rdfs:subPropertyOf :hasFeatureType , :hasPlaceType ;
+	owl:inverseOf :isGeoFeatureTypeOf ;
+	rdfs:domain :GeoFeature ;
+	rdfs:range :GeoFeatureType ;
+	rdfs:label "hasGeoFeatureType" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasIdentifier
 
-glbase:hasFeatureType rdf:type owl:ObjectProperty ;
-                      
-                      owl:inverseOf glbase:isFeatureTypeOf ;
-                      
-                      rdfs:domain glbase:Feature ;
-                      
-                      rdfs:range glbase:FeatureType ;
-                      
-                      rdfs:label "hasFeatureType" .
+:hasIdentifier a owl:ObjectProperty ;
+	owl:inverseOf :isIdentifierOf ;
+	rdfs:domain _:genid48 .
 
+_:genid48 a owl:Class ;
+	owl:unionOf _:genid78 .
 
+_:genid78 a rdf:List ;
+	rdf:first :Award ;
+	rdf:rest _:genid77 .
 
-###  http://schema.geolink.org/1.0/base/main#hasFormat
+_:genid77 a rdf:List ;
+	rdf:first :Country ;
+	rdf:rest _:genid76 .
 
-glbase:hasFormat rdf:type owl:ObjectProperty ;
-                 
-                 owl:inverseOf glbase:isFormatOf ;
-                 
-                 rdfs:domain glbase:DigitalObject ;
-                 
-                 rdfs:range glbase:Format ;
-                 
-                 rdfs:label "hasFormat" .
+_:genid76 a rdf:List ;
+	rdf:first :Cruise ;
+	rdf:rest _:genid75 .
 
+_:genid75 a rdf:List ;
+	rdf:first :CruiseType ;
+	rdf:rest _:genid74 .
 
+_:genid74 a rdf:List ;
+	rdf:first :Dataset ;
+	rdf:rest _:genid73 .
 
-###  http://schema.geolink.org/1.0/base/main#hasGeoFeatureType
+_:genid73 a rdf:List ;
+	rdf:first :DigitalObject ;
+	rdf:rest _:genid72 .
 
-glbase:hasGeoFeatureType rdf:type owl:ObjectProperty ;
-                         
-                         rdfs:subPropertyOf glbase:hasFeatureType ,
-                                            glbase:hasPlaceType ;
-                         
-                         owl:inverseOf glbase:isGeoFeatureTypeOf ;
-                         
-                         rdfs:domain glbase:GeoFeature ;
-                         
-                         rdfs:range glbase:GeoFeatureType ;
-                         
-                         rdfs:label "hasGeoFeatureType" .
+_:genid72 a rdf:List ;
+	rdf:first :Dive ;
+	rdf:rest _:genid71 .
 
+_:genid71 a rdf:List ;
+	rdf:first :Document ;
+	rdf:rest _:genid70 .
 
+_:genid70 a rdf:List ;
+	rdf:first :DocumentType ;
+	rdf:rest _:genid69 .
 
-###  http://schema.geolink.org/1.0/base/main#hasIdentifier
+_:genid69 a rdf:List ;
+	rdf:first :Feature ;
+	rdf:rest _:genid68 .
 
-glbase:hasIdentifier rdf:type owl:ObjectProperty ;
-                     
-                     owl:inverseOf glbase:isIdentifierOf ;
-                     
-                     rdfs:domain [ rdf:type owl:Class ;
-                                   owl:unionOf ( glbase:Award
-                                                 glbase:Country
-                                                 glbase:Cruise
-                                                 glbase:CruiseType
-                                                 glbase:Dataset
-                                                 glbase:DigitalObject
-                                                 glbase:Dive
-                                                 glbase:Document
-                                                 glbase:DocumentType
-                                                 glbase:Feature
-                                                 glbase:FeatureType
-                                                 glbase:Format
-                                                 glbase:GeologicAge
-                                                 glbase:Instrument
-                                                 glbase:InstrumentType
-                                                 glbase:MeasurementType
-                                                 glbase:Meeting
-                                                 glbase:Organization
-                                                 glbase:Person
-                                                 glbase:PhysicalSample
-                                                 glbase:PhysicalSampleType
-                                                 glbase:Place
-                                                 glbase:PlaceType
-                                                 glbase:Platform
-                                                 glbase:PlatformType
-                                                 glbase:PortCall
-                                                 glbase:Program
-                                                 glbase:Repository
-                                                 glbase:RoleType
-                                                 glbase:StratigraphicUnit
-                                               )
-                                 ] ;
-                     
-                     rdfs:range glbase:Identifier ;
-                     
-                     rdfs:comment "May be used by itself or in conjunction with hasIdentifierScheme and hasIdentifierValue data properties." ;
-                     
-                     rdfs:label "hasIdentifier" ;
-                     
-                     rdfs:seeAlso glbase:hasIdentifierValue .
+_:genid68 a rdf:List ;
+	rdf:first :FeatureType ;
+	rdf:rest _:genid67 .
 
+_:genid67 a rdf:List ;
+	rdf:first :Format ;
+	rdf:rest _:genid66 .
 
+_:genid66 a rdf:List ;
+	rdf:first :GeologicAge ;
+	rdf:rest _:genid65 .
 
-###  http://schema.geolink.org/1.0/base/main#hasIdentifierScheme
+_:genid65 a rdf:List ;
+	rdf:first :Instrument ;
+	rdf:rest _:genid64 .
 
-glbase:hasIdentifierScheme rdf:type owl:ObjectProperty ;
-                           
-                           owl:inverseOf glbase:isIdentifierSchemeOf ;
-                           
-                           rdfs:domain glbase:Identifier ;
-                           
-                           rdfs:range glbase:IdentifierScheme ;
-                           
-                           rdfs:label "hasIdentifierScheme" .
+_:genid64 a rdf:List ;
+	rdf:first :InstrumentType ;
+	rdf:rest _:genid63 .
 
+_:genid63 a rdf:List ;
+	rdf:first :MeasurementType ;
+	rdf:rest _:genid62 .
 
+_:genid62 a rdf:List ;
+	rdf:first :Meeting ;
+	rdf:rest _:genid61 .
 
-###  http://schema.geolink.org/1.0/base/main#hasInstrument
+_:genid61 a rdf:List ;
+	rdf:first :Organization ;
+	rdf:rest _:genid60 .
 
-glbase:hasInstrument rdf:type owl:ObjectProperty ;
-                     
-                     owl:inverseOf glbase:isInstrumentOf ;
-                     
-                     rdfs:domain [ rdf:type owl:Class ;
-                                   owl:unionOf ( glbase:Dataset
-                                                 glbase:DigitalObject
-                                               )
-                                 ] ;
-                     
-                     rdfs:range glbase:Instrument ;
-                     
-                     rdfs:label "hasInstrument" .
+_:genid60 a rdf:List ;
+	rdf:first :Person ;
+	rdf:rest _:genid59 .
 
+_:genid59 a rdf:List ;
+	rdf:first :PhysicalSample ;
+	rdf:rest _:genid58 .
 
+_:genid58 a rdf:List ;
+	rdf:first :PhysicalSampleType ;
+	rdf:rest _:genid57 .
 
-###  http://schema.geolink.org/1.0/base/main#hasInstrumentType
+_:genid57 a rdf:List ;
+	rdf:first :Place ;
+	rdf:rest _:genid56 .
 
-glbase:hasInstrumentType rdf:type owl:ObjectProperty ;
-                         
-                         owl:inverseOf glbase:isInstrumentTypeOf ;
-                         
-                         rdfs:domain glbase:Instrument ;
-                         
-                         rdfs:range glbase:InstrumentType ;
-                         
-                         rdfs:label "hasInstrumentType" .
+_:genid56 a rdf:List ;
+	rdf:first :PlaceType ;
+	rdf:rest _:genid55 .
 
+_:genid55 a rdf:List ;
+	rdf:first :Platform ;
+	rdf:rest _:genid54 .
 
+_:genid54 a rdf:List ;
+	rdf:first :PlatformType ;
+	rdf:rest _:genid53 .
 
-###  http://schema.geolink.org/1.0/base/main#hasMeasurementType
+_:genid53 a rdf:List ;
+	rdf:first :PortCall ;
+	rdf:rest _:genid52 .
 
-glbase:hasMeasurementType rdf:type owl:ObjectProperty ;
-                          
-                          owl:inverseOf glbase:isMeasurementTypeOf ;
-                          
-                          rdfs:domain [ rdf:type owl:Class ;
-                                        owl:unionOf ( glbase:Dataset
-                                                      glbase:DigitalObject
-                                                    )
-                                      ] ;
-                          
-                          rdfs:range glbase:MeasurementType ;
-                          
-                          rdfs:label "hasMeasurementType" .
+_:genid52 a rdf:List ;
+	rdf:first :Program ;
+	rdf:rest _:genid51 .
 
+_:genid51 a rdf:List ;
+	rdf:first :Repository ;
+	rdf:rest _:genid50 .
 
+_:genid50 a rdf:List ;
+	rdf:first :RoleType ;
+	rdf:rest _:genid49 .
 
-###  http://schema.geolink.org/1.0/base/main#hasMeetingParticipant
+_:genid49 a rdf:List ;
+	rdf:first :StratigraphicUnit ;
+	rdf:rest rdf:nil .
 
-glbase:hasMeetingParticipant rdf:type owl:ObjectProperty ;
-                             
-                             owl:inverseOf glbase:isMeetingParticipantOf ;
-                             
-                             rdfs:domain glbase:Meeting ;
-                             
-                             rdfs:range glbase:Person ;
-                             
-                             rdfs:label "hasMeetingParticipant" .
+:hasIdentifier rdfs:range :Identifier ;
+	rdfs:comment "May be used by itself or in conjunction with hasIdentifierScheme and hasIdentifierValue data properties." ;
+	rdfs:label "hasIdentifier" ;
+	rdfs:seeAlso :hasIdentifierValue .
+# 
+# http://schema.geolink.org/1.0/base/main#hasIdentifierScheme
 
+:hasIdentifierScheme a owl:ObjectProperty ;
+	owl:inverseOf :isIdentifierSchemeOf ;
+	rdfs:domain :Identifier ;
+	rdfs:range :IdentifierScheme ;
+	rdfs:label "hasIdentifierScheme" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasInstrument
 
+:hasInstrument a owl:ObjectProperty ;
+	owl:inverseOf :isInstrumentOf ;
+	rdfs:domain _:genid79 .
 
-###  http://schema.geolink.org/1.0/base/main#hasMidPortCall
+_:genid79 a owl:Class ;
+	owl:unionOf _:genid81 .
 
-glbase:hasMidPortCall rdf:type owl:ObjectProperty ;
-                      
-                      owl:inverseOf glbase:isMidPortCallOf ;
-                      
-                      rdfs:domain glbase:Cruise ;
-                      
-                      rdfs:range glbase:PortCall ;
-                      
-                      rdfs:comment """The range of this property is PortCall that acts as the domain of the 'atPort' and 'hasTimeStamp' property. Graph patterns for data using this property can be of the form:
+_:genid81 a rdf:List ;
+	rdf:first :Dataset ;
+	rdf:rest _:genid80 .
+
+_:genid80 a rdf:List ;
+	rdf:first :DigitalObject ;
+	rdf:rest rdf:nil .
+
+:hasInstrument rdfs:range :Instrument ;
+	rdfs:label "hasInstrument" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasInstrumentType
+
+:hasInstrumentType a owl:ObjectProperty ;
+	owl:inverseOf :isInstrumentTypeOf ;
+	rdfs:domain :Instrument ;
+	rdfs:range :InstrumentType ;
+	rdfs:label "hasInstrumentType" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasMeasurementType
+
+:hasMeasurementType a owl:ObjectProperty ;
+	owl:inverseOf :isMeasurementTypeOf ;
+	rdfs:domain _:genid82 .
+
+_:genid82 a owl:Class ;
+	owl:unionOf _:genid84 .
+
+_:genid84 a rdf:List ;
+	rdf:first :Dataset ;
+	rdf:rest _:genid83 .
+
+_:genid83 a rdf:List ;
+	rdf:first :DigitalObject ;
+	rdf:rest rdf:nil .
+
+:hasMeasurementType rdfs:range :MeasurementType ;
+	rdfs:label "hasMeasurementType" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasMeetingParticipant
+
+:hasMeetingParticipant a owl:ObjectProperty ;
+	owl:inverseOf :isMeetingParticipantOf ;
+	rdfs:domain :Meeting ;
+	rdfs:range :Person ;
+	rdfs:label "hasMeetingParticipant" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasMidPortCall
+
+:hasMidPortCall a owl:ObjectProperty ;
+	owl:inverseOf :isMidPortCallOf ;
+	rdfs:domain :Cruise ;
+	rdfs:range :PortCall ;
+	rdfs:comment """The range of this property is PortCall that acts as the domain of the 'atPort' and 'hasTimeStamp' property. Graph patterns for data using this property can be of the form:
 -   ?X :hasEndPortCall ?Y . ?Y a PortCall;  :atPort ?PL ; :hasTimeStamp ?T.""" ;
-                      
-                      rdfs:label "hasMidPortCall" .
+	rdfs:label "hasMidPortCall" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasObserver
 
+:hasObserver a owl:ObjectProperty ;
+	owl:inverseOf :isObserverIn ;
+	rdfs:domain _:genid85 .
 
+_:genid85 a owl:Class ;
+	owl:unionOf _:genid87 .
 
-###  http://schema.geolink.org/1.0/base/main#hasObserver
+_:genid87 a rdf:List ;
+	rdf:first :Cruise ;
+	rdf:rest _:genid86 .
 
-glbase:hasObserver rdf:type owl:ObjectProperty ;
-                   
-                   owl:inverseOf glbase:isObserverIn ;
-                   
-                   rdfs:domain [ rdf:type owl:Class ;
-                                 owl:unionOf ( glbase:Cruise
-                                               glbase:Dive
-                                             )
-                               ] ;
-                   
-                   rdfs:range glbase:Person ;
-                   
-                   rdfs:label "hasObserver" .
+_:genid86 a rdf:List ;
+	rdf:first :Dive ;
+	rdf:rest rdf:nil .
 
+:hasObserver rdfs:range :Person ;
+	rdfs:label "hasObserver" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasOperationArea
 
+:hasOperationArea a owl:ObjectProperty ;
+	owl:inverseOf :isOperationAreaOf ;
+	rdfs:domain :Dive ;
+	rdfs:range :Place ;
+	rdfs:label "hasOperationArea" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasOperator
 
-###  http://schema.geolink.org/1.0/base/main#hasOperationArea
+:hasOperator a owl:ObjectProperty ;
+	owl:inverseOf :isOperatorOf ;
+	rdfs:domain :Cruise ;
+	rdfs:range :Organization ;
+	rdfs:label "hasOperator" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasOriginDigitalRepository
 
-glbase:hasOperationArea rdf:type owl:ObjectProperty ;
-                        
-                        owl:inverseOf glbase:isOperationAreaOf ;
-                        
-                        rdfs:domain glbase:Dive ;
-                        
-                        rdfs:range glbase:Place ;
-                        
-                        rdfs:label "hasOperationArea" .
+:hasOriginDigitalRepository a owl:ObjectProperty ;
+	rdfs:subPropertyOf :hasRepository ;
+	owl:inverseOf :isOriginDigitalRepositoryOf ;
+	rdfs:domain _:genid88 .
 
+_:genid88 a owl:Class ;
+	owl:unionOf _:genid91 .
 
+_:genid91 a rdf:List ;
+	rdf:first :Dataset ;
+	rdf:rest _:genid90 .
 
-###  http://schema.geolink.org/1.0/base/main#hasOperator
+_:genid90 a rdf:List ;
+	rdf:first :DigitalObject ;
+	rdf:rest _:genid89 .
 
-glbase:hasOperator rdf:type owl:ObjectProperty ;
-                   
-                   owl:inverseOf glbase:isOperatorOf ;
-                   
-                   rdfs:domain glbase:Cruise ;
-                   
-                   rdfs:range glbase:Organization ;
-                   
-                   rdfs:label "hasOperator" .
+_:genid89 a rdf:List ;
+	rdf:first :PhysicalSample ;
+	rdf:rest rdf:nil .
 
+:hasOriginDigitalRepository rdfs:range :Repository ;
+	rdfs:label "hasOriginDigitalRepository" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasPart
 
+:hasPart a owl:ObjectProperty ;
+	owl:inverseOf :isPartOf ;
+	rdfs:domain _:genid92 .
 
-###  http://schema.geolink.org/1.0/base/main#hasOriginDigitalRepository
+_:genid92 a owl:Class ;
+	owl:unionOf _:genid94 .
 
-glbase:hasOriginDigitalRepository rdf:type owl:ObjectProperty ;
-                                  
-                                  rdfs:subPropertyOf glbase:hasRepository ;
-                                  
-                                  owl:inverseOf glbase:isOriginDigitalRepositoryOf ;
-                                  
-                                  rdfs:domain [ rdf:type owl:Class ;
-                                                owl:unionOf ( glbase:Dataset
-                                                              glbase:DigitalObject
-                                                              glbase:PhysicalSample
-                                                            )
-                                              ] ;
-                                  
-                                  rdfs:range glbase:Repository ;
-                                  
-                                  rdfs:label "hasOriginDigitalRepository" .
+_:genid94 a rdf:List ;
+	rdf:first :Dataset ;
+	rdf:rest _:genid93 .
 
+_:genid93 a rdf:List ;
+	rdf:first :Document ;
+	rdf:rest rdf:nil .
 
+:hasPart rdfs:range :DigitalObject ;
+	rdfs:label "hasPart" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasParticipant
 
-###  http://schema.geolink.org/1.0/base/main#hasPart
+:hasParticipant a owl:ObjectProperty ;
+	owl:inverseOf :isParticipantOf ;
+	rdfs:domain _:genid95 .
 
-glbase:hasPart rdf:type owl:ObjectProperty ;
-               
-               owl:inverseOf glbase:isPartOf ;
-               
-               rdfs:domain [ rdf:type owl:Class ;
-                             owl:unionOf ( glbase:Dataset
-                                           glbase:Document
-                                         )
-                           ] ;
-               
-               rdfs:range glbase:DigitalObject ;
-               
-               rdfs:label "hasPart" .
+_:genid95 a owl:Class ;
+	owl:unionOf _:genid100 .
 
+_:genid100 a rdf:List ;
+	rdf:first :Award ;
+	rdf:rest _:genid99 .
 
+_:genid99 a rdf:List ;
+	rdf:first :Cruise ;
+	rdf:rest _:genid98 .
 
-###  http://schema.geolink.org/1.0/base/main#hasParticipant
+_:genid98 a rdf:List ;
+	rdf:first :Dataset ;
+	rdf:rest _:genid97 .
 
-glbase:hasParticipant rdf:type owl:ObjectProperty ;
-                      
-                      owl:inverseOf glbase:isParticipantOf ;
-                      
-                      rdfs:domain [ rdf:type owl:Class ;
-                                    owl:unionOf ( glbase:Award
-                                                  glbase:Cruise
-                                                  glbase:Dataset
-                                                  glbase:PhysicalSample
-                                                  glbase:Program
-                                                )
-                                  ] ;
-                      
-                      rdfs:range glbase:Participant ;
-                      
-                      rdfs:comment """The range of this property includes instances of Participant that act as the domain of the 'hasRoleType', 'isPerformedBy', 'hasAffiliation' property. Graph patterns for data using this property can be of the form:
+_:genid97 a rdf:List ;
+	rdf:first :PhysicalSample ;
+	rdf:rest _:genid96 .
+
+_:genid96 a rdf:List ;
+	rdf:first :Program ;
+	rdf:rest rdf:nil .
+
+:hasParticipant rdfs:range :Participant ;
+	rdfs:comment """The range of this property includes instances of Participant that act as the domain of the 'hasRoleType', 'isPerformedBy', 'hasAffiliation' property. Graph patterns for data using this property can be of the form:
 ?X :hasParticipant ?Y.  
 ?Y a :Participant . 
 ?Y :hasRoleType ?RT. 
 ?Y :isPerformedBy ?P. 
 ?Y :hasAffiliation ?O.""" ;
-                      
-                      rdfs:label "hasParticipant" .
+	rdfs:label "hasParticipant" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasPilot
 
+:hasPilot a owl:ObjectProperty ;
+	owl:inverseOf :isPilotOf ;
+	rdfs:domain :Dive ;
+	rdfs:range :Person ;
+	rdfs:label "hasPilot" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasPlace
 
+:hasPlace a owl:ObjectProperty ;
+	owl:inverseOf :isPlaceOf ;
+	rdfs:domain _:genid101 .
 
-###  http://schema.geolink.org/1.0/base/main#hasPilot
+_:genid101 a owl:Class ;
+	owl:unionOf _:genid103 .
 
-glbase:hasPilot rdf:type owl:ObjectProperty ;
-                
-                owl:inverseOf glbase:isPilotOf ;
-                
-                rdfs:domain glbase:Dive ;
-                
-                rdfs:range glbase:Person ;
-                
-                rdfs:label "hasPilot" .
+_:genid103 a rdf:List ;
+	rdf:first :Document ;
+	rdf:rest _:genid102 .
 
+_:genid102 a rdf:List ;
+	rdf:first :Meeting ;
+	rdf:rest rdf:nil .
 
+:hasPlace rdfs:range :Place ;
+	rdfs:label "hasPlace" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasPlaceType
 
-###  http://schema.geolink.org/1.0/base/main#hasPlace
+:hasPlaceType a owl:ObjectProperty ;
+	owl:inverseOf :isPlaceTypeOf ;
+	rdfs:domain :Place ;
+	rdfs:range :PlaceType ;
+	rdfs:label "hasPlaceType" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasPlatformType
 
-glbase:hasPlace rdf:type owl:ObjectProperty ;
-                
-                owl:inverseOf glbase:isPlaceOf ;
-                
-                rdfs:domain [ rdf:type owl:Class ;
-                              owl:unionOf ( glbase:Document
-                                            glbase:Meeting
-                                          )
-                            ] ;
-                
-                rdfs:range glbase:Place ;
-                
-                rdfs:label "hasPlace" .
+:hasPlatformType a owl:ObjectProperty ;
+	owl:inverseOf :isPlatformTypeOf ;
+	rdfs:domain :Platform ;
+	rdfs:range :PlatformType ;
+	rdfs:label "hasPlatformType" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasPrincipalInvestigator
 
+:hasPrincipalInvestigator a owl:ObjectProperty ;
+	owl:inverseOf :isPrincipalInvestigatorOf ;
+	rdfs:domain _:genid104 .
 
+_:genid104 a owl:Class ;
+	owl:unionOf _:genid106 .
 
-###  http://schema.geolink.org/1.0/base/main#hasPlaceType
+_:genid106 a rdf:List ;
+	rdf:first :Award ;
+	rdf:rest _:genid105 .
 
-glbase:hasPlaceType rdf:type owl:ObjectProperty ;
-                    
-                    owl:inverseOf glbase:isPlaceTypeOf ;
-                    
-                    rdfs:domain glbase:Place ;
-                    
-                    rdfs:range glbase:PlaceType ;
-                    
-                    rdfs:label "hasPlaceType" .
+_:genid105 a rdf:List ;
+	rdf:first :Program ;
+	rdf:rest rdf:nil .
 
+:hasPrincipalInvestigator rdfs:range :Person ;
+	rdfs:label "hasPrincipalInvestigator" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasProgram
 
+:hasProgram a owl:ObjectProperty ;
+	owl:inverseOf :isProgramOf ;
+	rdfs:domain _:genid107 .
 
-###  http://schema.geolink.org/1.0/base/main#hasPlatformType
+_:genid107 a owl:Class ;
+	owl:unionOf _:genid109 .
 
-glbase:hasPlatformType rdf:type owl:ObjectProperty ;
-                       
-                       owl:inverseOf glbase:isPlatformTypeOf ;
-                       
-                       rdfs:domain glbase:Platform ;
-                       
-                       rdfs:range glbase:PlatformType ;
-                       
-                       rdfs:label "hasPlatformType" .
+_:genid109 a rdf:List ;
+	rdf:first :Cruise ;
+	rdf:rest _:genid108 .
 
+_:genid108 a rdf:List ;
+	rdf:first :Document ;
+	rdf:rest rdf:nil .
 
+:hasProgram rdfs:range :Program ;
+	rdfs:label "hasProgram" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasProgramManager
 
-###  http://schema.geolink.org/1.0/base/main#hasPrincipalInvestigator
+:hasProgramManager a owl:ObjectProperty ;
+	owl:inverseOf :isProgramManagerOf ;
+	rdfs:domain _:genid110 .
 
-glbase:hasPrincipalInvestigator rdf:type owl:ObjectProperty ;
-                                
-                                owl:inverseOf glbase:isPrincipalInvestigatorOf ;
-                                
-                                rdfs:domain [ rdf:type owl:Class ;
-                                              owl:unionOf ( glbase:Award
-                                                            glbase:Program
-                                                          )
-                                            ] ;
-                                
-                                rdfs:range glbase:Person ;
-                                
-                                rdfs:label "hasPrincipalInvestigator" .
+_:genid110 a owl:Class ;
+	owl:unionOf _:genid112 .
 
+_:genid112 a rdf:List ;
+	rdf:first :Award ;
+	rdf:rest _:genid111 .
 
+_:genid111 a rdf:List ;
+	rdf:first :Program ;
+	rdf:rest rdf:nil .
 
-###  http://schema.geolink.org/1.0/base/main#hasProgram
+:hasProgramManager rdfs:range :Person ;
+	rdfs:label "hasProgramManager" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasPublisher
 
-glbase:hasProgram rdf:type owl:ObjectProperty ;
-                  
-                  owl:inverseOf glbase:isProgramOf ;
-                  
-                  rdfs:domain [ rdf:type owl:Class ;
-                                owl:unionOf ( glbase:Cruise
-                                              glbase:Document
-                                            )
-                              ] ;
-                  
-                  rdfs:range glbase:Program ;
-                  
-                  rdfs:label "hasProgram" .
+:hasPublisher a owl:ObjectProperty ;
+	owl:inverseOf :isPublisherOf ;
+	rdfs:domain :Document ;
+	rdfs:range _:genid113 .
 
+_:genid113 a owl:Class ;
+	owl:unionOf _:genid115 .
 
+_:genid115 a rdf:List ;
+	rdf:first :Organization ;
+	rdf:rest _:genid114 .
 
-###  http://schema.geolink.org/1.0/base/main#hasProgramManager
+_:genid114 a rdf:List ;
+	rdf:first :Person ;
+	rdf:rest rdf:nil .
 
-glbase:hasProgramManager rdf:type owl:ObjectProperty ;
-                         
-                         owl:inverseOf glbase:isProgramManagerOf ;
-                         
-                         rdfs:domain [ rdf:type owl:Class ;
-                                       owl:unionOf ( glbase:Award
-                                                     glbase:Program
-                                                   )
-                                     ] ;
-                         
-                         rdfs:range glbase:Person ;
-                         
-                         rdfs:label "hasProgramManager" .
+:hasPublisher rdfs:label "hasPublisher" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasRelatedCruise
 
+:hasRelatedCruise a owl:ObjectProperty ;
+	owl:inverseOf :hasRelatedCruise ;
+	a owl:SymmetricProperty ;
+	rdfs:domain :Cruise ;
+	rdfs:range :Cruise ;
+	rdfs:label "hasRelatedCruise" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasReplicaRepository
 
+:hasReplicaRepository a owl:ObjectProperty ;
+	rdfs:subPropertyOf :hasRepository ;
+	owl:inverseOf :isReplicaDigitalRepositoryOf ;
+	rdfs:domain _:genid116 .
 
-###  http://schema.geolink.org/1.0/base/main#hasPublisher
+_:genid116 a owl:Class ;
+	owl:unionOf _:genid119 .
 
-glbase:hasPublisher rdf:type owl:ObjectProperty ;
-                    
-                    owl:inverseOf glbase:isPublisherOf ;
-                    
-                    rdfs:domain glbase:Document ;
-                    
-                    rdfs:range [ rdf:type owl:Class ;
-                                 owl:unionOf ( glbase:Organization
-                                               glbase:Person
-                                             )
-                               ] ;
-                    
-                    rdfs:label "hasPublisher" .
+_:genid119 a rdf:List ;
+	rdf:first :Dataset ;
+	rdf:rest _:genid118 .
 
+_:genid118 a rdf:List ;
+	rdf:first :DigitalObject ;
+	rdf:rest _:genid117 .
 
+_:genid117 a rdf:List ;
+	rdf:first :PhysicalSample ;
+	rdf:rest rdf:nil .
 
-###  http://schema.geolink.org/1.0/base/main#hasRelatedCruise
+:hasReplicaRepository rdfs:range :Repository ;
+	rdfs:label "hasReplicaDigitalRepository" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasRepository
 
-glbase:hasRelatedCruise rdf:type owl:ObjectProperty ;
-                        
-                        owl:inverseOf glbase:hasRelatedCruise ;
-                        
-                        rdf:type owl:SymmetricProperty ;
-                        
-                        rdfs:domain glbase:Cruise ;
-                        
-                        rdfs:range glbase:Cruise ;
-                        
-                        rdfs:label "hasRelatedCruise" .
+:hasRepository a owl:ObjectProperty ;
+	owl:inverseOf :isRepositoryOf ;
+	rdfs:domain _:genid120 .
 
+_:genid120 a owl:Class ;
+	owl:unionOf _:genid124 .
 
+_:genid124 a rdf:List ;
+	rdf:first :Dataset ;
+	rdf:rest _:genid123 .
 
-###  http://schema.geolink.org/1.0/base/main#hasReplicaRepository
+_:genid123 a rdf:List ;
+	rdf:first :DigitalObject ;
+	rdf:rest _:genid122 .
 
-glbase:hasReplicaRepository rdf:type owl:ObjectProperty ;
-                            
-                            rdfs:subPropertyOf glbase:hasRepository ;
-                            
-                            owl:inverseOf glbase:isReplicaDigitalRepositoryOf ;
-                            
-                            rdfs:domain [ rdf:type owl:Class ;
-                                          owl:unionOf ( glbase:Dataset
-                                                        glbase:DigitalObject
-                                                        glbase:PhysicalSample
-                                                      )
-                                        ] ;
-                            
-                            rdfs:range glbase:Repository ;
-                            
-                            rdfs:label "hasReplicaDigitalRepository" .
+_:genid122 a rdf:List ;
+	rdf:first :Document ;
+	rdf:rest _:genid121 .
 
+_:genid121 a rdf:List ;
+	rdf:first :PhysicalSample ;
+	rdf:rest rdf:nil .
 
+:hasRepository rdfs:range _:genid125 .
 
-###  http://schema.geolink.org/1.0/base/main#hasRepository
+_:genid125 a owl:Class ;
+	owl:unionOf _:genid127 .
 
-glbase:hasRepository rdf:type owl:ObjectProperty ;
-                     
-                     owl:inverseOf glbase:isRepositoryOf ;
-                     
-                     rdfs:domain [ rdf:type owl:Class ;
-                                   owl:unionOf ( glbase:Dataset
-                                                 glbase:DigitalObject
-                                                 glbase:Document
-                                                 glbase:PhysicalSample
-                                               )
-                                 ] ;
-                     
-                     rdfs:range [ rdf:type owl:Class ;
-                                  owl:unionOf ( glbase:Organization
-                                                glbase:Repository
-                                              )
-                                ] ;
-                     
-                     rdfs:label "hasRepository" .
+_:genid127 a rdf:List ;
+	rdf:first :Organization ;
+	rdf:rest _:genid126 .
 
+_:genid126 a rdf:List ;
+	rdf:first :Repository ;
+	rdf:rest rdf:nil .
 
+:hasRepository rdfs:label "hasRepository" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasRightsHolder
 
-###  http://schema.geolink.org/1.0/base/main#hasRightsHolder
+:hasRightsHolder a owl:ObjectProperty ;
+	owl:inverseOf :isRightsHolderOf ;
+	rdfs:domain _:genid128 .
 
-glbase:hasRightsHolder rdf:type owl:ObjectProperty ;
-                       
-                       owl:inverseOf glbase:isRightsHolderOf ;
-                       
-                       rdfs:domain [ rdf:type owl:Class ;
-                                     owl:unionOf ( glbase:Dataset
-                                                   glbase:DigitalObject
-                                                   glbase:Document
-                                                   glbase:PhysicalSample
-                                                 )
-                                   ] ;
-                       
-                       rdfs:range [ rdf:type owl:Class ;
-                                    owl:unionOf ( glbase:Organization
-                                                  glbase:Person
-                                                )
-                                  ] ;
-                       
-                       rdfs:label "hasRightsHolder" .
+_:genid128 a owl:Class ;
+	owl:unionOf _:genid132 .
 
+_:genid132 a rdf:List ;
+	rdf:first :Dataset ;
+	rdf:rest _:genid131 .
 
+_:genid131 a rdf:List ;
+	rdf:first :DigitalObject ;
+	rdf:rest _:genid130 .
 
-###  http://schema.geolink.org/1.0/base/main#hasRoleType
+_:genid130 a rdf:List ;
+	rdf:first :Document ;
+	rdf:rest _:genid129 .
 
-glbase:hasRoleType rdf:type owl:ObjectProperty ;
-                   
-                   owl:inverseOf glbase:isRoleTypeOf ;
-                   
-                   rdfs:domain glbase:Participant ;
-                   
-                   rdfs:range glbase:RoleType ;
-                   
-                   rdfs:comment """The domain of this property is Participant that acts as the range of 'hasParticipant' property. Graph patterns for data using this property can be of the form:
+_:genid129 a rdf:List ;
+	rdf:first :PhysicalSample ;
+	rdf:rest rdf:nil .
+
+:hasRightsHolder rdfs:range _:genid133 .
+
+_:genid133 a owl:Class ;
+	owl:unionOf _:genid135 .
+
+_:genid135 a rdf:List ;
+	rdf:first :Organization ;
+	rdf:rest _:genid134 .
+
+_:genid134 a rdf:List ;
+	rdf:first :Person ;
+	rdf:rest rdf:nil .
+
+:hasRightsHolder rdfs:label "hasRightsHolder" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasRoleType
+
+:hasRoleType a owl:ObjectProperty ;
+	owl:inverseOf :isRoleTypeOf ;
+	rdfs:domain :Participant ;
+	rdfs:range :RoleType ;
+	rdfs:comment """The domain of this property is Participant that acts as the range of 'hasParticipant' property. Graph patterns for data using this property can be of the form:
 -   ?X :hasParticipation ?Y . ?Y a :Participant;  :hasRoleType ?RT ; :isPerformedBy ?P; :hasAffiliation ?O .""" ;
-                   
-                   rdfs:label "hasRoleType" .
+	rdfs:label "hasRoleType" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasScheduler
 
+:hasScheduler a owl:ObjectProperty ;
+	owl:inverseOf :isSchedulerOf ;
+	rdfs:domain :Cruise ;
+	rdfs:range :Organization ;
+	rdfs:label "hasScheduler" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasScientist
 
+:hasScientist a owl:ObjectProperty ;
+	owl:inverseOf :isScientistOf ;
+	rdfs:domain :Cruise ;
+	rdfs:range :Person ;
+	rdfs:label "hasScientist" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasSponsor
 
-###  http://schema.geolink.org/1.0/base/main#hasScheduler
+:hasSponsor a owl:ObjectProperty ;
+	owl:inverseOf :isSponsorOf ;
+	rdfs:domain :Award ;
+	rdfs:range :Organization ;
+	rdfs:label "hasSponsor" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasStartPortCall
 
-glbase:hasScheduler rdf:type owl:ObjectProperty ;
-                    
-                    owl:inverseOf glbase:isSchedulerOf ;
-                    
-                    rdfs:domain glbase:Cruise ;
-                    
-                    rdfs:range glbase:Organization ;
-                    
-                    rdfs:label "hasScheduler" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#hasScientist
-
-glbase:hasScientist rdf:type owl:ObjectProperty ;
-                    
-                    owl:inverseOf glbase:isScientistOf ;
-                    
-                    rdfs:domain glbase:Cruise ;
-                    
-                    rdfs:range glbase:Person ;
-                    
-                    rdfs:label "hasScientist" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#hasSponsor
-
-glbase:hasSponsor rdf:type owl:ObjectProperty ;
-                  
-                  owl:inverseOf glbase:isSponsorOf ;
-                  
-                  rdfs:domain glbase:Award ;
-                  
-                  rdfs:range glbase:Organization ;
-                  
-                  rdfs:label "hasSponsor" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#hasStartPortCall
-
-glbase:hasStartPortCall rdf:type owl:ObjectProperty ;
-                        
-                        owl:inverseOf glbase:isStartPortCallOf ;
-                        
-                        rdfs:domain glbase:Cruise ;
-                        
-                        rdfs:range glbase:PortCall ;
-                        
-                        rdfs:comment """The range of this property is PortCall that acts as the domain of the 'atPort' and 'hasTimeStamp' property. Graph patterns for data using this property can be of the form:
+:hasStartPortCall a owl:ObjectProperty ;
+	owl:inverseOf :isStartPortCallOf ;
+	rdfs:domain :Cruise ;
+	rdfs:range :PortCall ;
+	rdfs:comment """The range of this property is PortCall that acts as the domain of the 'atPort' and 'hasTimeStamp' property. Graph patterns for data using this property can be of the form:
 -   ?X :hasEndPortCall ?Y . ?Y a PortCall;  :atPort ?PL ; :hasTimeStamp ?T.""" ;
-                        
-                        rdfs:label "hasStartPortCall" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#hasStudent
-
-glbase:hasStudent rdf:type owl:ObjectProperty ;
-                  
-                  owl:inverseOf glbase:isStudentIn ;
-                  
-                  rdfs:domain glbase:Cruise ;
-                  
-                  rdfs:range glbase:Person ;
-                  
-                  rdfs:label "hasStudent" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#hasSubOrganization
-
-glbase:hasSubOrganization rdf:type owl:ObjectProperty ;
-                          
-                          owl:inverseOf glbase:isSubOrganizationOf ;
-                          
-                          rdfs:domain glbase:Organization ;
-                          
-                          rdfs:range glbase:Organization ;
-                          
-                          rdfs:label "hasSubOrganization" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#hasSubmersible
-
-glbase:hasSubmersible rdf:type owl:ObjectProperty ;
-                      
-                      owl:inverseOf glbase:isSubmersibleOf ;
-                      
-                      rdfs:domain glbase:Dive ;
-                      
-                      rdfs:range glbase:Submersible .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#hasTechnician
-
-glbase:hasTechnician rdf:type owl:ObjectProperty ;
-                     
-                     owl:inverseOf glbase:isTechnicianOf ;
-                     
-                     rdfs:domain glbase:Cruise ;
-                     
-                     rdfs:range glbase:Person ;
-                     
-                     rdfs:label "hasTechnician" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#hasVendor
-
-glbase:hasVendor rdf:type owl:ObjectProperty ;
-                 
-                 owl:inverseOf glbase:isVendorOf ;
-                 
-                 rdfs:domain glbase:Instrument ;
-                 
-                 rdfs:range glbase:Organization ;
-                 
-                 rdfs:label "hasVendor" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#hasVessel
-
-glbase:hasVessel rdf:type owl:ObjectProperty ;
-                 
-                 owl:inverseOf glbase:isVesselOf ;
-                 
-                 rdfs:domain [ rdf:type owl:Class ;
-                               owl:unionOf ( glbase:Cruise
-                                             glbase:Document
-                                           )
-                             ] ;
-                 
-                 rdfs:range glbase:Vessel ;
-                 
-                 rdfs:label "hasVessel" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isAffiliationOf
-
-glbase:isAffiliationOf rdf:type owl:ObjectProperty ;
-                       
-                       rdfs:label "isAffiliationOf" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isAuthorOf
-
-glbase:isAuthorOf rdf:type owl:ObjectProperty ;
-                  
-                  rdfs:label "isAuthorOf" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isAuthoritativeDigitalRepositoryOf
-
-glbase:isAuthoritativeDigitalRepositoryOf rdf:type owl:ObjectProperty ;
-                                          
-                                          rdfs:label "isAuthoritativeDigitalRepositoryOf" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isAwardOf
-
-glbase:isAwardOf rdf:type owl:ObjectProperty ;
-                 
-                 rdfs:label "isAwardOf" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isChiefScientistOf
-
-glbase:isChiefScientistOf rdf:type owl:ObjectProperty ;
-                          
-                          rdfs:label "isChiefScientistOf" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isCoChiefScientistOf
-
-glbase:isCoChiefScientistOf rdf:type owl:ObjectProperty ;
-                            
-                            rdfs:label "isCoChiefScientistOf" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isCoPrincipalInvestigatorOf
-
-glbase:isCoPrincipalInvestigatorOf rdf:type owl:ObjectProperty ;
-                                   
-                                   rdfs:label "isCoPrincipalInvestigatorOf" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isContactOf
-
-glbase:isContactOf rdf:type owl:ObjectProperty ;
-                   
-                   rdfs:label "isContactOf" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isContainedDatasetBy
-
-glbase:isContainedDatasetBy rdf:type owl:ObjectProperty ;
-                            
-                            rdfs:label "isContainedDatasetBy" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isContributorOf
-
-glbase:isContributorOf rdf:type owl:ObjectProperty ;
-                       
-                       rdfs:label "isContributorOf" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isCountryOf
-
-glbase:isCountryOf rdf:type owl:ObjectProperty ;
-                   
-                   rdfs:label "isCountryOf" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isCreatorOf
-
-glbase:isCreatorOf rdf:type owl:ObjectProperty ;
-                   
-                   rdfs:label "isCreatorOf" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isCruiseOf
-
-glbase:isCruiseOf rdf:type owl:ObjectProperty ;
-                  
-                  rdfs:label "isCruiseOf" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isCruiseTypeOf
-
-glbase:isCruiseTypeOf rdf:type owl:ObjectProperty ;
-                      
-                      rdfs:label "isCruiseTypeOf" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isDiveOf
-
-glbase:isDiveOf rdf:type owl:ObjectProperty ;
-                
-                rdfs:label "isDiveOf" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isDocumentTypeOf
-
-glbase:isDocumentTypeOf rdf:type owl:ObjectProperty ;
-                        
-                        rdfs:label "isDocumentTypeOf" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isEditorOf
-
-glbase:isEditorOf rdf:type owl:ObjectProperty ;
-                  
-                  rdfs:label "isEditorOf" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isEducatorIn
-
-glbase:isEducatorIn rdf:type owl:ObjectProperty ;
-                    
-                    rdfs:label "isEducatorIn" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isEndPortCallOf
-
-glbase:isEndPortCallOf rdf:type owl:ObjectProperty ;
-                       
-                       rdfs:label "isEndPortCallOf" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isFeatureTypeOf
-
-glbase:isFeatureTypeOf rdf:type owl:ObjectProperty ;
-                       
-                       rdfs:label "isFeatureTypeOf" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isFirstAppearanceOf
-
-glbase:isFirstAppearanceOf rdf:type owl:ObjectProperty .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isFormatOf
-
-glbase:isFormatOf rdf:type owl:ObjectProperty ;
-                  
-                  rdfs:label "isFormatOf" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isGeoFeatureTypeOf
-
-glbase:isGeoFeatureTypeOf rdf:type owl:ObjectProperty ;
-                          
-                          rdfs:label "isGeoFeatureTypeOf" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isIdentifierOf
-
-glbase:isIdentifierOf rdf:type owl:ObjectProperty .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isIdentifierSchemeOf
-
-glbase:isIdentifierSchemeOf rdf:type owl:ObjectProperty ;
-                            
-                            rdfs:label "isIdentifierSchemeOf" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isInstrumentOf
-
-glbase:isInstrumentOf rdf:type owl:ObjectProperty ;
-                      
-                      rdfs:label "isInstrumentOf" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isInstrumentTypeOf
-
-glbase:isInstrumentTypeOf rdf:type owl:ObjectProperty ;
-                          
-                          rdfs:label "isInstrumentTypeOf" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isLastAppearanceOf
-
-glbase:isLastAppearanceOf rdf:type owl:ObjectProperty .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isMeasurementTypeOf
-
-glbase:isMeasurementTypeOf rdf:type owl:ObjectProperty ;
-                           
-                           rdfs:label "isMeasurementTypeOf" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isMeetingParticipantOf
-
-glbase:isMeetingParticipantOf rdf:type owl:ObjectProperty ;
-                              
-                              rdfs:label "isMeetingParticipantOf" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isMidPortCallOf
-
-glbase:isMidPortCallOf rdf:type owl:ObjectProperty ;
-                       
-                       rdfs:label "isMidPortCallOf" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isObserverIn
-
-glbase:isObserverIn rdf:type owl:ObjectProperty ;
-                    
-                    rdfs:label "isObserverIn" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isOperationAreaOf
-
-glbase:isOperationAreaOf rdf:type owl:ObjectProperty .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isOperatorOf
-
-glbase:isOperatorOf rdf:type owl:ObjectProperty ;
-                    
-                    rdfs:label "isOperatorOf" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isOriginDigitalRepositoryOf
-
-glbase:isOriginDigitalRepositoryOf rdf:type owl:ObjectProperty ;
-                                   
-                                   rdfs:label "isOriginDigitalRepositoryOf" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isPartOf
-
-glbase:isPartOf rdf:type owl:ObjectProperty ;
-                
-                rdfs:label "isPartOf" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isParticipantOf
-
-glbase:isParticipantOf rdf:type owl:ObjectProperty ;
-                       
-                       rdfs:label "isParticipantOf" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isPerformedBy
-
-glbase:isPerformedBy rdf:type owl:ObjectProperty ;
-                     
-                     owl:inverseOf glbase:performs ;
-                     
-                     rdfs:domain glbase:Participant ;
-                     
-                     rdfs:range glbase:Person ;
-                     
-                     rdfs:label "isPerformedBy" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isPilotOf
-
-glbase:isPilotOf rdf:type owl:ObjectProperty .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isPlaceOf
-
-glbase:isPlaceOf rdf:type owl:ObjectProperty .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isPlaceTypeOf
-
-glbase:isPlaceTypeOf rdf:type owl:ObjectProperty ;
-                     
-                     rdfs:label "isPlaceTypeOf" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isPlatformTypeOf
-
-glbase:isPlatformTypeOf rdf:type owl:ObjectProperty ;
-                        
-                        rdfs:label "isPlatformTypeOf" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isPortOf
-
-glbase:isPortOf rdf:type owl:ObjectProperty ;
-                
-                rdfs:label "isPortOf" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isPrincipalInvestigatorOf
-
-glbase:isPrincipalInvestigatorOf rdf:type owl:ObjectProperty ;
-                                 
-                                 rdfs:label "isPrincipalInvestigatorOf" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isProgramManagerOf
-
-glbase:isProgramManagerOf rdf:type owl:ObjectProperty ;
-                          
-                          rdfs:label "isProgramManagerOf" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isProgramOf
-
-glbase:isProgramOf rdf:type owl:ObjectProperty ;
-                   
-                   rdfs:label "isProgramOf" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isPublisherOf
-
-glbase:isPublisherOf rdf:type owl:ObjectProperty ;
-                     
-                     rdfs:label "isPublisherOf" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isReplicaDigitalRepositoryOf
-
-glbase:isReplicaDigitalRepositoryOf rdf:type owl:ObjectProperty ;
-                                    
-                                    rdfs:label "isReplicaDigitalRepositoryOf" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isRepositoryOf
-
-glbase:isRepositoryOf rdf:type owl:ObjectProperty ;
-                      
-                      rdfs:label "isRepositoryOf" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isRightsHolderOf
-
-glbase:isRightsHolderOf rdf:type owl:ObjectProperty ;
-                        
-                        rdfs:label "isRightsHolderOf" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isRoleTypeOf
-
-glbase:isRoleTypeOf rdf:type owl:ObjectProperty ;
-                    
-                    rdfs:label "isRoleTypeOf" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isSchedulerOf
-
-glbase:isSchedulerOf rdf:type owl:ObjectProperty ;
-                     
-                     rdfs:label "isSchedulerOf" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isScientistOf
-
-glbase:isScientistOf rdf:type owl:ObjectProperty ;
-                     
-                     rdfs:label "isScientistOf" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isSponsorOf
-
-glbase:isSponsorOf rdf:type owl:ObjectProperty ;
-                   
-                   rdfs:label "isSponsorOf" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isStartPortCallOf
-
-glbase:isStartPortCallOf rdf:type owl:ObjectProperty ;
-                         
-                         rdfs:label "isStartPortCallOf" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isStudentIn
-
-glbase:isStudentIn rdf:type owl:ObjectProperty ;
-                   
-                   rdfs:label "isStudentIn" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isSubOrganizationOf
-
-glbase:isSubOrganizationOf rdf:type owl:ObjectProperty ;
-                           
-                           rdfs:label "isSubOrganizationOf" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isSubmersibleOf
-
-glbase:isSubmersibleOf rdf:type owl:ObjectProperty .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isTechnicianOf
-
-glbase:isTechnicianOf rdf:type owl:ObjectProperty ;
-                      
-                      rdfs:label "isTechnicianOf" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isVendorOf
-
-glbase:isVendorOf rdf:type owl:ObjectProperty ;
-                  
-                  rdfs:label "isVendorOf" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#isVesselOf
-
-glbase:isVesselOf rdf:type owl:ObjectProperty ;
-                  
-                  rdfs:label "isVesselOf" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#performs
-
-glbase:performs rdf:type owl:ObjectProperty ;
-                
-                rdfs:label "performs" .
-
-
-
-
-
-#################################################################
-#
-#    Data properties
-#
-#################################################################
-
-
-###  http://schema.geolink.org/1.0/base/main#hasAbstract
-
-glbase:hasAbstract rdf:type owl:DatatypeProperty ;
-                   
-                   rdfs:domain [ rdf:type owl:Class ;
-                                 owl:unionOf ( glbase:Award
-                                               glbase:Cruise
-                                               glbase:Dataset
-                                               glbase:Document
-                                               glbase:Program
-                                             )
-                               ] ;
-                   
-                   rdfs:range xsd:string ;
-                   
-                   rdfs:label "hasAbstract" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#hasAcronym
-
-glbase:hasAcronym rdf:type owl:DatatypeProperty ;
-                  
-                  rdfs:domain glbase:Program ;
-                  
-                  rdfs:range xsd:string ;
-                  
-                  rdfs:label "hasAcronym" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#hasByteLength
-
-glbase:hasByteLength rdf:type owl:DatatypeProperty ;
-                     
-                     rdfs:domain glbase:DigitalObject ;
-                     
-                     rdfs:range owl:real ;
-                     
-                     rdfs:label "hasByteLength" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#hasChecksum
-
-glbase:hasChecksum rdf:type owl:DatatypeProperty ;
-                   
-                   rdfs:domain glbase:DigitalObject ;
-                   
-                   rdfs:range xsd:string ;
-                   
-                   rdfs:label "hasChecksum" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#hasChecksumAlgorithm
-
-glbase:hasChecksumAlgorithm rdf:type owl:DatatypeProperty ;
-                            
-                            rdfs:domain glbase:DigitalObject ;
-                            
-                            rdfs:range xsd:string ;
-                            
-                            rdfs:comment "For specifying the checksum algorithm's used to compute the checksum value of the digital objects. The value is provided in hasChecksum property." ;
-                            
-                            rdfs:label "hasChecksumAlgorithm" ;
-                            
-                            rdfs:seeAlso glbase:hasChecksum .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#hasCitationText
-
-glbase:hasCitationText rdf:type owl:DatatypeProperty ;
-                       
-                       rdfs:domain glbase:Document ;
-                       
-                       rdfs:range xsd:string ;
-                       
-                       rdfs:label "hasCitationText" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#hasDescription
-
-glbase:hasDescription rdf:type owl:DatatypeProperty ;
-                      
-                      rdfs:domain owl:Thing ;
-                      
-                      rdfs:range [ rdf:type rdfs:Datatype ;
-                                   owl:unionOf ( rdf:HTML
-                                                 xsd:string
-                                               )
-                                 ] ;
-                      
-                      rdfs:label "hasDescription" .
-[ rdf:type owl:Axiom ;
-  owl:annotatedSource glbase:hasDescription ;
-  owl:annotatedProperty rdfs:range ;
-  owl:annotatedTarget [ rdf:type rdfs:Datatype ;
-                        owl:unionOf ( rdf:HTML
-                                      xsd:string
-                                    )
-                      ] ;
-  rdfs:comment "Note that rdfs:Literal includes both xsd:string and rdf:HTML"
-] .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#hasDuration
-
-glbase:hasDuration rdf:type owl:DatatypeProperty ;
-                   
-                   rdfs:domain glbase:Dive ;
-                   
-                   rdfs:label "hasDuration" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#hasEndDate
-
-glbase:hasEndDate rdf:type owl:DatatypeProperty ;
-                  
-                  rdfs:domain [ rdf:type owl:Class ;
-                                owl:unionOf ( glbase:Award
-                                              glbase:Dataset
-                                              glbase:Meeting
-                                              glbase:Program
-                                            )
-                              ] ;
-                  
-                  rdfs:range xsd:dateTime ;
-                  
-                  rdfs:label "hasEndDate" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#hasEndTime
-
-glbase:hasEndTime rdf:type owl:DatatypeProperty ;
-                  
-                  rdfs:domain glbase:Dive ;
-                  
-                  rdfs:range xsd:dateTime .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#hasFamilyName
-
-glbase:hasFamilyName rdf:type owl:DatatypeProperty ;
-                     
-                     rdfs:domain glbase:Person ;
-                     
-                     rdfs:range xsd:string ;
-                     
-                     rdfs:label "hasFamilyName" ;
-                     
-                     rdfs:seeAlso glbase:hasFullName ,
-                                  glbase:hasGivenName ,
-                                  glbase:hasMiddleName ,
-                                  glbase:hasNamePrefix ,
-                                  glbase:hasNameSuffix .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#hasFormatType
-
-glbase:hasFormatType rdf:type owl:DatatypeProperty ;
-                     
-                     rdfs:domain glbase:Format ;
-                     
-                     rdfs:range xsd:string ;
-                     
-                     rdfs:label "hasFormatType" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#hasFullName
-
-glbase:hasFullName rdf:type owl:DatatypeProperty ;
-                   
-                   rdfs:domain glbase:Person ;
-                   
-                   rdfs:range xsd:string ;
-                   
-                   rdfs:label "hasFullName" ;
-                   
-                   rdfs:seeAlso glbase:hasFamilyName ,
-                                glbase:hasGivenName ,
-                                glbase:hasMiddleName ,
-                                glbase:hasNamePrefix ,
-                                glbase:hasNameSuffix .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#hasGeometryAsWktLiteral
-
-glbase:hasGeometryAsWktLiteral rdf:type owl:DatatypeProperty ;
-                               
-                               rdfs:domain [ rdf:type owl:Class ;
-                                             owl:unionOf ( glbase:Dataset
-                                                           glbase:DigitalObject
-                                                           glbase:Dive
-                                                           glbase:Document
-                                                           glbase:GeoFeature
-                                                           glbase:PhysicalSample
-                                                           glbase:Place
-                                                         )
-                                           ] ;
-                               
-                               rdfs:range geosparql:wktLiteral ;
-                               
-                               rdfs:label "hasGeometryAsWktLiteral" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#hasGivenName
-
-glbase:hasGivenName rdf:type owl:DatatypeProperty ;
-                    
-                    rdfs:domain glbase:Person ;
-                    
-                    rdfs:range xsd:string ;
-                    
-                    rdfs:label "hasGivenName" ;
-                    
-                    rdfs:seeAlso glbase:hasFamilyName ,
-                                 glbase:hasFullName ,
-                                 glbase:hasMiddleName ,
-                                 glbase:hasNamePrefix ,
-                                 glbase:hasNameSuffix .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#hasIdentifierValue
-
-glbase:hasIdentifierValue rdf:type owl:DatatypeProperty ;
-                          
-                          rdfs:domain glbase:Identifier ;
-                          
-                          rdfs:range xsd:string ;
-                          
-                          rdfs:comment "Points to the actual string value of identifier., e.g.: \"doi:10.5063/AA/ArchivalTag.4.1\"" ;
-                          
-                          rdfs:label "hasIdentifierValue" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#hasLandingPage
-
-glbase:hasLandingPage rdf:type owl:DatatypeProperty ;
-                      
-                      rdfs:domain [ rdf:type owl:Class ;
-                                    owl:unionOf ( glbase:Dataset
-                                                  glbase:DigitalObject
-                                                )
-                                  ] ;
-                      
-                      rdfs:range xsd:anyURI ;
-                      
-                      rdfs:comment "A URI pointing to a human-readable landing page for a Dataset or DigitalObject." ;
-                      
-                      rdfs:label "hasLandingPage" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#hasMaxDepth
-
-glbase:hasMaxDepth rdf:type owl:DatatypeProperty ;
-                   
-                   rdfs:domain glbase:Dive ;
-                   
-                   rdfs:label "hasMaxDepth" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#hasMiddleName
-
-glbase:hasMiddleName rdf:type owl:DatatypeProperty ;
-                     
-                     rdfs:domain glbase:Person ;
-                     
-                     rdfs:range xsd:string ;
-                     
-                     rdfs:label "hasMiddleName" ;
-                     
-                     rdfs:seeAlso glbase:hasFamilyName ,
-                                  glbase:hasFullName ,
-                                  glbase:hasGivenName ,
-                                  glbase:hasNamePrefix ,
-                                  glbase:hasNameSuffix .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#hasModel
-
-glbase:hasModel rdf:type owl:DatatypeProperty ;
-                
-                rdfs:domain glbase:Instrument ;
-                
-                rdfs:range xsd:string ;
-                
-                rdfs:label "hasModel" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#hasNamePrefix
-
-glbase:hasNamePrefix rdf:type owl:DatatypeProperty ;
-                     
-                     rdfs:domain glbase:Person ;
-                     
-                     rdfs:range xsd:string ;
-                     
-                     rdfs:label "hasNamePrefix" ;
-                     
-                     rdfs:seeAlso glbase:hasFamilyName ,
-                                  glbase:hasFullName ,
-                                  glbase:hasGivenName ,
-                                  glbase:hasMiddleName ,
-                                  glbase:hasNameSuffix .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#hasNameSuffix
-
-glbase:hasNameSuffix rdf:type owl:DatatypeProperty ;
-                     
-                     rdfs:domain glbase:Person ;
-                     
-                     rdfs:range xsd:string ;
-                     
-                     rdfs:label "hasNameSuffix" ;
-                     
-                     rdfs:seeAlso glbase:hasFamilyName ,
-                                  glbase:hasFullName ,
-                                  glbase:hasGivenName ,
-                                  glbase:hasMiddleName ,
-                                  glbase:hasNamePrefix .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#hasPosition
-
-glbase:hasPosition rdf:type owl:DatatypeProperty ;
-                   
-                   rdfs:domain [ rdf:type owl:Class ;
-                                 owl:unionOf ( glbase:GeoFeature
-                                               glbase:PhysicalSample
-                                             )
-                               ] ;
-                   
-                   rdfs:range geosparql:wktLiteral ;
-                   
-                   rdfs:label "hasPosition" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#hasProject
-
-glbase:hasProject rdf:type owl:DatatypeProperty ;
-                  
-                  rdfs:domain [ rdf:type owl:Class ;
-                                owl:unionOf ( glbase:Cruise
-                                              glbase:Dataset
-                                              glbase:Document
-                                            )
-                              ] ;
-                  
-                  rdfs:range xsd:string ;
-                  
-                  rdfs:label "hasProject" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#hasPublicationDate
-
-glbase:hasPublicationDate rdf:type owl:DatatypeProperty ;
-                          
-                          rdfs:domain [ rdf:type owl:Class ;
-                                        owl:unionOf ( glbase:Document
-                                                      glbase:PhysicalSample
-                                                    )
-                                      ] ;
-                          
-                          rdfs:range [ rdf:type rdfs:Datatype ;
-                                       owl:unionOf ( xsd:dateTime
-                                                     xsd:gYear
-                                                     xsd:gYearMonth
-                                                   )
-                                     ] ;
-                          
-                          rdfs:label "hasPublicationDate" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#hasSource
-
-glbase:hasSource rdf:type owl:DatatypeProperty ;
-                 
-                 rdfs:domain glbase:DigitalObject ;
-                 
-                 rdfs:range xsd:anyURI ;
-                 
-                 rdfs:label "hasSource" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#hasStartDate
-
-glbase:hasStartDate rdf:type owl:DatatypeProperty ;
-                    
-                    rdfs:domain [ rdf:type owl:Class ;
-                                  owl:unionOf ( glbase:Award
-                                                glbase:Dataset
-                                                glbase:Meeting
-                                                glbase:Program
-                                              )
-                                ] ;
-                    
-                    rdfs:range xsd:dateTime ;
-                    
-                    rdfs:label "hasStartDate" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#hasStartTime
-
-glbase:hasStartTime rdf:type owl:DatatypeProperty ;
-                    
-                    rdfs:domain glbase:Dive ;
-                    
-                    rdfs:range xsd:dateTime .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#hasTimeStamp
-
-glbase:hasTimeStamp rdf:type owl:DatatypeProperty ;
-                    
-                    rdfs:domain glbase:PortCall ;
-                    
-                    rdfs:range xsd:dateTime ;
-                    
-                    rdfs:comment "The domain of this property is PortCall that acts as the range of 'hasStartPortCall', 'hasMidPortCall', or 'hasEndPortCall' properties." ;
-                    
-                    rdfs:label "hasTimeStamp" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#hasTitle
-
-glbase:hasTitle rdf:type owl:DatatypeProperty ;
-                
-                rdfs:domain [ rdf:type owl:Class ;
-                              owl:unionOf ( glbase:Award
-                                            glbase:Cruise
-                                            glbase:Dataset
-                                            glbase:DigitalObject
-                                            glbase:Document
-                                            glbase:Feature
-                                            glbase:Instrument
-                                            glbase:Organization
-                                            glbase:PhysicalSample
-                                            glbase:Place
-                                            glbase:Program
-                                          )
-                            ] ;
-                
-                rdfs:range xsd:string ;
-                
-                rdfs:label "hasTitle" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#hasTrack
-
-glbase:hasTrack rdf:type owl:DatatypeProperty ;
-                
-                rdfs:domain glbase:Cruise ;
-                
-                rdfs:range geosparql:wktLiteral ;
-                
-                rdfs:label "hasTrack" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#hasUploadDate
-
-glbase:hasUploadDate rdf:type owl:DatatypeProperty ;
-                     
-                     rdfs:domain [ rdf:type owl:Class ;
-                                   owl:unionOf ( glbase:Dataset
-                                                 glbase:DigitalObject
-                                               )
-                                 ] ;
-                     
-                     rdfs:range xsd:dateTime ;
-                     
-                     rdfs:comment "The range of this property is a dateTime indicating when the Dataset or DigitalObject was uploaded to its originDigitalRepository." ;
-                     
-                     rdfs:label "hasUploadDate" .
-
-
-
-
-
-#################################################################
-#
-#    Classes
-#
-#################################################################
-
-
-###  http://schema.geolink.org/1.0/base/main#Award
-
-glbase:Award rdf:type owl:Class ;
-             
-             rdfs:comment "Funding provided by an Organization enabling Participation." ;
-             
-             rdfs:label "Award" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#Country
-
-glbase:Country rdf:type owl:Class ;
-               
-               rdfs:comment "A formally recognized, governed nation of Persons with a defined territory" ;
-               
-               rdfs:label "Country" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#Cruise
-
-glbase:Cruise rdf:type owl:Class ;
-              
-              rdfs:comment "An event occuring on a Vessel traversing a Trajectory." ;
-              
-              rdfs:label "Cruise" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#CruiseType
-
-glbase:CruiseType rdf:type owl:Class ;
-                  
-                  rdfs:comment "The type of Cruise - operational, transit, etc." ;
-                  
-                  rdfs:label "CruiseType" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#Dataset
-
-glbase:Dataset rdf:type owl:Class ;
-               
-               rdfs:comment "A collection of Measurements." ;
-               
-               rdfs:label "Dataset" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#DigitalObject
-
-glbase:DigitalObject rdf:type owl:Class ;
-                     
-                     rdfs:comment "A digital representation of a Thing" ;
-                     
-                     rdfs:label "DigitalObject" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#Dive
-
-glbase:Dive rdf:type owl:Class ;
-            
-            rdfs:comment "Analogous to cruise being an expedition/event/deployment conducted aboard vessel, dive is an expedition/event/deployment conducted on/in a submersible platform." ;
-            
-            rdfs:label "Dive" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#Document
-
-glbase:Document rdf:type owl:Class ;
-                
-                rdfs:comment "A textual, word-based, non-structured expression of information, such as a report, presentation, published article, or lecture." ;
-                
-                rdfs:label "Document" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#DocumentType
-
-glbase:DocumentType rdf:type owl:Class ;
-                    
-                    rdfs:label "DocumentType" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#Feature
-
-glbase:Feature rdf:type owl:Class ;
-               
-               rdfs:comment "A significant locality where observations are made, samples are acquired, or measurements are done. Not necessarily geospatial in nature." ;
-               
-               rdfs:label "Feature" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#FeatureType
-
-glbase:FeatureType rdf:type owl:Class ;
-                   
-                   rdfs:comment "Types of generic features." ;
-                   
-                   rdfs:label "FeatureType" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#Format
-
-glbase:Format rdf:type owl:Class ;
-              
-              rdfs:comment "The type of data format for a DigitalObject" ;
-              
-              rdfs:label "Format" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#GeoFeature
-
-glbase:GeoFeature rdf:type owl:Class ;
-                  
-                  rdfs:subClassOf glbase:Feature ,
-                                  glbase:Place ;
-                  
-                  rdfs:comment "A significant geospatial locality where observations are made. GEBCO vocabulary terms are included as subclasses." ;
-                  
-                  rdfs:label "GeoFeature" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#GeoFeatureType
-
-glbase:GeoFeatureType rdf:type owl:Class ;
-                      
-                      rdfs:subClassOf glbase:FeatureType ,
-                                      glbase:PlaceType ;
-                      
-                      rdfs:comment "The type of spatial feature - from gazetteer. GEBCO vocabulary terms are included as instances." ;
-                      
-                      rdfs:label "GeoFeatureType" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#Identifier
-
-glbase:Identifier rdf:type owl:Class ;
-                  
-                  rdfs:comment "Capturing various forms of identifiers, e.g., DOIs, ARKs, local strings, UUID strings, etc. Can be any URI that is understood as identifier of an entity, or a blank node, in which case, hasIdentifierScheme and hasIdentifierValue properties should be used to provide details." ;
-                  
-                  rdfs:label "Identifier" ;
-                  
-                  rdfs:seeAlso glbase:hasIdentifier ,
-                               glbase:hasIdentifierScheme ,
-                               glbase:hasIdentifierValue .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#IdentifierScheme
-
-glbase:IdentifierScheme rdf:type owl:Class ;
-                        
-                        rdfs:comment """Represents URIs of identifier schemes, e.g., http://purl.org/spar/datacite/ark for ARK, or
+	rdfs:label "hasStartPortCall" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasStudent
+
+:hasStudent a owl:ObjectProperty ;
+	owl:inverseOf :isStudentIn ;
+	rdfs:domain :Cruise ;
+	rdfs:range :Person ;
+	rdfs:label "hasStudent" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasSubOrganization
+
+:hasSubOrganization a owl:ObjectProperty ;
+	owl:inverseOf :isSubOrganizationOf ;
+	rdfs:domain :Organization ;
+	rdfs:range :Organization ;
+	rdfs:label "hasSubOrganization" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasSubmersible
+
+:hasSubmersible a owl:ObjectProperty ;
+	owl:inverseOf :isSubmersibleOf ;
+	rdfs:domain :Dive ;
+	rdfs:range :Submersible .
+# 
+# http://schema.geolink.org/1.0/base/main#hasTechnician
+
+:hasTechnician a owl:ObjectProperty ;
+	owl:inverseOf :isTechnicianOf ;
+	rdfs:domain :Cruise ;
+	rdfs:range :Person ;
+	rdfs:label "hasTechnician" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasVendor
+
+:hasVendor a owl:ObjectProperty ;
+	owl:inverseOf :isVendorOf ;
+	rdfs:domain :Instrument ;
+	rdfs:range :Organization ;
+	rdfs:label "hasVendor" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasVessel
+
+:hasVessel a owl:ObjectProperty ;
+	owl:inverseOf :isVesselOf ;
+	rdfs:domain _:genid136 .
+
+_:genid136 a owl:Class ;
+	owl:unionOf _:genid138 .
+
+_:genid138 a rdf:List ;
+	rdf:first :Cruise ;
+	rdf:rest _:genid137 .
+
+_:genid137 a rdf:List ;
+	rdf:first :Document ;
+	rdf:rest rdf:nil .
+
+:hasVessel rdfs:range :Vessel ;
+	rdfs:label "hasVessel" .
+# 
+# http://schema.geolink.org/1.0/base/main#isAffiliationOf
+
+:isAffiliationOf a owl:ObjectProperty ;
+	rdfs:label "isAffiliationOf" .
+# 
+# http://schema.geolink.org/1.0/base/main#isAuthorOf
+
+:isAuthorOf a owl:ObjectProperty ;
+	rdfs:label "isAuthorOf" .
+# 
+# http://schema.geolink.org/1.0/base/main#isAuthoritativeDigitalRepositoryOf
+
+:isAuthoritativeDigitalRepositoryOf a owl:ObjectProperty ;
+	rdfs:label "isAuthoritativeDigitalRepositoryOf" .
+# 
+# http://schema.geolink.org/1.0/base/main#isAwardOf
+
+:isAwardOf a owl:ObjectProperty ;
+	rdfs:label "isAwardOf" .
+# 
+# http://schema.geolink.org/1.0/base/main#isChiefScientistOf
+
+:isChiefScientistOf a owl:ObjectProperty ;
+	rdfs:label "isChiefScientistOf" .
+# 
+# http://schema.geolink.org/1.0/base/main#isCoChiefScientistOf
+
+:isCoChiefScientistOf a owl:ObjectProperty ;
+	rdfs:label "isCoChiefScientistOf" .
+# 
+# http://schema.geolink.org/1.0/base/main#isCoPrincipalInvestigatorOf
+
+:isCoPrincipalInvestigatorOf a owl:ObjectProperty ;
+	rdfs:label "isCoPrincipalInvestigatorOf" .
+# 
+# http://schema.geolink.org/1.0/base/main#isContactOf
+
+:isContactOf a owl:ObjectProperty ;
+	rdfs:label "isContactOf" .
+# 
+# http://schema.geolink.org/1.0/base/main#isContainedDatasetBy
+
+:isContainedDatasetBy a owl:ObjectProperty ;
+	rdfs:label "isContainedDatasetBy" .
+# 
+# http://schema.geolink.org/1.0/base/main#isContributorOf
+
+:isContributorOf a owl:ObjectProperty ;
+	rdfs:label "isContributorOf" .
+# 
+# http://schema.geolink.org/1.0/base/main#isCountryOf
+
+:isCountryOf a owl:ObjectProperty ;
+	rdfs:label "isCountryOf" .
+# 
+# http://schema.geolink.org/1.0/base/main#isCreatorOf
+
+:isCreatorOf a owl:ObjectProperty ;
+	rdfs:label "isCreatorOf" .
+# 
+# http://schema.geolink.org/1.0/base/main#isCruiseOf
+
+:isCruiseOf a owl:ObjectProperty ;
+	rdfs:label "isCruiseOf" .
+# 
+# http://schema.geolink.org/1.0/base/main#isCruiseTypeOf
+
+:isCruiseTypeOf a owl:ObjectProperty ;
+	rdfs:label "isCruiseTypeOf" .
+# 
+# http://schema.geolink.org/1.0/base/main#isDiveOf
+
+:isDiveOf a owl:ObjectProperty ;
+	rdfs:label "isDiveOf" .
+# 
+# http://schema.geolink.org/1.0/base/main#isDocumentTypeOf
+
+:isDocumentTypeOf a owl:ObjectProperty ;
+	rdfs:label "isDocumentTypeOf" .
+# 
+# http://schema.geolink.org/1.0/base/main#isEditorOf
+
+:isEditorOf a owl:ObjectProperty ;
+	rdfs:label "isEditorOf" .
+# 
+# http://schema.geolink.org/1.0/base/main#isEducatorIn
+
+:isEducatorIn a owl:ObjectProperty ;
+	rdfs:label "isEducatorIn" .
+# 
+# http://schema.geolink.org/1.0/base/main#isEndPortCallOf
+
+:isEndPortCallOf a owl:ObjectProperty ;
+	rdfs:label "isEndPortCallOf" .
+# 
+# http://schema.geolink.org/1.0/base/main#isFeatureTypeOf
+
+:isFeatureTypeOf a owl:ObjectProperty ;
+	rdfs:label "isFeatureTypeOf" .
+# 
+# http://schema.geolink.org/1.0/base/main#isFirstAppearanceOf
+
+:isFirstAppearanceOf a owl:ObjectProperty .
+# 
+# http://schema.geolink.org/1.0/base/main#isFormatOf
+
+:isFormatOf a owl:ObjectProperty ;
+	rdfs:label "isFormatOf" .
+# 
+# http://schema.geolink.org/1.0/base/main#isGeoFeatureTypeOf
+
+:isGeoFeatureTypeOf a owl:ObjectProperty ;
+	rdfs:label "isGeoFeatureTypeOf" .
+# 
+# http://schema.geolink.org/1.0/base/main#isIdentifierOf
+
+:isIdentifierOf a owl:ObjectProperty .
+# 
+# http://schema.geolink.org/1.0/base/main#isIdentifierSchemeOf
+
+:isIdentifierSchemeOf a owl:ObjectProperty ;
+	rdfs:label "isIdentifierSchemeOf" .
+# 
+# http://schema.geolink.org/1.0/base/main#isInstrumentOf
+
+:isInstrumentOf a owl:ObjectProperty ;
+	rdfs:label "isInstrumentOf" .
+# 
+# http://schema.geolink.org/1.0/base/main#isInstrumentTypeOf
+
+:isInstrumentTypeOf a owl:ObjectProperty ;
+	rdfs:label "isInstrumentTypeOf" .
+# 
+# http://schema.geolink.org/1.0/base/main#isLastAppearanceOf
+
+:isLastAppearanceOf a owl:ObjectProperty .
+# 
+# http://schema.geolink.org/1.0/base/main#isMeasurementTypeOf
+
+:isMeasurementTypeOf a owl:ObjectProperty ;
+	rdfs:label "isMeasurementTypeOf" .
+# 
+# http://schema.geolink.org/1.0/base/main#isMeetingParticipantOf
+
+:isMeetingParticipantOf a owl:ObjectProperty ;
+	rdfs:label "isMeetingParticipantOf" .
+# 
+# http://schema.geolink.org/1.0/base/main#isMidPortCallOf
+
+:isMidPortCallOf a owl:ObjectProperty ;
+	rdfs:label "isMidPortCallOf" .
+# 
+# http://schema.geolink.org/1.0/base/main#isObserverIn
+
+:isObserverIn a owl:ObjectProperty ;
+	rdfs:label "isObserverIn" .
+# 
+# http://schema.geolink.org/1.0/base/main#isOperationAreaOf
+
+:isOperationAreaOf a owl:ObjectProperty .
+# 
+# http://schema.geolink.org/1.0/base/main#isOperatorOf
+
+:isOperatorOf a owl:ObjectProperty ;
+	rdfs:label "isOperatorOf" .
+# 
+# http://schema.geolink.org/1.0/base/main#isOriginDigitalRepositoryOf
+
+:isOriginDigitalRepositoryOf a owl:ObjectProperty ;
+	rdfs:label "isOriginDigitalRepositoryOf" .
+# 
+# http://schema.geolink.org/1.0/base/main#isPartOf
+
+:isPartOf a owl:ObjectProperty ;
+	rdfs:label "isPartOf" .
+# 
+# http://schema.geolink.org/1.0/base/main#isParticipantOf
+
+:isParticipantOf a owl:ObjectProperty ;
+	rdfs:label "isParticipantOf" .
+# 
+# http://schema.geolink.org/1.0/base/main#isPerformedBy
+
+:isPerformedBy a owl:ObjectProperty ;
+	owl:inverseOf :performs ;
+	rdfs:domain :Participant ;
+	rdfs:range :Person ;
+	rdfs:label "isPerformedBy" .
+# 
+# http://schema.geolink.org/1.0/base/main#isPilotOf
+
+:isPilotOf a owl:ObjectProperty .
+# 
+# http://schema.geolink.org/1.0/base/main#isPlaceOf
+
+:isPlaceOf a owl:ObjectProperty .
+# 
+# http://schema.geolink.org/1.0/base/main#isPlaceTypeOf
+
+:isPlaceTypeOf a owl:ObjectProperty ;
+	rdfs:label "isPlaceTypeOf" .
+# 
+# http://schema.geolink.org/1.0/base/main#isPlatformTypeOf
+
+:isPlatformTypeOf a owl:ObjectProperty ;
+	rdfs:label "isPlatformTypeOf" .
+# 
+# http://schema.geolink.org/1.0/base/main#isPortOf
+
+:isPortOf a owl:ObjectProperty ;
+	rdfs:label "isPortOf" .
+# 
+# http://schema.geolink.org/1.0/base/main#isPrincipalInvestigatorOf
+
+:isPrincipalInvestigatorOf a owl:ObjectProperty ;
+	rdfs:label "isPrincipalInvestigatorOf" .
+# 
+# http://schema.geolink.org/1.0/base/main#isProgramManagerOf
+
+:isProgramManagerOf a owl:ObjectProperty ;
+	rdfs:label "isProgramManagerOf" .
+# 
+# http://schema.geolink.org/1.0/base/main#isProgramOf
+
+:isProgramOf a owl:ObjectProperty ;
+	rdfs:label "isProgramOf" .
+# 
+# http://schema.geolink.org/1.0/base/main#isPublisherOf
+
+:isPublisherOf a owl:ObjectProperty ;
+	rdfs:label "isPublisherOf" .
+# 
+# http://schema.geolink.org/1.0/base/main#isReplicaDigitalRepositoryOf
+
+:isReplicaDigitalRepositoryOf a owl:ObjectProperty ;
+	rdfs:label "isReplicaDigitalRepositoryOf" .
+# 
+# http://schema.geolink.org/1.0/base/main#isRepositoryOf
+
+:isRepositoryOf a owl:ObjectProperty ;
+	rdfs:label "isRepositoryOf" .
+# 
+# http://schema.geolink.org/1.0/base/main#isRightsHolderOf
+
+:isRightsHolderOf a owl:ObjectProperty ;
+	rdfs:label "isRightsHolderOf" .
+# 
+# http://schema.geolink.org/1.0/base/main#isRoleTypeOf
+
+:isRoleTypeOf a owl:ObjectProperty ;
+	rdfs:label "isRoleTypeOf" .
+# 
+# http://schema.geolink.org/1.0/base/main#isSchedulerOf
+
+:isSchedulerOf a owl:ObjectProperty ;
+	rdfs:label "isSchedulerOf" .
+# 
+# http://schema.geolink.org/1.0/base/main#isScientistOf
+
+:isScientistOf a owl:ObjectProperty ;
+	rdfs:label "isScientistOf" .
+# 
+# http://schema.geolink.org/1.0/base/main#isSponsorOf
+
+:isSponsorOf a owl:ObjectProperty ;
+	rdfs:label "isSponsorOf" .
+# 
+# http://schema.geolink.org/1.0/base/main#isStartPortCallOf
+
+:isStartPortCallOf a owl:ObjectProperty ;
+	rdfs:label "isStartPortCallOf" .
+# 
+# http://schema.geolink.org/1.0/base/main#isStudentIn
+
+:isStudentIn a owl:ObjectProperty ;
+	rdfs:label "isStudentIn" .
+# 
+# http://schema.geolink.org/1.0/base/main#isSubOrganizationOf
+
+:isSubOrganizationOf a owl:ObjectProperty ;
+	rdfs:label "isSubOrganizationOf" .
+# 
+# http://schema.geolink.org/1.0/base/main#isSubmersibleOf
+
+:isSubmersibleOf a owl:ObjectProperty .
+# 
+# http://schema.geolink.org/1.0/base/main#isTechnicianOf
+
+:isTechnicianOf a owl:ObjectProperty ;
+	rdfs:label "isTechnicianOf" .
+# 
+# http://schema.geolink.org/1.0/base/main#isVendorOf
+
+:isVendorOf a owl:ObjectProperty ;
+	rdfs:label "isVendorOf" .
+# 
+# http://schema.geolink.org/1.0/base/main#isVesselOf
+
+:isVesselOf a owl:ObjectProperty ;
+	rdfs:label "isVesselOf" .
+# 
+# http://schema.geolink.org/1.0/base/main#performs
+
+:performs a owl:ObjectProperty ;
+	rdfs:label "performs" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://schema.geolink.org/1.0/base/main#hasAbstract
+
+:hasAbstract a owl:DatatypeProperty ;
+	rdfs:domain _:genid139 .
+
+_:genid139 a owl:Class ;
+	owl:unionOf _:genid144 .
+
+_:genid144 a rdf:List ;
+	rdf:first :Award ;
+	rdf:rest _:genid143 .
+
+_:genid143 a rdf:List ;
+	rdf:first :Cruise ;
+	rdf:rest _:genid142 .
+
+_:genid142 a rdf:List ;
+	rdf:first :Dataset ;
+	rdf:rest _:genid141 .
+
+_:genid141 a rdf:List ;
+	rdf:first :Document ;
+	rdf:rest _:genid140 .
+
+_:genid140 a rdf:List ;
+	rdf:first :Program ;
+	rdf:rest rdf:nil .
+
+:hasAbstract rdfs:range xsd:string ;
+	rdfs:label "hasAbstract" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasAcronym
+
+:hasAcronym a owl:DatatypeProperty ;
+	rdfs:domain :Program ;
+	rdfs:range xsd:string ;
+	rdfs:label "hasAcronym" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasByteLength
+
+:hasByteLength a owl:DatatypeProperty ;
+	rdfs:domain :DigitalObject ;
+	rdfs:range owl:real ;
+	rdfs:label "hasByteLength" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasChecksum
+
+:hasChecksum a owl:DatatypeProperty ;
+	rdfs:domain :DigitalObject ;
+	rdfs:range xsd:string ;
+	rdfs:label "hasChecksum" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasChecksumAlgorithm
+
+:hasChecksumAlgorithm a owl:DatatypeProperty ;
+	rdfs:domain :DigitalObject ;
+	rdfs:range xsd:string ;
+	rdfs:comment "For specifying the checksum algorithm's used to compute the checksum value of the digital objects. The value is provided in hasChecksum property." ;
+	rdfs:label "hasChecksumAlgorithm" ;
+	rdfs:seeAlso :hasChecksum .
+# 
+# http://schema.geolink.org/1.0/base/main#hasCitationText
+
+:hasCitationText a owl:DatatypeProperty ;
+	rdfs:domain :Document ;
+	rdfs:range xsd:string ;
+	rdfs:label "hasCitationText" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasDescription
+
+:hasDescription a owl:DatatypeProperty ;
+	rdfs:domain owl:Thing ;
+	rdfs:range _:genid145 .
+
+_:genid145 a rdfs:Datatype ;
+	owl:unionOf _:genid147 .
+
+_:genid147 a rdf:List ;
+	rdf:first rdf:HTML ;
+	rdf:rest _:genid146 .
+
+_:genid146 a rdf:List ;
+	rdf:first xsd:string ;
+	rdf:rest rdf:nil .
+
+:hasDescription rdfs:label "hasDescription" .
+
+_:genid148 a owl:Axiom ;
+	owl:annotatedSource :hasDescription ;
+	owl:annotatedProperty rdfs:range ;
+	owl:annotatedTarget _:genid145 ;
+	rdfs:comment "Note that rdfs:Literal includes both xsd:string and rdf:HTML" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasDuration
+
+:hasDuration a owl:DatatypeProperty ;
+	rdfs:domain :Dive ;
+	rdfs:label "hasDuration" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasEndDate
+
+:hasEndDate a owl:DatatypeProperty ;
+	rdfs:domain _:genid149 .
+
+_:genid149 a owl:Class ;
+	owl:unionOf _:genid153 .
+
+_:genid153 a rdf:List ;
+	rdf:first :Award ;
+	rdf:rest _:genid152 .
+
+_:genid152 a rdf:List ;
+	rdf:first :Dataset ;
+	rdf:rest _:genid151 .
+
+_:genid151 a rdf:List ;
+	rdf:first :Meeting ;
+	rdf:rest _:genid150 .
+
+_:genid150 a rdf:List ;
+	rdf:first :Program ;
+	rdf:rest rdf:nil .
+
+:hasEndDate rdfs:range xsd:dateTime ;
+	rdfs:label "hasEndDate" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasEndTime
+
+:hasEndTime a owl:DatatypeProperty ;
+	rdfs:domain :Dive ;
+	rdfs:range xsd:dateTime .
+# 
+# http://schema.geolink.org/1.0/base/main#hasFamilyName
+
+:hasFamilyName a owl:DatatypeProperty ;
+	rdfs:domain :Person ;
+	rdfs:range xsd:string ;
+	rdfs:label "hasFamilyName" ;
+	rdfs:seeAlso :hasFullName , :hasGivenName , :hasMiddleName , :hasNamePrefix , :hasNameSuffix .
+# 
+# http://schema.geolink.org/1.0/base/main#hasFormatType
+
+:hasFormatType a owl:DatatypeProperty ;
+	rdfs:domain :Format ;
+	rdfs:range xsd:string ;
+	rdfs:label "hasFormatType" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasFullName
+
+:hasFullName a owl:DatatypeProperty ;
+	rdfs:domain :Person ;
+	rdfs:range xsd:string ;
+	rdfs:label "hasFullName" ;
+	rdfs:seeAlso :hasFamilyName , :hasGivenName , :hasMiddleName , :hasNamePrefix , :hasNameSuffix .
+# 
+# http://schema.geolink.org/1.0/base/main#hasGeometryAsWktLiteral
+
+:hasGeometryAsWktLiteral a owl:DatatypeProperty ;
+	rdfs:domain _:genid154 .
+
+_:genid154 a owl:Class ;
+	owl:unionOf _:genid161 .
+
+_:genid161 a rdf:List ;
+	rdf:first :Dataset ;
+	rdf:rest _:genid160 .
+
+_:genid160 a rdf:List ;
+	rdf:first :DigitalObject ;
+	rdf:rest _:genid159 .
+
+_:genid159 a rdf:List ;
+	rdf:first :Dive ;
+	rdf:rest _:genid158 .
+
+_:genid158 a rdf:List ;
+	rdf:first :Document ;
+	rdf:rest _:genid157 .
+
+_:genid157 a rdf:List ;
+	rdf:first :GeoFeature ;
+	rdf:rest _:genid156 .
+
+_:genid156 a rdf:List ;
+	rdf:first :PhysicalSample ;
+	rdf:rest _:genid155 .
+
+_:genid155 a rdf:List ;
+	rdf:first :Place ;
+	rdf:rest rdf:nil .
+
+:hasGeometryAsWktLiteral rdfs:range geosparql:wktLiteral ;
+	rdfs:label "hasGeometryAsWktLiteral" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasGivenName
+
+:hasGivenName a owl:DatatypeProperty ;
+	rdfs:domain :Person ;
+	rdfs:range xsd:string ;
+	rdfs:label "hasGivenName" ;
+	rdfs:seeAlso :hasFamilyName , :hasFullName , :hasMiddleName , :hasNamePrefix , :hasNameSuffix .
+# 
+# http://schema.geolink.org/1.0/base/main#hasIdentifierValue
+
+:hasIdentifierValue a owl:DatatypeProperty ;
+	rdfs:domain :Identifier ;
+	rdfs:range xsd:string ;
+	rdfs:comment "Points to the actual string value of identifier., e.g.: \"doi:10.5063/AA/ArchivalTag.4.1\"" ;
+	rdfs:label "hasIdentifierValue" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasLandingPage
+
+:hasLandingPage a owl:DatatypeProperty ;
+	rdfs:domain _:genid162 .
+
+_:genid162 a owl:Class ;
+	owl:unionOf _:genid164 .
+
+_:genid164 a rdf:List ;
+	rdf:first :Dataset ;
+	rdf:rest _:genid163 .
+
+_:genid163 a rdf:List ;
+	rdf:first :DigitalObject ;
+	rdf:rest rdf:nil .
+
+:hasLandingPage rdfs:range xsd:anyURI ;
+	rdfs:comment "A URI pointing to a human-readable landing page for a Dataset or DigitalObject." ;
+	rdfs:label "hasLandingPage" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasMaxDepth
+
+:hasMaxDepth a owl:DatatypeProperty ;
+	rdfs:domain :Dive ;
+	rdfs:label "hasMaxDepth" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasMiddleName
+
+:hasMiddleName a owl:DatatypeProperty ;
+	rdfs:domain :Person ;
+	rdfs:range xsd:string ;
+	rdfs:label "hasMiddleName" ;
+	rdfs:seeAlso :hasFamilyName , :hasFullName , :hasGivenName , :hasNamePrefix , :hasNameSuffix .
+# 
+# http://schema.geolink.org/1.0/base/main#hasModel
+
+:hasModel a owl:DatatypeProperty ;
+	rdfs:domain :Instrument ;
+	rdfs:range xsd:string ;
+	rdfs:label "hasModel" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasNamePrefix
+
+:hasNamePrefix a owl:DatatypeProperty ;
+	rdfs:domain :Person ;
+	rdfs:range xsd:string ;
+	rdfs:label "hasNamePrefix" ;
+	rdfs:seeAlso :hasFamilyName , :hasFullName , :hasGivenName , :hasMiddleName , :hasNameSuffix .
+# 
+# http://schema.geolink.org/1.0/base/main#hasNameSuffix
+
+:hasNameSuffix a owl:DatatypeProperty ;
+	rdfs:domain :Person ;
+	rdfs:range xsd:string ;
+	rdfs:label "hasNameSuffix" ;
+	rdfs:seeAlso :hasFamilyName , :hasFullName , :hasGivenName , :hasMiddleName , :hasNamePrefix .
+# 
+# http://schema.geolink.org/1.0/base/main#hasParticipationEndTime
+
+:hasParticipationEndTime a owl:DatatypeProperty ;
+	rdfs:domain :Participant ;
+	rdfs:range xsd:dateTime ;
+	rdfs:label "hasParticipationEndTime" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasParticipationStartTime
+
+:hasParticipationStartTime a owl:DatatypeProperty ;
+	rdfs:domain :Participant ;
+	rdfs:range xsd:dateTime ;
+	rdfs:label "hasParticipationStartTime" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasPosition
+
+:hasPosition a owl:DatatypeProperty ;
+	rdfs:domain _:genid165 .
+
+_:genid165 a owl:Class ;
+	owl:unionOf _:genid167 .
+
+_:genid167 a rdf:List ;
+	rdf:first :GeoFeature ;
+	rdf:rest _:genid166 .
+
+_:genid166 a rdf:List ;
+	rdf:first :PhysicalSample ;
+	rdf:rest rdf:nil .
+
+:hasPosition rdfs:range geosparql:wktLiteral ;
+	rdfs:label "hasPosition" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasProject
+
+:hasProject a owl:DatatypeProperty ;
+	rdfs:domain _:genid168 .
+
+_:genid168 a owl:Class ;
+	owl:unionOf _:genid171 .
+
+_:genid171 a rdf:List ;
+	rdf:first :Cruise ;
+	rdf:rest _:genid170 .
+
+_:genid170 a rdf:List ;
+	rdf:first :Dataset ;
+	rdf:rest _:genid169 .
+
+_:genid169 a rdf:List ;
+	rdf:first :Document ;
+	rdf:rest rdf:nil .
+
+:hasProject rdfs:range xsd:string ;
+	rdfs:label "hasProject" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasPublicationDate
+
+:hasPublicationDate a owl:DatatypeProperty ;
+	rdfs:domain _:genid172 .
+
+_:genid172 a owl:Class ;
+	owl:unionOf _:genid174 .
+
+_:genid174 a rdf:List ;
+	rdf:first :Document ;
+	rdf:rest _:genid173 .
+
+_:genid173 a rdf:List ;
+	rdf:first :PhysicalSample ;
+	rdf:rest rdf:nil .
+
+:hasPublicationDate rdfs:range _:genid175 .
+
+_:genid175 a rdfs:Datatype ;
+	owl:unionOf _:genid178 .
+
+_:genid178 a rdf:List ;
+	rdf:first xsd:dateTime ;
+	rdf:rest _:genid177 .
+
+_:genid177 a rdf:List ;
+	rdf:first xsd:gYear ;
+	rdf:rest _:genid176 .
+
+_:genid176 a rdf:List ;
+	rdf:first xsd:gYearMonth ;
+	rdf:rest rdf:nil .
+
+:hasPublicationDate rdfs:label "hasPublicationDate" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasSource
+
+:hasSource a owl:DatatypeProperty ;
+	rdfs:domain :DigitalObject ;
+	rdfs:range xsd:anyURI ;
+	rdfs:label "hasSource" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasStartDate
+
+:hasStartDate a owl:DatatypeProperty ;
+	rdfs:domain _:genid179 .
+
+_:genid179 a owl:Class ;
+	owl:unionOf _:genid183 .
+
+_:genid183 a rdf:List ;
+	rdf:first :Award ;
+	rdf:rest _:genid182 .
+
+_:genid182 a rdf:List ;
+	rdf:first :Dataset ;
+	rdf:rest _:genid181 .
+
+_:genid181 a rdf:List ;
+	rdf:first :Meeting ;
+	rdf:rest _:genid180 .
+
+_:genid180 a rdf:List ;
+	rdf:first :Program ;
+	rdf:rest rdf:nil .
+
+:hasStartDate rdfs:range xsd:dateTime ;
+	rdfs:label "hasStartDate" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasStartTime
+
+:hasStartTime a owl:DatatypeProperty ;
+	rdfs:domain :Dive ;
+	rdfs:range xsd:dateTime .
+# 
+# http://schema.geolink.org/1.0/base/main#hasTimeStamp
+
+:hasTimeStamp a owl:DatatypeProperty ;
+	rdfs:domain :PortCall ;
+	rdfs:range xsd:dateTime ;
+	rdfs:comment "The domain of this property is PortCall that acts as the range of 'hasStartPortCall', 'hasMidPortCall', or 'hasEndPortCall' properties." ;
+	rdfs:label "hasTimeStamp" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasTitle
+
+:hasTitle a owl:DatatypeProperty ;
+	rdfs:domain _:genid184 .
+
+_:genid184 a owl:Class ;
+	owl:unionOf _:genid195 .
+
+_:genid195 a rdf:List ;
+	rdf:first :Award ;
+	rdf:rest _:genid194 .
+
+_:genid194 a rdf:List ;
+	rdf:first :Cruise ;
+	rdf:rest _:genid193 .
+
+_:genid193 a rdf:List ;
+	rdf:first :Dataset ;
+	rdf:rest _:genid192 .
+
+_:genid192 a rdf:List ;
+	rdf:first :DigitalObject ;
+	rdf:rest _:genid191 .
+
+_:genid191 a rdf:List ;
+	rdf:first :Document ;
+	rdf:rest _:genid190 .
+
+_:genid190 a rdf:List ;
+	rdf:first :Feature ;
+	rdf:rest _:genid189 .
+
+_:genid189 a rdf:List ;
+	rdf:first :Instrument ;
+	rdf:rest _:genid188 .
+
+_:genid188 a rdf:List ;
+	rdf:first :Organization ;
+	rdf:rest _:genid187 .
+
+_:genid187 a rdf:List ;
+	rdf:first :PhysicalSample ;
+	rdf:rest _:genid186 .
+
+_:genid186 a rdf:List ;
+	rdf:first :Place ;
+	rdf:rest _:genid185 .
+
+_:genid185 a rdf:List ;
+	rdf:first :Program ;
+	rdf:rest rdf:nil .
+
+:hasTitle rdfs:range xsd:string ;
+	rdfs:label "hasTitle" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasTrack
+
+:hasTrack a owl:DatatypeProperty ;
+	rdfs:domain :Cruise ;
+	rdfs:range geosparql:wktLiteral ;
+	rdfs:label "hasTrack" .
+# 
+# http://schema.geolink.org/1.0/base/main#hasUploadDate
+
+:hasUploadDate a owl:DatatypeProperty ;
+	rdfs:domain _:genid196 .
+
+_:genid196 a owl:Class ;
+	owl:unionOf _:genid198 .
+
+_:genid198 a rdf:List ;
+	rdf:first :Dataset ;
+	rdf:rest _:genid197 .
+
+_:genid197 a rdf:List ;
+	rdf:first :DigitalObject ;
+	rdf:rest rdf:nil .
+
+:hasUploadDate rdfs:range xsd:dateTime ;
+	rdfs:comment "The range of this property is a dateTime indicating when the Dataset or DigitalObject was uploaded to its originDigitalRepository." ;
+	rdfs:label "hasUploadDate" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://schema.geolink.org/1.0/base/main#Award
+
+:Award a owl:Class ;
+	rdfs:comment "Funding provided by an Organization enabling Participation." ;
+	rdfs:label "Award" .
+# 
+# http://schema.geolink.org/1.0/base/main#Country
+
+:Country a owl:Class ;
+	rdfs:comment "A formally recognized, governed nation of Persons with a defined territory" ;
+	rdfs:label "Country" .
+# 
+# http://schema.geolink.org/1.0/base/main#Cruise
+
+:Cruise a owl:Class ;
+	rdfs:comment "An event occuring on a Vessel traversing a Trajectory." ;
+	rdfs:label "Cruise" .
+# 
+# http://schema.geolink.org/1.0/base/main#CruiseType
+
+:CruiseType a owl:Class ;
+	rdfs:comment "The type of Cruise - operational, transit, etc." ;
+	rdfs:label "CruiseType" .
+# 
+# http://schema.geolink.org/1.0/base/main#Dataset
+
+:Dataset a owl:Class ;
+	rdfs:comment "A collection of Measurements." ;
+	rdfs:label "Dataset" .
+# 
+# http://schema.geolink.org/1.0/base/main#DigitalObject
+
+:DigitalObject a owl:Class ;
+	rdfs:comment "A digital representation of a Thing" ;
+	rdfs:label "DigitalObject" .
+# 
+# http://schema.geolink.org/1.0/base/main#Dive
+
+:Dive a owl:Class ;
+	rdfs:comment "Analogous to cruise being an expedition/event/deployment conducted aboard vessel, dive is an expedition/event/deployment conducted on/in a submersible platform." ;
+	rdfs:label "Dive" .
+# 
+# http://schema.geolink.org/1.0/base/main#Document
+
+:Document a owl:Class ;
+	rdfs:comment "A textual, word-based, non-structured expression of information, such as a report, presentation, published article, or lecture." ;
+	rdfs:label "Document" .
+# 
+# http://schema.geolink.org/1.0/base/main#DocumentType
+
+:DocumentType a owl:Class ;
+	rdfs:label "DocumentType" .
+# 
+# http://schema.geolink.org/1.0/base/main#Feature
+
+:Feature a owl:Class ;
+	rdfs:comment "A significant locality where observations are made, samples are acquired, or measurements are done. Not necessarily geospatial in nature." ;
+	rdfs:label "Feature" .
+# 
+# http://schema.geolink.org/1.0/base/main#FeatureType
+
+:FeatureType a owl:Class ;
+	rdfs:comment "Types of generic features." ;
+	rdfs:label "FeatureType" .
+# 
+# http://schema.geolink.org/1.0/base/main#Format
+
+:Format a owl:Class ;
+	rdfs:comment "The type of data format for a DigitalObject" ;
+	rdfs:label "Format" .
+# 
+# http://schema.geolink.org/1.0/base/main#GeoFeature
+
+:GeoFeature a owl:Class ;
+	rdfs:subClassOf :Feature , :Place ;
+	rdfs:comment "A significant geospatial locality where observations are made. GEBCO vocabulary terms are included as subclasses." ;
+	rdfs:label "GeoFeature" .
+# 
+# http://schema.geolink.org/1.0/base/main#GeoFeatureType
+
+:GeoFeatureType a owl:Class ;
+	rdfs:subClassOf :FeatureType , :PlaceType ;
+	rdfs:comment "The type of spatial feature - from gazetteer. GEBCO vocabulary terms are included as instances." ;
+	rdfs:label "GeoFeatureType" .
+# 
+# http://schema.geolink.org/1.0/base/main#Identifier
+
+:Identifier a owl:Class ;
+	rdfs:comment "Capturing various forms of identifiers, e.g., DOIs, ARKs, local strings, UUID strings, etc. Can be any URI that is understood as identifier of an entity, or a blank node, in which case, hasIdentifierScheme and hasIdentifierValue properties should be used to provide details." ;
+	rdfs:label "Identifier" ;
+	rdfs:seeAlso :hasIdentifier , :hasIdentifierScheme , :hasIdentifierValue .
+# 
+# http://schema.geolink.org/1.0/base/main#IdentifierScheme
+
+:IdentifierScheme a owl:Class ;
+	rdfs:comment """Represents URIs of identifier schemes, e.g., http://purl.org/spar/datacite/ark for ARK, or
 http://purl.org/spar/datacite/doi for DOI.""" ;
-                        
-                        rdfs:label "IdentifierScheme" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#Instrument
-
-glbase:Instrument rdf:type owl:Class ;
-                  
-                  rdfs:comment "A specific instance of an Instrument being used to make observations resulting in a Dataset.NERC's L05 and L22 vocabulary terms are included as subclasses." ;
-                  
-                  rdfs:label "Instrument" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#InstrumentType
-
-glbase:InstrumentType rdf:type owl:Class ;
-                      
-                      rdfs:comment "The type of Instrument being used to make observations - CTD, ADCP, microscope. NERC's L05 and L22 vocabulary terms are included as instances." ;
-                      
-                      rdfs:label "InstrumentType" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#MeasurementType
-
-glbase:MeasurementType rdf:type owl:Class ;
-                       
-                       rdfs:comment "The type of Measurement being recorded - atmospheric emission, land surface temperature, depth, salinity of the water column. NERC's P02 and P03 vocabulary terms are included as instances." ;
-                       
-                       rdfs:label "MeasurementType" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#Meeting
-
-glbase:Meeting rdf:type owl:Class ;
-               
-               rdfs:comment "To represent, e.g., \"Person W attends Conference X at Place Y which occurred on Start/End Dates Z1-Z2\"" ;
-               
-               rdfs:label "Meeting" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#Organization
-
-glbase:Organization rdf:type owl:Class ;
-                    
-                    rdfs:comment "A physical or virtual collection of Agents in some formally recognized capacity of significance." ;
-                    
-                    rdfs:label "Organization" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#Participant
-
-glbase:Participant rdf:type owl:Class ;
-                   
-                   rdfs:comment "A reification of the n-ary (n >= 3) relation representing a participation of a Person performing a certain RoleType in a Cruise/Award/Program/Dataset/PhysicalSample. To an instance of Participant, one can attach additional information using properties such as hasAffiliation" ;
-                   
-                   rdfs:label "Participant" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#Person
-
-glbase:Person rdf:type owl:Class ;
-              
-              rdfs:comment "A homo sapien Agent of some significance" ;
-              
-              rdfs:label "Person" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#Place
-
-glbase:Place rdf:type owl:Class ;
-             
-             rdfs:comment "A location with at least some type of spatial extent." ;
-             
-             rdfs:label "Place" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#PlaceType
-
-glbase:PlaceType rdf:type owl:Class ;
-                 
-                 rdfs:comment "A common descriptor for a type of Place - ocean, shoreline, island, etc." ;
-                 
-                 rdfs:label "PlaceType" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#Platform
-
-glbase:Platform rdf:type owl:Class ;
-                
-                rdfs:comment "A physical object of significance enabling observations resulting in a Dataset. NERC's L06 vocabulary terms (i.e., ICES platform codes) are included as subclasses." ;
-                
-                rdfs:label "Platform" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#PlatformType
-
-glbase:PlatformType rdf:type owl:Class ;
-                    
-                    rdfs:comment "A type of Platform - vessel, glider, float, laboratory, etc. NERC's L06 vocabulary terms are included as instances." ;
-                    
-                    rdfs:label "PlatformType" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#PortCall
-
-glbase:PortCall rdf:type owl:Class ;
-                
-                rdfs:comment "A designated, specific port visited by a Vessel for some significant reason - the start or end of a mission; transfer of passengers, goods, or equipment." ;
-                
-                rdfs:label "PortCall" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#Program
-
-glbase:Program rdf:type owl:Class ;
-               
-               rdfs:comment "A formally recognized scientific effort receiving significant funding, requiring large scale coordination" ;
-               
-               rdfs:label "Program" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#Repository
-
-glbase:Repository rdf:type owl:Class ;
-                  
-                  rdfs:comment "A recognized, formal entity responsible for curating a certain set of Datasets or DigitalObjects" ;
-                  
-                  rdfs:label "Repository" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#RoleType
-
-glbase:RoleType rdf:type owl:Class ;
-                
-                rdfs:comment "A specific type of role performed by an Agent - Principal Investigator, Chief Scientist, Publisher, etc." ;
-                
-                rdfs:label "RoleType" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#Station
-
-glbase:Station rdf:type owl:Class ;
-               
-               rdfs:subClassOf glbase:Place ;
-               
-               rdfs:label "Station" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#Submersible
-
-glbase:Submersible rdf:type owl:Class ;
-                   
-                   owl:equivalentClass <http://vocab.nerc.ac.uk/collection/L06/current/20/> ;
-                   
-                   rdfs:subClassOf glbase:Platform ;
-                   
-                   rdfs:label "Submersible" .
-
-
-
-###  http://schema.geolink.org/1.0/base/main#Vessel
-
-glbase:Vessel rdf:type owl:Class ;
-              
-              owl:equivalentClass <http://vocab.nerc.ac.uk/collection/L06/current/3Z/> ;
-              
-              rdfs:subClassOf glbase:Platform ;
-              
-              rdfs:comment "The platform enabling a Cruise" ;
-              
-              rdfs:label "Vessel" .
-
-
-
-###  http://vocab.nerc.ac.uk/collection/L06/current/20/
-
-
-
-
-###  http://vocab.nerc.ac.uk/collection/L06/current/3Z/
-
-
-
-
-
-###  Generated by the OWL API (version 4.1.3.20151118-2017) https://github.com/owlcs/owlapi
-
+	rdfs:label "IdentifierScheme" .
+# 
+# http://schema.geolink.org/1.0/base/main#Instrument
+
+:Instrument a owl:Class ;
+	rdfs:comment "A specific instance of an Instrument being used to make observations resulting in a Dataset.NERC's L05 and L22 vocabulary terms are included as subclasses." ;
+	rdfs:label "Instrument" .
+# 
+# http://schema.geolink.org/1.0/base/main#InstrumentType
+
+:InstrumentType a owl:Class ;
+	rdfs:comment "The type of Instrument being used to make observations - CTD, ADCP, microscope. NERC's L05 and L22 vocabulary terms are included as instances." ;
+	rdfs:label "InstrumentType" .
+# 
+# http://schema.geolink.org/1.0/base/main#MeasurementType
+
+:MeasurementType a owl:Class ;
+	rdfs:comment "The type of Measurement being recorded - atmospheric emission, land surface temperature, depth, salinity of the water column. NERC's P02 and P03 vocabulary terms are included as instances." ;
+	rdfs:label "MeasurementType" .
+# 
+# http://schema.geolink.org/1.0/base/main#Meeting
+
+:Meeting a owl:Class ;
+	rdfs:comment "To represent, e.g., \"Person W attends Conference X at Place Y which occurred on Start/End Dates Z1-Z2\"" ;
+	rdfs:label "Meeting" .
+# 
+# http://schema.geolink.org/1.0/base/main#Organization
+
+:Organization a owl:Class ;
+	rdfs:comment "A physical or virtual collection of Agents in some formally recognized capacity of significance." ;
+	rdfs:label "Organization" .
+# 
+# http://schema.geolink.org/1.0/base/main#Participant
+
+:Participant a owl:Class ;
+	rdfs:comment "A reification of the n-ary (n >= 3) relation representing a participation of a Person performing a certain RoleType in a Cruise/Award/Program/Dataset/PhysicalSample. To an instance of Participant, one can attach additional information using properties such as hasAffiliation" ;
+	rdfs:label "Participant" .
+# 
+# http://schema.geolink.org/1.0/base/main#Person
+
+:Person a owl:Class ;
+	rdfs:comment "A homo sapien Agent of some significance" ;
+	rdfs:label "Person" .
+# 
+# http://schema.geolink.org/1.0/base/main#Place
+
+:Place a owl:Class ;
+	rdfs:comment "A location with at least some type of spatial extent." ;
+	rdfs:label "Place" .
+# 
+# http://schema.geolink.org/1.0/base/main#PlaceType
+
+:PlaceType a owl:Class ;
+	rdfs:comment "A common descriptor for a type of Place - ocean, shoreline, island, etc." ;
+	rdfs:label "PlaceType" .
+# 
+# http://schema.geolink.org/1.0/base/main#Platform
+
+:Platform a owl:Class ;
+	rdfs:comment "A physical object of significance enabling observations resulting in a Dataset. NERC's L06 vocabulary terms (i.e., ICES platform codes) are included as subclasses." ;
+	rdfs:label "Platform" .
+# 
+# http://schema.geolink.org/1.0/base/main#PlatformType
+
+:PlatformType a owl:Class ;
+	rdfs:comment "A type of Platform - vessel, glider, float, laboratory, etc. NERC's L06 vocabulary terms are included as instances." ;
+	rdfs:label "PlatformType" .
+# 
+# http://schema.geolink.org/1.0/base/main#PortCall
+
+:PortCall a owl:Class ;
+	rdfs:comment "A designated, specific port visited by a Vessel for some significant reason - the start or end of a mission; transfer of passengers, goods, or equipment." ;
+	rdfs:label "PortCall" .
+# 
+# http://schema.geolink.org/1.0/base/main#Program
+
+:Program a owl:Class ;
+	rdfs:comment "A formally recognized scientific effort receiving significant funding, requiring large scale coordination" ;
+	rdfs:label "Program" .
+# 
+# http://schema.geolink.org/1.0/base/main#Repository
+
+:Repository a owl:Class ;
+	rdfs:comment "A recognized, formal entity responsible for curating a certain set of Datasets or DigitalObjects" ;
+	rdfs:label "Repository" .
+# 
+# http://schema.geolink.org/1.0/base/main#RoleType
+
+:RoleType a owl:Class ;
+	rdfs:comment "A specific type of role performed by an Agent - Principal Investigator, Chief Scientist, Publisher, etc." ;
+	rdfs:label "RoleType" .
+# 
+# http://schema.geolink.org/1.0/base/main#Station
+
+:Station a owl:Class ;
+	rdfs:subClassOf :Place ;
+	rdfs:label "Station" .
+# 
+# http://schema.geolink.org/1.0/base/main#Submersible
+
+:Submersible a owl:Class ;
+	owl:equivalentClass <http://vocab.nerc.ac.uk/collection/L06/current/20/> ;
+	rdfs:subClassOf :Platform ;
+	rdfs:label "Submersible" .
+# 
+# http://schema.geolink.org/1.0/base/main#Vessel
+
+:Vessel a owl:Class ;
+	owl:equivalentClass <http://vocab.nerc.ac.uk/collection/L06/current/3Z/> ;
+	rdfs:subClassOf :Platform ;
+	rdfs:comment "The platform enabling a Cruise" ;
+	rdfs:label "Vessel" .
+# 
+# http://vocab.nerc.ac.uk/collection/L06/current/20/
+# 
+# http://vocab.nerc.ac.uk/collection/L06/current/3Z/
+# 
+# Generated by the OWL API (version 4.1.3.20151118-2017) https://github.com/owlcs/owlapi
