@@ -1,7 +1,7 @@
 from rdflib import Graph, OWL, URIRef, RDF, RDFS, Literal, Namespace, BNode
 from rdflib.namespace import SKOS, DC, DCTERMS
 
-datapath = "/Users/krisnadhi/github.com/ec-geolink/design/voc/nvs/"
+datapath = "./"
 collectionname = "P03"
 graphURIString = datapath + collectionname + "-source.rdf"
 g = Graph()
@@ -9,20 +9,20 @@ result = g.parse(graphURIString)
 
 print(graphURIString, "has %s statements." % len(g))
 
-s = g.serialize(format='turtle').splitlines()
-for l in s:
-    if l: print(l.decode('utf-8'))
+# s = g.serialize(format='turtle').splitlines()
+# for l in s:
+#     if l: print(l.decode('utf-8'))
 
 ## write as OWL
 idschemeOntoNs = Namespace("http://schema.geolink.org/1.0/voc/identifierscheme#")
 ontologyURIString = "http://schema.geolink.org/1.0/voc/nvs/" + collectionname
-DefaultNS = Namespace(ontologyURIString + '#')
-GLBaseNS = Namespace('http://schema.geolink.org/1.0/base/main#')
+defaultNS = Namespace(ontologyURIString + '#')
+glbaseNS = Namespace('http://schema.geolink.org/1.0/base/main#')
 comment = "This ontology captures SeaDataNet Agreed Parameter Groups from the NERC vocabulary server"
 ontologyCreator = "EarthCube GeoLink project"
 owloutput = Graph()
-owloutput.bind('', DefaultNS)
-owloutput.bind('glbase', GLBaseNS)
+owloutput.bind('', defaultNS)
+owloutput.bind('glbase', glbaseNS)
 owloutput.bind('owl', OWL)
 owloutput.bind('dcterms', DCTERMS)
 owloutput.bind('dc', DC)
@@ -46,14 +46,14 @@ owloutput.add((ontologyURI, RDFS.comment, Literal(comment, lang='en')))
 
 ## adding object property glbase:hasMeasurementType, glbase:hasIdentifier,
 ## glbase:hasIdentifierScheme, glbase:hasIdentifierValue
-owloutput.add((GLBaseNS.hasMeasurementType, RDF.type, OWL.ObjectProperty))
-owloutput.add((GLBaseNS.hasIdentifier, RDF.type, OWL.ObjectProperty))
-owloutput.add((GLBaseNS.hasIdentifierScheme, RDF.type, OWL.ObjectProperty))
-owloutput.add((GLBaseNS.hasIdentifierValue, RDF.type, OWL.DatatypeProperty))
+owloutput.add((glbaseNS.hasMeasurementType, RDF.type, OWL.ObjectProperty))
+owloutput.add((glbaseNS.hasIdentifier, RDF.type, OWL.ObjectProperty))
+owloutput.add((glbaseNS.hasIdentifierScheme, RDF.type, OWL.ObjectProperty))
+owloutput.add((glbaseNS.hasIdentifierValue, RDF.type, OWL.DatatypeProperty))
 
 ## adding class :SeaDataNetParameter, glbase:MeasurementType
-owloutput.add((DefaultNS.SeaDataNetParameter, RDF.type, OWL.Class))
-owloutput.add((GLBaseNS.MeasurementType, RDF.type, OWL.Class))
+owloutput.add((defaultNS.SeaDataNetParameter, RDF.type, OWL.Class))
+owloutput.add((glbaseNS.MeasurementType, RDF.type, OWL.Class))
 
 
 ## add each member of the P03 collection, i.e., Measurement types to ontology as instances of MeasurementType
@@ -62,14 +62,14 @@ colcreator = g.value(collectionURI, DCTERMS.creator, None)
 for measurementtype in g.objects(collectionURI, SKOS.member):
     owloutput.add((measurementtype, RDF.type, OWL.NamedIndividual))
     owloutput.add((measurementtype, RDF.type, OWL.Class))
-    owloutput.add((measurementtype, RDF.type, GLBaseNS.MeasurementType))
+    owloutput.add((measurementtype, RDF.type, glbaseNS.MeasurementType))
 
     ## add typecasting axiom
     bn1 = BNode()
     bn2 = BNode()
     lst = BNode()
     owloutput.add((bn1, RDF.type, OWL.Restriction))
-    owloutput.add((bn1, OWL.onProperty, GLBaseNS.hasMeasurementType))
+    owloutput.add((bn1, OWL.onProperty, glbaseNS.hasMeasurementType))
     owloutput.add((bn1, OWL.someValuesFrom, bn2))
     owloutput.add((bn2, RDF.type, OWL.Class))
     owloutput.add((bn2, OWL.oneOf, lst))
@@ -87,11 +87,11 @@ for measurementtype in g.objects(collectionURI, SKOS.member):
     # add identifier
     bn = BNode()
     ident = g.value(measurementtype, DCTERMS.identifier, None)
-    owloutput.add((measurementtype, GLBaseNS.hasIdentifier, bn))
-    owloutput.add((bn, GLBaseNS.hasIdentifierValue, ident))
+    owloutput.add((measurementtype, glbaseNS.hasIdentifier, bn))
+    owloutput.add((bn, glbaseNS.hasIdentifierValue, ident))
     ## we assume idschemeOntoNs.sdnp03 as the identifier scheme for the measurement types (SeaDataNet P03)
     ## the identifier scheme is assumed to already be defined in identifierscheme.owl
-    owloutput.add((bn, GLBaseNS.hasIdentifierScheme, idschemeOntoNs.sdnp03))
+    owloutput.add((bn, glbaseNS.hasIdentifierScheme, idschemeOntoNs.sdnp03))
 
     ## get equivclass
     for equivcls in g.objects(measurementtype, OWL.sameAs):
@@ -110,7 +110,7 @@ for measurementtype in g.objects(collectionURI, SKOS.member):
             isSubclassedToDefaultSuperClass = False
 
     if isSubclassedToDefaultSuperClass:
-        owloutput.add((measurementtype, RDFS.subClassOf, DefaultNS.SeaDataNetParameter))
+        owloutput.add((measurementtype, RDFS.subClassOf, defaultNS.SeaDataNetParameter))
 
 
 s = owloutput.serialize(format='pretty-xml').splitlines()
@@ -118,18 +118,8 @@ fout = open(datapath + collectionname + ".owl",'w',newline='\n')
 # fout = open(collectionname + ".owl",'w',newline='\n')
 for l in s:
     if l:
-        print(l.decode('utf-8'))
+        # print(l.decode('utf-8'))
         fout.write(l.decode('utf-8'))
         fout.write('\n')
 
 fout.close()
-
-
-
-
-
-
-
-
-
-

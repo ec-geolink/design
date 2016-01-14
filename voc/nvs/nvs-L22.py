@@ -1,7 +1,7 @@
 from rdflib import Graph, OWL, URIRef, RDF, RDFS, Literal, Namespace, BNode
 from rdflib.namespace import SKOS, DC, DCTERMS
 
-datapath = "/Users/krisnadhi/github.com/ec-geolink/design/voc/nvs/"
+datapath = "./"
 directUpperCollectionName = "L05"
 uppergraph = Graph()
 uppergraph.parse(datapath + directUpperCollectionName + "-source.rdf")
@@ -15,20 +15,20 @@ result = g.parse(graphURIString)
 
 print(graphURIString, "has %s statements." % len(g))
 
-s = g.serialize(format='turtle').splitlines()
-for l in s:
-    if l: print(l.decode('utf-8'))
+# s = g.serialize(format='turtle').splitlines()
+# for l in s:
+#     if l: print(l.decode('utf-8'))
 
 ## write as OWL
 idschemeOntoNs = Namespace("http://schema.geolink.org/1.0/voc/identifierscheme#")
 ontologyURIString = "http://schema.geolink.org/1.0/voc/nvs/" + collectionname
-DefaultNS = Namespace(ontologyURIString + '#')
-GLBaseNS = Namespace('http://schema.geolink.org/1.0/base/main#')
+defaultNS = Namespace(ontologyURIString + '#')
+glbaseNS = Namespace('http://schema.geolink.org/1.0/base/main#')
 comment = "This ontology captures SeaDataNet device catalog from the NERC vocabulary server with mapping to SeaDataNet device categories"
 ontologyCreator = "EarthCube GeoLink project"
 owloutput = Graph()
-owloutput.bind('', DefaultNS)
-owloutput.bind('glbase', GLBaseNS)
+owloutput.bind('', defaultNS)
+owloutput.bind('glbase', glbaseNS)
 owloutput.bind('owl', OWL)
 owloutput.bind('dcterms', DCTERMS)
 owloutput.bind('dc', DC)
@@ -55,14 +55,14 @@ owloutput.add((ontologyURI, OWL.imports, upperCollectionOntologyURI))
 
 ## adding object property glbase:hasInstrumentType, glbase:hasIdentifier,
 ## glbase:hasIdentifierScheme, glbase:hasIdentifierValue
-owloutput.add((GLBaseNS.hasInstrumentType, RDF.type, OWL.ObjectProperty))
-owloutput.add((GLBaseNS.hasIdentifier, RDF.type, OWL.ObjectProperty))
-owloutput.add((GLBaseNS.hasIdentifierScheme, RDF.type, OWL.ObjectProperty))
-owloutput.add((GLBaseNS.hasIdentifierValue, RDF.type, OWL.DatatypeProperty))
+owloutput.add((glbaseNS.hasInstrumentType, RDF.type, OWL.ObjectProperty))
+owloutput.add((glbaseNS.hasIdentifier, RDF.type, OWL.ObjectProperty))
+owloutput.add((glbaseNS.hasIdentifierScheme, RDF.type, OWL.ObjectProperty))
+owloutput.add((glbaseNS.hasIdentifierValue, RDF.type, OWL.DatatypeProperty))
 
 ## adding class glbase:Instrument, glbase:InstrumentType
-owloutput.add((GLBaseNS.Instrument, RDF.type, OWL.Class))
-owloutput.add((GLBaseNS.InstrumentType, RDF.type, OWL.Class))
+owloutput.add((glbaseNS.Instrument, RDF.type, OWL.Class))
+owloutput.add((glbaseNS.InstrumentType, RDF.type, OWL.Class))
 
 
 ## add each member of the L22 collection, i.e., Instrument types to ontology as instances of InstrumentType
@@ -71,14 +71,14 @@ colcreator = g.value(collectionURI, DCTERMS.creator, None)
 for instrumenttype in g.objects(collectionURI, SKOS.member):
     owloutput.add((instrumenttype, RDF.type, OWL.NamedIndividual))
     owloutput.add((instrumenttype, RDF.type, OWL.Class))
-    owloutput.add((instrumenttype, RDF.type, GLBaseNS.InstrumentType))
+    owloutput.add((instrumenttype, RDF.type, glbaseNS.InstrumentType))
 
     ## add typecasting axiom
     bn1 = BNode()
     bn2 = BNode()
     lst = BNode()
     owloutput.add((bn1, RDF.type, OWL.Restriction))
-    owloutput.add((bn1, OWL.onProperty, GLBaseNS.hasInstrumentType))
+    owloutput.add((bn1, OWL.onProperty, glbaseNS.hasInstrumentType))
     owloutput.add((bn1, OWL.someValuesFrom, bn2))
     owloutput.add((bn2, RDF.type, OWL.Class))
     owloutput.add((bn2, OWL.oneOf, lst))
@@ -96,11 +96,11 @@ for instrumenttype in g.objects(collectionURI, SKOS.member):
     # add identifier
     bn = BNode()
     ident = g.value(instrumenttype, DCTERMS.identifier, None)
-    owloutput.add((instrumenttype, GLBaseNS.hasIdentifier, bn))
-    owloutput.add((bn, GLBaseNS.hasIdentifierValue, ident))
+    owloutput.add((instrumenttype, glbaseNS.hasIdentifier, bn))
+    owloutput.add((bn, glbaseNS.hasIdentifierValue, ident))
     ## we assume idschemeOntoNs.sdnl22 as the identifier scheme for the instrument types (SeaDataNet L22)
     ## the identifier scheme is assumed to already be defined in identifierscheme.owl
-    owloutput.add((bn, GLBaseNS.hasIdentifierScheme, idschemeOntoNs.sdnl22))
+    owloutput.add((bn, glbaseNS.hasIdentifierScheme, idschemeOntoNs.sdnl22))
 
     ## get equivclass
     for equivcls in g.objects(instrumenttype, OWL.sameAs):
@@ -122,7 +122,7 @@ for instrumenttype in g.objects(collectionURI, SKOS.member):
             isDirectSubClassofInstrument = False
 
     if isDirectSubClassofInstrument:
-        owloutput.add((instrumenttype, RDFS.subClassOf, GLBaseNS.Instrument))
+        owloutput.add((instrumenttype, RDFS.subClassOf, glbaseNS.Instrument))
 
 
 s = owloutput.serialize(format='pretty-xml').splitlines()

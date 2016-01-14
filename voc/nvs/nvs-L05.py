@@ -9,9 +9,9 @@ result = g.parse(graphURIString)
 
 print(graphURIString, "has %s statements." % len(g))
 
-s = g.serialize(format='turtle').splitlines()
-for l in s:
-    if l: print(l.decode('utf-8'))
+# s = g.serialize(format='turtle').splitlines()
+# for l in s:
+#     if l: print(l.decode('utf-8'))
 
 ## write as OWL
 idschemeOntoNs = Namespace("http://schema.geolink.org/1.0/voc/identifierscheme#")
@@ -119,7 +119,7 @@ fout = open(datapath + collectionname + ".owl",'w',newline='\n')
 # fout = open(collectionname + ".owl",'w',newline='\n')
 for l in s:
     if l:
-        print(l.decode('utf-8'))
+        # print(l.decode('utf-8'))
         fout.write(l.decode('utf-8'))
         fout.write('\n')
 
