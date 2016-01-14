@@ -73,6 +73,12 @@ for instrumenttype in g.objects(collectionURI, SKOS.member):
     owloutput.add((instrumenttype, RDF.type, OWL.Class))
     owloutput.add((instrumenttype, RDF.type, glbaseNS.InstrumentType))
 
+    ## add deprecation status if any
+    depre = g.value(instrumenttype, OWL.deprecated, None)
+    if depre:
+        if str(depre) == 'true': print(instrumenttype, depre)
+        owloutput.add((instrumenttype, OWL.deprecated, depre))
+
     ## add typecasting axiom
     bn1 = BNode()
     bn2 = BNode()

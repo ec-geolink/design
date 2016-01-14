@@ -28,7 +28,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::0" ] ;
     rdfs:comment "The correct value is not known to, and not computable by, the creator of this information. However, a correct value probably exists."@en ;
-    rdfs:subClassOf glbase:Platform .
+    rdfs:subClassOf glbase:Platform ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/11/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -39,7 +40,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
             glbase:hasIdentifierValue "SDN:L06::11" ] ;
     rdfs:comment "A collection of oceanographic instruments mounted at a fixed position on the seabed (e.g. POL Monitoring Platform, seabed ADCP)."@en ;
     rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/10/>,
-        <http://vocab.nerc.ac.uk/collection/L06/current/48/> .
+        <http://vocab.nerc.ac.uk/collection/L06/current/48/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/12/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -49,7 +51,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::12" ] ;
     rdfs:comment "An instrumented platform that is propelled on wheels or tracks on the seabed (e.g benthic crawler)."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/10/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/10/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/13/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -59,7 +62,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::13" ] ;
     rdfs:comment "A structure to which instrumentation may be attached that is either in air or under water depending on the state of the tide and weather conditions."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/10/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/10/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/14/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -69,7 +73,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::14" ] ;
     rdfs:comment "A fixed man-made structure on land to which instrumentation may be attached (e.g. meteorological tower)."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/10/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/10/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/15/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -79,7 +84,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::15" ] ;
     rdfs:comment "An instrumented vehicle or sample collector that operates on the solid surface of the Earth (e.g. mobile meteorological station, land crawler, snowmobile)."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/10/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/10/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/16/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -89,7 +95,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::16" ] ;
     rdfs:comment "A fixed (for the duration of the measurements) man-made structure away from the coast to which instrumentation may be attached (e.g. oil rig, gas rig or jack-up barge)."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/10/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/10/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/17/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -99,7 +106,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::17" ] ;
     rdfs:comment "A fixed man-made structure permanently linked to land with access to water at all states of the tide to which instrumentation may be attached (e.g. pier)."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/10/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/10/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/18/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -109,7 +117,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::18" ] ;
     rdfs:comment "An instrumented structure in a river upstream of its tidal limit."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/10/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/10/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/19/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -119,7 +128,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::19" ] ;
     rdfs:comment "A large polythene bag containing a water sample suspended in the natural environment so that it shares ambient physical conditions such as temperature and light levels, but is chemically isolated to allow experiments such as fertilisation."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/10/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/10/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/21/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -129,7 +139,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::21" ] ;
     rdfs:comment "A platform operating in the water column that has both self-contained propulsion and at least one human operator on board (e.g. submarine)."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/20/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/20/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/22/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -139,7 +150,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::22" ] ;
     rdfs:comment "A platform operating in the water column attached to a mothership by an umbilical with limited propulsion and no human operator on board (e.g. ROV)."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/20/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/20/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/23/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -149,7 +161,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::23" ] ;
     rdfs:comment "A vehicle towed by rigid cable through the water column at fixed or varying depth with no propulsion and no human operator (e.g. Towfish, Scanfish, UOR, SeaSoar)."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/20/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/20/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/24/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -159,7 +172,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::24" ] ;
     rdfs:comment "A platform operating in the water column attached to a mothership by an umbilical but with no means of propulsion that has at least one human operator on board (e.g. bathysphere)."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/20/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/20/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/26/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -169,7 +183,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::26" ] ;
     rdfs:comment "An unmanned platform lowered and raised vertically by a cable from the mothership.  Includes any type of profiling sensor mounting such as CTD frames, profiling radiometers and instrumented nets."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/20/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/20/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/27/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -179,7 +194,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::27" ] ;
     rdfs:comment "Platforms with buoyancy-based propulsion that are capable of operations at variable depths which are not constrained to be near the sea surface."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/25/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/25/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/30/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -189,7 +205,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::30" ] ;
     rdfs:comment "A large platform operating on the surface of the water column. Objective definitions for guidelines: >50m length (EU), >100 foot length (USA), >300 GRT weight (SOLAS). Subjective definition: a ship is a vessel big enough to carry a boat."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/3Z/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/3Z/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/31/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -199,7 +216,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::31" ] ;
     rdfs:comment "A platform of any size operating on the surface of the water column in unpredictable locations that is specifically equipped, manned and operated for scientific, usually oceanographic, research."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/3Z/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/3Z/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/32/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -209,7 +227,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::32" ] ;
     rdfs:comment "A platform for purpose of commerce of any size operating on the surface of the water column in unpredictable locations that regularly collects scientific (oceanographic and meteorological) data (e.g. an instrumented cargo vessel)."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/3Z/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/3Z/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/33/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -219,7 +238,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::33" ] ;
     rdfs:comment "A small self-propelled platform operating on the surface of the water column that may be easily removed from the water (e.g. shore-based RIBs, ships' boats)."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/3Z/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/3Z/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/34/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -229,7 +249,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::34" ] ;
     rdfs:comment "A platform of any size occupying a fixed location on the surface of the water column for prolonged periods collecting scientific (oceanographic and meteorological) data as a primary or secondary mission.  Includes light vessels and weather ships."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/3Z/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/3Z/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/35/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -239,7 +260,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::35" ] ;
     rdfs:comment "A platform repeatedly following a predictable fixed track on the surface of the water column that collects scientific (oceanographic and meteorological) data (e.g. an instrumented ferry)."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/3Z/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/3Z/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/36/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -249,7 +271,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::36" ] ;
     rdfs:comment "A platform operating on the surface of the water column whose primary purpose is the commercial harvesting of fish or shellfish but may be engaged in scientific activities such as fish stock surveys or mooring deployments and recoveries."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/3Z/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/3Z/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/37/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -259,7 +282,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::37" ] ;
     rdfs:comment "A small self-propelled platform operating on the surface of the water column in unpredictable locations that is smaller than a ship, but too large to easily remove from the water."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/3Z/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/3Z/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/38/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -269,7 +293,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::38" ] ;
     rdfs:comment "A platform operating on the surface of the water column that is manually propelled and may not be easily removed from the water (e.g. trireme)."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/3Z/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/3Z/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/39/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -279,7 +304,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::39" ] ;
     rdfs:comment "A platform operating on the surface of the water column in unpredictable locations that is primarily equipped, manned and operated for military purposes.  Includes surface warships of all sizes and logistic support vessels."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/3Z/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/3Z/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/3A/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -289,7 +315,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::3A" ] ;
     rdfs:comment "A platform operating on the surface of the water column that is manually propelled and may be easily removed from the water (e.g. rowing boat, canoe)."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/3Z/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/3Z/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/3C/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -299,7 +326,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::3C" ] ;
     rdfs:comment "Platforms with buoyancy-based propulsion that operate at a single depth near the sea surface."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/3B/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/3B/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/3D/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -309,7 +337,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::3D" ] ;
     rdfs:comment "A drillship is a merchant vessel designed for use in exploratory offshore drilling of new oil and gas wells or for scientific drilling purposes."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/3Z/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/3Z/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/41/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -319,7 +348,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::41" ] ;
     rdfs:comment "An unmanned instrumented platform operating on the surface of the water column loosely tethered to the seafloor to maintain a fixed position (e.g. ODAS buoy)."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/48/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/48/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/43/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -329,7 +359,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::43" ] ;
     rdfs:comment "A collection of oceanographic instruments attached to wires suspended between anchors on the seabed and buoyant spheres in the water column."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/48/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/48/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/44/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -339,7 +370,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::44" ] ;
     rdfs:comment "An unmanned instrumented platform drifting freely in the water column at a depth governed by its density (e.g. Swallow float)."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/47/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/47/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/45/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -349,7 +381,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::45" ] ;
     rdfs:comment "A platform that periodically makes an automated vertical traverse of the water column at a predetermined fixed location. (e.g. YSI vertical profiler, HOMER CTD)."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/48/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/48/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/46/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -359,7 +392,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::46" ] ;
     rdfs:comment "An unmanned instrumented platform drifting freely in the water column that periodically makes vertical traverses through the water column (e.g. Argo float)."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/47/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/47/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/49/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -369,7 +403,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::49" ] ;
     rdfs:comment "An undrogued (i.e. no sub-surface parachute) surface float that is deployed in regions where sea ice forms that moves with either ice or water depending upon the time of year."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/42/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/42/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/51/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -379,7 +414,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::51" ] ;
     rdfs:comment "A container filled with a gas that is lighter than air, which is constrained to rise vertically at a fixed location."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/50/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/50/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/52/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -389,7 +425,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::52" ] ;
     rdfs:comment "A container filled with a gas that is lighter than air, which is free to drift in the atmosphere."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/50/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/50/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/53/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -399,7 +436,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::53" ] ;
     rdfs:comment "A container filled with a gas that is lighter than air, which is tethered at a fixed height and location."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/50/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/50/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/54/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -409,7 +447,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::54" ] ;
     rdfs:comment "A self-propelled container filled with a gas that is lighter than air."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/50/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/50/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/61/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -419,7 +458,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::61" ] ;
     rdfs:comment "A fixed-wing self-propelled aircraft that is equipped, manned and operated for atmospheric, meteorological or oceanographic research."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/60/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/60/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/62/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -429,7 +469,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::62" ] ;
     rdfs:comment "A fixed-wing self-propelled aircraft."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/60/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/60/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/63/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -439,7 +480,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::63" ] ;
     rdfs:comment "A rocket is a vehicle, missile or aircraft which obtains thrust by the reaction to the ejection of fast moving exhaust gas from within a rocket engine."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/60/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/60/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/64/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -449,7 +491,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::64" ] ;
     rdfs:comment "A vehicle operating beyond the Earth's atmosphere without human occupants that orbits the Earth at the same rate as the Earth's rotation keeping it over a fixed location on the Earth's surface.."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/6Z/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/6Z/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/65/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -459,7 +502,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::65" ] ;
     rdfs:comment "A vehicle operating beyond the Earth's atmosphere without human occupants that orbits the Earth at a different rate to the Earth's rotation so it moves over the Earth's surface.."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/6Z/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/6Z/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/66/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -469,7 +513,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::66" ] ;
     rdfs:comment "A vehicle operating beyond the Earth's atmosphere with human occupants."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/6Z/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/6Z/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/67/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -479,7 +524,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::67" ] ;
     rdfs:comment "An aircraft without wings that obtains its lift from the rotation of overhead blades."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/60/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/60/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/68/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -489,7 +535,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::68" ] ;
     rdfs:comment "A vehicle operating beyond the Earth's atmosphere without human occupants that orbits the Earth."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/6Z/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/6Z/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/69/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -499,7 +546,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::69" ] ;
     rdfs:comment "An aircraft without wings that obtains its lift from the rotation of overhead blades, but obtains forward populsion from a fixed propellor."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/60/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/60/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/6A/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -509,7 +557,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::6A" ] ;
     rdfs:comment "A fixed-wing aircraft with no propulsion."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/60/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/60/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/6B/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -519,7 +568,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::6B" ] ;
     rdfs:comment "An aerofoil tethered to the ground held aloft by the wind."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/60/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/60/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/6C/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -529,7 +579,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::6C" ] ;
     rdfs:comment "A fabric sheet designed to slow the descent of an object through the atmosphere."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/60/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/60/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/6D/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -539,7 +590,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::6D" ] ;
     rdfs:comment "Any untethered heavier-than-air aircraft that is not occupied by people: may be a remotely piloted aircraft or an autonomous aircraft. Also referred to as a drone."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/60/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/60/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/71/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -549,7 +601,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::71" ] ;
     rdfs:comment "A human being without specialised equipment operating on land or the surface of the water column."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/70/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/70/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/72/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -559,7 +612,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::72" ] ;
     rdfs:comment "A human being with self-contained equipment or surface-connected suit enabling operation within the water column."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/70/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/70/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/73/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -569,7 +623,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::73" ] ;
     rdfs:comment "A bird that is unable to fly with the ability to exist within the water column (e.g. penguin)."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/70/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/70/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/74/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -579,7 +634,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::74" ] ;
     rdfs:comment "A flighted bird that is able to exist on the water column surface and dive into the water column (e.g. cormorants, auks, ducks and gulls)."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/70/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/70/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/75/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -589,7 +645,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::75" ] ;
     rdfs:comment "A mammal that exists within the water column but needing to regularly surface to breathe (i.e. dolphins and whales)."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/70/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/70/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/76/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -599,7 +656,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::76" ] ;
     rdfs:comment "A free-swimming creature that exists totally within the water column."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/70/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/70/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/77/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -609,7 +667,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::77" ] ;
     rdfs:comment "A mammal that exists both on land and within the water column. Includes seals, sealions, sea-otters and walruses."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/70/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/70/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/91/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -619,7 +678,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::91" ] ;
     rdfs:comment "A floating ice sheet detached from the coast."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/90/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/90/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/92/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -629,7 +689,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::92" ] ;
     rdfs:comment "A floating ice sheet attached to the coast."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/90/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/90/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/93/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -639,7 +700,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::93" ] ;
     rdfs:comment "Sea ice not connected to land with an ice concetration of over 70 per cent."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/90/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/90/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/94/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -649,7 +711,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::94" ] ;
     rdfs:comment "Sea ice not connected to land with an ice concetration of under 70 per cent."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/90/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/90/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/96/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -659,7 +722,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::96" ] ;
     rdfs:comment "A self-propelled vehicle capable of operation on land or the seabed (e.g. beach crawler)."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/10/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/10/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/9A/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -669,7 +733,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::9A" ] ;
     rdfs:comment "A six-wheel drive amphibious truck developed during the second World War."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/95/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/95/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/9B/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -679,7 +744,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::9B" ] ;
     rdfs:comment "A craft capable of moving over water or land on a downwardly-propelled cushion of air."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/95/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/95/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/25/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -689,7 +755,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::25" ] ;
     rdfs:comment "A free-roving platform operating in the water column with propulsion but no human operator on board (e.g. Autosub, Glider)."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/20/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/20/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/3B/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -699,7 +766,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::3B" ] ;
     rdfs:comment "A self-propelled vehicle operating on the sea surface with no human occupants."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/3Z/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/3Z/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/42/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -709,7 +777,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::42" ] ;
     rdfs:comment "An unmanned instrumented platform operating on the surface of the water column often attached to a drogue to track currents rather than winds (e.g. Argos buoy)."@en ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/47/> .
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/47/> ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/95/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -719,7 +788,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::95" ] ;
     rdfs:comment "A self-propelled platform capable of operating on land and within or on the surface of a water body."@en ;
-    rdfs:subClassOf glbase:Platform .
+    rdfs:subClassOf glbase:Platform ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/47/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -729,7 +799,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::47" ] ;
     rdfs:comment "A free-floating platform either on the surface of the water column or at a predetermined depth within the water column."@en ;
-    rdfs:subClassOf glbase:Platform .
+    rdfs:subClassOf glbase:Platform ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/48/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -739,7 +810,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::48" ] ;
     rdfs:comment "A tethered collection of oceanographic instruments at a fixed location that may include seafloor, mid-water and surface components."@en ;
-    rdfs:subClassOf glbase:Platform .
+    rdfs:subClassOf glbase:Platform ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/50/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -749,7 +821,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::50" ] ;
     rdfs:comment "A platform capable of flight in the atmosphere because it is lighter than air."@en ;
-    rdfs:subClassOf glbase:Platform .
+    rdfs:subClassOf glbase:Platform ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/6Z/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -759,7 +832,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::6Z" ] ;
     rdfs:comment "A platform operating beyond the Earth's atmosphere."@en ;
-    rdfs:subClassOf glbase:Platform .
+    rdfs:subClassOf glbase:Platform ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/90/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -769,7 +843,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::90" ] ;
     rdfs:comment "A frozen body of water on land, freshwater or sea."@en ;
-    rdfs:subClassOf glbase:Platform .
+    rdfs:subClassOf glbase:Platform ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/20/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -779,7 +854,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::20" ] ;
     rdfs:comment "A platform operating within a water body."@en ;
-    rdfs:subClassOf glbase:Platform .
+    rdfs:subClassOf glbase:Platform ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/70/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -789,7 +865,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::70" ] ;
     rdfs:comment "A living creature carrying instruments or collecting samples."@en ;
-    rdfs:subClassOf glbase:Platform .
+    rdfs:subClassOf glbase:Platform ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/60/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -799,7 +876,8 @@ glbase:hasIdentifierValue a owl:DatatypeProperty .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::60" ] ;
     rdfs:comment "A platform capable of flight in the atmosphere despite its being heavier than air."@en ;
-    rdfs:subClassOf glbase:Platform .
+    rdfs:subClassOf glbase:Platform ;
+    owl:deprecated "false" .
 glbase:Platform a owl:Class .
 <http://vocab.nerc.ac.uk/collection/L06/current/10/> a glbase:PlatformType,
         owl:Class,
@@ -810,7 +888,8 @@ glbase:Platform a owl:Class .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::10" ] ;
     rdfs:comment "A platform located on the solid surface of the Earth either above or below sea level."@en ;
-    rdfs:subClassOf glbase:Platform .
+    rdfs:subClassOf glbase:Platform ;
+    owl:deprecated "false" .
 <http://vocab.nerc.ac.uk/collection/L06/current/3Z/> a glbase:PlatformType,
         owl:Class,
         owl:NamedIndividual ;
@@ -820,406 +899,407 @@ glbase:Platform a owl:Class .
     glbase:hasIdentifier [ glbase:hasIdentifierScheme idscheme:sdnl06 ;
             glbase:hasIdentifierValue "SDN:L06::3Z" ] ;
     rdfs:comment "A mobile platform with propulsion operating on and restricted to the surface of a water body."@en ;
-    rdfs:subClassOf glbase:Platform .
+    rdfs:subClassOf glbase:Platform ;
+    owl:deprecated "false" .
 glbase:PlatformType a owl:Class .
 glbase:hasPlatformType a owl:ObjectProperty .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/63/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/63/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/6A/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/6A/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/3A/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/3A/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/31/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/31/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/13/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/13/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/18/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/18/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/62/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/62/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/95/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/95/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/37/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/37/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/30/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/30/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/91/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/91/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/6C/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/6C/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/3B/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/3B/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/3D/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/3D/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/68/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/68/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/11/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/11/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/21/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/21/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/14/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/14/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/3Z/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/3Z/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/10/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/10/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/23/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/23/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/15/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/15/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/76/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/76/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/43/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/43/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/34/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/34/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/75/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/75/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/93/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/93/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/6D/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/6D/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/64/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/64/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/42/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/42/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/32/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/32/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/6Z/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/6Z/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/74/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/74/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/16/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/16/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/70/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/70/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/12/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/12/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/22/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/22/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/6B/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/6B/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/94/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/94/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/69/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/69/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/38/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/38/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/47/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/47/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/44/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/44/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/39/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/39/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/90/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/90/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/50/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/50/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/45/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/45/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/3C/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/3C/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/54/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/54/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/19/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/19/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/73/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/73/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/48/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/48/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/20/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/20/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/72/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/72/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/0/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/0/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/51/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/51/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/49/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/49/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/9B/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/9B/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/46/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/46/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/9A/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/9A/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/67/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/67/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/26/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/26/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/60/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/60/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/35/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/35/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/36/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/36/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/27/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/27/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/25/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/25/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/71/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/71/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/33/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/33/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/52/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/52/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/96/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/96/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/66/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/66/> ) ] .
-[] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/92/> ;
-    owl:onProperty glbase:hasPlatformType ;
-    owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/92/> ) ] .
 [] a owl:Restriction ;
     rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/77/> ;
     owl:onProperty glbase:hasPlatformType ;
     owl:someValuesFrom [ a owl:Class ;
             owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/77/> ) ] .
 [] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/24/> ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/19/> ;
     owl:onProperty glbase:hasPlatformType ;
     owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/24/> ) ] .
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/19/> ) ] .
 [] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/61/> ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/65/> ;
     owl:onProperty glbase:hasPlatformType ;
     owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/61/> ) ] .
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/65/> ) ] .
 [] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/53/> ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/18/> ;
     owl:onProperty glbase:hasPlatformType ;
     owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/53/> ) ] .
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/18/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/38/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/38/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/51/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/51/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/12/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/12/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/3Z/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/3Z/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/93/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/93/> ) ] .
 [] a owl:Restriction ;
     rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/41/> ;
     owl:onProperty glbase:hasPlatformType ;
     owl:someValuesFrom [ a owl:Class ;
             owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/41/> ) ] .
 [] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/0/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/0/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/64/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/64/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/6B/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/6B/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/6A/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/6A/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/46/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/46/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/42/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/42/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/74/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/74/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/75/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/75/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/3B/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/3B/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/35/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/35/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/95/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/95/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/22/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/22/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/36/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/36/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/34/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/34/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/68/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/68/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/6Z/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/6Z/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/90/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/90/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/54/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/54/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/30/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/30/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/6C/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/6C/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/67/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/67/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/96/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/96/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/91/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/91/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/31/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/31/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/23/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/23/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/69/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/69/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/15/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/15/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/94/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/94/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/49/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/49/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/27/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/27/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/13/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/13/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/60/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/60/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/62/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/62/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/72/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/72/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/6D/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/6D/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/25/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/25/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/66/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/66/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/53/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/53/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/43/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/43/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/45/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/45/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/47/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/47/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/26/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/26/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/63/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/63/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/9B/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/9B/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/50/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/50/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/73/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/73/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/20/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/20/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/52/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/52/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/71/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/71/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/32/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/32/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/37/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/37/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/16/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/16/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/3D/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/3D/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/21/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/21/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/10/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/10/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/39/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/39/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/9A/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/9A/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/3A/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/3A/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/24/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/24/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/11/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/11/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/33/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/33/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/76/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/76/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/14/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/14/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/3C/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/3C/> ) ] .
+[] a owl:Restriction ;
     rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/17/> ;
     owl:onProperty glbase:hasPlatformType ;
     owl:someValuesFrom [ a owl:Class ;
             owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/17/> ) ] .
 [] a owl:Restriction ;
-    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/65/> ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/92/> ;
     owl:onProperty glbase:hasPlatformType ;
     owl:someValuesFrom [ a owl:Class ;
-            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/65/> ) ] .
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/92/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/44/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/44/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/48/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/48/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/70/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/70/> ) ] .
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://vocab.nerc.ac.uk/collection/L06/current/61/> ;
+    owl:onProperty glbase:hasPlatformType ;
+    owl:someValuesFrom [ a owl:Class ;
+            owl:oneOf ( <http://vocab.nerc.ac.uk/collection/L06/current/61/> ) ] .

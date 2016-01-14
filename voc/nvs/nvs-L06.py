@@ -67,6 +67,11 @@ for platformtype in g.objects(collectionURI, SKOS.member):
     owloutput.add((platformtype, RDF.type, OWL.Class))
     owloutput.add((platformtype, RDF.type, glbaseNS.PlatformType))
 
+    ## add deprecation status if any
+    depre = g.value(platformtype, OWL.deprecated, None)
+    if depre:
+        owloutput.add((platformtype, OWL.deprecated, depre))
+
     ## add typecasting axiom
     bn1 = BNode()
     bn2 = BNode()
