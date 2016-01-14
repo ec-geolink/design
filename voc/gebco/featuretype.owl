@@ -1,2075 +1,1886 @@
-<?xml version="1.0"?>
-<rdf:RDF xmlns="http://schema.geolink.org/1.0/voc/gebco/featuretype#"
-     xml:base="http://schema.geolink.org/1.0/voc/gebco/featuretype"
-     xmlns:geosparql="http://www.opengis.net/ont/geosparql#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:glvoc_gebco="http://schema.geolink.org/1.0/voc/gebco/featuretype#">
-    <owl:Ontology rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype">
-        <rdfs:comment>This ontology captures the classification (feature types) used by the IHO-IOC GEBCO Gazetteer of Undersea Feature Names, IHO publication B-8</rdfs:comment>
-        <rdfs:comment>GeoLink project (2015); http://www.geolink.org/</rdfs:comment>
-        <rdfs:comment>Uses OWL 2 Punning as per http://www.w3.org/TR/owl2-new-features/#F12:_Punning</rdfs:comment>
-        <rdfs:seeAlso rdf:resource="http://www.gebco.net/data_and_products/undersea_feature_names/"/>
-    </owl:Ontology>
-    
+@prefix : <http://schema.geolink.org/1.0/voc/gebco/featuretype#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix glbase: <http://schema.geolink.org/1.0/base/main#> .
+@prefix geosparql: <http://www.opengis.net/ont/geosparql#> .
+@prefix glvoc_gebco: <http://schema.geolink.org/1.0/voc/gebco/featuretype#> .
+@base <http://schema.geolink.org/1.0/voc/gebco/featuretype> .
 
+<http://schema.geolink.org/1.0/voc/gebco/featuretype> rdf:type owl:Ontology ;
+                                                      
+                                                      rdfs:comment "This ontology captures the classification (feature types) used by the IHO-IOC GEBCO Gazetteer of Undersea Feature Names, IHO publication B-8" ,
+                                                                   "GeoLink project (2015); http://www.geolink.org/" ,
+                                                                   "Uses OWL 2 Punning as per http://www.w3.org/TR/owl2-new-features/#F12:_Punning" ;
+                                                      
+                                                      rdfs:seeAlso <http://www.gebco.net/data_and_products/undersea_feature_names/> .
 
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Object Properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://schema.geolink.org/1.0/base/main#hasGeoFeatureType -->
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Classes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://schema.geolink.org/1.0/base/main#GeoFeature -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/base/main#GeoFeatureType -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Abyssal_Hill -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Abyssal_Hill">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Abyssal_Hill"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Abyssal_Plain -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Abyssal_Plain">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Abyssal_Plain"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Apron -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Apron">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Apron"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Archipelagic_Apron -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Archipelagic_Apron">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Archipelagic_Apron"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Arrugado -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Arrugado">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Arrugado"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Bank -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Bank">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Bank"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Banks -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Banks">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Banks"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Basin -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Basin">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Basin"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Basin_and_Ridge_Province -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Basin_and_Ridge_Province">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Basin_and_Ridge_Province"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Borderland -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Borderland">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Borderland"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Caldera -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Caldera">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Caldera"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Calderas -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Calderas">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Calderas"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Canyon -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Canyon">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Canyon"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Canyons -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Canyons">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Canyons"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Cap -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Cap">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Cap"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Channel -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Channel">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Channel"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Cone -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Cone">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Cone"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Continental_Margin -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Continental_Margin">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Continental_Margin"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Continental_Rise -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Continental_Rise">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Continental_Rise"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Continental_Shelf -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Continental_Shelf">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Continental_Shelf"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Continental_Slope -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Continental_Slope">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Continental_Slope"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Deep -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Deep">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Deep"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Deeps -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Deeps">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Deeps"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Discordance -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Discordance">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Discordance"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Escarpment -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Escarpment">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Escarpment"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Fan -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Fan">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Fan"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Fracture_Zone -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Fracture_Zone">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Fracture_Zone"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Fracture_Zone_Province -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Fracture_Zone_Province">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Fracture_Zone_Province"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Fracture_Zone_System -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Fracture_Zone_System">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Fracture_Zone_System"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Gap -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Gap">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Gap"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Ground -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Ground">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Ground"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Guyot -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Guyot">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Guyot"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Guyots -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Guyots">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Guyots"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Hill -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Hill">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Hill"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Hills -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Hills">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Hills"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Hole -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Hole">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Hole"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Knoll -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Knoll">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Knoll"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Knolls -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Knolls">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Knolls"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Levee -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Levee">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Levee"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Median_Valley -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Median_Valley">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Median_Valley"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Mid-Oceanic_Ridge -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Mid-Oceanic_Ridge">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Mid-Oceanic_Ridge"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Moat -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Moat">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Moat"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Mound -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Mound">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Mound"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Mounds -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Mounds">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Mounds"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Mud_Volcano -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Mud_Volcano">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Mud_Volcano"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Mud_Volcanoes -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Mud_Volcanoes">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Mud_Volcanoes"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Pass -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Pass">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Pass"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Passage -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Passage">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Passage"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Peak -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Peak">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Peak"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Pinnacle -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Pinnacle">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Pinnacle"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Plain -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Plain">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Plain"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Plateau -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Plateau">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Plateau"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Promontory -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Promontory">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Promontory"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Province -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Province">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Province"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Reef -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Reef">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Reef"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Reefs -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Reefs">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Reefs"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Ridge -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Ridge">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Ridge"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Ridges -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Ridges">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Ridges"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Rift -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Rift">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Rift"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Rise -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Rise">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Rise"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Saddle -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Saddle">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Saddle"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Salt_Dome -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Salt_Dome">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Salt_Dome"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Salt_Dome_Province -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Salt_Dome_Province">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Salt_Dome_Province"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Sand_Ridge -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Sand_Ridge">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Sand_Ridge"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Sand_Ridge_Province -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Sand_Ridge_Province">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Sand_Ridge_Province"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Scarp -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Scarp">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Scarp"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Sea_Channel -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Sea_Channel">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Sea_Channel"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Sea_Valley -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Sea_Valley">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Sea_Valley"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Seabight -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Seabight">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Seabight"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Seachannel -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Seachannel">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Seachannel"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Seamount -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Seamount">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Seamount"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Seamount_Chain -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Seamount_Chain">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Seamount_Chain"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Seamount_Group -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Seamount_Group">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Seamount_Group"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Seamount_Province -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Seamount_Province">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Seamount_Province"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Seamounts -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Seamounts">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Seamounts"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Shelf -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Shelf">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Shelf"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Shelf-Edge -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Shelf-Edge">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Shelf-Edge"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Shelf_Break -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Shelf_Break">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Shelf_Break"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Shoal -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Shoal">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Shoal"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Shoals -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Shoals">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Shoals"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Sill -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Sill">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Sill"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Slope -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Slope">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Slope"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Spur -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Spur">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Spur"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Submarine_Valley -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Submarine_Valley">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Submarine_Valley"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Tablemount -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Tablemount">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Tablemount"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Terrace -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Terrace">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Terrace"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Trench -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Trench">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Trench"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Trough -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Trough">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Trough"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Valley -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Valley">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Valley"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Valleys -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Valleys">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Valleys"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Zone -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Zone">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasGeoFeatureType"/>
-                <owl:hasValue rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype#Zone"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeature"/>
-    </owl:Class>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Individuals
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Abyssal_Hill -->
-
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Abyssal_Hill">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Abyssal_Plain -->
-
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Abyssal_Plain">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Apron -->
-
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Apron">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Archipelagic_Apron -->
-
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Archipelagic_Apron">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Arrugado -->
-
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Arrugado">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Bank -->
-
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Bank">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Banks -->
-
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Banks">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Basin -->
-
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Basin">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Basin_and_Ridge_Province -->
-
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Basin_and_Ridge_Province">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Borderland -->
-
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Borderland">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Caldera -->
-
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Caldera">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Calderas -->
-
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Calderas">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Canyon -->
-
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Canyon">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Canyons -->
-
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Canyons">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Cap -->
-
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Cap">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Channel -->
-
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Channel">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Cone -->
-
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Cone">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Continental_Margin -->
-
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Continental_Margin">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Continental_Rise -->
-
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Continental_Rise">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Continental_Shelf -->
-
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Continental_Shelf">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Continental_Slope -->
-
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Continental_Slope">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Deep -->
-
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Deep">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Deeps -->
-
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Deeps">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Discordance -->
-
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Discordance">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Escarpment -->
-
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Escarpment">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Fan -->
-
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Fan">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Fracture_Zone -->
-
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Fracture_Zone">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Fracture_Zone_Province -->
-
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Fracture_Zone_Province">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Fracture_Zone_System -->
-
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Fracture_Zone_System">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Gap -->
-
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Gap">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Ground -->
-
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Ground">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
 
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Guyot -->
-
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Guyot">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
+###  http://schema.geolink.org/1.0/base/main#hasGeoFeatureType
 
+glbase:hasGeoFeatureType rdf:type owl:ObjectProperty .
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Guyots -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Guyots">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
 
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Hill -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Hill">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
+#################################################################
+#
+#    Classes
+#
+#################################################################
 
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Hills -->
+###  http://schema.geolink.org/1.0/base/main#GeoFeature
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Hills">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
+glbase:GeoFeature rdf:type owl:Class .
 
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Hole -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Hole">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
+###  http://schema.geolink.org/1.0/base/main#GeoFeatureType
 
+glbase:GeoFeatureType rdf:type owl:Class .
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Knoll -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Knoll">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
 
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Abyssal_Hill
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Knolls -->
+glvoc_gebco:Abyssal_Hill rdf:type owl:Class ;
+                         
+                         owl:equivalentClass [ rdf:type owl:Restriction ;
+                                               owl:onProperty glbase:hasGeoFeatureType ;
+                                               owl:hasValue glvoc_gebco:Abyssal_Hill
+                                             ] ;
+                         
+                         rdfs:subClassOf glbase:GeoFeature .
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Knolls">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
 
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Levee -->
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Abyssal_Plain
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Levee">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
+glvoc_gebco:Abyssal_Plain rdf:type owl:Class ;
+                          
+                          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                owl:onProperty glbase:hasGeoFeatureType ;
+                                                owl:hasValue glvoc_gebco:Abyssal_Plain
+                                              ] ;
+                          
+                          rdfs:subClassOf glbase:GeoFeature .
 
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Median_Valley -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Median_Valley">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Apron
 
+glvoc_gebco:Apron rdf:type owl:Class ;
+                  
+                  owl:equivalentClass [ rdf:type owl:Restriction ;
+                                        owl:onProperty glbase:hasGeoFeatureType ;
+                                        owl:hasValue glvoc_gebco:Apron
+                                      ] ;
+                  
+                  rdfs:subClassOf glbase:GeoFeature .
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Mid-Oceanic_Ridge -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Mid-Oceanic_Ridge">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
 
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Archipelagic_Apron
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Moat -->
+glvoc_gebco:Archipelagic_Apron rdf:type owl:Class ;
+                               
+                               owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                     owl:onProperty glbase:hasGeoFeatureType ;
+                                                     owl:hasValue glvoc_gebco:Archipelagic_Apron
+                                                   ] ;
+                               
+                               rdfs:subClassOf glbase:GeoFeature .
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Moat">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
 
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Mound -->
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Arrugado
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Mound">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
+glvoc_gebco:Arrugado rdf:type owl:Class ;
+                     
+                     owl:equivalentClass [ rdf:type owl:Restriction ;
+                                           owl:onProperty glbase:hasGeoFeatureType ;
+                                           owl:hasValue glvoc_gebco:Arrugado
+                                         ] ;
+                     
+                     rdfs:subClassOf glbase:GeoFeature .
 
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Mounds -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Mounds">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Bank
 
+glvoc_gebco:Bank rdf:type owl:Class ;
+                 
+                 owl:equivalentClass [ rdf:type owl:Restriction ;
+                                       owl:onProperty glbase:hasGeoFeatureType ;
+                                       owl:hasValue glvoc_gebco:Bank
+                                     ] ;
+                 
+                 rdfs:subClassOf glbase:GeoFeature .
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Mud_Volcano -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Mud_Volcano">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
 
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Banks
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Mud_Volcanoes -->
+glvoc_gebco:Banks rdf:type owl:Class ;
+                  
+                  owl:equivalentClass [ rdf:type owl:Restriction ;
+                                        owl:onProperty glbase:hasGeoFeatureType ;
+                                        owl:hasValue glvoc_gebco:Banks
+                                      ] ;
+                  
+                  rdfs:subClassOf glbase:GeoFeature .
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Mud_Volcanoes">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
 
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Pass -->
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Basin
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Pass">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
+glvoc_gebco:Basin rdf:type owl:Class ;
+                  
+                  owl:equivalentClass [ rdf:type owl:Restriction ;
+                                        owl:onProperty glbase:hasGeoFeatureType ;
+                                        owl:hasValue glvoc_gebco:Basin
+                                      ] ;
+                  
+                  rdfs:subClassOf glbase:GeoFeature .
 
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Passage -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Passage">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Basin_and_Ridge_Province
 
+glvoc_gebco:Basin_and_Ridge_Province rdf:type owl:Class ;
+                                     
+                                     owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                           owl:onProperty glbase:hasGeoFeatureType ;
+                                                           owl:hasValue glvoc_gebco:Basin_and_Ridge_Province
+                                                         ] ;
+                                     
+                                     rdfs:subClassOf glbase:GeoFeature .
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Peak -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Peak">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
 
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Borderland
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Pinnacle -->
+glvoc_gebco:Borderland rdf:type owl:Class ;
+                       
+                       owl:equivalentClass [ rdf:type owl:Restriction ;
+                                             owl:onProperty glbase:hasGeoFeatureType ;
+                                             owl:hasValue glvoc_gebco:Borderland
+                                           ] ;
+                       
+                       rdfs:subClassOf glbase:GeoFeature .
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Pinnacle">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
 
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Plain -->
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Caldera
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Plain">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
+glvoc_gebco:Caldera rdf:type owl:Class ;
+                    
+                    owl:equivalentClass [ rdf:type owl:Restriction ;
+                                          owl:onProperty glbase:hasGeoFeatureType ;
+                                          owl:hasValue glvoc_gebco:Caldera
+                                        ] ;
+                    
+                    rdfs:subClassOf glbase:GeoFeature .
 
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Plateau -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Plateau">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Calderas
 
+glvoc_gebco:Calderas rdf:type owl:Class ;
+                     
+                     owl:equivalentClass [ rdf:type owl:Restriction ;
+                                           owl:onProperty glbase:hasGeoFeatureType ;
+                                           owl:hasValue glvoc_gebco:Calderas
+                                         ] ;
+                     
+                     rdfs:subClassOf glbase:GeoFeature .
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Promontory -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Promontory">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
 
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Canyon
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Province -->
+glvoc_gebco:Canyon rdf:type owl:Class ;
+                   
+                   owl:equivalentClass [ rdf:type owl:Restriction ;
+                                         owl:onProperty glbase:hasGeoFeatureType ;
+                                         owl:hasValue glvoc_gebco:Canyon
+                                       ] ;
+                   
+                   rdfs:subClassOf glbase:GeoFeature .
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Province">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
 
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Reef -->
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Canyons
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Reef">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
+glvoc_gebco:Canyons rdf:type owl:Class ;
+                    
+                    owl:equivalentClass [ rdf:type owl:Restriction ;
+                                          owl:onProperty glbase:hasGeoFeatureType ;
+                                          owl:hasValue glvoc_gebco:Canyons
+                                        ] ;
+                    
+                    rdfs:subClassOf glbase:GeoFeature .
 
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Reefs -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Reefs">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Cap
 
+glvoc_gebco:Cap rdf:type owl:Class ;
+                
+                owl:equivalentClass [ rdf:type owl:Restriction ;
+                                      owl:onProperty glbase:hasGeoFeatureType ;
+                                      owl:hasValue glvoc_gebco:Cap
+                                    ] ;
+                
+                rdfs:subClassOf glbase:GeoFeature .
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Ridge -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Ridge">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
 
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Channel
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Ridges -->
+glvoc_gebco:Channel rdf:type owl:Class ;
+                    
+                    owl:equivalentClass [ rdf:type owl:Restriction ;
+                                          owl:onProperty glbase:hasGeoFeatureType ;
+                                          owl:hasValue glvoc_gebco:Channel
+                                        ] ;
+                    
+                    rdfs:subClassOf glbase:GeoFeature .
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Ridges">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
 
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Rift -->
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Cone
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Rift">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
+glvoc_gebco:Cone rdf:type owl:Class ;
+                 
+                 owl:equivalentClass [ rdf:type owl:Restriction ;
+                                       owl:onProperty glbase:hasGeoFeatureType ;
+                                       owl:hasValue glvoc_gebco:Cone
+                                     ] ;
+                 
+                 rdfs:subClassOf glbase:GeoFeature .
 
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Rise -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Rise">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Continental_Margin
 
+glvoc_gebco:Continental_Margin rdf:type owl:Class ;
+                               
+                               owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                     owl:onProperty glbase:hasGeoFeatureType ;
+                                                     owl:hasValue glvoc_gebco:Continental_Margin
+                                                   ] ;
+                               
+                               rdfs:subClassOf glbase:GeoFeature .
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Saddle -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Saddle">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
 
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Continental_Rise
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Salt_Dome -->
+glvoc_gebco:Continental_Rise rdf:type owl:Class ;
+                             
+                             owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                   owl:onProperty glbase:hasGeoFeatureType ;
+                                                   owl:hasValue glvoc_gebco:Continental_Rise
+                                                 ] ;
+                             
+                             rdfs:subClassOf glbase:GeoFeature .
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Salt_Dome">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
 
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Salt_Dome_Province -->
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Continental_Shelf
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Salt_Dome_Province">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
+glvoc_gebco:Continental_Shelf rdf:type owl:Class ;
+                              
+                              owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                    owl:onProperty glbase:hasGeoFeatureType ;
+                                                    owl:hasValue glvoc_gebco:Continental_Shelf
+                                                  ] ;
+                              
+                              rdfs:subClassOf glbase:GeoFeature .
 
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Sand_Ridge -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Sand_Ridge">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Continental_Slope
 
+glvoc_gebco:Continental_Slope rdf:type owl:Class ;
+                              
+                              owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                    owl:onProperty glbase:hasGeoFeatureType ;
+                                                    owl:hasValue glvoc_gebco:Continental_Slope
+                                                  ] ;
+                              
+                              rdfs:subClassOf glbase:GeoFeature .
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Sand_Ridge_Province -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Sand_Ridge_Province">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
 
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Deep
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Scarp -->
+glvoc_gebco:Deep rdf:type owl:Class ;
+                 
+                 owl:equivalentClass [ rdf:type owl:Restriction ;
+                                       owl:onProperty glbase:hasGeoFeatureType ;
+                                       owl:hasValue glvoc_gebco:Deep
+                                     ] ;
+                 
+                 rdfs:subClassOf glbase:GeoFeature .
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Scarp">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
 
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Sea_Channel -->
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Deeps
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Sea_Channel">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
+glvoc_gebco:Deeps rdf:type owl:Class ;
+                  
+                  owl:equivalentClass [ rdf:type owl:Restriction ;
+                                        owl:onProperty glbase:hasGeoFeatureType ;
+                                        owl:hasValue glvoc_gebco:Deeps
+                                      ] ;
+                  
+                  rdfs:subClassOf glbase:GeoFeature .
 
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Sea_Valley -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Sea_Valley">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Discordance
 
+glvoc_gebco:Discordance rdf:type owl:Class ;
+                        
+                        owl:equivalentClass [ rdf:type owl:Restriction ;
+                                              owl:onProperty glbase:hasGeoFeatureType ;
+                                              owl:hasValue glvoc_gebco:Discordance
+                                            ] ;
+                        
+                        rdfs:subClassOf glbase:GeoFeature .
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Seabight -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Seabight">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
 
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Escarpment
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Seachannel -->
+glvoc_gebco:Escarpment rdf:type owl:Class ;
+                       
+                       owl:equivalentClass [ rdf:type owl:Restriction ;
+                                             owl:onProperty glbase:hasGeoFeatureType ;
+                                             owl:hasValue glvoc_gebco:Escarpment
+                                           ] ;
+                       
+                       rdfs:subClassOf glbase:GeoFeature .
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Seachannel">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
 
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Seamount -->
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Fan
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Seamount">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
+glvoc_gebco:Fan rdf:type owl:Class ;
+                
+                owl:equivalentClass [ rdf:type owl:Restriction ;
+                                      owl:onProperty glbase:hasGeoFeatureType ;
+                                      owl:hasValue glvoc_gebco:Fan
+                                    ] ;
+                
+                rdfs:subClassOf glbase:GeoFeature .
 
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Seamount_Chain -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Seamount_Chain">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Fracture_Zone
 
+glvoc_gebco:Fracture_Zone rdf:type owl:Class ;
+                          
+                          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                owl:onProperty glbase:hasGeoFeatureType ;
+                                                owl:hasValue glvoc_gebco:Fracture_Zone
+                                              ] ;
+                          
+                          rdfs:subClassOf glbase:GeoFeature .
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Seamount_Group -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Seamount_Group">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
 
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Fracture_Zone_Province
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Seamount_Province -->
+glvoc_gebco:Fracture_Zone_Province rdf:type owl:Class ;
+                                   
+                                   owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                         owl:onProperty glbase:hasGeoFeatureType ;
+                                                         owl:hasValue glvoc_gebco:Fracture_Zone_Province
+                                                       ] ;
+                                   
+                                   rdfs:subClassOf glbase:GeoFeature .
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Seamount_Province">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
 
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Seamounts -->
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Fracture_Zone_System
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Seamounts">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
+glvoc_gebco:Fracture_Zone_System rdf:type owl:Class ;
+                                 
+                                 owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                       owl:onProperty glbase:hasGeoFeatureType ;
+                                                       owl:hasValue glvoc_gebco:Fracture_Zone_System
+                                                     ] ;
+                                 
+                                 rdfs:subClassOf glbase:GeoFeature .
 
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Shelf -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Shelf">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Gap
 
+glvoc_gebco:Gap rdf:type owl:Class ;
+                
+                owl:equivalentClass [ rdf:type owl:Restriction ;
+                                      owl:onProperty glbase:hasGeoFeatureType ;
+                                      owl:hasValue glvoc_gebco:Gap
+                                    ] ;
+                
+                rdfs:subClassOf glbase:GeoFeature .
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Shelf-Edge -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Shelf-Edge">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
 
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Ground
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Shelf_Break -->
+glvoc_gebco:Ground rdf:type owl:Class ;
+                   
+                   owl:equivalentClass [ rdf:type owl:Restriction ;
+                                         owl:onProperty glbase:hasGeoFeatureType ;
+                                         owl:hasValue glvoc_gebco:Ground
+                                       ] ;
+                   
+                   rdfs:subClassOf glbase:GeoFeature .
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Shelf_Break">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
 
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Shoal -->
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Guyot
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Shoal">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
+glvoc_gebco:Guyot rdf:type owl:Class ;
+                  
+                  owl:equivalentClass [ rdf:type owl:Restriction ;
+                                        owl:onProperty glbase:hasGeoFeatureType ;
+                                        owl:hasValue glvoc_gebco:Guyot
+                                      ] ;
+                  
+                  rdfs:subClassOf glbase:GeoFeature .
 
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Shoals -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Shoals">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Guyots
 
+glvoc_gebco:Guyots rdf:type owl:Class ;
+                   
+                   owl:equivalentClass [ rdf:type owl:Restriction ;
+                                         owl:onProperty glbase:hasGeoFeatureType ;
+                                         owl:hasValue glvoc_gebco:Guyots
+                                       ] ;
+                   
+                   rdfs:subClassOf glbase:GeoFeature .
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Sill -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Sill">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
 
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Hill
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Slope -->
+glvoc_gebco:Hill rdf:type owl:Class ;
+                 
+                 owl:equivalentClass [ rdf:type owl:Restriction ;
+                                       owl:onProperty glbase:hasGeoFeatureType ;
+                                       owl:hasValue glvoc_gebco:Hill
+                                     ] ;
+                 
+                 rdfs:subClassOf glbase:GeoFeature .
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Slope">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
 
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Spur -->
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Hills
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Spur">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
+glvoc_gebco:Hills rdf:type owl:Class ;
+                  
+                  owl:equivalentClass [ rdf:type owl:Restriction ;
+                                        owl:onProperty glbase:hasGeoFeatureType ;
+                                        owl:hasValue glvoc_gebco:Hills
+                                      ] ;
+                  
+                  rdfs:subClassOf glbase:GeoFeature .
 
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Submarine_Valley -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Submarine_Valley">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Hole
 
+glvoc_gebco:Hole rdf:type owl:Class ;
+                 
+                 owl:equivalentClass [ rdf:type owl:Restriction ;
+                                       owl:onProperty glbase:hasGeoFeatureType ;
+                                       owl:hasValue glvoc_gebco:Hole
+                                     ] ;
+                 
+                 rdfs:subClassOf glbase:GeoFeature .
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Tablemount -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Tablemount">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
 
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Knoll
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Terrace -->
+glvoc_gebco:Knoll rdf:type owl:Class ;
+                  
+                  owl:equivalentClass [ rdf:type owl:Restriction ;
+                                        owl:onProperty glbase:hasGeoFeatureType ;
+                                        owl:hasValue glvoc_gebco:Knoll
+                                      ] ;
+                  
+                  rdfs:subClassOf glbase:GeoFeature .
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Terrace">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
 
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Trench -->
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Knolls
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Trench">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
+glvoc_gebco:Knolls rdf:type owl:Class ;
+                   
+                   owl:equivalentClass [ rdf:type owl:Restriction ;
+                                         owl:onProperty glbase:hasGeoFeatureType ;
+                                         owl:hasValue glvoc_gebco:Knolls
+                                       ] ;
+                   
+                   rdfs:subClassOf glbase:GeoFeature .
 
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Trough -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Trough">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Levee
 
+glvoc_gebco:Levee rdf:type owl:Class ;
+                  
+                  owl:equivalentClass [ rdf:type owl:Restriction ;
+                                        owl:onProperty glbase:hasGeoFeatureType ;
+                                        owl:hasValue glvoc_gebco:Levee
+                                      ] ;
+                  
+                  rdfs:subClassOf glbase:GeoFeature .
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Valley -->
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Valley">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
 
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Median_Valley
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Valleys -->
+glvoc_gebco:Median_Valley rdf:type owl:Class ;
+                          
+                          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                owl:onProperty glbase:hasGeoFeatureType ;
+                                                owl:hasValue glvoc_gebco:Median_Valley
+                                              ] ;
+                          
+                          rdfs:subClassOf glbase:GeoFeature .
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Valleys">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-    
 
 
-    <!-- http://schema.geolink.org/1.0/voc/gebco/featuretype#Zone -->
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Mid-Oceanic_Ridge
 
-    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/gebco/featuretype#Zone">
-        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#GeoFeatureType"/>
-    </owl:NamedIndividual>
-</rdf:RDF>
+glvoc_gebco:Mid-Oceanic_Ridge rdf:type owl:Class ;
+                              
+                              owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                    owl:onProperty glbase:hasGeoFeatureType ;
+                                                    owl:hasValue glvoc_gebco:Mid-Oceanic_Ridge
+                                                  ] ;
+                              
+                              rdfs:subClassOf glbase:GeoFeature .
 
 
 
-<!-- Generated by the OWL API (version 4.1.3.20151118-2017) https://github.com/owlcs/owlapi -->
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Moat
+
+glvoc_gebco:Moat rdf:type owl:Class ;
+                 
+                 owl:equivalentClass [ rdf:type owl:Restriction ;
+                                       owl:onProperty glbase:hasGeoFeatureType ;
+                                       owl:hasValue glvoc_gebco:Moat
+                                     ] ;
+                 
+                 rdfs:subClassOf glbase:GeoFeature .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Mound
+
+glvoc_gebco:Mound rdf:type owl:Class ;
+                  
+                  owl:equivalentClass [ rdf:type owl:Restriction ;
+                                        owl:onProperty glbase:hasGeoFeatureType ;
+                                        owl:hasValue glvoc_gebco:Mound
+                                      ] ;
+                  
+                  rdfs:subClassOf glbase:GeoFeature .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Mounds
+
+glvoc_gebco:Mounds rdf:type owl:Class ;
+                   
+                   owl:equivalentClass [ rdf:type owl:Restriction ;
+                                         owl:onProperty glbase:hasGeoFeatureType ;
+                                         owl:hasValue glvoc_gebco:Mounds
+                                       ] ;
+                   
+                   rdfs:subClassOf glbase:GeoFeature .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Mud_Volcano
+
+glvoc_gebco:Mud_Volcano rdf:type owl:Class ;
+                        
+                        owl:equivalentClass [ rdf:type owl:Restriction ;
+                                              owl:onProperty glbase:hasGeoFeatureType ;
+                                              owl:hasValue glvoc_gebco:Mud_Volcano
+                                            ] ;
+                        
+                        rdfs:subClassOf glbase:GeoFeature .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Mud_Volcanoes
+
+glvoc_gebco:Mud_Volcanoes rdf:type owl:Class ;
+                          
+                          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                owl:onProperty glbase:hasGeoFeatureType ;
+                                                owl:hasValue glvoc_gebco:Mud_Volcanoes
+                                              ] ;
+                          
+                          rdfs:subClassOf glbase:GeoFeature .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Pass
+
+glvoc_gebco:Pass rdf:type owl:Class ;
+                 
+                 owl:equivalentClass [ rdf:type owl:Restriction ;
+                                       owl:onProperty glbase:hasGeoFeatureType ;
+                                       owl:hasValue glvoc_gebco:Pass
+                                     ] ;
+                 
+                 rdfs:subClassOf glbase:GeoFeature .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Passage
+
+glvoc_gebco:Passage rdf:type owl:Class ;
+                    
+                    owl:equivalentClass [ rdf:type owl:Restriction ;
+                                          owl:onProperty glbase:hasGeoFeatureType ;
+                                          owl:hasValue glvoc_gebco:Passage
+                                        ] ;
+                    
+                    rdfs:subClassOf glbase:GeoFeature .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Peak
+
+glvoc_gebco:Peak rdf:type owl:Class ;
+                 
+                 owl:equivalentClass [ rdf:type owl:Restriction ;
+                                       owl:onProperty glbase:hasGeoFeatureType ;
+                                       owl:hasValue glvoc_gebco:Peak
+                                     ] ;
+                 
+                 rdfs:subClassOf glbase:GeoFeature .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Pinnacle
+
+glvoc_gebco:Pinnacle rdf:type owl:Class ;
+                     
+                     owl:equivalentClass [ rdf:type owl:Restriction ;
+                                           owl:onProperty glbase:hasGeoFeatureType ;
+                                           owl:hasValue glvoc_gebco:Pinnacle
+                                         ] ;
+                     
+                     rdfs:subClassOf glbase:GeoFeature .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Plain
+
+glvoc_gebco:Plain rdf:type owl:Class ;
+                  
+                  owl:equivalentClass [ rdf:type owl:Restriction ;
+                                        owl:onProperty glbase:hasGeoFeatureType ;
+                                        owl:hasValue glvoc_gebco:Plain
+                                      ] ;
+                  
+                  rdfs:subClassOf glbase:GeoFeature .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Plateau
+
+glvoc_gebco:Plateau rdf:type owl:Class ;
+                    
+                    owl:equivalentClass [ rdf:type owl:Restriction ;
+                                          owl:onProperty glbase:hasGeoFeatureType ;
+                                          owl:hasValue glvoc_gebco:Plateau
+                                        ] ;
+                    
+                    rdfs:subClassOf glbase:GeoFeature .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Promontory
+
+glvoc_gebco:Promontory rdf:type owl:Class ;
+                       
+                       owl:equivalentClass [ rdf:type owl:Restriction ;
+                                             owl:onProperty glbase:hasGeoFeatureType ;
+                                             owl:hasValue glvoc_gebco:Promontory
+                                           ] ;
+                       
+                       rdfs:subClassOf glbase:GeoFeature .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Province
+
+glvoc_gebco:Province rdf:type owl:Class ;
+                     
+                     owl:equivalentClass [ rdf:type owl:Restriction ;
+                                           owl:onProperty glbase:hasGeoFeatureType ;
+                                           owl:hasValue glvoc_gebco:Province
+                                         ] ;
+                     
+                     rdfs:subClassOf glbase:GeoFeature .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Reef
+
+glvoc_gebco:Reef rdf:type owl:Class ;
+                 
+                 owl:equivalentClass [ rdf:type owl:Restriction ;
+                                       owl:onProperty glbase:hasGeoFeatureType ;
+                                       owl:hasValue glvoc_gebco:Reef
+                                     ] ;
+                 
+                 rdfs:subClassOf glbase:GeoFeature .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Reefs
+
+glvoc_gebco:Reefs rdf:type owl:Class ;
+                  
+                  owl:equivalentClass [ rdf:type owl:Restriction ;
+                                        owl:onProperty glbase:hasGeoFeatureType ;
+                                        owl:hasValue glvoc_gebco:Reefs
+                                      ] ;
+                  
+                  rdfs:subClassOf glbase:GeoFeature .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Ridge
+
+glvoc_gebco:Ridge rdf:type owl:Class ;
+                  
+                  owl:equivalentClass [ rdf:type owl:Restriction ;
+                                        owl:onProperty glbase:hasGeoFeatureType ;
+                                        owl:hasValue glvoc_gebco:Ridge
+                                      ] ;
+                  
+                  rdfs:subClassOf glbase:GeoFeature .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Ridges
+
+glvoc_gebco:Ridges rdf:type owl:Class ;
+                   
+                   owl:equivalentClass [ rdf:type owl:Restriction ;
+                                         owl:onProperty glbase:hasGeoFeatureType ;
+                                         owl:hasValue glvoc_gebco:Ridges
+                                       ] ;
+                   
+                   rdfs:subClassOf glbase:GeoFeature .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Rift
+
+glvoc_gebco:Rift rdf:type owl:Class ;
+                 
+                 owl:equivalentClass [ rdf:type owl:Restriction ;
+                                       owl:onProperty glbase:hasGeoFeatureType ;
+                                       owl:hasValue glvoc_gebco:Rift
+                                     ] ;
+                 
+                 rdfs:subClassOf glbase:GeoFeature .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Rise
+
+glvoc_gebco:Rise rdf:type owl:Class ;
+                 
+                 owl:equivalentClass [ rdf:type owl:Restriction ;
+                                       owl:onProperty glbase:hasGeoFeatureType ;
+                                       owl:hasValue glvoc_gebco:Rise
+                                     ] ;
+                 
+                 rdfs:subClassOf glbase:GeoFeature .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Saddle
+
+glvoc_gebco:Saddle rdf:type owl:Class ;
+                   
+                   owl:equivalentClass [ rdf:type owl:Restriction ;
+                                         owl:onProperty glbase:hasGeoFeatureType ;
+                                         owl:hasValue glvoc_gebco:Saddle
+                                       ] ;
+                   
+                   rdfs:subClassOf glbase:GeoFeature .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Salt_Dome
+
+glvoc_gebco:Salt_Dome rdf:type owl:Class ;
+                      
+                      owl:equivalentClass [ rdf:type owl:Restriction ;
+                                            owl:onProperty glbase:hasGeoFeatureType ;
+                                            owl:hasValue glvoc_gebco:Salt_Dome
+                                          ] ;
+                      
+                      rdfs:subClassOf glbase:GeoFeature .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Salt_Dome_Province
+
+glvoc_gebco:Salt_Dome_Province rdf:type owl:Class ;
+                               
+                               owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                     owl:onProperty glbase:hasGeoFeatureType ;
+                                                     owl:hasValue glvoc_gebco:Salt_Dome_Province
+                                                   ] ;
+                               
+                               rdfs:subClassOf glbase:GeoFeature .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Sand_Ridge
+
+glvoc_gebco:Sand_Ridge rdf:type owl:Class ;
+                       
+                       owl:equivalentClass [ rdf:type owl:Restriction ;
+                                             owl:onProperty glbase:hasGeoFeatureType ;
+                                             owl:hasValue glvoc_gebco:Sand_Ridge
+                                           ] ;
+                       
+                       rdfs:subClassOf glbase:GeoFeature .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Sand_Ridge_Province
+
+glvoc_gebco:Sand_Ridge_Province rdf:type owl:Class ;
+                                
+                                owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                      owl:onProperty glbase:hasGeoFeatureType ;
+                                                      owl:hasValue glvoc_gebco:Sand_Ridge_Province
+                                                    ] ;
+                                
+                                rdfs:subClassOf glbase:GeoFeature .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Scarp
+
+glvoc_gebco:Scarp rdf:type owl:Class ;
+                  
+                  owl:equivalentClass [ rdf:type owl:Restriction ;
+                                        owl:onProperty glbase:hasGeoFeatureType ;
+                                        owl:hasValue glvoc_gebco:Scarp
+                                      ] ;
+                  
+                  rdfs:subClassOf glbase:GeoFeature .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Sea_Channel
+
+glvoc_gebco:Sea_Channel rdf:type owl:Class ;
+                        
+                        owl:equivalentClass [ rdf:type owl:Restriction ;
+                                              owl:onProperty glbase:hasGeoFeatureType ;
+                                              owl:hasValue glvoc_gebco:Sea_Channel
+                                            ] ;
+                        
+                        rdfs:subClassOf glbase:GeoFeature .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Sea_Valley
+
+glvoc_gebco:Sea_Valley rdf:type owl:Class ;
+                       
+                       owl:equivalentClass [ rdf:type owl:Restriction ;
+                                             owl:onProperty glbase:hasGeoFeatureType ;
+                                             owl:hasValue glvoc_gebco:Sea_Valley
+                                           ] ;
+                       
+                       rdfs:subClassOf glbase:GeoFeature .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Seabight
+
+glvoc_gebco:Seabight rdf:type owl:Class ;
+                     
+                     owl:equivalentClass [ rdf:type owl:Restriction ;
+                                           owl:onProperty glbase:hasGeoFeatureType ;
+                                           owl:hasValue glvoc_gebco:Seabight
+                                         ] ;
+                     
+                     rdfs:subClassOf glbase:GeoFeature .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Seachannel
+
+glvoc_gebco:Seachannel rdf:type owl:Class ;
+                       
+                       owl:equivalentClass [ rdf:type owl:Restriction ;
+                                             owl:onProperty glbase:hasGeoFeatureType ;
+                                             owl:hasValue glvoc_gebco:Seachannel
+                                           ] ;
+                       
+                       rdfs:subClassOf glbase:GeoFeature .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Seamount
+
+glvoc_gebco:Seamount rdf:type owl:Class ;
+                     
+                     owl:equivalentClass [ rdf:type owl:Restriction ;
+                                           owl:onProperty glbase:hasGeoFeatureType ;
+                                           owl:hasValue glvoc_gebco:Seamount
+                                         ] ;
+                     
+                     rdfs:subClassOf glbase:GeoFeature .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Seamount_Chain
+
+glvoc_gebco:Seamount_Chain rdf:type owl:Class ;
+                           
+                           owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                 owl:onProperty glbase:hasGeoFeatureType ;
+                                                 owl:hasValue glvoc_gebco:Seamount_Chain
+                                               ] ;
+                           
+                           rdfs:subClassOf glbase:GeoFeature .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Seamount_Group
+
+glvoc_gebco:Seamount_Group rdf:type owl:Class ;
+                           
+                           owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                 owl:onProperty glbase:hasGeoFeatureType ;
+                                                 owl:hasValue glvoc_gebco:Seamount_Group
+                                               ] ;
+                           
+                           rdfs:subClassOf glbase:GeoFeature .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Seamount_Province
+
+glvoc_gebco:Seamount_Province rdf:type owl:Class ;
+                              
+                              owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                    owl:onProperty glbase:hasGeoFeatureType ;
+                                                    owl:hasValue glvoc_gebco:Seamount_Province
+                                                  ] ;
+                              
+                              rdfs:subClassOf glbase:GeoFeature .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Seamounts
+
+glvoc_gebco:Seamounts rdf:type owl:Class ;
+                      
+                      owl:equivalentClass [ rdf:type owl:Restriction ;
+                                            owl:onProperty glbase:hasGeoFeatureType ;
+                                            owl:hasValue glvoc_gebco:Seamounts
+                                          ] ;
+                      
+                      rdfs:subClassOf glbase:GeoFeature .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Shelf
+
+glvoc_gebco:Shelf rdf:type owl:Class ;
+                  
+                  owl:equivalentClass [ rdf:type owl:Restriction ;
+                                        owl:onProperty glbase:hasGeoFeatureType ;
+                                        owl:hasValue glvoc_gebco:Shelf
+                                      ] ;
+                  
+                  rdfs:subClassOf glbase:GeoFeature .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Shelf-Edge
+
+glvoc_gebco:Shelf-Edge rdf:type owl:Class ;
+                       
+                       owl:equivalentClass [ rdf:type owl:Restriction ;
+                                             owl:onProperty glbase:hasGeoFeatureType ;
+                                             owl:hasValue glvoc_gebco:Shelf-Edge
+                                           ] ;
+                       
+                       rdfs:subClassOf glbase:GeoFeature .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Shelf_Break
+
+glvoc_gebco:Shelf_Break rdf:type owl:Class ;
+                        
+                        owl:equivalentClass [ rdf:type owl:Restriction ;
+                                              owl:onProperty glbase:hasGeoFeatureType ;
+                                              owl:hasValue glvoc_gebco:Shelf_Break
+                                            ] ;
+                        
+                        rdfs:subClassOf glbase:GeoFeature .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Shoal
+
+glvoc_gebco:Shoal rdf:type owl:Class ;
+                  
+                  owl:equivalentClass [ rdf:type owl:Restriction ;
+                                        owl:onProperty glbase:hasGeoFeatureType ;
+                                        owl:hasValue glvoc_gebco:Shoal
+                                      ] ;
+                  
+                  rdfs:subClassOf glbase:GeoFeature .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Shoals
+
+glvoc_gebco:Shoals rdf:type owl:Class ;
+                   
+                   owl:equivalentClass [ rdf:type owl:Restriction ;
+                                         owl:onProperty glbase:hasGeoFeatureType ;
+                                         owl:hasValue glvoc_gebco:Shoals
+                                       ] ;
+                   
+                   rdfs:subClassOf glbase:GeoFeature .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Sill
+
+glvoc_gebco:Sill rdf:type owl:Class ;
+                 
+                 owl:equivalentClass [ rdf:type owl:Restriction ;
+                                       owl:onProperty glbase:hasGeoFeatureType ;
+                                       owl:hasValue glvoc_gebco:Sill
+                                     ] ;
+                 
+                 rdfs:subClassOf glbase:GeoFeature .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Slope
+
+glvoc_gebco:Slope rdf:type owl:Class ;
+                  
+                  owl:equivalentClass [ rdf:type owl:Restriction ;
+                                        owl:onProperty glbase:hasGeoFeatureType ;
+                                        owl:hasValue glvoc_gebco:Slope
+                                      ] ;
+                  
+                  rdfs:subClassOf glbase:GeoFeature .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Spur
+
+glvoc_gebco:Spur rdf:type owl:Class ;
+                 
+                 owl:equivalentClass [ rdf:type owl:Restriction ;
+                                       owl:onProperty glbase:hasGeoFeatureType ;
+                                       owl:hasValue glvoc_gebco:Spur
+                                     ] ;
+                 
+                 rdfs:subClassOf glbase:GeoFeature .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Submarine_Valley
+
+glvoc_gebco:Submarine_Valley rdf:type owl:Class ;
+                             
+                             owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                   owl:onProperty glbase:hasGeoFeatureType ;
+                                                   owl:hasValue glvoc_gebco:Submarine_Valley
+                                                 ] ;
+                             
+                             rdfs:subClassOf glbase:GeoFeature .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Tablemount
+
+glvoc_gebco:Tablemount rdf:type owl:Class ;
+                       
+                       owl:equivalentClass [ rdf:type owl:Restriction ;
+                                             owl:onProperty glbase:hasGeoFeatureType ;
+                                             owl:hasValue glvoc_gebco:Tablemount
+                                           ] ;
+                       
+                       rdfs:subClassOf glbase:GeoFeature .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Terrace
+
+glvoc_gebco:Terrace rdf:type owl:Class ;
+                    
+                    owl:equivalentClass [ rdf:type owl:Restriction ;
+                                          owl:onProperty glbase:hasGeoFeatureType ;
+                                          owl:hasValue glvoc_gebco:Terrace
+                                        ] ;
+                    
+                    rdfs:subClassOf glbase:GeoFeature .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Trench
+
+glvoc_gebco:Trench rdf:type owl:Class ;
+                   
+                   owl:equivalentClass [ rdf:type owl:Restriction ;
+                                         owl:onProperty glbase:hasGeoFeatureType ;
+                                         owl:hasValue glvoc_gebco:Trench
+                                       ] ;
+                   
+                   rdfs:subClassOf glbase:GeoFeature .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Trough
+
+glvoc_gebco:Trough rdf:type owl:Class ;
+                   
+                   owl:equivalentClass [ rdf:type owl:Restriction ;
+                                         owl:onProperty glbase:hasGeoFeatureType ;
+                                         owl:hasValue glvoc_gebco:Trough
+                                       ] ;
+                   
+                   rdfs:subClassOf glbase:GeoFeature .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Valley
+
+glvoc_gebco:Valley rdf:type owl:Class ;
+                   
+                   owl:equivalentClass [ rdf:type owl:Restriction ;
+                                         owl:onProperty glbase:hasGeoFeatureType ;
+                                         owl:hasValue glvoc_gebco:Valley
+                                       ] ;
+                   
+                   rdfs:subClassOf glbase:GeoFeature .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Valleys
+
+glvoc_gebco:Valleys rdf:type owl:Class ;
+                    
+                    owl:equivalentClass [ rdf:type owl:Restriction ;
+                                          owl:onProperty glbase:hasGeoFeatureType ;
+                                          owl:hasValue glvoc_gebco:Valleys
+                                        ] ;
+                    
+                    rdfs:subClassOf glbase:GeoFeature .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Zone
+
+glvoc_gebco:Zone rdf:type owl:Class ;
+                 
+                 owl:equivalentClass [ rdf:type owl:Restriction ;
+                                       owl:onProperty glbase:hasGeoFeatureType ;
+                                       owl:hasValue glvoc_gebco:Zone
+                                     ] ;
+                 
+                 rdfs:subClassOf glbase:GeoFeature .
+
+
+
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Abyssal_Hill
+
+glvoc_gebco:Abyssal_Hill rdf:type owl:NamedIndividual ,
+                                  glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Abyssal_Plain
+
+glvoc_gebco:Abyssal_Plain rdf:type owl:NamedIndividual ,
+                                   glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Apron
+
+glvoc_gebco:Apron rdf:type owl:NamedIndividual ,
+                           glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Archipelagic_Apron
+
+glvoc_gebco:Archipelagic_Apron rdf:type owl:NamedIndividual ,
+                                        glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Arrugado
+
+glvoc_gebco:Arrugado rdf:type owl:NamedIndividual ,
+                              glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Bank
+
+glvoc_gebco:Bank rdf:type owl:NamedIndividual ,
+                          glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Banks
+
+glvoc_gebco:Banks rdf:type owl:NamedIndividual ,
+                           glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Basin
+
+glvoc_gebco:Basin rdf:type owl:NamedIndividual ,
+                           glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Basin_and_Ridge_Province
+
+glvoc_gebco:Basin_and_Ridge_Province rdf:type owl:NamedIndividual ,
+                                              glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Borderland
+
+glvoc_gebco:Borderland rdf:type owl:NamedIndividual ,
+                                glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Caldera
+
+glvoc_gebco:Caldera rdf:type owl:NamedIndividual ,
+                             glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Calderas
+
+glvoc_gebco:Calderas rdf:type owl:NamedIndividual ,
+                              glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Canyon
+
+glvoc_gebco:Canyon rdf:type owl:NamedIndividual ,
+                            glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Canyons
+
+glvoc_gebco:Canyons rdf:type owl:NamedIndividual ,
+                             glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Cap
+
+glvoc_gebco:Cap rdf:type owl:NamedIndividual ,
+                         glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Channel
+
+glvoc_gebco:Channel rdf:type owl:NamedIndividual ,
+                             glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Cone
+
+glvoc_gebco:Cone rdf:type owl:NamedIndividual ,
+                          glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Continental_Margin
+
+glvoc_gebco:Continental_Margin rdf:type owl:NamedIndividual ,
+                                        glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Continental_Rise
+
+glvoc_gebco:Continental_Rise rdf:type owl:NamedIndividual ,
+                                      glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Continental_Shelf
+
+glvoc_gebco:Continental_Shelf rdf:type owl:NamedIndividual ,
+                                       glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Continental_Slope
+
+glvoc_gebco:Continental_Slope rdf:type owl:NamedIndividual ,
+                                       glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Deep
+
+glvoc_gebco:Deep rdf:type owl:NamedIndividual ,
+                          glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Deeps
+
+glvoc_gebco:Deeps rdf:type owl:NamedIndividual ,
+                           glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Discordance
+
+glvoc_gebco:Discordance rdf:type owl:NamedIndividual ,
+                                 glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Escarpment
+
+glvoc_gebco:Escarpment rdf:type owl:NamedIndividual ,
+                                glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Fan
+
+glvoc_gebco:Fan rdf:type owl:NamedIndividual ,
+                         glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Fracture_Zone
+
+glvoc_gebco:Fracture_Zone rdf:type owl:NamedIndividual ,
+                                   glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Fracture_Zone_Province
+
+glvoc_gebco:Fracture_Zone_Province rdf:type owl:NamedIndividual ,
+                                            glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Fracture_Zone_System
+
+glvoc_gebco:Fracture_Zone_System rdf:type owl:NamedIndividual ,
+                                          glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Gap
+
+glvoc_gebco:Gap rdf:type owl:NamedIndividual ,
+                         glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Ground
+
+glvoc_gebco:Ground rdf:type owl:NamedIndividual ,
+                            glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Guyot
+
+glvoc_gebco:Guyot rdf:type owl:NamedIndividual ,
+                           glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Guyots
+
+glvoc_gebco:Guyots rdf:type owl:NamedIndividual ,
+                            glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Hill
+
+glvoc_gebco:Hill rdf:type owl:NamedIndividual ,
+                          glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Hills
+
+glvoc_gebco:Hills rdf:type owl:NamedIndividual ,
+                           glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Hole
+
+glvoc_gebco:Hole rdf:type owl:NamedIndividual ,
+                          glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Knoll
+
+glvoc_gebco:Knoll rdf:type owl:NamedIndividual ,
+                           glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Knolls
+
+glvoc_gebco:Knolls rdf:type owl:NamedIndividual ,
+                            glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Levee
+
+glvoc_gebco:Levee rdf:type owl:NamedIndividual ,
+                           glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Median_Valley
+
+glvoc_gebco:Median_Valley rdf:type owl:NamedIndividual ,
+                                   glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Mid-Oceanic_Ridge
+
+glvoc_gebco:Mid-Oceanic_Ridge rdf:type owl:NamedIndividual ,
+                                       glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Moat
+
+glvoc_gebco:Moat rdf:type owl:NamedIndividual ,
+                          glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Mound
+
+glvoc_gebco:Mound rdf:type owl:NamedIndividual ,
+                           glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Mounds
+
+glvoc_gebco:Mounds rdf:type owl:NamedIndividual ,
+                            glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Mud_Volcano
+
+glvoc_gebco:Mud_Volcano rdf:type owl:NamedIndividual ,
+                                 glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Mud_Volcanoes
+
+glvoc_gebco:Mud_Volcanoes rdf:type owl:NamedIndividual ,
+                                   glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Pass
+
+glvoc_gebco:Pass rdf:type owl:NamedIndividual ,
+                          glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Passage
+
+glvoc_gebco:Passage rdf:type owl:NamedIndividual ,
+                             glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Peak
+
+glvoc_gebco:Peak rdf:type owl:NamedIndividual ,
+                          glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Pinnacle
+
+glvoc_gebco:Pinnacle rdf:type owl:NamedIndividual ,
+                              glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Plain
+
+glvoc_gebco:Plain rdf:type owl:NamedIndividual ,
+                           glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Plateau
+
+glvoc_gebco:Plateau rdf:type owl:NamedIndividual ,
+                             glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Promontory
+
+glvoc_gebco:Promontory rdf:type owl:NamedIndividual ,
+                                glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Province
+
+glvoc_gebco:Province rdf:type owl:NamedIndividual ,
+                              glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Reef
+
+glvoc_gebco:Reef rdf:type owl:NamedIndividual ,
+                          glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Reefs
+
+glvoc_gebco:Reefs rdf:type owl:NamedIndividual ,
+                           glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Ridge
+
+glvoc_gebco:Ridge rdf:type owl:NamedIndividual ,
+                           glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Ridges
+
+glvoc_gebco:Ridges rdf:type owl:NamedIndividual ,
+                            glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Rift
+
+glvoc_gebco:Rift rdf:type owl:NamedIndividual ,
+                          glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Rise
+
+glvoc_gebco:Rise rdf:type owl:NamedIndividual ,
+                          glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Saddle
+
+glvoc_gebco:Saddle rdf:type owl:NamedIndividual ,
+                            glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Salt_Dome
+
+glvoc_gebco:Salt_Dome rdf:type owl:NamedIndividual ,
+                               glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Salt_Dome_Province
+
+glvoc_gebco:Salt_Dome_Province rdf:type owl:NamedIndividual ,
+                                        glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Sand_Ridge
+
+glvoc_gebco:Sand_Ridge rdf:type owl:NamedIndividual ,
+                                glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Sand_Ridge_Province
+
+glvoc_gebco:Sand_Ridge_Province rdf:type owl:NamedIndividual ,
+                                         glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Scarp
+
+glvoc_gebco:Scarp rdf:type owl:NamedIndividual ,
+                           glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Sea_Channel
+
+glvoc_gebco:Sea_Channel rdf:type owl:NamedIndividual ,
+                                 glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Sea_Valley
+
+glvoc_gebco:Sea_Valley rdf:type owl:NamedIndividual ,
+                                glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Seabight
+
+glvoc_gebco:Seabight rdf:type owl:NamedIndividual ,
+                              glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Seachannel
+
+glvoc_gebco:Seachannel rdf:type owl:NamedIndividual ,
+                                glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Seamount
+
+glvoc_gebco:Seamount rdf:type owl:NamedIndividual ,
+                              glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Seamount_Chain
+
+glvoc_gebco:Seamount_Chain rdf:type owl:NamedIndividual ,
+                                    glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Seamount_Group
+
+glvoc_gebco:Seamount_Group rdf:type owl:NamedIndividual ,
+                                    glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Seamount_Province
+
+glvoc_gebco:Seamount_Province rdf:type owl:NamedIndividual ,
+                                       glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Seamounts
+
+glvoc_gebco:Seamounts rdf:type owl:NamedIndividual ,
+                               glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Shelf
+
+glvoc_gebco:Shelf rdf:type owl:NamedIndividual ,
+                           glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Shelf-Edge
+
+glvoc_gebco:Shelf-Edge rdf:type owl:NamedIndividual ,
+                                glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Shelf_Break
+
+glvoc_gebco:Shelf_Break rdf:type owl:NamedIndividual ,
+                                 glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Shoal
+
+glvoc_gebco:Shoal rdf:type owl:NamedIndividual ,
+                           glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Shoals
+
+glvoc_gebco:Shoals rdf:type owl:NamedIndividual ,
+                            glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Sill
+
+glvoc_gebco:Sill rdf:type owl:NamedIndividual ,
+                          glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Slope
+
+glvoc_gebco:Slope rdf:type owl:NamedIndividual ,
+                           glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Spur
+
+glvoc_gebco:Spur rdf:type owl:NamedIndividual ,
+                          glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Submarine_Valley
+
+glvoc_gebco:Submarine_Valley rdf:type owl:NamedIndividual ,
+                                      glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Tablemount
+
+glvoc_gebco:Tablemount rdf:type owl:NamedIndividual ,
+                                glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Terrace
+
+glvoc_gebco:Terrace rdf:type owl:NamedIndividual ,
+                             glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Trench
+
+glvoc_gebco:Trench rdf:type owl:NamedIndividual ,
+                            glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Trough
+
+glvoc_gebco:Trough rdf:type owl:NamedIndividual ,
+                            glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Valley
+
+glvoc_gebco:Valley rdf:type owl:NamedIndividual ,
+                            glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Valleys
+
+glvoc_gebco:Valleys rdf:type owl:NamedIndividual ,
+                             glbase:GeoFeatureType .
+
+
+
+###  http://schema.geolink.org/1.0/voc/gebco/featuretype#Zone
+
+glvoc_gebco:Zone rdf:type owl:NamedIndividual ,
+                          glbase:GeoFeatureType .
+
+
+
+
+###  Generated by the OWL API (version 4.1.3.20151118-2017) https://github.com/owlcs/owlapi
 
