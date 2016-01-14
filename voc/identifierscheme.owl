@@ -117,6 +117,17 @@
     
 
 
+    <!-- http://schema.geolink.org/1.0/voc/identifierscheme#sdn -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/identifierscheme#sdn">
+        <rdf:type rdf:resource="http://purl.org/spar/datacite/ResourceIdentifierScheme"/>
+        <rdfs:comment>SeaDataNet codelists</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.seadatanet.org/Standards-Software/Metadata-formats"/>
+        <rdfs:label>sdn</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://schema.geolink.org/1.0/voc/identifierscheme#uuid -->
 
     <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/identifierscheme#uuid">
