@@ -1,999 +1,1011 @@
-@prefix : <http://schema.geolink.org/1.0/voc/local#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix glbase: <http://schema.geolink.org/1.0/base/main#> .
-@prefix geosparql: <http://www.opengis.net/ont/geosparql#> .
-@base <http://schema.geolink.org/1.0/voc/local> .
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://schema.geolink.org/1.0/voc/local#"
+     xml:base="http://schema.geolink.org/1.0/voc/local"
+     xmlns:geosparql="http://www.opengis.net/ont/geosparql#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:glbase="http://schema.geolink.org/1.0/base/main#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://schema.geolink.org/1.0/voc/local">
+        <rdfs:comment>This ontology contains all GeoLink&apos;s own internal controlled vocabulary that is not obtained by adopting a well-known external controlled vocabulary</rdfs:comment>
+    </owl:Ontology>
+    
 
-<http://schema.geolink.org/1.0/voc/local> rdf:type owl:Ontology ;
-                                          
-                                          rdfs:comment "This ontology contains all GeoLink's own internal controlled vocabulary that is not obtained by adopting a well-known external controlled vocabulary" .
 
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
 
-#################################################################
-#
-#    Object Properties
-#
-#################################################################
+    
 
 
-###  http://schema.geolink.org/1.0/base/main#hasCruiseType
+    <!-- http://schema.geolink.org/1.0/base/main#hasCruiseType -->
 
-glbase:hasCruiseType rdf:type owl:ObjectProperty .
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/base/main#hasCruiseType"/>
+    
 
 
+    <!-- http://schema.geolink.org/1.0/base/main#hasRoleType -->
 
-###  http://schema.geolink.org/1.0/base/main#hasRoleType
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/base/main#hasRoleType"/>
+    
 
-glbase:hasRoleType rdf:type owl:ObjectProperty .
 
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
 
+    
 
 
+    <!-- http://schema.geolink.org/1.0/base/main#Cruise -->
 
-#################################################################
-#
-#    Classes
-#
-#################################################################
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/base/main#Cruise"/>
+    
 
 
-###  http://schema.geolink.org/1.0/base/main#Cruise
+    <!-- http://schema.geolink.org/1.0/base/main#CruiseType -->
 
-glbase:Cruise rdf:type owl:Class .
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/base/main#CruiseType"/>
+    
 
 
+    <!-- http://schema.geolink.org/1.0/base/main#Participant -->
 
-###  http://schema.geolink.org/1.0/base/main#CruiseType
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/base/main#Participant"/>
+    
 
-glbase:CruiseType rdf:type owl:Class .
 
+    <!-- http://schema.geolink.org/1.0/base/main#RoleType -->
 
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/base/main#RoleType"/>
+    
 
-###  http://schema.geolink.org/1.0/base/main#Participant
 
-glbase:Participant rdf:type owl:Class .
+    <!-- http://schema.geolink.org/1.0/voc/local#cruisetype_maintenance -->
 
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/local#cruisetype_maintenance">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#Cruise"/>
+    </owl:Class>
+    
 
 
-###  http://schema.geolink.org/1.0/base/main#RoleType
+    <!-- http://schema.geolink.org/1.0/voc/local#cruisetype_operational -->
 
-glbase:RoleType rdf:type owl:Class .
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/local#cruisetype_operational">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#Cruise"/>
+    </owl:Class>
+    
 
 
+    <!-- http://schema.geolink.org/1.0/voc/local#cruisetype_transit -->
 
-###  http://schema.geolink.org/1.0/voc/local#cruisetype_maintenance
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/local#cruisetype_transit">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#Cruise"/>
+    </owl:Class>
+    
 
-:cruisetype_maintenance rdf:type owl:Class ;
-                        
-                        rdfs:subClassOf glbase:Cruise .
 
+    <!-- http://schema.geolink.org/1.0/voc/local#roletype_author -->
 
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_author">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#Participant"/>
+    </owl:Class>
+    
 
-###  http://schema.geolink.org/1.0/voc/local#cruisetype_operational
 
-:cruisetype_operational rdf:type owl:Class ;
-                        
-                        rdfs:subClassOf glbase:Cruise .
+    <!-- http://schema.geolink.org/1.0/voc/local#roletype_captain -->
 
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_captain">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#Participant"/>
+    </owl:Class>
+    
 
 
-###  http://schema.geolink.org/1.0/voc/local#cruisetype_transit
+    <!-- http://schema.geolink.org/1.0/voc/local#roletype_chief_engineer -->
 
-:cruisetype_transit rdf:type owl:Class ;
-                    
-                    rdfs:subClassOf glbase:Cruise .
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_chief_engineer">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#Participant"/>
+    </owl:Class>
+    
 
 
+    <!-- http://schema.geolink.org/1.0/voc/local#roletype_co-principal_investigator -->
 
-###  http://schema.geolink.org/1.0/voc/local#roletype_author
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_co-principal_investigator">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#Participant"/>
+    </owl:Class>
+    
 
-:roletype_author rdf:type owl:Class ;
-                 
-                 rdfs:subClassOf glbase:Participant .
 
+    <!-- http://schema.geolink.org/1.0/voc/local#roletype_collector -->
 
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_collector">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#Participant"/>
+    </owl:Class>
+    
 
-###  http://schema.geolink.org/1.0/voc/local#roletype_captain
 
-:roletype_captain rdf:type owl:Class ;
-                  
-                  rdfs:subClassOf glbase:Participant .
+    <!-- http://schema.geolink.org/1.0/voc/local#roletype_contact -->
 
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_contact">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#Participant"/>
+    </owl:Class>
+    
 
 
-###  http://schema.geolink.org/1.0/voc/local#roletype_chief_engineer
+    <!-- http://schema.geolink.org/1.0/voc/local#roletype_contributor -->
 
-:roletype_chief_engineer rdf:type owl:Class ;
-                         
-                         rdfs:subClassOf glbase:Participant .
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_contributor">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#Participant"/>
+    </owl:Class>
+    
 
 
+    <!-- http://schema.geolink.org/1.0/voc/local#roletype_creator -->
 
-###  http://schema.geolink.org/1.0/voc/local#roletype_co-principal_investigator
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_creator">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#Participant"/>
+    </owl:Class>
+    
 
-:roletype_co-principal_investigator rdf:type owl:Class ;
-                                    
-                                    rdfs:subClassOf glbase:Participant .
 
+    <!-- http://schema.geolink.org/1.0/voc/local#roletype_editor -->
 
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_editor">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#Participant"/>
+    </owl:Class>
+    
 
-###  http://schema.geolink.org/1.0/voc/local#roletype_collector
 
-:roletype_collector rdf:type owl:Class ;
-                    
-                    rdfs:subClassOf glbase:Participant .
+    <!-- http://schema.geolink.org/1.0/voc/local#roletype_educator -->
 
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_educator">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#Participant"/>
+    </owl:Class>
+    
 
 
-###  http://schema.geolink.org/1.0/voc/local#roletype_contact
+    <!-- http://schema.geolink.org/1.0/voc/local#roletype_inspector -->
 
-:roletype_contact rdf:type owl:Class ;
-                  
-                  rdfs:subClassOf glbase:Participant .
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_inspector">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#Participant"/>
+    </owl:Class>
+    
 
 
+    <!-- http://schema.geolink.org/1.0/voc/local#roletype_investigator -->
 
-###  http://schema.geolink.org/1.0/voc/local#roletype_contributor
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_investigator">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#Participant"/>
+    </owl:Class>
+    
 
-:roletype_contributor rdf:type owl:Class ;
-                      
-                      rdfs:subClassOf glbase:Participant .
 
+    <!-- http://schema.geolink.org/1.0/voc/local#roletype_observer -->
 
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_observer">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#Participant"/>
+    </owl:Class>
+    
 
-###  http://schema.geolink.org/1.0/voc/local#roletype_creator
 
-:roletype_creator rdf:type owl:Class ;
-                  
-                  rdfs:subClassOf glbase:Participant .
+    <!-- http://schema.geolink.org/1.0/voc/local#roletype_observer_foreign -->
 
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_observer_foreign">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#Participant"/>
+    </owl:Class>
+    
 
 
-###  http://schema.geolink.org/1.0/voc/local#roletype_editor
+    <!-- http://schema.geolink.org/1.0/voc/local#roletype_other -->
 
-:roletype_editor rdf:type owl:Class ;
-                 
-                 rdfs:subClassOf glbase:Participant .
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_other">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#Participant"/>
+    </owl:Class>
+    
 
 
+    <!-- http://schema.geolink.org/1.0/voc/local#roletype_principal_investigator -->
 
-###  http://schema.geolink.org/1.0/voc/local#roletype_educator
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_principal_investigator">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#Participant"/>
+    </owl:Class>
+    
 
-:roletype_educator rdf:type owl:Class ;
-                   
-                   rdfs:subClassOf glbase:Participant .
 
+    <!-- http://schema.geolink.org/1.0/voc/local#roletype_program_manager -->
 
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_program_manager">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#Participant"/>
+    </owl:Class>
+    
 
-###  http://schema.geolink.org/1.0/voc/local#roletype_inspector
 
-:roletype_inspector rdf:type owl:Class ;
-                    
-                    rdfs:subClassOf glbase:Participant .
+    <!-- http://schema.geolink.org/1.0/voc/local#roletype_rightsholder -->
 
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_rightsholder">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#Participant"/>
+    </owl:Class>
+    
 
 
-###  http://schema.geolink.org/1.0/voc/local#roletype_investigator
+    <!-- http://schema.geolink.org/1.0/voc/local#roletype_scientist -->
 
-:roletype_investigator rdf:type owl:Class ;
-                       
-                       rdfs:subClassOf glbase:Participant .
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_scientist">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#Participant"/>
+    </owl:Class>
+    
 
 
+    <!-- http://schema.geolink.org/1.0/voc/local#roletype_scientist_chief -->
 
-###  http://schema.geolink.org/1.0/voc/local#roletype_observer
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_scientist_chief">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#Participant"/>
+    </owl:Class>
+    
 
-:roletype_observer rdf:type owl:Class ;
-                   
-                   rdfs:subClassOf glbase:Participant .
 
+    <!-- http://schema.geolink.org/1.0/voc/local#roletype_scientist_co-chief -->
 
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_scientist_co-chief">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#Participant"/>
+    </owl:Class>
+    
 
-###  http://schema.geolink.org/1.0/voc/local#roletype_observer_foreign
 
-:roletype_observer_foreign rdf:type owl:Class ;
-                           
-                           rdfs:subClassOf glbase:Participant .
+    <!-- http://schema.geolink.org/1.0/voc/local#roletype_student -->
 
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_student">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#Participant"/>
+    </owl:Class>
+    
 
 
-###  http://schema.geolink.org/1.0/voc/local#roletype_other
+    <!-- http://schema.geolink.org/1.0/voc/local#roletype_student_graduate -->
 
-:roletype_other rdf:type owl:Class ;
-                
-                rdfs:subClassOf glbase:Participant .
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_student_graduate">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#Participant"/>
+    </owl:Class>
+    
 
 
+    <!-- http://schema.geolink.org/1.0/voc/local#roletype_student_undergraduate -->
 
-###  http://schema.geolink.org/1.0/voc/local#roletype_principal_investigator
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_student_undergraduate">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#Participant"/>
+    </owl:Class>
+    
 
-:roletype_principal_investigator rdf:type owl:Class ;
-                                 
-                                 rdfs:subClassOf glbase:Participant .
 
+    <!-- http://schema.geolink.org/1.0/voc/local#roletype_technician -->
 
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_technician">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#Participant"/>
+    </owl:Class>
+    
 
-###  http://schema.geolink.org/1.0/voc/local#roletype_program_manager
 
-:roletype_program_manager rdf:type owl:Class ;
-                          
-                          rdfs:subClassOf glbase:Participant .
+    <!-- http://schema.geolink.org/1.0/voc/local#roletype_technician_resident -->
 
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_technician_resident">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#Participant"/>
+    </owl:Class>
+    
 
 
-###  http://schema.geolink.org/1.0/voc/local#roletype_rightsholder
+    <!-- http://schema.geolink.org/1.0/voc/local#roletype_technician_resident_lead -->
 
-:roletype_rightsholder rdf:type owl:Class ;
-                       
-                       rdfs:subClassOf glbase:Participant .
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_technician_resident_lead">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/base/main#Participant"/>
+    </owl:Class>
+    
 
 
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
 
-###  http://schema.geolink.org/1.0/voc/local#roletype_scientist
+    
 
-:roletype_scientist rdf:type owl:Class ;
-                    
-                    rdfs:subClassOf glbase:Participant .
 
+    <!-- http://schema.geolink.org/1.0/voc/local#cruisetype_maintenance -->
 
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/local#cruisetype_maintenance">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#CruiseType"/>
+    </owl:NamedIndividual>
+    
 
-###  http://schema.geolink.org/1.0/voc/local#roletype_scientist_chief
 
-:roletype_scientist_chief rdf:type owl:Class ;
-                          
-                          rdfs:subClassOf glbase:Participant .
+    <!-- http://schema.geolink.org/1.0/voc/local#cruisetype_operational -->
 
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/local#cruisetype_operational">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#CruiseType"/>
+    </owl:NamedIndividual>
+    
 
 
-###  http://schema.geolink.org/1.0/voc/local#roletype_scientist_co-chief
+    <!-- http://schema.geolink.org/1.0/voc/local#cruisetype_transit -->
 
-:roletype_scientist_co-chief rdf:type owl:Class ;
-                             
-                             rdfs:subClassOf glbase:Participant .
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/local#cruisetype_transit">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#CruiseType"/>
+    </owl:NamedIndividual>
+    
 
 
+    <!-- http://schema.geolink.org/1.0/voc/local#roletype_author -->
 
-###  http://schema.geolink.org/1.0/voc/local#roletype_student
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_author">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#RoleType"/>
+    </owl:NamedIndividual>
+    
 
-:roletype_student rdf:type owl:Class ;
-                  
-                  rdfs:subClassOf glbase:Participant .
 
+    <!-- http://schema.geolink.org/1.0/voc/local#roletype_captain -->
 
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_captain">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#RoleType"/>
+    </owl:NamedIndividual>
+    
 
-###  http://schema.geolink.org/1.0/voc/local#roletype_student_graduate
 
-:roletype_student_graduate rdf:type owl:Class ;
-                           
-                           rdfs:subClassOf glbase:Participant .
+    <!-- http://schema.geolink.org/1.0/voc/local#roletype_chief_engineer -->
 
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_chief_engineer">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#RoleType"/>
+    </owl:NamedIndividual>
+    
 
 
-###  http://schema.geolink.org/1.0/voc/local#roletype_student_undergraduate
+    <!-- http://schema.geolink.org/1.0/voc/local#roletype_co-principal_investigator -->
 
-:roletype_student_undergraduate rdf:type owl:Class ;
-                                
-                                rdfs:subClassOf glbase:Participant .
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_co-principal_investigator">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#RoleType"/>
+    </owl:NamedIndividual>
+    
 
 
+    <!-- http://schema.geolink.org/1.0/voc/local#roletype_collector -->
 
-###  http://schema.geolink.org/1.0/voc/local#roletype_technician
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_collector">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#RoleType"/>
+    </owl:NamedIndividual>
+    
 
-:roletype_technician rdf:type owl:Class ;
-                     
-                     rdfs:subClassOf glbase:Participant .
 
+    <!-- http://schema.geolink.org/1.0/voc/local#roletype_contact -->
 
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_contact">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#RoleType"/>
+    </owl:NamedIndividual>
+    
 
-###  http://schema.geolink.org/1.0/voc/local#roletype_technician_resident
 
-:roletype_technician_resident rdf:type owl:Class ;
-                              
-                              rdfs:subClassOf glbase:Participant .
+    <!-- http://schema.geolink.org/1.0/voc/local#roletype_contributor -->
 
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_contributor">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#RoleType"/>
+    </owl:NamedIndividual>
+    
 
 
-###  http://schema.geolink.org/1.0/voc/local#roletype_technician_resident_lead
+    <!-- http://schema.geolink.org/1.0/voc/local#roletype_creator -->
 
-:roletype_technician_resident_lead rdf:type owl:Class ;
-                                   
-                                   rdfs:subClassOf glbase:Participant .
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_creator">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#RoleType"/>
+    </owl:NamedIndividual>
+    
 
 
+    <!-- http://schema.geolink.org/1.0/voc/local#roletype_editor -->
 
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_editor">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#RoleType"/>
+    </owl:NamedIndividual>
+    
 
 
-#################################################################
-#
-#    Individuals
-#
-#################################################################
+    <!-- http://schema.geolink.org/1.0/voc/local#roletype_educator -->
 
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_educator">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#RoleType"/>
+    </owl:NamedIndividual>
+    
 
-###  http://schema.geolink.org/1.0/voc/local#cruisetype_maintenance
 
-:cruisetype_maintenance rdf:type owl:NamedIndividual ,
-                                 glbase:CruiseType .
+    <!-- http://schema.geolink.org/1.0/voc/local#roletype_inspector -->
 
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_inspector">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#RoleType"/>
+    </owl:NamedIndividual>
+    
 
 
-###  http://schema.geolink.org/1.0/voc/local#cruisetype_operational
+    <!-- http://schema.geolink.org/1.0/voc/local#roletype_investigator -->
 
-:cruisetype_operational rdf:type owl:NamedIndividual ,
-                                 glbase:CruiseType .
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_investigator">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#RoleType"/>
+    </owl:NamedIndividual>
+    
 
 
+    <!-- http://schema.geolink.org/1.0/voc/local#roletype_observer -->
 
-###  http://schema.geolink.org/1.0/voc/local#cruisetype_transit
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_observer">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#RoleType"/>
+    </owl:NamedIndividual>
+    
 
-:cruisetype_transit rdf:type owl:NamedIndividual ,
-                             glbase:CruiseType .
 
+    <!-- http://schema.geolink.org/1.0/voc/local#roletype_observer_foreign -->
 
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_observer_foreign">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#RoleType"/>
+    </owl:NamedIndividual>
+    
 
-###  http://schema.geolink.org/1.0/voc/local#roletype_author
 
-:roletype_author rdf:type owl:NamedIndividual ,
-                          glbase:RoleType .
+    <!-- http://schema.geolink.org/1.0/voc/local#roletype_other -->
 
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_other">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#RoleType"/>
+    </owl:NamedIndividual>
+    
 
 
-###  http://schema.geolink.org/1.0/voc/local#roletype_captain
+    <!-- http://schema.geolink.org/1.0/voc/local#roletype_principal_investigator -->
 
-:roletype_captain rdf:type owl:NamedIndividual ,
-                           glbase:RoleType .
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_principal_investigator">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#RoleType"/>
+    </owl:NamedIndividual>
+    
 
 
+    <!-- http://schema.geolink.org/1.0/voc/local#roletype_program_manager -->
 
-###  http://schema.geolink.org/1.0/voc/local#roletype_chief_engineer
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_program_manager">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#RoleType"/>
+    </owl:NamedIndividual>
+    
 
-:roletype_chief_engineer rdf:type owl:NamedIndividual ,
-                                  glbase:RoleType .
 
+    <!-- http://schema.geolink.org/1.0/voc/local#roletype_rightsholder -->
 
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_rightsholder">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#RoleType"/>
+    </owl:NamedIndividual>
+    
 
-###  http://schema.geolink.org/1.0/voc/local#roletype_co-principal_investigator
 
-:roletype_co-principal_investigator rdf:type owl:NamedIndividual ,
-                                             glbase:RoleType .
+    <!-- http://schema.geolink.org/1.0/voc/local#roletype_scientist -->
 
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_scientist">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#RoleType"/>
+    </owl:NamedIndividual>
+    
 
 
-###  http://schema.geolink.org/1.0/voc/local#roletype_collector
+    <!-- http://schema.geolink.org/1.0/voc/local#roletype_scientist_chief -->
 
-:roletype_collector rdf:type owl:NamedIndividual ,
-                             glbase:RoleType .
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_scientist_chief">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#RoleType"/>
+    </owl:NamedIndividual>
+    
 
 
+    <!-- http://schema.geolink.org/1.0/voc/local#roletype_scientist_co-chief -->
 
-###  http://schema.geolink.org/1.0/voc/local#roletype_contact
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_scientist_co-chief">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#RoleType"/>
+    </owl:NamedIndividual>
+    
 
-:roletype_contact rdf:type owl:NamedIndividual ,
-                           glbase:RoleType .
 
+    <!-- http://schema.geolink.org/1.0/voc/local#roletype_student -->
 
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_student">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#RoleType"/>
+    </owl:NamedIndividual>
+    
 
-###  http://schema.geolink.org/1.0/voc/local#roletype_contributor
 
-:roletype_contributor rdf:type owl:NamedIndividual ,
-                               glbase:RoleType .
+    <!-- http://schema.geolink.org/1.0/voc/local#roletype_student_graduate -->
 
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_student_graduate">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#RoleType"/>
+    </owl:NamedIndividual>
+    
 
 
-###  http://schema.geolink.org/1.0/voc/local#roletype_creator
+    <!-- http://schema.geolink.org/1.0/voc/local#roletype_student_undergraduate -->
 
-:roletype_creator rdf:type owl:NamedIndividual ,
-                           glbase:RoleType .
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_student_undergraduate">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#RoleType"/>
+    </owl:NamedIndividual>
+    
 
 
+    <!-- http://schema.geolink.org/1.0/voc/local#roletype_technician -->
 
-###  http://schema.geolink.org/1.0/voc/local#roletype_editor
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_technician">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#RoleType"/>
+    </owl:NamedIndividual>
+    
 
-:roletype_editor rdf:type owl:NamedIndividual ,
-                          glbase:RoleType .
 
+    <!-- http://schema.geolink.org/1.0/voc/local#roletype_technician_resident -->
 
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_technician_resident">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#RoleType"/>
+    </owl:NamedIndividual>
+    
 
-###  http://schema.geolink.org/1.0/voc/local#roletype_educator
 
-:roletype_educator rdf:type owl:NamedIndividual ,
-                            glbase:RoleType .
+    <!-- http://schema.geolink.org/1.0/voc/local#roletype_technician_resident_lead -->
 
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_technician_resident_lead">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#RoleType"/>
+    </owl:NamedIndividual>
+    
 
 
-###  http://schema.geolink.org/1.0/voc/local#roletype_inspector
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
 
-:roletype_inspector rdf:type owl:NamedIndividual ,
-                             glbase:RoleType .
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#cruisetype_maintenance">
+        <rdfs:label>Cruise: Maintenance</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#cruisetype_operational">
+        <rdfs:label>Cruise: Operational</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#cruisetype_transit">
+        <rdfs:label>Cruise: Transit</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_author">
+        <rdfs:label>Role: Author</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_captain">
+        <rdfs:label>Role: Captain</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_chief_engineer">
+        <rdfs:label>Role: Chief Engineer</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_co-principal_investigator">
+        <rdfs:label>Role: Co-Principal Investigator</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_collector">
+        <rdfs:label>Role: Collector</rdfs:label>
+        <rdfs:comment>Used by PhysicalSample</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_contact">
+        <rdfs:label>Role: Contact</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_contributor">
+        <rdfs:label>Role: Contributor</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_creator">
+        <rdfs:label>Role: Creator</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_editor">
+        <rdfs:label>Role: Editor</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_educator">
+        <rdfs:label>Role: Educator</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_inspector">
+        <rdfs:label>Role: Inspector</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_investigator">
+        <rdfs:label>Role: Investigator</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_observer">
+        <rdfs:label>Role: Observer</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_observer_foreign">
+        <rdfs:label>Role: Observer, Foreign</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_other">
+        <rdfs:label>Role: Other</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_principal_investigator">
+        <rdfs:label>Role: Principal Investigator</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_program_manager">
+        <rdfs:label>Role: Program Manager</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_rightsholder">
+        <rdfs:label>Role: Rights Holder</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_scientist">
+        <rdfs:label>Role: Scientist</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_scientist_chief">
+        <rdfs:label>Role: Scientist, Chief</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_scientist_co-chief">
+        <rdfs:label>Role: Scientist, Co-Chief</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_student">
+        <rdfs:label>Role: Student</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_student_graduate">
+        <rdfs:label>Role: Student, Graduate</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_student_undergraduate">
+        <rdfs:label>Role: Student, Undergraduate</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_technician">
+        <rdfs:label>Role: Technician</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_technician_resident">
+        <rdfs:label>Role: Technician, Resident</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_technician_resident_lead">
+        <rdfs:label>Role: Technician, Resident, Lead</rdfs:label>
+    </rdf:Description>
+    
 
 
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
 
-###  http://schema.geolink.org/1.0/voc/local#roletype_investigator
-
-:roletype_investigator rdf:type owl:NamedIndividual ,
-                                glbase:RoleType .
-
-
-
-###  http://schema.geolink.org/1.0/voc/local#roletype_observer
-
-:roletype_observer rdf:type owl:NamedIndividual ,
-                            glbase:RoleType .
-
-
-
-###  http://schema.geolink.org/1.0/voc/local#roletype_observer_foreign
-
-:roletype_observer_foreign rdf:type owl:NamedIndividual ,
-                                    glbase:RoleType .
-
-
-
-###  http://schema.geolink.org/1.0/voc/local#roletype_other
-
-:roletype_other rdf:type owl:NamedIndividual ,
-                         glbase:RoleType .
-
-
-
-###  http://schema.geolink.org/1.0/voc/local#roletype_principal_investigator
-
-:roletype_principal_investigator rdf:type owl:NamedIndividual ,
-                                          glbase:RoleType .
-
-
-
-###  http://schema.geolink.org/1.0/voc/local#roletype_program_manager
-
-:roletype_program_manager rdf:type owl:NamedIndividual ,
-                                   glbase:RoleType .
-
-
-
-###  http://schema.geolink.org/1.0/voc/local#roletype_rightsholder
-
-:roletype_rightsholder rdf:type owl:NamedIndividual ,
-                                glbase:RoleType .
-
-
-
-###  http://schema.geolink.org/1.0/voc/local#roletype_scientist
-
-:roletype_scientist rdf:type owl:NamedIndividual ,
-                             glbase:RoleType .
-
-
-
-###  http://schema.geolink.org/1.0/voc/local#roletype_scientist_chief
-
-:roletype_scientist_chief rdf:type owl:NamedIndividual ,
-                                   glbase:RoleType .
-
-
-
-###  http://schema.geolink.org/1.0/voc/local#roletype_scientist_co-chief
-
-:roletype_scientist_co-chief rdf:type owl:NamedIndividual ,
-                                      glbase:RoleType .
-
-
-
-###  http://schema.geolink.org/1.0/voc/local#roletype_student
-
-:roletype_student rdf:type owl:NamedIndividual ,
-                           glbase:RoleType .
-
-
-
-###  http://schema.geolink.org/1.0/voc/local#roletype_student_graduate
-
-:roletype_student_graduate rdf:type owl:NamedIndividual ,
-                                    glbase:RoleType .
-
-
-
-###  http://schema.geolink.org/1.0/voc/local#roletype_student_undergraduate
-
-:roletype_student_undergraduate rdf:type owl:NamedIndividual ,
-                                         glbase:RoleType .
-
-
-
-###  http://schema.geolink.org/1.0/voc/local#roletype_technician
-
-:roletype_technician rdf:type owl:NamedIndividual ,
-                              glbase:RoleType .
-
-
-
-###  http://schema.geolink.org/1.0/voc/local#roletype_technician_resident
-
-:roletype_technician_resident rdf:type owl:NamedIndividual ,
-                                       glbase:RoleType .
-
-
-
-###  http://schema.geolink.org/1.0/voc/local#roletype_technician_resident_lead
-
-:roletype_technician_resident_lead rdf:type owl:NamedIndividual ,
-                                            glbase:RoleType .
-
-
-
-
-
-#################################################################
-#
-#    Annotations
-#
-#################################################################
-
-
-:cruisetype_maintenance rdfs:label "Cruise: Maintenance" .
-
-
-
-:cruisetype_operational rdfs:label "Cruise: Operational" .
-
-
-
-:cruisetype_transit rdfs:label "Cruise: Transit" .
-
-
-
-:roletype_author rdfs:label "Role: Author" .
-
-
-
-:roletype_captain rdfs:label "Role: Captain" .
-
-
-
-:roletype_chief_engineer rdfs:label "Role: Chief Engineer" .
-
-
-
-:roletype_co-principal_investigator rdfs:label "Role: Co-Principal Investigator" .
-
-
-
-:roletype_collector rdfs:label "Role: Collector" ;
-                    
-                    rdfs:comment "Used by PhysicalSample" .
-
-
-
-:roletype_contact rdfs:label "Role: Contact" .
-
-
-
-:roletype_contributor rdfs:label "Role: Contributor" .
-
-
-
-:roletype_creator rdfs:label "Role: Creator" .
-
-
-
-:roletype_editor rdfs:label "Role: Editor" .
-
-
-
-:roletype_educator rdfs:label "Role: Educator" .
-
-
-
-:roletype_inspector rdfs:label "Role: Inspector" .
-
-
-
-:roletype_investigator rdfs:label "Role: Investigator" .
-
-
-
-:roletype_observer rdfs:label "Role: Observer" .
-
-
-
-:roletype_observer_foreign rdfs:label "Role: Observer, Foreign" .
-
-
-
-:roletype_other rdfs:label "Role: Other" .
-
-
-
-:roletype_principal_investigator rdfs:label "Role: Principal Investigator" .
-
-
-
-:roletype_program_manager rdfs:label "Role: Program Manager" .
-
-
-
-:roletype_rightsholder rdfs:label "Role: Rights Holder" .
-
-
-
-:roletype_scientist rdfs:label "Role: Scientist" .
-
-
-
-:roletype_scientist_chief rdfs:label "Role: Scientist, Chief" .
-
-
-
-:roletype_scientist_co-chief rdfs:label "Role: Scientist, Co-Chief" .
-
-
-
-:roletype_student rdfs:label "Role: Student" .
-
-
-
-:roletype_student_graduate rdfs:label "Role: Student, Graduate" .
-
-
-
-:roletype_student_undergraduate rdfs:label "Role: Student, Undergraduate" .
-
-
-
-:roletype_technician rdfs:label "Role: Technician" .
-
-
-
-:roletype_technician_resident rdfs:label "Role: Technician, Resident" .
-
-
-
-:roletype_technician_resident_lead rdfs:label "Role: Technician, Resident, Lead" .
-
-
-
-
-
-#################################################################
-#
-#    General axioms
-#
-#################################################################
-
-
-[ rdf:type owl:Restriction ;
-  owl:onProperty glbase:hasCruiseType ;
-  owl:someValuesFrom [ rdf:type owl:Class ;
-                       owl:oneOf ( :cruisetype_maintenance
-                                 )
-                     ] ;
-  rdfs:subClassOf :cruisetype_maintenance
-] .
-
-
-
-[ rdf:type owl:Restriction ;
-  owl:onProperty glbase:hasCruiseType ;
-  owl:someValuesFrom [ rdf:type owl:Class ;
-                       owl:oneOf ( :cruisetype_operational
-                                 )
-                     ] ;
-  rdfs:subClassOf :cruisetype_operational
-] .
-
-
-
-[ rdf:type owl:Restriction ;
-  owl:onProperty glbase:hasCruiseType ;
-  owl:someValuesFrom [ rdf:type owl:Class ;
-                       owl:oneOf ( :cruisetype_transit
-                                 )
-                     ] ;
-  rdfs:subClassOf :cruisetype_transit
-] .
-
-
-
-[ rdf:type owl:Restriction ;
-  owl:onProperty glbase:hasRoleType ;
-  owl:someValuesFrom [ rdf:type owl:Class ;
-                       owl:oneOf ( :roletype_author
-                                 )
-                     ] ;
-  rdfs:subClassOf :roletype_author
-] .
-
-
-
-[ rdf:type owl:Restriction ;
-  owl:onProperty glbase:hasRoleType ;
-  owl:someValuesFrom [ rdf:type owl:Class ;
-                       owl:oneOf ( :roletype_captain
-                                 )
-                     ] ;
-  rdfs:subClassOf :roletype_captain
-] .
-
-
-
-[ rdf:type owl:Restriction ;
-  owl:onProperty glbase:hasRoleType ;
-  owl:someValuesFrom [ rdf:type owl:Class ;
-                       owl:oneOf ( :roletype_chief_engineer
-                                 )
-                     ] ;
-  rdfs:subClassOf :roletype_chief_engineer
-] .
-
-
-
-[ rdf:type owl:Restriction ;
-  owl:onProperty glbase:hasRoleType ;
-  owl:someValuesFrom [ rdf:type owl:Class ;
-                       owl:oneOf ( :roletype_co-principal_investigator
-                                 )
-                     ] ;
-  rdfs:subClassOf :roletype_co-principal_investigator
-] .
-
-
-
-[ rdf:type owl:Restriction ;
-  owl:onProperty glbase:hasRoleType ;
-  owl:someValuesFrom [ rdf:type owl:Class ;
-                       owl:oneOf ( :roletype_collector
-                                 )
-                     ] ;
-  rdfs:subClassOf :roletype_collector
-] .
-
-
-
-[ rdf:type owl:Restriction ;
-  owl:onProperty glbase:hasRoleType ;
-  owl:someValuesFrom [ rdf:type owl:Class ;
-                       owl:oneOf ( :roletype_contact
-                                 )
-                     ] ;
-  rdfs:subClassOf :roletype_contact
-] .
-
-
-
-[ rdf:type owl:Restriction ;
-  owl:onProperty glbase:hasRoleType ;
-  owl:someValuesFrom [ rdf:type owl:Class ;
-                       owl:oneOf ( :roletype_contributor
-                                 )
-                     ] ;
-  rdfs:subClassOf :roletype_contributor
-] .
-
-
-
-[ rdf:type owl:Restriction ;
-  owl:onProperty glbase:hasRoleType ;
-  owl:someValuesFrom [ rdf:type owl:Class ;
-                       owl:oneOf ( :roletype_creator
-                                 )
-                     ] ;
-  rdfs:subClassOf :roletype_creator
-] .
-
-
-
-[ rdf:type owl:Restriction ;
-  owl:onProperty glbase:hasRoleType ;
-  owl:someValuesFrom [ rdf:type owl:Class ;
-                       owl:oneOf ( :roletype_editor
-                                 )
-                     ] ;
-  rdfs:subClassOf :roletype_editor
-] .
-
-
-
-[ rdf:type owl:Restriction ;
-  owl:onProperty glbase:hasRoleType ;
-  owl:someValuesFrom [ rdf:type owl:Class ;
-                       owl:oneOf ( :roletype_educator
-                                 )
-                     ] ;
-  rdfs:subClassOf :roletype_educator
-] .
-
-
-
-[ rdf:type owl:Restriction ;
-  owl:onProperty glbase:hasRoleType ;
-  owl:someValuesFrom [ rdf:type owl:Class ;
-                       owl:oneOf ( :roletype_inspector
-                                 )
-                     ] ;
-  rdfs:subClassOf :roletype_inspector
-] .
-
-
-
-[ rdf:type owl:Restriction ;
-  owl:onProperty glbase:hasRoleType ;
-  owl:someValuesFrom [ rdf:type owl:Class ;
-                       owl:oneOf ( :roletype_investigator
-                                 )
-                     ] ;
-  rdfs:subClassOf :roletype_investigator
-] .
-
-
-
-[ rdf:type owl:Restriction ;
-  owl:onProperty glbase:hasRoleType ;
-  owl:someValuesFrom [ rdf:type owl:Class ;
-                       owl:oneOf ( :roletype_observer
-                                 )
-                     ] ;
-  rdfs:subClassOf :roletype_observer
-] .
-
-
-
-[ rdf:type owl:Restriction ;
-  owl:onProperty glbase:hasRoleType ;
-  owl:someValuesFrom [ rdf:type owl:Class ;
-                       owl:oneOf ( :roletype_observer_foreign
-                                 )
-                     ] ;
-  rdfs:subClassOf :roletype_observer_foreign
-] .
-
-
-
-[ rdf:type owl:Restriction ;
-  owl:onProperty glbase:hasRoleType ;
-  owl:someValuesFrom [ rdf:type owl:Class ;
-                       owl:oneOf ( :roletype_other
-                                 )
-                     ] ;
-  rdfs:subClassOf :roletype_other
-] .
-
-
-
-[ rdf:type owl:Restriction ;
-  owl:onProperty glbase:hasRoleType ;
-  owl:someValuesFrom [ rdf:type owl:Class ;
-                       owl:oneOf ( :roletype_principal_investigator
-                                 )
-                     ] ;
-  rdfs:subClassOf :roletype_principal_investigator
-] .
-
-
-
-[ rdf:type owl:Restriction ;
-  owl:onProperty glbase:hasRoleType ;
-  owl:someValuesFrom [ rdf:type owl:Class ;
-                       owl:oneOf ( :roletype_program_manager
-                                 )
-                     ] ;
-  rdfs:subClassOf :roletype_program_manager
-] .
-
-
-
-[ rdf:type owl:Restriction ;
-  owl:onProperty glbase:hasRoleType ;
-  owl:someValuesFrom [ rdf:type owl:Class ;
-                       owl:oneOf ( :roletype_rightsholder
-                                 )
-                     ] ;
-  rdfs:subClassOf :roletype_rightsholder
-] .
-
-
-
-[ rdf:type owl:Restriction ;
-  owl:onProperty glbase:hasRoleType ;
-  owl:someValuesFrom [ rdf:type owl:Class ;
-                       owl:oneOf ( :roletype_scientist
-                                 )
-                     ] ;
-  rdfs:subClassOf :roletype_scientist
-] .
-
-
-
-[ rdf:type owl:Restriction ;
-  owl:onProperty glbase:hasRoleType ;
-  owl:someValuesFrom [ rdf:type owl:Class ;
-                       owl:oneOf ( :roletype_scientist_chief
-                                 )
-                     ] ;
-  rdfs:subClassOf :roletype_scientist_chief
-] .
-
-
-
-[ rdf:type owl:Restriction ;
-  owl:onProperty glbase:hasRoleType ;
-  owl:someValuesFrom [ rdf:type owl:Class ;
-                       owl:oneOf ( :roletype_scientist_co-chief
-                                 )
-                     ] ;
-  rdfs:subClassOf :roletype_scientist_co-chief
-] .
-
-
-
-[ rdf:type owl:Restriction ;
-  owl:onProperty glbase:hasRoleType ;
-  owl:someValuesFrom [ rdf:type owl:Class ;
-                       owl:oneOf ( :roletype_student
-                                 )
-                     ] ;
-  rdfs:subClassOf :roletype_student
-] .
-
-
-
-[ rdf:type owl:Restriction ;
-  owl:onProperty glbase:hasRoleType ;
-  owl:someValuesFrom [ rdf:type owl:Class ;
-                       owl:oneOf ( :roletype_student_graduate
-                                 )
-                     ] ;
-  rdfs:subClassOf :roletype_student_graduate
-] .
-
-
-
-[ rdf:type owl:Restriction ;
-  owl:onProperty glbase:hasRoleType ;
-  owl:someValuesFrom [ rdf:type owl:Class ;
-                       owl:oneOf ( :roletype_student_undergraduate
-                                 )
-                     ] ;
-  rdfs:subClassOf :roletype_student_undergraduate
-] .
-
-
-
-[ rdf:type owl:Restriction ;
-  owl:onProperty glbase:hasRoleType ;
-  owl:someValuesFrom [ rdf:type owl:Class ;
-                       owl:oneOf ( :roletype_technician
-                                 )
-                     ] ;
-  rdfs:subClassOf :roletype_technician
-] .
-
-
-
-[ rdf:type owl:Restriction ;
-  owl:onProperty glbase:hasRoleType ;
-  owl:someValuesFrom [ rdf:type owl:Class ;
-                       owl:oneOf ( :roletype_technician_resident
-                                 )
-                     ] ;
-  rdfs:subClassOf :roletype_technician_resident
-] .
-
-
-
-[ rdf:type owl:Restriction ;
-  owl:onProperty glbase:hasRoleType ;
-  owl:someValuesFrom [ rdf:type owl:Class ;
-                       owl:oneOf ( :roletype_technician_resident_lead
-                                 )
-                     ] ;
-  rdfs:subClassOf :roletype_technician_resident_lead
-] .
-
-
-
-
-###  Generated by the OWL API (version 4.1.3.20151118-2017) https://github.com/owlcs/owlapi
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasCruiseType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#cruisetype_maintenance"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/local#cruisetype_maintenance"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasCruiseType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#cruisetype_operational"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/local#cruisetype_operational"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasCruiseType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#cruisetype_transit"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/local#cruisetype_transit"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasRoleType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_author"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/local#roletype_author"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasRoleType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_captain"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/local#roletype_captain"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasRoleType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_chief_engineer"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/local#roletype_chief_engineer"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasRoleType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_co-principal_investigator"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/local#roletype_co-principal_investigator"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasRoleType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_collector"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/local#roletype_collector"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasRoleType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_contact"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/local#roletype_contact"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasRoleType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_contributor"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/local#roletype_contributor"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasRoleType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_creator"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/local#roletype_creator"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasRoleType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_editor"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/local#roletype_editor"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasRoleType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_educator"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/local#roletype_educator"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasRoleType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_inspector"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/local#roletype_inspector"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasRoleType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_investigator"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/local#roletype_investigator"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasRoleType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_observer"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/local#roletype_observer"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasRoleType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_observer_foreign"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/local#roletype_observer_foreign"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasRoleType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_other"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/local#roletype_other"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasRoleType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_principal_investigator"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/local#roletype_principal_investigator"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasRoleType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_program_manager"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/local#roletype_program_manager"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasRoleType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_rightsholder"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/local#roletype_rightsholder"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasRoleType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_scientist"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/local#roletype_scientist"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasRoleType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_scientist_chief"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/local#roletype_scientist_chief"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasRoleType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_scientist_co-chief"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/local#roletype_scientist_co-chief"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasRoleType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_student"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/local#roletype_student"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasRoleType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_student_graduate"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/local#roletype_student_graduate"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasRoleType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_student_undergraduate"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/local#roletype_student_undergraduate"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasRoleType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_technician"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/local#roletype_technician"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasRoleType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_technician_resident"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/local#roletype_technician_resident"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/base/main#hasRoleType"/>
+        <owl:someValuesFrom>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/voc/local#roletype_technician_resident_lead"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/voc/local#roletype_technician_resident_lead"/>
+    </owl:Restriction>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.1.3.20151118-2017) https://github.com/owlcs/owlapi -->
 
