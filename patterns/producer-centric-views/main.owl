@@ -1885,22 +1885,26 @@ _:genid188 a rdf:List ;
 	rdfs:domain _:genid192 .
 
 _:genid192 a owl:Class ;
-	owl:unionOf _:genid203 .
+	owl:unionOf _:genid204 .
+
+_:genid204 a rdf:List ;
+	rdf:first :Award ;
+	rdf:rest _:genid203 .
 
 _:genid203 a rdf:List ;
-	rdf:first :Award ;
+	rdf:first :Cruise ;
 	rdf:rest _:genid202 .
 
 _:genid202 a rdf:List ;
-	rdf:first :Cruise ;
+	rdf:first :Dataset ;
 	rdf:rest _:genid201 .
 
 _:genid201 a rdf:List ;
-	rdf:first :Dataset ;
+	rdf:first :DigitalObject ;
 	rdf:rest _:genid200 .
 
 _:genid200 a rdf:List ;
-	rdf:first :DigitalObject ;
+	rdf:first :Dive ;
 	rdf:rest _:genid199 .
 
 _:genid199 a rdf:List ;
@@ -1944,16 +1948,16 @@ _:genid193 a rdf:List ;
 # http://schema.geolink.org/1.0/base/main#hasUploadDate
 
 :hasUploadDate a owl:DatatypeProperty ;
-	rdfs:domain _:genid204 .
+	rdfs:domain _:genid205 .
 
-_:genid204 a owl:Class ;
-	owl:unionOf _:genid206 .
+_:genid205 a owl:Class ;
+	owl:unionOf _:genid207 .
+
+_:genid207 a rdf:List ;
+	rdf:first :Dataset ;
+	rdf:rest _:genid206 .
 
 _:genid206 a rdf:List ;
-	rdf:first :Dataset ;
-	rdf:rest _:genid205 .
-
-_:genid205 a rdf:List ;
 	rdf:first :DigitalObject ;
 	rdf:rest rdf:nil .
 
