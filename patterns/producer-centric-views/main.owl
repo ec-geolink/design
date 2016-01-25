@@ -19,9 +19,27 @@
         <owl:imports rdf:resource="http://schema.geolink.org/1.0/voc/gebco/featuretype"/>
         <owl:imports rdf:resource="http://schema.geolink.org/1.0/voc/local"/>
         <owl:imports rdf:resource="http://schema.geolink.org/1.0/voc/nvs/L05"/>
+        <dcterms:description rdf:resource="http://schema.geolink.org/images/gbo-overview.svg"/>
         <rdfs:label>GeoLink base ontology.</rdfs:label>
         <rdfs:comment>A base ontology providing a conceptual view into the GeoLink patterns. For data providers, this is the default view of the patterns.</rdfs:comment>
     </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
     
 
 
