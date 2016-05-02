@@ -186,9 +186,9 @@
     
 
 
-    <!-- http://schema.geolink.org/1.0/base/main#hasAuthoritativeRepository -->
+    <!-- http://schema.geolink.org/1.0/base/main#hasAuthoritativeDigitalRepository -->
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/base/main#hasAuthoritativeRepository">
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/base/main#hasAuthoritativeDigitalRepository">
         <rdfs:subPropertyOf rdf:resource="http://schema.geolink.org/1.0/base/main#hasRepository"/>
         <owl:inverseOf rdf:resource="http://schema.geolink.org/1.0/base/main#isAuthoritativeDigitalRepositoryOf"/>
         <rdfs:domain>
