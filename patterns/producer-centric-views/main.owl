@@ -859,9 +859,9 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     
 
 
-    <!-- http://schema.geolink.org/1.0/base/main#hasReplicaRepository -->
+    <!-- http://schema.geolink.org/1.0/base/main#hasReplicaDigitalRepository -->
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/base/main#hasReplicaRepository">
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/base/main#hasReplicaDigitalRepository">
         <rdfs:subPropertyOf rdf:resource="http://schema.geolink.org/1.0/base/main#hasRepository"/>
         <owl:inverseOf rdf:resource="http://schema.geolink.org/1.0/base/main#isReplicaDigitalRepositoryOf"/>
         <rdfs:domain>
