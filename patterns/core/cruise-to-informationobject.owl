@@ -6,20 +6,20 @@
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-    <!ENTITY glcr "http://schema.geolink.org/dev/pattern/cruise#" >
-    <!ENTITY glio "http://schema.geolink.org/dev/pattern/informationobject#" >
+    <!ENTITY glcr "http://schema.geolink.org/1.0/pattern/cruise#" >
+    <!ENTITY glio "http://schema.geolink.org/1.0/pattern/informationobject#" >
 ]>
 
 
-<rdf:RDF xmlns="http://schema.geolink.org/dev/pattern/cruise-to-informationobject#"
-     xml:base="http://schema.geolink.org/dev/pattern/cruise-to-informationobject"
-     xmlns:glcr="http://schema.geolink.org/dev/pattern/cruise#"
+<rdf:RDF xmlns="http://schema.geolink.org/1.0/pattern/cruise-to-informationobject#"
+     xml:base="http://schema.geolink.org/1.0/pattern/cruise-to-informationobject"
+     xmlns:glcr="http://schema.geolink.org/1.0/pattern/cruise#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:glio="http://schema.geolink.org/dev/pattern/informationobject#">
-    <owl:Ontology rdf:about="http://schema.geolink.org/dev/pattern/cruise-to-informationobject">
+     xmlns:glio="http://schema.geolink.org/1.0/pattern/informationobject#">
+    <owl:Ontology rdf:about="http://schema.geolink.org/1.0/pattern/cruise-to-informationobject">
         <rdfs:label>Alignment from Cruise Pattern to Information Object Pattern</rdfs:label>
     </owl:Ontology>
     
@@ -36,7 +36,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/cruise#isDescribedBy -->
+    <!-- http://schema.geolink.org/1.0/pattern/cruise#isDescribedBy -->
 
     <owl:ObjectProperty rdf:about="&glcr;isDescribedBy">
         <rdfs:comment>glcr:isDescribedBy</rdfs:comment>
@@ -45,7 +45,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/informationobject#isDescribedBy -->
+    <!-- http://schema.geolink.org/1.0/pattern/informationobject#isDescribedBy -->
 
     <owl:ObjectProperty rdf:about="&glio;isDescribedBy">
         <rdfs:comment>glio:isDescribedBy</rdfs:comment>
@@ -64,7 +64,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/cruise#InformationObject -->
+    <!-- http://schema.geolink.org/1.0/pattern/cruise#InformationObject -->
 
     <owl:Class rdf:about="&glcr;InformationObject">
         <rdfs:subClassOf rdf:resource="&glio;InformationObject"/>
@@ -73,7 +73,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/informationobject#InformationObject -->
+    <!-- http://schema.geolink.org/1.0/pattern/informationobject#InformationObject -->
 
     <owl:Class rdf:about="&glio;InformationObject">
         <rdfs:comment>glio:InformationObject</rdfs:comment>

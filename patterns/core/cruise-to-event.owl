@@ -6,20 +6,20 @@
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-    <!ENTITY glev "http://schema.geolink.org/dev/pattern/event#" >
-    <!ENTITY glcr "http://schema.geolink.org/dev/pattern/cruise#" >
+    <!ENTITY glev "http://schema.geolink.org/1.0/pattern/event#" >
+    <!ENTITY glcr "http://schema.geolink.org/1.0/pattern/cruise#" >
 ]>
 
 
-<rdf:RDF xmlns="http://schema.geolink.org/dev/pattern/cruise-to-event#"
-     xml:base="http://schema.geolink.org/dev/pattern/cruise-to-event"
-     xmlns:glcr="http://schema.geolink.org/dev/pattern/cruise#"
+<rdf:RDF xmlns="http://schema.geolink.org/1.0/pattern/cruise-to-event#"
+     xml:base="http://schema.geolink.org/1.0/pattern/cruise-to-event"
+     xmlns:glcr="http://schema.geolink.org/1.0/pattern/cruise#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:glev="http://schema.geolink.org/dev/pattern/event#"
+     xmlns:glev="http://schema.geolink.org/1.0/pattern/event#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="http://schema.geolink.org/dev/pattern/cruise-to-event">
+    <owl:Ontology rdf:about="http://schema.geolink.org/1.0/pattern/cruise-to-event">
         <rdfs:label>Alignment from Cruise Pattern to Event Pattern</rdfs:label>
     </owl:Ontology>
     
@@ -36,7 +36,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/cruise#atTime -->
+    <!-- http://schema.geolink.org/1.0/pattern/cruise#atTime -->
 
     <owl:ObjectProperty rdf:about="&glcr;atTime">
         <rdfs:label>glcr:atTime</rdfs:label>
@@ -44,7 +44,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/cruise#hasFix -->
+    <!-- http://schema.geolink.org/1.0/pattern/cruise#hasFix -->
 
     <owl:ObjectProperty rdf:about="&glcr;hasFix">
         <rdfs:label>glcr:hasFix</rdfs:label>
@@ -52,7 +52,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/cruise#hasLocation -->
+    <!-- http://schema.geolink.org/1.0/pattern/cruise#hasLocation -->
 
     <owl:ObjectProperty rdf:about="&glcr;hasLocation">
         <rdfs:label>glcr:hasLocation</rdfs:label>
@@ -60,7 +60,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/cruise#hasSpatialFootprint -->
+    <!-- http://schema.geolink.org/1.0/pattern/cruise#hasSpatialFootprint -->
 
     <owl:ObjectProperty rdf:about="&glcr;hasSpatialFootprint">
         <rdfs:label>glcr:hasSpatialFootprint</rdfs:label>
@@ -68,7 +68,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/cruise#hasTrajectory -->
+    <!-- http://schema.geolink.org/1.0/pattern/cruise#hasTrajectory -->
 
     <owl:ObjectProperty rdf:about="&glcr;hasTrajectory">
         <rdfs:label>glcr:hasTrajectory</rdfs:label>
@@ -76,7 +76,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/cruise#isPerformedBy -->
+    <!-- http://schema.geolink.org/1.0/pattern/cruise#isPerformedBy -->
 
     <owl:ObjectProperty rdf:about="&glcr;isPerformedBy">
         <rdfs:label>glcr:isPerformedBy</rdfs:label>
@@ -85,7 +85,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/cruise#providesAgentRole -->
+    <!-- http://schema.geolink.org/1.0/pattern/cruise#providesAgentRole -->
 
     <owl:ObjectProperty rdf:about="&glcr;providesAgentRole">
         <rdfs:label>glcr:providesAgentRole</rdfs:label>
@@ -94,7 +94,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/event#isPerformedBy -->
+    <!-- http://schema.geolink.org/1.0/pattern/event#isPerformedBy -->
 
     <owl:ObjectProperty rdf:about="&glev;isPerformedBy">
         <rdfs:label>glev:isPerformedBy</rdfs:label>
@@ -102,7 +102,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/event#occursAtPlace -->
+    <!-- http://schema.geolink.org/1.0/pattern/event#occursAtPlace -->
 
     <owl:ObjectProperty rdf:about="&glev;occursAtPlace">
         <rdfs:label>glev:occursAtPlace</rdfs:label>
@@ -118,7 +118,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/event#occursAtTime -->
+    <!-- http://schema.geolink.org/1.0/pattern/event#occursAtTime -->
 
     <owl:ObjectProperty rdf:about="&glev;occursAtTime">
         <rdfs:label>glev:occursAtTime</rdfs:label>
@@ -131,7 +131,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/event#providesAgentRole -->
+    <!-- http://schema.geolink.org/1.0/pattern/event#providesAgentRole -->
 
     <owl:ObjectProperty rdf:about="&glev;providesAgentRole">
         <rdfs:label>glev:providesAgentRole</rdfs:label>
@@ -150,7 +150,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/cruise#Agent -->
+    <!-- http://schema.geolink.org/1.0/pattern/cruise#Agent -->
 
     <owl:Class rdf:about="&glcr;Agent">
         <rdfs:label>glcr:Agent</rdfs:label>
@@ -159,7 +159,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/cruise#AgentRole -->
+    <!-- http://schema.geolink.org/1.0/pattern/cruise#AgentRole -->
 
     <owl:Class rdf:about="&glcr;AgentRole">
         <rdfs:label>glcr:AgentRole</rdfs:label>
@@ -168,7 +168,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/cruise#Cruise -->
+    <!-- http://schema.geolink.org/1.0/pattern/cruise#Cruise -->
 
     <owl:Class rdf:about="&glcr;Cruise">
         <rdfs:label>glcr:Cruise</rdfs:label>
@@ -177,7 +177,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/cruise#Place -->
+    <!-- http://schema.geolink.org/1.0/pattern/cruise#Place -->
 
     <owl:Class rdf:about="&glcr;Place">
         <rdfs:label>glcr:Place</rdfs:label>
@@ -186,7 +186,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/cruise#TimeEntity -->
+    <!-- http://schema.geolink.org/1.0/pattern/cruise#TimeEntity -->
 
     <owl:Class rdf:about="&glcr;TimeEntity">
         <rdfs:label>glcr:TimeEntity</rdfs:label>
@@ -195,7 +195,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/event#Agent -->
+    <!-- http://schema.geolink.org/1.0/pattern/event#Agent -->
 
     <owl:Class rdf:about="&glev;Agent">
         <rdfs:label>glev:Agent</rdfs:label>
@@ -203,7 +203,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/event#AgentRole -->
+    <!-- http://schema.geolink.org/1.0/pattern/event#AgentRole -->
 
     <owl:Class rdf:about="&glev;AgentRole">
         <rdfs:label>glev:AgentRole</rdfs:label>
@@ -211,7 +211,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/event#Event -->
+    <!-- http://schema.geolink.org/1.0/pattern/event#Event -->
 
     <owl:Class rdf:about="&glev;Event">
         <rdfs:label>glev:Event</rdfs:label>
@@ -219,7 +219,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/event#Place -->
+    <!-- http://schema.geolink.org/1.0/pattern/event#Place -->
 
     <owl:Class rdf:about="&glev;Place">
         <rdfs:label>glev:Place</rdfs:label>
@@ -227,7 +227,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/event#TimeEntity -->
+    <!-- http://schema.geolink.org/1.0/pattern/event#TimeEntity -->
 
     <owl:Class rdf:about="&glev;TimeEntity">
         <rdfs:label>glev:TimeEntity</rdfs:label>

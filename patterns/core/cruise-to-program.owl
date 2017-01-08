@@ -6,20 +6,20 @@
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-    <!ENTITY glcr "http://schema.geolink.org/dev/pattern/cruise#" >
-    <!ENTITY glpg "http://schema.geolink.org/dev/pattern/program#" >
+    <!ENTITY glcr "http://schema.geolink.org/1.0/pattern/cruise#" >
+    <!ENTITY glpg "http://schema.geolink.org/1.0/pattern/program#" >
 ]>
 
 
-<rdf:RDF xmlns="http://schema.geolink.org/dev/pattern/cruise-to-program#"
-     xml:base="http://schema.geolink.org/dev/pattern/cruise-to-program"
-     xmlns:glcr="http://schema.geolink.org/dev/pattern/cruise#"
+<rdf:RDF xmlns="http://schema.geolink.org/1.0/pattern/cruise-to-program#"
+     xml:base="http://schema.geolink.org/1.0/pattern/cruise-to-program"
+     xmlns:glcr="http://schema.geolink.org/1.0/pattern/cruise#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:glpg="http://schema.geolink.org/dev/pattern/program#">
-    <owl:Ontology rdf:about="http://schema.geolink.org/dev/pattern/cruise-to-program">
+     xmlns:glpg="http://schema.geolink.org/1.0/pattern/program#">
+    <owl:Ontology rdf:about="http://schema.geolink.org/1.0/pattern/cruise-to-program">
         <rdfs:label>Alignment from Cruise Pattern to Program Pattern</rdfs:label>
     </owl:Ontology>
     
@@ -36,7 +36,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/cruise#isAssociatedWithProgram -->
+    <!-- http://schema.geolink.org/1.0/pattern/cruise#isAssociatedWithProgram -->
 
     <owl:ObjectProperty rdf:about="&glcr;isAssociatedWithProgram">
         <rdfs:label>glcr:isAssociatedWithProgram</rdfs:label>
@@ -45,7 +45,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/program#isAssociatedWithProgram -->
+    <!-- http://schema.geolink.org/1.0/pattern/program#isAssociatedWithProgram -->
 
     <owl:ObjectProperty rdf:about="&glpg;isAssociatedWithProgram">
         <rdfs:label>glpg:isAssociatedWithProgram</rdfs:label>
@@ -64,7 +64,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/cruise#Program -->
+    <!-- http://schema.geolink.org/1.0/pattern/cruise#Program -->
 
     <owl:Class rdf:about="&glcr;Program">
         <rdfs:label>glcr:Program</rdfs:label>
@@ -73,7 +73,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/program#Program -->
+    <!-- http://schema.geolink.org/1.0/pattern/program#Program -->
 
     <owl:Class rdf:about="&glpg;Program">
         <rdfs:label>glpg:Program</rdfs:label>

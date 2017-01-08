@@ -6,20 +6,20 @@
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-    <!ENTITY glpl "http://schema.geolink.org/dev/pattern/place#" >
-    <!ENTITY glcr "http://schema.geolink.org/dev/pattern/cruise#" >
+    <!ENTITY glpl "http://schema.geolink.org/1.0/pattern/place#" >
+    <!ENTITY glcr "http://schema.geolink.org/1.0/pattern/cruise#" >
 ]>
 
 
-<rdf:RDF xmlns="http://schema.geolink.org/dev/pattern/cruise-to-place#"
-     xml:base="http://schema.geolink.org/dev/pattern/cruise-to-place"
-     xmlns:glpl="http://schema.geolink.org/dev/pattern/place#"
-     xmlns:glcr="http://schema.geolink.org/dev/pattern/cruise#"
+<rdf:RDF xmlns="http://schema.geolink.org/1.0/pattern/cruise-to-place#"
+     xml:base="http://schema.geolink.org/1.0/pattern/cruise-to-place"
+     xmlns:glpl="http://schema.geolink.org/1.0/pattern/place#"
+     xmlns:glcr="http://schema.geolink.org/1.0/pattern/cruise#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="http://schema.geolink.org/dev/pattern/cruise-to-place">
+    <owl:Ontology rdf:about="http://schema.geolink.org/1.0/pattern/cruise-to-place">
         <rdfs:label>Alignment from Cruise Pattern to Place Pattern</rdfs:label>
     </owl:Ontology>
     
@@ -36,7 +36,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/cruise#hasSpatialFootprint -->
+    <!-- http://schema.geolink.org/1.0/pattern/cruise#hasSpatialFootprint -->
 
     <owl:ObjectProperty rdf:about="&glcr;hasSpatialFootprint">
         <rdfs:comment>glcr:hasSpatialFootprint</rdfs:comment>
@@ -45,7 +45,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/place#hasSpatialFootprint -->
+    <!-- http://schema.geolink.org/1.0/pattern/place#hasSpatialFootprint -->
 
     <owl:ObjectProperty rdf:about="&glpl;hasSpatialFootprint">
         <rdfs:comment>glpl:hasSpatialFootprint</rdfs:comment>
@@ -64,7 +64,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/cruise#Place -->
+    <!-- http://schema.geolink.org/1.0/pattern/cruise#Place -->
 
     <owl:Class rdf:about="&glcr;Place">
         <rdfs:label>glcr:Place</rdfs:label>
@@ -73,7 +73,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/cruise#Position -->
+    <!-- http://schema.geolink.org/1.0/pattern/cruise#Position -->
 
     <owl:Class rdf:about="&glcr;Position">
         <rdfs:label>glcr:Position</rdfs:label>
@@ -82,7 +82,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/place#Geometry -->
+    <!-- http://schema.geolink.org/1.0/pattern/place#Geometry -->
 
     <owl:Class rdf:about="&glpl;Geometry">
         <rdfs:label>glpl:Geometry</rdfs:label>
@@ -90,7 +90,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/place#Place -->
+    <!-- http://schema.geolink.org/1.0/pattern/place#Place -->
 
     <owl:Class rdf:about="&glpl;Place">
         <rdfs:label>glpl:Place</rdfs:label>

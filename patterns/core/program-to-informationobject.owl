@@ -6,20 +6,20 @@
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-    <!ENTITY ecglpg "http://schema.geolink.org/dev/pattern/program#" >
-    <!ENTITY ecglio "http://schema.geolink.org/dev/pattern/informationobject#" >
+    <!ENTITY ecglpg "http://schema.geolink.org/1.0/pattern/program#" >
+    <!ENTITY ecglio "http://schema.geolink.org/1.0/pattern/informationobject#" >
 ]>
 
 
-<rdf:RDF xmlns="http://schema.geolink.org/dev/pattern/program-to-informationobject#"
-     xml:base="http://schema.geolink.org/dev/pattern/program-to-informationobject"
-     xmlns:ecglio="http://schema.geolink.org/dev/pattern/informationobject#"
+<rdf:RDF xmlns="http://schema.geolink.org/1.0/pattern/program-to-informationobject#"
+     xml:base="http://schema.geolink.org/1.0/pattern/program-to-informationobject"
+     xmlns:ecglio="http://schema.geolink.org/1.0/pattern/informationobject#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:ecglpg="http://schema.geolink.org/dev/pattern/program#"
+     xmlns:ecglpg="http://schema.geolink.org/1.0/pattern/program#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="http://schema.geolink.org/dev/pattern/program-to-informationobject"/>
+    <owl:Ontology rdf:about="http://schema.geolink.org/1.0/pattern/program-to-informationobject"/>
     
 
 
@@ -34,13 +34,13 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/informationobject#isDescribedBy -->
+    <!-- http://schema.geolink.org/1.0/pattern/informationobject#isDescribedBy -->
 
     <owl:ObjectProperty rdf:about="&ecglio;isDescribedBy"/>
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/program#isDescribedBy -->
+    <!-- http://schema.geolink.org/1.0/pattern/program#isDescribedBy -->
 
     <owl:ObjectProperty rdf:about="&ecglpg;isDescribedBy">
         <rdfs:subPropertyOf rdf:resource="&ecglio;isDescribedBy"/>
@@ -59,13 +59,13 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/informationobject#InformationObject -->
+    <!-- http://schema.geolink.org/1.0/pattern/informationobject#InformationObject -->
 
     <owl:Class rdf:about="&ecglio;InformationObject"/>
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/program#InformationObject -->
+    <!-- http://schema.geolink.org/1.0/pattern/program#InformationObject -->
 
     <owl:Class rdf:about="&ecglpg;InformationObject">
         <rdfs:subClassOf rdf:resource="&ecglio;InformationObject"/>

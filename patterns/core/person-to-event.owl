@@ -6,20 +6,20 @@
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-    <!ENTITY ecglev "http://schema.geolink.org/dev/pattern/event#" >
-    <!ENTITY ecglpr "http://schema.geolink.org/dev/pattern/person#" >
+    <!ENTITY ecglev "http://schema.geolink.org/1.0/pattern/event#" >
+    <!ENTITY ecglpr "http://schema.geolink.org/1.0/pattern/person#" >
 ]>
 
 
-<rdf:RDF xmlns="http://schema.geolink.org/dev/pattern/person-to-event#"
-     xml:base="http://schema.geolink.org/dev/pattern/person-to-event"
+<rdf:RDF xmlns="http://schema.geolink.org/1.0/pattern/person-to-event#"
+     xml:base="http://schema.geolink.org/1.0/pattern/person-to-event"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:ecglpr="http://schema.geolink.org/dev/pattern/person#"
+     xmlns:ecglpr="http://schema.geolink.org/1.0/pattern/person#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:ecglev="http://schema.geolink.org/dev/pattern/event#"
+     xmlns:ecglev="http://schema.geolink.org/1.0/pattern/event#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="http://schema.geolink.org/dev/pattern/person-to-event"/>
+    <owl:Ontology rdf:about="http://schema.geolink.org/1.0/pattern/person-to-event"/>
     
 
 
@@ -34,31 +34,31 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/event#isPerformedBy -->
+    <!-- http://schema.geolink.org/1.0/pattern/event#isPerformedBy -->
 
     <owl:ObjectProperty rdf:about="&ecglev;isPerformedBy"/>
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/event#occursAtPlace -->
+    <!-- http://schema.geolink.org/1.0/pattern/event#occursAtPlace -->
 
     <owl:ObjectProperty rdf:about="&ecglev;occursAtPlace"/>
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/event#occursAtTime -->
+    <!-- http://schema.geolink.org/1.0/pattern/event#occursAtTime -->
 
     <owl:ObjectProperty rdf:about="&ecglev;occursAtTime"/>
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/event#providesAgentRole -->
+    <!-- http://schema.geolink.org/1.0/pattern/event#providesAgentRole -->
 
     <owl:ObjectProperty rdf:about="&ecglev;providesAgentRole"/>
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/person#isPerformedBy -->
+    <!-- http://schema.geolink.org/1.0/pattern/person#isPerformedBy -->
 
     <owl:ObjectProperty rdf:about="&ecglpr;isPerformedBy">
         <rdfs:subPropertyOf rdf:resource="&ecglev;isPerformedBy"/>
@@ -66,7 +66,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/person#occursAtPlace -->
+    <!-- http://schema.geolink.org/1.0/pattern/person#occursAtPlace -->
 
     <owl:ObjectProperty rdf:about="&ecglpr;occursAtPlace">
         <rdfs:subPropertyOf rdf:resource="&ecglev;occursAtPlace"/>
@@ -74,7 +74,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/person#occursAtTime -->
+    <!-- http://schema.geolink.org/1.0/pattern/person#occursAtTime -->
 
     <owl:ObjectProperty rdf:about="&ecglpr;occursAtTime">
         <rdfs:subPropertyOf rdf:resource="&ecglev;occursAtTime"/>
@@ -82,7 +82,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/person#providesAgentRole -->
+    <!-- http://schema.geolink.org/1.0/pattern/person#providesAgentRole -->
 
     <owl:ObjectProperty rdf:about="&ecglpr;providesAgentRole">
         <rdfs:subPropertyOf rdf:resource="&ecglev;providesAgentRole"/>
@@ -101,37 +101,37 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/event#Agent -->
+    <!-- http://schema.geolink.org/1.0/pattern/event#Agent -->
 
     <owl:Class rdf:about="&ecglev;Agent"/>
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/event#AgentRole -->
+    <!-- http://schema.geolink.org/1.0/pattern/event#AgentRole -->
 
     <owl:Class rdf:about="&ecglev;AgentRole"/>
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/event#Event -->
+    <!-- http://schema.geolink.org/1.0/pattern/event#Event -->
 
     <owl:Class rdf:about="&ecglev;Event"/>
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/event#Place -->
+    <!-- http://schema.geolink.org/1.0/pattern/event#Place -->
 
     <owl:Class rdf:about="&ecglev;Place"/>
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/event#TimeInstant -->
+    <!-- http://schema.geolink.org/1.0/pattern/event#TimeInstant -->
 
     <owl:Class rdf:about="&ecglev;TimeInstant"/>
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/person#BirthEvent -->
+    <!-- http://schema.geolink.org/1.0/pattern/person#BirthEvent -->
 
     <owl:Class rdf:about="&ecglpr;BirthEvent">
         <rdfs:subClassOf rdf:resource="&ecglev;Event"/>
@@ -139,7 +139,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/person#BirthPlace -->
+    <!-- http://schema.geolink.org/1.0/pattern/person#BirthPlace -->
 
     <owl:Class rdf:about="&ecglpr;BirthPlace">
         <rdfs:subClassOf rdf:resource="&ecglev;Place"/>
@@ -147,7 +147,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/person#BirthTimeInstant -->
+    <!-- http://schema.geolink.org/1.0/pattern/person#BirthTimeInstant -->
 
     <owl:Class rdf:about="&ecglpr;BirthTimeInstant">
         <rdfs:subClassOf rdf:resource="&ecglev;TimeInstant"/>
@@ -155,7 +155,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/person#BornPersonRole -->
+    <!-- http://schema.geolink.org/1.0/pattern/person#BornPersonRole -->
 
     <owl:Class rdf:about="&ecglpr;BornPersonRole">
         <rdfs:subClassOf rdf:resource="&ecglev;AgentRole"/>
@@ -163,7 +163,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/person#Person -->
+    <!-- http://schema.geolink.org/1.0/pattern/person#Person -->
 
     <owl:Class rdf:about="&ecglpr;Person">
         <rdfs:subClassOf rdf:resource="&ecglev;Agent"/>
