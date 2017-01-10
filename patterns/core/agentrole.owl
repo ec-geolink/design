@@ -36,6 +36,14 @@
     
 
 
+    <!-- http://schema.geolink.org/1.0/pattern/agentrole#hasAgentRoleType -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/agentrole#hasAgentRoleType">
+        <rdfs:label>hasAgentRoleType</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://schema.geolink.org/1.0/pattern/agentrole#isAgentRoleIn -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/agentrole#isAgentRoleIn">
@@ -106,6 +114,12 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole#hasAgentRoleType"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole#AgentRoleType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole#isPerformedBy"/>
                 <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole#Agent"/>
             </owl:Restriction>
@@ -149,6 +163,15 @@
     
 
 
+    <!-- http://schema.geolink.org/1.0/pattern/agentrole#AgentRoleType -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/agentrole#AgentRoleType">
+        <rdfs:comment>Class that contains types of agent roles. Allows one to put types of agent roles (which can be seen as subclasses of AgentRole) as named individuals, and the axiomatization could infer anonymous subclasses of AgentRole from those individuals.</rdfs:comment>
+        <rdfs:label>AgentRoleType</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://schema.geolink.org/1.0/pattern/agentrole#TimeInstant -->
 
     <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/agentrole#TimeInstant">
@@ -169,6 +192,11 @@
     <owl:Restriction>
         <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole#endsAtTime"/>
         <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole#TimeInstant"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole#AgentRole"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole#hasAgentRoleType"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole#AgentRoleType"/>
         <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole#AgentRole"/>
     </owl:Restriction>
     <owl:Restriction>
