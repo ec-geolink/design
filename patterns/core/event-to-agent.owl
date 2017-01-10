@@ -6,20 +6,20 @@
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-    <!ENTITY glev "http://schema.geolink.org/dev/pattern/event#" >
-    <!ENTITY glag "http://schema.geolink.org/dev/pattern/agent#" >
+    <!ENTITY glev "http://schema.geolink.org/1.0/pattern/event#" >
+    <!ENTITY glag "http://schema.geolink.org/1.0/pattern/agent#" >
 ]>
 
 
-<rdf:RDF xmlns="http://schema.geolink.org/dev/pattern/event-to-agent#"
-     xml:base="http://schema.geolink.org/dev/pattern/event-to-agent"
+<rdf:RDF xmlns="http://schema.geolink.org/1.0/pattern/event-to-agent#"
+     xml:base="http://schema.geolink.org/1.0/pattern/event-to-agent"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:glev="http://schema.geolink.org/dev/pattern/event#"
+     xmlns:glev="http://schema.geolink.org/1.0/pattern/event#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:glag="http://schema.geolink.org/dev/pattern/agent#">
-    <owl:Ontology rdf:about="http://schema.geolink.org/dev/pattern/event-to-agent">
+     xmlns:glag="http://schema.geolink.org/1.0/pattern/agent#">
+    <owl:Ontology rdf:about="http://schema.geolink.org/1.0/pattern/event-to-agent">
         <rdfs:label>Alignment from Event Pattern to Agent Pattern</rdfs:label>
     </owl:Ontology>
     
@@ -36,7 +36,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/agent#performsAgentRole -->
+    <!-- http://schema.geolink.org/1.0/pattern/agent#performsAgentRole -->
 
     <owl:ObjectProperty rdf:about="&glag;performsAgentRole">
         <rdfs:label>glag:performsAgentRole</rdfs:label>
@@ -44,7 +44,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/event#isPerformedBy -->
+    <!-- http://schema.geolink.org/1.0/pattern/event#isPerformedBy -->
 
     <owl:ObjectProperty rdf:about="&glev;isPerformedBy">
         <rdfs:label>glev:isPerformedBy</rdfs:label>
@@ -68,7 +68,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/agent#Agent -->
+    <!-- http://schema.geolink.org/1.0/pattern/agent#Agent -->
 
     <owl:Class rdf:about="&glag;Agent">
         <rdfs:label>glag:Agent</rdfs:label>
@@ -76,7 +76,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/agent#AgentRole -->
+    <!-- http://schema.geolink.org/1.0/pattern/agent#AgentRole -->
 
     <owl:Class rdf:about="&glag;AgentRole">
         <rdfs:label>glag:AgentRole</rdfs:label>
@@ -84,7 +84,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/event#Agent -->
+    <!-- http://schema.geolink.org/1.0/pattern/event#Agent -->
 
     <owl:Class rdf:about="&glev;Agent">
         <rdfs:label>glev:Agent</rdfs:label>
@@ -93,7 +93,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/event#AgentRole -->
+    <!-- http://schema.geolink.org/1.0/pattern/event#AgentRole -->
 
     <owl:Class rdf:about="&glev;AgentRole">
         <rdfs:label>glev:AgentRole</rdfs:label>

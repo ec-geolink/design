@@ -7,19 +7,19 @@
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-    <!ENTITY ecglvs "http://schema.geolink.org/dev/pattern/vessel#" >
+    <!ENTITY ecglvs "http://schema.geolink.org/1.0/pattern/vessel#" >
 ]>
 
 
-<rdf:RDF xmlns="http://schema.geolink.org/dev/pattern/vessel-to-owltime#"
-     xml:base="http://schema.geolink.org/dev/pattern/vessel-to-owltime"
+<rdf:RDF xmlns="http://schema.geolink.org/1.0/pattern/vessel-to-owltime#"
+     xml:base="http://schema.geolink.org/1.0/pattern/vessel-to-owltime"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:time="http://www.w3.org/2006/time#"
-     xmlns:ecglvs="http://schema.geolink.org/dev/pattern/vessel#">
-    <owl:Ontology rdf:about="http://schema.geolink.org/dev/pattern/vessel-to-owltime"/>
+     xmlns:ecglvs="http://schema.geolink.org/1.0/pattern/vessel#">
+    <owl:Ontology rdf:about="http://schema.geolink.org/1.0/pattern/vessel-to-owltime"/>
     
 
 
@@ -34,7 +34,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/vessel#TimeInstant -->
+    <!-- http://schema.geolink.org/1.0/pattern/vessel#TimeInstant -->
 
     <owl:Class rdf:about="&ecglvs;TimeInstant">
         <rdfs:subClassOf rdf:resource="&time;Instant"/>

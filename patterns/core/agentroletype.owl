@@ -5,20 +5,20 @@
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
-    <!ENTITY ecglar "http://schema.geolink.org/dev/agentrole#" >
+    <!ENTITY ecglar "http://schema.geolink.org/1.0/agentrole#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
 ]>
 
 
-<rdf:RDF xmlns="http://schema.geolink.org/dev/agentroletype#"
-     xml:base="http://schema.geolink.org/dev/agentroletype"
+<rdf:RDF xmlns="http://schema.geolink.org/1.0/agentroletype#"
+     xml:base="http://schema.geolink.org/1.0/agentroletype"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:ecglar="http://schema.geolink.org/dev/agentrole#">
-    <owl:Ontology rdf:about="http://schema.geolink.org/dev/agentroletype">
-        <owl:imports rdf:resource="http://schema.geolink.org/dev/agentrole"/>
+     xmlns:ecglar="http://schema.geolink.org/1.0/agentrole#">
+    <owl:Ontology rdf:about="http://schema.geolink.org/1.0/agentroletype">
+        <owl:imports rdf:resource="http://schema.geolink.org/1.0/agentrole"/>
     </owl:Ontology>
     
 
@@ -34,9 +34,9 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/agentroletype#hasAgentRoleType -->
+    <!-- http://schema.geolink.org/1.0/agentroletype#hasAgentRoleType -->
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/dev/agentroletype#hasAgentRoleType"/>
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/agentroletype#hasAgentRoleType"/>
     
 
 
@@ -51,46 +51,46 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/agentrole#Agent -->
+    <!-- http://schema.geolink.org/1.0/agentrole#Agent -->
 
     <rdf:Description rdf:about="&ecglar;Agent">
-        <owl:disjointWith rdf:resource="http://schema.geolink.org/dev/agentroletype#AgentRoleType"/>
+        <owl:disjointWith rdf:resource="http://schema.geolink.org/1.0/agentroletype#AgentRoleType"/>
     </rdf:Description>
     
 
 
-    <!-- http://schema.geolink.org/dev/agentrole#AgentRole -->
+    <!-- http://schema.geolink.org/1.0/agentrole#AgentRole -->
 
     <rdf:Description rdf:about="&ecglar;AgentRole">
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/agentroletype#hasAgentRoleType"/>
-                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/dev/agentroletype#AgentRoleType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/agentroletype#hasAgentRoleType"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/agentroletype#AgentRoleType"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/dev/agentroletype#hasAgentRoleType"/>
-                <owl:onClass rdf:resource="http://schema.geolink.org/dev/agentroletype#AgentRoleType"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/agentroletype#hasAgentRoleType"/>
+                <owl:onClass rdf:resource="http://schema.geolink.org/1.0/agentroletype#AgentRoleType"/>
                 <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <owl:disjointWith rdf:resource="http://schema.geolink.org/dev/agentroletype#AgentRoleType"/>
+        <owl:disjointWith rdf:resource="http://schema.geolink.org/1.0/agentroletype#AgentRoleType"/>
     </rdf:Description>
     
 
 
-    <!-- http://schema.geolink.org/dev/agentrole#TimeInstant -->
+    <!-- http://schema.geolink.org/1.0/agentrole#TimeInstant -->
 
     <rdf:Description rdf:about="&ecglar;TimeInstant">
-        <owl:disjointWith rdf:resource="http://schema.geolink.org/dev/agentroletype#AgentRoleType"/>
+        <owl:disjointWith rdf:resource="http://schema.geolink.org/1.0/agentroletype#AgentRoleType"/>
     </rdf:Description>
     
 
 
-    <!-- http://schema.geolink.org/dev/agentroletype#AgentRoleType -->
+    <!-- http://schema.geolink.org/1.0/agentroletype#AgentRoleType -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/agentroletype#AgentRoleType"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/agentroletype#AgentRoleType"/>
     
 
 
@@ -104,8 +104,8 @@
 
     <owl:Restriction>
         <rdfs:subClassOf rdf:resource="&ecglar;AgentRole"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/dev/agentroletype#hasAgentRoleType"/>
-        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/dev/agentroletype#AgentRoleType"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/agentroletype#hasAgentRoleType"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/agentroletype#AgentRoleType"/>
     </owl:Restriction>
 </rdf:RDF>
 

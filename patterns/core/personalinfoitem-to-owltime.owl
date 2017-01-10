@@ -7,19 +7,19 @@
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-    <!ENTITY ecglpi "http://schema.geolink.org/dev/pattern/personalinfoitem#" >
+    <!ENTITY ecglpi "http://schema.geolink.org/1.0/pattern/personalinfoitem#" >
 ]>
 
 
-<rdf:RDF xmlns="http://schema.geolink.org/dev/pattern/personalinfoitem-to-owltime#"
-     xml:base="http://schema.geolink.org/dev/pattern/personalinfoitem-to-owltime"
-     xmlns:ecglpi="http://schema.geolink.org/dev/pattern/personalinfoitem#"
+<rdf:RDF xmlns="http://schema.geolink.org/1.0/pattern/personalinfoitem-to-owltime#"
+     xml:base="http://schema.geolink.org/1.0/pattern/personalinfoitem-to-owltime"
+     xmlns:ecglpi="http://schema.geolink.org/1.0/pattern/personalinfoitem#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:time="http://www.w3.org/2006/time#">
-    <owl:Ontology rdf:about="http://schema.geolink.org/dev/pattern/personalinfoitem-to-owltime"/>
+    <owl:Ontology rdf:about="http://schema.geolink.org/1.0/pattern/personalinfoitem-to-owltime"/>
     
 
 
@@ -34,7 +34,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/personalinfoitem#TimeInstant -->
+    <!-- http://schema.geolink.org/1.0/pattern/personalinfoitem#TimeInstant -->
 
     <owl:Class rdf:about="&ecglpi;TimeInstant">
         <rdfs:subClassOf rdf:resource="&time;Instant"/>

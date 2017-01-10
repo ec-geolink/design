@@ -4,22 +4,22 @@
 <!DOCTYPE rdf:RDF [
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY ecglcr "http://schema.geolink.org/dev/cruise#" >
+    <!ENTITY ecglcr "http://schema.geolink.org/1.0/cruise#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
-    <!ENTITY ecglvoc "http://schema.geolink.org/voc/dev/ecglvoc#" >
+    <!ENTITY ecglvoc "http://schema.geolink.org/voc/1.0/ecglvoc#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
 ]>
 
 
-<rdf:RDF xmlns="http://schema.geolink.org/voc/dev/cruisetype#"
-     xml:base="http://schema.geolink.org/voc/dev/cruisetype"
-     xmlns:ecglvoc="http://schema.geolink.org/voc/dev/ecglvoc#"
+<rdf:RDF xmlns="http://schema.geolink.org/voc/1.0/cruisetype#"
+     xml:base="http://schema.geolink.org/voc/1.0/cruisetype"
+     xmlns:ecglvoc="http://schema.geolink.org/voc/1.0/ecglvoc#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:ecglcr="http://schema.geolink.org/dev/cruise#">
-    <owl:Ontology rdf:about="http://schema.geolink.org/voc/dev/cruisetype"/>
+     xmlns:ecglcr="http://schema.geolink.org/1.0/cruise#">
+    <owl:Ontology rdf:about="http://schema.geolink.org/voc/1.0/cruisetype"/>
     
 
 
@@ -34,7 +34,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/cruise#hasCruiseType -->
+    <!-- http://schema.geolink.org/1.0/cruise#hasCruiseType -->
 
     <owl:ObjectProperty rdf:about="&ecglcr;hasCruiseType">
         <rdfs:range rdf:resource="&ecglcr;CruiseType"/>
@@ -53,7 +53,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/cruise#CruiseType -->
+    <!-- http://schema.geolink.org/1.0/cruise#CruiseType -->
 
     <owl:Class rdf:about="&ecglcr;CruiseType"/>
     
@@ -70,7 +70,7 @@
     
 
 
-    <!-- http://schema.geolink.org/voc/dev/ecglvoc#maintenance_cruisetype -->
+    <!-- http://schema.geolink.org/voc/1.0/ecglvoc#maintenance_cruisetype -->
 
     <owl:NamedIndividual rdf:about="&ecglvoc;maintenance_cruisetype">
         <rdf:type rdf:resource="&ecglcr;CruiseType"/>
@@ -78,7 +78,7 @@
     
 
 
-    <!-- http://schema.geolink.org/voc/dev/ecglvoc#operational_cruisetype -->
+    <!-- http://schema.geolink.org/voc/1.0/ecglvoc#operational_cruisetype -->
 
     <owl:NamedIndividual rdf:about="&ecglvoc;operational_cruisetype">
         <rdf:type rdf:resource="&ecglcr;CruiseType"/>
@@ -86,7 +86,7 @@
     
 
 
-    <!-- http://schema.geolink.org/voc/dev/ecglvoc#transit_cruisetype -->
+    <!-- http://schema.geolink.org/voc/1.0/ecglvoc#transit_cruisetype -->
 
     <owl:NamedIndividual rdf:about="&ecglvoc;transit_cruisetype">
         <rdf:type rdf:resource="&ecglcr;CruiseType"/>

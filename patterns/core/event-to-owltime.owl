@@ -7,19 +7,19 @@
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-    <!ENTITY glev "http://schema.geolink.org/dev/pattern/event#" >
+    <!ENTITY glev "http://schema.geolink.org/1.0/pattern/event#" >
 ]>
 
 
-<rdf:RDF xmlns="http://schema.geolink.org/dev/pattern/event-to-owltime#"
-     xml:base="http://schema.geolink.org/dev/pattern/event-to-owltime"
+<rdf:RDF xmlns="http://schema.geolink.org/1.0/pattern/event-to-owltime#"
+     xml:base="http://schema.geolink.org/1.0/pattern/event-to-owltime"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:glev="http://schema.geolink.org/dev/pattern/event#"
+     xmlns:glev="http://schema.geolink.org/1.0/pattern/event#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:time="http://www.w3.org/2006/time#">
-    <owl:Ontology rdf:about="http://schema.geolink.org/dev/pattern/event-to-owltime">
+    <owl:Ontology rdf:about="http://schema.geolink.org/1.0/pattern/event-to-owltime">
         <rdfs:label>Alignment from Event Pattern to OWL-Time Ontology</rdfs:label>
     </owl:Ontology>
     
@@ -36,7 +36,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/event#TimeEntity -->
+    <!-- http://schema.geolink.org/1.0/pattern/event#TimeEntity -->
 
     <owl:Class rdf:about="&glev;TimeEntity">
         <rdfs:label>glev:TimeEntity</rdfs:label>
@@ -45,7 +45,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/event#TimeInstant -->
+    <!-- http://schema.geolink.org/1.0/pattern/event#TimeInstant -->
 
     <owl:Class rdf:about="&glev;TimeInstant">
         <rdfs:label>glev:TimeInstant</rdfs:label>

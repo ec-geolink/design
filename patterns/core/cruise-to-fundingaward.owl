@@ -6,20 +6,20 @@
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-    <!ENTITY glcr "http://schema.geolink.org/dev/pattern/cruise#" >
-    <!ENTITY glfa "http://schema.geolink.org/dev/pattern/fundingaward#" >
+    <!ENTITY glcr "http://schema.geolink.org/1.0/pattern/cruise#" >
+    <!ENTITY glfa "http://schema.geolink.org/1.0/pattern/fundingaward#" >
 ]>
 
 
-<rdf:RDF xmlns="http://schema.geolink.org/dev/pattern/cruise-to-fundingaward#"
-     xml:base="http://schema.geolink.org/dev/pattern/cruise-to-fundingaward"
-     xmlns:glfa="http://schema.geolink.org/dev/pattern/fundingaward#"
-     xmlns:glcr="http://schema.geolink.org/dev/pattern/cruise#"
+<rdf:RDF xmlns="http://schema.geolink.org/1.0/pattern/cruise-to-fundingaward#"
+     xml:base="http://schema.geolink.org/1.0/pattern/cruise-to-fundingaward"
+     xmlns:glfa="http://schema.geolink.org/1.0/pattern/fundingaward#"
+     xmlns:glcr="http://schema.geolink.org/1.0/pattern/cruise#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="http://schema.geolink.org/dev/pattern/cruise-to-fundingaward">
+    <owl:Ontology rdf:about="http://schema.geolink.org/1.0/pattern/cruise-to-fundingaward">
         <rdfs:label>Alignment from Cruise Pattern to Funding Award Pattern</rdfs:label>
     </owl:Ontology>
     
@@ -36,7 +36,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/cruise#isFundedBy -->
+    <!-- http://schema.geolink.org/1.0/pattern/cruise#isFundedBy -->
 
     <owl:ObjectProperty rdf:about="&glcr;isFundedBy">
         <rdfs:comment>glcr:isFundedBy</rdfs:comment>
@@ -45,7 +45,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/fundingaward#isFundedBy -->
+    <!-- http://schema.geolink.org/1.0/pattern/fundingaward#isFundedBy -->
 
     <owl:ObjectProperty rdf:about="&glfa;isFundedBy">
         <rdfs:comment>glfa:isFundedBy</rdfs:comment>
@@ -64,7 +64,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/cruise#FundingAward -->
+    <!-- http://schema.geolink.org/1.0/pattern/cruise#FundingAward -->
 
     <owl:Class rdf:about="&glcr;FundingAward">
         <rdfs:subClassOf rdf:resource="&glfa;FundingAward"/>
@@ -73,7 +73,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/fundingaward#FundingAward -->
+    <!-- http://schema.geolink.org/1.0/pattern/fundingaward#FundingAward -->
 
     <owl:Class rdf:about="&glfa;FundingAward">
         <rdfs:comment>glfa:FundingAward</rdfs:comment>

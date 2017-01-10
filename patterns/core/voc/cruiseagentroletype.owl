@@ -4,22 +4,22 @@
 <!DOCTYPE rdf:RDF [
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY ecglcr "http://schema.geolink.org/dev/cruise#" >
+    <!ENTITY ecglcr "http://schema.geolink.org/1.0/cruise#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
-    <!ENTITY ecglvoc "http://schema.geolink.org/voc/dev/ecglvoc#" >
+    <!ENTITY ecglvoc "http://schema.geolink.org/voc/1.0/ecglvoc#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
 ]>
 
 
-<rdf:RDF xmlns="http://schema.geolink.org/voc/dev/cruiseagentroletype#"
-     xml:base="http://schema.geolink.org/voc/dev/cruiseagentroletype"
-     xmlns:ecglvoc="http://schema.geolink.org/voc/dev/ecglvoc#"
+<rdf:RDF xmlns="http://schema.geolink.org/voc/1.0/cruiseagentroletype#"
+     xml:base="http://schema.geolink.org/voc/1.0/cruiseagentroletype"
+     xmlns:ecglvoc="http://schema.geolink.org/voc/1.0/ecglvoc#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:ecglcr="http://schema.geolink.org/dev/cruise#">
-    <owl:Ontology rdf:about="http://schema.geolink.org/voc/dev/cruiseagentroletype"/>
+     xmlns:ecglcr="http://schema.geolink.org/1.0/cruise#">
+    <owl:Ontology rdf:about="http://schema.geolink.org/voc/1.0/cruiseagentroletype"/>
     
 
 
@@ -34,7 +34,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/cruise#hasCruiseAgentRoleType -->
+    <!-- http://schema.geolink.org/1.0/cruise#hasCruiseAgentRoleType -->
 
     <owl:ObjectProperty rdf:about="&ecglcr;hasCruiseAgentRoleType">
         <rdfs:range rdf:resource="&ecglcr;CruiseAgentRoleType"/>
@@ -53,7 +53,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/cruise#CruiseAgentRoleType -->
+    <!-- http://schema.geolink.org/1.0/cruise#CruiseAgentRoleType -->
 
     <owl:Class rdf:about="&ecglcr;CruiseAgentRoleType"/>
     
@@ -70,7 +70,7 @@
     
 
 
-    <!-- http://schema.geolink.org/voc/dev/ecglvoc#captain_role -->
+    <!-- http://schema.geolink.org/voc/1.0/ecglvoc#captain_role -->
 
     <owl:NamedIndividual rdf:about="&ecglvoc;captain_role">
         <rdf:type rdf:resource="&ecglcr;CruiseAgentRoleType"/>
@@ -78,7 +78,7 @@
     
 
 
-    <!-- http://schema.geolink.org/voc/dev/ecglvoc#chief_engineer_role -->
+    <!-- http://schema.geolink.org/voc/1.0/ecglvoc#chief_engineer_role -->
 
     <owl:NamedIndividual rdf:about="&ecglvoc;chief_engineer_role">
         <rdf:type rdf:resource="&ecglcr;CruiseAgentRoleType"/>
@@ -86,7 +86,7 @@
     
 
 
-    <!-- http://schema.geolink.org/voc/dev/ecglvoc#chief_scientist_role -->
+    <!-- http://schema.geolink.org/voc/1.0/ecglvoc#chief_scientist_role -->
 
     <owl:NamedIndividual rdf:about="&ecglvoc;chief_scientist_role">
         <rdf:type rdf:resource="&ecglcr;CruiseAgentRoleType"/>
@@ -94,7 +94,7 @@
     
 
 
-    <!-- http://schema.geolink.org/voc/dev/ecglvoc#co_chief_scienstist_role -->
+    <!-- http://schema.geolink.org/voc/1.0/ecglvoc#co_chief_scienstist_role -->
 
     <owl:NamedIndividual rdf:about="&ecglvoc;co_chief_scienstist_role">
         <rdf:type rdf:resource="&ecglcr;CruiseAgentRoleType"/>
@@ -102,7 +102,7 @@
     
 
 
-    <!-- http://schema.geolink.org/voc/dev/ecglvoc#educator_role -->
+    <!-- http://schema.geolink.org/voc/1.0/ecglvoc#educator_role -->
 
     <owl:NamedIndividual rdf:about="&ecglvoc;educator_role">
         <rdf:type rdf:resource="&ecglcr;CruiseAgentRoleType"/>
@@ -110,7 +110,7 @@
     
 
 
-    <!-- http://schema.geolink.org/voc/dev/ecglvoc#engineer_role -->
+    <!-- http://schema.geolink.org/voc/1.0/ecglvoc#engineer_role -->
 
     <owl:NamedIndividual rdf:about="&ecglvoc;engineer_role">
         <rdf:type rdf:resource="&ecglcr;CruiseAgentRoleType"/>
@@ -118,7 +118,7 @@
     
 
 
-    <!-- http://schema.geolink.org/voc/dev/ecglvoc#foreign_observer_role -->
+    <!-- http://schema.geolink.org/voc/1.0/ecglvoc#foreign_observer_role -->
 
     <owl:NamedIndividual rdf:about="&ecglvoc;foreign_observer_role">
         <rdf:type rdf:resource="&ecglcr;CruiseAgentRoleType"/>
@@ -126,7 +126,7 @@
     
 
 
-    <!-- http://schema.geolink.org/voc/dev/ecglvoc#graduate_student_role -->
+    <!-- http://schema.geolink.org/voc/1.0/ecglvoc#graduate_student_role -->
 
     <owl:NamedIndividual rdf:about="&ecglvoc;graduate_student_role">
         <rdf:type rdf:resource="&ecglcr;CruiseAgentRoleType"/>
@@ -134,7 +134,7 @@
     
 
 
-    <!-- http://schema.geolink.org/voc/dev/ecglvoc#higher_ed_educator_role -->
+    <!-- http://schema.geolink.org/voc/1.0/ecglvoc#higher_ed_educator_role -->
 
     <owl:NamedIndividual rdf:about="&ecglvoc;higher_ed_educator_role">
         <rdf:type rdf:resource="&ecglcr;CruiseAgentRoleType"/>
@@ -142,7 +142,7 @@
     
 
 
-    <!-- http://schema.geolink.org/voc/dev/ecglvoc#inspector_role -->
+    <!-- http://schema.geolink.org/voc/1.0/ecglvoc#inspector_role -->
 
     <owl:NamedIndividual rdf:about="&ecglvoc;inspector_role">
         <rdf:type rdf:resource="&ecglcr;CruiseAgentRoleType"/>
@@ -150,7 +150,7 @@
     
 
 
-    <!-- http://schema.geolink.org/voc/dev/ecglvoc#k12_educator_role -->
+    <!-- http://schema.geolink.org/voc/1.0/ecglvoc#k12_educator_role -->
 
     <owl:NamedIndividual rdf:about="&ecglvoc;k12_educator_role">
         <rdf:type rdf:resource="&ecglcr;CruiseAgentRoleType"/>
@@ -158,7 +158,7 @@
     
 
 
-    <!-- http://schema.geolink.org/voc/dev/ecglvoc#k12_student_role -->
+    <!-- http://schema.geolink.org/voc/1.0/ecglvoc#k12_student_role -->
 
     <owl:NamedIndividual rdf:about="&ecglvoc;k12_student_role">
         <rdf:type rdf:resource="&ecglcr;CruiseAgentRoleType"/>
@@ -166,7 +166,7 @@
     
 
 
-    <!-- http://schema.geolink.org/voc/dev/ecglvoc#lead_technician_role -->
+    <!-- http://schema.geolink.org/voc/1.0/ecglvoc#lead_technician_role -->
 
     <owl:NamedIndividual rdf:about="&ecglvoc;lead_technician_role">
         <rdf:type rdf:resource="&ecglcr;CruiseAgentRoleType"/>
@@ -174,7 +174,7 @@
     
 
 
-    <!-- http://schema.geolink.org/voc/dev/ecglvoc#marine_technician_role -->
+    <!-- http://schema.geolink.org/voc/1.0/ecglvoc#marine_technician_role -->
 
     <owl:NamedIndividual rdf:about="&ecglvoc;marine_technician_role">
         <rdf:type rdf:resource="&ecglcr;CruiseAgentRoleType"/>
@@ -182,7 +182,7 @@
     
 
 
-    <!-- http://schema.geolink.org/voc/dev/ecglvoc#observer_role -->
+    <!-- http://schema.geolink.org/voc/1.0/ecglvoc#observer_role -->
 
     <owl:NamedIndividual rdf:about="&ecglvoc;observer_role">
         <rdf:type rdf:resource="&ecglcr;CruiseAgentRoleType"/>
@@ -190,7 +190,7 @@
     
 
 
-    <!-- http://schema.geolink.org/voc/dev/ecglvoc#operator_role -->
+    <!-- http://schema.geolink.org/voc/1.0/ecglvoc#operator_role -->
 
     <owl:NamedIndividual rdf:about="&ecglvoc;operator_role">
         <rdf:type rdf:resource="&ecglcr;CruiseAgentRoleType"/>
@@ -198,7 +198,7 @@
     
 
 
-    <!-- http://schema.geolink.org/voc/dev/ecglvoc#other_observer_role -->
+    <!-- http://schema.geolink.org/voc/1.0/ecglvoc#other_observer_role -->
 
     <owl:NamedIndividual rdf:about="&ecglvoc;other_observer_role">
         <rdf:type rdf:resource="&ecglcr;CruiseAgentRoleType"/>
@@ -206,7 +206,7 @@
     
 
 
-    <!-- http://schema.geolink.org/voc/dev/ecglvoc#other_role -->
+    <!-- http://schema.geolink.org/voc/1.0/ecglvoc#other_role -->
 
     <owl:NamedIndividual rdf:about="&ecglvoc;other_role">
         <rdf:type rdf:resource="&ecglcr;CruiseAgentRoleType"/>
@@ -214,7 +214,7 @@
     
 
 
-    <!-- http://schema.geolink.org/voc/dev/ecglvoc#postdoc_scientist_role -->
+    <!-- http://schema.geolink.org/voc/1.0/ecglvoc#postdoc_scientist_role -->
 
     <owl:NamedIndividual rdf:about="&ecglvoc;postdoc_scientist_role">
         <rdf:type rdf:resource="&ecglcr;CruiseAgentRoleType"/>
@@ -222,7 +222,7 @@
     
 
 
-    <!-- http://schema.geolink.org/voc/dev/ecglvoc#scheduler_role -->
+    <!-- http://schema.geolink.org/voc/1.0/ecglvoc#scheduler_role -->
 
     <owl:NamedIndividual rdf:about="&ecglvoc;scheduler_role">
         <rdf:type rdf:resource="&ecglcr;CruiseAgentRoleType"/>
@@ -230,7 +230,7 @@
     
 
 
-    <!-- http://schema.geolink.org/voc/dev/ecglvoc#scientist_role -->
+    <!-- http://schema.geolink.org/voc/1.0/ecglvoc#scientist_role -->
 
     <owl:NamedIndividual rdf:about="&ecglvoc;scientist_role">
         <rdf:type rdf:resource="&ecglcr;CruiseAgentRoleType"/>
@@ -238,7 +238,7 @@
     
 
 
-    <!-- http://schema.geolink.org/voc/dev/ecglvoc#student_role -->
+    <!-- http://schema.geolink.org/voc/1.0/ecglvoc#student_role -->
 
     <owl:NamedIndividual rdf:about="&ecglvoc;student_role">
         <rdf:type rdf:resource="&ecglcr;CruiseAgentRoleType"/>
@@ -246,7 +246,7 @@
     
 
 
-    <!-- http://schema.geolink.org/voc/dev/ecglvoc#technician_role -->
+    <!-- http://schema.geolink.org/voc/1.0/ecglvoc#technician_role -->
 
     <owl:NamedIndividual rdf:about="&ecglvoc;technician_role">
         <rdf:type rdf:resource="&ecglcr;CruiseAgentRoleType"/>
@@ -254,7 +254,7 @@
     
 
 
-    <!-- http://schema.geolink.org/voc/dev/ecglvoc#undergraduate_student_role -->
+    <!-- http://schema.geolink.org/voc/1.0/ecglvoc#undergraduate_student_role -->
 
     <owl:NamedIndividual rdf:about="&ecglvoc;undergraduate_student_role">
         <rdf:type rdf:resource="&ecglcr;CruiseAgentRoleType"/>

@@ -4,22 +4,22 @@
 <!DOCTYPE rdf:RDF [
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY ecglcr "http://schema.geolink.org/dev/cruise#" >
+    <!ENTITY ecglcr "http://schema.geolink.org/1.0/cruise#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
-    <!ENTITY ecglvoc "http://schema.geolink.org/voc/dev/ecglvoc#" >
+    <!ENTITY ecglvoc "http://schema.geolink.org/voc/1.0/ecglvoc#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
 ]>
 
 
-<rdf:RDF xmlns="http://schema.geolink.org/voc/dev/cruisetrajectoryfixsegmentattribute#"
-     xml:base="http://schema.geolink.org/voc/dev/cruisetrajectoryfixsegmentattribute"
-     xmlns:ecglvoc="http://schema.geolink.org/voc/dev/ecglvoc#"
+<rdf:RDF xmlns="http://schema.geolink.org/voc/1.0/cruisetrajectoryfixsegmentattribute#"
+     xml:base="http://schema.geolink.org/voc/1.0/cruisetrajectoryfixsegmentattribute"
+     xmlns:ecglvoc="http://schema.geolink.org/voc/1.0/ecglvoc#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:ecglcr="http://schema.geolink.org/dev/cruise#">
-    <owl:Ontology rdf:about="http://schema.geolink.org/voc/dev/cruisetrajectoryfixsegmentattribute"/>
+     xmlns:ecglcr="http://schema.geolink.org/1.0/cruise#">
+    <owl:Ontology rdf:about="http://schema.geolink.org/voc/1.0/cruisetrajectoryfixsegmentattribute"/>
     
 
 
@@ -34,7 +34,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/cruise#Attribute -->
+    <!-- http://schema.geolink.org/1.0/cruise#Attribute -->
 
     <owl:Class rdf:about="&ecglcr;Attribute"/>
     
@@ -51,7 +51,7 @@
     
 
 
-    <!-- http://schema.geolink.org/voc/dev/ecglvoc#port_stop_arrival -->
+    <!-- http://schema.geolink.org/voc/1.0/ecglvoc#port_stop_arrival -->
 
     <owl:NamedIndividual rdf:about="&ecglvoc;port_stop_arrival">
         <rdf:type rdf:resource="&ecglcr;Attribute"/>
@@ -59,7 +59,7 @@
     
 
 
-    <!-- http://schema.geolink.org/voc/dev/ecglvoc#port_stop_departure -->
+    <!-- http://schema.geolink.org/voc/1.0/ecglvoc#port_stop_departure -->
 
     <owl:NamedIndividual rdf:about="&ecglvoc;port_stop_departure">
         <rdf:type rdf:resource="&ecglcr;Attribute"/>

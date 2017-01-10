@@ -9,13 +9,13 @@
 ]>
 
 
-<rdf:RDF xmlns="http://schema.geolink.org/dev/pattern/physicalsample-to-event#"
-     xml:base="http://schema.geolink.org/dev/pattern/physicalsample-to-event"
+<rdf:RDF xmlns="http://schema.geolink.org/1.0/pattern/physicalsample-to-event#"
+     xml:base="http://schema.geolink.org/1.0/pattern/physicalsample-to-event"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="http://schema.geolink.org/dev/pattern/physicalsample-to-event"/>
+    <owl:Ontology rdf:about="http://schema.geolink.org/1.0/pattern/physicalsample-to-event"/>
     
 
 
@@ -30,16 +30,16 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/event#Event -->
+    <!-- http://schema.geolink.org/1.0/pattern/event#Event -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/pattern/event#Event"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/event#Event"/>
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/physicalsample#SamplingProcess -->
+    <!-- http://schema.geolink.org/1.0/pattern/physicalsample#SamplingProcess -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/pattern/physicalsample#SamplingProcess">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/pattern/event#Event"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/physicalsample#SamplingProcess">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/event#Event"/>
     </owl:Class>
 </rdf:RDF>
 

@@ -9,13 +9,13 @@
 ]>
 
 
-<rdf:RDF xmlns="http://schema.geolink.org/dev/pattern/physicalsample-to-propertyvalue#"
-     xml:base="http://schema.geolink.org/dev/pattern/physicalsample-to-propertyvalue"
+<rdf:RDF xmlns="http://schema.geolink.org/1.0/pattern/physicalsample-to-propertyvalue#"
+     xml:base="http://schema.geolink.org/1.0/pattern/physicalsample-to-propertyvalue"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="http://schema.geolink.org/dev/pattern/physicalsample-to-propertyvalue"/>
+    <owl:Ontology rdf:about="http://schema.geolink.org/1.0/pattern/physicalsample-to-propertyvalue"/>
     
 
 
@@ -30,17 +30,17 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/physicalsample#Property -->
+    <!-- http://schema.geolink.org/1.0/pattern/physicalsample#Property -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/pattern/physicalsample#Property">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/dev/pattern/propertyvalue#Property"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/physicalsample#Property">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/propertyvalue#Property"/>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/propertyvalue#Property -->
+    <!-- http://schema.geolink.org/1.0/pattern/propertyvalue#Property -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/dev/pattern/propertyvalue#Property"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/propertyvalue#Property"/>
 </rdf:RDF>
 
 

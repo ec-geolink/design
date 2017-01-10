@@ -6,20 +6,20 @@
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-    <!ENTITY ecglid "http://schema.geolink.org/dev/pattern/identifier#" >
-    <!ENTITY ecglio "http://schema.geolink.org/dev/pattern/informationobject#" >
+    <!ENTITY ecglid "http://schema.geolink.org/1.0/pattern/identifier#" >
+    <!ENTITY ecglio "http://schema.geolink.org/1.0/pattern/informationobject#" >
 ]>
 
 
-<rdf:RDF xmlns="http://schema.geolink.org/dev/pattern/informationobject-to-identifier#"
-     xml:base="http://schema.geolink.org/dev/pattern/informationobject-to-identifier"
-     xmlns:ecglid="http://schema.geolink.org/dev/pattern/identifier#"
-     xmlns:ecglio="http://schema.geolink.org/dev/pattern/informationobject#"
+<rdf:RDF xmlns="http://schema.geolink.org/1.0/pattern/informationobject-to-identifier#"
+     xml:base="http://schema.geolink.org/1.0/pattern/informationobject-to-identifier"
+     xmlns:ecglid="http://schema.geolink.org/1.0/pattern/identifier#"
+     xmlns:ecglio="http://schema.geolink.org/1.0/pattern/informationobject#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="http://schema.geolink.org/dev/pattern/informationobject-to-identifier"/>
+    <owl:Ontology rdf:about="http://schema.geolink.org/1.0/pattern/informationobject-to-identifier"/>
     
 
 
@@ -34,7 +34,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/identifier#Identifier -->
+    <!-- http://schema.geolink.org/1.0/pattern/identifier#Identifier -->
 
     <owl:Class rdf:about="&ecglid;Identifier">
         <owl:equivalentClass rdf:resource="&ecglio;Identifier"/>
@@ -42,7 +42,7 @@
     
 
 
-    <!-- http://schema.geolink.org/dev/pattern/informationobject#Identifier -->
+    <!-- http://schema.geolink.org/1.0/pattern/informationobject#Identifier -->
 
     <owl:Class rdf:about="&ecglio;Identifier"/>
 </rdf:RDF>
