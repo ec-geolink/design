@@ -6,12 +6,13 @@
      xmlns:glar="http://schema.geolink.org/1.0/pattern/agentrole#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:agentrole-to-owltime="http://schema.geolink.org/1.0/pattern/agentrole-to-owltime#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:time="http://www.w3.org/2006/time#">
-    <owl:Ontology rdf:about="http://schema.geolink.org/1.0/pattern/agentrole-to-owltime">
-        <rdfs:comment>This pattern specifies the alignment from the Agent Role pattern to the OWL Time ontology</rdfs:comment>
-        <rdfs:label>Alignment from Agent Role Pattern to OWL-Time Ontology</rdfs:label>
+    <owl:Ontology rdf:about="http://schema.geolink.org/1.0/pattern/agentrole-owltime">
+        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole"/>
+        <owl:imports rdf:resource="http://www.w3.org/2006/time"/>
+        <rdfs:comment>Agent Role pattern with alignment to OWL-Time Ontology</rdfs:comment>
+        <rdfs:label>agentrole-owltime</rdfs:label>
     </owl:Ontology>
     
 
@@ -29,18 +30,9 @@
 
     <!-- http://schema.geolink.org/1.0/pattern/agentrole#TemporalEntity -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/agentrole#TemporalEntity">
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/agentrole#TemporalEntity">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
-        <rdfs:label>glar:TemporalEntity</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.w3.org/2006/time#TemporalEntity -->
-
-    <owl:Class rdf:about="http://www.w3.org/2006/time#TemporalEntity">
-        <rdfs:label>time:TemporalEntity</rdfs:label>
-    </owl:Class>
+    </rdf:Description>
 </rdf:RDF>
 
 
