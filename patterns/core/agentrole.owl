@@ -9,9 +9,8 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="http://schema.geolink.org/1.0/pattern/agentrole">
         <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole-to-owltime"/>
-        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/agent"/>
         <rdfs:label>GeoLink Agent Role Pattern</rdfs:label>
-        <rdfs:comment>The Agent Role pattern describes a role that may be performed by an agent within a particular context, i.e., in an organization, a cruise, a project, etc.</rdfs:comment>
+        <rdfs:comment>The Agent Role pattern describes a role that may be performed by an agent within a particular context, e.g., in an organization, a cruise, a project, etc.</rdfs:comment>
     </owl:Ontology>
     
 
@@ -58,8 +57,17 @@
     <!-- http://schema.geolink.org/1.0/pattern/agentrole#isPerformedBy -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/agentrole#isPerformedBy">
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole#performsAgentRole"/>
         <rdfs:comment>isPerformedBy connects  a role to the agent that performs it.</rdfs:comment>
         <rdfs:label>isPerformedBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/1.0/pattern/agentrole#performsAgentRole -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/agentrole#performsAgentRole">
+        <rdfs:label>performsAgentRole</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -97,7 +105,8 @@
     <!-- http://schema.geolink.org/1.0/pattern/agentrole#Agent -->
 
     <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/agentrole#Agent">
-        <rdfs:comment>Hook of the Agent class in Agent Role pattern, which corresponds to the main class of the Agent pattern.</rdfs:comment>
+        <rdfs:comment>Represents agents, e.g., persons, organizations, etc.
+Can be used as a hook of a more detailed model of agent.</rdfs:comment>
         <rdfs:label>Agent</rdfs:label>
     </owl:Class>
     
