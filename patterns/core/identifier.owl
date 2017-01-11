@@ -1,21 +1,16 @@
 <?xml version="1.0"?>
-
-
-<!DOCTYPE rdf:RDF [
-    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
-    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
-    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-]>
-
-
 <rdf:RDF xmlns="http://schema.geolink.org/1.0/pattern/identifier#"
      xml:base="http://schema.geolink.org/1.0/pattern/identifier"
+     xmlns:identifier="http://schema.geolink.org/1.0/pattern/identifier#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="http://schema.geolink.org/1.0/pattern/identifier"/>
+    <owl:Ontology rdf:about="http://schema.geolink.org/1.0/pattern/identifier">
+        <rdfs:comment>Identifier pattern generically describing identifiers where every identifier has an identifier value and possibly an identifier scheme.</rdfs:comment>
+        <rdfs:label>Identifier pattern</rdfs:label>
+    </owl:Ontology>
     
 
 
@@ -62,8 +57,8 @@
                 <owl:allValuesFrom>
                     <rdfs:Datatype>
                         <owl:unionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="&xsd;anyURI"/>
-                            <rdf:Description rdf:about="&xsd;string"/>
+                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
+                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
                         </owl:unionOf>
                     </rdfs:Datatype>
                 </owl:allValuesFrom>
@@ -72,25 +67,25 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/identifier#hasIdentifierValue"/>
-                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/identifier#hasIdentifierValue"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="&xsd;string"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/identifier#hasIdentifierScheme"/>
-                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
                 <owl:onDataRange>
                     <rdfs:Datatype>
                         <owl:unionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="&xsd;anyURI"/>
-                            <rdf:Description rdf:about="&xsd;string"/>
+                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
+                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
                         </owl:unionOf>
                     </rdfs:Datatype>
                 </owl:onDataRange>
@@ -109,25 +104,25 @@
      -->
 
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/identifier#Identifier"/>
         <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/identifier#hasIdentifierScheme"/>
         <owl:someValuesFrom>
             <rdfs:Datatype>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&xsd;anyURI"/>
-                    <rdf:Description rdf:about="&xsd;string"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
                 </owl:unionOf>
             </rdfs:Datatype>
         </owl:someValuesFrom>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/identifier#Identifier"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/identifier#Identifier"/>
         <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/identifier#hasIdentifierValue"/>
-        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+        <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/identifier#Identifier"/>
     </owl:Restriction>
 </rdf:RDF>
 
 
 
-<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
 
