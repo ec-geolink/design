@@ -7,12 +7,13 @@
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:time="http://www.w3.org/2006/time#">
+     xmlns:time="http://www.w3.org/2006/time#"
+     xmlns:agentrole-module="http://schema.geolink.org/1.0/pattern/agentrole-module#">
     <owl:Ontology rdf:about="http://schema.geolink.org/1.0/pattern/agentrole-module">
         <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole"/>
         <owl:imports rdf:resource="http://www.w3.org/2006/time"/>
-        <rdfs:label>agentrole-module</rdfs:label>
         <rdfs:comment>The whole Agent Role module, which includes the Agent Role pattern and its alignment to OWL-Time Ontology</rdfs:comment>
+        <rdfs:label>GeoLink Agent Role module</rdfs:label>
     </owl:Ontology>
     
 
