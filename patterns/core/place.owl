@@ -1,24 +1,13 @@
 <?xml version="1.0"?>
-
-
-<!DOCTYPE rdf:RDF [
-    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
-    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
-    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-]>
-
-
 <rdf:RDF xmlns="http://schema.geolink.org/1.0/pattern/place#"
      xml:base="http://schema.geolink.org/1.0/pattern/place"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="http://schema.geolink.org/1.0/pattern/place">
-        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/place-to-geosparql"/>
-        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/place-to-informationobject"/>
-    </owl:Ontology>
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:place="http://schema.geolink.org/1.0/pattern/place#">
+    <owl:Ontology rdf:about="http://schema.geolink.org/1.0/pattern/place"/>
     
 
 
@@ -36,6 +25,12 @@
     <!-- http://schema.geolink.org/1.0/pattern/place#hasSpatialFootprint -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/place#hasSpatialFootprint"/>
+    
+
+
+    <!-- http://schema.geolink.org/1.0/pattern/place#isDescribedBy -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/place#isDescribedBy"/>
     
 
 
@@ -58,7 +53,7 @@
 
     <!-- http://schema.geolink.org/1.0/pattern/place#InformationObject -->
 
-    <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/place#InformationObject">
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/place#InformationObject">
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty>
@@ -66,11 +61,11 @@
                         <owl:inverseOf rdf:resource="http://schema.geolink.org/1.0/pattern/place#isDescribedBy"/>
                     </rdf:Description>
                 </owl:onProperty>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onClass rdf:resource="http://schema.geolink.org/1.0/pattern/place#Place"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
-    </rdf:Description>
+    </owl:Class>
     
 
 
@@ -86,14 +81,14 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/place#isDescribedBy"/>
-                <owl:onClass rdf:resource="http://schema.geolink.org/1.0/pattern/place#InformationObject"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/place#InformationObject"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/place#isDescribedBy"/>
-                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/place#InformationObject"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://schema.geolink.org/1.0/pattern/place#InformationObject"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -109,26 +104,26 @@
      -->
 
     <owl:Restriction>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/place#hasSpatialFootprint"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/place#Geometry"/>
         <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/place#Place"/>
+    </owl:Restriction>
+    <owl:Restriction>
         <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/place#isDescribedBy"/>
         <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/place#InformationObject"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/place#Place"/>
     </owl:Restriction>
     <rdf:Description>
-        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/place#Geometry"/>
             <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/place#InformationObject"/>
             <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/place#Place"/>
         </owl:members>
     </rdf:Description>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/place#Place"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/place#hasSpatialFootprint"/>
-        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/place#Geometry"/>
-    </owl:Restriction>
 </rdf:RDF>
 
 
 
-<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
 
