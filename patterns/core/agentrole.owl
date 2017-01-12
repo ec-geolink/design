@@ -200,6 +200,7 @@ Can be used as a hook of a more detailed model of agent.</rdfs:comment>
         <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/agentrole#Agent"/>
             <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/agentrole#AgentRole"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/agentrole#AgentRoleType"/>
             <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/agentrole#TemporalEntity"/>
         </owl:members>
     </rdf:Description>
