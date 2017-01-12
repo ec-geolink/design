@@ -8,6 +8,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="http://schema.geolink.org/1.0/pattern/informationobject">
+        <rdfs:comment>Information Object pattern captures informational aspect of the described object, which are not definitional in nature, e.g., alternative identifiers, webpages, textual description, etc.</rdfs:comment>
         <rdfs:label>GeoLink Information Object pattern</rdfs:label>
     </owl:Ontology>
     
@@ -101,12 +102,6 @@
     
 
 
-    <!-- http://schema.geolink.org/1.0/pattern/informationobject#seeAlso -->
-
-    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/1.0/pattern/informationobject#seeAlso"/>
-    
-
-
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -131,6 +126,8 @@
                 </owl:complementOf>
             </owl:Class>
         </rdfs:subClassOf>
+        <rdfs:comment>Hook to (external) Identifier class, e.g., as defined in the Identifier pattern.</rdfs:comment>
+        <rdfs:label>Identifier</rdfs:label>
     </owl:Class>
     
 
@@ -200,12 +197,8 @@
                 <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#seeAlso"/>
-                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
+        <rdfs:comment>An InformationObject describes informational aspect of the described object, which are not definitional in nature, e.g., alternative identifiers, webpages, textual description, etc.</rdfs:comment>
+        <rdfs:label>InformationObject</rdfs:label>
     </owl:Class>
     
 
@@ -223,6 +216,8 @@
                 </owl:complementOf>
             </owl:Class>
         </rdfs:subClassOf>
+        <rdfs:comment>Some InformationObjects may be realized in some concrete manifestation, e.g., different digital copies of a publication. InformationRealization captures such manifestations.</rdfs:comment>
+        <rdfs:label>InformationRealization</rdfs:label>
     </owl:Class>
     
 
@@ -281,11 +276,6 @@
     </owl:Restriction>
     <owl:Restriction>
         <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#hasWebpage"/>
-        <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#InformationObject"/>
-    </owl:Restriction>
-    <owl:Restriction>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#seeAlso"/>
         <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
         <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#InformationObject"/>
     </owl:Restriction>
