@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://schema.geolink.org/1.0/pattern/identifier#"
      xml:base="http://schema.geolink.org/1.0/pattern/identifier"
-     xmlns:identifier="http://schema.geolink.org/1.0/pattern/identifier#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
@@ -27,13 +26,19 @@
 
     <!-- http://schema.geolink.org/1.0/pattern/identifier#hasIdentifierScheme -->
 
-    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/1.0/pattern/identifier#hasIdentifierScheme"/>
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/1.0/pattern/identifier#hasIdentifierScheme">
+        <rdfs:comment>Provides the scheme of the identifier (as a string or URI), e.g., doi, orcid, etc.</rdfs:comment>
+        <rdfs:label>hasIdentifierScheme</rdfs:label>
+    </owl:DatatypeProperty>
     
 
 
     <!-- http://schema.geolink.org/1.0/pattern/identifier#hasIdentifierValue -->
 
-    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/1.0/pattern/identifier#hasIdentifierValue"/>
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/1.0/pattern/identifier#hasIdentifierValue">
+        <rdfs:comment>Provides the value of the identifier (of type xsd:string or xsd:anyURI)</rdfs:comment>
+        <rdfs:label>hasIdentifierValue</rdfs:label>
+    </owl:DatatypeProperty>
     
 
 
