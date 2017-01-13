@@ -3,7 +3,6 @@
      xml:base="http://schema.geolink.org/1.0/pattern/informationobject"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:informationobject="http://schema.geolink.org/1.0/pattern/informationobject#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
@@ -25,45 +24,53 @@
     
 
 
+    <!-- http://schema.geolink.org/1.0/pattern/informationobject#describedBy -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/informationobject#describedBy">
+        <rdfs:range rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#InformationObject"/>
+        <rdfs:label>describedBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://schema.geolink.org/1.0/pattern/informationobject#hasAlternativeIdentifier -->
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/informationobject#hasAlternativeIdentifier"/>
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/informationobject#hasAlternativeIdentifier">
+        <rdfs:label>hasAlternativeIdentifier</rdfs:label>
+    </owl:ObjectProperty>
     
 
 
     <!-- http://schema.geolink.org/1.0/pattern/informationobject#hasPrimaryIdentifier -->
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/informationobject#hasPrimaryIdentifier"/>
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/informationobject#hasPrimaryIdentifier">
+        <rdfs:label>hasPrimaryIdentifier</rdfs:label>
+    </owl:ObjectProperty>
     
 
 
-    <!-- http://schema.geolink.org/1.0/pattern/informationobject#isAbout -->
+    <!-- http://schema.geolink.org/1.0/pattern/informationobject#realizationAbout -->
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/informationobject#isAbout">
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/informationobject#realizationAbout">
         <rdfs:domain rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#InformationRealization"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description>
-                <owl:inverseOf rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#isRealizedBy"/>
+                <owl:inverseOf rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#realizedBy"/>
             </rdf:Description>
             <rdf:Description>
-                <owl:inverseOf rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#isDescribedBy"/>
+                <owl:inverseOf rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#describedBy"/>
             </rdf:Description>
         </owl:propertyChainAxiom>
+        <rdfs:label>realizationAbout</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://schema.geolink.org/1.0/pattern/informationobject#isDescribedBy -->
+    <!-- http://schema.geolink.org/1.0/pattern/informationobject#realizedBy -->
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/informationobject#isDescribedBy">
-        <rdfs:range rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#InformationObject"/>
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/informationobject#realizedBy">
+        <rdfs:label>realizedBy</rdfs:label>
     </owl:ObjectProperty>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/pattern/informationobject#isRealizedBy -->
-
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/informationobject#isRealizedBy"/>
     
 
 
@@ -80,25 +87,34 @@
 
     <!-- http://schema.geolink.org/1.0/pattern/informationobject#alsoKnownAs -->
 
-    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/1.0/pattern/informationobject#alsoKnownAs"/>
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/1.0/pattern/informationobject#alsoKnownAs">
+        <rdfs:comment>Provides the name alias of the object/entity described by this information object.</rdfs:comment>
+        <rdfs:label>alsoKnownAs</rdfs:label>
+    </owl:DatatypeProperty>
     
 
 
     <!-- http://schema.geolink.org/1.0/pattern/informationobject#hasCanonicalName -->
 
-    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/1.0/pattern/informationobject#hasCanonicalName"/>
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/1.0/pattern/informationobject#hasCanonicalName">
+        <rdfs:label>hasCanonicalName</rdfs:label>
+    </owl:DatatypeProperty>
     
 
 
     <!-- http://schema.geolink.org/1.0/pattern/informationobject#hasDescription -->
 
-    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/1.0/pattern/informationobject#hasDescription"/>
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/1.0/pattern/informationobject#hasDescription">
+        <rdfs:label>hasDescription</rdfs:label>
+    </owl:DatatypeProperty>
     
 
 
     <!-- http://schema.geolink.org/1.0/pattern/informationobject#hasWebpage -->
 
-    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/1.0/pattern/informationobject#hasWebpage"/>
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/1.0/pattern/informationobject#hasWebpage">
+        <rdfs:label>hasWebpage</rdfs:label>
+    </owl:DatatypeProperty>
     
 
 
@@ -120,7 +136,7 @@
             <owl:Class>
                 <owl:complementOf>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#isDescribedBy"/>
+                        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#describedBy"/>
                         <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#InformationObject"/>
                     </owl:Restriction>
                 </owl:complementOf>
@@ -139,7 +155,7 @@
             <owl:Class>
                 <owl:complementOf>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#isDescribedBy"/>
+                        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#describedBy"/>
                         <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#InformationObject"/>
                     </owl:Restriction>
                 </owl:complementOf>
@@ -159,7 +175,7 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#isRealizedBy"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#realizedBy"/>
                 <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#InformationRealization"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -167,7 +183,7 @@
             <owl:Restriction>
                 <owl:onProperty>
                     <rdf:Description>
-                        <owl:inverseOf rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#isDescribedBy"/>
+                        <owl:inverseOf rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#describedBy"/>
                     </rdf:Description>
                 </owl:onProperty>
                 <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
@@ -200,6 +216,83 @@
         <rdfs:comment>An InformationObject describes informational aspect of the described object, which are not definitional in nature, e.g., alternative identifiers, webpages, textual description, etc.</rdfs:comment>
         <rdfs:label>InformationObject</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#InformationObject"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#hasAlternativeIdentifier"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#Identifier"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+        <rdfs:comment>Range of hasAlternativeIdentifier is Identifier  (guard: InformationObject)</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#InformationObject"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#hasPrimaryIdentifier"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#Identifier"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+        <rdfs:comment>Range of hasPrimaryIdentifier is Identifier  (guard: InformationObject)</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#InformationObject"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#realizedBy"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#InformationRealization"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+        <rdfs:comment>Range of realizedBy is InformationRealization  (guard: InformationObject)</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#InformationObject"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#alsoKnownAs"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+        <rdfs:comment>Range of alsoKnownAs is xsd:string  (guard: InformationObject)</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#InformationObject"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#hasCanonicalName"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+        <rdfs:comment>Range of hasCanonicalName is xsd:string  (guard: InformationObject)</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#InformationObject"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#hasDescription"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+        <rdfs:comment>Range of hasDescription is xsd:string  (guard: InformationObject)</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#InformationObject"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#hasWebpage"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+        <rdfs:comment>Range of hasWebpage is xsd:anyURI  (guard: InformationObject)</rdfs:comment>
+    </owl:Axiom>
     
 
 
@@ -210,7 +303,7 @@
             <owl:Class>
                 <owl:complementOf>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#isDescribedBy"/>
+                        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#describedBy"/>
                         <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#InformationObject"/>
                     </owl:Restriction>
                 </owl:complementOf>
@@ -227,7 +320,7 @@
     <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing">
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#isDescribedBy"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#describedBy"/>
                 <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
                 <owl:onClass rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#InformationObject"/>
             </owl:Restriction>
@@ -255,7 +348,7 @@
         <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#InformationObject"/>
     </owl:Restriction>
     <owl:Restriction>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#isRealizedBy"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#realizedBy"/>
         <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#InformationRealization"/>
         <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#InformationObject"/>
     </owl:Restriction>
