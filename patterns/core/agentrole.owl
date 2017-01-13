@@ -25,6 +25,17 @@
     
 
 
+    <!-- http://schema.geolink.org/1.0/pattern/agentrole#agentRoleIn -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/agentrole#agentRoleIn">
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole#providesAgentRole"/>
+        <rdfs:domain rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole#AgentRole"/>
+        <rdfs:comment>agentRoleIn connects a role to the thing thing in which the role is performed by the agent.</rdfs:comment>
+        <rdfs:label>agentRoleIn</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://schema.geolink.org/1.0/pattern/agentrole#hasAgentRoleType -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/agentrole#hasAgentRoleType">
@@ -42,23 +53,12 @@
     
 
 
-    <!-- http://schema.geolink.org/1.0/pattern/agentrole#isAgentRoleIn -->
+    <!-- http://schema.geolink.org/1.0/pattern/agentrole#performedBy -->
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/agentrole#isAgentRoleIn">
-        <owl:inverseOf rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole#providesAgentRole"/>
-        <rdfs:domain rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole#AgentRole"/>
-        <rdfs:comment>isAgentRoleIn connects a role to the thing thing in which the role is performed by the agent.</rdfs:comment>
-        <rdfs:label>isAgentRoleIn</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/pattern/agentrole#isPerformedBy -->
-
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/agentrole#isPerformedBy">
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/agentrole#performedBy">
         <owl:inverseOf rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole#performsAgentRole"/>
-        <rdfs:comment>isPerformedBy connects  a role to the agent that performs it.</rdfs:comment>
-        <rdfs:label>isPerformedBy</rdfs:label>
+        <rdfs:comment>performedBy connects  a role to the agent that performs it.</rdfs:comment>
+        <rdfs:label>performedBy</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -119,8 +119,14 @@ Can be used as a hook of a more detailed model of agent.</rdfs:comment>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole#isPerformedBy"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole#performedBy"/>
                 <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole#Agent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole#agentRoleIn"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -132,13 +138,7 @@ Can be used as a hook of a more detailed model of agent.</rdfs:comment>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole#isAgentRoleIn"/>
-                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole#isPerformedBy"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole#performedBy"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onClass rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole#Agent"/>
             </owl:Restriction>
@@ -176,6 +176,11 @@ Can be used as a hook of a more detailed model of agent.</rdfs:comment>
      -->
 
     <owl:Restriction>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole#agentRoleIn"/>
+        <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole#AgentRole"/>
+    </owl:Restriction>
+    <owl:Restriction>
         <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole#hasAgentRoleType"/>
         <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole#AgentRoleType"/>
         <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole#AgentRole"/>
@@ -186,12 +191,7 @@ Can be used as a hook of a more detailed model of agent.</rdfs:comment>
         <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole#AgentRole"/>
     </owl:Restriction>
     <owl:Restriction>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole#isAgentRoleIn"/>
-        <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole#AgentRole"/>
-    </owl:Restriction>
-    <owl:Restriction>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole#isPerformedBy"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole#performedBy"/>
         <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole#Agent"/>
         <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole#AgentRole"/>
     </owl:Restriction>
