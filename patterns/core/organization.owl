@@ -27,13 +27,17 @@
 
     <!-- http://schema.geolink.org/1.0/pattern/organization#describedBy -->
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/organization#describedBy"/>
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/organization#describedBy">
+        <rdfs:label>describedBy</rdfs:label>
+    </owl:ObjectProperty>
     
 
 
     <!-- http://schema.geolink.org/1.0/pattern/organization#hasCountryOfOrigin -->
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/organization#hasCountryOfOrigin"/>
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/organization#hasCountryOfOrigin">
+        <rdfs:label>hasCountryOfOrigin</rdfs:label>
+    </owl:ObjectProperty>
     
 
 
@@ -41,13 +45,16 @@
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/organization#hasSubOrganization">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:label>hasSubOrganization</rdfs:label>
     </owl:ObjectProperty>
     
 
 
     <!-- http://schema.geolink.org/1.0/pattern/organization#providesAgentRole -->
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/organization#providesAgentRole"/>
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/organization#providesAgentRole">
+        <rdfs:label>providesAgentRole</rdfs:label>
+    </owl:ObjectProperty>
     
 
 
@@ -64,7 +71,9 @@
 
     <!-- http://schema.geolink.org/1.0/pattern/organization#hasCanonicalName -->
 
-    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/1.0/pattern/organization#hasCanonicalName"/>
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/1.0/pattern/organization#hasCanonicalName">
+        <rdfs:label>hasCanonicalName</rdfs:label>
+    </owl:DatatypeProperty>
     
 
 
@@ -94,19 +103,26 @@
                 <owl:onClass rdf:resource="http://schema.geolink.org/1.0/pattern/organization#Organization"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment>This represents the affiliation relation in a reified form (following the Agent Role pattern). For every instance of affiliation role, there is exactly one instance of Organization that provides it.</rdfs:comment>
+        <rdfs:label>AgentAffiliationRole</rdfs:label>
     </owl:Class>
     
 
 
     <!-- http://schema.geolink.org/1.0/pattern/organization#AgentRole -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/organization#AgentRole"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/organization#AgentRole">
+        <rdfs:comment>Hook to Agent Role pattern</rdfs:comment>
+        <rdfs:label>AgentRole</rdfs:label>
+    </owl:Class>
     
 
 
     <!-- http://schema.geolink.org/1.0/pattern/organization#Country -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/organization#Country"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/organization#Country">
+        <rdfs:label>Country</rdfs:label>
+    </owl:Class>
     
 
 
@@ -143,6 +159,8 @@
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment>Hook to Information Object pattern.</rdfs:comment>
+        <rdfs:label>InformationObject</rdfs:label>
     </owl:Class>
     
 
@@ -175,6 +193,7 @@
                 <owl:onClass rdf:resource="http://schema.geolink.org/1.0/pattern/organization#InformationObject"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:label>Organization</rdfs:label>
     </owl:Class>
     
 
