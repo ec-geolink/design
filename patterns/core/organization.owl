@@ -1,25 +1,15 @@
 <?xml version="1.0"?>
-
-
-<!DOCTYPE rdf:RDF [
-    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
-    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
-    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-]>
-
-
 <rdf:RDF xmlns="http://schema.geolink.org/1.0/pattern/organization#"
      xml:base="http://schema.geolink.org/1.0/pattern/organization"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:organization="http://schema.geolink.org/1.0/pattern/organization#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="http://schema.geolink.org/1.0/pattern/organization">
-        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/organization-to-agent"/>
-        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/organization-to-agentrole"/>
-        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/organization-to-informationobject"/>
-        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/organization-to-person"/>
+        <rdfs:comment>Organization pattern models the notion of organization. An organization may provide some agent roles and may have a suborganization. It is also described by an information object that provides information such as the organization&apos;s name, etc. An organization is a type of agent, which is made explicit by subclassing it to the Agent class from Agent Role pattern.</rdfs:comment>
+        <rdfs:label>GeoLink Organization pattern.</rdfs:label>
     </owl:Ontology>
     
 
@@ -35,17 +25,46 @@
     
 
 
-    <!-- http://schema.geolink.org/1.0/pattern/organization#hasCountryLocation -->
+    <!-- http://schema.geolink.org/1.0/pattern/organization#describedBy -->
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/organization#hasCountryLocation"/>
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/organization#describedBy"/>
+    
+
+
+    <!-- http://schema.geolink.org/1.0/pattern/organization#hasCountryOfOrigin -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/organization#hasCountryOfOrigin"/>
     
 
 
     <!-- http://schema.geolink.org/1.0/pattern/organization#hasSubOrganization -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/organization#hasSubOrganization">
-        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
     </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/1.0/pattern/organization#providesAgentRole -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/organization#providesAgentRole"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.geolink.org/1.0/pattern/organization#hasCanonicalName -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/1.0/pattern/organization#hasCanonicalName"/>
     
 
 
@@ -70,14 +89,7 @@
 
     <!-- http://schema.geolink.org/1.0/pattern/organization#AgentRole -->
 
-    <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/organization#AgentRole">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/organization#isPerformedBy"/>
-                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/organization#Agent"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </rdf:Description>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/organization#AgentRole"/>
     
 
 
@@ -89,48 +101,47 @@
 
     <!-- http://schema.geolink.org/1.0/pattern/organization#InformationObject -->
 
-    <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/organization#InformationObject">
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/organization#InformationObject">
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/organization#hasCanonicalName"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="&xsd;string"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/organization#hasCountryOfOrigin"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/organization#Country"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty>
                     <rdf:Description>
-                        <owl:inverseOf rdf:resource="http://schema.geolink.org/1.0/pattern/organization#isDescribedBy"/>
+                        <owl:inverseOf rdf:resource="http://schema.geolink.org/1.0/pattern/organization#describedBy"/>
                     </rdf:Description>
                 </owl:onProperty>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onClass rdf:resource="http://schema.geolink.org/1.0/pattern/organization#Organization"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/organization#hasCanonicalName"/>
-                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/organization#hasCountryLocation"/>
-                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/organization#Country"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/organization#hasCanonicalName"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-    </rdf:Description>
+    </owl:Class>
     
 
 
     <!-- http://schema.geolink.org/1.0/pattern/organization#Organization -->
 
     <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/organization#Organization">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/organization#Agent"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/organization#isDescribedBy"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/organization#describedBy"/>
                 <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/organization#InformationObject"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -142,67 +153,15 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/organization#isDescribedBy"/>
-                <owl:onClass rdf:resource="http://schema.geolink.org/1.0/pattern/organization#InformationObject"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/organization#providesAgentRole"/>
                 <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/organization#AgentRole"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <owl:disjointWith rdf:resource="http://schema.geolink.org/1.0/pattern/organization#Person"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/pattern/organization#OrganizationAffiliationRole -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/organization#OrganizationAffiliationRole">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/organization#AgentAffiliationRole"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/organization#isPerformedBy"/>
-                <owl:onClass rdf:resource="http://schema.geolink.org/1.0/pattern/organization#Organization"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/organization#isPerformedBy"/>
-                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/organization#Organization"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <owl:disjointWith rdf:resource="http://schema.geolink.org/1.0/pattern/organization#PersonAffiliationRole"/>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/pattern/organization#Person -->
-
-    <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/organization#Person">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/organization#Agent"/>
-    </rdf:Description>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/pattern/organization#PersonAffiliationRole -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/organization#PersonAffiliationRole">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/organization#AgentAffiliationRole"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/organization#isPerformedBy"/>
-                <owl:onClass rdf:resource="http://schema.geolink.org/1.0/pattern/organization#Person"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/organization#isPerformedBy"/>
-                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/organization#Person"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/organization#describedBy"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://schema.geolink.org/1.0/pattern/organization#InformationObject"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -218,47 +177,33 @@
      -->
 
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/organization#InformationObject"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/organization#hasCanonicalName"/>
-        <owl:someValuesFrom rdf:resource="&xsd;string"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/organization#describedBy"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/organization#InformationObject"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/organization#Organization"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/organization#InformationObject"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/organization#hasCountryLocation"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/organization#hasCountryOfOrigin"/>
         <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/organization#Country"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/organization#InformationObject"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/organization#Organization"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/organization#providesAgentRole"/>
-        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/organization#AgentRole"/>
-    </owl:Restriction>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/organization#Organization"/>
         <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/organization#hasSubOrganization"/>
         <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/organization#Organization"/>
-    </owl:Restriction>
-    <rdf:Description>
-        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/organization#Agent"/>
-            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/organization#AgentRole"/>
-            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/organization#Country"/>
-            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/organization#InformationObject"/>
-        </owl:members>
-    </rdf:Description>
-    <owl:Restriction>
         <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/organization#Organization"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/organization#isDescribedBy"/>
-        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/organization#InformationObject"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/organization#AgentRole"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/organization#isPerformedBy"/>
-        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/organization#Agent"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/organization#providesAgentRole"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/organization#AgentRole"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/organization#Organization"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/organization#hasCanonicalName"/>
+        <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/organization#InformationObject"/>
     </owl:Restriction>
 </rdf:RDF>
 
 
 
-<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
 
