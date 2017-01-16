@@ -83,6 +83,17 @@
 
     <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/organization#AgentAffiliationRole">
         <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/organization#AgentRole"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://schema.geolink.org/1.0/pattern/organization#providesAgentRole"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://schema.geolink.org/1.0/pattern/organization#Organization"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 

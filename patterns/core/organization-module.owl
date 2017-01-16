@@ -11,9 +11,92 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="http://schema.geolink.org/1.0/pattern/organization-module">
         <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/organization"/>
+        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject-module"/>
+        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole-module"/>
         <rdfs:label>GeoLink Organization module</rdfs:label>
         <rdfs:comment>Organization module imports Organization pattern, Agent Role module, and Information Object module.</rdfs:comment>
     </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.geolink.org/1.0/pattern/organization#describedBy -->
+
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/organization#describedBy">
+        <rdfs:subPropertyOf rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#describedBy"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://schema.geolink.org/1.0/pattern/organization#providesAgentRole -->
+
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/organization#providesAgentRole">
+        <rdfs:subPropertyOf rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole#providesAgentRole"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.geolink.org/1.0/pattern/organization#hasCanonicalName -->
+
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/organization#hasCanonicalName">
+        <rdfs:subPropertyOf rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#hasCanonicalName"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.geolink.org/1.0/pattern/organization#AgentRole -->
+
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/organization#AgentRole">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole#AgentRole"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://schema.geolink.org/1.0/pattern/organization#InformationObject -->
+
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/organization#InformationObject">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#InformationObject"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://schema.geolink.org/1.0/pattern/organization#Organization -->
+
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/organization#Organization">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole#Agent"/>
+    </rdf:Description>
 </rdf:RDF>
 
 
