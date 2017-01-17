@@ -1,25 +1,24 @@
 <?xml version="1.0"?>
-
-
-<!DOCTYPE rdf:RDF [
-    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
-    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
-    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-    <!ENTITY ecglag "http://schema.geolink.org/1.0/pattern/agent#" >
-    <!ENTITY ecglpr "http://schema.geolink.org/1.0/pattern/person#" >
-]>
-
-
-<rdf:RDF xmlns="http://schema.geolink.org/1.0/pattern/person-to-agent#"
-     xml:base="http://schema.geolink.org/1.0/pattern/person-to-agent"
-     xmlns:ecglag="http://schema.geolink.org/1.0/pattern/agent#"
+<rdf:RDF xmlns="http://schema.geolink.org/1.0/pattern/person-module#"
+     xml:base="http://schema.geolink.org/1.0/pattern/person-module"
+     xmlns:glpn="http://schema.geolink.org/1.0/pattern/personname#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:ecglpr="http://schema.geolink.org/1.0/pattern/person#"
+     xmlns:glpii="http://schema.geolink.org/1.0/pattern/personalinfoitem#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:glpr="http://schema.geolink.org/1.0/pattern/person#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="http://schema.geolink.org/1.0/pattern/person-to-agent"/>
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:time="http://www.w3.org/2006/time#"
+     xmlns:person-module="http://schema.geolink.org/1.0/pattern/person-module#">
+    <owl:Ontology rdf:about="http://schema.geolink.org/1.0/pattern/person-module">
+        <owl:imports rdf:resource="http://www.w3.org/2006/time"/>
+        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/personname"/>
+        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/personalinfoitem"/>
+        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/person"/>
+        <rdfs:comment>Person module imports Person pattern, Personal Info Item pattern, Person Name pattern, Agent Role module, and OWL-Time ontology.</rdfs:comment>
+        <rdfs:label>GeoLink Person module.</rdfs:label>
+    </owl:Ontology>
     
 
 
@@ -34,21 +33,44 @@
     
 
 
-    <!-- http://schema.geolink.org/1.0/pattern/agent#performsAgentRole -->
+    <!-- http://schema.geolink.org/1.0/pattern/person#hasPersonalInfoItem -->
 
-    <owl:ObjectProperty rdf:about="&ecglag;performsAgentRole"/>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/person#hasPersonalInfoItem">
+        <owl:inverseOf rdf:resource="http://schema.geolink.org/1.0/pattern/personalinfoitem#personalInfoItemOf"/>
+    </rdf:Description>
     
 
 
-    <!-- http://schema.geolink.org/1.0/pattern/person#isPerformedBy -->
+    <!-- http://schema.geolink.org/1.0/pattern/personalinfoitem#personalInfoItemOf -->
 
-    <owl:ObjectProperty rdf:about="&ecglpr;isPerformedBy">
-        <rdfs:subPropertyOf>
-            <rdf:Description>
-                <owl:inverseOf rdf:resource="&ecglag;performsAgentRole"/>
-            </rdf:Description>
-        </rdfs:subPropertyOf>
-    </owl:ObjectProperty>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/personalinfoitem#personalInfoItemOf"/>
+    
+
+
+    <!-- http://schema.geolink.org/1.0/pattern/personname#hasPersonName -->
+
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/personname#hasPersonName">
+        <rdfs:subPropertyOf rdf:resource="http://schema.geolink.org/1.0/pattern/person#hasPersonalInfoItem"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.geolink.org/1.0/pattern/personname#fullName -->
+
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/personname#fullName">
+        <rdfs:subPropertyOf rdf:resource="http://schema.geolink.org/1.0/pattern/personalinfoitem#hasLiteralValue"/>
+    </rdf:Description>
     
 
 
@@ -63,34 +85,57 @@
     
 
 
-    <!-- http://schema.geolink.org/1.0/pattern/agent#Agent -->
-
-    <owl:Class rdf:about="&ecglag;Agent"/>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/pattern/agent#AgentRole -->
-
-    <owl:Class rdf:about="&ecglag;AgentRole"/>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/pattern/person#BornPersonRole -->
-
-    <owl:Class rdf:about="&ecglpr;BornPersonRole">
-        <rdfs:subClassOf rdf:resource="&ecglag;AgentRole"/>
-    </owl:Class>
-    
-
-
     <!-- http://schema.geolink.org/1.0/pattern/person#Person -->
 
-    <owl:Class rdf:about="&ecglpr;Person">
-        <rdfs:subClassOf rdf:resource="&ecglag;Agent"/>
-    </owl:Class>
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/person#Person">
+        <owl:equivalentClass rdf:resource="http://schema.geolink.org/1.0/pattern/personalinfoitem#Person"/>
+        <owl:equivalentClass rdf:resource="http://schema.geolink.org/1.0/pattern/personname#Person"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://schema.geolink.org/1.0/pattern/person#PersonalInfoItem -->
+
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/person#PersonalInfoItem">
+        <owl:equivalentClass rdf:resource="http://schema.geolink.org/1.0/pattern/personalinfoitem#PersonalInfoItem"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://schema.geolink.org/1.0/pattern/personalinfoitem#Person -->
+
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/personalinfoitem#Person"/>
+    
+
+
+    <!-- http://schema.geolink.org/1.0/pattern/personalinfoitem#PersonalInfoItem -->
+
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/personalinfoitem#PersonalInfoItem"/>
+    
+
+
+    <!-- http://schema.geolink.org/1.0/pattern/personalinfoitem#TemporalEntity -->
+
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/personalinfoitem#TemporalEntity">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://schema.geolink.org/1.0/pattern/personalinfoitem#TimeInstant -->
+
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/personalinfoitem#TimeInstant">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://schema.geolink.org/1.0/pattern/personname#Person -->
+
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/personname#Person"/>
 </rdf:RDF>
 
 
 
-<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
 
