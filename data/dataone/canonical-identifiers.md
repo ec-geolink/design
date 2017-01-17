@@ -36,7 +36,7 @@ For dataset (`:x`) with a DOI identifier that has the DOI name '10.1006/jmbi.199
 ```{ttl}
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix glbase: <http://schema.geolink.org/dev/view.owl > .
-@prefix datacite: <http://purl.spar.org/datacite/> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
 
 :x a glbase:Dataset ;
   #...elided...
