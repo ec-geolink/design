@@ -19,10 +19,7 @@ body {
    text-decoration: none;
 }
 
-table td {
-  padding-right: 20px;
-}
-
-table th {
-  padding-right: 20px;
+table td, th {
+  padding-left: 10px;
+  vertical-align: top;
 }
