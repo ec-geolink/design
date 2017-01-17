@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://schema.geolink.org/1.0/pattern/personname#"
      xml:base="http://schema.geolink.org/1.0/pattern/personname"
+     xmlns:glpn="http://schema.geolink.org/1.0/pattern/personname#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:personname="http://schema.geolink.org/1.0/pattern/personname#">
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="http://schema.geolink.org/1.0/pattern/personname">
         <rdfs:label>GeoLink Person Name pattern.</rdfs:label>
         <rdfs:comment>Person Name pattern is a specialization of Personal Info Item pattern, modeling person names. A person name must have exactly one full name expressed as a string, and additionally at most one first name and at most one surname.</rdfs:comment>
