@@ -23,3 +23,11 @@ table td, th {
   padding-left: 10px;
   vertical-align: top;
 }
+
+td:nth-child(1) {
+  width: 230px;
+}
+
+td:nth-child(3) {
+  width: 80px;
+}
