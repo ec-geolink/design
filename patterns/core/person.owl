@@ -1,31 +1,19 @@
 <?xml version="1.0"?>
-
-
-<!DOCTYPE rdf:RDF [
-    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
-    <!ENTITY swrl "http://www.w3.org/2003/11/swrl#" >
-    <!ENTITY swrlb "http://www.w3.org/2003/11/swrlb#" >
-    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
-    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-]>
-
-
 <rdf:RDF xmlns="http://schema.geolink.org/1.0/pattern/person#"
      xml:base="http://schema.geolink.org/1.0/pattern/person"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
-     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:person="http://schema.geolink.org/1.0/pattern/person#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="http://schema.geolink.org/1.0/pattern/person">
-        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/person-to-agent"/>
-        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/person-to-agentrole"/>
-        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/person-to-event"/>
-        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/person-to-owltime"/>
-        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/person-to-personalinfoitem"/>
-        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/person-to-place"/>
+        <rdfs:comment>Person pattern represents the notion of Person. Intuitively, attributes/properties that constitute a person can be categorized into time-dependent and non-time-dependent ones. Most attributes are time-dependent: even name is time-dependent. These attributes are modeled through Personal Info Item, whose detail can be defined by attaching a separate pattern to the hook provided in this pattern.
+
+Besides time-dependent attributes, there are a few non-time-dependent attributes, e.g., date/time of birth (the same person cannot be born at two different times), place of birth, time of death, and place of death. Nevertheless, no data in GeoLink project provides information regarding those non-time-dependent attributes, and thus, they are not modeled in this pattern, although future version of this pattern may choose to accommodate them.
+
+Person is understood as a type of agent, and thus, the Person module, which imports this pattern, aligns the Person class to the Agent class from Agent Role pattern.</rdfs:comment>
+        <rdfs:label>GeoLink Person pattern.</rdfs:label>
     </owl:Ontology>
     
 
@@ -41,45 +29,11 @@
     
 
 
-    <!-- http://schema.geolink.org/1.0/pattern/person#hasBirthEvent -->
-
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/person#hasBirthEvent"/>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/pattern/person#hasCredential -->
-
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/person#hasCredential"/>
-    
-
-
     <!-- http://schema.geolink.org/1.0/pattern/person#hasPersonalInfoItem -->
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/person#hasPersonalInfoItem"/>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/pattern/person#isPerformedBy -->
-
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/person#isPerformedBy"/>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/pattern/person#occursAtPlace -->
-
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/person#occursAtPlace"/>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/pattern/person#occursAtTime -->
-
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/person#occursAtTime"/>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/pattern/person#providesAgentRole -->
-
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/person#providesAgentRole"/>
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/person#hasPersonalInfoItem">
+        <rdfs:label>hasPersonalInfoItem</rdfs:label>
+    </owl:ObjectProperty>
     
 
 
@@ -94,141 +48,26 @@
     
 
 
-    <!-- http://schema.geolink.org/1.0/pattern/person#BirthEvent -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/person#BirthEvent">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/person#occursAtPlace"/>
-                <owl:onClass rdf:resource="http://schema.geolink.org/1.0/pattern/person#BirthPlace"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/person#occursAtPlace"/>
-                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/person#BirthPlace"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty>
-                    <rdf:Description>
-                        <owl:inverseOf rdf:resource="http://schema.geolink.org/1.0/pattern/person#hasBirthEvent"/>
-                    </rdf:Description>
-                </owl:onProperty>
-                <owl:onClass rdf:resource="http://schema.geolink.org/1.0/pattern/person#Person"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/person#occursAtTime"/>
-                <owl:onClass rdf:resource="http://schema.geolink.org/1.0/pattern/person#BirthTimeInstant"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/person#occursAtTime"/>
-                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/person#BirthTimeInstant"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/person#providesAgentRole"/>
-                <owl:onClass rdf:resource="http://schema.geolink.org/1.0/pattern/person#BornPersonRole"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/pattern/person#BirthPlace -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/person#BirthPlace"/>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/pattern/person#BirthTimeInstant -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/person#BirthTimeInstant"/>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/pattern/person#BornPersonRole -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/person#BornPersonRole">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/person#isPerformedBy"/>
-                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/person#Person"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/person#isPerformedBy"/>
-                <owl:onClass rdf:resource="http://schema.geolink.org/1.0/pattern/person#Person"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty>
-                    <rdf:Description>
-                        <owl:inverseOf rdf:resource="http://schema.geolink.org/1.0/pattern/person#providesAgentRole"/>
-                    </rdf:Description>
-                </owl:onProperty>
-                <owl:onClass rdf:resource="http://schema.geolink.org/1.0/pattern/person#BirthEvent"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/pattern/person#Credential -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/person#Credential"/>
-    
-
-
     <!-- http://schema.geolink.org/1.0/pattern/person#Person -->
 
     <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/person#Person">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/person#hasBirthEvent"/>
-                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/person#BirthEvent"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/person#hasBirthEvent"/>
-                <owl:onClass rdf:resource="http://schema.geolink.org/1.0/pattern/person#BirthEvent"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/person#hasCredential"/>
-                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/person#Credential"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/person#hasPersonalInfoItem"/>
                 <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/person#PersonalInfoItem"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:label>Person</rdfs:label>
     </owl:Class>
     
 
 
     <!-- http://schema.geolink.org/1.0/pattern/person#PersonalInfoItem -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/person#PersonalInfoItem"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/person#PersonalInfoItem">
+        <rdfs:comment>Represents a hook to a more detailed Personal Info Item pattern.</rdfs:comment>
+        <rdfs:label>PersonalInfoItem</rdfs:label>
+    </owl:Class>
     
 
 
@@ -241,126 +80,13 @@
      -->
 
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/person#BirthEvent"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/person#providesAgentRole"/>
-        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/person#BornPersonRole"/>
-    </owl:Restriction>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/person#Person"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/person#hasBirthEvent"/>
-        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/person#BirthEvent"/>
-    </owl:Restriction>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/person#Person"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/person#hasCredential"/>
-        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/person#Credential"/>
-    </owl:Restriction>
-    <rdf:Description>
-        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/person#BirthEvent"/>
-            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/person#BirthPlace"/>
-            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/person#BirthTimeInstant"/>
-            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/person#BornPersonRole"/>
-            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/person#Credential"/>
-            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/person#Person"/>
-            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/person#PersonalInfoItem"/>
-        </owl:members>
-    </rdf:Description>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/person#BirthEvent"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/person#occursAtTime"/>
-        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/person#BirthTimeInstant"/>
-    </owl:Restriction>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/person#Person"/>
         <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/person#hasPersonalInfoItem"/>
         <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/person#PersonalInfoItem"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/person#Person"/>
     </owl:Restriction>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/person#BirthEvent"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/person#occursAtPlace"/>
-        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/person#BirthPlace"/>
-    </owl:Restriction>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Rules
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    <rdf:Description rdf:about="urn:swrl#z">
-        <rdf:type rdf:resource="&swrl;Variable"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="urn:swrl#y">
-        <rdf:type rdf:resource="&swrl;Variable"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="urn:swrl#x">
-        <rdf:type rdf:resource="&swrl;Variable"/>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="&swrl;Imp"/>
-        <swrl:head>
-            <rdf:Description>
-                <rdf:type rdf:resource="&swrl;AtomList"/>
-                <rdf:rest rdf:resource="&rdf;nil"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://schema.geolink.org/1.0/pattern/person#isPerformedBy"/>
-                        <swrl:argument1 rdf:resource="urn:swrl#x"/>
-                        <swrl:argument2 rdf:resource="urn:swrl#z"/>
-                    </rdf:Description>
-                </rdf:first>
-            </rdf:Description>
-        </swrl:head>
-        <swrl:body>
-            <rdf:Description>
-                <rdf:type rdf:resource="&swrl;AtomList"/>
-                <rdf:rest>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;AtomList"/>
-                        <rdf:first>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="&swrl;ClassAtom"/>
-                                <swrl:classPredicate rdf:resource="http://schema.geolink.org/1.0/pattern/person#BornPersonRole"/>
-                                <swrl:argument1 rdf:resource="urn:swrl#x"/>
-                            </rdf:Description>
-                        </rdf:first>
-                        <rdf:rest>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="&swrl;AtomList"/>
-                                <rdf:rest rdf:resource="&rdf;nil"/>
-                                <rdf:first>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
-                                        <swrl:propertyPredicate rdf:resource="http://schema.geolink.org/1.0/pattern/person#providesAgentRole"/>
-                                        <swrl:argument2 rdf:resource="urn:swrl#x"/>
-                                        <swrl:argument1 rdf:resource="urn:swrl#y"/>
-                                    </rdf:Description>
-                                </rdf:first>
-                            </rdf:Description>
-                        </rdf:rest>
-                    </rdf:Description>
-                </rdf:rest>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://schema.geolink.org/1.0/pattern/person#hasBirthEvent"/>
-                        <swrl:argument2 rdf:resource="urn:swrl#y"/>
-                        <swrl:argument1 rdf:resource="urn:swrl#z"/>
-                    </rdf:Description>
-                </rdf:first>
-            </rdf:Description>
-        </swrl:body>
-    </rdf:Description>
 </rdf:RDF>
 
 
 
-<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
 
