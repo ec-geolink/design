@@ -76,8 +76,14 @@
     <!-- http://schema.geolink.org/1.0/pattern/fundingaward#TimeInstant -->
 
     <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/fundingaward#TimeInstant">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#Instant"/>
+        <owl:equivalentClass rdf:resource="http://www.w3.org/2006/time#Instant"/>
     </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/2006/time#Instant -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2006/time#Instant"/>
 </rdf:RDF>
 
 
