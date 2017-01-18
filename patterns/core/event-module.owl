@@ -73,7 +73,7 @@
     <!-- http://schema.geolink.org/1.0/pattern/event#TemporalEntity -->
 
     <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/event#TemporalEntity">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+        <owl:equivalentClass rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
     </rdf:Description>
     
 
@@ -81,8 +81,20 @@
     <!-- http://schema.geolink.org/1.0/pattern/event#TimeInstant -->
 
     <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/event#TimeInstant">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#Instant"/>
+        <owl:equivalentClass rdf:resource="http://www.w3.org/2006/time#Instant"/>
     </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/2006/time#Instant -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2006/time#Instant"/>
+    
+
+
+    <!-- http://www.w3.org/2006/time#TemporalEntity -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2006/time#TemporalEntity"/>
 </rdf:RDF>
 
 
