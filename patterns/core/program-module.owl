@@ -3,6 +3,7 @@
      xml:base="http://schema.geolink.org/1.0/pattern/program-module"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:informationobject="http://schema.geolink.org/1.0/pattern/informationobject#"
      xmlns:glar="http://schema.geolink.org/1.0/pattern/agentrole#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:program-module="http://schema.geolink.org/1.0/pattern/program-module#"
@@ -23,7 +24,7 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
-    // Object Properties
+    // Annotation properties
     //
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
@@ -31,19 +32,31 @@
     
 
 
+    <!-- http://schema.geolink.org/1.0/pattern/agentrole#providesAgentRole -->
+
+    <owl:AnnotationProperty rdf:about="http://schema.geolink.org/1.0/pattern/agentrole#providesAgentRole"/>
+    
+
+
+    <!-- http://schema.geolink.org/1.0/pattern/informationobject#describedBy -->
+
+    <owl:AnnotationProperty rdf:about="http://schema.geolink.org/1.0/pattern/informationobject#describedBy"/>
+    
+
+
     <!-- http://schema.geolink.org/1.0/pattern/program#describedBy -->
 
-    <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/program#describedBy">
+    <owl:AnnotationProperty rdf:about="http://schema.geolink.org/1.0/pattern/program#describedBy">
         <rdfs:subPropertyOf rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#describedBy"/>
-    </rdf:Description>
+    </owl:AnnotationProperty>
     
 
 
     <!-- http://schema.geolink.org/1.0/pattern/program#providesAgentRole -->
 
-    <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/program#providesAgentRole">
+    <owl:AnnotationProperty rdf:about="http://schema.geolink.org/1.0/pattern/program#providesAgentRole">
         <rdfs:subPropertyOf rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole#providesAgentRole"/>
-    </rdf:Description>
+    </owl:AnnotationProperty>
     
 
 
