@@ -3,10 +3,10 @@
      xml:base="http://schema.geolink.org/1.0/pattern/propertyvalue"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:propertyvalue="http://schema.geolink.org/1.0/pattern/propertyvalue#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:glpv="http://schema.geolink.org/1.0/pattern/propertyvalue#">
     <owl:Ontology rdf:about="http://schema.geolink.org/1.0/pattern/propertyvalue">
         <rdfs:comment>Property Value pattern models properties, which are inherent to the target object. In principle, the pattern could be understood as a reification that generalizes the properties. This should be distinguished from information associated with the target object as modeled by Information Object pattern. For example, age, shape, and material type are properties of a physical sample, while name, description, and website are information captured by information object of the physical sample.</rdfs:comment>
         <rdfs:label>GeoLink Property Value pattern</rdfs:label>

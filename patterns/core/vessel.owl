@@ -1,28 +1,51 @@
 <?xml version="1.0"?>
-
-
-<!DOCTYPE rdf:RDF [
-    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
-    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
-    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-]>
-
-
 <rdf:RDF xmlns="http://schema.geolink.org/1.0/pattern/vessel#"
      xml:base="http://schema.geolink.org/1.0/pattern/vessel"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:vessel="http://schema.geolink.org/1.0/pattern/vessel#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="http://schema.geolink.org/1.0/pattern/vessel">
-        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/vessel-to-agent"/>
-        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/vessel-to-agentrole"/>
-        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/vessel-to-informationobject"/>
-        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/vessel-to-owltime"/>
-        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/vessel-to-platform"/>
-        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/vessel-to-propertyvalue"/>
+        <rdfs:label>GeoLink Vessel pattern.</rdfs:label>
+        <rdfs:comment>Vessel pattern represents vessels (ships), which are usually used for oceanographic cruises.</rdfs:comment>
     </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.geolink.org/1.0/pattern/vessel#describedBy -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/vessel#describedBy">
+        <rdfs:label>describedBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/1.0/pattern/vessel#hasProperty -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/vessel#hasProperty">
+        <rdfs:label>hasProperty</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/1.0/pattern/vessel#providesAgentRole -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/vessel#providesAgentRole">
+        <rdfs:label>providesAgentRole</rdfs:label>
+    </owl:ObjectProperty>
     
 
 
@@ -39,44 +62,35 @@
 
     <!-- http://schema.geolink.org/1.0/pattern/vessel#AgentRole -->
 
-    <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/vessel#AgentRole">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/vessel#isPerformedBy"/>
-                <owl:onClass rdf:resource="http://schema.geolink.org/1.0/pattern/vessel#Agent"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/vessel#isPerformedBy"/>
-                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/vessel#Agent"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </rdf:Description>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/vessel#AgentRole">
+        <rdfs:label>AgentRole</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/1.0/pattern/vessel#InformationObject -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/vessel#InformationObject">
+        <rdfs:label>InformationObject</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/1.0/pattern/vessel#Property -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/vessel#Property">
+        <rdfs:label>Property</rdfs:label>
+    </owl:Class>
     
 
 
     <!-- http://schema.geolink.org/1.0/pattern/vessel#Vessel -->
 
-    <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/vessel#Vessel">
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/vessel#Vessel">
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/vessel#providesAgentRole"/>
-                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/vessel#AgentRole"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/vessel#isDescribedBy"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/vessel#describedBy"/>
                 <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/vessel#InformationObject"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/vessel#isDescribedBy"/>
-                <owl:onClass rdf:resource="http://schema.geolink.org/1.0/pattern/vessel#InformationObject"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -85,7 +99,30 @@
                 <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/vessel#Property"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-    </rdf:Description>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/vessel#providesAgentRole"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/vessel#AgentRole"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/vessel#describedBy"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://schema.geolink.org/1.0/pattern/vessel#InformationObject"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Vessel</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/1.0/pattern/vessel#VesselOwnerRole -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/vessel#VesselOwnerRole">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/vessel#AgentRole"/>
+        <rdfs:label>VesselOwnerRole</rdfs:label>
+    </owl:Class>
     
 
 
@@ -98,28 +135,23 @@
      -->
 
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/vessel#AgentRole"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/vessel#isPerformedBy"/>
-        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/vessel#Agent"/>
-    </owl:Restriction>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/vessel#Vessel"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/vessel#providesAgentRole"/>
-        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/vessel#AgentRole"/>
-    </owl:Restriction>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/vessel#Vessel"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/vessel#isDescribedBy"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/vessel#describedBy"/>
         <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/vessel#InformationObject"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/vessel#Vessel"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/vessel#Vessel"/>
         <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/vessel#hasProperty"/>
         <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/vessel#Property"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/vessel#Vessel"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/vessel#providesAgentRole"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/vessel#AgentRole"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/vessel#Vessel"/>
     </owl:Restriction>
 </rdf:RDF>
 
 
 
-<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
 
