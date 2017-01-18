@@ -63,7 +63,7 @@
     <!-- http://schema.geolink.org/1.0/pattern/place#Geometry -->
 
     <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/place#Geometry">
-        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
+        <owl:equivalentClass rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
     </rdf:Description>
     
 
@@ -73,6 +73,12 @@
     <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/place#InformationObject">
         <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#InformationObject"/>
     </rdf:Description>
+    
+
+
+    <!-- http://www.opengis.net/ont/geosparql#Geometry -->
+
+    <rdf:Description rdf:about="http://www.opengis.net/ont/geosparql#Geometry"/>
 </rdf:RDF>
 
 
