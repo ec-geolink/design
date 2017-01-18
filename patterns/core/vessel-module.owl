@@ -10,9 +10,9 @@
      xmlns:vessel-module="http://schema.geolink.org/1.0/pattern/vessel-module#">
     <owl:Ontology rdf:about="http://schema.geolink.org/1.0/pattern/vessel-module">
         <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/propertyvalue"/>
-        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject-module"/>
         <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole-module"/>
         <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/vessel"/>
+        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/platform-module"/>
         <rdfs:comment>Vessel module includes Vessel pattern, Information Object module, Agent Role module, and Property Value pattern.</rdfs:comment>
         <rdfs:label>GeoLink Vessel module</rdfs:label>
     </owl:Ontology>
@@ -33,7 +33,7 @@
     <!-- http://schema.geolink.org/1.0/pattern/vessel#describedBy -->
 
     <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/vessel#describedBy">
-        <rdfs:subPropertyOf rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#describedBy"/>
+        <rdfs:subPropertyOf rdf:resource="http://schema.geolink.org/1.0/pattern/platform#describedBy"/>
     </rdf:Description>
     
 
@@ -76,7 +76,7 @@
     <!-- http://schema.geolink.org/1.0/pattern/vessel#InformationObject -->
 
     <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/vessel#InformationObject">
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#InformationObject"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/platform#InformationObject"/>
     </rdf:Description>
     
 
@@ -85,6 +85,14 @@
 
     <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/vessel#Property">
         <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/propertyvalue#Property"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://schema.geolink.org/1.0/pattern/vessel#Vessel -->
+
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/vessel#Vessel">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/platform#Platform"/>
     </rdf:Description>
 </rdf:RDF>
 
