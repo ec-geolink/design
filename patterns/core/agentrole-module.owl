@@ -31,15 +31,15 @@
 
     <!-- http://schema.geolink.org/1.0/pattern/agentrole#TemporalEntity -->
 
-    <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/agentrole#TemporalEntity">
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/agentrole#TemporalEntity">
         <owl:equivalentClass rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
-    </rdf:Description>
+    </owl:Class>
     
 
 
     <!-- http://www.w3.org/2006/time#TemporalEntity -->
 
-    <rdf:Description rdf:about="http://www.w3.org/2006/time#TemporalEntity"/>
+    <owl:Class rdf:about="http://www.w3.org/2006/time#TemporalEntity"/>
 </rdf:RDF>
 
 
