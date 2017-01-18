@@ -3,7 +3,7 @@
      xml:base="http://schema.geolink.org/1.0/pattern/personalinfoitem"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:glpii="http://schema.geolink.org/1.0/pattern/personalinfoitem#"
+     xmlns:personalinfoitem="http://schema.geolink.org/1.0/pattern/personalinfoitem#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
@@ -24,7 +24,9 @@
 
     <!-- http://schema.geolink.org/1.0/pattern/personalinfoitem#endsAtTime -->
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/personalinfoitem#endsAtTime"/>
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/personalinfoitem#endsAtTime">
+        <rdfs:subPropertyOf rdf:resource="http://schema.geolink.org/1.0/pattern/personalinfoitem#hasTemporalExtent"/>
+    </owl:ObjectProperty>
     
 
 
@@ -50,7 +52,9 @@
 
     <!-- http://schema.geolink.org/1.0/pattern/personalinfoitem#startsAtTime -->
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/personalinfoitem#startsAtTime"/>
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/personalinfoitem#startsAtTime">
+        <rdfs:subPropertyOf rdf:resource="http://schema.geolink.org/1.0/pattern/personalinfoitem#hasTemporalExtent"/>
+    </owl:ObjectProperty>
     
 
 
@@ -117,6 +121,27 @@
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/personalinfoitem#startsAtTime"/>
                 <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/personalinfoitem#TimeInstant"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/personalinfoitem#personalInfoItemOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://schema.geolink.org/1.0/pattern/personalinfoitem#Person"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/personalinfoitem#startsAtTime"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://schema.geolink.org/1.0/pattern/personalinfoitem#TimeInstant"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/personalinfoitem#endsAtTime"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://schema.geolink.org/1.0/pattern/personalinfoitem#TimeInstant"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label>PersonalInfoItem</rdfs:label>
