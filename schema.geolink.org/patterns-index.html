@@ -48,71 +48,70 @@
           <div class="padding">
             <p class="lead">
 
-<!--p>OceanLink Design Document: (pdf: <a href="/docs/0.9/">0.9</a>, <a href="/docs/draft/">draft</a>)</p-->
-<!--p>GeoLink Pattern Documentation (<a href="/docs/0.1/main-pattern-collections.pdf">pdf</a>)</p-->
-<p>GeoLink Modular Ontology Documentation (<a href="/patterns/core/main-pattern-collections.pdf">pdf</a>)</p>
+              
+<p>GeoLink Modular Ontology (GMO) Documentation (<a href="/patterns/core/main-pattern-collections.pdf">pdf</a>)</p>
+<p>Parts of GMO indicated as module below contains alignmenta axioms between classes and properties from the imported patterns, modules, and ontologies.</p>
 
 <table>
 
-<tr><th>Pattern/Module</th><th>URI</th><th>Format</th><th>Note</th></tr>
+<tr><th>Pattern & Module</th><th>URI</th><th>Format</th><th>Note</th></tr>
 
 <tr>
-  <td>Agent Role (core pattern)</td><td><a href="/1.0/pattern/agentrole">http://schema.geolink.org/1.0/pattern/agentrole</a></td>
+  <td>Agent Role (pattern)</td><td><a href="/1.0/pattern/agentrole">http://schema.geolink.org/1.0/pattern/agentrole</a></td>
   <td>[ <a href="http://schema.geolink.org/1.0/pattern/agentrole.html">html</a>, <a href="http://schema.geolink.org/1.0/pattern/agentrole.owl">rdf</a> ]</td>
-  <!--td style="white-space:pre-wrap ; word-wrap:break-word;">Represents a role that may be performed by an agent within a particular context.</td-->
 </tr>
 
 <tr>
   <td>Agent Role (module)</td><td><a href="/1.0/pattern/agentrole-owltime">http://schema.geolink.org/1.0/pattern/agentrole-module</a></td>
   <td>[ <a href="http://schema.geolink.org/1.0/pattern/agentrole-owltime.html">html</a>, <a href="http://schema.geolink.org/1.0/pattern/agentrole-owltime.owl">rdf</a> ]</td>
-  <td style="white-space:pre-wrap ; word-wrap:break-word;">Includes Agent Role core pattern and alignment with <a href="https://www.w3.org/TR/owl-time/">OWL-Time</a> ontology.</td>
+  <td style="white-space:pre-wrap ; word-wrap:break-word;">Imports Agent Role pattern and alignment with <a href="https://www.w3.org/TR/owl-time/">OWL-Time</a> ontology.</td>
 </tr>
 
 <tr><td>Cruise</td><td><a href="/1.0/pattern/cruise">http://schema.geolink.org/1.0/pattern/cruise</a></td>
   <td>[ <a href="http://schema.geolink.org/1.0/pattern/cruise.html">html</a>, <a href="http://schema.geolink.org/1.0/pattern/cruise.owl">rdf</a> ]</td></tr>
 
-<tr><td>Event (core pattern)</td><td><a href="/1.0/pattern/event">http://schema.geolink.org/1.0/pattern/event</a></td>
+<tr><td>Event (pattern)</td><td><a href="/1.0/pattern/event">http://schema.geolink.org/1.0/pattern/event</a></td>
   <td>[ <a href="http://schema.geolink.org/1.0/pattern/event.html">html</a>, <a href="http://schema.geolink.org/1.0/pattern/event.owl">rdf</a> ]</td></tr>
 
-<tr><td>Event (module)</td><td><a href="/1.0/pattern/event">http://schema.geolink.org/1.0/pattern/event</a></td>
-  <td>[ <a href="http://schema.geolink.org/1.0/pattern/event.html">html</a>, <a href="http://schema.geolink.org/1.0/pattern/event.owl">rdf</a> ]</td>
-  <td style="white-space:pre-wrap ; word-wrap:break-word;">Includes Event pattern, Agent Role module, Place module, and alignment with <a href="https://www.w3.org/TR/owl-time/">OWL-Time</a> ontology.</td>
+<tr><td>Event (module)</td><td><a href="/1.0/pattern/event-module">http://schema.geolink.org/1.0/pattern/event-module</a></td>
+  <td>[ <a href="http://schema.geolink.org/1.0/pattern/event-module.html">html</a>, <a href="http://schema.geolink.org/1.0/pattern/event-module.owl">rdf</a> ]</td>
+  <td style="white-space:pre-wrap ; word-wrap:break-word;">Imports Event pattern, Agent Role module, Place module, and alignment with <a href="https://www.w3.org/TR/owl-time/">OWL-Time</a> ontology.</td>
 </tr>
 
-<tr><td>Funding Award (core pattern)</td><td><a href="/1.0/pattern/fundingaward">http://schema.geolink.org/1.0/pattern/fundingaward</a></td>
+<tr><td>Funding Award (pattern)</td><td><a href="/1.0/pattern/fundingaward">http://schema.geolink.org/1.0/pattern/fundingaward</a></td>
   <td>[ <a href="http://schema.geolink.org/1.0/pattern/fundingaward.html">html</a>, <a href="http://schema.geolink.org/1.0/pattern/fundingaward.owl">rdf</a> ]</td></tr>
 
 <tr><td>Funding Award (module)</td><td><a href="/1.0/pattern/fundingaward-module">http://schema.geolink.org/1.0/pattern/fundingaward-module</a></td>
   <td>[ <a href="http://schema.geolink.org/1.0/pattern/fundingaward-module.html">html</a>, <a href="http://schema.geolink.org/1.0/pattern/fundingaward-module.owl">rdf</a> ]</td>
-  <td style="white-space:pre-wrap ; word-wrap:break-word;">Includes Funding Award pattern, Agent Role module, Information Object module, and alignment with <a href="https://www.w3.org/TR/owl-time/">OWL-Time</a> ontology.</td>
+  <td style="white-space:pre-wrap ; word-wrap:break-word;">Imports Funding Award pattern, Agent Role module, Information Object module, and alignment with <a href="https://www.w3.org/TR/owl-time/">OWL-Time</a> ontology.</td>
 </tr>
 
 <tr><td>Identifier</td><td><a href="/1.0/pattern/identifier">http://schema.geolink.org/1.0/pattern/identifier</a></td>
   <td>[ <a href="http://schema.geolink.org/1.0/pattern/identifier.html">html</a>, <a href="http://schema.geolink.org/1.0/pattern/identifier.owl">rdf</a> ]</td></tr>
 
-<tr><td>Information Object (core pattern) </td><td><a href="/1.0/pattern/informationobject">http://schema.geolink.org/1.0/pattern/informationobject</a></td>
+<tr><td>Information Object (pattern) </td><td><a href="/1.0/pattern/informationobject">http://schema.geolink.org/1.0/pattern/informationobject</a></td>
   <td>[ <a href="http://schema.geolink.org/1.0/pattern/informationobject.html">html</a>, <a href="http://schema.geolink.org/1.0/pattern/informationobject.owl">rdf</a> ]</td></tr>
 
 <tr><td>Information Object (module) </td><td><a href="/1.0/pattern/informationobject-module">http://schema.geolink.org/1.0/pattern/informationobject-module</a></td>
   <td>[ <a href="http://schema.geolink.org/1.0/pattern/informationobject-module.html">html</a>, <a href="http://schema.geolink.org/1.0/pattern/informationobject-module.owl">rdf</a> ]</td>
-  <td style="white-space:pre-wrap ; word-wrap:break-word;">Includes Information Object and Identifier core patterns.</td>
+  <td style="white-space:pre-wrap ; word-wrap:break-word;">Imports Information Object and Identifier patterns.</td>
 </tr>
 
-<tr><td>Organization (core pattern) </td><td><a href="/1.0/pattern/organization">http://schema.geolink.org/1.0/pattern/organization</a></td>
+<tr><td>Organization (pattern) </td><td><a href="/1.0/pattern/organization">http://schema.geolink.org/1.0/pattern/organization</a></td>
   <td>[ <a href="http://schema.geolink.org/1.0/pattern/organization.html">html</a>, <a href="http://schema.geolink.org/1.0/pattern/organization.owl">rdf</a> ]</td></tr>
 
 <tr><td>Organization (module) </td><td><a href="/1.0/pattern/organization-module">http://schema.geolink.org/1.0/pattern/organization-module</a></td>
   <td>[ <a href="http://schema.geolink.org/1.0/pattern/organization-module.html">html</a>, <a href="http://schema.geolink.org/1.0/pattern/organization-module.owl">rdf</a> ]</td>
-  <td style="white-space:pre-wrap ; word-wrap:break-word;">Includes Organization pattern, Agent Role module, Information Object module.</td>
+  <td style="white-space:pre-wrap ; word-wrap:break-word;">Imports Organization pattern, Agent Role module, Information Object module.</td>
 </tr>
 
-<tr><td>Person (core pattern) </td><td><a href="/1.0/pattern/person">http://schema.geolink.org/1.0/pattern/person</a></td>
+<tr><td>Person (pattern) </td><td><a href="/1.0/pattern/person">http://schema.geolink.org/1.0/pattern/person</a></td>
   <td> [ <a href="http://schema.geolink.org/1.0/pattern/person.html">html</a>, <a href="http://schema.geolink.org/1.0/pattern/person.owl">rdf</a> ]</td></tr>
 
 <tr><td>Person (module) </td>
   <td><a href="/1.0/pattern/person-module">http://schema.geolink.org/1.0/pattern/person-module</a></td>
   <td> [ <a href="http://schema.geolink.org/1.0/pattern/person-module.html">html</a>, <a href="http://schema.geolink.org/1.0/pattern/person-module.owl">rdf</a> ]</td>
-  <td style="white-space:pre-wrap ; word-wrap:break-word;">Includes Person pattern, Personal Info Item pattern, Person Name pattern, Agent Role module, and alignment with <a href="https://www.w3.org/TR/owl-time/">OWL-Time</a> ontology.</td>
+  <td style="white-space:pre-wrap ; word-wrap:break-word;">Imports Person pattern, Personal Info Item pattern, Person Name pattern, Agent Role module, and alignment with <a href="https://www.w3.org/TR/owl-time/">OWL-Time</a> ontology.</td>
 </tr>
 
 <tr><td>Personal Info Item</td><td><a href="/1.0/pattern/personalinfoitem">http://schema.geolink.org/1.0/pattern/personalinfoitem</a></td>
@@ -124,23 +123,24 @@
 <tr><td>Physical Sample</td><td><a href="/1.0/pattern/physicalsample">http://schema.geolink.org/1.0/pattern/physicalsample</a></td>
   <td> [ <a href="http://schema.geolink.org/1.0/pattern/physicalsample.html">html</a>, <a href="http://schema.geolink.org/1.0/pattern/physicalsample.owl">rdf</a> ]</td></tr>
 
-<tr><td>Place (core pattern)</td><td><a href="/1.0/pattern/place">http://schema.geolink.org/1.0/pattern/place</a></td>
+<tr><td>Place (pattern)</td><td><a href="/1.0/pattern/place">http://schema.geolink.org/1.0/pattern/place</a></td>
   <td>[ <a href="http://schema.geolink.org/1.0/pattern/place.html">html</a>, <a href="http://schema.geolink.org/1.0/pattern/place.owl">rdf</a>]</td></tr>
 
 <tr><td>Place (module)</td><td><a href="/1.0/pattern/place-module">http://schema.geolink.org/1.0/pattern/place-module</a></td>
   <td>[ <a href="http://schema.geolink.org/1.0/pattern/place-module.html">html</a>, <a href="http://schema.geolink.org/1.0/pattern/place-module.owl">rdf</a>]</td>
-  <td style="white-space:pre-wrap ; word-wrap:break-word;">Includes Information Object module and alignment with GeoSPARQL ontology.</td>
+  <td style="white-space:pre-wrap ; word-wrap:break-word;">Imports Place pattern, Information Object module, and <a href="http://www.opengeospatial.org/standards/geosparql">GeoSPARQL</a> ontology
+  with alignment axioms</td>
 </tr>
 
 <tr><td>Platform</td><td><a href="/1.0/pattern/platform">http://schema.geolink.org/1.0/pattern/platform</a></td>
   <td>[ <a href="http://schema.geolink.org/1.0/pattern/platform.html">html</a>, <a href="http://schema.geolink.org/1.0/pattern/platform.owl">rdf</a> ]</td></tr>
 
-<tr><td>Program (core pattern)</td><td><a href="/1.0/pattern/program">http://schema.geolink.org/1.0/pattern/program</a></td>
+<tr><td>Program (pattern)</td><td><a href="/1.0/pattern/program">http://schema.geolink.org/1.0/pattern/program</a></td>
   <td> [ <a href="http://schema.geolink.org/1.0/pattern/program.html">html</a>, <a href="http://schema.geolink.org/1.0/pattern/program.owl">rdf</a> ]</td></tr>
 
 <tr><td>Program (module)</td><td><a href="/1.0/pattern/program-module">http://schema.geolink.org/1.0/pattern/program-module</a></td>
   <td> [ <a href="http://schema.geolink.org/1.0/pattern/program-module.html">html</a>, <a href="http://schema.geolink.org/1.0/pattern/program-module.owl">rdf</a> ]</td>
-  <td style="white-space:pre-wrap ; word-wrap:break-word;">Includes Program pattern, Agent Role module, Information Object module, and alignment with <a href="https://www.w3.org/TR/owl-time/">OWL-Time</a> ontology.</td>
+  <td style="white-space:pre-wrap ; word-wrap:break-word;">Imports Program pattern, Agent Role module, Information Object module, and alignment with <a href="https://www.w3.org/TR/owl-time/">OWL-Time</a> ontology.</td>
 </tr>
 
 <tr><td>Property Value</td><td><a href="/1.0/pattern/propertyvalue">http://schema.geolink.org/1.0/pattern/propertyvalue</a></td>
