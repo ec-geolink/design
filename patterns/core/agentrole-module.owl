@@ -34,12 +34,24 @@
     <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/agentrole#TemporalEntity">
         <owl:equivalentClass rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole#TemporalEntity"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2002/07/owl#equivalentClass"/>
+        <owl:annotatedTarget rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+        <rdfs:comment>Alignment axiom between AgentRole and OWL-Time.</rdfs:comment>
+    </owl:Axiom>
     
 
 
     <!-- http://www.w3.org/2006/time#TemporalEntity -->
 
     <owl:Class rdf:about="http://www.w3.org/2006/time#TemporalEntity"/>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole#TemporalEntity"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2002/07/owl#equivalentClass"/>
+        <owl:annotatedTarget rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+        <rdfs:comment>Alignment axiom between AgentRole and OWL-Time.</rdfs:comment>
+    </owl:Axiom>
 </rdf:RDF>
 
 
