@@ -146,6 +146,17 @@ Can be used as a hook of a more detailed model of agent.</rdfs:comment>
         <rdfs:comment>An instance of AgentRole represents a role performed by an agent, which is temporally restricted by a starting and ending time.  Every agent role is performed by exactly one agent. One can create a subclass of AgentRole to model a particular kind of roles.</rdfs:comment>
         <rdfs:label>AgentRole</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole#AgentRole"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole#performedBy"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole#Agent"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+        <rdfs:comment>Guarded range for performedBy (range: Agent, guard: AgentRole)</rdfs:comment>
+    </owl:Axiom>
     
 
 
