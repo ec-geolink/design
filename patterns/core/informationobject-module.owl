@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://schema.geolink.org/1.0/pattern/informationobject-to-identifier#"
      xml:base="http://schema.geolink.org/1.0/pattern/informationobject-to-identifier"
+     xmlns:informationobject-module="http://schema.geolink.org/1.0/pattern/informationobject-module#"
      xmlns:glid="http://schema.geolink.org/1.0/pattern/identifier#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
@@ -9,36 +10,9 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:glio="http://schema.geolink.org/1.0/pattern/informationobject#">
     <owl:Ontology rdf:about="http://schema.geolink.org/1.0/pattern/informationobject-module">
-        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject"/>
-        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/identifier"/>
         <rdfs:label>GeoLink Information Object module</rdfs:label>
         <rdfs:comment>Information Object module, which includes Information Object pattern and Identifier pattern</rdfs:comment>
     </owl:Ontology>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Classes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://schema.geolink.org/1.0/pattern/identifier#Identifier -->
-
-    <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/identifier#Identifier">
-        <owl:equivalentClass rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#Identifier"/>
-    </rdf:Description>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/pattern/informationobject#Identifier -->
-
-    <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/informationobject#Identifier"/>
 </rdf:RDF>
 
 
