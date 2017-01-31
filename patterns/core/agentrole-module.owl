@@ -11,35 +11,9 @@
      xmlns:agentrole-module="http://schema.geolink.org/1.0/pattern/agentrole-module#">
     <owl:Ontology rdf:about="http://schema.geolink.org/1.0/pattern/agentrole-module">
         <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole"/>
-        <owl:imports rdf:resource="http://www.w3.org/2006/time"/>
         <rdfs:comment>The whole Agent Role module, which includes the Agent Role pattern and its alignment to OWL-Time Ontology</rdfs:comment>
         <rdfs:label>GeoLink Agent Role module</rdfs:label>
     </owl:Ontology>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Classes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://schema.geolink.org/1.0/pattern/agentrole#TemporalEntity -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/agentrole#TemporalEntity">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.w3.org/2006/time#TemporalEntity -->
-
-    <owl:Class rdf:about="http://www.w3.org/2006/time#TemporalEntity"/>
 </rdf:RDF>
 
 
