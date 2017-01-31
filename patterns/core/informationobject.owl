@@ -3,10 +3,12 @@
      xml:base="http://schema.geolink.org/1.0/pattern/informationobject"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:informationobject="http://schema.geolink.org/1.0/pattern/informationobject#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="http://schema.geolink.org/1.0/pattern/informationobject">
+        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/identifier"/>
         <rdfs:comment>Information Object pattern captures informational aspect of the described object, which are not definitional in nature, e.g., alternative identifiers, webpages, textual description, etc.</rdfs:comment>
         <rdfs:label>GeoLink Information Object pattern</rdfs:label>
     </owl:Ontology>
@@ -129,9 +131,9 @@
     
 
 
-    <!-- http://schema.geolink.org/1.0/pattern/informationobject#Identifier -->
+    <!-- http://schema.geolink.org/1.0/pattern/identifier#Identifier -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/informationobject#Identifier">
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/identifier#Identifier">
         <rdfs:subClassOf>
             <owl:Class>
                 <owl:complementOf>
@@ -142,9 +144,7 @@
                 </owl:complementOf>
             </owl:Class>
         </rdfs:subClassOf>
-        <rdfs:comment>Hook to (external) Identifier class, e.g., as defined in the Identifier pattern.</rdfs:comment>
-        <rdfs:label>Identifier</rdfs:label>
-    </owl:Class>
+    </rdf:Description>
     
 
 
@@ -164,13 +164,13 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#hasAlternativeIdentifier"/>
-                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#Identifier"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/identifier#Identifier"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#hasPrimaryIdentifier"/>
-                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#Identifier"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/identifier#Identifier"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -216,28 +216,6 @@
         <rdfs:comment>An InformationObject describes informational aspect of the described object, which are not definitional in nature, e.g., alternative identifiers, webpages, textual description, etc.</rdfs:comment>
         <rdfs:label>InformationObject</rdfs:label>
     </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#InformationObject"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#hasAlternativeIdentifier"/>
-                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#Identifier"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <rdfs:comment>Range of hasAlternativeIdentifier is Identifier  (guard: InformationObject)</rdfs:comment>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#InformationObject"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#hasPrimaryIdentifier"/>
-                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#Identifier"/>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <rdfs:comment>Range of hasPrimaryIdentifier is Identifier  (guard: InformationObject)</rdfs:comment>
-    </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#InformationObject"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
@@ -339,12 +317,12 @@
 
     <owl:Restriction>
         <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#hasAlternativeIdentifier"/>
-        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#Identifier"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/identifier#Identifier"/>
         <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#InformationObject"/>
     </owl:Restriction>
     <owl:Restriction>
         <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#hasPrimaryIdentifier"/>
-        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#Identifier"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/identifier#Identifier"/>
         <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#InformationObject"/>
     </owl:Restriction>
     <owl:Restriction>
@@ -375,7 +353,7 @@
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/informationobject#Identifier"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/identifier#Identifier"/>
             <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/informationobject#InformationObject"/>
             <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/informationobject#InformationRealization"/>
         </owl:members>
