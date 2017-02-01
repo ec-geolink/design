@@ -2,12 +2,17 @@
 <rdf:RDF xmlns="http://schema.geolink.org/1.0/pattern/event#"
      xml:base="http://schema.geolink.org/1.0/pattern/event"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:terms="http://purl.org/dc/terms/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:event="http://schema.geolink.org/1.0/pattern/event#">
+     xmlns:event="http://schema.geolink.org/1.0/pattern/event#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
     <owl:Ontology rdf:about="http://schema.geolink.org/1.0/pattern/event">
+        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/place"/>
+        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole"/>
         <owl:imports rdf:resource="http://www.w3.org/2006/time"/>
         <rdfs:comment>Event pattern represents generic events. An event occurs at some place and time and may provide some agent role.</rdfs:comment>
         <rdfs:label>GeoLink Event Pattern</rdfs:label>
@@ -51,14 +56,6 @@
     
 
 
-    <!-- http://schema.geolink.org/1.0/pattern/event#providesAgentRole -->
-
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/event#providesAgentRole">
-        <rdfs:label>providesAgentRole</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://schema.geolink.org/1.0/pattern/event#startsAtTime -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/event#startsAtTime">
@@ -79,27 +76,25 @@
     
 
 
-    <!-- http://schema.geolink.org/1.0/pattern/event#AgentRole -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/event#AgentRole">
-        <rdfs:label>AgentRole</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://schema.geolink.org/1.0/pattern/event#Event -->
 
     <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/event#Event">
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/event#occursAtPlace"/>
-                <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/event#Place"/>
+                <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/place#Place"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/event#occursAtTime"/>
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole#providesAgentRole"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole#AgentRole"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -111,7 +106,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/event#occursAtPlace"/>
-                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/event#Place"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/place#Place"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -122,25 +117,11 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/event#providesAgentRole"/>
-                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/event#AgentRole"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/event#startsAtTime"/>
                 <owl:allValuesFrom rdf:resource="http://www.w3.org/2006/time#Instant"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label>Event</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/pattern/event#Place -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/event#Place">
-        <rdfs:label>Place</rdfs:label>
     </owl:Class>
     
 
@@ -160,17 +141,12 @@
     </owl:Restriction>
     <owl:Restriction>
         <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/event#occursAtPlace"/>
-        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/event#Place"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/place#Place"/>
         <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/event#Event"/>
     </owl:Restriction>
     <owl:Restriction>
         <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/event#occursAtTime"/>
         <owl:someValuesFrom rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/event#Event"/>
-    </owl:Restriction>
-    <owl:Restriction>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/event#providesAgentRole"/>
-        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/event#AgentRole"/>
         <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/event#Event"/>
     </owl:Restriction>
     <owl:Restriction>
@@ -181,9 +157,9 @@
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/event#AgentRole"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/agentrole#AgentRole"/>
             <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/event#Event"/>
-            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/event#Place"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/place#Place"/>
             <rdf:Description rdf:about="http://www.w3.org/2006/time#TemporalEntity"/>
         </owl:members>
     </rdf:Description>
