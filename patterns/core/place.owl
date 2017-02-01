@@ -2,12 +2,17 @@
 <rdf:RDF xmlns="http://schema.geolink.org/1.0/pattern/place#"
      xml:base="http://schema.geolink.org/1.0/pattern/place"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:terms="http://purl.org/dc/terms/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:place="http://schema.geolink.org/1.0/pattern/place#">
+     xmlns:place="http://schema.geolink.org/1.0/pattern/place#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
     <owl:Ontology rdf:about="http://schema.geolink.org/1.0/pattern/place">
+        <owl:imports rdf:resource="http://www.opengis.net/ont/geosparql"/>
+        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject"/>
         <rdfs:label>GeoLink Place pattern</rdfs:label>
         <rdfs:comment>Place pattern describes a generic place, which may have some geometry as a spatial footprint.</rdfs:comment>
     </owl:Ontology>
@@ -25,20 +30,11 @@
     
 
 
-    <!-- http://schema.geolink.org/1.0/pattern/place#describedBy -->
+    <!-- http://schema.geolink.org/1.0/pattern/place#hasSpatialFootprint -->
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/place#describedBy">
-        <rdfs:comment>Points to an information object that describes the place.</rdfs:comment>
-        <rdfs:label>describedBy</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/pattern/place#hasGeometry -->
-
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/place#hasGeometry">
-        <rdfs:comment>Provides to a geometrical boundary of the place.</rdfs:comment>
-        <rdfs:label>hasGeometry</rdfs:label>
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/place#hasSpatialFootprint">
+        <rdfs:comment>Provides to a spatial footprint of the place, which is specified as a geometry.</rdfs:comment>
+        <rdfs:label>hasSpatialFootprint</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -54,44 +50,26 @@
     
 
 
-    <!-- http://schema.geolink.org/1.0/pattern/place#Geometry -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/place#Geometry">
-        <rdfs:comment>Represents a geometrical boundary of the place (e.g., a point, line, polygon, etc.)</rdfs:comment>
-        <rdfs:label>Geometry</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/pattern/place#InformationObject -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/place#InformationObject">
-        <rdfs:comment>Represents an information object describing the place. This will be aligned to InformationObject class in the Information Object pattern.</rdfs:comment>
-        <rdfs:label>InformationObject</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://schema.geolink.org/1.0/pattern/place#Place -->
 
     <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/place#Place">
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/place#describedBy"/>
-                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/place#InformationObject"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#describedBy"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#InformationObject"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/place#hasGeometry"/>
-                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/place#Geometry"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/place#hasSpatialFootprint"/>
+                <owl:allValuesFrom rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/place#describedBy"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#describedBy"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://schema.geolink.org/1.0/pattern/place#InformationObject"/>
+                <owl:onClass rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#InformationObject"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>Represents a generic place, e.g., a port, a city, etc. May have a geometry information.</rdfs:comment>
@@ -109,21 +87,16 @@
      -->
 
     <owl:Restriction>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/place#describedBy"/>
-        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/place#InformationObject"/>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/place#Place"/>
-    </owl:Restriction>
-    <owl:Restriction>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/place#hasGeometry"/>
-        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/place#Geometry"/>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/place#hasSpatialFootprint"/>
+        <owl:someValuesFrom rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
         <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/place#Place"/>
     </owl:Restriction>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/place#Geometry"/>
-            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/place#InformationObject"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/informationobject#InformationObject"/>
             <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/place#Place"/>
+            <rdf:Description rdf:about="http://www.opengis.net/ont/geosparql#Geometry"/>
         </owl:members>
     </rdf:Description>
 </rdf:RDF>
