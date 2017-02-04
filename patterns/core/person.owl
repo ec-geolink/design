@@ -8,11 +8,14 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="http://schema.geolink.org/1.0/pattern/person">
+        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole"/>
+        <owl:imports rdf:resource="http://www.w3.org/2006/time"/>
+        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/personname"/>
         <rdfs:comment>Person pattern represents the notion of Person. Intuitively, attributes/properties that constitute a person can be categorized into time-dependent and non-time-dependent ones. Most attributes are time-dependent: even name is time-dependent. These attributes are modeled through Personal Info Item, whose detail can be defined by attaching a separate pattern to the hook provided in this pattern.
 
 Besides time-dependent attributes, there are a few non-time-dependent attributes, e.g., date/time of birth (the same person cannot be born at two different times), place of birth, time of death, and place of death. Nevertheless, no data in GeoLink project provides information regarding those non-time-dependent attributes, and thus, they are not modeled in this pattern, although future version of this pattern may choose to accommodate them.
 
-Person is understood as a type of agent, and thus, the Person module, which imports this pattern, aligns the Person class to the Agent class from Agent Role pattern.</rdfs:comment>
+Person is understood as a type of agent, and thus, aligned to the Agent class from Agent Role pattern.</rdfs:comment>
         <rdfs:label>GeoLink Person pattern.</rdfs:label>
     </owl:Ontology>
     
@@ -29,11 +32,50 @@ Person is understood as a type of agent, and thus, the Person module, which impo
     
 
 
+    <!-- http://schema.geolink.org/1.0/pattern/person#endsAtTime -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/person#endsAtTime"/>
+    
+
+
     <!-- http://schema.geolink.org/1.0/pattern/person#hasPersonalInfoItem -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/person#hasPersonalInfoItem">
         <rdfs:label>hasPersonalInfoItem</rdfs:label>
     </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/1.0/pattern/person#hasValue -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/person#hasValue">
+        <rdfs:domain rdf:resource="http://schema.geolink.org/1.0/pattern/person#PersonalInfoItem"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/1.0/pattern/person#startsAtTime -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/person#startsAtTime"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.geolink.org/1.0/pattern/person#hasLiteralValue -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.geolink.org/1.0/pattern/person#hasLiteralValue">
+        <rdfs:domain rdf:resource="http://schema.geolink.org/1.0/pattern/person#PersonalInfoItem"/>
+    </owl:DatatypeProperty>
     
 
 
@@ -51,6 +93,7 @@ Person is understood as a type of agent, and thus, the Person module, which impo
     <!-- http://schema.geolink.org/1.0/pattern/person#Person -->
 
     <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/person#Person">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole#Agent"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/person#hasPersonalInfoItem"/>
@@ -65,7 +108,44 @@ Person is understood as a type of agent, and thus, the Person module, which impo
     <!-- http://schema.geolink.org/1.0/pattern/person#PersonalInfoItem -->
 
     <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/person#PersonalInfoItem">
-        <rdfs:comment>Represents a hook to a more detailed Personal Info Item pattern.</rdfs:comment>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/person#endsAtTime"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2006/time#Instant"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/person#startsAtTime"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2006/time#Instant"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/person#startsAtTime"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.w3.org/2006/time#Instant"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://schema.geolink.org/1.0/pattern/person#hasPersonalInfoItem"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://schema.geolink.org/1.0/pattern/person#Person"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/person#endsAtTime"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.w3.org/2006/time#Instant"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Represents a personal information item such as names, addresses, etc.</rdfs:comment>
         <rdfs:label>PersonalInfoItem</rdfs:label>
     </owl:Class>
     
@@ -80,10 +160,28 @@ Person is understood as a type of agent, and thus, the Person module, which impo
      -->
 
     <owl:Restriction>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/person#endsAtTime"/>
+        <owl:someValuesFrom rdf:resource="http://www.w3.org/2006/time#Instant"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/person#PersonalInfoItem"/>
+    </owl:Restriction>
+    <owl:Restriction>
         <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/person#hasPersonalInfoItem"/>
         <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/person#PersonalInfoItem"/>
         <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/person#Person"/>
     </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/person#startsAtTime"/>
+        <owl:someValuesFrom rdf:resource="http://www.w3.org/2006/time#Instant"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/person#PersonalInfoItem"/>
+    </owl:Restriction>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/person#Person"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/person#PersonalInfoItem"/>
+            <rdf:Description rdf:about="http://www.w3.org/2006/time#Instant"/>
+        </owl:members>
+    </rdf:Description>
 </rdf:RDF>
 
 

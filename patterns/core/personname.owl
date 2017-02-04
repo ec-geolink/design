@@ -1,15 +1,16 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://schema.geolink.org/1.0/pattern/personname#"
      xml:base="http://schema.geolink.org/1.0/pattern/personname"
-     xmlns:glpn="http://schema.geolink.org/1.0/pattern/personname#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:personname="http://schema.geolink.org/1.0/pattern/personname#">
     <owl:Ontology rdf:about="http://schema.geolink.org/1.0/pattern/personname">
+        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/person"/>
         <rdfs:label>GeoLink Person Name pattern.</rdfs:label>
-        <rdfs:comment>Person Name pattern is a specialization of Personal Info Item pattern, modeling person names. A person name must have exactly one full name expressed as a string, and additionally at most one first name and at most one surname.</rdfs:comment>
+        <rdfs:comment>Person Name pattern is a specialization of Personal Info Item from the Person pattern, modeling person names. A person name must have exactly one full name expressed as a string, and additionally at most one first name and at most one surname.</rdfs:comment>
     </owl:Ontology>
     
 
@@ -28,6 +29,7 @@
     <!-- http://schema.geolink.org/1.0/pattern/personname#hasPersonName -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/personname#hasPersonName">
+        <rdfs:subPropertyOf rdf:resource="http://schema.geolink.org/1.0/pattern/person#hasPersonalInfoItem"/>
         <rdfs:label>hasPersonName</rdfs:label>
     </owl:ObjectProperty>
     
@@ -63,6 +65,7 @@
     <!-- http://schema.geolink.org/1.0/pattern/personname#fullName -->
 
     <owl:DatatypeProperty rdf:about="http://schema.geolink.org/1.0/pattern/personname#fullName">
+        <rdfs:subPropertyOf rdf:resource="http://schema.geolink.org/1.0/pattern/person#hasLiteralValue"/>
         <rdfs:label>fullName</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -79,9 +82,9 @@
     
 
 
-    <!-- http://schema.geolink.org/1.0/pattern/personname#Person -->
+    <!-- http://schema.geolink.org/1.0/pattern/person#Person -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/personname#Person">
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/person#Person">
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/personname#hasPersonName"/>
@@ -102,6 +105,7 @@
     <!-- http://schema.geolink.org/1.0/pattern/personname#PersonName -->
 
     <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/personname#PersonName">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/person#PersonalInfoItem"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/personname#familyOrSurname"/>
@@ -156,7 +160,7 @@
     <owl:Restriction>
         <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/personname#hasPersonName"/>
         <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/personname#PersonName"/>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/personname#Person"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/person#Person"/>
     </owl:Restriction>
     <owl:Restriction>
         <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/personname#familyOrSurname"/>
