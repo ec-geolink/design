@@ -142,8 +142,8 @@
      -->
 
     <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/organization#AffiliationRole">
-        <rdfs:label>OrganizationAffiliationRole</rdfs:label>
-        <rdfs:comment>This represents the affiliation relation of an organization to another expressed in a reified form (a specialization of Agent Role). For every instance of this affiliation role performed by an organization (the affiliate), there is exactly one instance of Organization (to which the affiliate is attached to) that provides it.</rdfs:comment>
+        <rdfs:comment>This represents the affiliation relation of an agent to an organization in a reified form (a specialization of Agent Role). For every instance of this affiliation role performed by an agent (the affiliate), there is exactly one instance of Organization (to which the affiliate is attached to) that provides it.</rdfs:comment>
+        <rdfs:label>AffiliationRole</rdfs:label>
     </rdf:Description>
     
 
