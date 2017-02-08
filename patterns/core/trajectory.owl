@@ -33,7 +33,10 @@ In this model, it is assumed that the data provides the fixes in some linear seq
 
     <!-- http://schema.geolink.org/1.0/pattern/trajectory#atTime -->
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#atTime"/>
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#atTime">
+        <rdfs:comment>Provides temporal information of a fix.</rdfs:comment>
+        <rdfs:label>atTime</rdfs:label>
+    </owl:ObjectProperty>
     
 
 
@@ -44,19 +47,27 @@ In this model, it is assumed that the data provides the fixes in some linear seq
             <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#startsFromFix"/>
             <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#hasNextFix"/>
         </owl:propertyChainAxiom>
+        <rdfs:comment>Provides the fix where the segment ends.</rdfs:comment>
+        <rdfs:label>endsAtFix</rdfs:label>
     </owl:ObjectProperty>
     
 
 
     <!-- http://schema.geolink.org/1.0/pattern/trajectory#hasAttribute -->
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#hasAttribute"/>
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#hasAttribute">
+        <rdfs:comment>Provides an attribute of a fix or a segment.</rdfs:comment>
+        <rdfs:label>hasAttribute</rdfs:label>
+    </owl:ObjectProperty>
     
 
 
     <!-- http://schema.geolink.org/1.0/pattern/trajectory#hasDataSource -->
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#hasDataSource"/>
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#hasDataSource">
+        <rdfs:comment>Provides the source (e.g., a sensor, a device, etc.) from which information about the fix was obtained.</rdfs:comment>
+        <rdfs:label>hasDataSource</rdfs:label>
+    </owl:ObjectProperty>
     
 
 
@@ -67,6 +78,8 @@ In this model, it is assumed that the data provides the fixes in some linear seq
             <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#hasFix"/>
             <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#hasNextFix"/>
         </owl:propertyChainAxiom>
+        <rdfs:comment>Provides a fix for the trajectory.</rdfs:comment>
+        <rdfs:label>hasFix</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -75,13 +88,18 @@ In this model, it is assumed that the data provides the fixes in some linear seq
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#hasNextFix">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Provides the next fix after this fix in the sequence.</rdfs:comment>
+        <rdfs:label>hasNextFix</rdfs:label>
     </owl:ObjectProperty>
     
 
 
     <!-- http://schema.geolink.org/1.0/pattern/trajectory#hasPosition -->
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#hasPosition"/>
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#hasPosition">
+        <rdfs:comment>Provides a geographical location of a fix.</rdfs:comment>
+        <rdfs:label>hasPosition</rdfs:label>
+    </owl:ObjectProperty>
     
 
 
@@ -94,6 +112,8 @@ In this model, it is assumed that the data provides the fixes in some linear seq
                 <owl:inverseOf rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#startsFromFix"/>
             </rdf:Description>
         </owl:propertyChainAxiom>
+        <rdfs:comment>Provides a segment of the trajectory.</rdfs:comment>
+        <rdfs:label>hasSegment</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -102,13 +122,18 @@ In this model, it is assumed that the data provides the fixes in some linear seq
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#startsFromFix">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment>Provides the fix from which the segment starts.</rdfs:comment>
+        <rdfs:label>startsFromFix</rdfs:label>
     </owl:ObjectProperty>
     
 
 
     <!-- http://schema.geolink.org/1.0/pattern/trajectory#traversedBy -->
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#traversedBy"/>
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#traversedBy">
+        <rdfs:comment>Provides a moving object that traverses the segment.</rdfs:comment>
+        <rdfs:label>traversedBy</rdfs:label>
+    </owl:ObjectProperty>
     
 
 
