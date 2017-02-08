@@ -11,6 +11,7 @@
      xmlns:trajectory="http://schema.geolink.org/1.0/pattern/trajectory#"
      xmlns:dc="http://purl.org/dc/elements/1.1/">
     <owl:Ontology rdf:about="http://schema.geolink.org/1.0/pattern/trajectory">
+        <owl:imports rdf:resource="http://www.opengis.net/ont/geosparql"/>
         <owl:imports rdf:resource="http://www.w3.org/2006/time"/>
         <rdfs:comment>A trajectory is given by a collection of fixes, representing time-stamped locations. Non-spatiotemporal information specific to a fix can be included by assigning it some attributes, for example, to indicate that the fix is the arrival to some port stop. The ordering of the fixes is based on their temporal information, although such an ordering is not axiomatized in this pattern. Between two consecutive fixes, we can define a segment, which is traversed by some moving object. There is no requirement forcing that all segments in the trajectory can only be traversed by the same moving object.
 
@@ -253,7 +254,9 @@ In this model, it is assumed that the data provides the fixes in some linear seq
     <!-- http://schema.geolink.org/1.0/pattern/trajectory#Position -->
 
     <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#Position">
-        <rdfs:comment>Represents a geospatial location associated with a fix in the trajectory of a cruise.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/gml#Point"/>
+        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/sf#Point"/>
+        <rdfs:comment>Represents a geospatial location associated with a fix in the trajectory of a cruise. A position is understood as a point in either 2D or 3D space.</rdfs:comment>
         <rdfs:label>Position</rdfs:label>
     </owl:Class>
     
