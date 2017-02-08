@@ -12,6 +12,10 @@
      xmlns:dc="http://purl.org/dc/elements/1.1/">
     <owl:Ontology rdf:about="http://schema.geolink.org/1.0/pattern/trajectory">
         <owl:imports rdf:resource="http://www.w3.org/2006/time"/>
+        <rdfs:comment>A trajectory is given by a collection of fixes, representing time-stamped locations. Non-spatiotemporal information specific to a fix can be included by assigning it some attributes, for example, to indicate that the fix is the arrival to some port stop. The ordering of the fixes is based on their temporal information, although such an ordering is not axiomatized in this pattern. Between two consecutive fixes, we can define a segment, which is traversed by some moving object. There is no requirement forcing that all segments in the trajectory can only be traversed by the same moving object.
+
+In this model, it is assumed that the data provides the fixes in some linear sequence, which is motivated by real scenarios whereby indeed only properties of fixes will often be known, in particular their locations, and temporal extension, whether they are at ports, whether they are arrival or departure fixes from ports, and in which sequence the fixes occurred. This pattern instantiates the segments from the fixes. The traversing vessel will usually also be known. However, those segments to which the trajectory pattern attaches information about the vessel are usually not explicitly represented in the data.</rdfs:comment>
+        <rdfs:label>GeoLink Semantic Trajectory pattern</rdfs:label>
     </owl:Ontology>
     
 
@@ -121,7 +125,10 @@
 
     <!-- http://schema.geolink.org/1.0/pattern/trajectory#Attribute -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#Attribute"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#Attribute">
+        <rdfs:comment>Represents all kinds of attributes of a fix or a segment in a trajectory.</rdfs:comment>
+        <rdfs:label>Attribute</rdfs:label>
+    </owl:Class>
     
 
 
@@ -143,6 +150,8 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:comment>An instance of EndingFix represents the final fix in the specification of a trajectory</rdfs:comment>
+        <rdfs:label>EndingFix</rdfs:label>
     </owl:Class>
     
 
@@ -202,19 +211,26 @@
                 <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#Position"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment>A fix represents a spatiotemporal point in the specification of a trajectory.  A fix has a location and a time stamp, and always belongs to one particular trajectory. Also, a fix cannot be followed by more than one other fix, and cannot follow itself. This gives a linear structure in the ordering of the fixes.</rdfs:comment>
+        <rdfs:label>Fix</rdfs:label>
     </owl:Class>
     
 
 
     <!-- http://schema.geolink.org/1.0/pattern/trajectory#MovingObject -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#MovingObject"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#MovingObject">
+        <rdfs:label>MovingObject</rdfs:label>
+    </owl:Class>
     
 
 
     <!-- http://schema.geolink.org/1.0/pattern/trajectory#Position -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#Position"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#Position">
+        <rdfs:comment>Represents a geospatial location associated with a fix in the trajectory of a cruise.</rdfs:comment>
+        <rdfs:label>Position</rdfs:label>
+    </owl:Class>
     
 
 
@@ -267,13 +283,17 @@
                 <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#MovingObject"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment>A segment starts from exactly one fix, and for every fix with a successor fix, there is a segment that starts from it. If a fix belongs to a trajectory and there is a segment that starts from this fix, then the segment belongs to the trajectory. Furthermore, if a segment starts from a fix, then it ends at the successor of the fix.</rdfs:comment>
+        <rdfs:label>Segment</rdfs:label>
     </owl:Class>
     
 
 
     <!-- http://schema.geolink.org/1.0/pattern/trajectory#Source -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#Source"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#Source">
+        <rdfs:label>Source</rdfs:label>
+    </owl:Class>
     
 
 
@@ -299,6 +319,8 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:comment>An instance of StartingFix represents the first fix in a specification of a trajectory.  A trajectory is linked to at least two consecutive fixes where the first fix is the starting fix.</rdfs:comment>
+        <rdfs:label>StartingFix</rdfs:label>
     </owl:Class>
     
 
@@ -324,6 +346,8 @@
                 <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#Segment"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment>This class serves as the main access point of the pattern.</rdfs:comment>
+        <rdfs:label>Trajectory</rdfs:label>
     </owl:Class>
     
 
