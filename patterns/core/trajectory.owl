@@ -1,0 +1,428 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://schema.geolink.org/1.0/pattern/trajectory#"
+     xml:base="http://schema.geolink.org/1.0/pattern/trajectory"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:trajectory="http://schema.geolink.org/1.0/pattern/trajectory#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <owl:Ontology rdf:about="http://schema.geolink.org/1.0/pattern/trajectory">
+        <owl:imports rdf:resource="http://www.w3.org/2006/time"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.geolink.org/1.0/pattern/trajectory#atTime -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#atTime"/>
+    
+
+
+    <!-- http://schema.geolink.org/1.0/pattern/trajectory#endsAtFix -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#endsAtFix">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#startsFromFix"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#hasNextFix"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/1.0/pattern/trajectory#hasAttribute -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#hasAttribute"/>
+    
+
+
+    <!-- http://schema.geolink.org/1.0/pattern/trajectory#hasDataSource -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#hasDataSource"/>
+    
+
+
+    <!-- http://schema.geolink.org/1.0/pattern/trajectory#hasFix -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#hasFix">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#hasFix"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#hasNextFix"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/1.0/pattern/trajectory#hasNextFix -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#hasNextFix">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/1.0/pattern/trajectory#hasPosition -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#hasPosition"/>
+    
+
+
+    <!-- http://schema.geolink.org/1.0/pattern/trajectory#hasSegment -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#hasSegment">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#hasFix"/>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#startsFromFix"/>
+            </rdf:Description>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/1.0/pattern/trajectory#startsFromFix -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#startsFromFix">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/1.0/pattern/trajectory#traversedBy -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#traversedBy"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.geolink.org/1.0/pattern/trajectory#Attribute -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#Attribute"/>
+    
+
+
+    <!-- http://schema.geolink.org/1.0/pattern/trajectory#EndingFix -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#EndingFix">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#Fix"/>
+                    <owl:Class>
+                        <owl:complementOf>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#hasNextFix"/>
+                                <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#Fix"/>
+                            </owl:Restriction>
+                        </owl:complementOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/1.0/pattern/trajectory#Fix -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#Fix">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#atTime"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#hasPosition"/>
+                <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#Position"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#hasFix"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#Trajectory"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#atTime"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#hasAttribute"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#Attribute"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#hasDataSource"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#Source"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#hasNextFix"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#Fix"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#hasPosition"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#Position"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/1.0/pattern/trajectory#MovingObject -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#MovingObject"/>
+    
+
+
+    <!-- http://schema.geolink.org/1.0/pattern/trajectory#Position -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#Position"/>
+    
+
+
+    <!-- http://schema.geolink.org/1.0/pattern/trajectory#Segment -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#Segment">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#endsAtFix"/>
+                <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#Fix"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#startsFromFix"/>
+                <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#Fix"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#hasSegment"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#Trajectory"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#endsAtFix"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#Fix"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#hasAttribute"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#Attribute"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#startsFromFix"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#Fix"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#traversedBy"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#MovingObject"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/1.0/pattern/trajectory#Source -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#Source"/>
+    
+
+
+    <!-- http://schema.geolink.org/1.0/pattern/trajectory#StartingFix -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#StartingFix">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#Fix"/>
+                    <owl:Class>
+                        <owl:complementOf>
+                            <owl:Restriction>
+                                <owl:onProperty>
+                                    <rdf:Description>
+                                        <owl:inverseOf rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#hasNextFix"/>
+                                    </rdf:Description>
+                                </owl:onProperty>
+                                <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#Fix"/>
+                            </owl:Restriction>
+                        </owl:complementOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/1.0/pattern/trajectory#Trajectory -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#Trajectory">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#hasFix"/>
+                <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#StartingFix"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#hasFix"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#Fix"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#hasSegment"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#Segment"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#atTime"/>
+        <owl:someValuesFrom rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#Fix"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#endsAtFix"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#Fix"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#Segment"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#hasAttribute"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#Attribute"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#Fix"/>
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#Segment"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#hasDataSource"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#Source"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#Fix"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#hasFix"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#Fix"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#Trajectory"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#hasNextFix"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#Fix"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#Fix"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#hasNextFix"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#Fix"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#startsFromFix"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#Segment"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#hasPosition"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#Position"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#Fix"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#hasSegment"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#Segment"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#Trajectory"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#startsFromFix"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#Fix"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#Segment"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#traversedBy"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#MovingObject"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#Segment"/>
+    </owl:Restriction>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#Attribute"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#Fix"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#MovingObject"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#Position"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#Segment"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#Source"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#Trajectory"/>
+            <rdf:Description rdf:about="http://www.w3.org/2006/time#TemporalEntity"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+
