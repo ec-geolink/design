@@ -1,37 +1,48 @@
 <?xml version="1.0"?>
-
-
-<!DOCTYPE rdf:RDF [
-    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
-    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
-    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-]>
-
-
 <rdf:RDF xmlns="http://schema.geolink.org/1.0/pattern/cruise#"
      xml:base="http://schema.geolink.org/1.0/pattern/cruise"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:terms="http://purl.org/dc/terms/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:cruise="http://schema.geolink.org/1.0/pattern/cruise#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
     <owl:Ontology rdf:about="http://schema.geolink.org/1.0/pattern/cruise">
-        <rdfs:label>GeoLink Cruise Pattern</rdfs:label>
+        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/place"/>
+        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject"/>
+        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole"/>
+        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/event"/>
+        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/program"/>
+        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/vessel"/>
+        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/fundingaward"/>
+        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory"/>
         <rdfs:comment>The Cruise pattern describes ocean science cruises. This pattern is obtained by combining and reusing existing patterns, while keeping the amount of abstract ontological commitments to a minimum.
 
 The Cruise pattern can be dissected into three parts. First, a cruise is an abstraction of a path/route undertaken by a vessel, which is a physical object, through space within a certain time duration. This is captured by modeling a cruise to have exactly one trajectory, consisting of spatiotemporal segments traversed by a vessel. Second, a cruise can be understood as an event, which provides role performed by agents, pertaining activities conducted in/during a cruise. Our modeling of event through the Event pattern views events as something that not only provide roles to agents, but also occurs within some spatiotemporal boundary. Consequently, the first and second parts mentioned earlier can be together seen as a kind of complicated event. In fact, both the first and second parts motivate the alignment with the Agent pattern, Agent Role pattern, and obviously, the Event pattern. Alignment with the Event pattern is in particular rather complicated since the spatiotemporal information of a cruise is implicitly given by its associated trajectory.
 
 Next, for the third part, we understand that a cruise may have other, non-spatiotemporal information relevant to it. For instance, information about funding awards that fund it, or programs associated with it. This is modeled by reusing the Information Object pattern. Note that every information object can be realized by a number of information realization, which includes digital objects (papers, reports, etc.) about the cruise. All the above modeling choices allows us to distinguish a cruise from both the information object that describes it and the physical object, i.e., vessel, by which it is undertaken.</rdfs:comment>
-        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/cruise-to-agent"/>
-        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/cruise-to-agentrole"/>
-        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/cruise-to-event"/>
-        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/cruise-to-fundingaward"/>
-        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/cruise-to-informationobject"/>
-        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/cruise-to-owltime"/>
-        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/cruise-to-place"/>
-        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/cruise-to-program"/>
-        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/cruise-to-vessel"/>
+        <rdfs:label>GeoLink Cruise Pattern</rdfs:label>
     </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.geolink.org/1.0/pattern/cruise#DASE_RULE -->
+
+    <owl:AnnotationProperty rdf:about="http://schema.geolink.org/1.0/pattern/cruise#DASE_RULE"/>
     
 
 
@@ -49,69 +60,28 @@ Next, for the third part, we understand that a cruise may have other, non-spatio
     <!-- http://schema.geolink.org/1.0/pattern/cruise#atPort -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/cruise#atPort">
-        <rdfs:label>atPort</rdfs:label>
-        <rdfs:comment>atPort connects a fix to an instance of Port. It is used when the fix corresponds to a port stop in the beginning, middle, or end of a cruise.</rdfs:comment>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/cruise#hasLocation"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#hasPosition"/>
             <rdf:Description>
-                <owl:inverseOf rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#hasSpatialFootprint"/>
+                <owl:inverseOf rdf:resource="http://schema.geolink.org/1.0/pattern/place#hasSpatialFootprint"/>
             </rdf:Description>
-            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/cruise#rollifiedPort"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/cruise#r_Port"/>
         </owl:propertyChainAxiom>
+        <rdfs:comment>atPort connects a fix to an instance of Port. It is used when the fix corresponds to a port stop in the beginning, middle, or end of a cruise.</rdfs:comment>
+        <rdfs:label>atPort</rdfs:label>
     </owl:ObjectProperty>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/pattern/cruise#atTime -->
-
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/cruise#atTime">
-        <rdfs:label>atTime</rdfs:label>
-        <rdfs:comment>atTime provides temporal information of a fix.</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/pattern/cruise#endsAt -->
-
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/cruise#endsAt">
-        <rdfs:label>endsAt</rdfs:label>
-        <rdfs:comment>The endsAt property provides the fix where a segment ends.</rdfs:comment>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/cruise#startsFrom"/>
-            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/cruise#nextFix"/>
-        </owl:propertyChainAxiom>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/pattern/cruise#hasAttribute -->
-
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/cruise#hasAttribute">
-        <rdfs:label>hasAttribute</rdfs:label>
-        <rdfs:comment>This provides an attribute of a fix or a segment.</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/pattern/cruise#hasFix -->
-
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/cruise#hasFix">
-        <rdfs:label>hasFix</rdfs:label>
-        <rdfs:comment>The hasFix property connects a trajectory to its fixes.</rdfs:comment>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/cruise#hasFix"/>
-            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/cruise#nextFix"/>
-        </owl:propertyChainAxiom>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/pattern/cruise#hasLocation -->
-
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/cruise#hasLocation">
-        <rdfs:label>hasLocation</rdfs:label>
-        <rdfs:comment>The hasLocation property provides the geospatial location of a fix.</rdfs:comment>
-    </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#atPort"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2002/07/owl#propertyChainAxiom"/>
+        <owl:annotatedTarget rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#hasPosition"/>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://schema.geolink.org/1.0/pattern/place#hasSpatialFootprint"/>
+            </rdf:Description>
+            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/cruise#r_Port"/>
+        </owl:annotatedTarget>
+        <DASE_RULE rdf:datatype="http://www.w3.org/2001/XMLSchema#string">R2___trajectory:hasPosition(?x,?y) ^ place:hasSpatialFootprint(?z,?y) ^ :Port(?z) -&gt; :atPort(?x,?z)___If position of a fix corresponds to a (spatial footprint of a) port, then that fix is at that port.___http://schema.geolink.org/1.0/pattern/cruise#freshObjectProperty1</DASE_RULE>
+    </owl:Axiom>
     
 
 
@@ -123,147 +93,70 @@ Next, for the third part, we understand that a cruise may have other, non-spatio
     
 
 
-    <!-- http://schema.geolink.org/1.0/pattern/cruise#hasSegment -->
-
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/cruise#hasSegment">
-        <rdfs:label>hasSegment</rdfs:label>
-        <rdfs:comment>The hasSegment property connects a trajectory to its segments.</rdfs:comment>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/cruise#hasFix"/>
-            <rdf:Description>
-                <owl:inverseOf rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#startsFrom"/>
-            </rdf:Description>
-        </owl:propertyChainAxiom>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/pattern/cruise#hasSpatialFootprint -->
-
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/cruise#hasSpatialFootprint">
-        <rdfs:label>hasSpatialFootprint</rdfs:label>
-        <rdfs:comment>In the context of a cruise trajectory, this property connects an instance of Place to an instance of Position. The more general version of this property, given by the Place pattern, connects a place to a (geospatial) geometric object.</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://schema.geolink.org/1.0/pattern/cruise#hasTrajectory -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/cruise#hasTrajectory">
-        <rdfs:label>hasTrajectory</rdfs:label>
         <rdfs:comment>The hasTrajectory connects a cruise to its trajectory.</rdfs:comment>
+        <rdfs:label>hasTrajectory</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://schema.geolink.org/1.0/pattern/cruise#isAssociatedWithProgram -->
+    <!-- http://schema.geolink.org/1.0/pattern/cruise#r_Port -->
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/cruise#isAssociatedWithProgram">
-        <rdfs:label>isAssociatedWithProgram</rdfs:label>
-        <rdfs:comment>This property associates (the information object of) a cruise to a geoscience program.</rdfs:comment>
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/cruise#r_Port">
+        <rdfs:comment>The class Port typecasted as an object property. Logically, r_Port(x,x) &lt;-&gt; Port(x)</rdfs:comment>
+        <rdfs:label>r_Port</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://schema.geolink.org/1.0/pattern/cruise#isDescribedBy -->
+    <!-- http://schema.geolink.org/1.0/pattern/cruise#traveledBy -->
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/cruise#isDescribedBy">
-        <rdfs:label>isDescribedBy</rdfs:label>
-        <rdfs:comment>This connects a cruise to its corresponding information object.</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/pattern/cruise#isFundedBy -->
-
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/cruise#isFundedBy">
-        <rdfs:label>isFundedBy</rdfs:label>
-        <rdfs:comment>This property associates (the information object of) a cruise to a funding award.</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/pattern/cruise#isPerformedBy -->
-
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/cruise#isPerformedBy">
-        <rdfs:label>isPerformedBy</rdfs:label>
-        <rdfs:comment>This connects an agent role to the agent that performs it. This specializes isPerformedBy property of Agent Role pattern in the context of a cruise.</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/pattern/cruise#isTraveledBy -->
-
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/cruise#isTraveledBy">
-        <rdfs:label>isTraveledBy</rdfs:label>
-        <rdfs:comment>If a cruise is undertaken by a vessel, then its trajectory is traveled by the vessel.</rdfs:comment>
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/cruise#traveledBy">
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description>
                 <owl:inverseOf rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#hasTrajectory"/>
             </rdf:Description>
-            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/cruise#isUndertakenBy"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/cruise#undertakenBy"/>
         </owl:propertyChainAxiom>
+        <rdfs:comment>If a cruise is undertaken by a vessel, then its trajectory is traveled by the vessel.</rdfs:comment>
+        <rdfs:label>traveledBy</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://schema.geolink.org/1.0/pattern/cruise#isTraversedBy -->
+    <!-- http://schema.geolink.org/1.0/pattern/cruise#undertakenBy -->
 
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/cruise#isTraversedBy">
-        <rdfs:label>isTraversedBy</rdfs:label>
-        <rdfs:comment>If a trajectory is traveled by a vessel that its segment is traversed by the vessel.</rdfs:comment>
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/cruise#undertakenBy">
+        <rdfs:comment>This connects a cruise to the vessel on which the cruise is conducted.</rdfs:comment>
+        <rdfs:label>undertakenBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/1.0/pattern/trajectory#traversedBy -->
+
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#traversedBy">
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description>
-                <owl:inverseOf rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#hasSegment"/>
+                <owl:inverseOf rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#hasSegment"/>
             </rdf:Description>
-            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/cruise#isTraveledBy"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/cruise#traveledBy"/>
         </owl:propertyChainAxiom>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/pattern/cruise#isUndertakenBy -->
-
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/cruise#isUndertakenBy">
-        <rdfs:label>isUndertakenBy</rdfs:label>
-        <rdfs:comment>This connects a cruise to the vessel on which the cruise is conducted.</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/pattern/cruise#nextFix -->
-
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/cruise#nextFix">
-        <rdfs:label>nextFix</rdfs:label>
-        <rdfs:comment>This property connects a fix to another fix that follows it in a cruise trajectory.</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/pattern/cruise#providesAgentRole -->
-
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/cruise#providesAgentRole">
-        <rdfs:label>providesAgentRole</rdfs:label>
-        <rdfs:comment>This property connects a cruise to a role that an agent (person, organization) have in it.</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/pattern/cruise#rollifiedPort -->
-
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/cruise#rollifiedPort">
-        <rdfs:label>rollifiedPort</rdfs:label>
-        <rdfs:comment>Logically, x is a Port if and only if x is related to itself via rollifiedPort property.</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/pattern/cruise#startsFrom -->
-
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/cruise#startsFrom">
-        <rdfs:label>startsFrom</rdfs:label>
-        <rdfs:comment>The endsAt property provides the fix where a segment starts.</rdfs:comment>
-    </owl:ObjectProperty>
+    </rdf:Description>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#traversedBy"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2002/07/owl#propertyChainAxiom"/>
+        <owl:annotatedTarget rdf:parseType="Collection">
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#hasSegment"/>
+            </rdf:Description>
+            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/cruise#traveledBy"/>
+        </owl:annotatedTarget>
+        <rdfs:comment>This axiom is equivalent to the rule: 
+:traveledBy(?x,?y) ^ trajectory:hasSegment(?x,?z) -&gt; trajectory:traversedBy(?z,?y)</rdfs:comment>
+    </owl:Axiom>
     
 
 
@@ -278,183 +171,14 @@ Next, for the third part, we understand that a cruise may have other, non-spatio
     
 
 
-    <!-- http://schema.geolink.org/1.0/pattern/cruise#Agent -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/cruise#Agent">
-        <rdfs:label>Agent</rdfs:label>
-        <rdfs:comment>Represents agents in the context of Cruise pattern.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/pattern/cruise#AgentRole -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/cruise#AgentRole">
-        <rdfs:label>AgentRole</rdfs:label>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#isPerformedBy"/>
-                <owl:onClass rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Agent"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#isPerformedBy"/>
-                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Agent"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>Represents roles of agents in the context of a cruise.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/pattern/cruise#Attribute -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/cruise#Attribute">
-        <rdfs:label>Attribute</rdfs:label>
-        <rdfs:comment>Represents all kidns of attributes of a fix or a segment in a trajectory.</rdfs:comment>
-    </owl:Class>
-    
-
-
     <!-- http://schema.geolink.org/1.0/pattern/cruise#Cruise -->
 
     <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/cruise#Cruise">
-        <rdfs:label>Cruise</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/event#Event"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#isDescribedBy"/>
-                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#InformationObject"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#providesAgentRole"/>
-                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#AgentRole"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#hasTrajectory"/>
-                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Trajectory"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#hasTrajectory"/>
-                <owl:onClass rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Trajectory"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#isUndertakenBy"/>
-                <owl:onClass rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Vessel"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#isDescribedBy"/>
-                <owl:onClass rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#InformationObject"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#isUndertakenBy"/>
-                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Vessel"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>A cruise is an event through the alignment with Event pattern. A cruise has exactly one trajectory, is undertaken by exactly one vessel, and is described by exactly one information object. Additionally, this information object describes exactly only the cruise. If a cruise is undertaken by a vessel, then the trajectory of the cruise has to be traveled by the vessel. Note that since isTraveledBy is implied by a property chain, OWL 2 specification forbids us to express a cardinality restriction using this peroperty. Consequently, we cannot axiomatize that the trajectory of a cruise can only be traveled by one vessel.
-
-Involvements of agents in a cruise is modeled via the AgentRole, which is aligned to the Agent Role pattern. A cruise may be funded by some funding award, associated with some program, and related to some other cruise. These information are attached to the information object associated with a cruise.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/pattern/cruise#EndingFix -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/cruise#EndingFix">
-        <rdfs:label>EndingFix</rdfs:label>
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/cruise#Fix"/>
-                    <owl:Class>
-                        <owl:complementOf>
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#nextFix"/>
-                                <owl:someValuesFrom rdf:resource="&owl;Thing"/>
-                            </owl:Restriction>
-                        </owl:complementOf>
-                    </owl:Class>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <owl:disjointWith rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#StartingFix"/>
-        <rdfs:comment>An instance of EndingFix represents the final fix in the specification of a trajectory</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/pattern/cruise#Fix -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/cruise#Fix">
-        <rdfs:label>Fix</rdfs:label>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#hasAttribute"/>
-                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Attribute"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#atPort"/>
-                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Port"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#nextFix"/>
-                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Fix"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#atTime"/>
-                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#TimeEntity"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#hasLocation"/>
-                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Position"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>A fix represents a spatiotemporal point in the specification of a trajectory.  A fix has a location and a time stamp, and always belongs to one particular trajectory. Also, a fix cannot be followed by more than one other fix, and cannot follow itself. This gives a linear structure in the ordering of the fixes.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/pattern/cruise#FundingAward -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/cruise#FundingAward">
-        <rdfs:label>FundingAward</rdfs:label>
-        <rdfs:comment>Represents funding awards that fund activities in a cruise.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/pattern/cruise#InformationObject -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/cruise#InformationObject">
-        <rdfs:label>InformationObject</rdfs:label>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#isFundedBy"/>
-                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#FundingAward"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole#providesAgentRole"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole#AgentRole"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -465,178 +189,77 @@ Involvements of agents in a cruise is modeled via the AgentRole, which is aligne
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty>
-                    <rdf:Description>
-                        <owl:inverseOf rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#isDescribedBy"/>
-                    </rdf:Description>
-                </owl:onProperty>
-                <owl:onClass rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Cruise"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#hasTrajectory"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#CruiseTrajectory"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#isAssociatedWithProgram"/>
-                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Program"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#undertakenBy"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/vessel#Vessel"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment>Represents the collation of non-spatiotemporal information of a cruise.</rdfs:comment>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/fundingaward#fundedBy"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/fundingaward#FundingAward"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#describedBy"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#InformationObject"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/program#associatedWithProgram"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/program#Program"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#hasTrajectory"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#CruiseTrajectory"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#undertakenBy"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://schema.geolink.org/1.0/pattern/vessel#Vessel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#describedBy"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#InformationObject"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A cruise is an event through the alignment with Event pattern. A cruise has exactly one trajectory, is undertaken by exactly one vessel, and is described by exactly one information object. Additionally, this information object describes exactly only the cruise. If a cruise is undertaken by a vessel, then the trajectory of the cruise has to be traveled by the vessel. Note that since isTraveledBy is implied by a property chain, OWL 2 specification forbids us to express a cardinality restriction using this peroperty. Consequently, we cannot axiomatize that the trajectory of a cruise can only be traveled by one vessel.
+
+Involvements of agents in a cruise is modeled via the AgentRole, which is aligned to the Agent Role pattern. A cruise may be funded by some funding award, associated with some program, and related to some other cruise. These information are attached to the information object associated with a cruise.</rdfs:comment>
+        <rdfs:label>Cruise</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/1.0/pattern/cruise#Place -->
+    <!-- http://schema.geolink.org/1.0/pattern/cruise#CruiseTrajectory -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/cruise#Place">
-        <rdfs:label>Place</rdfs:label>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/cruise#CruiseTrajectory">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#Trajectory"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#hasSpatialFootprint"/>
-                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Position"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>Represents place of interests (POIs) associated with some geospatial features in the context of a cruise trajectory.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/pattern/cruise#Port -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/cruise#Port">
-        <rdfs:label>Port</rdfs:label>
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#rollifiedPort"/>
-                <owl:hasSelf rdf:datatype="&xsd;boolean">true</owl:hasSelf>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Place"/>
-        <rdfs:comment>Represents ports that may be relevant for a cruise.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/pattern/cruise#Position -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/cruise#Position">
-        <rdfs:label>Position</rdfs:label>
-        <rdfs:comment>Represents a geospatial location associated with a fix in the trajectory of a cruise.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/pattern/cruise#Program -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/cruise#Program">
-        <rdfs:label>Program</rdfs:label>
-        <rdfs:comment>Represents the notion of Program in geoscience research, which usually refers to a  named collection of things, including cruises, funding awards, activities, events, etc., which are grouped together because they officially (typically according to some funding agency) serve some common purposes. This definition of Program in the Cruise pattern is intended as a hook to programs that are relevant to a particular cruise.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/pattern/cruise#Segment -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/cruise#Segment">
-        <rdfs:label>Segment</rdfs:label>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#startsFrom"/>
-                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Fix"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#endsAt"/>
-                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Fix"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#isTraversedBy"/>
-                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Vessel"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#hasAttribute"/>
-                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Attribute"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#startsFrom"/>
-                <owl:onClass rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Fix"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>A segment starts from exactly one fix, and for every fix with a successor fix, there is a segment that starts from it. If a fix belongs to a trajectory and there is a segment that starts from this fix, then the segment belongs to the trajectory. Furthermore, if a segment starts from a fix, then it ends at the successor of the fix.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/pattern/cruise#StartingFix -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/cruise#StartingFix">
-        <rdfs:label>StartingFix</rdfs:label>
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/cruise#Fix"/>
-                    <owl:Class>
-                        <owl:complementOf>
-                            <owl:Restriction>
-                                <owl:onProperty>
-                                    <rdf:Description>
-                                        <owl:inverseOf rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#nextFix"/>
-                                    </rdf:Description>
-                                </owl:onProperty>
-                                <owl:someValuesFrom rdf:resource="&owl;Thing"/>
-                            </owl:Restriction>
-                        </owl:complementOf>
-                    </owl:Class>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:comment>An instance of StartingFix represents the first fix in a specification of a trajectory.  A trajectory is linked to at least two consecutive fixes where the first fix is the starting fix.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/pattern/cruise#TimeEntity -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/cruise#TimeEntity">
-        <rdfs:label>TimeEntity</rdfs:label>
-        <rdfs:comment>A generic temporal entity, which serves as a part of the description of a fix. This can be aligned to OWL Time&apos;s TemporalEntity class.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/pattern/cruise#Trajectory -->
-
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/cruise#Trajectory">
-        <rdfs:label>Trajectory</rdfs:label>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#isTraveledBy"/>
-                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Vessel"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#hasFix"/>
-                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Fix"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#hasFix"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#hasFix"/>
                 <owl:someValuesFrom>
                     <owl:Class>
                         <owl:intersectionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/cruise#StartingFix"/>
+                            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#StartingFix"/>
                             <owl:Restriction>
-                                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#nextFix"/>
-                                <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Fix"/>
+                                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#hasNextFix"/>
+                                <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#Fix"/>
                             </owl:Restriction>
                         </owl:intersectionOf>
                     </owl:Class>
@@ -645,23 +268,56 @@ Involvements of agents in a cruise is modeled via the AgentRole, which is aligne
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#hasSegment"/>
-                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Segment"/>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#traveledBy"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/vessel#Vessel"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>A trajectory is given by a collection of fixes, representing time-stamped locations. Non-spatiotemporal information specific to a fix can be included by assigning it some attributes, for example, to indicate that the fix is the arrival to some port stop. The ordering of the fixes is based on their temporal information, although such an ordering is not axiomatized in this pattern. Between two consecutive fixes, we can define a segment, which is traversed by some moving object. There is no requirement forcing that all segments in the trajectory can only be traversed by the same moving object.
 
 In the context of GeoLink project, the data typically already contains ordering of fixes, i.e., the nextFix relation is explicit in the data, and thus, segments are auto-instantiated from it. This is motivated by real scenarios whereby indeed only properties of fixes will often be known, in particular their locations, and temporal extension, whether they are at ports, whether they are arrival or departure fixes from ports, and in which sequence the fixes occurred. The traversing vessel will usually also be known. However, trajectory segments to which the trajectory pattern attaches information about the vessel are usually not explicitly represented in the data.</rdfs:comment>
+        <rdfs:label>Trajectory</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/1.0/pattern/cruise#Vessel -->
+    <!-- http://schema.geolink.org/1.0/pattern/cruise#Port -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/cruise#Vessel">
-        <rdfs:label>Vessel</rdfs:label>
-        <rdfs:comment>Represents the vessel on which a cruise is carried out.</rdfs:comment>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/cruise#Port">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/place#Place"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/place#hasSpatialFootprint"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#Position"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#r_Port"/>
+                <owl:hasSelf rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasSelf>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Represents ports that may be relevant for a cruise.</rdfs:comment>
+        <rdfs:label>Port</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Port"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#r_Port"/>
+                <owl:hasSelf rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasSelf>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+        <DASE_RULE rdf:datatype="http://www.w3.org/2001/XMLSchema#string">R2___trajectory:hasPosition(?x,?y) ^ place:hasSpatialFootprint(?z,?y) ^ :Port(?z) -&gt; :atPort(?x,?z)___If position of a fix corresponds to a (spatial footprint of a) port, then that fix is at that port.___http://schema.geolink.org/1.0/pattern/cruise#freshObjectProperty1</DASE_RULE>
+    </owl:Axiom>
+    
+
+
+    <!-- http://schema.geolink.org/1.0/pattern/vessel#Vessel -->
+
+    <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/vessel#Vessel">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#MovingObject"/>
+    </rdf:Description>
     
 
 
@@ -673,150 +329,150 @@ In the context of GeoLink project, the data typically already contains ordering 
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Segment"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#isTraversedBy"/>
-        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Vessel"/>
-    </owl:Restriction>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#InformationObject"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#isFundedBy"/>
-        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#FundingAward"/>
-    </owl:Restriction>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Fix"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#nextFix"/>
-        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Fix"/>
-    </owl:Restriction>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Fix"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#atTime"/>
-        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#TimeEntity"/>
-    </owl:Restriction>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#InformationObject"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#isAssociatedWithProgram"/>
-        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Program"/>
-    </owl:Restriction>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Fix"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#hasLocation"/>
-        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Position"/>
-    </owl:Restriction>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#AgentRole"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#isPerformedBy"/>
-        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Agent"/>
-    </owl:Restriction>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Cruise"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#providesAgentRole"/>
-        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#AgentRole"/>
-    </owl:Restriction>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Cruise"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#isUndertakenBy"/>
-        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Vessel"/>
-    </owl:Restriction>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Place"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#hasSpatialFootprint"/>
-        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Position"/>
-    </owl:Restriction>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Segment"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#endsAt"/>
-        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Fix"/>
-    </owl:Restriction>
-    <rdf:Description>
-        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/cruise#Agent"/>
-            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/cruise#AgentRole"/>
-            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/cruise#Attribute"/>
-            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/cruise#Cruise"/>
-            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/cruise#Fix"/>
-            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/cruise#FundingAward"/>
-            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/cruise#InformationObject"/>
-            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/cruise#Place"/>
-            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/cruise#Position"/>
-            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/cruise#Program"/>
-            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/cruise#Segment"/>
-            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/cruise#TimeEntity"/>
-            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/cruise#Trajectory"/>
-            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/cruise#Vessel"/>
-        </owl:members>
-    </rdf:Description>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Cruise"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#hasTrajectory"/>
-        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Trajectory"/>
-    </owl:Restriction>
-    <owl:Restriction>
-        <rdfs:subClassOf>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/cruise#Fix"/>
-                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/cruise#Segment"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:subClassOf>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#hasAttribute"/>
-        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Attribute"/>
-    </owl:Restriction>
-    <owl:Restriction>
+    <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#Fix"/>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#atPort"/>
+                <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Port"/>
+            </owl:Restriction>
+        </owl:intersectionOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty>
                     <rdf:Description>
-                        <owl:inverseOf rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#startsFrom"/>
+                        <owl:inverseOf rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#hasFix"/>
                     </rdf:Description>
                 </owl:onProperty>
-                <owl:onClass rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Segment"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#CruiseTrajectory"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#nextFix"/>
-        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Fix"/>
-    </owl:Restriction>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#Fix"/>
+                    <owl:Restriction>
+                        <owl:onProperty>
+                            <rdf:Description>
+                                <owl:inverseOf rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#hasFix"/>
+                            </rdf:Description>
+                        </owl:onProperty>
+                        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#CruiseTrajectory"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+                <rdfs:subClassOf>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#atPort"/>
+                        <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Port"/>
+                    </owl:Restriction>
+                </rdfs:subClassOf>
+            </owl:Class>
+        </owl:annotatedSource>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#atPort"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Port"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+        <rdfs:comment>Scoped range of atPort is Port where the scope is (inverse hasFix some CruiseTrajectory)</rdfs:comment>
+    </owl:Axiom>
+    <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#Segment"/>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#traversedBy"/>
+                <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/vessel#Vessel"/>
+            </owl:Restriction>
+        </owl:intersectionOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#hasSegment"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#CruiseTrajectory"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#Segment"/>
+                    <owl:Restriction>
+                        <owl:onProperty>
+                            <rdf:Description>
+                                <owl:inverseOf rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#hasSegment"/>
+                            </rdf:Description>
+                        </owl:onProperty>
+                        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#CruiseTrajectory"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+                <rdfs:subClassOf>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#traversedBy"/>
+                        <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/vessel#Vessel"/>
+                    </owl:Restriction>
+                </rdfs:subClassOf>
+            </owl:Class>
+        </owl:annotatedSource>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#traversedBy"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/vessel#Vessel"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+        <rdfs:comment>Cruise trajectory&apos;s segments are traversed by a vessel</rdfs:comment>
+    </owl:Axiom>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Cruise"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#isDescribedBy"/>
-        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#InformationObject"/>
-    </owl:Restriction>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Trajectory"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#hasFix"/>
-        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Fix"/>
-    </owl:Restriction>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Trajectory"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#hasSegment"/>
-        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Segment"/>
-    </owl:Restriction>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Segment"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#startsFrom"/>
-        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Fix"/>
-    </owl:Restriction>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Trajectory"/>
-        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#isTraveledBy"/>
-        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Vessel"/>
-    </owl:Restriction>
-    <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Fix"/>
         <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#atPort"/>
         <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Port"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/trajectory#Fix"/>
     </owl:Restriction>
     <owl:Restriction>
-        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#InformationObject"/>
         <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#hasRelatedCruise"/>
         <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Cruise"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Cruise"/>
     </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#hasTrajectory"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#CruiseTrajectory"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Cruise"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#traveledBy"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/vessel#Vessel"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#CruiseTrajectory"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#undertakenBy"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/vessel#Vessel"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/cruise#Cruise"/>
+    </owl:Restriction>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/agentrole#AgentRole"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/cruise#Cruise"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/cruise#CruiseTrajectory"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/cruise#Port"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/fundingaward#FundingAward"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/informationobject#InformationObject"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/program#Program"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#Fix"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#Position"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/trajectory#Segment"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/vessel#Vessel"/>
+        </owl:members>
+    </rdf:Description>
 </rdf:RDF>
 
 
 
-<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
 
