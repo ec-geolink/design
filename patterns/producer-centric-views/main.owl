@@ -1799,6 +1799,26 @@ Should use vocabulary from BiBO or CrossRef</rdfs:comment>
     
 
 
+    <!-- http://schema.geolink.org/1.0/base/main#strongCoReferentOf -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/base/main#strongCoReferentOf">
+        <rdfs:subPropertyOf rdf:resource="http://schema.geolink.org/1.0/base/main#coReferentOf"/>
+        <rdfs:comment>Used to state that an instance matches with another based on a highly trusted machine-generated matching. The matching requires at least one additional corroborating piece of information that is trusted to differentiate individuals (e.g., surname and email match).</rdfs:comment>
+        <rdfs:label>strongCoReferentOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.geolink.org/1.0/base/main#weakCoReferentOf -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/base/main#weakCoReferentOf">
+        <rdfs:subPropertyOf rdf:resource="http://schema.geolink.org/1.0/base/main#coReferentOf"/>
+        <rdfs:comment>Used to state that an instance matches with another based on a totally loose, machine-generated matching. The matching only needs at least one important property matches.</rdfs:comment>
+        <rdfs:label>weakCoReferentOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -2855,6 +2875,35 @@ http://purl.org/spar/datacite/doi for DOI.</rdfs:comment>
     <!-- http://vocab.nerc.ac.uk/collection/L06/current/3Z/ -->
 
     <rdf:Description rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/3Z/"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.geolink.org/1.0/base/main#aguAbstractScheme -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/base/main#aguAbstractScheme">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#IdentifierScheme"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">American Geophysical Union Abstract Identifier</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.geolink.org/1.0/base/main#nsfAwardScheme -->
+
+    <owl:NamedIndividual rdf:about="http://schema.geolink.org/1.0/base/main#nsfAwardScheme">
+        <rdf:type rdf:resource="http://schema.geolink.org/1.0/base/main#IdentifierScheme"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">National Science Foundation Award Number</rdfs:label>
+    </owl:NamedIndividual>
 </rdf:RDF>
 
 
