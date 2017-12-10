@@ -1,24 +1,19 @@
 <?xml version="1.0"?>
-
-
-<!DOCTYPE rdf:RDF [
-    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
-    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
-    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-]>
-
-
 <rdf:RDF xmlns="http://schema.geolink.org/1.0/pattern/physicalsample#"
      xml:base="http://schema.geolink.org/1.0/pattern/physicalsample"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:terms="http://purl.org/dc/terms/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
     <owl:Ontology rdf:about="http://schema.geolink.org/1.0/pattern/physicalsample">
-        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/physicalsample-to-event"/>
-        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/physicalsample-to-informationobject"/>
-        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/physicalsample-to-propertyvalue"/>
+        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/propertyvalue"/>
+        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject"/>
+        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole"/>
+        <owl:imports rdf:resource="http://schema.geolink.org/1.0/pattern/event"/>
     </owl:Ontology>
     
 
@@ -43,32 +38,27 @@
     
 
 
+    <!-- http://schema.geolink.org/1.0/pattern/physicalsample#hasInputFeature -->
+
+    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/physicalsample#hasInputFeature"/>
+    
+
+
     <!-- http://schema.geolink.org/1.0/pattern/physicalsample#hasProperty -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/physicalsample#hasProperty"/>
     
 
 
-    <!-- http://schema.geolink.org/1.0/pattern/physicalsample#isDescribedBy -->
-
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/physicalsample#isDescribedBy"/>
-    
-
-
-    <!-- http://schema.geolink.org/1.0/pattern/physicalsample#isInputFeatureOf -->
-
-    <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/physicalsample#isInputFeatureOf">
-        <rdfs:domain rdf:resource="http://schema.geolink.org/1.0/pattern/physicalsample#Feature"/>
-        <rdfs:range rdf:resource="http://schema.geolink.org/1.0/pattern/physicalsample#SamplingProcess"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://schema.geolink.org/1.0/pattern/physicalsample#originatesFrom -->
 
     <owl:ObjectProperty rdf:about="http://schema.geolink.org/1.0/pattern/physicalsample#originatesFrom">
-        <rdfs:range rdf:resource="http://schema.geolink.org/1.0/pattern/physicalsample#Feature"/>
         <rdfs:domain rdf:resource="http://schema.geolink.org/1.0/pattern/physicalsample#PhysicalSample"/>
+        <rdfs:range rdf:resource="http://schema.geolink.org/1.0/pattern/physicalsample#Feature"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/physicalsample#derivedUsing"/>
+            <rdf:Description rdf:about="http://schema.geolink.org/1.0/pattern/physicalsample#hasInputFeature"/>
+        </owl:propertyChainAxiom>
     </owl:ObjectProperty>
     
 
@@ -84,15 +74,54 @@
     
 
 
-    <!-- http://schema.geolink.org/1.0/pattern/physicalsample#Feature -->
+    <!-- http://schema.geolink.org/1.0/pattern/physicalsample#CollectorRole -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/physicalsample#Feature"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/physicalsample#CollectorRole">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole#AgentRole"/>
+        <rdfs:label>CollectorRole</rdfs:label>
+    </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/1.0/pattern/physicalsample#InformationObject -->
+    <!-- http://schema.geolink.org/1.0/pattern/physicalsample#ContactRole -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/physicalsample#InformationObject"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/physicalsample#ContactRole">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole#AgentRole"/>
+        <rdfs:label>ContactRole</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/1.0/pattern/physicalsample#ContributorRole -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/physicalsample#ContributorRole">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole#AgentRole"/>
+        <rdfs:label>ContributorRole</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/1.0/pattern/physicalsample#CuratorRole -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/physicalsample#CuratorRole">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole#AgentRole"/>
+        <rdfs:label>CuratorRole</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/1.0/pattern/physicalsample#EditorRole -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/physicalsample#EditorRole">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole#AgentRole"/>
+        <rdfs:label>EditorRole</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/1.0/pattern/physicalsample#Feature -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/physicalsample#Feature"/>
     
 
 
@@ -100,22 +129,104 @@
 
     <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/physicalsample#PhysicalSample">
         <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/physicalsample#Feature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/physicalsample#derivedUsing"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/physicalsample#SamplingProcess"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/physicalsample#hasProperty"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/propertyvalue#Property"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/physicalsample#originatesFrom"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/physicalsample#Feature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
 
-    <!-- http://schema.geolink.org/1.0/pattern/physicalsample#Property -->
+    <!-- http://schema.geolink.org/1.0/pattern/physicalsample#RegistrantRole -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/physicalsample#Property"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/physicalsample#RegistrantRole">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole#AgentRole"/>
+        <rdfs:label>RegistrantRole</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.geolink.org/1.0/pattern/physicalsample#RightsHolderRole -->
+
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/physicalsample#RightsHolderRole">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/agentrole#AgentRole"/>
+        <rdfs:label>RightsHolderRole</rdfs:label>
+    </owl:Class>
     
 
 
     <!-- http://schema.geolink.org/1.0/pattern/physicalsample#SamplingProcess -->
 
-    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/physicalsample#SamplingProcess"/>
+    <owl:Class rdf:about="http://schema.geolink.org/1.0/pattern/physicalsample#SamplingProcess">
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/event#Event"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/physicalsample#hasInputFeature"/>
+                <owl:allValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/physicalsample#Feature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/physicalsample#hasInputFeature"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://schema.geolink.org/1.0/pattern/physicalsample#Feature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://schema.geolink.org/1.0/pattern/physicalsample#derivedUsing"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://schema.geolink.org/1.0/pattern/physicalsample#PhysicalSample"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/physicalsample#derivedUsing"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/physicalsample#SamplingProcess"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/physicalsample#PhysicalSample"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/physicalsample#hasInputFeature"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/physicalsample#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/physicalsample#SamplingProcess"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://schema.geolink.org/1.0/pattern/physicalsample#originatesFrom"/>
+        <owl:someValuesFrom rdf:resource="http://schema.geolink.org/1.0/pattern/physicalsample#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://schema.geolink.org/1.0/pattern/physicalsample#PhysicalSample"/>
+    </owl:Restriction>
 </rdf:RDF>
 
 
 
-<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
 
