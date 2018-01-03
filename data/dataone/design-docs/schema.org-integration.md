@@ -29,3 +29,11 @@ Tasks:
     - This may interact with Task 2. Our landing pages may not need to be crawlable by Google Search if they provide Structured Data instead.
 
     - If Google prefers Structured Data over parsing the full page, we may find doing both is redundant. Compare both options.
+
+    - We need to think about where the information would come from
+
+        It can come from the EML record, the Solr index, or the DataONE LOD graph.
+        All that depends on things like:
+
+        - What data we want to put in the Schema.org markup. i.e., does the EML have enough info alone or do we need more?
+        - Whether we think we can maintain the DataONE LOD graph
