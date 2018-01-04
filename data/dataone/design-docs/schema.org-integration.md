@@ -14,6 +14,8 @@ Tasks:
 
 1. Investigate the feasibility of no longer using Fragment URLs in MetacatUI
 
+    Issue: https://github.com/NCEAS/metacatui/issues/431
+    
     Notes:
 
     - The solution will need to gracefully redirect users from the previous Fragment URLs to the new URL so bookmarks/links and, more importantly DOIs don't break. This is very important.
@@ -24,6 +26,7 @@ Tasks:
 
 3. Investigate what's needed to support Google's Structured Dataset initiative (putting JSON-LD on dataset landing pages)
 
+    Issue: https://github.com/NCEAS/metacatui/issues/432
     Notes:
 
     - This may interact with Task 2. Our landing pages may not need to be crawlable by Google Search if they provide Structured Data instead.
